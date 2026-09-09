@@ -250,15 +250,16 @@ Aucune de ces trois stratégies n\'a démontré sa supériorité de façon conva
         S.skin({ thickness: 8, fatBelow: 22 });
         S.muscle({ path: 'M0 74 L640 74 L640 114 L0 118 Z', label: 'Deltoïde', at: [92, 98] });
         S.fascia({ points: [[0, 118], [640, 114]], width: 1.5 });
-        S.muscle({ path: 'M0 122 L640 118 L640 152 Q550 146 470 150 Q380 172 300 232 Q240 240 0 236 Z', label: 'Infra-épineux refoulé', at: [128, 178], opacity: 0.5 });
-        S.fascia({ points: [[238, 242], [300, 236], [380, 178], [470, 156], [560, 162], [640, 170]], width: 2.2, label: 'Capsule distendue', at: [520, 130], small: true, lead: [520, 160] });
+        S.muscle({ path: 'M0 122 L640 118 L640 136 Q550 128 470 130 Q380 150 300 224 Q240 238 0 236 Z', label: 'Infra-épineux refoulé', at: [132, 182], opacity: 0.5 });
+        S.fluid({ path: 'M244 246 L300 232 Q380 156 470 136 Q560 140 636 152 L636 208 Q560 196 470 200 Q380 222 302 252 Z' });
+        S.fascia({ points: [[238, 242], [300, 230], [380, 156], [470, 136], [560, 140], [640, 150]], width: 2.2, label: 'Capsule distendue', at: [546, 110], small: true, lead: [546, 141] });
         S.bone({ path: 'M0 246 L246 250', label: 'Glène', at: [96, 302] });
         S.bone({ path: 'M296 260 Q470 172 640 226', label: 'Tête humérale', at: [504, 268] });
         S.cartilage({ path: 'M300 250 Q470 164 640 216 L640 226 Q470 172 296 260 Z' });
         S.ligament({ path: 'M242 242 L294 250 L262 288 Z' });
         S.target({ x: 316, y: 250, r: 14 });
         S.needle({ from: [636, 108], to: [322, 246], label: 'Prolongateur + robinet 3 voies' });
-        S.spreadPath({ path: 'M244 246 L300 240 Q380 182 470 160 Q560 166 636 174 L636 206 Q560 194 470 198 Q380 220 302 252 Z', at: [452, 202], label: '20–40 mL — distension capsulaire' });
+        S.spreadPath({ path: 'M244 246 L300 232 Q380 156 470 136 Q560 140 636 152 L636 208 Q560 196 470 200 Q380 222 302 252 Z', at: [456, 180], label: '20–40 mL — distension capsulaire' });
       },
     },
   ],

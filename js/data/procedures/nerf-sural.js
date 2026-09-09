@@ -214,16 +214,16 @@ Ponction **in-plane**, dans le grand axe de la sonde, de latéral en médial ou 
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Transverse, face postérieure du mollet', type: 'linéaire 12–18 MHz' });
         S.skin({ thickness: 8, fatBelow: 26 });
-        S.fascia({ points: [[0, 84], [640, 84]], width: 1.8 });
-        S.muscle({ path: 'M0 92 L296 100 L292 248 L0 242 Z', label: 'Gastrocnémien médial', at: [142, 176], opacity: 0.5 });
-        S.muscle({ path: 'M332 100 L640 92 L640 242 L336 248 Z', label: 'Gastrocnémien latéral', at: [488, 176], opacity: 0.5 });
-        S.vein({ x: 306, y: 62, rx: 14, ry: 11 });
-        S.nerve({ x: 340, y: 70, r: 7 });
-        S.fascia({ points: [[0, 258], [640, 258]], width: 1.6, opacity: 0.7 });
-        S.muscle({ path: 'M0 264 L640 264 L640 366 L0 366 Z', label: 'Soléaire', at: [320, 316], opacity: 0.45 });
-        S.label({ x: 150, y: 122, text: 'Petite veine saphène', cls: 'lbl-vein', small: true, lead: [294, 66] });
-        S.label({ x: 496, y: 122, text: 'N. cutané sural médial', cls: 'lbl-nerve', small: true, lead: [348, 70] });
-        S.label({ x: 500, y: 62, text: 'Fascia crural', cls: 'lbl-fascia', small: true });
+        S.fascia({ points: [[0, 116], [640, 116]], width: 1.8 });
+        S.muscle({ path: 'M0 124 L296 132 L292 262 L0 256 Z', label: 'Gastrocnémien médial', at: [142, 200], opacity: 0.5 });
+        S.muscle({ path: 'M332 132 L640 124 L640 256 L336 262 Z', label: 'Gastrocnémien latéral', at: [488, 200], opacity: 0.5 });
+        S.vein({ x: 306, y: 92, rx: 14, ry: 11 });
+        S.nerve({ x: 342, y: 100, r: 7 });
+        S.fascia({ points: [[0, 272], [640, 272]], width: 1.6, opacity: 0.7 });
+        S.muscle({ path: 'M0 278 L640 278 L640 372 L0 372 Z', label: 'Soléaire', at: [320, 328], opacity: 0.45 });
+        S.label({ x: 150, y: 156, text: 'Petite veine saphène', cls: 'lbl-vein', small: true, lead: [294, 96] });
+        S.label({ x: 496, y: 156, text: 'N. cutané sural médial', cls: 'lbl-nerve', small: true, lead: [350, 102] });
+        S.label({ x: 566, y: 108, text: 'Fascia crural', cls: 'lbl-fascia', small: true, anchor: 'end' });
       },
     },
     {
@@ -234,18 +234,18 @@ Ponction **in-plane**, dans le grand axe de la sonde, de latéral en médial ou 
         S.orient({ left: 'Postérieur (Achille)', right: 'Antérieur (malléole)' }).probeInfo({ plan: 'Transverse, rétro-malléolaire latéral', type: 'in-plane' });
         S.skin({ thickness: 8, fatBelow: 20 });
         S.tendon({ x: 70, y: 130, rx: 84, ry: 30 });
-        S.bone({ path: 'M424 186 Q520 154 626 162', label: 'Malléole latérale', at: [520, 218], ldy: 0 });
+        S.bone({ path: 'M424 186 Q520 154 626 162', label: 'Malléole latérale', at: [552, 302], ldy: 0, anchor: 'end' });
         S.tendon({ x: 452, y: 136, rx: 21, ry: 14 });
         S.tendon({ x: 496, y: 122, rx: 19, ry: 12 });
-        S.vein({ x: 278, y: 96, rx: 17, ry: 13 });
-        S.nerve({ x: 314, y: 108, r: 7 });
+        S.vein({ x: 268, y: 88, rx: 17, ry: 13 });
+        S.nerve({ x: 306, y: 104, r: 7 });
         S.label({ x: 96, y: 82, text: 'Tendon d\'Achille', cls: 'lbl-tendon', small: true });
-        S.label({ x: 168, y: 178, text: 'Petite v. saphène\n(dilatée au garrot)', cls: 'lbl-vein', small: true, lead: [268, 108] });
-        S.label({ x: 400, y: 300, text: 'N. sural (1–2 mm, non compressible)', cls: 'lbl-nerve', small: true, lead: [320, 118] });
-        S.label({ x: 486, y: 74, text: 'Tendons fibulaires', cls: 'lbl-tendon', small: true, lead: [492, 110] });
-        S.target({ x: 314, y: 108, r: 15 });
-        S.needle({ from: [636, 74], to: [332, 104], label: '25–27 G, in-plane' });
-        S.spread({ x: 314, y: 108, rx: 40, ry: 21, label: '2–3 mL' });
+        S.label({ x: 158, y: 186, text: 'Petite v. saphène\n(dilatée au garrot)', cls: 'lbl-vein', small: true, lead: [256, 98] });
+        S.label({ x: 214, y: 258, text: 'N. sural (1–2 mm)', cls: 'lbl-nerve', small: true, lead: [298, 112] });
+        S.label({ x: 570, y: 250, text: 'Tendons fibulaires', cls: 'lbl-tendon', small: true, anchor: 'end', lead: [500, 134] });
+        S.target({ x: 306, y: 104, r: 14 });
+        S.needle({ from: [636, 74], to: [330, 110], label: '25–27 G, in-plane' });
+        S.spread({ x: 352, y: 124, rx: 36, ry: 20, label: '2–3 mL' });
       },
     },
   ],

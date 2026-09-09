@@ -221,7 +221,7 @@ Limite méthodologique importante à connaître : dans cet essai, le bras gros v
       build: S => {
         S.orient({ left: 'Proximal (corps du tendon)', right: 'Distal (insertion)' }).probeInfo({ plan: 'Sagittal, face postérieure', type: 'linéaire 10–15 MHz' });
         S.skin({ thickness: 8, fatBelow: 16 });
-        S.tendon({ path: 'M0 76 L286 88 L432 122 L522 178 L508 200 L412 146 L278 110 L0 100 Z' });
+        S.tendon({ path: 'M0 76 L286 88 L432 122 L504 246 L480 262 L412 146 L278 110 L0 100 Z' });
         S.fat({ path: 'M96 128 L392 168 L436 208 L300 262 L128 250 Z' });
         S.fluid({ x: 424, y: 168, rx: 36, ry: 13 });
         S.bone({ path: 'M638 312 L544 304 Q470 296 452 212 Q448 186 468 178' });
@@ -242,14 +242,14 @@ Limite méthodologique importante à connaître : dans cet essai, le bras gros v
         S.tendon({ x: 320, y: 110, rx: 150, ry: 26 });
         S.vein({ x: 92, y: 80, rx: 9, ry: 7 });
         S.nerve({ x: 120, y: 84, r: 7 });
-        S.fluid({ x: 320, y: 158, rx: 92, ry: 14 });
+        S.fluid({ x: 320, y: 158, rx: 100, ry: 15 });
         S.bone({ path: 'M108 212 Q320 188 542 210', label: 'Calcanéus', at: [330, 248], ldy: 0 });
         S.label({ x: 320, y: 112, text: 'Tendon d\'Achille — jamais dedans', cls: 'lbl-tendon', small: true });
         S.label({ x: 176, y: 60, text: 'N. sural + petite v. saphène', cls: 'lbl-nerve', small: true, anchor: 'start', lead: [128, 78] });
         S.label({ x: 470, y: 316, text: 'Bourse rétro-calcanéenne', cls: 'lbl-fluid', small: true, lead: [392, 160] });
         S.target({ x: 300, y: 158, r: 15 });
         S.needle({ from: [2, 120], to: [250, 156], label: '25 G, latéral → médial, sous le tendon' });
-        S.spread({ x: 312, y: 160, rx: 88, ry: 14, label: '1–2 mL intra-bursal' });
+        S.spread({ x: 312, y: 160, rx: 78, ry: 12, label: '1–2 mL intra-bursal' });
       },
     },
     {
@@ -267,10 +267,10 @@ Limite méthodologique importante à connaître : dans cet essai, le bras gros v
         S.label({ x: 120, y: 100, text: 'Tendon épaissi et hypoéchogène', cls: 'lbl-tendon', small: true });
         S.label({ x: 236, y: 194, text: 'Néovaisseaux (Doppler)', cls: 'lbl-artery', small: true, lead: [250, 134] });
         S.label({ x: 540, y: 196, text: 'Paratendon', cls: 'lbl-fascia', small: true, lead: [540, 143] });
-        S.label({ x: 540, y: 300, text: 'Graisse de Kager', cls: 'lbl-fat', small: true });
+        S.label({ x: 540, y: 238, text: 'Graisse de Kager', cls: 'lbl-fat', small: true });
         S.target({ x: 340, y: 140, r: 14 });
         S.needle({ from: [638, 182], to: [346, 142], label: '21 G, distal → proximal' });
-        S.spread({ x: 320, y: 146, rx: 210, ry: 15, label: '~10 mL AL + 30–40 mL sérum' });
+        S.spread({ x: 320, y: 146, rx: 210, ry: 15, label: '10 mL AL + 30–40 mL sérum' });
       },
     },
   ],

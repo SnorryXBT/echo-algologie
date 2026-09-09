@@ -194,15 +194,15 @@ Ponction **in-plane, de latéral vers médial**, l\'aiguille arrivant presque pa
       opts: { depth: 3 },
       build: S => {
         S.orient({ left: 'Latéral (clavicule)', right: 'Médial (manubrium)' }).probeInfo({ plan: 'Transversale sur l\'extrémité médiale de la clavicule', type: 'linéaire 12–18 MHz' });
-        S.skin({ thickness: 6, fatBelow: 14 });
-        S.ligament({ path: 'M232 106 L368 104 L366 128 L234 130 Z', label: 'Lig. sterno-claviculaire ant.', at: [340, 80], small: true });
-        S.bone({ path: 'M20 136 Q150 90 268 126', label: 'Clavicule (extrémité médiale)', at: [118, 98] });
-        S.bone({ path: 'M332 126 Q480 96 640 120', label: 'Manubrium sternal', at: [512, 92] });
-        S.cartilage({ path: 'M280 128 L320 126 L324 176 L276 178 Z', label: 'Disque articulaire', at: [300, 200], ldy: 0, small: true, lead: [300, 178] });
-        S.fluid({ path: 'M270 130 L280 128 L276 178 L266 176 Z' });
-        S.fluid({ path: 'M320 126 L330 128 L334 176 L324 176 Z' });
-        S.vein({ x: 300, y: 268, rx: 54, ry: 22, label: 'V. brachio-céphalique et vaisseaux sous-claviers', lx: 300, ly: 320, small: true, lead: [300, 292] });
-        S.label({ x: 300, y: 344, text: '≈ 1 cm en arrière de l\'interligne — non compressibles', cls: 'lbl-target', small: true });
+        S.skin({ thickness: 6, fatBelow: 16 });
+        S.muscle({ path: 'M0 66 L640 66 L640 128 L0 134 Z', label: 'Plan sous-cutané (platysma, SCM)', at: [148, 100], opacity: 0.4, small: true });
+        S.bone({ path: 'M20 200 Q150 152 268 190', label: 'Clavicule (extrémité médiale)', at: [122, 152] });
+        S.bone({ path: 'M332 190 Q480 158 640 184', label: 'Manubrium sternal', at: [512, 148] });
+        S.ligament({ path: 'M230 158 L370 154 L368 176 L232 180 Z', label: 'Lig. sterno-claviculaire ant.', at: [352, 132], small: true });
+        S.cartilage({ path: 'M282 186 L320 184 L324 238 L278 240 Z', label: 'Disque articulaire', at: [300, 262], ldy: 0, small: true, lead: [300, 240] });
+        S.vein({ x: 300, y: 306, rx: 40, ry: 20, label: 'V. brachio-céphalique et vaisseaux sous-claviers', lx: 300, ly: 352, small: true, lead: [300, 328] });
+        S.label({ x: 300, y: 376, text: '≈ 1 cm en arrière de l\'interligne — non compressibles', cls: 'lbl-target', small: true });
+        S.label({ x: 118, y: 250, text: 'Fente articulaire', cls: 'lbl-target', small: true, lead: [274, 200] });
       },
     },
     {
@@ -212,16 +212,16 @@ Ponction **in-plane, de latéral vers médial**, l\'aiguille arrivant presque pa
       build: S => {
         S.orient({ left: 'Latéral (côte osseuse)', right: 'Médial (sternum)' }).probeInfo({ plan: 'Longitudinale, dans l\'axe de la côte', type: 'in-plane' });
         S.skin({ thickness: 6, fatBelow: 16 });
-        S.muscle({ path: 'M0 66 L640 66 L640 100 L0 104 Z', label: 'Grand pectoral', at: [76, 88], opacity: 0.45 });
-        S.region({ path: 'M228 100 Q326 82 424 100 L426 120 L226 120 Z', fill: '#4a5560', opacity: 0.55, label: 'Tuméfaction péri-chondrale', at: [486, 92], small: true, lead: [412, 100] });
+        S.muscle({ path: 'M0 62 L640 62 L640 94 L0 98 Z', label: 'Grand pectoral', at: [90, 84], opacity: 0.45, small: true });
+        S.region({ path: 'M206 96 Q326 70 446 96 L448 120 L204 120 Z', fill: '#5d6a76', opacity: 0.6, label: 'Tuméfaction péri-chondrale', at: [488, 84], small: true, lead: [430, 94] });
         S.cartilage({ path: 'M182 118 L470 116 L472 164 L184 166 Z', label: 'Cartilage costal', at: [326, 146] });
         S.bone({ path: 'M0 124 L180 120', label: 'Côte osseuse', at: [84, 156] });
         S.bone({ path: 'M472 118 L640 122', label: 'Sternum', at: [568, 156] });
         S.pleura({ points: [[186, 268], [326, 278], [464, 268]], label: 'Plèvre — visible à travers le cartilage', at: [326, 302], small: true });
-        S.lung({ path: 'M182 282 L470 282 L478 420 L176 420 Z', label: 'Poumon', at: [326, 348], small: true });
-        S.target({ x: 306, y: 110, r: 14 });
-        S.needle({ from: [8, 84], to: [300, 110], label: '25 G — tangentielle, jamais perpendiculaire' });
-        S.spread({ x: 316, y: 111, rx: 82, ry: 8, label: '0,5–1 mL' });
+        S.lung({ path: 'M206 288 L446 288 L452 420 L200 420 Z', label: 'Poumon', at: [326, 350], small: true });
+        S.target({ x: 304, y: 110, r: 13 });
+        S.needle({ from: [8, 78], to: [298, 110], label: '25 G — tangentielle, jamais perpendiculaire' });
+        S.spread({ x: 318, y: 110, rx: 74, ry: 6, label: '0,5–1 mL' });
       },
     },
   ],

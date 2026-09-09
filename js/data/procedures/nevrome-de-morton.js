@@ -232,12 +232,12 @@ Voie dorsale : ponction **dorsale, dans l\'espace intermétatarsien**, aiguille 
         S.skin({ thickness: 8, fatBelow: 18 });
         S.bone({ path: 'M234 214 Q320 166 408 214', label: 'M3', at: [318, 150] });
         S.bone({ path: 'M444 216 Q530 168 618 216', label: 'M4', at: [532, 152] });
-        S.fluid({ x: 426, y: 202, rx: 20, ry: 11 });
+        S.fluid({ x: 414, y: 196, rx: 18, ry: 10 });
         S.ligament({ path: 'M310 236 L546 236 L546 244 L310 244 Z' });
         S.nerve({ x: 426, y: 292, rx: 26, ry: 30 });
         S.label({ x: 150, y: 250, text: 'Lig. transverse', cls: 'lbl-lig', small: true, lead: [312, 240] });
         S.label({ x: 152, y: 300, text: 'Névrome', cls: 'lbl-nerve', small: true, lead: [398, 292] });
-        S.label({ x: 592, y: 200, text: 'Bourse', cls: 'lbl-fluid', small: true, anchor: 'end', lead: [448, 202] });
+        S.label({ x: 592, y: 200, text: 'Bourse', cls: 'lbl-fluid', small: true, anchor: 'end', lead: [432, 196] });
         S.target({ x: 426, y: 262, r: 15 });
         S.needle({ from: [470, 68], to: [428, 256], label: '25–27 G, voie dorsale' });
         S.spread({ x: 426, y: 288, rx: 48, ry: 36, label: '1,5–3 mL' });

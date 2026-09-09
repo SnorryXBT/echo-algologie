@@ -207,12 +207,12 @@ Sens de ponction pour la voie antérieure : **de distal vers proximal**, aiguill
         S.vein({ x: 306, y: 142, rx: 7, ry: 6 });
         S.vein({ x: 356, y: 144, rx: 7, ry: 6 });
         S.artery({ x: 331, y: 140, r: 10 });
-        S.nerve({ x: 348, y: 162, r: 7 });
+        S.nerve({ x: 352, y: 168, r: 7 });
         S.bone({ path: 'M0 232 Q200 222 330 224 Q480 226 640 238' });
         S.label({ x: 100, y: 300, text: 'Tendon tibial antérieur', cls: 'lbl-tendon', small: true, lead: [120, 127] });
         S.label({ x: 110, y: 332, text: 'Long ext. de l\'hallux', cls: 'lbl-tendon', small: true, lead: [252, 129] });
         S.label({ x: 445, y: 300, text: 'A. tibiale antérieure', cls: 'lbl-artery', small: true, lead: [334, 150] });
-        S.label({ x: 445, y: 332, text: 'N. fibulaire profond', cls: 'lbl-nerve', small: true, lead: [351, 169] });
+        S.label({ x: 445, y: 332, text: 'N. fibulaire profond', cls: 'lbl-nerve', small: true, lead: [356, 176] });
         S.label({ x: 545, y: 366, text: 'Long ext. des orteils', cls: 'lbl-tendon', small: true, lead: [464, 129] });
         S.label({ x: 190, y: 366, text: 'Tibia distal', cls: 'lbl-bone', small: true });
         S.label({ x: 48, y: 200, text: 'Fenêtre\nantéro-médiale', cls: 'lbl-target', small: true });
@@ -225,15 +225,15 @@ Sens de ponction pour la voie antérieure : **de distal vers proximal**, aiguill
       build: S => {
         S.orient({ left: 'Proximal (tibia)', right: 'Distal (talus)' }).probeInfo({ plan: 'Sagittal, en dedans du tendon tibial antérieur', type: 'in-plane' });
         S.skin({ thickness: 8, fatBelow: 18 });
-        S.bone({ path: 'M0 190 L168 194 Q230 198 252 232 L258 272', label: 'Tibia distal', at: [96, 240], ldy: 0 });
-        S.cartilage({ path: 'M300 268 Q372 238 442 234 Q542 238 640 260 L640 268 Q542 246 442 242 Q372 246 302 276 Z' });
-        S.bone({ path: 'M300 276 Q372 246 442 242 Q542 246 640 268' });
+        S.bone({ path: 'M0 190 L168 194 Q232 198 254 236', label: 'Tibia distal', at: [110, 252], ldy: 0 });
+        S.cartilage({ path: 'M262 280 Q372 238 442 234 Q542 238 640 260 L640 268 Q542 246 442 242 Q372 246 264 290 Z' });
+        S.bone({ path: 'M262 288 Q372 246 442 242 Q542 246 640 268' });
         S.region({ path: 'M284 268 L250 226 Q332 212 406 232 Z', fill: '#6f7a84', opacity: 0.4 });
         S.fascia({ path: 'M246 224 Q332 208 410 230', width: 2 });
         S.label({ x: 330, y: 190, text: 'Capsule antérieure', cls: 'lbl-fascia', small: true, lead: [330, 210] });
         S.label({ x: 150, y: 330, text: 'Récessus antérieur', cls: 'lbl-region', small: true, lead: [300, 250] });
-        S.label({ x: 505, y: 330, text: 'Talus (dôme et col)', cls: 'lbl-bone', small: true, lead: [470, 252] });
-        S.label({ x: 505, y: 358, text: 'Cartilage hyalin', cls: 'lbl-cart', small: true });
+        S.label({ x: 560, y: 352, text: 'Talus (dôme et col)', cls: 'lbl-bone', small: true, anchor: 'end', lead: [500, 252] });
+        S.label({ x: 560, y: 306, text: 'Cartilage hyalin', cls: 'lbl-cart', small: true, anchor: 'end', lead: [520, 240] });
         S.target({ x: 300, y: 254, r: 16 });
         S.needle({ from: [636, 148], to: [308, 252], label: '22–25 G, distal → proximal' });
         S.spread({ x: 296, y: 254, rx: 46, ry: 18, label: '2–4 mL' });

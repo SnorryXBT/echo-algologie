@@ -213,12 +213,12 @@ Deux temps distincts : **repérage en coupe longitudinale** (mesure de l\'épais
         S.skin({ thickness: 14, fatBelow: 52 });
         S.label({ x: 470, y: 92, text: 'Coussinet graisseux — à préserver', cls: 'lbl-fat', small: true });
         S.tendon({ path: 'M62 118 L300 138 L624 152 L624 160 L300 150 L64 142 Z' });
-        S.region({ path: 'M66 122 L188 133 L188 145 L68 140 Z', fill: '#0d1116', opacity: 0.85 });
-        S.bone({ path: 'M0 150 L58 148 L128 158 L104 162 Q172 168 216 180', label: 'Calcanéus', at: [70, 214], ldy: 0 });
+        S.region({ path: 'M66 122 L190 134 L190 147 L68 140 Z', fill: '#0d1116', opacity: 0.75 });
+        S.bone({ path: 'M0 150 L58 148 L128 158 L104 162 Q172 168 216 180', label: 'Calcanéus', at: [70, 330], ldy: 0 });
         S.muscle({ path: 'M196 194 Q392 204 640 216 L640 276 Q392 266 196 250 Z', label: 'Court fléchisseur des orteils', at: [412, 236], opacity: 0.5 });
-        S.label({ x: 300, y: 316, text: 'Fascia plantaire', cls: 'lbl-tendon', small: true, lead: [300, 152] });
-        S.label({ x: 126, y: 348, text: 'Insertion épaissie > 4 mm\net hypoéchogène', cls: 'lbl-target', small: true, lead: [124, 138] });
-        S.label({ x: 214, y: 172, text: 'Éperon', cls: 'lbl-bone', small: true, lead: [122, 159] });
+        S.label({ x: 400, y: 180, text: 'Fascia plantaire', cls: 'lbl-tendon', small: true, lead: [400, 156] });
+        S.label({ x: 150, y: 252, text: 'Insertion épaissie > 4 mm\net hypoéchogène', cls: 'lbl-target', small: true, lead: [128, 142] });
+        S.label({ x: 250, y: 186, text: 'Éperon', cls: 'lbl-bone', small: true, lead: [124, 160] });
       },
     },
     {
@@ -234,9 +234,9 @@ Deux temps distincts : **repérage en coupe longitudinale** (mesure de l\'épais
         S.muscle({ path: 'M118 154 L568 158 L590 224 L120 218 Z', label: 'Court fléchisseur des orteils', at: [370, 190], opacity: 0.5 });
         S.bone({ path: 'M70 274 Q330 252 626 270', label: 'Calcanéus', at: [330, 306], ldy: 0 });
         S.label({ x: 452, y: 112, text: 'Fascia plantaire', cls: 'lbl-tendon', small: true, lead: [420, 128] });
-        S.target({ x: 300, y: 150, r: 15 });
-        S.needle({ from: [2, 116], to: [292, 148], label: '22–25 G, voie médiale' });
-        S.spread({ x: 306, y: 152, rx: 86, ry: 13, label: '2–3 mL — face profonde' });
+        S.target({ x: 300, y: 158, r: 15 });
+        S.needle({ from: [2, 146], to: [294, 157], label: '22–25 G, voie médiale' });
+        S.spread({ x: 306, y: 166, rx: 86, ry: 12, label: '2–3 mL — face profonde' });
       },
     },
     {
@@ -251,12 +251,12 @@ Deux temps distincts : **repérage en coupe longitudinale** (mesure de l\'épais
         S.muscle({ path: 'M180 130 L606 124 L606 190 L180 196 Z', label: 'Court fléchisseur des orteils', at: [396, 160], opacity: 0.45 });
         S.muscle({ path: 'M184 208 L600 198 L610 288 L188 296 Z', label: 'Carré plantaire', at: [420, 250], opacity: 0.5 });
         S.fascia({ points: [[16, 210], [162, 218]], width: 1.8 });
-        S.nerve({ x: 186, y: 210, r: 7 });
+        S.nerve({ x: 184, y: 206, r: 7 });
         S.bone({ path: 'M206 330 Q408 316 638 328', label: 'Calcanéus', at: [420, 360], ldy: 0 });
         S.label({ x: 458, y: 96, text: 'Fascia plantaire', cls: 'lbl-tendon', small: true });
-        S.label({ x: 320, y: 372, text: 'N. calcanéen inférieur (Baxter)', cls: 'lbl-nerve', small: true, lead: [190, 218] });
+        S.label({ x: 320, y: 372, text: 'N. calcanéen inférieur (Baxter)', cls: 'lbl-nerve', small: true, lead: [182, 214] });
         S.needle({ from: [2, 140], to: [174, 204], label: '25 G, in-plane médial' });
-        S.spread({ x: 192, y: 212, rx: 38, ry: 18, label: '2–4 mL bloc · 5–10 mL hydrodissection' });
+        S.spread({ x: 230, y: 222, rx: 40, ry: 17, label: '2–4 mL' });
       },
     },
   ],
