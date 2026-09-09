@@ -219,7 +219,7 @@ Pour l'IPBSN, même orientation mais trajet très court : on reste dans le plan 
         S.target({ x: 292, y: 168, r: 18 });
         S.needle({ from: [0, 96], to: [280, 166], label: '22 G 80 mm, in-plane' });
         S.spread({ x: 288, y: 144, rx: 62, ry: 10 });
-        S.spread({ x: 262, y: 202, rx: 20, ry: 28 });
+        S.spreadPath({ path: 'M252 156 Q234 190 250 228 L272 222 Q258 190 272 162 Z' });
         S.label({ x: 190, y: 244, text: '5–10 mL', cls: 'lbl-spread', small: true, lead: [246, 216] });
       },
     },
