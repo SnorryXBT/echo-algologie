@@ -84,7 +84,7 @@ Ponction **dans le plan, de médial-crânial vers latéral-caudal**, l\'aiguille
     { structure: 'Petit pectoral', aspect: 'Muscle lenticulaire, plus mince, se terminant en biseau vers le bas et le dehors', repere: 'Son bord latéro-inférieur est le repère du PECS II' },
     { structure: 'Plan pecto-serratus', aspect: 'Interface entre la face profonde du petit pectoral et le dentelé antérieur', repere: 'Cible du PECS II, à hauteur de la 3e–4e côte ; le dentelé reste interposé entre la pointe et la côte' },
     { structure: 'Dentelé antérieur', aspect: 'Muscle appliqué sur les côtes, moulé sur les arcs costaux', repere: 'Le muscle « qui suit l\'os »' },
-    { structure: 'Côtes (3e et 4e)', aspect: 'Arcs hyperéchogènes convexes avec cône d\'ombre franc', repere: 'Garde-fou du temps profond' },
+    { structure: 'Côtes (3e et 4e)', aspect: 'Arcs hyperéchogènes convexes avec cône d\'ombre franc', repere: 'Donnent le **niveau**, pas la profondeur : le plancher du PECS II est le dentelé, pas la côte' },
     { structure: 'Plèvre', aspect: 'Ligne brillante animée du glissement respiratoire', repere: 'Doit rester dans le champ pendant tout le geste' },
   ],
 
@@ -142,7 +142,7 @@ Les blocs de fascia ont une **absorption systémique élevée** : diluer plutôt
     '**Toxicité systémique des AL (LAST)** : volumes cumulés élevés et absorption interfasciale importante. Prodromes (goût métallique, acouphènes, dysarthrie, agitation) → arrêt immédiat, oxygène, intralipide 20 %.',
     'Ponction vasculaire : branche pectorale de l\'artère thoraco-acromiale, artère thoracique latérale, veines satellites — hématome de la loge pectorale ou axillaire, compressible. Doppler préalable.',
     'Bloc moteur transitoire des pectoraux (antépulsion, adduction) et parfois du dentelé (scapula ailée passagère) : attendu, à annoncer, 6–12 h.',
-    'Extension au plexus brachial si la ponction est trop haute et trop médiale : bloc du membre supérieur transitoire, à prévenir par un repérage costal correct.',
+    'Extension au plexus brachial si la ponction est trop haute et trop **latérale**, vers la région infra-claviculaire sous le processus coracoïde, où les cordons cheminent sous le petit pectoral avec les vaisseaux axillaires : bloc du membre supérieur transitoire, à prévenir par un repérage costal correct (rester à hauteur de la 3e–4e côte) et par le Doppler.',
   ],
   securite: [
     'Blocs superficiels et compressibles : **faible risque hémorragique** (ASRA-ESRA 2018, procédures douleur) — pas d\'arrêt systématique des antiagrégants ; anticoagulants au cas par cas.',
@@ -226,8 +226,9 @@ Les blocs de fascia ont une **absorption systémique élevée** : diluer plutôt
         S.target({ x: 296, y: 146, r: 13 });
         S.needle({ from: [6, 100], to: [432, 205], delay: 0.2, dur: 1.2, label: '① 22 G 80 mm — PECS II (profond)' });
         S.spread({ x: 396, y: 207, rx: 112, ry: 9, delay: 1.4, dur: 1.0, label: '20 mL' });
-        S.needle({ from: [6, 74], to: [292, 148], delay: 2.4, dur: 1.0, label: '② retrait → plan inter-pectoral (PECS I)' });
+        S.needle({ from: [6, 100], to: [292, 148], delay: 2.4, dur: 1.0 });
         S.spread({ x: 274, y: 146, rx: 98, ry: 8, delay: 3.4, dur: 0.9, label: '10 mL' });
+        S.label({ x: 120, y: 320, text: '② même point de ponction :\nretrait dans le plan inter-pectoral (PECS I)', cls: 'lbl-needle', small: true, anchor: 'middle' });
       },
     },
   ],

@@ -205,7 +205,7 @@ Preuves : revue systématique 2024 (Can J Pain) de la PRF du GON dans les cépha
   scenes: [
     {
       id: 'gon-c2-reperage', section: 'sonoanatomie', titre: 'Approche proximale C2 — coupe axiale oblique sur la lame de C2',
-      legende: 'Sonde médiale sur l\'épineuse bifide de C2, extrémité latérale tournée vers la mastoïde. De la superficie à la profondeur : trapèze, splénius, semi-épineux de la tête, puis le plan interfascial où court le GON sur la face dorsale de l\'oblique inférieur. L\'artère vertébrale (V3) est profonde et latérale, sous l\'OCI : elle n\'est jamais sur le trajet d\'une aiguille qui s\'arrête au contact dorsal du muscle.',
+      legende: 'Sonde médiale sur l\'épineuse bifide de C2, extrémité latérale tournée vers la mastoïde. De la superficie à la profondeur : trapèze, splénius, semi-épineux de la tête, puis le plan interfascial où court le GON sur la face dorsale de l\'oblique inférieur. L\'artère vertébrale (V3) est en profondeur de la partie latérale de l\'OCI et en céphalique, dans le triangle sous-occipital : elle n\'est jamais sur le trajet d\'une aiguille qui s\'arrête au contact dorsal du muscle.',
       opts: { depth: 4 },
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Axiale oblique, lame de C2', type: 'linéaire 10–15 MHz' });
@@ -221,7 +221,7 @@ Preuves : revue systématique 2024 (Can J Pain) de la PRF du GON dans les cépha
         S.bone({ path: 'M0 302 L36 298 L64 288 Q92 274 120 288 L152 302', label: 'Épineuse bifide de C2', at: [86, 336], small: true, ldy: 0 });
         S.bone({ path: 'M508 330 Q572 312 640 306', label: 'Proc. transverse C1', at: [566, 356], small: true, ldy: 0 });
         S.artery({ x: 452, y: 336, r: 15, label: 'A. vertébrale (V3)', lx: 400, ly: 386, anchor: 'end', lead: [440, 344] });
-        S.label({ x: 152, y: 224, text: 'Plan interfascial = cible', cls: 'lbl-target', small: true });
+        S.label({ x: 152, y: 212, text: 'Plan interfascial = cible', cls: 'lbl-target', small: true });
       },
     },
     {
@@ -245,7 +245,7 @@ Preuves : revue systématique 2024 (Can J Pain) de la PRF du GON dans les cépha
         S.target({ x: 320, y: 238, r: 15 });
         S.needle({ from: [640, 88], to: [332, 238], label: '22 G 50–80 mm, 25–35°' });
         /* nappe interfasciale percée d'un « trou » autour du nerf : la diffusion englobe le GON sans le masquer */
-        S.spreadPath({ path: 'M218 240 A78 16 0 1 1 374 240 A78 16 0 1 1 218 240 Z M287 236 A9 9 0 1 0 305 236 A9 9 0 1 0 287 236 Z', at: [148, 224], label: '3–5 mL' });
+        S.spreadPath({ path: 'M218 240 A78 16 0 1 1 374 240 A78 16 0 1 1 218 240 Z M287 236 A9 9 0 1 0 305 236 A9 9 0 1 0 287 236 Z', at: [148, 208], label: '3–5 mL' });
       },
     },
     {

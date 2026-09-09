@@ -218,10 +218,10 @@ Objectif : convertir une tendinopathie dégénérative chronique en réponse cic
         S.bone({ path: 'M40 322 Q170 252 300 278 L362 300', label: 'Tubérosité ischiatique', at: [152, 372] });
         S.muscle({ path: 'M366 294 L640 266 L640 400 L374 400 Z', opacity: 0.45 });
         S.nerve({ x: 472, y: 266, rx: 28, ry: 14, label: 'N. sciatique', lx: 546, ly: 300, anchor: 'start', small: true, lead: [498, 272] });
-        S.target({ x: 238, y: 240, r: 13 });
-        S.needle({ from: [6, 118], to: [234, 238], label: '21–22 G 90 mm' });
-        S.spread({ x: 212, y: 232, rx: 76, ry: 10, label: '3–5 mL' });
-        S.label({ x: 430, y: 196, text: 'Ne pas dépasser le\nbord latéral du tendon', cls: 'lbl-target', small: true });
+        S.target({ x: 244, y: 244, r: 13 });
+        S.needle({ from: [6, 118], to: [240, 244], label: '21–22 G 90 mm' });
+        S.spread({ x: 214, y: 240, rx: 76, ry: 9, label: '3–5 mL' });
+        S.label({ x: 320, y: 190, text: 'Ne pas dépasser le\nbord latéral du tendon', cls: 'lbl-target', small: true, anchor: 'start', lead: [300, 258] });
       },
     },
   ],

@@ -44,7 +44,7 @@ ECHO.register({
 
   anatomie: `L’espace paravertébral thoracique est un espace **cunéiforme** (triangulaire en coupe transversale), situé de part et d’autre du rachis. Ses limites, qui sont exactement les repères du geste :
 
-- **en arrière** : le **ligament costo-transversaire supérieur**, tendu entre deux processus transverses adjacents — c’est la structure que l’aiguille doit franchir, avec un ressaut souvent perceptible ;
+- **en arrière** : le **ligament costo-transversaire supérieur**, tendu du **bord inférieur du processus transverse sus-jacent** à la **crête du col de la côte sous-jacente** (à l’écran, en coupe sagittale paramédiane, il apparaît simplement comme la bande qui ponte l’espace entre deux processus transverses) — c’est la structure que l’aiguille doit franchir, avec un ressaut souvent perceptible ; latéralement il se prolonge par la **membrane intercostale interne** ;
 - **en avant et latéralement** : la **plèvre pariétale**, seule barrière entre la pointe de l’aiguille et le poumon ;
 - **en dedans** : le corps vertébral, le disque et le **foramen intervertébral**, qui fait communiquer l’espace avec l’**espace épidural** ;
 - **latéralement** : l’espace se prolonge sans rupture par l’**espace intercostal**.
@@ -105,7 +105,7 @@ Compter et **marquer les niveaux au feutre avant la désinfection**, ainsi que l
     { titre: 'Préparation', texte: 'Checklist (fin de fiche). **Voie veineuse posée, monitorage tensionnel et SpO₂ en place.** Niveaux comptés et marqués au feutre avant désinfection. Glissement pleural vérifié et noté. Désinfection large, gel stérile ou housse, gants stériles. Dose totale d’AL calculée en mg/kg et écrite. Aiguille 20–22 G 80–100 mm écho-visible sur prolongateur. **Émulsion lipidique 20 % et chariot d’urgence dans la salle.**' },
     { titre: 'Anesthésie cutanée', texte: '1–2 mL de lidocaïne 1 % au point d’entrée et sur le trajet superficiel. Systématique ici : l’aiguille est de gros calibre et le trajet long à travers les érecteurs.' },
     { titre: 'Ponction dans le plan', texte: '**Abord sagittal** : entrer au bord caudal de la sonde, progresser en crânial et en profondeur, aiguille visible autant que possible ; en cas de perte de la pointe, hydrolocaliser plutôt qu’avancer. **Abord transversal** : entrer au bord latéral, progresser de latéral en médial, tangentiellement à la plèvre, l’aiguille restant visible sur toute sa longueur.' },
-    { titre: 'Franchir le ligament costo-transversaire supérieur', texte: 'Un **ressaut** est souvent perçu (aiguille à biseau court). En sagittal, une alternative sûre est de prendre d’abord le **contact osseux du processus transverse**, puis de reculer et de redescendre de 1 à 1,5 cm au maximum au-delà de son bord caudal — jamais plus, sous peine d’aborder la plèvre.' },
+    { titre: 'Franchir le ligament costo-transversaire supérieur', texte: 'Un **ressaut** est souvent perçu (aiguille à biseau court). En sagittal, la manœuvre de sécurité est de prendre d’abord le **contact osseux du processus transverse** et d’en **noter la profondeur**, puis de reculer, de réorienter légèrement pour passer au-delà de son bord (caudal si l’aiguille progresse de crânial en caudal, crânial dans le sens inverse) et de ne pas dépasser **1 à 1,5 cm au-delà de la profondeur du contact osseux** — la règle porte sur la profondeur, pas sur la distance horizontale à l’écran. Jamais plus, sous peine d’aborder la plèvre.' },
     { titre: 'Hydrolocalisation et test', texte: 'Aspiration (sang, air, LCR). Injecter **1–2 mL de sérum** : le bon signe est un **déplacement antérieur de la plèvre** et un élargissement visible de l’espace. Si le muscle érecteur se gonfle sans que la plèvre bouge, la pointe est en arrière du ligament : avancer prudemment. Si rien ne se voit, retirer et recommencer le repérage — on n’avance jamais à l’aveugle à ce niveau.' },
     { titre: 'Injection fractionnée', texte: '**10 à 20 mL** par bolus de 3–5 mL, avec aspiration entre chaque, en surveillant en continu la plèvre et le patient (pression artérielle, symptômes de toxicité). Si l’on traite plusieurs niveaux, **4–5 mL par niveau** donnent une couverture plus fiable qu’une injection unique de gros volume.' },
     { titre: 'Critère de fin', texte: 'Élargissement franc de l’espace paravertébral avec **déplacement antérieur de la plèvre**, glissement pleural conservé, absence de résistance anormale, patient asymptomatique. Retrait de l’aiguille en gardant la pointe visible.' },
@@ -116,7 +116,7 @@ Compter et **marquer les niveaux au feutre avant la désinfection**, ainsi que l
 |---|---|---|---|
 | Bloc test / bloc antalgique mono-injection | Ropivacaïne 0,2–0,375 % (ou lévobupivacaïne 0,25 %) | **10–20 mL** en un point | Couvre habituellement plusieurs métamères, mais avec une **variabilité individuelle importante** : documenter la cartographie obtenue, ne rien promettre à l’avance |
 | Couverture métamérique précise | Même produit | **4–5 mL par niveau**, 3 à 5 niveaux | Plus fiable qu’une injection unique de gros volume quand la cible métamérique est étroite |
-| Bloc thérapeutique avec corticoïde | Ropivacaïne 0,2 % + méthylprednisolone 40 mg, ou bétaméthasone 5,7 mg, ou dexaméthasone 4–8 mg | 10–15 mL | Site **non artériel terminal**, particulaire acceptable ; mais la proximité du foramen et de l’espace épidural est un argument sérieux pour préférer un **corticoïde non particulaire** (dexaméthasone) si l’on a le moindre doute sur la position médiale de la pointe |
+| Bloc thérapeutique avec corticoïde | Ropivacaïne 0,2 % + **dexaméthasone 4–8 mg** | 10–15 mL | **Corticoïde non particulaire, par principe.** L’espace paravertébral communique avec l’espace épidural par le foramen, la diffusion épidurale y est fréquente et souvent silencieuse, et les **artères médullaires segmentaires** (dont l’artère d’Adamkiewicz, T9–L2, le plus souvent à gauche) naissent des artères intercostales postérieures et rejoignent le canal par le foramen. Aucun bénéfice du particulaire n’est démontré sur cette cible : il n’y a pas de raison d’en prendre le risque. Méthylprednisolone 40 mg envisageable seulement sur un abord franchement latéral, pointe à distance du foramen, et à tracer |
 | Zona aigu / prévention de la névralgie post-zostérienne | Ropivacaïne 0,2 % + corticoïde, injections **répétées** | 10–15 mL par séance | Schéma des essais positifs : injections répétées, pas une seule. À confirmer sur le protocole exact des publications avant transposition |
 | Cathéter paravertébral (situation palliative) | Ropivacaïne 0,2 % en perfusion continue | bolus initial 15–20 mL puis perfusion | Aiguille de Tuohy 20 G, cathéter monté de 2–3 cm ; geste d’équipe entraînée, environnement de surveillance |
 
@@ -129,7 +129,7 @@ Corticoïde : au maximum 3 injections par an sur le même site, espacées d’au
   variantes: [
     { titre: 'Abord sagittal paramédian — l’abord classique', texte: `Sonde sagittale à 2,5–3 cm de la ligne médiane, deux processus transverses à l’écran, aiguille dans le plan en direction caudo-crâniale (ou l’inverse selon l’accès).
 
-Avantages : anatomie intuitive, repères osseux nets, technique de sécurité disponible (contact osseux du processus transverse puis progression contrôlée de 1–1,5 cm au maximum au-delà de son bord caudal).
+Avantages : anatomie intuitive, repères osseux nets, technique de sécurité disponible (contact osseux du processus transverse, profondeur notée, puis progression contrôlée de **1–1,5 cm au maximum au-delà de cette profondeur**).
 
 Limite majeure : **l’angle d’insonation est défavorable et l’aiguille se voit mal**, ce qui est précisément le problème quand la plèvre est à 10 mm. Hydrolocaliser abondamment, ne jamais avancer sans voir. Certaines équipes réalisent cet abord **hors du plan**, la pointe étant repérée par le déplacement tissulaire et l’hydrolocalisation — à réserver aux opérateurs très entraînés.` },
     { titre: 'Abord transversal in-plane latéro-médial (Shibata, Karmakar)', texte: `Sonde transversale, obliquée pour passer entre deux processus transverses ; on identifie de dedans en dehors le processus épineux, la lame, l’articulation costo-transversaire, puis latéralement l’espace intercostal et la plèvre. L’aiguille est introduite au bord **latéral** de la sonde et progresse **de latéral en médial**, tangentiellement à la plèvre, à travers la membrane intercostale interne, jusqu’au coin paravertébral.
@@ -155,7 +155,7 @@ Limite : l’aiguille pointe **vers le foramen**. Fixer visuellement une limite 
   pieges: [
     'Prendre les côtes pour les processus transverses : on injecte alors dans l’espace intercostal ou dans le muscle, et le bloc est incomplet ou nul.',
     'Progresser en sagittal sans voir la pointe : c’est le mécanisme habituel du pneumothorax de ce bloc.',
-    'Dépasser 1,5 cm au-delà du bord caudal du processus transverse en sagittal : au-delà, on est sur la plèvre.',
+    'Dépasser 1,5 cm au-delà de la **profondeur** du contact osseux du processus transverse en sagittal : au-delà, on est sur la plèvre.',
     'En transversal, se laisser entraîner en dedans : diffusion épidurale, hypotension bilatérale, voire injection intrathécale.',
     'Promettre une couverture de « quatre à cinq métamères » : la variabilité individuelle rend cette promesse fausse une fois sur deux.',
     'Faire un bloc bilatéral sans réévaluer la dose totale d’anesthésique local ni l’environnement de surveillance.',
@@ -177,10 +177,11 @@ Limite : l’aiguille pointe **vers le foramen**. Fixer visuellement une limite 
     '**Environnement** : voie veineuse, monitorage tensionnel et SpO₂, chariot d’urgence, émulsion lipidique 20 %, possibilité d’un drainage thoracique dans un délai raisonnable. Surveillance ≥ 60 min. Ce bloc ne se fait pas en consultation.',
     '**Plèvre visible et glissement vérifié avant chaque ponction, et glissement bilatéral revérifié en fin de geste.** Si la plèvre n’est pas visible, le geste ne se fait pas — faire un ESP block.',
     '**Pointe visible en permanence.** En cas de perte de la pointe : arrêt, hydrolocalisation, réalignement de la sonde. Jamais de progression à l’aveugle.',
-    'Limite médiale fixée visuellement en abord transversal ; limite de 1–1,5 cm au-delà du bord caudal du processus transverse en abord sagittal.',
+    'Limite médiale fixée visuellement en abord transversal ; en abord sagittal, limite de 1–1,5 cm au-delà de la **profondeur** du contact osseux du processus transverse.',
     'Aspiration systématique à la recherche de **sang, d’air et de LCR** avant chaque bolus ; injection fractionnée par 3–5 mL ; patient interrogé entre les bolus.',
     'Dose totale d’AL calculée en mg/kg et écrite avant le geste ; réévaluation obligatoire en cas de bloc bilatéral ou de gestes associés.',
     'Risque hémorragique **intermédiaire** (ASRA-ESRA 2018) : appliquer les délais d’interruption des anticoagulants correspondants. Ne pas assimiler ce bloc à un bloc de paroi.',
+    '**Corticoïde non particulaire (dexaméthasone)** : l’espace communique avec l’épidural par le foramen, où cheminent les artères médullaires segmentaires. Le particulaire n’apporte rien de démontré ici.',
     'Consigne écrite remise : dyspnée, douleur thoracique brutale, faiblesse des membres inférieurs ou malaise dans les 24 h = consultation en urgence, avec mention du geste réalisé. Pas de conduite le jour même.',
   ],
 
@@ -288,6 +289,7 @@ Limite : l’aiguille pointe **vers le foramen**. Fixer visuellement une limite 
     'Distance ligament costo-transversaire – plèvre mesurée avant la ponction (marge de travail)',
     'Glissement pleural vérifié avant le geste, et BILATÉRALEMENT en fin de geste',
     'Anticoagulants gérés selon un risque hémorragique INTERMÉDIAIRE (et non comme un bloc de paroi)',
+    'Corticoïde NON PARTICULAIRE (dexaméthasone) si un corticoïde est utilisé — communication avec l’espace épidural par le foramen',
     'Aspiration à la recherche de sang, d’air ET de LCR avant chaque bolus',
     'Patient prévenu : hypotension possible, Claude Bernard-Horner possible en thoracique haut, couverture métamérique non garantie',
     'Surveillance ≥ 60 min avec pression artérielle répétée et examen des membres inférieurs avant le lever',

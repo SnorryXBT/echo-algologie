@@ -41,7 +41,7 @@ ECHO.register({
 
   anatomie: `L\'**articulation sterno-claviculaire** est la seule articulation vraie entre le membre supérieur et le squelette axial. C\'est une articulation en selle, très incongruente, dont la stabilité repose sur un **disque articulaire fibro-cartilagineux** complet et sur les ligaments sterno-claviculaires antérieur et postérieur, costo-claviculaire et interclaviculaire. Elle est **très superficielle** : la ligne articulaire est habituellement à 5–15 mm de la peau.
 
-Ce qui est **immédiatement en arrière** d\'elle décide de la technique : le **tronc veineux brachio-céphalique** (à droite) et la **veine brachio-céphalique gauche** qui croise la ligne médiane, l\'**artère sous-clavière** et le **tronc artériel brachio-céphalique**, la trachée, l\'œsophage et le **dôme pleural**. Une aiguille dirigée d\'avant en arrière sur quelques millimètres de trop ne rencontre pas du tissu inerte : elle rencontre le médiastin.
+Ce qui est **immédiatement en arrière** d\'elle décide de la technique. À **droite** : la **veine brachio-céphalique droite** (confluent jugulo-sous-clavier) et, un peu plus bas et en dedans, le **tronc artériel brachio-céphalique**. À **gauche** : la **veine brachio-céphalique gauche**, qui croise la ligne médiane en arrière du manubrium, l\'**artère carotide commune gauche** et l\'**artère sous-clavière gauche**. Des deux côtés : la trachée, l\'œsophage et le **dôme pleural**. Une aiguille dirigée d\'avant en arrière sur quelques millimètres de trop ne rencontre pas du tissu inerte : elle rencontre le médiastin, et aucun de ces vaisseaux n\'est compressible.
 
 L\'**articulation manubrio-sternale** (angle de Louis, en regard du 2e cartilage costal) est une symphyse qui peut se synovialiser et s\'enflammer — c\'est une localisation quasi spécifique des spondyloarthrites et du SAPHO.
 
@@ -145,7 +145,7 @@ Ponction **in-plane, de latéral vers médial**, l\'aiguille arrivant presque pa
   ],
   complications: [
     '**Pneumothorax** : possible pour toute cible chondro-costale ou sterno-costale, le cartilage ne protégeant pas la plèvre. CAT : arrêt, échographie pleurale (perte du glissement, point poumon), surveillance, radiographie et avis si symptomatique.',
-    '**Ponction vasculaire ou médiastinale** (sterno-claviculaire) : veine ou tronc brachio-céphalique, artère sous-clavière — site non compressible. Prévention exclusive : abord latéral tangentiel, Doppler préalable, aspiration.',
+    '**Ponction vasculaire ou médiastinale** (sterno-claviculaire) : veine brachio-céphalique, tronc artériel brachio-céphalique à droite, carotide commune et artère sous-clavière à gauche — **site non compressible**, hémomédiastin possible. Prévention exclusive : abord latéral tangentiel, Doppler préalable, aspiration, jamais de progression d’avant en arrière.',
     '**Atrophie et dépigmentation cutanées** : complication la plus fréquente en pratique, du fait de la finesse de la peau. Dose minimale, dépôt profond, éviter le reflux le long du trajet, prévenir le patient.',
     'Arthrite septique iatrogène : exceptionnelle sous asepsie correcte, mais gravissime sur la sterno-claviculaire (risque d\'extension médiastinale). Toute douleur croissante avec fièvre après le geste = avis en urgence.',
     'Poussée douloureuse post-injection (cristaux de corticoïde) : 24–48 h, glace et antalgiques de palier 1 ; à annoncer systématiquement, sinon elle est vécue comme un échec.',

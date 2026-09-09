@@ -203,7 +203,8 @@ window.ECHO = window.ECHO || {};
           autoLabel(s, o, 'lbl-lung'); break;
         }
         case 'target':
-          out.push(`<circle cx="${o.x}" cy="${o.y}" r="${o.r || 12}" class="us-target" fill="none" stroke="#ffd166" stroke-width="1.6" stroke-dasharray="4 3"/>`);
+          /* la cible est dessinée après l'overlay (voir plus bas) pour rester visible sous la diffusion */
+          s._targets = s._targets || []; s._targets.push(o);
           autoLabel(s, o, 'lbl-target'); break;
       }
     }
@@ -244,6 +245,7 @@ window.ECHO = window.ECHO || {};
         if (o.label && o.at) s.labels.push({ x: o.at[0], y: o.at[1], text: o.label, anchor: 'middle', dy: 4, cls: 'lbl-spread', small: true, delay: delay + dur * 0.6 });
       }
     }
+    for (const o of (s._targets || [])) out.push(`<circle cx="${o.x}" cy="${o.y}" r="${o.r || 12}" class="us-target" fill="none" stroke="#ffd166" stroke-width="1.6" stroke-dasharray="4 3"/>`);
     out.push(`</g>`); // clip
 
     /* échelle de profondeur */

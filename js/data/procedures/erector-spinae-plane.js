@@ -33,7 +33,7 @@ ECHO.register({
   ],
   contreIndications: [
     '**Absolues** : refus, infection cutanée au point de ponction, allergie vraie aux amino-amides.',
-    '**Hémostase** : bloc superficiel, sur un site compressible, à distance du névraxe — **risque faible** dans la stratification ASRA-ESRA 2018 des procédures douleur (*à confirmer sur la table du texte princeps : les blocs de plan interfascial du tronc n\'y sont pas tous individualisés*). En pratique, c\'est le bloc du rachis que l\'on peut proposer sous antiagrégant, et discuter sous anticoagulant.',
+    '**Hémostase** : l\'ESP n\'est pas individualisé dans la table ASRA-ESRA 2018 (le bloc a été décrit en 2016, la classification ne le reprend pas). Il relève par analogie des procédures **à faible risque** : le plan n\'est pas compressible, mais il est **à distance du névraxe** — un hématome y serait volumineux sans jamais comprimer la moelle ni la queue de cheval, à la différence d\'un bloc paravertébral, d\'une épidurale ou d\'un geste facettaire (risque intermédiaire). En pratique, c\'est le bloc du rachis que l\'on peut proposer sous antiagrégant et discuter sous anticoagulant.',
     '**Relatives** : troubles de la crase majeurs (le plan est vascularisé par les artères segmentaires et un hématome y serait volumineux mais non compressif du névraxe) ; infection profonde ; grands volumes chez le sujet de faible poids (voir doses maximales).',
     'Corticoïde : diabète déséquilibré, infection évolutive. Le bénéfice du corticoïde dans ce bloc n\'est pas démontré (*à confirmer*) — le faire d\'abord en AL seul est défendable.',
   ],
@@ -41,7 +41,7 @@ ECHO.register({
 
   anatomie: `Les muscles **érecteurs du rachis** (ilio-costal en dehors, longissimus au milieu, épineux en dedans) forment une colonne musculaire posée sur la face postérieure des **processus transverses** et des lames, entourée par le fascia thoraco-lombaire. Le « plan des érecteurs » est l\'**espace interfascial situé entre la face profonde de cette colonne et le périoste du processus transverse** : un plan virtuel, avasculaire, que l\'injectat ouvre.
 
-De ce plan partent, en avant et en dehors, les **rameaux dorsaux** des nerfs spinaux (qui innervent les muscles paravertébraux, les articulations facettaires et la peau paravertébrale) et, plus en avant à travers les ligaments costo-transversaires, l\'espace **paravertébral** où cheminent les rameaux ventraux (nerfs intercostaux) et la chaîne sympathique.
+Les **rameaux dorsaux** des nerfs spinaux naissent au foramen, cheminent **en arrière** entre les processus transverses puis se divisent en branches médiale et latérale qui perforent les érecteurs : ils traversent donc le plan cible de dedans en dehors et d\'avant en arrière — c\'est ce qui explique que l\'ESP bloque de façon fiable les rameaux dorsaux (muscles paravertébraux, articulations facettaires, peau paravertébrale). **En avant du plan**, au-delà des ligaments costo-transversaires, se trouve l\'espace **paravertébral** où cheminent les rameaux ventraux (nerfs intercostaux) et la chaîne sympathique : l\'injectat ne l\'atteint que de façon inconstante.
 
 ### Ce qui compte pour le geste
 - **Repère osseux thoracique** : le processus transverse thoracique est une structure **plate, large, à bord carré**, à 3 cm de la ligne médiane, à 2–4 cm de profondeur. À ne pas confondre avec la **côte**, plus latérale, plus étroite et **plus superficielle**, sous laquelle la plèvre glisse : si on voit la plèvre juste sous l\'os, on est sur la côte — il faut revenir en médial.
@@ -150,7 +150,7 @@ Limite honnête : dans la lombalgie facettaire, l\'ESP **ne remplace pas** le bl
     'Dose totale d\'AL calculée en mg/kg **avant** de préparer les seringues, surtout en bilatéral ou multi-niveaux. Chariot d\'urgence et émulsion lipidique vérifiés.',
     'Aspiration avant chaque bolus de 5 mL ; jamais d\'injection en un seul temps.',
     'Surveillance 30 min minimum avec contrôle tensionnel et test de la marche.',
-    'Risque hémorragique faible (site superficiel, compressible, à distance du névraxe) : c\'est l\'argument qui permet de le proposer sous antiagrégant. *La classification ASRA-ESRA 2018 individualise mal les blocs de plan du tronc — à confirmer sur le texte princeps.*',
+    'Risque hémorragique faible par analogie (plan à distance du névraxe : un hématome n\'y est pas compressif pour la moelle) — c\'est l\'argument qui permet de le proposer sous antiagrégant. L\'ESP n\'est pas nommé dans la table ASRA-ESRA 2018, qui lui est antérieure en pratique : le raisonnement est analogique, pas normatif.',
   ],
 
   suivi: `- **J0** : EN avant / à 30 min, et surtout **cartographie du territoire bloqué** (froid ou piqûre) — noter les métamères couverts. C\'est ce qui distingue un ESP « myofascial » d\'un ESP à diffusion paravertébrale, et cela oriente la suite.

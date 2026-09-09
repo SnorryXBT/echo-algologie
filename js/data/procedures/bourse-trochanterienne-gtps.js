@@ -57,7 +57,7 @@ La **bandelette ilio-tibiale** passe en superficie, tendue et parfois épaissie 
 - Rechercher en même temps une **rupture** (interruption des fibres, trochanter dénudé), des **calcifications** (enthésopathie calcifiante, accessible au barbotage) et un **épanchement de bourse** : ces trois éléments changent l’indication.`,
 
   installation: {
-    patient: `**Décubitus latéral**, côté douloureux **en haut**, dos bien perpendiculaire au plan du lit (une bascule postérieure fait fuir la facette latérale). Hanche fléchie à 20–30°, genou fléchi, **coussin entre les genoux** : l’adduction du membre supérieur comprime les tendons contre le trochanter et referme l’espace visé.
+    patient: `**Décubitus latéral**, côté douloureux **en haut**, dos bien perpendiculaire au plan du lit (une bascule postérieure fait fuir la facette latérale). Hanche fléchie à 20–30°, genou fléchi, **coussin entre les genoux** : l’adduction du membre inférieur comprime les tendons contre le trochanter et referme l’espace visé.
 
 Repérer le trochanter à la palpation et faire préciser au patient le point le plus douloureux : la concordance entre le point palpé et l’anomalie échographique est un élément diagnostique. Marquer au feutre, désinfecter largement.
 
@@ -213,7 +213,7 @@ Prévenir d’une **recrudescence douloureuse de 5 à 10 jours**, interdire le c
         S.muscle({ path: 'M0 86 L640 82 L640 190 Q400 178 200 140 L0 104 Z', label: 'Grand fessier', at: [150, 116], opacity: 0.5 });
         S.fascia({ points: [[0, 106], [300, 152], [560, 198]], width: 2.4, label: 'Bandelette ilio-tibiale', at: [430, 168], small: true });
         S.fluid({ path: 'M120 176 L430 226 L434 210 L124 160 Z', label: 'Bourse sous-glutéale', lx: 118, ly: 148, anchor: 'start', small: true, lead: [230, 178] });
-        S.tendon({ path: 'M0 190 L420 250 L470 268 L482 246 L436 230 L0 160 Z', label: 'Tendon du moyen fessier', lx: 90, ly: 232, anchor: 'start', small: true, lead: [230, 210] });
+        S.tendon({ path: 'M0 190 L440 256 L498 272 L506 250 L450 234 L0 160 Z', label: 'Tendon du moyen fessier', lx: 90, ly: 232, anchor: 'start', small: true, lead: [230, 210] });
         S.bone({ path: 'M0 372 L200 356 Q300 340 380 300 Q450 264 520 272 Q580 282 620 320 L640 342', label: 'Grand trochanter', at: [430, 372] });
         S.target({ x: 420, y: 216, r: 13 });
         S.needle({ from: [636, 118], to: [424, 216], label: '21–22 G, tangentielle' });
