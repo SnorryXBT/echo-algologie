@@ -227,7 +227,7 @@ Limite honnête : dans la lombalgie facettaire, l\'ESP **ne remplace pas** le bl
         S.pleura({ points: [[352, 334], [428, 336]] });
         S.label({ x: 390, y: 362, text: 'Plèvre', cls: 'lbl-pleura', small: true });
         S.needle({ from: [8, 90], to: [292, 254], label: '21 G 90 mm' });
-        S.spreadPath({ path: 'M60 236 L540 228 L540 254 L60 262 Z', at: [400, 200], label: '20–30 mL — nappe sur ≥ 3 niveaux' });
+        S.spreadPath({ path: 'M52 252 Q160 232 300 234 Q440 236 556 244 Q440 264 300 262 Q160 260 52 252 Z', at: [408, 204], label: '20–30 mL — nappe sur ≥ 3 niveaux' });
       },
     },
   ],

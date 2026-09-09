@@ -17,7 +17,7 @@ ECHO.register({
     sonde: 'lineaire', sondeNote: '6–13 MHz, profondeur 4–5 cm ; convexe si IMC élevé ou reconstruction épaisse',
     approche: 'in-plane', approcheNote: 'sonde para-sagittale oblique sous le tiers latéral de la clavicule, glissée en dehors et en bas jusqu\'à la 3e–4e côte ; ponction de médial/crânial vers latéral/caudal',
     aiguille: '21–22 G, 80–100 mm échovisible (le trajet est long et oblique)',
-    cible: 'PECS I : plan entre grand et petit pectoral, autour de la branche pectorale de l\'artère thoraco-acromiale. PECS II : plan entre petit pectoral et dentelé antérieur, sur la 3e–4e côte. Critère de fin : décollement linéaire du plan, jamais une lentille intramusculaire',
+    cible: 'PECS I : plan entre grand et petit pectoral, autour de la branche pectorale de l\'artère thoraco-acromiale. PECS II : plan entre la face profonde du petit pectoral et le **dentelé antérieur** (au-dessus du dentelé, pas sur la côte), à hauteur de la 3e–4e côte. Critère de fin : décollement linéaire du plan, jamais une lentille intramusculaire',
     injectat: 'PECS II 20 mL puis PECS I 10 mL, ropivacaïne 0,2–0,375 % (30 mL au total)',
     duree: '15–20 min pour les deux injections',
   },
@@ -52,7 +52,7 @@ Le **plan pecto-serratus** (entre petit pectoral et dentelé antérieur), abord�
 - **Ce qui n\'est jamais couvert** : les branches cutanées **antérieures** (para-sternales, issues des mêmes intercostaux mais émergeant près du sternum) et les rameaux postérieurs. Une douleur para-sternale médiane relève d\'un bloc pecto-intercostal ou para-sternal, pas du PECS.
 - **Profondeurs habituelles** : plan inter-pectoral 1,5–3 cm, plan pecto-serratus 2,5–4 cm, plèvre 3,5–5 cm — plus profond et plus variable qu\'au niveau du dentelé, d\'où le niveau 2.
 - **Les repères vasculaires structurent le geste** : branche pectorale de l\'artère thoraco-acromiale dans le plan inter-pectoral, **artère thoracique latérale** en dehors, vaisseaux axillaires en haut. Doppler systématique avant chaque ponction.
-- **La côte est le garde-fou** du temps profond : la pointe posée sur le sommet de la 3e ou 4e côte est mécaniquement tenue à distance de la plèvre.`,
+- **La côte donne le niveau, pas la profondeur.** Le plan pecto-serratus est situé **entre la face profonde du petit pectoral et le dentelé antérieur** — donc *au-dessus* du dentelé, qui reste interposé entre la pointe et la côte. Le repère costal (3e–4e) sert à se situer en hauteur ; c'est le **dentelé** qui est le plancher du geste, et c'est lui qui tient la pointe à distance de la plèvre. Poser la pointe « sur la côte » revient à traverser le dentelé et à faire un bloc du plan du dentelé profond, ce qui n'est pas la même couverture.`,
 
   installation: {
     patient: `**Décubitus dorsal**, bras du côté à traiter en **abduction à 90° et rotation externe** (main derrière la nuque ou sur un appui) : cette position étale le grand pectoral, dégage le creux axillaire et rapproche le petit pectoral de la surface. Léger proclive chez la patiente dyspnéique ou obèse.
@@ -72,9 +72,9 @@ Ponction **dans le plan, de médial-crânial vers latéral-caudal**, l\'aiguille
     { titre: 'Départ sous-claviculaire', texte: 'Sonde **para-sagittale sous le tiers latéral de la clavicule**. Identifier de la superficie à la profondeur : graisse, **grand pectoral**, **petit pectoral**, puis les côtes. À ce niveau on peut aussi apercevoir les vaisseaux axillaires en haut — repère à ne pas confondre avec la branche pectorale.' },
     { titre: 'Doppler dans le plan inter-pectoral', texte: 'Chercher la **branche pectorale de l\'artère thoraco-acromiale** entre grand et petit pectoral : c\'est le repère du PECS I. Elle est fine, pulsatile, souvent accompagnée d\'une veine satellite.' },
     { titre: 'Glisser vers le bas et le dehors, compter les côtes', texte: 'Translater la sonde en direction du creux axillaire en comptant les côtes jusqu\'à la **3e ou 4e côte** (ligne axillaire antérieure). À ce niveau le **petit pectoral** se termine en biseau et le **dentelé antérieur** apparaît sous lui : le plan pecto-serratus est ouvert.' },
-    { titre: 'Identifier le bord latéral du petit pectoral', texte: 'C\'est le repère clé du PECS II : la pointe doit être posée **sous le bord latéro-inférieur du petit pectoral**, sur le dentelé, au niveau du sommet costal. Si le petit pectoral n\'est plus visible, la sonde est trop latérale — on est alors dans un bloc du plan du dentelé, ce qui n\'est pas la même couverture.' },
+    { titre: 'Identifier le bord latéral du petit pectoral', texte: 'C\'est le repère clé du PECS II : la pointe doit être posée **sous le bord latéro-inférieur du petit pectoral**, à la surface du dentelé antérieur, à hauteur de la 3e–4e côte — pas au contact de la côte, qui reste sous le dentelé. Si le petit pectoral n\'est plus visible, la sonde est trop latérale — on est alors dans un bloc du plan du dentelé, ce qui n\'est pas la même couverture.' },
     { titre: 'Vérifier la plèvre et l\'implant', texte: 'Noter la profondeur peau–plèvre et le glissement pleural. Chez la patiente reconstruite, identifier l\'enveloppe de la prothèse et son rapport aux muscles : une prothèse **rétro-pectorale** occupe le plan que l\'on vise et interdit le geste tel quel.' },
-    { titre: 'Si on ne trouve pas les plans', texte: 'Revenir au repère osseux : poser la pointe au contact du sommet d\'une côte identifiée, retirer de 1–2 mm et hydrodisséquer — le plan s\'ouvre. Si le petit pectoral reste invisible (sujet très mince, post-radique), renoncer au PECS II et faire un bloc du plan du dentelé, plus fiable dans ces conditions.' },
+    { titre: 'Si on ne trouve pas les plans', texte: 'Revenir au dentelé : suivre sa surface hyperéchogène, moulée sur les côtes, et hydrodisséquer au contact de son fascia superficiel — le plan s\'ouvre. Le repère costal sert à confirmer le niveau, pas à poser la pointe. Si le petit pectoral reste invisible (sujet très mince, post-radique), renoncer au PECS II et faire un bloc du plan du dentelé, plus fiable dans ces conditions.' },
   ],
 
   sonoanatomie: [
@@ -82,7 +82,7 @@ Ponction **dans le plan, de médial-crânial vers latéral-caudal**, l\'aiguille
     { structure: 'Plan inter-pectoral', aspect: 'Interface hyperéchogène fine entre les deux pectoraux', repere: 'Cible du PECS I ; contient la branche pectorale de l\'artère thoraco-acromiale' },
     { structure: 'Branche pectorale de l\'a. thoraco-acromiale', aspect: 'Petit vaisseau pulsatile en Doppler, souvent accompagné d\'une veine', repere: 'Signe le plan inter-pectoral ; à éviter avec l\'aiguille' },
     { structure: 'Petit pectoral', aspect: 'Muscle lenticulaire, plus mince, se terminant en biseau vers le bas et le dehors', repere: 'Son bord latéro-inférieur est le repère du PECS II' },
-    { structure: 'Plan pecto-serratus', aspect: 'Interface entre la face profonde du petit pectoral et le dentelé antérieur', repere: 'Cible du PECS II, à hauteur de la 3e–4e côte' },
+    { structure: 'Plan pecto-serratus', aspect: 'Interface entre la face profonde du petit pectoral et le dentelé antérieur', repere: 'Cible du PECS II, à hauteur de la 3e–4e côte ; le dentelé reste interposé entre la pointe et la côte' },
     { structure: 'Dentelé antérieur', aspect: 'Muscle appliqué sur les côtes, moulé sur les arcs costaux', repere: 'Le muscle « qui suit l\'os »' },
     { structure: 'Côtes (3e et 4e)', aspect: 'Arcs hyperéchogènes convexes avec cône d\'ombre franc', repere: 'Garde-fou du temps profond' },
     { structure: 'Plèvre', aspect: 'Ligne brillante animée du glissement respiratoire', repere: 'Doit rester dans le champ pendant tout le geste' },
@@ -91,7 +91,7 @@ Ponction **dans le plan, de médial-crânial vers latéral-caudal**, l\'aiguille
   technique: [
     { titre: 'Préparation', texte: 'Checklist (fin de fiche). Voie veineuse recommandée (30 mL cumulés). Désinfection large du thorax antérieur et du creux axillaire, housse de sonde. Deux seringues étiquetées : 20 mL pour le temps profond, 10 mL pour le temps superficiel. Aiguille 21–22 G 80–100 mm sur prolongateur purgé.' },
     { titre: 'Anesthésie cutanée', texte: '1–2 mL de lidocaïne 1 % au point de ponction, au bord supéro-médial de la sonde. Utile ici : le trajet est long et traverse deux muscles.' },
-    { titre: 'Temps profond — PECS II', texte: 'Ponction dans le plan, de médial-crânial vers latéral-caudal, angle 30–45°. Traverser grand puis petit pectoral et poser la pointe **sous le bord latéro-inférieur du petit pectoral**, au contact du sommet de la 3e ou 4e côte, puis retirer de 1–2 mm. Aspiration, hydrolocalisation par 1–2 mL de sérum : le décollement doit être **linéaire**, entre petit pectoral et dentelé.' },
+    { titre: 'Temps profond — PECS II', texte: 'Ponction dans le plan, de médial-crânial vers latéral-caudal, angle 30–45°. Traverser grand puis petit pectoral et poser la pointe **sous le bord latéro-inférieur du petit pectoral**, au contact du fascia superficiel du **dentelé antérieur**, à hauteur de la 3e–4e côte. Ne pas chercher le contact osseux : le dentelé est le plancher. Aspiration, hydrolocalisation par 1–2 mL de sérum : le décollement doit être **linéaire**, entre petit pectoral et dentelé.' },
     { titre: 'Injection profonde', texte: '20 mL fractionnés par 5 mL, aspiration entre chaque, en suivant la progression de la nappe vers le creux axillaire. Contact verbal maintenu avec la patiente à chaque bolus.' },
     { titre: 'Temps superficiel — PECS I', texte: 'Retirer l\'aiguille **sans sortir de la peau** jusqu\'au plan inter-pectoral, à distance de la branche pectorale repérée au Doppler. Hydrolocalisation, puis **10 mL** fractionnés : le grand pectoral doit se décoller du petit pectoral sur plusieurs centimètres.' },
     { titre: 'Critère de fin', texte: 'Deux nappes hypoéchogènes distinctes et linéaires, l\'une entre petit pectoral et dentelé, l\'autre entre les deux pectoraux, sans lentille intramusculaire, sans disparition de l\'injectat, plèvre intacte et glissement conservé.' },
@@ -131,6 +131,7 @@ Les blocs de fascia ont une **absorption systémique élevée** : diluer plutôt
     'Attendre du PECS I une analgésie cutanée : ce sont des nerfs moteurs, l\'échec est prévisible et n\'est pas technique.',
     'Attendre du PECS une couverture para-sternale ou dorsale : les branches cutanées antérieures et postérieures ne sont pas dans ces plans.',
     'Confondre plan inter-pectoral et plan pecto-serratus quand les deux fascias sont proches : hydrolocaliser systématiquement avant d\'injecter le volume.',
+    'Descendre jusqu\'au contact osseux en croyant sécuriser le geste : on traverse alors le dentelé et l\'on quitte le plan pecto-serratus — le plancher du PECS II est le dentelé, pas la côte.',
     'Ponctionner l\'enveloppe d\'une prothèse ou d\'un expandeur : complication chirurgicale, pas anesthésique. Identifier l\'implant ou renoncer.',
     'Perdre la plèvre de vue pour « mieux voir » les plans superficiels en réduisant la profondeur.',
     'Enchaîner PECS complet + serratus homolatéral sans recalculer la dose totale d\'AL : c\'est le scénario de toxicité systémique le plus réaliste de cette fiche.',
@@ -201,12 +202,13 @@ Les blocs de fascia ont une **absorption systémique élevée** : diluer plutôt
         S.artery({ x: 386, y: 141, r: 5.5, label: 'A. thoraco-acromiale\n(br. pectorale)', lx: 434, ly: 106, small: true, lead: [391, 134] });
         S.nerve({ x: 200, y: 145, r: 4.5, label: 'N. pectoral latéral', lx: 200, ly: 118, small: true, lead: [200, 140] });
         S.label({ x: 552, y: 156, text: 'Plan inter-pectoral (PECS I)', cls: 'lbl-target', small: true });
-        S.label({ x: 176, y: 208, text: 'Plan pecto-serratus (PECS II)', cls: 'lbl-target', small: true });
+        S.label({ x: 300, y: 208, text: 'Plan pecto-serratus (PECS II)', cls: 'lbl-target', small: true });
+        S.label({ x: 500, y: 244, text: 'Bord latéro-inférieur\ndu petit pectoral', small: true, lead: [458, 194] });
       },
     },
     {
       id: 'pecs-bloc', section: 'technique', titre: 'Une ponction, deux injections — PECS II puis PECS I',
-      legende: 'Aiguille dans le plan, de médial-crânial vers latéral-caudal. ① Temps profond : pointe sous le bord latéro-inférieur du petit pectoral, sur le sommet de la 3e côte, 20 mL. ② L\'aiguille est ensuite retirée dans le plan inter-pectoral, à distance de la branche pectorale, pour 10 mL. Le critère de fin est un décollement linéaire, jamais une lentille intramusculaire.',
+      legende: 'Aiguille dans le plan, de médial-crânial vers latéral-caudal. ① Temps profond : pointe sous le bord latéro-inférieur du petit pectoral, à la surface du dentelé antérieur (au-dessus de la 4e côte), 20 mL. ② L\'aiguille est ensuite retirée dans le plan inter-pectoral, à distance de la branche pectorale, pour 10 mL. Le critère de fin est un décollement linéaire, jamais une lentille intramusculaire.',
       opts: { depth: 5 },
       build: S => {
         S.orient({ left: 'Crânial / médial', right: 'Caudal / latéral' }).probeInfo({ plan: 'Para-sagittale oblique', type: 'in-plane' });
@@ -214,18 +216,18 @@ Les blocs de fascia ont une **absorption systémique élevée** : diluer plutôt
         S.muscle({ path: 'M0 82 L640 82 L640 138 L0 142 Z', label: 'Grand pectoral', at: [110, 124] });
         S.fascia({ points: [[0, 142], [640, 138]], width: 1.8 });
         S.muscle({ path: 'M80 158 Q270 142 460 166 L456 196 Q270 214 84 186 Z', label: 'Petit pectoral', at: [268, 184], opacity: 0.55 });
-        S.muscle({ path: 'M0 214 L640 214 L640 296 Q580 300 520 298 Q460 254 400 298 Q330 306 262 298 Q200 254 138 298 Q70 302 0 296 Z', label: 'Dentelé', at: [72, 250], opacity: 0.5 });
+        S.muscle({ path: 'M0 214 L640 214 L640 296 Q580 300 520 298 Q460 254 400 298 Q330 306 262 298 Q200 254 138 298 Q70 302 0 296 Z', label: 'Dentelé antérieur — plancher du geste', at: [200, 250], opacity: 0.5, small: true });
         S.muscle({ path: 'M262 298 Q330 306 400 298 L398 332 Q330 344 264 332 Z', opacity: 0.45 });
         S.bone({ path: 'M142 300 Q200 256 258 300', label: '3e côte', at: [190, 374] });
         S.bone({ path: 'M404 300 Q460 256 518 300', label: '4e côte', at: [470, 374] });
         S.pleura({ points: [[266, 336], [330, 344], [396, 336]], label: 'Plèvre — jamais hors champ', at: [332, 364], small: true });
         S.artery({ x: 386, y: 141, r: 5.5, label: 'A. thoraco-acromiale', lx: 470, ly: 120, small: true, lead: [392, 136] });
-        S.target({ x: 232, y: 206, r: 15 });
-        S.target({ x: 296, y: 145, r: 13 });
-        S.needle({ from: [6, 104], to: [228, 208], label: '① 22 G 80 mm — PECS II (profond)' });
-        S.spread({ x: 258, y: 210, rx: 104, ry: 10, label: '20 mL' });
-        S.needle({ from: [6, 76], to: [292, 147], label: '② retrait dans le plan inter-pectoral — PECS I' });
-        S.spread({ x: 300, y: 145, rx: 108, ry: 9, label: '10 mL' });
+        S.target({ x: 440, y: 204, r: 15 });
+        S.target({ x: 296, y: 146, r: 13 });
+        S.needle({ from: [6, 100], to: [432, 205], label: '① 22 G 80 mm — PECS II (profond)' });
+        S.spread({ x: 396, y: 207, rx: 112, ry: 9, label: '20 mL' });
+        S.needle({ from: [6, 74], to: [292, 148], label: '② retrait dans le plan inter-pectoral — PECS I' });
+        S.spread({ x: 296, y: 146, rx: 104, ry: 8, label: '10 mL' });
       },
     },
   ],

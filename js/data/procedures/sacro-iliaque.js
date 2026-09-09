@@ -224,7 +224,7 @@ Ce n\'est **pas** un geste intra-articulaire et cela doit être écrit comme tel
     },
     {
       id: 'si-foramens', section: 'technique', titre: 'Foramens sacrés postérieurs — blocs des branches latérales S1–S3',
-      legende: 'En coupe para-sagittale sur le sacrum, les foramens postérieurs se succèdent en creux réguliers. Les branches latérales ne sont jamais visibles : le dépôt se fait au contact du périoste, en arc, immédiatement en dehors du bord latéral de chaque foramen, jamais dans le foramen. Ajouter le rameau dorsal de L5 pour couvrir toute l\'innervation postérieure.',
+      legende: 'En coupe para-sagittale sur le sacrum, les foramens postérieurs se succèdent en creux réguliers. Les branches latérales ne sont jamais visibles : le dépôt se fait au contact du périoste, en arc, immédiatement en dehors du bord latéral de chaque foramen, jamais dans le foramen. Ajouter le rameau dorsal de L5 pour couvrir toute l\'innervation postérieure. **Cette vue sert à compter et à marquer les niveaux** : l\'extension latérale du dépôt, du foramen vers la ligne articulaire, se fait hors du plan de coupe — basculer la sonde en transversal pour la contrôler.',
       opts: { depth: 5 },
       build: S => {
         S.orient({ left: 'Crânial', right: 'Caudal' }).probeInfo({ plan: 'Para-sagittal sur le sacrum', type: 'convexe 2–5 MHz' });
@@ -234,11 +234,11 @@ Ce n\'est **pas** un geste intra-articulaire et cela doit être écrit comme tel
         S.label({ x: 160, y: 330, text: 'Foramen S1', cls: 'lbl-bone', small: true });
         S.label({ x: 340, y: 330, text: 'Foramen S2', cls: 'lbl-bone', small: true });
         S.label({ x: 518, y: 328, text: 'Foramen S3', cls: 'lbl-bone', small: true });
-        S.target({ x: 206, y: 262, r: 12 });
-        S.target({ x: 386, y: 262, r: 12 });
-        S.needle({ from: [8, 100], to: [200, 256], label: '22 G 90 mm' });
-        S.spread({ x: 212, y: 262, rx: 32, ry: 12, label: '1–1,5 mL' });
-        S.spread({ x: 392, y: 262, rx: 32, ry: 12, label: '1–1,5 mL' });
+        S.target({ x: 198, y: 260, r: 12 });
+        S.target({ x: 378, y: 260, r: 12 });
+        S.needle({ from: [8, 100], to: [194, 254], label: '22 G 90 mm' });
+        S.spread({ x: 204, y: 260, rx: 30, ry: 11, label: '1–1,5 mL' });
+        S.spread({ x: 384, y: 260, rx: 30, ry: 11, label: '1–1,5 mL' });
         S.label({ x: 300, y: 200, text: 'Dépôt en arc, en dehors du bord latéral\ndu foramen — jamais dans le foramen', small: true });
       },
     },

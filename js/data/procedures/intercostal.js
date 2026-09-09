@@ -206,7 +206,7 @@ Les données sont anciennes et contrastées. La cryoanalgésie intercostale **pe
         S.muscle({ path: 'M0 72 L640 72 L640 124 L0 130 Z', label: 'Muscles superficiels', at: [96, 100], opacity: 0.42, small: true });
         S.fascia({ points: [[0, 130], [640, 124]], width: 1.5 });
         S.muscle({ path: 'M206 198 Q318 184 434 198 L434 230 Q318 224 206 230 Z', label: 'Intercostal externe', at: [320, 214], opacity: 0.5, small: true });
-        S.muscle({ path: 'M206 230 Q318 224 434 230 L434 258 Q318 253 434 258 L206 258 Z', label: 'Intercostal interne', at: [320, 246], opacity: 0.55, small: true });
+        S.muscle({ path: 'M206 230 Q318 224 434 230 L434 258 Q318 253 206 258 Z', label: 'Intercostal interne', at: [326, 246], opacity: 0.55, small: true });
         S.muscle({ path: 'M206 258 Q318 253 434 258 L434 272 Q318 268 206 272 Z', label: 'Intime', at: [330, 268], opacity: 0.4, small: true });
         S.bone({ path: 'M20 208 Q115 148 210 206', label: 'Côte', at: [110, 240], small: true, ldy: 0 });
         S.bone({ path: 'M430 206 Q525 148 620 208', label: 'Côte', at: [525, 240], small: true, ldy: 0 });
@@ -230,7 +230,7 @@ Les données sont anciennes et contrastées. La cryoanalgésie intercostale **pe
         S.muscle({ path: 'M0 72 L640 72 L640 124 L0 130 Z', label: 'Muscles superficiels', at: [90, 100], opacity: 0.42, small: true });
         S.fascia({ points: [[0, 130], [640, 124]], width: 1.5 });
         S.muscle({ path: 'M206 198 Q318 184 434 198 L434 230 Q318 224 206 230 Z', opacity: 0.5 });
-        S.muscle({ path: 'M206 230 Q318 224 434 230 L434 258 Q318 253 434 258 L206 258 Z', opacity: 0.55 });
+        S.muscle({ path: 'M206 230 Q318 224 434 230 L434 258 Q318 253 206 258 Z', opacity: 0.55 });
         S.muscle({ path: 'M206 258 Q318 253 434 258 L434 272 Q318 268 206 272 Z', opacity: 0.4 });
         S.bone({ path: 'M20 208 Q115 148 210 206', label: 'Côte', at: [110, 240], small: true, ldy: 0 });
         S.bone({ path: 'M430 206 Q525 148 620 208', label: 'Côte', at: [525, 240], small: true, ldy: 0 });

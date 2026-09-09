@@ -233,7 +233,7 @@ C’est dans l’**orchialgie chronique post-chirurgicale** que les données son
         S.vein({ x: 348, y: 142, rx: 12, ry: 9 });
         S.vein({ x: 378, y: 166, rx: 10, ry: 8 });
         S.vein({ x: 336, y: 186, rx: 11, ry: 8 });
-        S.artery({ x: 300, y: 176, r: 7, label: 'A. testiculaire — jamais de particulaire', lx: 152, ly: 200, anchor: 'end', small: true, lead: [293, 178] });
+        S.artery({ x: 300, y: 176, r: 7, label: 'A. testiculaire\n(jamais de particulaire)', lx: 206, ly: 258, anchor: 'middle', small: true, lead: [296, 184] });
         S.nerve({ x: 418, y: 200, r: 7 });
         S.artery({ x: 440, y: 210, r: 5 });
         S.fascia({ points: [[0, 244], [200, 240], [460, 244], [640, 238]], width: 1.6, opacity: 0.75 });

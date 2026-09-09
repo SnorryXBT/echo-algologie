@@ -243,7 +243,7 @@ Données : séries prospectives et cohortes rétrospectives (Yoon 2013 : réduct
         S.target({ x: 470, y: 212, r: 20 });
         S.needle({ from: [0, 96], to: [386, 208], label: '22–25 G 50 mm, angle 15–25°' });
         S.spread({ x: 442, y: 211, rx: 96, ry: 13, label: '5–10 mL' });
-        S.label({ x: 250, y: 330, text: 'Butoir osseux : la pointe s’éloigne du péritoine', cls: 'lbl-target', small: true, anchor: 'middle' });
+        S.label({ x: 512, y: 348, text: 'Butoir osseux :\nla pointe s’éloigne du péritoine', cls: 'lbl-target', small: true, anchor: 'middle' });
       },
     },
     {

@@ -229,7 +229,7 @@ Message opérationnel : **poser la question chirurgicale après 2 à 3 infiltrat
         S.orient({ left: 'Médial (ligne blanche)', right: 'Latéral' }).probeInfo({ plan: 'Transverse sur le point exquis', type: 'in-plane, latéro-médial' });
         S.skin({ thickness: 8, fatBelow: 24 });
         S.fascia({ points: [[0, 78], [280, 80], [408, 88]], width: 2.6 });
-        S.muscle({ path: 'M0 80 L280 82 L410 90 L414 198 L280 206 L0 204 Z', label: 'Muscle droit', at: [120, 140], opacity: 0.55 });
+        S.muscle({ path: 'M0 80 L280 82 L410 90 L414 198 L280 206 L0 204 Z', label: 'Muscle droit', at: [104, 158], opacity: 0.55 });
         S.fascia({ points: [[0, 204], [280, 206], [414, 198]], width: 2.4 });
         S.ligament({ path: 'M408 88 L462 104 L470 176 L414 198 Z' });
         S.muscle({ path: 'M462 100 L640 92 L640 132 L466 138 Z', opacity: 0.42 });
@@ -239,7 +239,7 @@ Message opérationnel : **poser la question chirurgicale après 2 à 3 infiltrat
         S.vein({ x: 344, y: 196, rx: 8, ry: 6 });
         S.nerve({ x: 392, y: 86, r: 7 });
         S.target({ x: 392, y: 86, r: 20 });
-        S.label({ x: 300, y: 62, text: 'Variante : canal fibreux, au point exquis (1–3 mL)', cls: 'lbl-target', small: true, anchor: 'middle' });
+        S.label({ x: 336, y: 132, text: 'Variante : canal fibreux (1–3 mL)', cls: 'lbl-target', small: true, anchor: 'middle', lead: [392, 104] });
         S.fascia({ points: [[0, 226], [300, 228], [640, 222]], width: 1.5, opacity: 0.8 });
         S.bowel({ path: 'M30 300 q60 -36 130 -6 q66 30 130 -2 q56 -28 110 2 L400 400 L30 400 Z', label: 'Péritoine, anses', at: [180, 350] });
         S.needle({ from: [640, 118], to: [338, 192], label: '22–25 G 50 mm' });
