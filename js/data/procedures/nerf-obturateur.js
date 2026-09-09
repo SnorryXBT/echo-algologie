@@ -243,11 +243,11 @@ En pratique, chez un candidat à la dénervation : **PENG 15 mL + bloc obturateu
         S.skin({ thickness: 8, fatBelow: 30 });
         S.muscle({ path: 'M0 84 L640 80 L640 212 L0 224 Z', label: 'Pectiné', at: [130, 150], opacity: 0.5 });
         S.fascia({ points: [[150, 230], [400, 226], [640, 218]], width: 2 });
-        S.muscle({ path: 'M96 262 L640 238 L640 386 L128 396 Z', label: 'Obturateur externe', at: [430, 320], opacity: 0.5 });
+        S.muscle({ path: 'M96 262 L640 238 L640 386 L128 396 Z', label: 'Obturateur externe', at: [472, 358], opacity: 0.5 });
         S.bone({ path: 'M0 268 Q130 224 252 244', label: 'Branche sup. du pubis', at: [122, 330] });
-        S.nerve({ x: 306, y: 240, rx: 16, ry: 7, label: 'N. obturateur (tronc)', lx: 296, ly: 196, small: true });
-        S.artery({ x: 352, y: 212, r: 7, label: 'Vaisseaux obturateurs', lx: 400, ly: 186, anchor: 'start', small: true, lead: [360, 210] });
-        S.vein({ x: 384, y: 218, rx: 10, ry: 7 });
+        S.nerve({ x: 306, y: 240, rx: 16, ry: 7, label: 'N. obturateur (tronc)', lx: 352, ly: 302, anchor: 'start', small: true, lead: [320, 248] });
+        S.artery({ x: 300, y: 210, r: 7, label: 'Vaisseaux obturateurs', lx: 322, ly: 180, anchor: 'start', small: true, lead: [307, 205] });
+        S.vein({ x: 272, y: 216, rx: 10, ry: 7 });
         S.target({ x: 308, y: 244, r: 14 });
         S.needle({ from: [636, 112], to: [326, 242], label: '22 G 90 mm, latéro-médial' });
         S.spread({ x: 292, y: 250, rx: 62, ry: 12, label: '8–10 mL' });

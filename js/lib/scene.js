@@ -189,10 +189,19 @@ window.ECHO = window.ECHO || {};
         case 'pleura':
           out.push(`${lineAttrs(o)} class="${cls} us-slide" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" filter="url(#${id}-glow)"/>`);
           autoLabel(s, o, 'lbl-pleura'); break;
-        case 'lung':
-          out.push(`${shapeAttrs(o)} class="${cls}" fill="#2a3138"/>`);
-          out.push(`${shapeAttrs(o)} fill="#000" filter="url(#${id}-speckle)" opacity="0.9"/>`);
+        case 'lung': {
+          /* poumon : gris sombre granuleux + lignes A (réverbérations horizontales de la plèvre) */
+          out.push(`${shapeAttrs(o)} class="${cls}" fill="#141a20"/>`);
+          out.push(`${shapeAttrs(o)} fill="#000" filter="url(#${id}-speckle)" opacity="0.45"/>`);
+          const bb = bbox(o);
+          if (bb) {
+            const cid = id + '-lc' + (++uid);
+            out.push(`<clipPath id="${cid}">${shapeAttrs(o)}/></clipPath><g clip-path="url(#${cid})">`);
+            for (let y = bb.y + 28; y < bb.y + bb.h; y += 28) out.push(`<line x1="${bb.x}" y1="${y}" x2="${bb.x + bb.w}" y2="${y}" stroke="#e8edf2" stroke-opacity="0.16" stroke-width="2"/>`);
+            out.push(`</g>`);
+          }
           autoLabel(s, o, 'lbl-lung'); break;
+        }
         case 'target':
           out.push(`<circle cx="${o.x}" cy="${o.y}" r="${o.r || 12}" class="us-target" fill="none" stroke="#ffd166" stroke-width="1.6" stroke-dasharray="4 3"/>`);
           autoLabel(s, o, 'lbl-target'); break;
@@ -273,6 +282,16 @@ window.ECHO = window.ECHO || {};
     return out.join('\n');
   };
 
+  function bbox(o) {
+    if (o.rect) return { x: o.rect[0], y: o.rect[1], w: o.rect[2], h: o.rect[3] };
+    let pts = null;
+    if (o.points) pts = o.points;
+    else if (o.path) pts = [...String(o.path).matchAll(/(-?[\d.]+)[ ,]+(-?[\d.]+)/g)].map(m => [+m[1], +m[2]]);
+    else if (o.x != null) return { x: o.x - (o.rx || o.r || 10), y: o.y - (o.ry || o.r || 10), w: 2 * (o.rx || o.r || 10), h: 2 * (o.ry || o.r || 10) };
+    if (!pts || !pts.length) return null;
+    const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]);
+    return { x: Math.min(...xs), y: Math.min(...ys), w: Math.max(...xs) - Math.min(...xs), h: Math.max(...ys) - Math.min(...ys) };
+  }
   function parseFirst(d) { const m = d.match(/M\s*(-?[\d.]+)[ ,]+(-?[\d.]+)/i); return m ? [+m[1], +m[2]] : [0, 0]; }
   function parseLast(d) { const m = d.match(/(-?[\d.]+)[ ,]+(-?[\d.]+)\s*$/); return m ? [+m[1], +m[2]] : [0, 0]; }
 

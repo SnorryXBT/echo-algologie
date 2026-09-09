@@ -208,18 +208,18 @@ Pour l\'hydrodissection radiale : sonde **transversale** sur l\'avant-bras proxi
       opts: { depth: 3 },
       build: S => {
         S.orient({ left: 'Proximal', right: 'Distal' }).probeInfo({ plan: 'Coronal, axe long du tendon commun', type: 'linéaire 12–18 MHz' });
-        S.skin({ thickness: 8, fatBelow: 40 });
-        S.tendon({ path: 'M150 96 L450 150 L450 188 L186 152 Z', label: 'Tendon commun des épicondyliens', at: [392, 172] });
-        S.ligament({ path: 'M188 152 Q290 172 398 182 L396 200 Q288 190 186 168 Z', label: 'Lig. collatéral latéral', at: [300, 216], small: true });
-        S.bone({ path: 'M0 132 L120 134 L176 148 Q204 176 220 212 Q252 250 310 256 Q364 254 396 232', label: 'Épicondyle latéral', at: [64, 116], small: true });
-        S.bone({ path: 'M420 242 Q466 232 508 240 L566 258 L640 274' });
-        S.region({ path: 'M190 138 L300 152 L300 168 L192 156 Z', fill: '#05070a', opacity: 0.92, label: 'Zone hypoéchogène\n(face profonde, CERC)', lx: 148, ly: 300, anchor: 'middle', lead: [246, 160], small: true });
-        S.fluid({ path: 'M226 146 L266 152 L264 159 L224 153 Z', label: 'Fissure intratendineuse', lx: 348, ly: 104, anchor: 'start', lead: [252, 150], small: true });
-        S.bone({ path: 'M172 138 L200 149', width: 4, shadow: false, label: 'Enthésophyte', lx: 112, ly: 172, anchor: 'middle', lead: [176, 144], small: true });
-        S.artery({ x: 220, y: 148, r: 3 });
-        S.artery({ x: 248, y: 155, r: 3, label: 'Néovaisseaux (Doppler)', lx: 132, ly: 224, anchor: 'middle', lead: [244, 158], small: true });
-        S.label({ x: 330, y: 296, text: 'Capitellum', cls: 'lbl-bone', small: true });
-        S.label({ x: 536, y: 308, text: 'Tête radiale', cls: 'lbl-bone', small: true });
+        S.skin({ thickness: 8, fatBelow: 36 });
+        S.bone({ path: 'M0 124 L118 128 L180 138 L216 152 Q242 190 256 226 Q288 266 338 272 Q390 270 420 248', label: 'Épicondyle latéral', at: [70, 108], small: true });
+        S.bone({ path: 'M444 258 Q490 248 532 256 L588 274 L640 288' });
+        S.ligament({ path: 'M218 158 L420 232 L418 256 L214 182 Z', label: 'Lig. collatéral latéral', at: [346, 240], small: true });
+        S.tendon({ path: 'M198 132 L456 190 L456 236 L216 154 Z', label: 'Tendon commun des épicondyliens', at: [392, 206] });
+        S.region({ path: 'M228 146 L330 180 L330 194 L226 160 Z', fill: '#05070a', opacity: 0.92, label: 'Zone hypoéchogène\n(face profonde, CERC)', lx: 140, ly: 296, anchor: 'middle', lead: [270, 176], small: true });
+        S.fluid({ path: 'M252 160 L292 174 L290 180 L250 166 Z', label: 'Fissure intratendineuse', lx: 358, ly: 116, anchor: 'start', lead: [274, 170], small: true });
+        S.bone({ path: 'M200 146 L228 158', width: 4, shadow: false, label: 'Enthésophyte', lx: 116, ly: 166, anchor: 'middle', lead: [204, 150], small: true });
+        S.artery({ x: 246, y: 162, r: 3 });
+        S.artery({ x: 276, y: 174, r: 3, label: 'Néovaisseaux (Doppler)', lx: 128, ly: 222, anchor: 'middle', lead: [272, 176], small: true });
+        S.label({ x: 338, y: 312, text: 'Capitellum', cls: 'lbl-bone', small: true });
+        S.label({ x: 540, y: 330, text: 'Tête radiale', cls: 'lbl-bone', small: true });
       },
     },
     {
@@ -228,18 +228,18 @@ Pour l\'hydrodissection radiale : sonde **transversale** sur l\'avant-bras proxi
       opts: { depth: 3 },
       build: S => {
         S.orient({ left: 'Proximal', right: 'Distal' }).probeInfo({ plan: 'Coronal', type: 'in-plane, distal → proximal' });
-        S.skin({ thickness: 8, fatBelow: 40 });
-        S.tendon({ path: 'M150 96 L450 150 L450 188 L186 152 Z', label: 'Tendon commun', at: [396, 176] });
-        S.ligament({ path: 'M188 152 Q290 172 398 182 L396 200 Q288 190 186 168 Z' });
-        S.bone({ path: 'M0 132 L120 134 L176 148 Q204 176 220 212 Q252 250 310 256 Q364 254 396 232', label: 'Épicondyle latéral', at: [64, 116], small: true });
-        S.bone({ path: 'M420 242 Q466 232 508 240 L566 258 L640 274' });
-        S.region({ path: 'M190 138 L300 152 L300 168 L192 156 Z', fill: '#05070a', opacity: 0.92 });
-        S.target({ x: 240, y: 152, r: 17 });
-        S.needle({ from: [628, 74], to: [246, 150], label: '21–22 G — 20 à 30 passages', dur: 1.0, delay: 0.2 });
-        S.needle({ from: [628, 74], to: [214, 144], dur: 0.7, delay: 1.3 });
-        S.needle({ from: [628, 74], to: [272, 162], dur: 0.7, delay: 2.0 });
-        S.spread({ x: 244, y: 154, rx: 30, ry: 13, label: '± PRP 2–3 mL', delay: 2.8, dur: 0.9 });
-        S.label({ x: 300, y: 236, text: 'Ne pas franchir le LCL', cls: 'lbl-lig', small: true, lead: [280, 194] });
+        S.skin({ thickness: 8, fatBelow: 36 });
+        S.bone({ path: 'M0 124 L118 128 L180 138 L216 152 Q242 190 256 226 Q288 266 338 272 Q390 270 420 248', label: 'Épicondyle latéral', at: [70, 108], small: true });
+        S.bone({ path: 'M444 258 Q490 248 532 256 L588 274 L640 288' });
+        S.ligament({ path: 'M218 158 L420 232 L418 256 L214 182 Z', label: 'Ne pas franchir le LCL', at: [372, 254], small: true });
+        S.tendon({ path: 'M198 132 L456 190 L456 236 L216 154 Z', label: 'Tendon commun', at: [418, 210] });
+        S.region({ path: 'M228 146 L330 180 L330 194 L226 160 Z', fill: '#05070a', opacity: 0.92 });
+        S.target({ x: 276, y: 170, r: 18 });
+        S.needle({ from: [624, 66], to: [278, 170], label: '21–22 G — 20 à 30 passages', dur: 1.0, delay: 0.2 });
+        S.needle({ from: [624, 66], to: [244, 156], dur: 0.7, delay: 1.3 });
+        S.needle({ from: [624, 66], to: [312, 186], dur: 0.7, delay: 2.0 });
+        S.spread({ x: 276, y: 172, rx: 34, ry: 13, label: '± PRP 2–3 mL', delay: 2.8, dur: 0.9 });
+        S.label({ x: 130, y: 236, text: 'Cible : face profonde\nà l\'enthèse', small: true, lead: [252, 168] });
       },
     },
     {
@@ -249,17 +249,17 @@ Pour l\'hydrodissection radiale : sonde **transversale** sur l\'avant-bras proxi
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Transverse, avant-bras proximal', type: 'in-plane, latéro-médial' });
         S.skin({ thickness: 8, fatBelow: 18 });
-        S.muscle({ path: 'M0 68 L640 68 L640 138 L0 146 Z', label: 'Brachio-radial / LERC', at: [96, 102], opacity: 0.45 });
-        S.nerve({ x: 150, y: 132, r: 6, label: 'N. radial superficiel', lx: 254, ly: 120, anchor: 'start', lead: [157, 132], small: true });
-        S.muscle({ path: 'M96 156 L556 150 L566 212 Q330 234 92 208 Z', label: 'Supinateur — chef superficiel', at: [446, 180], opacity: 0.5 });
-        S.artery({ x: 214, y: 190, r: 5, label: 'A. récurrente radiale', lx: 258, ly: 166, anchor: 'start', lead: [220, 188], small: true });
-        S.fascia({ points: [[152, 208], [300, 216], [448, 206]], width: 3.4, label: 'Arcade de Frohse', lx: 112, ly: 190, anchor: 'middle', lead: [172, 208], small: true });
-        S.nerve({ x: 300, y: 230, rx: 13, ry: 8, label: 'N. interosseux postérieur\n(branche profonde du radial)', lx: 300, ly: 350, anchor: 'middle', lead: [300, 240] });
-        S.muscle({ path: 'M104 246 L562 238 L556 284 Q330 302 100 278 Z', label: 'Chef profond', at: [452, 264], opacity: 0.45 });
-        S.bone({ path: 'M84 310 Q330 284 566 304' });
-        S.label({ x: 108, y: 348, text: 'Radius (col)', cls: 'lbl-bone', small: true });
-        S.needle({ from: [634, 88], to: [332, 224], label: '22–25 G' });
-        S.spreadPath({ path: 'M268 230 A 34 23 0 1 1 336 230 A 34 23 0 1 1 268 230 Z M287 230 A 14 9 0 1 0 315 230 A 14 9 0 1 0 287 230 Z', at: [468, 306], label: 'Glucosé 5 % — 5 à 10 mL' });
+        S.muscle({ path: 'M0 68 L640 68 L640 142 L0 150 Z', label: 'Brachio-radial / LERC', at: [96, 102], opacity: 0.45 });
+        S.nerve({ x: 150, y: 134, r: 6, label: 'N. radial superficiel', lx: 254, ly: 120, anchor: 'start', lead: [157, 134], small: true });
+        S.muscle({ path: 'M84 152 L566 146 L574 210 Q330 230 80 206 Z', label: 'Supinateur — chef superficiel', at: [446, 178], opacity: 0.5 });
+        S.artery({ x: 212, y: 186, r: 5, label: 'A. récurrente radiale', lx: 258, ly: 164, anchor: 'start', lead: [218, 184], small: true });
+        S.fascia({ points: [[136, 204], [300, 212], [464, 202]], width: 3.4, label: 'Arcade de Frohse', lx: 106, ly: 188, anchor: 'middle', lead: [158, 205], small: true });
+        S.nerve({ x: 300, y: 224, rx: 13, ry: 8, label: 'N. interosseux postérieur\n(branche profonde du radial)', lx: 300, ly: 352, anchor: 'middle', lead: [300, 234] });
+        S.muscle({ path: 'M88 238 L572 232 L566 280 Q330 296 84 274 Z', label: 'Chef profond', at: [472, 252], opacity: 0.45 });
+        S.bone({ path: 'M84 308 Q330 282 566 302' });
+        S.label({ x: 142, y: 328, text: 'Radius (col)', cls: 'lbl-bone', small: true });
+        S.needle({ from: [634, 88], to: [330, 218], label: '22–25 G, in-plane' });
+        S.spreadPath({ path: 'M266 224 A 34 23 0 1 1 334 224 A 34 23 0 1 1 266 224 Z M287 224 A 14 9 0 1 0 313 224 A 14 9 0 1 0 287 224 Z', at: [498, 320], label: 'Glucosé 5 % — 5 à 10 mL' });
       },
     },
   ],
