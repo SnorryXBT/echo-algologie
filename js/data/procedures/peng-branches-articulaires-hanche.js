@@ -209,7 +209,7 @@ Ces cibles étant définies par des **repères osseux**, la dénervation de hanc
         S.orient({ left: 'Médial (pubis)', right: 'Latéral (EIAI)' }).probeInfo({ plan: 'Oblique 45°, branche sup. du pubis', type: 'convexe 2–5 MHz' });
         S.skin({ thickness: 8, fatBelow: 28 });
         S.muscle({ path: 'M470 82 L640 78 L640 148 L482 154 Z', label: 'Sartorius / droit fémoral', at: [556, 116], opacity: 0.45, small: true });
-        S.muscle({ path: 'M232 118 L560 112 L560 246 Q460 266 380 266 Q300 266 244 242 Z', label: 'Ilio-psoas', at: [300, 156], opacity: 0.5 });
+        S.muscle({ path: 'M232 118 L560 112 L560 246 Q460 266 380 266 Q300 266 244 242 Z', label: 'Ilio-psoas', at: [346, 150], opacity: 0.5 });
         S.tendon({ x: 384, y: 240, rx: 62, ry: 22, label: 'Tendon du psoas', lx: 384, ly: 196, small: true });
         S.bone({ path: 'M0 322 Q140 294 268 278 L400 274 Q472 270 522 242 Q570 220 640 232' });
         S.label({ x: 250, y: 330, text: 'Éminence ilio-pubienne', cls: 'lbl-bone' });
@@ -217,7 +217,7 @@ Ces cibles étant définies par des **repères osseux**, la dénervation de hanc
         S.vein({ x: 56, y: 200, rx: 24, ry: 16, label: 'V. fémorale', lx: 56, ly: 246, small: true });
         S.artery({ x: 136, y: 186, r: 17, label: 'A. fémorale', lx: 136, ly: 146, small: true });
         S.nerve({ x: 202, y: 200, rx: 14, ry: 8, label: 'N. fémoral', lx: 208, ly: 158, anchor: 'start', small: true, lead: [206, 194] });
-        S.artery({ x: 448, y: 138, r: 6, label: 'A. circonflexe fém. lat.', lx: 468, ly: 130, anchor: 'start', small: true, lead: [454, 136] });
+        S.artery({ x: 448, y: 138, r: 6, label: 'A. circonflexe fém. lat.', lx: 466, ly: 172, anchor: 'start', small: true, lead: [453, 143] });
         S.target({ x: 384, y: 268, r: 14 });
       },
     },
@@ -229,7 +229,7 @@ Ces cibles étant définies par des **repères osseux**, la dénervation de hanc
         S.orient({ left: 'Médial (pubis)', right: 'Latéral (EIAI)' }).probeInfo({ plan: 'Oblique 45°, branche sup. du pubis', type: 'in-plane, latéro-médial' });
         S.skin({ thickness: 8, fatBelow: 28 });
         S.muscle({ path: 'M470 82 L640 78 L640 148 L482 154 Z', opacity: 0.45 });
-        S.muscle({ path: 'M232 118 L560 112 L560 246 Q460 266 380 266 Q300 266 244 242 Z', label: 'Ilio-psoas', at: [292, 152], opacity: 0.5 });
+        S.muscle({ path: 'M232 118 L560 112 L560 246 Q460 266 380 266 Q300 266 244 242 Z', label: 'Ilio-psoas', at: [346, 148], opacity: 0.5 });
         S.tendon({ x: 384, y: 240, rx: 62, ry: 22, label: 'Tendon du psoas', lx: 384, ly: 198, small: true });
         S.bone({ path: 'M0 322 Q140 294 268 278 L400 274 Q472 270 522 242 Q570 220 640 232' });
         S.label({ x: 232, y: 336, text: 'Éminence ilio-pubienne', cls: 'lbl-bone' });
@@ -249,7 +249,7 @@ Ces cibles étant définies par des **repères osseux**, la dénervation de hanc
         S.orient({ left: 'Médial (pubis)', right: 'Latéral (EIAI)' }).probeInfo({ plan: 'Oblique 45°, branche sup. du pubis', type: 'aiguille RF 22 G, extrémité active 10 mm' });
         S.skin({ thickness: 8, fatBelow: 28 });
         S.muscle({ path: 'M470 82 L640 78 L640 148 L482 154 Z', opacity: 0.45 });
-        S.muscle({ path: 'M232 118 L560 112 L560 246 Q460 266 380 266 Q300 266 244 242 Z', label: 'Ilio-psoas', at: [292, 152], opacity: 0.5 });
+        S.muscle({ path: 'M232 118 L560 112 L560 246 Q460 266 380 266 Q300 266 244 242 Z', label: 'Ilio-psoas', at: [346, 148], opacity: 0.5 });
         S.tendon({ x: 384, y: 240, rx: 62, ry: 22, label: 'Tendon du psoas', lx: 384, ly: 198, small: true });
         S.bone({ path: 'M0 322 Q140 294 268 278 L400 274 Q472 270 522 242 Q570 220 640 232' });
         S.label({ x: 232, y: 336, text: 'Éminence ilio-pubienne', cls: 'lbl-bone' });

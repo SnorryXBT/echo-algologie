@@ -212,14 +212,14 @@ Ponction **in-plane, avec le trajet le plus tangentiel possible** : l\'aiguille 
         S.label({ x: 466, y: 96, text: 'Bande tendue', anchor: 'start', cls: 'lbl-fascia', small: true, lead: [434, 101] });
         S.fluid({ x: 300, y: 106, rx: 38, ry: 14 });
         S.label({ x: 300, y: 62, text: 'Nodule de point gâchette (hypoéchogène)', anchor: 'middle', cls: 'lbl-fluid', small: true, lead: [300, 94] });
-        S.muscle({ path: 'M248 246 L376 242 L372 288 L252 292 Z', label: 'Intercostaux', at: [312, 314], opacity: 0.5, small: true });
-        S.bone({ path: 'M40 268 Q140 228 240 258', label: 'Côte', at: [130, 322], ldy: 0, small: true });
+        S.muscle({ path: 'M248 246 L376 242 L372 288 L252 292 Z', label: 'Intercostaux', at: [312, 270], opacity: 0.5, small: true });
+        S.bone({ path: 'M40 268 Q140 228 240 258', label: 'Côte', at: [150, 372], ldy: 0, small: true });
         S.bone({ path: 'M382 254 Q470 218 566 250', label: 'Côte', at: [478, 312], ldy: 0, small: true });
         S.pleura({ points: [[252, 292], [372, 289]] });
         S.label({ x: 402, y: 348, text: 'Ligne pleurale (glissement)', anchor: 'start', cls: 'lbl-pleura', small: true, lead: [366, 292] });
-        S.lung({ path: 'M250 296 L374 293 L396 420 L226 420 Z', label: 'Poumon', at: [310, 386], small: true });
-        S.artery({ x: 552, y: 166, r: 7, label: 'A. dorsale de la scapula', lx: 528, ly: 196, anchor: 'end', small: true, lead: [546, 172] });
-        S.label({ x: 96, y: 250, text: 'Peau → plèvre : 25–40 mm — à mesurer avant de piquer', anchor: 'start', cls: 'lbl-region', small: true });
+        S.lung({ path: 'M252 298 L372 295 L372 420 L252 420 Z', label: 'Poumon', at: [312, 372], small: true });
+        S.artery({ x: 552, y: 166, r: 7, label: 'A. dorsale de la scapula', lx: 530, ly: 182, anchor: 'end', small: true, lead: [546, 172] });
+        S.label({ x: 130, y: 300, text: 'Peau → plèvre : 25–40 mm\nà mesurer avant de piquer', anchor: 'middle', cls: 'lbl-region', small: true });
       },
     },
     {
@@ -238,7 +238,7 @@ Ponction **in-plane, avec le trajet le plus tangentiel possible** : l\'aiguille 
         S.bone({ path: 'M382 254 Q470 218 566 250', label: 'Côte', at: [478, 312], ldy: 0, small: true });
         S.pleura({ points: [[252, 292], [372, 289]] });
         S.label({ x: 402, y: 348, text: 'Plèvre — à voir avant de piquer', anchor: 'start', cls: 'lbl-pleura', small: true, lead: [366, 292] });
-        S.lung({ path: 'M250 296 L374 293 L396 420 L226 420 Z', label: 'Poumon', at: [310, 386], small: true });
+        S.lung({ path: 'M252 298 L372 295 L372 420 L252 420 Z', label: 'Poumon', at: [312, 372], small: true });
         S.fluid({ x: 288, y: 108, rx: 36, ry: 14 });
         S.target({ x: 288, y: 108, r: 22 });
         S.label({ x: 288, y: 62, text: 'Point gâchette', anchor: 'middle', cls: 'lbl-target', small: true, lead: [288, 92] });

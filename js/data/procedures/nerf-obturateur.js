@@ -228,10 +228,10 @@ En pratique, chez un candidat à la dénervation : **PENG 15 mL + bloc obturateu
         S.muscle({ path: 'M0 180 L640 170 L640 262 L0 274 Z', label: 'Court adducteur', at: [104, 224], opacity: 0.5 });
         S.fascia({ points: [[0, 280], [320, 272], [640, 266]], width: 2.2 });
         S.muscle({ path: 'M0 286 L640 272 L640 400 L0 400 Z', label: 'Grand adducteur', at: [120, 344], opacity: 0.5 });
-        S.needle({ from: [6, 96], to: [300, 174], label: 'Plan 1' });
-        S.spread({ x: 400, y: 172, rx: 96, ry: 9, label: '5 mL' });
-        S.needle({ from: [6, 172], to: [318, 274], label: 'Plan 2' });
-        S.spread({ x: 418, y: 272, rx: 96, ry: 9, label: '5 mL' });
+        S.needle({ from: [6, 96], to: [300, 174], label: 'Plan 1', delay: 0.2, dur: 1.1 });
+        S.spread({ x: 400, y: 172, rx: 96, ry: 9, label: '5 mL', delay: 1.3, dur: 0.8 });
+        S.needle({ from: [6, 172], to: [318, 274], label: 'Plan 2', delay: 2.1, dur: 1.1 });
+        S.spread({ x: 418, y: 272, rx: 96, ry: 9, label: '5 mL', delay: 3.2, dur: 0.8 });
       },
     },
     {
@@ -243,11 +243,11 @@ En pratique, chez un candidat à la dénervation : **PENG 15 mL + bloc obturateu
         S.skin({ thickness: 8, fatBelow: 30 });
         S.muscle({ path: 'M0 84 L640 80 L640 212 L0 224 Z', label: 'Pectiné', at: [130, 150], opacity: 0.5 });
         S.fascia({ points: [[150, 230], [400, 226], [640, 218]], width: 2 });
-        S.bone({ path: 'M0 268 Q130 224 252 244', label: 'Branche sup. du pubis', at: [122, 330] });
         S.muscle({ path: 'M96 262 L640 238 L640 386 L128 396 Z', label: 'Obturateur externe', at: [430, 320], opacity: 0.5 });
+        S.bone({ path: 'M0 268 Q130 224 252 244', label: 'Branche sup. du pubis', at: [122, 330] });
         S.nerve({ x: 306, y: 240, rx: 16, ry: 7, label: 'N. obturateur (tronc)', lx: 296, ly: 196, small: true });
-        S.artery({ x: 358, y: 228, r: 7, label: 'Vaisseaux obturateurs', lx: 400, ly: 196, anchor: 'start', small: true, lead: [366, 226] });
-        S.vein({ x: 388, y: 236, rx: 10, ry: 7 });
+        S.artery({ x: 352, y: 212, r: 7, label: 'Vaisseaux obturateurs', lx: 400, ly: 186, anchor: 'start', small: true, lead: [360, 210] });
+        S.vein({ x: 384, y: 218, rx: 10, ry: 7 });
         S.target({ x: 308, y: 244, r: 14 });
         S.needle({ from: [636, 112], to: [326, 242], label: '22 G 90 mm, latéro-médial' });
         S.spread({ x: 292, y: 250, rx: 62, ry: 12, label: '8–10 mL' });
