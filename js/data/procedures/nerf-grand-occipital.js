@@ -254,16 +254,16 @@ Preuves : revue systématique 2024 (Can J Pain) de la PRF du GON dans les cépha
       opts: { depth: 3 },
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Transversale, ligne nuchale supérieure', type: 'in-plane' });
-        S.skin({ thickness: 9, fatBelow: 44 });
-        S.fascia({ points: [[0, 128], [320, 122], [640, 130]], width: 2, opacity: 0.9 });
-        S.label({ x: 96, y: 116, text: 'Aponévrose du trapèze', cls: 'lbl-fascia', small: true });
-        S.muscle({ path: 'M0 130 L320 124 L640 132 L640 196 L320 176 L0 190 Z', label: 'Trapèze / semi-épineux (insertions)', at: [316, 158], opacity: 0.5, small: true });
-        S.bone({ path: 'M0 232 Q160 200 320 196 Q480 200 640 230', label: 'Écaille occipitale', at: [320, 268], ldy: 0 });
-        S.nerve({ x: 262, y: 106, r: 7, label: 'N. grand occipital', lx: 150, ly: 74, anchor: 'end', lead: [256, 100] });
-        S.artery({ x: 330, y: 102, r: 7, label: 'A. occipitale (Doppler)', lx: 420, ly: 74, anchor: 'start', lead: [337, 100] });
-        S.target({ x: 262, y: 106, r: 16 });
-        S.needle({ from: [640, 84], to: [284, 110], label: '25 G 50 mm, angle 10–20°' });
-        S.spread({ x: 258, y: 108, rx: 44, ry: 14, label: '2–3 mL' });
+        S.skin({ thickness: 9, fatBelow: 62 });
+        S.fascia({ points: [[0, 152], [320, 146], [640, 154]], width: 2, opacity: 0.9 });
+        S.label({ x: 92, y: 140, text: 'Aponévrose du trapèze', cls: 'lbl-fascia', small: true });
+        S.muscle({ path: 'M0 154 L320 148 L640 156 L640 232 L320 214 L0 226 Z', label: 'Trapèze / semi-épineux (insertions)', at: [320, 192], opacity: 0.5, small: true });
+        S.bone({ path: 'M0 300 Q160 268 320 264 Q480 268 640 298', label: 'Écaille occipitale', at: [320, 332], ldy: 0 });
+        S.nerve({ x: 238, y: 130, r: 7, label: 'N. grand occipital', lx: 138, ly: 96, anchor: 'end', lead: [232, 124] });
+        S.artery({ x: 400, y: 126, r: 7, label: 'A. occipitale (Doppler)', lx: 452, ly: 176, anchor: 'start', lead: [406, 132] });
+        S.needle({ from: [640, 74], to: [270, 116], label: '25 G 50 mm, angle 10–20°' });
+        /* halo circonférentiel autour du nerf : anneau (le nerf reste visible au centre) */
+        S.spreadPath({ path: 'M190 130 A48 19 0 1 1 286 130 A48 19 0 1 1 190 130 Z M228 130 A10 10 0 1 0 248 130 A10 10 0 1 0 228 130 Z', at: [334, 134], label: '2–3 mL' });
       },
     },
   ],

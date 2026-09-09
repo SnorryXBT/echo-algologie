@@ -194,7 +194,7 @@ Niveau de preuve : **faible** — séries et pratique d\'experts, extrapolation 
   scenes: [
     {
       id: 'ax-espace', section: 'sonoanatomie', titre: 'Espace quadrilatère — coupe sagittale postérieure',
-      legende: 'Sonde sagittale, 2–3 cm sous l\'angle postéro-latéral de l\'acromion. Le deltoïde postérieur occupe la superficie ; petit rond en haut et grand rond en bas encadrent l\'espace quadrilatère, appliqué sur le col chirurgical. L\'artère circonflexe postérieure de l\'humérus signe l\'espace ; le nerf lui est adjacent. La longue portion du triceps borde l\'espace en dedans : elle est hors du plan de coupe et ne doit pas être cherchée dans l\'image.',
+      legende: 'Sonde sagittale, 2–3 cm sous l\'angle postéro-latéral de l\'acromion. Le deltoïde postérieur occupe la superficie ; petit rond en haut et grand rond en bas encadrent l\'espace quadrilatère, appliqué sur le col chirurgical. L\'artère circonflexe postérieure de l\'humérus signe l\'espace ; le nerf lui est adjacent, le plus souvent immédiatement crânial. La longue portion du triceps borde l\'espace en dedans : elle est hors du plan de coupe et ne doit pas être cherchée dans l\'image.',
       opts: { depth: 5 },
       build: S => {
         S.orient({ left: 'Crânial', right: 'Caudal' }).probeInfo({ plan: 'Sagittale, face postérieure de l\'épaule', type: 'linéaire 6–13 MHz' });
@@ -216,33 +216,33 @@ Niveau de preuve : **faible** — séries et pratique d\'experts, extrapolation 
       build: S => {
         S.orient({ left: 'Crânial', right: 'Caudal' }).probeInfo({ plan: 'Sagittale postérieure', type: 'in-plane' });
         S.skin({ thickness: 8, fatBelow: 20 });
-        S.muscle({ path: 'M0 72 L640 72 L640 168 L0 178 Z', label: 'Deltoïde', at: [420, 122] });
+        S.muscle({ path: 'M0 72 L640 72 L640 168 L0 178 Z', label: 'Deltoïde', at: [452, 122] });
         S.fascia({ points: [[0, 178], [640, 168]], width: 1.5 });
-        S.muscle({ path: 'M0 182 L246 178 L286 214 L246 250 L0 256 Z', label: 'Petit rond', at: [92, 218], opacity: 0.5 });
-        S.muscle({ path: 'M398 178 L640 172 L640 252 L392 256 L358 214 Z', label: 'Grand rond', at: [528, 218], opacity: 0.5 });
-        S.bone({ path: 'M40 300 Q330 262 620 302', label: 'Col chirurgical — butée', at: [330, 340] });
-        S.artery({ x: 336, y: 262, r: 6 });
-        S.nerve({ x: 296, y: 250, r: 7, label: 'N. axillaire', lx: 172, ly: 300, small: true, lead: [290, 254] });
-        S.target({ x: 312, y: 258, r: 16 });
-        S.needle({ from: [6, 108], to: [300, 256], label: '22 G 80 mm, 40–60°' });
-        S.spread({ x: 326, y: 264, rx: 58, ry: 16, label: '5–10 mL' });
+        S.muscle({ path: 'M0 182 L250 180 L250 282 L0 286 Z', label: 'Petit rond', at: [108, 222], opacity: 0.5 });
+        S.muscle({ path: 'M394 178 L640 172 L640 276 L392 282 Z', label: 'Grand rond', at: [522, 222], opacity: 0.5 });
+        S.bone({ path: 'M-20 302 Q320 260 660 304', label: 'Col chirurgical — butée', at: [330, 340] });
+        S.nerve({ x: 300, y: 248, r: 7, label: 'N. axillaire', lx: 246, ly: 236, anchor: 'end', small: true, lead: [294, 246] });
+        S.artery({ x: 344, y: 260, r: 6, label: 'A. circonflexe post.', lx: 400, ly: 244, anchor: 'start', small: true, lead: [350, 258] });
+        S.target({ x: 316, y: 262, r: 14 });
+        S.needle({ from: [6, 110], to: [300, 268], label: '22 G 80 mm, 40–60°' });
+        S.spread({ x: 330, y: 272, rx: 62, ry: 9, label: '5–10 mL' });
       },
     },
     {
       id: 'ax-distal', section: 'technique', titre: 'Voie distale — col chirurgical sous le deltoïde (cible de la PRF)',
-      legende: 'Sonde transversale sur la face postéro-latérale du bras, 5–7 cm sous l\'angle acromial. La branche antérieure du nerf axillaire et l\'artère circonflexe postérieure contournent le col dans l\'espace sous-deltoïdien ; c\'est là que naissent les branches articulaires. Cible plus sélective, bloc moteur moins complet : à privilégier pour la radiofréquence pulsée, électrode parallèle au trajet et posée contre l\'os.',
+      legende: 'Sonde transversale sur la face postéro-latérale du bras, 5–7 cm sous l\'angle acromial. La branche antérieure du nerf axillaire et l\'artère circonflexe postérieure contournent le col dans l\'espace sous-deltoïdien ; c\'est là que naissent les branches articulaires. Abord de postérieur en antérieur, pointe posée contre l\'os en arrière du signal Doppler : on n\'aborde jamais le nerf en traversant l\'artère. Cible plus sélective, bloc moteur moins complet : à privilégier pour la radiofréquence pulsée, électrode parallèle au trajet.',
       opts: { depth: 5 },
       build: S => {
         S.orient({ left: 'Postérieur', right: 'Antérieur' }).probeInfo({ plan: 'Transversale sur le bras, 5–7 cm sous l\'acromion', type: 'in-plane' });
         S.skin({ thickness: 8, fatBelow: 18 });
         S.muscle({ path: 'M0 68 L640 68 L640 196 L0 206 Z', label: 'Deltoïde', at: [104, 132] });
         S.fascia({ points: [[0, 206], [640, 196]], width: 1.5, opacity: 0.75 });
-        S.bone({ path: 'M110 330 Q320 250 530 330', label: 'Humérus — col chirurgical', at: [322, 356] });
-        S.nerve({ x: 268, y: 262, r: 7, label: 'N. axillaire, br. antérieure\net branches articulaires', lx: 150, ly: 228, small: true, lead: [262, 258] });
-        S.artery({ x: 324, y: 268, r: 6, label: 'A. circonflexe post.', lx: 486, ly: 236, small: true, lead: [330, 264] });
-        S.target({ x: 296, y: 266, r: 15 });
-        S.needle({ from: [634, 122], to: [312, 268], label: 'Aiguille RF 22 G, parallèle au trajet' });
-        S.spread({ x: 290, y: 272, rx: 52, ry: 13, label: '3–5 mL' });
+        S.bone({ path: 'M-20 334 Q320 252 660 334', label: 'Humérus — col chirurgical', at: [322, 358] });
+        S.nerve({ x: 300, y: 268, r: 7, label: 'N. axillaire, br. antérieure\net branches articulaires', lx: 168, ly: 232, small: true, lead: [294, 264] });
+        S.artery({ x: 342, y: 270, r: 6, label: 'A. circonflexe post.', lx: 420, ly: 240, anchor: 'start', small: true, lead: [348, 266] });
+        S.target({ x: 300, y: 268, r: 15 });
+        S.needle({ from: [8, 118], to: [286, 268], label: 'Aiguille RF 22 G, parallèle au trajet' });
+        S.spread({ x: 312, y: 284, rx: 54, ry: 8, label: '3–5 mL' });
       },
     },
   ],

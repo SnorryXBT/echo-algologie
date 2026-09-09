@@ -10,7 +10,7 @@ const path = require('path');
   page.on('pageerror', e => errors.push('PAGEERROR ' + e.message));
   page.on('console', m => { if (m.type() === 'error') errors.push('CONSOLE ' + m.text()); });
   await page.goto('file://' + path.resolve(__dirname, '../index.html') + hash);
-  await page.waitForTimeout(selector ? 4500 : 2500);
+  await page.waitForTimeout(selector ? 7000 : 2500);
   if (selector) await page.locator(selector).nth(+nth).screenshot({ path: out });
   else await page.screenshot({ path: out, fullPage: !selector });
   console.log(errors.length ? errors.join('\n') : 'no errors');

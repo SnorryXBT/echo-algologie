@@ -34,7 +34,7 @@ ECHO.register({
   contreIndications: [
     'Absolues : refus, infection cutanée du point de ponction, allergie vraie aux amino-amides.',
     '**Insuffisance respiratoire sévère, emphysème bulleux, poumon unique, pneumonectomie controlatérale** : un pneumothorax même minime y serait catastrophique. Contre-indication relative forte — si le geste est indispensable, le faire en milieu où un drainage est immédiatement possible.',
-    'Hémostase : bloc **profond et non compressible**, à proximité immédiate de la plèvre et d’une artère intercostale. À traiter comme un geste de **risque intermédiaire** dans la stratification ASRA-ESRA 2018 (classement exact à confirmer sur le texte avant d’en tirer une conduite). Concrètement : ne pas le faire sous anticoagulation curative non interrompue ; antiagrégants au cas par cas.',
+    'Hémostase : bloc nerveux périphérique, classé à **faible risque hémorragique** dans la stratification ASRA-ESRA 2018 — pas d’arrêt systématique des antiagrégants. Nuance clinique à ne pas perdre : le site n’est **pas compressible** et l’artère intercostale chemine dans la gouttière, si bien qu’un hématome extra-pleural est possible. Sous anticoagulation curative non interrompue, peser l’indication au cas par cas et préférer l’ESP block.',
     'Blocs multiples chez un patient de faible poids : le facteur limitant est la **dose totale d’anesthésique local**, pas la technique.',
     'Corticoïdes : diabète déséquilibré, infection évolutive ; ne pas dépasser 3 injections par an sur le même site.',
   ],
@@ -52,7 +52,7 @@ De la superficie à la profondeur, l’espace intercostal contient trois plans m
 - **Recouvrement métamérique constant.** Chaque territoire cutané reçoit des fibres de plusieurs nerfs adjacents et le nerf donne une branche collatérale qui court sur le bord supérieur de la côte sous-jacente. Un bloc mono-étagé laisse presque toujours une bande douloureuse : bloquer **un à deux niveaux au-dessus et au-dessous**.
 - **Absorption systémique maximale.** L’espace intercostal est le territoire qui donne les **concentrations plasmatiques d’anesthésique local les plus élevées** de tous les blocs périphériques, à dose égale. C’est la contrainte dominante quand on bloque plusieurs niveaux, et l’argument pour l’adrénaline diluée dans cette indication.
 - **Diffusion médiale possible.** Une injection trop proche de l’angle costal, sous pression, peut remonter dans l’espace paravertébral et, exceptionnellement, atteindre l’espace épidural. Argument supplémentaire pour un abord un peu latéral et une injection lente.
-- **Compter les côtes** : partir de la 12e (première côte flottante repérée en balayant vers le bas) ou de la pointe de la scapula (correspondant approximativement à la 7e côte, à confirmer sur chaque patient), puis remonter ou descendre en marquant chaque espace au feutre.
+- **Compter les côtes** : partir de la **12e** (la plus basse ; les 11e et 12e sont flottantes, la 12e est la première rencontrée en balayant de bas en haut) ou de la pointe de la scapula (en regard de la 7e côte / de T7 environ, repère grossier à vérifier sur chaque patient), puis remonter ou descendre en marquant chaque espace au feutre.
 - **Profondeurs usuelles** : plèvre à 1,5–3 cm chez l’adulte mince, jusqu’à 4–5 cm si surcharge pondérale. Le plan cible est 5–10 mm au-dessus d’elle.`,
 
   installation: {
@@ -74,7 +74,7 @@ Ponction **dans le plan**, du côté qui donne l’angle le plus **tangentiel à
   },
 
   reperage: [
-    { titre: 'Compter les côtes', texte: 'Sonde sagittale paravertébrale, balayage de bas en haut pour identifier la **12e côte** (la première qui « flotte », sans continuité antérieure), puis remonter espace par espace en marquant au feutre. Vérification croisée par la pointe de la scapula. Se tromper de niveau est l’erreur la plus fréquente et la plus silencieuse.' },
+    { titre: 'Compter les côtes', texte: 'Sonde sagittale paravertébrale, balayage de bas en haut pour identifier la **12e côte** (la plus basse, flottante, sans continuité antérieure), puis remonter espace par espace en marquant au feutre. Vérification croisée par la pointe de la scapula (7e côte / T7 environ). Se tromper de niveau est l’erreur la plus fréquente et la plus silencieuse.' },
     { titre: 'Obtenir la coupe à deux côtes', texte: 'Sonde sagittale à 6–8 cm de la ligne médiane : deux **arcs hyperéchogènes convexes avec cône d’ombre** (les côtes en section), séparés par l’espace intercostal. Cette image « en deux bosses » est la coupe de travail.' },
     { titre: 'Identifier la plèvre et son glissement', texte: 'Au fond de l’espace, une **ligne hyperéchogène brillante qui glisse** avec la respiration, avec en dessous les artefacts du poumon (queues de comète, lignes A). **Aucune ponction tant que cette ligne n’est pas identifiée et son glissement vérifié.**' },
     { titre: 'Distinguer les trois plans musculaires', texte: 'Entre les deux côtes, de la superficie à la profondeur : **intercostal externe**, **intercostal interne**, puis la fine lame de l’**intercostal intime** juste au-dessus de la plèvre. Le plan cible est l’interface interne / intime. Chez le sujet mince, les trois plans sont nets ; chez l’obèse, on se contente de l’interface la plus profonde repérable au-dessus de la plèvre.' },
@@ -164,7 +164,7 @@ Les données sont anciennes et contrastées. La cryoanalgésie intercostale **pe
     'Progression **tangentielle** à la plèvre, pointe visible en permanence. En cas de perte de la pointe : arrêt, réalignement de la sonde, jamais de progression à l’aveugle.',
     'Dose totale d’AL calculée en mg/kg **avant** le geste et notée ; adrénaline 1/200 000 au-delà de deux niveaux ; injection fractionnée avec aspiration ; interrogatoire du patient entre chaque niveau.',
     '**Émulsion lipidique 20 % et chariot d’urgence dans la salle**, protocole LAST affiché.',
-    'Bloc profond et non compressible à proximité pleurale : à traiter comme un **risque hémorragique intermédiaire** (ASRA-ESRA 2018 — classement exact à confirmer). Pas de geste sous anticoagulation curative non interrompue.',
+    '**Faible risque hémorragique** (ASRA-ESRA 2018, catégorie des blocs nerveux périphériques) : pas d’arrêt systématique des antiagrégants. Mais le site n’est pas compressible et l’artère intercostale est sur le trajet — sous anticoagulation curative non interrompue, discuter l’indication et préférer l’ESP block.',
     'Consigne écrite remise au patient : dyspnée, douleur thoracique brutale ou malaise dans les 24 h = consultation en urgence, avec mention du geste réalisé.',
     'Contre-indication de bon sens chez le patient à réserve respiratoire nulle : préférer l’ESP block.',
   ],
