@@ -226,11 +226,11 @@ L'ECR contre sham de **Radnovich 2017** porte sur la cryoneurolyse des branches 
         S.ligament({ path: 'M56 98 L620 118 L622 150 L54 130 Z', label: 'LCM', at: [180, 124] });
         S.bone({ path: 'M0 226 Q120 214 220 226 Q300 238 400 258 L640 268', label: 'Tibia', at: [128, 304] });
         S.artery({ x: 324, y: 240, r: 7, label: 'A. géniculée inf.-médiale', lx: 476, ly: 204, lead: [330, 234] });
-        S.nerve({ x: 300, y: 244, r: 5, label: 'NG inféro-médial', lx: 176, ly: 208, lead: [296, 239] });
+        S.nerve({ x: 300, y: 244, r: 5, label: 'NG inféro-médial', lx: 148, ly: 196, lead: [296, 239] });
         S.label({ x: 432, y: 330, text: 'Jonction métaphyso-épiphysaire', cls: 'lbl-bone', small: true, lead: [370, 268] });
         S.target({ x: 312, y: 244, r: 16 });
         S.needle({ from: [640, 168], to: [318, 240], label: '22 G, contact périosté puis recul 1–2 mm' });
-        S.spread({ x: 310, y: 244, rx: 52, ry: 15, label: '1–2 mL' });
+        S.spread({ x: 240, y: 232, rx: 54, ry: 10, label: '1–2 mL' });
       },
     },
     {
@@ -246,7 +246,7 @@ L'ECR contre sham de **Radnovich 2017** porte sur la cryoneurolyse des branches 
         S.nerve({ x: 384, y: 258, r: 5, label: 'NG supéro-latéral', lx: 214, ly: 228, anchor: 'end', lead: [379, 257] });
         S.region({ x: 400, y: 254, rx: 40, ry: 15, fill: '#ff8f3f', opacity: 0.32, label: 'Lésion 80 °C / 90 s', lx: 430, ly: 342, small: true, lead: [408, 270] });
         S.target({ x: 396, y: 256, r: 18 });
-        S.needle({ from: [640, 182], to: [388, 254], label: 'Électrode RF 22 G, pointe active 10 mm' });
+        S.needle({ from: [640, 168], to: [386, 246], label: 'Électrode RF 22 G, pointe active 10 mm' });
       },
     },
   ],

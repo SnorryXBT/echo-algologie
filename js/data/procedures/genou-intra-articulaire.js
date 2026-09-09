@@ -230,17 +230,17 @@ Le taux de récidive est élevé si la pathologie intra-articulaire sous-jacente
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Transverse, creux poplité', type: 'in-plane' });
         S.skin({ thickness: 8, fatBelow: 22 });
-        S.muscle({ path: 'M120 168 Q260 152 360 170 L364 300 Q250 322 118 300 Z', label: 'Gastrocnémien médial', at: [242, 252], opacity: 0.5 });
-        S.tendon({ x: 52, y: 172, rx: 30, ry: 18, label: 'Semi-memb.', lx: 56, ly: 216, small: true });
-        S.fluid({ path: 'M36 92 Q170 70 290 94 Q320 104 306 132 Q240 148 150 146 Q84 142 38 124 Z', label: 'Kyste poplité', lx: 122, ly: 92 });
-        S.fluid({ path: 'M96 140 L138 176 L120 192 L80 152 Z', label: 'Collet', lx: 196, ly: 186, anchor: 'start', small: true, lead: [130, 172] });
+        S.muscle({ path: 'M150 176 Q270 158 366 176 L370 300 Q256 322 148 300 Z', label: 'Gastrocnémien médial', at: [258, 254], opacity: 0.5 });
+        S.tendon({ x: 48, y: 196, rx: 28, ry: 16, label: 'Semi-memb.', lx: 48, ly: 238, small: true });
+        S.fluid({ path: 'M34 88 Q160 66 286 90 Q318 100 302 132 Q236 148 150 146 Q80 142 36 122 Z', label: 'Kyste poplité', lx: 190, ly: 86 });
+        S.fluid({ path: 'M98 140 L152 186 L134 202 L80 154 Z', label: 'Collet', lx: 206, ly: 208, anchor: 'start', small: true, lead: [146, 194] });
         S.nerve({ x: 500, y: 150, r: 14, label: 'N. tibial', lx: 556, ly: 132, anchor: 'start', lead: [513, 146] });
         S.vein({ x: 470, y: 202, rx: 24, ry: 15, label: 'V. poplitée', lx: 590, ly: 206, anchor: 'end', lead: [494, 202] });
         S.artery({ x: 494, y: 250, r: 17, label: 'A. poplitée', lx: 494, ly: 292 });
         S.bone({ path: 'M130 326 Q300 334 430 316 Q530 300 640 306', label: 'Condyles fémoraux', at: [300, 366] });
-        S.target({ x: 232, y: 110, r: 16 });
-        S.needle({ from: [0, 92], to: [236, 112], label: '18–21 G, médio-latérale' });
-        S.spread({ x: 226, y: 124, rx: 66, ry: 20, label: '1–2 mL après vidange' });
+        S.target({ x: 252, y: 126, r: 15 });
+        S.needle({ from: [0, 116], to: [246, 126], label: '18–21 G' });
+        S.spread({ x: 196, y: 124, rx: 58, ry: 16, label: '1–2 mL après vidange' });
       },
     },
   ],

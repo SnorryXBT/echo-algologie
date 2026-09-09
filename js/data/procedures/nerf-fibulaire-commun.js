@@ -226,10 +226,10 @@ Conduite à tenir : **IRM** et **avis chirurgical**. Le traitement est l'évacua
         S.bone({ path: 'M250 258 Q340 232 432 254 Q492 272 522 304', label: 'Fibula', at: [318, 332] });
         S.target({ x: 386, y: 196, r: 26 });
         S.needle({ from: [0, 116], to: [356, 208], label: '25 G — face profonde' });
-        S.spread({ x: 386, y: 214, rx: 40, ry: 10 });
+        S.spread({ x: 386, y: 215, rx: 34, ry: 8 });
         S.needle({ from: [640, 128], to: [418, 182], label: '25 G — face superficielle' });
-        S.spread({ x: 386, y: 178, rx: 40, ry: 10 });
-        S.label({ x: 420, y: 262, text: 'Halo circonférentiel — 5–10 mL D5W', cls: 'lbl-spread', small: true, lead: [396, 226] });
+        S.spread({ x: 386, y: 177, rx: 34, ry: 8 });
+        S.label({ x: 292, y: 266, text: 'Halo circonférentiel — 5–10 mL D5W', cls: 'lbl-spread', small: true, lead: [364, 224] });
       },
     },
   ],

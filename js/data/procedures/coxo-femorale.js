@@ -6,11 +6,11 @@ ECHO.register({
   en: 'Ultrasound-guided intra-articular hip injection — anterior approach, femoral head-neck junction, anterior recess',
   region: 'membre-inf',
   types: ['infiltration'],
-  niveau: 1,
+  niveau: 2,
   grade: 'Modérée pour le corticoïde à court terme (ECR) ; faible pour l’acide hyaluronique et le PRP',
   maj: '2026-09',
   motsCles: ['hanche', 'coxarthrose', 'coxopathie', 'récessus antérieur', 'jonction tête-col', 'conflit fémoro-acétabulaire', 'FAI', 'bloc test', 'PTH', 'descellement', 'acide hyaluronique', 'PRP', 'triamcinolone hexacétonide'],
-  resume: 'L’infiltration coxo-fémorale est le geste articulaire le plus rentable du membre inférieur en HDJ douleur, parce qu’il est à la fois thérapeutique et diagnostique : chez le patient qui cumule coxarthrose et rachis lombaire dégénératif, c’est souvent lui qui tranche l’origine de la douleur. La hanche n’est pas palpable : l’infiltration à l’aveugle n’a pas sa place, le guidage (échographie ou scopie) est la règle. La cible est le récessus antérieur, à la jonction tête-col, sous la capsule et le ligament ilio-fémoral, atteinte par une aiguille spinale in-plane caudo-crâniale. Le paquet fémoral reste médial et l’artère circonflexe fémorale latérale croise le trajet en superficie : ce sont les deux structures à repérer au Doppler avant de ponctionner. Le débat actuel ne porte plus sur l’efficacité à court terme du corticoïde, qui est établie, mais sur sa sécurité articulaire à moyen terme et sur le délai à respecter avant une arthroplastie.',
+  resume: 'L’infiltration coxo-fémorale est le geste articulaire le plus rentable du membre inférieur en HDJ douleur, parce qu’il est à la fois thérapeutique et diagnostique : chez le patient qui cumule coxarthrose et rachis lombaire dégénératif, c’est souvent lui qui tranche l’origine de la douleur. La hanche n’est pas palpable : l’infiltration à l’aveugle n’a pas sa place, le guidage (échographie ou scopie) est la règle. La cible est le récessus antérieur, à la jonction tête-col, sous la capsule et le ligament ilio-fémoral, atteinte par une aiguille spinale in-plane caudo-crâniale. Le paquet fémoral reste médial et l’artère circonflexe fémorale latérale croise le trajet dans le plan situé entre le sartorius / droit fémoral et l’ilio-psoas : ce sont les deux structures à repérer au Doppler avant de ponctionner. Le débat actuel ne porte plus sur l’efficacité à court terme du corticoïde, qui est établie, mais sur sa sécurité articulaire à moyen terme et sur le délai à respecter avant une arthroplastie.',
 
   flash: {
     position: 'dorsal', positionNote: 'membre en extension, rotation neutre ou légère rotation interne ; ne pas mettre la hanche en rotation externe (le col fuit sous la sonde)',
@@ -49,7 +49,7 @@ En avant de la capsule chemine le **muscle ilio-psoas**, dont le tendon croise l
 - **Le plan de coupe fait tout.** La sonde est placée dans l’axe du col fémoral, c’est-à-dire selon une ligne oblique allant approximativement de l’EIAS vers l’angle latéral de la symphyse pubienne. On obtient alors l’image en « cône de glace » : la tête, la concavité de la jonction tête-col, puis le col qui s’éloigne en profondeur.
 - **La jonction tête-col est la cible, pas la tête.** Piquer la tête, c’est piquer du cartilage ; piquer le col au-delà de la jonction, c’est risquer d’être extra-capsulaire, la capsule s’insérant plus distalement. Le point d’entrée articulaire est la concavité entre les deux, sous la capsule.
 - **Le paquet vasculo-nerveux fémoral est médial** : de médial en latéral, veine, artère, puis nerf fémoral, ce dernier sous le fascia iliaca et appliqué sur le psoas. Une ponction menée de caudal-latéral vers crânial-médial ne le rencontre pas, à condition de ne jamais dériver en médial.
-- **L’artère circonflexe fémorale latérale** (branche ascendante) croise le champ en superficie, entre le sartorius et le droit fémoral : c’est le vaisseau que le Doppler doit chercher sur le trajet prévu, plus que l’artère fémorale.
+- **L’artère circonflexe fémorale latérale** (branche ascendante) croise le champ dans l’intervalle situé entre le plan sartorius / droit fémoral et l’ilio-psoas, donc **en travers du trajet de l’aiguille** : c’est le vaisseau que le Doppler doit chercher sur le trajet prévu, plus que l’artère fémorale, qui reste à distance en médial.
 - **Profondeur de la cible** : 4–6 cm chez le sujet mince, 8–10 cm chez le patient obèse. Au-delà de 7 cm, le convexe s’impose et une aiguille de 90 mm peut devenir juste.`,
 
   installation: {
@@ -70,7 +70,7 @@ Ne jamais orienter la pointe en direction du pli inguinal (crânio-médial franc
     { titre: 'Coupe transverse au pli inguinal — bornes vasculaires', texte: 'Commencer par une coupe **transversale au pli inguinal** : identifier la **veine fémorale** (médiale, compressible), l’**artère fémorale** et, latéralement à elle, le **nerf fémoral** aplati sur le psoas sous le fascia iliaca. Cette étape n’est pas une perte de temps : elle fixe mentalement la limite médiale à ne jamais franchir.' },
     { titre: 'Basculer dans l’axe du col', texte: 'Translater la sonde de 2–3 cm en latéral et en distal, puis la faire pivoter d’environ 45° pour l’aligner sur une ligne **EIAS → angle latéral de la symphyse pubienne**. Apparaît l’image caractéristique : ligne osseuse convexe de la **tête fémorale**, concavité de la **jonction tête-col**, puis le **col** qui plonge en profondeur.' },
     { titre: 'Identifier la capsule et le récessus', texte: 'Au-dessus de l’os, chercher la bande hyperéchogène fibrillaire de la **capsule / ligament ilio-fémoral**, tendue du rebord acétabulaire au col. Entre elle et la corticale, à la jonction tête-col, se trouve le **récessus antérieur** : normalement un simple liseré, il devient une lame anéchogène de plus de 7 mm en cas d’épanchement (mesure à comparer au côté sain).' },
-    { titre: 'Doppler sur le trajet', texte: 'Activer le Doppler couleur et balayer le trajet prévu, du point d’entrée cutané à la cible : repérer la branche ascendante de l’**artère circonflexe fémorale latérale**, qui croise en superficie entre sartorius et droit fémoral. Décaler le point d’entrée de quelques millimètres plutôt que de traverser un vaisseau.' },
+    { titre: 'Doppler sur le trajet', texte: 'Activer le Doppler couleur et balayer le trajet prévu, du point d’entrée cutané à la cible : repérer la branche ascendante de l’**artère circonflexe fémorale latérale**, qui croise le trajet dans le plan de clivage entre le sartorius / droit fémoral et l’ilio-psoas. Décaler le point d’entrée de quelques millimètres plutôt que de traverser un vaisseau.' },
     { titre: 'Si la jonction tête-col ne se voit pas', texte: 'Trois causes par ordre de fréquence : (1) la sonde n’est pas dans l’axe du col — faire pivoter de 10° dans les deux sens jusqu’à obtenir le plus long segment de col visible ; (2) la hanche est en rotation externe — corriger la position du pied ; (3) la profondeur ou la fréquence sont inadaptées — passer au convexe. Chez le patient obèse, appuyer fermement et faire expirer.' },
     { titre: 'Cas de la prothèse', texte: 'Sur une PTH, la tête prothétique est une **ligne hyperéchogène franche avec réverbérations** et non un arc régulier ; le col est métallique, hyperéchogène, avec artefacts. Le récessus para-prothétique se ponctionne de la même façon, en visant l’espace entre le col prothétique et la pseudo-capsule. Attention à ne pas rayer l’implant : contact osseux prudent.' },
   ],
@@ -84,7 +84,7 @@ Ne jamais orienter la pointe en direction du pli inguinal (crânio-médial franc
     { structure: 'Jonction tête-col', aspect: 'Concavité entre l’arc de la tête et la ligne du col', repere: 'Point de contact osseux visé' },
     { structure: 'Col fémoral', aspect: 'Ligne hyperéchogène rectiligne s’éloignant en profondeur', repere: 'Au-delà de la jonction, la capsule s’éloigne : risque extra-capsulaire' },
     { structure: 'Labrum antérieur', aspect: 'Triangle hyperéchogène appendu au rebord acétabulaire', repere: 'Limite crâniale ; ne pas traverser' },
-    { structure: 'A. circonflexe fémorale latérale', aspect: 'Petit vaisseau pulsatile superficiel, Doppler positif', repere: 'Entre sartorius et droit fémoral, sur le trajet' },
+    { structure: 'A. circonflexe fémorale latérale', aspect: 'Petit vaisseau pulsatile, Doppler positif', repere: 'Dans le plan entre sartorius / droit fémoral et ilio-psoas, en travers du trajet' },
   ],
 
   technique: [
@@ -217,7 +217,7 @@ Ne jamais orienter la pointe en direction du pli inguinal (crânio-médial franc
         S.artery({ x: 172, y: 120, r: 18, label: 'A. fémorale', lx: 172, ly: 80, small: true });
         S.nerve({ x: 236, y: 160, rx: 16, ry: 8, label: 'N. fémoral', lx: 264, ly: 202, anchor: 'start', small: true, lead: [242, 166] });
         S.bone({ path: 'M150 330 Q380 282 640 322', label: 'Tête fémorale / acétabulum', at: [386, 372] });
-        S.label({ x: 84, y: 322, text: 'Limite médiale\n— ne pas franchir', cls: 'lbl-target', small: true });
+        S.label({ x: 66, y: 300, text: 'Limite médiale\n— ne pas franchir', cls: 'lbl-target', small: true, anchor: 'start', lead: [190, 122] });
       },
     },
     {
@@ -234,9 +234,9 @@ Ne jamais orienter la pointe en direction du pli inguinal (crânio-médial franc
         S.bone({ path: 'M0 196 L68 224 L116 254' });
         S.bone({ path: 'M112 272 Q175 232 245 232 Q322 236 356 286 Q392 314 424 316 L570 326 L640 332', label: 'Tête fémorale', at: [206, 372] });
         S.label({ x: 546, y: 372, text: 'Col fémoral', cls: 'lbl-bone' });
-        S.target({ x: 384, y: 280, r: 12 });
-        S.needle({ from: [636, 104], to: [404, 284], label: '22 G 90 mm, caudo-crânial' });
-        S.spread({ x: 406, y: 294, rx: 48, ry: 11, label: '4–6 mL' });
+        S.target({ x: 392, y: 296, r: 12 });
+        S.needle({ from: [636, 104], to: [400, 302], label: '22 G 90 mm, caudo-crânial' });
+        S.spread({ x: 430, y: 306, rx: 50, ry: 9, label: '4–6 mL' });
       },
     },
   ],

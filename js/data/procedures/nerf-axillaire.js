@@ -32,7 +32,7 @@ ECHO.register({
   ],
   contreIndications: [
     'Absolues : refus, infection cutanée au point de ponction, allergie vraie aux amino-amides.',
-    'Relatives : troubles de l\'hémostase — bloc **profond mais compressible sur un plan osseux**, classé à **faible risque hémorragique** (ASRA-ESRA 2018) ; pas d\'arrêt systématique des antiagrégants, anticoagulants au cas par cas. Rester attentif à l\'artère circonflexe postérieure, qui est à la cible.',
+    'Relatives : troubles de l\'hémostase. Les blocs périphériques sont globalement classés à **faible risque hémorragique** par l\'ASRA-ESRA 2018, mais celui-ci est **profond et non compressible**, avec une artère à la cible : le traiter en pratique comme un site **à risque intermédiaire** (un hématome de l\'espace quadrilatère ne se comprime pas et peut comprimer le nerf). Pas d\'arrêt systématique des antiagrégants ; anticoagulants au cas par cas, avec la même prudence que pour un bloc profond.',
     '**Déficit moteur préexistant du deltoïde**, ou patient dont l\'autonomie repose sur l\'abduction du bras (transferts, béquilles, fauteuil roulant manuel) : le bloc moteur transitoire est alors une perte fonctionnelle réelle pendant quelques heures. En parler avant, prévoir l\'accompagnement du retour à domicile.',
     'Neuropathie axillaire connue ou suspectée (post-traumatique, post-luxation) : un bloc peut masquer l\'évolution ; faire l\'EMG d\'abord si le diagnostic n\'est pas fait.',
     'Corticoïdes : diabète déséquilibré, infection évolutive, prothèse d\'épaule ou chirurgie programmée à moins de 3 mois.',
@@ -51,7 +51,8 @@ Des **branches articulaires** naissent au voisinage de l\'espace quadrilatère e
 - **Les trois ponts sensitifs de l\'épaule** (Laumonerie 2020) : suprascapulaire (postéro-supérieur, majoritaire), **axillaire (antéro-inférieur)**, pectoral latéral (antéro-supérieur, inconstant). Ce découpage justifie la pratique du bloc combiné : un suprascapulaire seul laisse en place tout le versant antéro-inférieur.
 - **Bloc proximal = bloc moteur.** Dans l\'espace quadrilatère, le nerf est encore complet : le bloc entraîne une **paralysie transitoire du deltoïde** (2–6 h). C\'est attendu, ce n\'est pas une complication, mais ce n\'est pas anodin pour un patient âgé ou hémiplégique.
 - **Cible distale = plus sélective.** Au **col chirurgical**, sous le deltoïde, on peut viser les branches articulaires en épargnant en partie la fonction musculaire — c\'est la cible de la radiofréquence pulsée, pour la même raison qu\'on choisit l\'échancrure spinoglénoïdienne plutôt que la fosse pour le suprascapulaire.
-- **L\'artère est le repère, pas la cible.** L\'artère circonflexe postérieure signe l\'espace quadrilatère ; le nerf est adjacent, souvent en dedans ou en avant d\'elle, et n\'est individualisé que chez le sujet mince.
+- **L\'artère est le repère, pas la cible.** L\'artère circonflexe postérieure signe l\'espace quadrilatère ; sur la coupe sagittale postérieure, le nerf est le plus souvent **immédiatement crânial** à l\'artère (parfois accolé à elle), et n\'est individualisé que chez le sujet mince — la variabilité est réelle, ne pas se fier à la seule position théorique.
+- **L\'artère circonflexe postérieure assure l\'essentiel de la vascularisation de la tête humérale** : c\'est un argument de plus pour l\'aspiration systématique, et pour préférer un corticoïde non particulaire (dexaméthasone) si la pointe reste au contact du signal Doppler.
 - **Profondeurs** : nerf à **3–5 cm** chez l\'adulte de corpulence moyenne, jusqu\'à 6 cm ; le col chirurgical à 4–6 cm. C\'est plus profond que le suprascapulaire — d\'où le niveau 2 et l\'intérêt d\'une aiguille échovisible.
 - **La longue portion du triceps est médiale, donc hors du plan** de la coupe sagittale postérieure : on ne la voit pas, et vouloir la trouver dans l\'image fait perdre du temps.`,
 
@@ -75,7 +76,7 @@ Sonde **sagittale**, appliquée 2–3 cm sous l\'angle postéro-latéral de l\'a
     { titre: 'Partir de l\'acromion', texte: 'Poser la sonde **sagittale sur l\'angle postéro-latéral de l\'acromion** : ligne osseuse hyperéchogène franche avec ombre. Descendre de 2–3 cm en gardant l\'orientation : le deltoïde postérieur occupe alors toute la superficie du champ.' },
     { titre: 'Trouver le col chirurgical', texte: 'Poursuivre la descente jusqu\'à voir, en profondeur, la **ligne osseuse convexe et régulière du col chirurgical de l\'humérus**, avec son cône d\'ombre. C\'est le plancher du geste et son garde-fou. Si l\'on voit une surface articulaire ou la glène, on est trop haut et trop médial.' },
     { titre: 'Encadrer l\'espace quadrilatère', texte: 'Identifier le **petit rond** (crânial) et le **grand rond** (caudal) : deux ventres musculaires séparés par un intervalle graisseux triangulaire, appliqué sur le col — c\'est l\'espace quadrilatère en coupe. La longue portion du triceps est médiale, **hors du plan** : ne pas la chercher dans l\'image.' },
-    { titre: 'Doppler', texte: 'Activer le Doppler couleur : l\'**artère circonflexe postérieure de l\'humérus** pulse dans l\'espace, contre l\'os. C\'est le repère décisif. Le **nerf axillaire** est adjacent — souvent en dedans ou légèrement en avant de l\'artère — et n\'apparaît comme une structure ovalaire en nid d\'abeilles de 3–5 mm que chez le sujet mince.' },
+    { titre: 'Doppler', texte: 'Activer le Doppler couleur : l\'**artère circonflexe postérieure de l\'humérus** pulse dans l\'espace, contre l\'os. C\'est le repère décisif. Le **nerf axillaire** est adjacent — le plus souvent **crânial** à l\'artère sur cette coupe, parfois accolé — et n\'apparaît comme une structure ovalaire en nid d\'abeilles de 3–5 mm que chez le sujet mince.' },
     { titre: 'Vérifier avant de piquer', texte: 'Balayer de haut en bas pour vérifier la continuité de l\'artère et l\'absence de branche sur le trajet prévu ; mesurer la profondeur du col ; repérer le point d\'entrée cutané au bord crânial de la sonde.' },
     { titre: 'Si l\'on ne trouve ni l\'espace ni l\'artère', texte: 'Deux options. **Descendre** : suivre le col chirurgical vers le bas jusqu\'au niveau sous-deltoïdien, où la branche antérieure et l\'artère contournent l\'os — cible plus distale, plus sélective, souvent plus facile chez le sujet épais. Ou **renoncer à l\'axillaire** et vérifier d\'abord que le bloc suprascapulaire a été fait correctement : dans la majorité des épaules, c\'est lui qui manque, pas l\'axillaire.' },
   ],
@@ -87,7 +88,7 @@ Sonde **sagittale**, appliquée 2–3 cm sous l\'angle postéro-latéral de l\'a
     { structure: 'Espace quadrilatère', aspect: 'Intervalle graisseux triangulaire entre les deux ronds, contre l\'os', repere: 'Contient nerf et artère ; la longue portion du triceps est médiale, hors du plan' },
     { structure: 'Col chirurgical de l\'humérus', aspect: 'Ligne hyperéchogène convexe et régulière avec cône d\'ombre franc', repere: 'Plancher et butée du geste ; sa profondeur est la limite de progression' },
     { structure: 'A. circonflexe postérieure de l\'humérus', aspect: 'Point pulsatile en Doppler, contre l\'os dans l\'espace', repere: 'Repère principal : chercher l\'artère, pas le nerf' },
-    { structure: 'Nerf axillaire', aspect: 'Structure ovalaire de 3–5 mm en nid d\'abeilles, souvent non individualisée', repere: 'Adjacent à l\'artère, en dedans ou en avant' },
+    { structure: 'Nerf axillaire', aspect: 'Structure ovalaire de 3–5 mm en nid d\'abeilles, souvent non individualisée', repere: 'Adjacent à l\'artère, le plus souvent immédiatement crânial à elle sur la coupe sagittale' },
     { structure: 'Branche antérieure et branches articulaires (voie distale)', aspect: 'Non visibles isolément ; espace sous-deltoïdien contre le col', repere: 'Cible de la PRF, plus sélective, plus bas sur le col' },
   ],
 
@@ -104,7 +105,7 @@ Sonde **sagittale**, appliquée 2–3 cm sous l\'angle postéro-latéral de l\'a
   injectat: `| Objectif | Produits | Volume | Commentaire |
 |---|---|---|---|
 | Bloc test diagnostique (avant PRF) | Lidocaïne 1–2 % ou ropivacaïne 0,2 % | 4–5 mL | Petit volume pour limiter la diffusion aux ronds et au triceps ; EN avant / 30 min, et test des amplitudes |
-| Bloc thérapeutique, en association au suprascapulaire | Ropivacaïne 0,2–0,5 % + méthylprednisolone 40 mg, ou triamcinolone 40 mg, ou bétaméthasone 5,7 mg | **5–10 mL** | Site non artériel terminal : corticoïde particulaire acceptable. Additionner avec le volume du bloc suprascapulaire de la même séance |
+| Bloc thérapeutique, en association au suprascapulaire | Ropivacaïne 0,2–0,5 % + méthylprednisolone 40 mg, ou triamcinolone 40 mg, ou bétaméthasone 5,7 mg | **5–10 mL** | Corticoïde particulaire acceptable (pas d\'artère à destinée médullaire ou encéphalique), mais l\'artère circonflexe postérieure vascularise la tête humérale : aspiration avant chaque bolus, et **dexaméthasone 4–8 mg** si la pointe reste au contact du signal Doppler. Additionner avec le volume du bloc suprascapulaire de la même séance |
 | Épaule hémiplégique | AL seul ou AL + corticoïde | 5–8 mL | Le corticoïde n\'est pas indispensable ; l\'objectif est la fenêtre de mobilisation |
 | Hydrodissection (syndrome de l\'espace quadrilatère) | Sérum physiologique ou dextrose 5 % ± AL | 5–10 mL | Vise à libérer le nerf de l\'espace ; données limitées, à confirmer |
 | Avant PRF | Lidocaïne 1 % ou sérum | 1–2 mL | Volume minimal : au-delà, le nerf est déplacé hors de portée de l\'électrode |
@@ -114,7 +115,7 @@ Sonde **sagittale**, appliquée 2–3 cm sous l\'angle postéro-latéral de l\'a
 **Corticoïdes** : ne pas dépasser l\'équivalent de 40–80 mg de méthylprednisolone par séance toutes cibles confondues, et espacer de 3 mois sur un même site. Chez le diabétique, glycémie capillaire le jour même et les 48 h suivantes.`,
 
   variantes: [
-    { titre: 'Voie distale — col chirurgical, sous le deltoïde', texte: `Sonde **transversale sur la face postéro-latérale du bras**, à 5–7 cm sous l\'angle acromial : l\'humérus apparaît en coupe comme une corticale convexe, et la **branche antérieure** du nerf axillaire, accompagnée de l\'artère circonflexe postérieure, contourne le col dans l\'espace sous-deltoïdien. Aiguille in-plane, de latéral en médial, 3–5 mL.
+    { titre: 'Voie distale — col chirurgical, sous le deltoïde', texte: `Sonde **transversale sur la face postéro-latérale du bras**, à 5–7 cm sous l\'angle acromial : l\'humérus apparaît en coupe comme une corticale convexe, et la **branche antérieure** du nerf axillaire, accompagnée de l\'artère circonflexe postérieure, contourne le col dans l\'espace sous-deltoïdien. Aiguille in-plane, **de postérieur en antérieur**, tangentiellement à la corticale, pointe posée contre l\'os en arrière du signal Doppler : ce sens évite d\'aborder le nerf en traversant l\'artère. 3–5 mL.
 
 Avantages : cible plus superficielle chez certains morphotypes, plus **sélective** sur les branches articulaires, avec un bloc moteur du deltoïde moins complet. C\'est la cible que je privilégie pour la **radiofréquence pulsée** — même logique que l\'échancrure spinoglénoïdienne pour le suprascapulaire. Limite : le territoire capsulaire couvert est plus étroit, et le repérage exige de bien tenir la coupe.` },
     { titre: 'Bloc combiné suprascapulaire + axillaire (« shoulder block »)', texte: `C\'est le mode d\'emploi normal de cette fiche. Historiquement décrit par Price en 2007 sur repères anatomiques comme alternative au bloc interscalénique, il est aujourd\'hui réalisé sous échographie, les deux cibles étant abordées **dans la même installation** (assis ou décubitus latéral), avec un seul champ.
@@ -155,7 +156,7 @@ Niveau de preuve : **faible** — séries et pratique d\'experts, extrapolation 
     'Malaise vagal en position assise : patient surveillé, position allongée prête.',
   ],
   securite: [
-    'Bloc profond mais posé sur un plan osseux compressible : **faible risque hémorragique** (ASRA-ESRA 2018, procédures douleur) — pas d\'arrêt systématique des antiagrégants ; anticoagulants au cas par cas.',
+    'Bloc périphérique (classe **faible risque** dans la grille ASRA-ESRA 2018) mais **site profond, non compressible, artère à la cible** : le gérer comme un risque intermédiaire chez l\'anticoagulé — pas d\'arrêt systématique des antiagrégants, décision au cas par cas pour les anticoagulants, surveillance neurologique du membre après le geste.',
     '**Doppler couleur systématique** sur le trajet prévu avant la ponction ; l\'artère est à la cible et non à distance.',
     'Pointe d\'aiguille jamais perdue de vue ; en cas de perte de l\'image, corriger la sonde, jamais avancer « au jugé » à cette profondeur.',
     'Aspiration avant chaque bolus de 2–3 mL ; arrêt immédiat sur douleur fulgurante ou résistance anormale.',
@@ -200,12 +201,12 @@ Niveau de preuve : **faible** — séries et pratique d\'experts, extrapolation 
         S.skin({ thickness: 8, fatBelow: 20 });
         S.muscle({ path: 'M0 72 L640 72 L640 168 L0 178 Z', label: 'Deltoïde postérieur', at: [116, 122] });
         S.fascia({ points: [[0, 178], [640, 168]], width: 1.5 });
-        S.muscle({ path: 'M0 182 L246 178 L286 214 L246 250 L0 256 Z', label: 'Petit rond', at: [98, 216], opacity: 0.5 });
-        S.muscle({ path: 'M398 178 L640 172 L640 252 L392 256 L358 214 Z', label: 'Grand rond', at: [520, 216], opacity: 0.5 });
-        S.region({ path: 'M250 178 L394 178 L390 256 L250 252 L288 214 Z', fill: '#5c666f', opacity: 0.3, label: 'Espace quadrilatère', at: [322, 196], small: true });
-        S.bone({ path: 'M40 300 Q330 262 620 302', label: 'Col chirurgical de l\'humérus', at: [330, 336] });
-        S.artery({ x: 336, y: 262, r: 6, label: 'A. circonflexe post. de l\'humérus', lx: 468, ly: 300, small: true, lead: [342, 264] });
-        S.nerve({ x: 296, y: 250, r: 7, label: 'N. axillaire', lx: 178, ly: 300, small: true, lead: [290, 254] });
+        S.muscle({ path: 'M0 182 L250 180 L250 282 L0 286 Z', label: 'Petit rond', at: [108, 222], opacity: 0.5 });
+        S.muscle({ path: 'M394 178 L640 172 L640 276 L392 282 Z', label: 'Grand rond', at: [522, 222], opacity: 0.5 });
+        S.region({ path: 'M250 180 L394 178 L392 282 L250 284 Z', fill: '#5c666f', opacity: 0.28, label: 'Espace quadrilatère', at: [322, 200], small: true });
+        S.bone({ path: 'M-20 302 Q320 260 660 304', label: 'Col chirurgical de l\'humérus', at: [330, 336] });
+        S.nerve({ x: 300, y: 248, r: 7, label: 'N. axillaire', lx: 246, ly: 272, anchor: 'end', small: true, lead: [294, 250] });
+        S.artery({ x: 344, y: 260, r: 6, label: 'A. circonflexe post. de l\'humérus', lx: 398, ly: 272, anchor: 'start', small: true, lead: [350, 262] });
       },
     },
     {

@@ -225,7 +225,7 @@ Résultats : les séries prospectives rapportent des taux de succès **élevés,
           S.label({ x: 108, y: 100, text: 'Nodule du fléchisseur', cls: 'lbl-tendon', small: true, lead: [166, 146] });
           S.label({ x: 534, y: 174, text: 'Fléchisseurs (FCS + FCP)', cls: 'lbl-tendon', small: true });
           S.label({ x: 328, y: 296, text: 'Interligne MCP', cls: 'lbl-bone', small: true, lead: [328, 250] });
-          S.label({ x: 622, y: 250, text: 'Poulie A2 en aval :\nlimite à ne jamais franchir', cls: 'lbl-lig', anchor: 'end', small: true, lead: [560, 150] });
+          S.label({ x: 622, y: 212, text: 'Poulie A2 en aval :\nlimite à ne jamais franchir', cls: 'lbl-lig', anchor: 'end', small: true, lead: [560, 150] });
         },
       },
       {
@@ -261,7 +261,7 @@ Résultats : les séries prospectives rapportent des taux de succès **élevés,
           S.orient({ left: 'Proximal (paume)', right: 'Distal (doigt)' }).probeInfo({ plan: 'Longitudinal dans l\'axe du doigt', type: 'in-plane' });
           baseLong(S, false);
           S.label({ x: 116, y: 116, text: 'Poulie A1', cls: 'lbl-lig', small: true, lead: [252, 134] });
-          S.label({ x: 622, y: 250, text: 'A2 : limite distale absolue', cls: 'lbl-lig', anchor: 'end', small: true, lead: [560, 150] });
+          S.label({ x: 622, y: 212, text: 'A2 : limite distale absolue', cls: 'lbl-lig', anchor: 'end', small: true, lead: [560, 150] });
           S.label({ x: 148, y: 330, text: 'Tête métacarpienne', cls: 'lbl-bone', small: true });
           S.needle({ from: [636, 166], to: [268, 158], label: '18–21 G, biseau dans l\'axe', delay: 0.2, dur: 1.2 });
           S.arrow({ from: [300, 96], to: [420, 96], text: 'Va-et-vient longitudinal' });

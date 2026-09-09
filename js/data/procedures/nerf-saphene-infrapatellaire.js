@@ -214,11 +214,13 @@ Pour l'IPBSN, même orientation mais trajet très court : on reste dans le plan 
         S.muscle({ path: 'M180 84 Q320 74 460 86 Q472 130 400 148 Q320 158 240 148 Q176 134 180 84 Z', label: 'Sartorius', at: [352, 112], opacity: 0.62 });
         S.artery({ x: 322, y: 192, r: 22, label: 'A. fémorale', lx: 400, ly: 196, anchor: 'start', lead: [345, 193] });
         S.vein({ x: 354, y: 240, rx: 26, ry: 17 });
-        S.nerve({ x: 288, y: 166, r: 8, label: 'N. saphène', lx: 176, ly: 296, anchor: 'middle', lead: [283, 172] });
+        S.nerve({ x: 288, y: 166, r: 8, label: 'N. saphène', lx: 196, ly: 174, anchor: 'end', lead: [281, 168] });
         S.bone({ path: 'M100 302 Q320 332 560 302' });
         S.target({ x: 292, y: 168, r: 18 });
         S.needle({ from: [0, 96], to: [280, 166], label: '22 G 80 mm, in-plane' });
-        S.spread({ x: 306, y: 176, rx: 62, ry: 26, label: '5–10 mL' });
+        S.spread({ x: 288, y: 144, rx: 62, ry: 10 });
+        S.spread({ x: 262, y: 202, rx: 20, ry: 28 });
+        S.label({ x: 190, y: 244, text: '5–10 mL', cls: 'lbl-spread', small: true, lead: [246, 216] });
       },
     },
     {
@@ -228,15 +230,15 @@ Pour l'IPBSN, même orientation mais trajet très court : on reste dans le plan 
       build: S => {
         S.orient({ left: 'Antérieur (patella)', right: 'Postérieur' }).probeInfo({ plan: 'Transverse, condyle fémoral médial', type: 'in-plane' });
         S.skin({ thickness: 8, fatBelow: 22 });
-        S.muscle({ path: 'M0 88 L292 92 L286 142 L0 150 Z', label: 'Vaste médial', at: [128, 134], small: true, opacity: 0.45 });
+        S.muscle({ path: 'M0 88 L292 92 L286 142 L0 150 Z', label: 'Vaste médial', at: [152, 112], small: true, opacity: 0.45 });
         S.tendon({ path: 'M300 92 Q382 82 448 98 Q458 128 400 138 Q332 142 296 124 Z', label: 'T. du sartorius', at: [374, 112], small: true });
-        S.vein({ x: 476, y: 128, rx: 15, ry: 11, label: 'V. grande saphène', lx: 528, ly: 108, anchor: 'start', lead: [489, 124] });
-        S.nerve({ x: 430, y: 156, r: 7, label: 'N. saphène (tronc)', lx: 476, ly: 192, anchor: 'start', lead: [437, 161] });
+        S.vein({ x: 476, y: 128, rx: 15, ry: 11, label: 'V. grande saphène', lx: 624, ly: 104, anchor: 'end', lead: [489, 122] });
+        S.nerve({ x: 430, y: 156, r: 7, label: 'N. saphène (tronc)', lx: 470, ly: 192, anchor: 'start', lead: [437, 161] });
         S.nerve({ x: 288, y: 154, r: 6, label: 'Branche infrapatellaire (IPBSN)', lx: 248, ly: 214, lead: [286, 162] });
-        S.bone({ path: 'M60 268 Q300 242 520 270 Q582 284 640 302', label: 'Condyle fémoral médial', at: [216, 320] });
+        S.bone({ path: 'M60 268 Q300 242 520 270 Q582 284 640 302', label: 'Condyle fémoral médial', at: [206, 326] });
         S.target({ x: 290, y: 154, r: 15 });
-        S.needle({ from: [0, 118], to: [280, 152], label: '25 G, tangentielle' });
-        S.spread({ x: 300, y: 158, rx: 46, ry: 16, label: '2–3 mL' });
+        S.needle({ from: [0, 118], to: [272, 152], label: '25 G, tangentielle' });
+        S.spread({ x: 224, y: 172, rx: 46, ry: 13, label: '2–3 mL' });
       },
     },
   ],

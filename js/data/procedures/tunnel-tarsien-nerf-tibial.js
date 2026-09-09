@@ -228,7 +228,7 @@ Ce qui reste possible : une cryoneurolyse ou une alcoolisation ciblée sur une *
         S.vein({ x: 266, y: 166, rx: 11, ry: 8 });
         S.vein({ x: 326, y: 164, rx: 11, ry: 8, label: 'Veines', lx: 202, ly: 178, anchor: 'end', small: true, lead: [256, 168] });
         S.nerve({ x: 312, y: 192, rx: 17, ry: 12, label: 'N. tibial', lx: 194, ly: 216, anchor: 'end', lead: [296, 194] });
-        S.tendon({ x: 434, y: 190, rx: 28, ry: 18, label: 'FHL', at: [434, 190], small: true });
+        S.tendon({ x: 440, y: 198, rx: 27, ry: 17, label: 'FHL', at: [440, 198], small: true });
         S.bone({ path: 'M26 232 Q170 258 320 274 Q440 286 570 280', label: 'Malléole médiale — talus', at: [280, 322] });
       },
     },
@@ -246,13 +246,13 @@ Ce qui reste possible : une cryoneurolyse ou une alcoolisation ciblée sur une *
         S.vein({ x: 266, y: 166, rx: 11, ry: 8 });
         S.vein({ x: 326, y: 164, rx: 11, ry: 8 });
         S.nerve({ x: 312, y: 192, rx: 17, ry: 12, label: 'N. tibial', lx: 190, ly: 214, anchor: 'end', lead: [296, 194] });
-        S.tendon({ x: 434, y: 190, rx: 28, ry: 18, label: 'FHL', at: [434, 190], small: true });
+        S.tendon({ x: 440, y: 198, rx: 27, ry: 17, label: 'FHL', at: [440, 198], small: true });
         S.bone({ path: 'M26 232 Q170 258 320 274 Q440 286 570 280', label: 'Talus', at: [232, 318] });
         S.target({ x: 312, y: 192, r: 26 });
-        S.needle({ from: [640, 140], to: [348, 200], label: '25 G, postéro-antérieure' });
-        S.spread({ x: 312, y: 208, rx: 42, ry: 10 });
-        S.spread({ x: 312, y: 176, rx: 40, ry: 9 });
-        S.label({ x: 428, y: 252, text: 'Halo péri-nerveux — 2–4 mL AL ou 5–10 mL D5W', cls: 'lbl-spread', small: true, lead: [340, 220] });
+        S.needle({ from: [640, 124], to: [350, 198], label: '25 G, postéro-antérieure' });
+        S.spread({ x: 310, y: 210, rx: 36, ry: 8 });
+        S.spread({ x: 310, y: 175, rx: 34, ry: 8 });
+        S.label({ x: 290, y: 254, text: 'Halo péri-nerveux — 2–4 mL', cls: 'lbl-spread', small: true, lead: [322, 220] });
       },
     },
   ],

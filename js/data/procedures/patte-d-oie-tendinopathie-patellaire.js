@@ -219,9 +219,9 @@ Le **tendon patellaire** s'étend de la pointe de la patella à la tubérosité 
         S.fluid({ path: 'M250 148 Q350 140 442 152 L444 170 Q350 182 248 170 Z' });
         S.ligament({ path: 'M118 176 Q340 168 562 180 L564 204 Q340 194 116 202 Z', label: 'LCM', at: [180, 192] });
         S.bone({ path: 'M60 240 Q340 258 600 236', label: 'Tibia', at: [180, 300] });
-        S.target({ x: 300, y: 160, r: 16 });
+        S.target({ x: 292, y: 160, r: 15 });
         S.needle({ from: [0, 106], to: [286, 158], label: '25 G, tangentielle' });
-        S.spread({ x: 352, y: 160, rx: 92, ry: 15, label: '2–3 mL' });
+        S.spread({ x: 382, y: 160, rx: 60, ry: 12, label: '2–3 mL' });
       },
     },
     {
@@ -235,12 +235,13 @@ Le **tendon patellaire** s'étend de la pointe de la patella à la tubérosité 
         S.tendon({ path: 'M120 92 L600 108 L604 154 L118 142 Z', label: 'Tendon patellaire', at: [432, 128] });
         S.region({ path: 'M126 114 Q180 118 234 124 L236 148 Q180 144 124 140 Z', fill: '#4aa3ff', opacity: 0.34, label: 'Zone hypoéchogène profonde', lx: 262, ly: 86, lead: [196, 118] });
         S.artery({ x: 196, y: 150, r: 4 });
-        S.artery({ x: 222, y: 154, r: 4, label: 'Néovaisseaux', lx: 300, ly: 186, anchor: 'start', small: true, lead: [232, 158] });
+        S.artery({ x: 222, y: 154, r: 4, label: 'Néovaisseaux', lx: 466, ly: 186, anchor: 'start', small: true, lead: [232, 158] });
         S.fat({ path: 'M124 158 Q260 166 378 170 L376 206 Q250 204 122 196 Z', label: 'Graisse de Hoffa', at: [212, 186], small: true });
         S.bone({ path: 'M130 224 Q340 232 560 238 Q604 240 640 250', label: 'Tibia', at: [420, 292] });
         S.target({ x: 196, y: 134, r: 17 });
         S.needle({ from: [640, 172], to: [202, 136], label: '21 G, dans l\'axe des fibres' });
-        S.spread({ x: 190, y: 132, rx: 38, ry: 13, label: '2–3 mL' });
+        S.spread({ x: 180, y: 132, rx: 42, ry: 9 });
+        S.label({ x: 168, y: 252, text: '2–3 mL PRP ou dextrose', cls: 'lbl-spread', small: true, lead: [180, 144] });
       },
     },
   ],
