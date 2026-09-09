@@ -198,10 +198,10 @@ Objectif : convertir une tendinopathie dégénérative chronique en réponse cic
         S.tendon({ path: 'M100 268 Q195 232 292 258 L296 278 Q195 254 104 288 Z', label: 'Tendon conjoint', lx: 118, ly: 212, anchor: 'start', small: true, lead: [186, 248] });
         S.tendon({ x: 338, y: 280, rx: 24, ry: 11, label: 'T. semi-membraneux', lx: 318, ly: 336, anchor: 'start', small: true, lead: [340, 290] });
         S.bone({ path: 'M40 322 Q170 252 300 278 L362 300', label: 'Tubérosité ischiatique', at: [152, 372] });
-        S.muscle({ path: 'M366 302 L640 278 L640 400 L374 400 Z', label: 'Carré fémoral / gd adducteur', at: [500, 356], opacity: 0.45, small: true });
+        S.muscle({ path: 'M366 294 L640 266 L640 400 L374 400 Z', label: 'Carré fémoral / gd adducteur', at: [500, 356], opacity: 0.45, small: true });
         S.nerve({ x: 472, y: 266, rx: 28, ry: 14, label: 'N. sciatique', lx: 472, ly: 218 });
         S.bone({ path: 'M578 258 Q610 246 640 252' });
-        S.label({ x: 600, y: 300, text: 'Gd trochanter', cls: 'lbl-bone', small: true });
+        S.label({ x: 580, y: 300, text: 'Gd trochanter', cls: 'lbl-bone', small: true });
         S.label({ x: 408, y: 240, text: '≈ 1–2 cm', cls: 'lbl-target', small: true });
       },
     },
@@ -216,7 +216,7 @@ Objectif : convertir une tendinopathie dégénérative chronique en réponse cic
         S.tendon({ path: 'M100 268 Q195 232 292 258 L296 278 Q195 254 104 288 Z', label: 'Tendon conjoint', lx: 96, ly: 300, anchor: 'start', small: true, lead: [170, 274] });
         S.tendon({ x: 338, y: 280, rx: 24, ry: 11 });
         S.bone({ path: 'M40 322 Q170 252 300 278 L362 300', label: 'Tubérosité ischiatique', at: [152, 372] });
-        S.muscle({ path: 'M366 302 L640 278 L640 400 L374 400 Z', opacity: 0.45 });
+        S.muscle({ path: 'M366 294 L640 266 L640 400 L374 400 Z', opacity: 0.45 });
         S.nerve({ x: 472, y: 266, rx: 28, ry: 14, label: 'N. sciatique', lx: 546, ly: 300, anchor: 'start', small: true, lead: [498, 272] });
         S.target({ x: 238, y: 240, r: 13 });
         S.needle({ from: [6, 118], to: [234, 238], label: '21–22 G 90 mm' });
