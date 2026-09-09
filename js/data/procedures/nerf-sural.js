@@ -214,7 +214,7 @@ Ponction **in-plane**, dans le grand axe de la sonde, de latéral en médial ou 
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Transverse, face postérieure du mollet', type: 'linéaire 12–18 MHz' });
         S.skin({ thickness: 8, fatBelow: 26 });
-        S.fascia({ points: [[0, 116], [640, 116]], width: 1.8 });
+        S.fascia({ points: [[0, 80], [640, 80]], width: 1.8 });
         S.muscle({ path: 'M0 124 L296 132 L292 262 L0 256 Z', label: 'Gastrocnémien médial', at: [142, 200], opacity: 0.5 });
         S.muscle({ path: 'M332 132 L640 124 L640 256 L336 262 Z', label: 'Gastrocnémien latéral', at: [488, 200], opacity: 0.5 });
         S.vein({ x: 306, y: 92, rx: 14, ry: 11 });
@@ -223,7 +223,7 @@ Ponction **in-plane**, dans le grand axe de la sonde, de latéral en médial ou 
         S.muscle({ path: 'M0 278 L640 278 L640 372 L0 372 Z', label: 'Soléaire', at: [320, 328], opacity: 0.45 });
         S.label({ x: 150, y: 156, text: 'Petite veine saphène', cls: 'lbl-vein', small: true, lead: [294, 96] });
         S.label({ x: 496, y: 156, text: 'N. cutané sural médial', cls: 'lbl-nerve', small: true, lead: [350, 102] });
-        S.label({ x: 566, y: 108, text: 'Fascia crural', cls: 'lbl-fascia', small: true, anchor: 'end' });
+        S.label({ x: 140, y: 106, text: 'Fascia crural', cls: 'lbl-fascia', small: true });
       },
     },
     {

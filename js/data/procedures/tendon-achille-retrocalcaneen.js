@@ -266,7 +266,7 @@ Limite méthodologique importante à connaître : dans cet essai, le bras gros v
         S.artery({ x: 300, y: 130, r: 4 });
         S.label({ x: 120, y: 100, text: 'Tendon épaissi et hypoéchogène', cls: 'lbl-tendon', small: true });
         S.label({ x: 236, y: 194, text: 'Néovaisseaux (Doppler)', cls: 'lbl-artery', small: true, lead: [250, 134] });
-        S.label({ x: 540, y: 196, text: 'Paratendon', cls: 'lbl-fascia', small: true, lead: [540, 143] });
+        S.label({ x: 430, y: 196, text: 'Paratendon', cls: 'lbl-fascia', small: true, lead: [430, 144] });
         S.label({ x: 540, y: 238, text: 'Graisse de Kager', cls: 'lbl-fat', small: true });
         S.target({ x: 340, y: 140, r: 14 });
         S.needle({ from: [638, 182], to: [346, 142], label: '21 G, distal → proximal' });

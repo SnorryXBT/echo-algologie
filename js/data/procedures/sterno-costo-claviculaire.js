@@ -212,15 +212,15 @@ Ponction **in-plane, de latéral vers médial**, l\'aiguille arrivant presque pa
       build: S => {
         S.orient({ left: 'Latéral (côte osseuse)', right: 'Médial (sternum)' }).probeInfo({ plan: 'Longitudinale, dans l\'axe de la côte', type: 'in-plane' });
         S.skin({ thickness: 6, fatBelow: 16 });
-        S.muscle({ path: 'M0 62 L640 62 L640 94 L0 98 Z', label: 'Grand pectoral', at: [90, 84], opacity: 0.45, small: true });
-        S.region({ path: 'M206 96 Q326 70 446 96 L448 120 L204 120 Z', fill: '#5d6a76', opacity: 0.6, label: 'Tuméfaction péri-chondrale', at: [488, 84], small: true, lead: [430, 94] });
+        S.muscle({ path: 'M0 62 L640 62 L640 94 L0 98 Z', label: 'Grand pectoral', at: [566, 84], opacity: 0.45, small: true });
+        S.region({ path: 'M206 96 Q326 70 446 96 L448 120 L204 120 Z', fill: '#5d6a76', opacity: 0.6, label: 'Tuméfaction\npéri-chondrale', at: [408, 74], small: true, lead: [398, 94] });
         S.cartilage({ path: 'M182 118 L470 116 L472 164 L184 166 Z', label: 'Cartilage costal', at: [326, 146] });
         S.bone({ path: 'M0 124 L180 120', label: 'Côte osseuse', at: [84, 156] });
         S.bone({ path: 'M472 118 L640 122', label: 'Sternum', at: [568, 156] });
         S.pleura({ points: [[186, 268], [326, 278], [464, 268]], label: 'Plèvre — visible à travers le cartilage', at: [326, 302], small: true });
         S.lung({ path: 'M206 288 L446 288 L452 420 L200 420 Z', label: 'Poumon', at: [326, 350], small: true });
         S.target({ x: 304, y: 110, r: 13 });
-        S.needle({ from: [8, 78], to: [298, 110], label: '25 G — tangentielle, jamais perpendiculaire' });
+        S.needle({ from: [8, 78], to: [298, 110], label: '25 G, tangentielle' });
         S.spread({ x: 318, y: 110, rx: 74, ry: 6, label: '0,5–1 mL' });
       },
     },

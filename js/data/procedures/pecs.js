@@ -224,10 +224,10 @@ Les blocs de fascia ont une **absorption systémique élevée** : diluer plutôt
         S.artery({ x: 386, y: 141, r: 5.5, label: 'A. thoraco-acromiale', lx: 470, ly: 120, small: true, lead: [392, 136] });
         S.target({ x: 440, y: 204, r: 15 });
         S.target({ x: 296, y: 146, r: 13 });
-        S.needle({ from: [6, 100], to: [432, 205], label: '① 22 G 80 mm — PECS II (profond)' });
-        S.spread({ x: 396, y: 207, rx: 112, ry: 9, label: '20 mL' });
-        S.needle({ from: [6, 74], to: [292, 148], label: '② retrait dans le plan inter-pectoral — PECS I' });
-        S.spread({ x: 296, y: 146, rx: 104, ry: 8, label: '10 mL' });
+        S.needle({ from: [6, 100], to: [432, 205], delay: 0.2, dur: 1.2, label: '① 22 G 80 mm — PECS II (profond)' });
+        S.spread({ x: 396, y: 207, rx: 112, ry: 9, delay: 1.4, dur: 1.0, label: '20 mL' });
+        S.needle({ from: [6, 74], to: [292, 148], delay: 2.4, dur: 1.0, label: '② retrait → plan inter-pectoral (PECS I)' });
+        S.spread({ x: 274, y: 146, rx: 98, ry: 8, delay: 3.4, dur: 0.9, label: '10 mL' });
       },
     },
   ],
