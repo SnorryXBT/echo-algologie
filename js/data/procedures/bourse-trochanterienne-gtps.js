@@ -192,9 +192,9 @@ Prévenir d’une **recrudescence douloureuse de 5 à 10 jours**, interdire le c
       build: S => {
         S.orient({ left: 'Antérieur', right: 'Postérieur' }).probeInfo({ plan: 'Transverse, sommet du grand trochanter', type: 'linéaire 6–13 MHz' });
         S.skin({ thickness: 8, fatBelow: 34 });
-        S.muscle({ path: 'M306 96 L640 90 L640 214 Q470 200 384 178 L310 152 Z', label: 'Grand fessier', at: [512, 146], opacity: 0.5 });
+        S.muscle({ path: 'M306 96 L640 90 L640 214 Q470 200 384 178 L310 152 Z', label: 'Grand fessier', at: [548, 120], opacity: 0.5 });
         S.ligament({ path: 'M0 110 L336 124 L336 138 L0 124 Z', label: 'Bandelette ilio-tibiale', at: [136, 100] });
-        S.fluid({ path: 'M252 158 Q352 154 452 170 L450 182 Q352 166 252 172 Z', label: 'Bourse sous-glutéale', lx: 468, ly: 158, anchor: 'start', small: true, lead: [452, 168] });
+        S.fluid({ path: 'M252 158 Q352 154 452 170 L450 182 Q352 166 252 172 Z', label: 'Bourse sous-glutéale', lx: 252, ly: 142, anchor: 'start', small: true, lead: [300, 162] });
         S.tendon({ path: 'M58 194 L232 178 L238 200 L64 216 Z', label: 'T. petit fessier', lx: 60, ly: 168, anchor: 'start', small: true, lead: [120, 186] });
         S.tendon({ path: 'M248 176 L452 188 L448 210 L244 198 Z', label: 'T. moyen fessier', lx: 300, ly: 238, anchor: 'start', small: true, lead: [344, 200] });
         S.bone({ path: 'M0 268 L70 254 Q140 226 216 212 L300 210 Q420 220 530 246 L640 270' });

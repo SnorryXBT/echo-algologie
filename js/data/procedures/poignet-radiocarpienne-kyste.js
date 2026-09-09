@@ -5,7 +5,7 @@
   function baseDorsale(S, labels) {
     S.skin({ thickness: 7, fatBelow: 14 });
     S.ligament({ path: 'M120 64 L400 60 L400 74 L120 78 Z' });
-    S.tendon({ path: 'M0 84 L640 78 L640 120 L0 126 Z' });
+    S.tendon({ path: 'M0 84 L498 80 L520 96 L520 110 L498 122 L0 126 Z' });
     S.bone({ path: 'M0 254 L146 252 Q176 232 202 252 L242 248 Q296 246 314 258 L322 300' });
     S.fascia({ points: [[298, 246], [348, 236], [400, 242], [452, 246]], width: 2 });
     S.fluid({ path: 'M316 252 Q344 244 366 252 L360 292 L326 298 Z' });
@@ -13,6 +13,7 @@
     S.bone({ path: 'M578 292 Q608 258 640 254' });
     if (labels) {
       S.label({ x: 120, y: 104, text: 'Tendons extenseurs (4e compartiment)', cls: 'lbl-tendon', small: true });
+      S.label({ x: 620, y: 104, text: 'Intervalle 3-4 :\nplan sans tendon', cls: 'lbl-tendon', anchor: 'end', small: true, lead: [524, 104] });
       S.label({ x: 552, y: 70, text: 'Rétinaculum des extenseurs', cls: 'lbl-lig', anchor: 'end', small: true, lead: [398, 68] });
       S.label({ x: 176, y: 206, text: 'Tubercule de Lister', cls: 'lbl-bone', small: true, lead: [176, 238] });
       S.label({ x: 440, y: 200, text: 'Capsule dorsale', cls: 'lbl-fascia', small: true, lead: [398, 240] });
@@ -234,9 +235,11 @@ Convention d\'image en sagittal : **proximal (radius) à gauche, distal (carpe) 
           baseDorsale(S, false);
           S.label({ x: 130, y: 336, text: 'Radius', cls: 'lbl-bone', small: true });
           S.label({ x: 456, y: 336, text: 'Lunatum', cls: 'lbl-bone', small: true });
-          S.target({ x: 340, y: 272, r: 20 });
-          S.needle({ from: [636, 112], to: [346, 268], label: '25 G 25 mm, 30–40°' });
-          S.spread({ x: 338, y: 272, rx: 30, ry: 24, label: '1–2 mL' });
+          S.label({ x: 616, y: 214, text: '25 G 25 mm, 30–40°', cls: 'lbl-needle', anchor: 'end', small: true });
+          S.label({ x: 620, y: 104, text: 'Intervalle 3-4 :\nl\'aiguille passe\nentre les tendons', cls: 'lbl-tendon', anchor: 'end', small: true, lead: [524, 104] });
+          S.target({ x: 342, y: 272, r: 30 });
+          S.needle({ from: [636, 80], to: [346, 268] });
+          S.spread({ x: 344, y: 272, rx: 24, ry: 16, label: '1–2 mL' });
         },
       },
       {
@@ -257,7 +260,7 @@ Convention d\'image en sagittal : **proximal (radius) à gauche, distal (carpe) 
           S.fluid({ path: 'M286 206 L316 206 L308 254 L294 254 Z', label: 'Pédicule', lx: 210, ly: 234, anchor: 'end', small: true, lead: [286, 230] });
           S.label({ x: 116, y: 84, text: 'Tendons extenseurs refoulés', cls: 'lbl-tendon', small: true });
           S.target({ x: 300, y: 158, r: 30 });
-          S.needle({ from: [636, 92], to: [368, 148], label: '18 G — aspiration puis fenestration' });
+          S.needle({ from: [636, 92], to: [326, 152], label: '18 G — aspiration puis fenestration' });
         },
       },
     ],

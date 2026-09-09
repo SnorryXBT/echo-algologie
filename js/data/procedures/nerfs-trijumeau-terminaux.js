@@ -204,20 +204,20 @@ Foramens de la face : ponction **in-plane, de latéral en médial**, à angle tr
       opts: { depth: 2 },
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Transverse sur le sourcil', type: 'hockey stick 12–18 MHz' });
-        S.skin({ thickness: 8, fatBelow: 22 });
-        S.muscle({ path: 'M0 72 L640 72 L640 128 L0 132 Z', label: 'M. frontal / orbiculaire', at: [140, 104], opacity: 0.45 });
-        S.fascia({ points: [[0, 132], [640, 128]], width: 1.3, opacity: 0.55 });
-        S.nerve({ x: 168, y: 172, r: 8 });
-        S.artery({ x: 148, y: 176, r: 5 });
-        S.label({ x: 152, y: 122, text: 'Paquet supratrochléaire\n(1–1,5 cm en dedans)', anchor: 'middle', cls: 'lbl-nerve', small: true, lead: [164, 164] });
-        S.bone({ path: 'M0 196 L120 194 L200 192 L336 190 L344 232 Q360 250 378 232 L386 190 L500 192 L640 196', label: 'Corticale du frontal (rebord orbitaire)', at: [180, 296], ldy: 0, small: true });
-        S.nerve({ x: 366, y: 208, r: 9 });
-        S.label({ x: 452, y: 232, text: 'N. supra-orbitaire', anchor: 'start', cls: 'lbl-nerve', small: true, lead: [376, 210] });
-        S.artery({ x: 344, y: 210, r: 6 });
-        S.label({ x: 262, y: 232, text: 'A. supra-orbitaire\n(Doppler)', anchor: 'end', cls: 'lbl-artery', small: true, lead: [337, 212] });
-        S.label({ x: 362, y: 288, text: 'Échancrure = interruption corticale', anchor: 'middle', cls: 'lbl-bone', small: true });
-        S.target({ x: 388, y: 186, r: 15 });
-        S.label({ x: 470, y: 160, text: 'Cible : au contact de l\'os,\nà côté de l\'ostium', anchor: 'start', cls: 'lbl-target', small: true, lead: [400, 180] });
+        S.skin({ thickness: 8, fatBelow: 26 });
+        S.muscle({ path: 'M0 82 L640 82 L640 146 L0 152 Z', label: 'M. frontal / orbiculaire', at: [452, 114], opacity: 0.45 });
+        S.fascia({ points: [[0, 152], [640, 146]], width: 1.3, opacity: 0.55 });
+        S.nerve({ x: 168, y: 216, r: 8 });
+        S.artery({ x: 146, y: 220, r: 5 });
+        S.label({ x: 148, y: 182, text: 'Paquet supratrochléaire\n(1–1,5 cm en dedans)', anchor: 'middle', cls: 'lbl-nerve', small: true, lead: [164, 208] });
+        S.bone({ path: 'M0 254 L120 252 L200 250 L336 248 L344 292 Q360 312 378 292 L386 248 L500 250 L640 254', label: 'Corticale du frontal (rebord orbitaire)', at: [160, 348], ldy: 0, small: true });
+        S.nerve({ x: 366, y: 268, r: 9 });
+        S.label({ x: 452, y: 290, text: 'N. supra-orbitaire', anchor: 'start', cls: 'lbl-nerve', small: true, lead: [376, 270] });
+        S.artery({ x: 344, y: 270, r: 6 });
+        S.label({ x: 264, y: 292, text: 'A. supra-orbitaire\n(Doppler)', anchor: 'end', cls: 'lbl-artery', small: true, lead: [337, 272] });
+        S.label({ x: 410, y: 376, text: 'Échancrure = interruption corticale', anchor: 'middle', cls: 'lbl-bone', small: true });
+        S.target({ x: 390, y: 244, r: 15 });
+        S.label({ x: 452, y: 214, text: 'Cible : au contact de l\'os,\nà côté de l\'ostium', anchor: 'start', cls: 'lbl-target', small: true, lead: [402, 238] });
       },
     },
     {
@@ -234,7 +234,7 @@ Foramens de la face : ponction **in-plane, de latéral en médial**, à angle tr
         S.artery({ x: 296, y: 228, r: 5 });
         S.label({ x: 232, y: 268, text: 'N. + A. infra-orbitaires\ndans le foramen', anchor: 'end', cls: 'lbl-nerve', small: true, lead: [300, 236] });
         S.label({ x: 396, y: 300, text: 'Canal dirigé en haut, en arrière\net en dehors → ne pas s\'y engager', anchor: 'middle', cls: 'lbl-bone', small: true });
-        S.label({ x: 60, y: 200, text: 'Rebord orbitaire inférieur : 1 cm en crânial (hors coupe)', anchor: 'start', cls: 'lbl-bone', small: true });
+        S.label({ x: 20, y: 384, text: 'Rebord orbitaire inférieur : 1 cm en crânial, hors coupe', anchor: 'start', cls: 'lbl-bone', small: true });
         S.target({ x: 350, y: 200, r: 15 });
         S.needle({ from: [640, 108], to: [356, 200], label: '27–30 G, angle 10–20°' });
         S.spread({ x: 322, y: 196, rx: 46, ry: 15, label: '1–2 mL' });
@@ -251,12 +251,12 @@ Foramens de la face : ponction **in-plane, de latéral en médial**, à angle tr
         S.bone({ path: 'M56 178 L196 170', label: 'Processus coronoïde', at: [116, 214], ldy: 0, small: true });
         S.bone({ path: 'M452 168 L618 180', label: 'Col du condyle', at: [538, 216], ldy: 0, small: true });
         S.label({ x: 324, y: 152, text: 'Échancrure sigmoïde (fenêtre)', anchor: 'middle', cls: 'lbl-bone', small: true });
-        S.muscle({ path: 'M204 186 L444 184 L440 268 L208 270 Z', label: 'M. ptérygoïdien latéral', at: [300, 208], opacity: 0.5 });
-        S.artery({ x: 330, y: 252, r: 9 });
-        S.label({ x: 352, y: 240, text: 'A. maxillaire', anchor: 'start', cls: 'lbl-artery', small: true, lead: [340, 250] });
+        S.muscle({ path: 'M204 186 L444 184 L440 268 L208 270 Z', label: 'M. ptérygoïdien latéral', at: [298, 198], opacity: 0.5 });
+        S.artery({ x: 288, y: 232, r: 9 });
+        S.label({ x: 266, y: 226, text: 'A. maxillaire', anchor: 'end', cls: 'lbl-artery', small: true, lead: [279, 231] });
         S.bone({ path: 'M240 346 L338 300', label: '' });
         S.label({ x: 352, y: 300, text: 'Lame ptérygoïdienne latérale', anchor: 'start', cls: 'lbl-bone', small: true, lead: [334, 304] });
-        S.region({ path: 'M200 292 L246 342 L214 384 L192 330 Z', fill: '#7d868e', opacity: 0.3 });
+        S.region({ path: 'M198 302 Q238 296 252 330 Q250 368 216 374 Q188 358 188 330 Q188 308 198 302 Z', fill: '#7d868e', opacity: 0.3 });
         S.label({ x: 186, y: 296, text: 'Fosse ptérygo-palatine (V2)', anchor: 'end', cls: 'lbl-region', small: true, lead: [212, 322] });
         S.nerve({ x: 382, y: 334, r: 11 });
         S.label({ x: 402, y: 360, text: 'N. mandibulaire (V3)', anchor: 'start', cls: 'lbl-nerve', small: true, lead: [390, 340] });
