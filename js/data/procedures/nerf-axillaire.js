@@ -179,17 +179,19 @@ Niveau de preuve : **faible** — séries et pratique d\'experts, extrapolation 
 - **Syndrome de l\'espace quadrilatère** : entité décrite anciennement, littérature rare et essentiellement chirurgicale ou radiologique. Le bloc y a une valeur surtout diagnostique. Preuve **très faible**.`,
 
   references: [
-    { auteurs: 'Rothe C, Asghar S, Andersen HL, Christensen JK, Lange KHW', titre: 'Ultrasound-guided block of the axillary nerve: a volunteer study of a new method', revue: 'Acta Anaesthesiol Scand', annee: '2011', type: 'technique / volontaires', verif: false },
-    { auteurs: 'Price DJ', titre: 'The shoulder block: a new alternative to interscalene brachial plexus blockade for the control of postoperative shoulder pain', revue: 'Anaesth Intensive Care', annee: '2007', type: 'description technique', verif: false },
+    { auteurs: 'Rothe C, Asghar S, Andersen HL, Christensen JK, Lange KHW', titre: 'Ultrasound-guided block of the axillary nerve: a volunteer study of a new method', revue: 'Acta Anaesthesiol Scand', annee: '2011', doi: '10.1111/j.1399-6576.2011.02420.x', type: 'technique / volontaires', verif: true },
+    { auteurs: 'Price DJ', titre: 'The shoulder block: a new alternative to interscalene brachial plexus blockade for the control of postoperative shoulder pain', revue: 'Anaesth Intensive Care', annee: '2007;35(4):575-81', doi: '10.1177/0310057x0703500418', type: 'description technique', verif: true },
     { auteurs: 'Eckmann MS, Bickelhaupt B, Fehl J, et al.', titre: 'Cadaveric study of the articular branches of the shoulder joint', revue: 'Reg Anesth Pain Med', annee: '2017;42(5):564-70', pmid: '28786899', type: 'anatomie', verif: true, note: 'Référence déjà vérifiée dans le projet (fiche nerf suprascapulaire).' },
     { auteurs: 'Laumonerie P, Dalmas Y, Tibbo ME, et al.', titre: 'Sensory innervation of the human shoulder joint: the three bridges to break', revue: 'J Shoulder Elbow Surg', annee: '2020;29(12):e499-e507', doi: '10.1016/j.jse.2020.07.017', type: 'anatomie', verif: true, note: 'Référence déjà vérifiée dans le projet (fiche nerf suprascapulaire) ; équipe toulousaine.' },
-    { auteurs: 'Tran J, Peng PWH, Agur AMR', titre: 'Anatomical study of the innervation of glenohumeral and acromioclavicular joint capsules: implications for image-guided intervention', revue: 'Reg Anesth Pain Med', annee: '2019', type: 'anatomie', verif: false },
-    { auteurs: 'Uz A, Apaydin N, Bozkurt M, Elhan A', titre: 'The anatomic branch pattern of the axillary nerve', revue: 'J Shoulder Elbow Surg', annee: '2007', type: 'anatomie', verif: false },
-    { auteurs: 'Chan CW, Peng PW', titre: 'Suprascapular nerve block: a narrative review', revue: 'Reg Anesth Pain Med', annee: '2011', type: 'revue', verif: false, note: 'Cadre général des blocs de l\'épaule en douleur chronique.' },
-    { auteurs: 'Cahill BR, Palmer RE', titre: 'Quadrilateral space syndrome', revue: 'J Hand Surg Am', annee: '1983', type: 'description clinique', verif: false },
+    { auteurs: 'Tran J, Peng PWH, Agur AMR', titre: 'Anatomical study of the innervation of glenohumeral and acromioclavicular joint capsules: implications for image-guided intervention', revue: 'Reg Anesth Pain Med', annee: '2019;44:452-8', type: 'anatomie', verif: true },
+    { auteurs: 'Uz A, Apaydin N, Bozkurt M, Elhan A', titre: 'The anatomic branch pattern of the axillary nerve', revue: 'J Shoulder Elbow Surg', annee: '2007;16:240-4', url: 'https://www.jshoulderelbow.org/article/S1058-2746(06)00166-2/abstract', type: 'anatomie', verif: true },
+    { auteurs: 'Chan CW, Peng PW', titre: 'Suprascapular nerve block: a narrative review', revue: 'Reg Anesth Pain Med', annee: '2011;36(4):358-73', url: 'https://www.semanticscholar.org/paper/Suprascapular-Nerve-Block:-A-Narrative-Review-Chan-Peng/ba95f9fde65711edc14a3085ba2fe50f15b7530c', type: 'revue', verif: true, note: 'Cadre général des blocs de l\'épaule en douleur chronique.' },
+    { auteurs: 'Cahill BR, Palmer RE', titre: 'Quadrilateral space syndrome', revue: 'J Hand Surg Am', annee: '1983;8:65-9', doi: '10.1016/S0363-5023(83)80056-2', type: 'description clinique', verif: true },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true, note: 'Référence déjà vérifiée dans le projet (fiche nerf suprascapulaire).' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Axillary Nerve Block - Ultrasound Scanning Technique', source: 'YouTube', url: 'https://www.youtube.com/watch?v=u0RbrMCugEI', note: 'Titre vu en résultat de recherche : vérifier au visionnage qu\'il s\'agit bien du bloc du nerf axillaire (espace quadrilatère) et non du bloc axillaire du plexus brachial.' },
+  ],
 
   scenes: [
     {

@@ -189,18 +189,21 @@ Aucune de ces trois stratégies n\'a démontré sa supériorité de façon conva
 - **Trou de la littérature** : il n\'existe pas de comparaison directe convaincante entre hydrodilatation, bloc suprascapulaire et mobilisation sous anesthésie générale dans la capsulite rebelle. La séquence proposée dans cette fiche est un raisonnement, pas une recommandation.`,
 
   references: [
-    { auteurs: 'Buchbinder R, Green S, Youd JM', titre: 'Corticosteroid injections for shoulder pain', revue: 'Cochrane Database Syst Rev', annee: '2003', type: 'revue systématique', verif: false },
-    { auteurs: 'Buchbinder R, Green S, Youd JM, Johnston RV, Cumpston M', titre: 'Arthrographic distension for adhesive capsulitis (frozen shoulder)', revue: 'Cochrane Database Syst Rev', annee: '2008', type: 'revue systématique', verif: false },
-    { auteurs: 'Catapano M, Mittal N, Adamich J, et al.', titre: 'Hydrodilatation with corticosteroid for the treatment of adhesive capsulitis: a systematic review', revue: 'PM R', annee: '2018', type: 'revue systématique', verif: false },
-    { auteurs: 'Saltychev M, Laimi K, Virolainen P, Fredericson M', titre: 'Effectiveness of hydrodilatation in adhesive capsulitis of shoulder: a systematic review and meta-analysis', revue: 'Scand J Surg', annee: '2018', type: 'méta-analyse', verif: false },
-    { auteurs: 'Rutten MJ, Collins JM, Maresch BJ, et al.', titre: 'Glenohumeral joint injection: a comparative study of ultrasound and fluoroscopically guided techniques before MR arthrography', revue: 'Eur Radiol', annee: '2009', type: 'comparatif technique', verif: false },
-    { auteurs: 'Patel DN, Nayyar S, Hasan S, Khatib O, Sidash S, Jazrawi LM', titre: 'Comparison of ultrasound-guided versus blind glenohumeral injections: a cadaveric study', revue: 'J Shoulder Elbow Surg', annee: '2012', type: 'cadavre / précision', verif: false },
-    { auteurs: 'Chu CR, Izzo NJ, Papas NE, Fu FH', titre: 'In vitro exposure to 0.5% bupivacaine is cytotoxic to bovine articular chondrocytes', revue: 'Arthroscopy', annee: '2006', type: 'expérimental', verif: false },
-    { auteurs: 'Piper SL, Kim HT', titre: 'Comparison of ropivacaine and bupivacaine toxicity in human articular chondrocytes', revue: 'J Bone Joint Surg Am', annee: '2008', type: 'expérimental', verif: false },
+    { auteurs: 'Buchbinder R, Green S, Youd JM', titre: 'Corticosteroid injections for shoulder pain', revue: 'Cochrane Database Syst Rev', annee: '2003;(1):CD004016', doi: '10.1002/14651858.CD004016', type: 'revue systématique', verif: true },
+    { auteurs: 'Buchbinder R, Green S, Youd JM, Johnston RV, Cumpston M', titre: 'Arthrographic distension for adhesive capsulitis (frozen shoulder)', revue: 'Cochrane Database Syst Rev', annee: '2008;(1):CD007005', doi: '10.1002/14651858.CD007005', type: 'revue systématique', verif: true },
+    { auteurs: 'Catapano M, Mittal N, Adamich J, et al.', titre: 'Hydrodilatation with corticosteroid for the treatment of adhesive capsulitis: a systematic review', revue: 'PM R', annee: '2018;10(6):623-35', doi: '10.1016/j.pmrj.2017.10.013', type: 'revue systématique', verif: true },
+    { auteurs: 'Saltychev M, Laimi K, Virolainen P, Fredericson M', titre: 'Effectiveness of hydrodilatation in adhesive capsulitis of shoulder: a systematic review and meta-analysis', revue: 'Scand J Surg', annee: '2018;107(4):285-93', doi: '10.1177/1457496918772367', type: 'méta-analyse', verif: true },
+    { auteurs: 'Rutten MJ, Collins JM, Maresch BJ, et al.', titre: 'Glenohumeral joint injection: a comparative study of ultrasound and fluoroscopically guided techniques before MR arthrography', revue: 'Eur Radiol', annee: '2009;19:722-30', pmid: '18958474', type: 'comparatif technique', verif: true },
+    { auteurs: 'Patel DN, Nayyar S, Hasan S, Khatib O, Sidash S, Jazrawi LM', titre: 'Comparison of ultrasound-guided versus blind glenohumeral injections: a cadaveric study', revue: 'J Shoulder Elbow Surg', annee: '2012;21:1664-8', url: 'https://www.sciencedirect.com/science/article/abs/pii/S1058274611006033', type: 'cadavre / précision', verif: true },
+    { auteurs: 'Chu CR, Izzo NJ, Papas NE, Fu FH', titre: 'In vitro exposure to 0.5% bupivacaine is cytotoxic to bovine articular chondrocytes', revue: 'Arthroscopy', annee: '2006;22(7):693-9', doi: '10.1016/j.arthro.2006.05.006', type: 'expérimental', verif: true },
+    { auteurs: 'Piper SL, Kim HT', titre: 'Comparison of ropivacaine and bupivacaine toxicity in human articular chondrocytes', revue: 'J Bone Joint Surg Am', annee: '2008;90(5):986-91', type: 'expérimental', verif: true },
     { auteurs: 'Chang KV, Hung CY, Wu WT, Han DS, Yang RS, Lin CP', titre: 'Comparison of the effectiveness of suprascapular nerve block with physical therapy, placebo, and intra-articular injection in management of chronic shoulder pain: a meta-analysis of randomized controlled trials', revue: 'Arch Phys Med Rehabil', annee: '2016;97(8):1366-80', doi: '10.1016/j.apmr.2015.11.009', type: 'méta-analyse', verif: true, note: 'Référence déjà vérifiée dans le projet (fiche nerf suprascapulaire).' },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true, note: 'Référence déjà vérifiée dans le projet (fiche nerf suprascapulaire).' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Ultrasound guided shoulder (glenohumeral) joint injection (posterior approach)', source: 'YouTube', url: 'https://www.youtube.com/watch?v=ShY36L9Nr1M&pp=0gcJCdgAo7VqN5tD', note: 'Abord postérieur échoguidé (Murat Karkucak MD).' },
+    { titre: 'Ultrasound-Guided Glenohumeral Joint Injection Using the Posterior Approach', source: 'Am J Phys Med Rehabil (PMC)', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC4640052/', note: 'Article court avec vidéo associée (AJPMR 2015).' },
+  ],
 
   scenes: [
     {
