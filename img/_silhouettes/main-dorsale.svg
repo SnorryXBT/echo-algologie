@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Poignet et main droits, dos vers le haut (avant-bras en pronation), avant-bras venant de la gauche, doigts vers la droite, pouce en haut ; tubercule de Lister, interligne radio-carpien et tendons extenseurs en pointillés -->
+  <path d="M0,104 C60,106 130,108 178,112 C200,114 214,110 232,100"/>
+  <path d="M0,196 C60,194 130,192 180,190 C210,190 240,196 270,200"/>
+  <path d="M232,100 C250,80 276,58 300,52 C318,48 330,58 322,72 C312,86 290,100 278,112"/>
+  <path d="M278,112 C300,112 340,112 372,118 C392,124 396,140 380,146 C400,150 400,166 384,172 C400,178 398,194 380,198 C392,206 390,222 372,222 C340,222 300,214 270,200"/>
+  <g stroke-width="1.3" stroke-dasharray="4 4" opacity=".7">
+    <circle cx="196" cy="140" r="6"/>
+    <path d="M214,116 C222,140 222,166 214,188"/>
+    <path d="M20,136 L196,140 M20,150 L200,152 M20,164 L200,164 M20,178 L200,176"/>
+  </g>
+</svg>
