@@ -1,0 +1,45 @@
+/* Figures — articulation acromio-claviculaire (planche de Gray annotée, installation, écho réelle) */
+ECHO.figures['acromio-claviculaire'] = [
+  {
+    type: 'anatomie',
+    src: 'img/acromio-claviculaire/gray-0326.png',
+    titre: 'Articulation acromio-claviculaire et ligaments coraco-claviculaires, épaule gauche vue de face',
+    legende: 'L\'interligne AC est une fente oblique entre l\'extrémité latérale de la clavicule et l\'acromion, coiffée par le ligament acromio-claviculaire supérieur (renfort capsulaire) ; sous la sonde coronale, c\'est le V hypoéchogène entre deux corticales. Les ligaments conoïde et trapézoïde (coraco-claviculaires) restent à distance de l\'aiguille.',
+    credit: 'Gray\'s Anatomy (1918), planche 326 — domaine public, Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Gray326.png',
+    crop: [0.12, 0.00, 0.88, 0.48],
+    labels: [
+      { x: 0.20, y: 0.10, text: 'Clavicule', dx: 0.02, dy: 0.20 },
+      { x: 0.82, y: 0.38, text: 'Acromion', dx: 0.02, dy: 0.20 },
+      { x: 0.76, y: 0.22, text: 'Interligne AC (lig. acromio-claviculaire sup.)', dx: -0.20, dy: -0.12 },
+      { x: 0.42, y: 0.34, text: 'Lig. conoïde et trapézoïde', dx: -0.10, dy: 0.22 },
+      { x: 0.46, y: 0.66, text: 'Coracoïde', dx: 0.14, dy: 0.14 },
+      { x: 0.66, y: 0.60, text: 'Lig. coraco-acromial', dx: 0.18, dy: 0.14 },
+    ],
+  },
+  {
+    type: 'installation',
+    src: 'img/acromio-claviculaire/installation.svg',
+    titre: 'Installation : assis, bras pendant, sonde coronale sur la fente AC',
+    legende: 'Sonde linéaire (ou « hockey ») dans le plan coronal, à cheval sur l\'extrémité de la clavicule et l\'acromion ; aiguille hors du plan, verticale, à l\'aplomb du milieu de la sonde, jusqu\'à sentir la capsule céder. Voie dans le plan possible en tournant la sonde dans l\'axe antéro-postérieur de l\'interligne.',
+    credit: 'Schéma original du mémo',
+    spec: {
+      silhouette: 'epaule-anterieure',
+      sonde: { x: 94, y: 138, angle: -6, w: 56, h: 12 },
+      aiguille: { from: [96, 100], to: [95, 130] },
+      position: 'assis',
+      labels: [{ x: 128, y: 126, text: 'clavicule' }, { x: 20, y: 156, text: 'acromion' }],
+      note: 'Sonde coronale sur la fente acromio-claviculaire ; aiguille hors du plan, verticale, au milieu de la sonde',
+    },
+  },
+  {
+    type: 'echo',
+    src: 'img/acromio-claviculaire/echo-1.jpg',
+    pair: 'ac-geste',
+    titre: 'Coupe coronale réelle de l\'interligne AC, aiguille en place',
+    legende: 'Image d\'origine annotée (anglais) : ACR = acromion, CLA = clavicule ; les têtes de flèche marquent l\'aiguille, ici passée dans le plan de latéral en médial, dans le V hypoéchogène de l\'interligne dont la capsule bombe en surface. Panneau d d\'une planche composite (le panneau c montre la prise en main).',
+    credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 16d — CC BY-NC-SA 4.0',
+    source: 'https://doi.org/10.4103/jmu.JMU-D-25-00156',
+    crop: [0.5, 0.5, 0.5, 0.5],
+  },
+];
