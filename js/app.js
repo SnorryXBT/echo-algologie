@@ -104,6 +104,42 @@
     return `<ul class="check">${items.map((t, i) => `<li><input type="checkbox" id="ck${i}"><label for="ck${i}">${inline(t)}</label></li>`).join('')}</ul>`;
   }
 
+
+  /* ---------- figures (planches annotées, images réelles) ---------- */
+  function figHtml(f, p) {
+    const crop = f.crop || [0, 0, 1, 1];
+    const labels = (f.labels || []).map((l, i) => `<div class="fig-label" data-i="${i}" style="left:${(l.x + (l.dx || 0)) * 100}%;top:${(l.y + (l.dy || 0)) * 100}%">${inline(l.text)}</div>`).join('');
+    const lines = (f.labels || []).map(l => `<line x1="${(l.x + (l.dx || 0)) * 100}" y1="${(l.y + (l.dy || 0)) * 100}" x2="${l.x * 100}" y2="${l.y * 100}"/><circle cx="${l.x * 100}" cy="${l.y * 100}" r="0.9"/>`).join('');
+    const img = `<div class="fig-img" data-crop="${crop.join(',')}"><div class="fig-clip"><img src="${esc(f.src)}" alt="${esc(f.titre || '')}" loading="lazy" onerror="this.closest('figure').classList.add('missing')"></div><svg class="fig-lines" viewBox="0 0 100 100" preserveAspectRatio="none">${lines}</svg>${labels}</div>`;
+    let pair = '';
+    if (f.type === 'echo' && f.pair) { const sc = (p.scenes || []).find(x => x.id === f.pair); if (sc) pair = `<div class="fig-pair">${safeScene(sc)}</div>`; }
+    return `<figure class="fig fig-${esc(f.type || 'anatomie')}${pair ? ' has-pair' : ''}">${pair ? '<div class="fig-side">' : ''}${img}${pair}${pair ? '</div>' : ''}<figcaption>${f.titre ? `<b>${inline(f.titre)}</b> ` : ''}${inline(f.legende || '')}${f.credit ? `<span class="credit">${inline(f.credit)}${f.source ? ` · <a href="${esc(f.source)}" target="_blank" rel="noopener">source</a>` : ''}</span>` : ''}</figcaption></figure>`;
+  }
+  function figuresHtml(p, types) {
+    const list = (E.figures[p.id] || []).filter(f => types.includes(f.type || 'anatomie'));
+    return list.length ? `<div class="figs">${list.map(f => figHtml(f, p)).join('')}</div>` : '';
+  }
+  function applyCrops() {
+    document.querySelectorAll('.fig-img').forEach(el => {
+      const c = (el.dataset.crop || '0,0,1,1').split(',').map(Number), img = el.querySelector('img');
+      const fit = () => {
+        if (!img.naturalWidth) return;
+        const w = img.naturalWidth * c[2], h = img.naturalHeight * c[3];
+        el.style.aspectRatio = `${w} / ${h}`;
+        img.style.width = `${100 / c[2]}%`; img.style.height = `${100 / c[3]}%`;
+        img.style.left = `${-c[0] / c[2] * 100}%`; img.style.top = `${-c[1] / c[3] * 100}%`;
+      };
+      if (img.complete) fit(); else img.addEventListener('load', fit);
+    });
+  }
+  function demoHtml(p) {
+    const yt = (p.videos || []).map(v => (v.url || '').match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{6,})/)).find(Boolean);
+    const exts = (E.videosLocales || {})[p.id] || [];
+    const local = exts.length ? `<video class="demo" controls loop playsinline preload="metadata">${exts.includes('mp4') ? `<source src="video/${esc(p.id)}.mp4" type="video/mp4">` : ''}${exts.includes('webm') ? `<source src="video/${esc(p.id)}.webm" type="video/webm">` : ''}</video>` : `<div class="demo-missing">Vidéo non encore générée pour cette fiche (<code>node scripts/video.js ${esc(p.id)}</code>).</div>`;
+    return `<div class="demo-wrap card"><h3>Le geste en 40 secondes (schémas animés${exts.length ? '' : ''})</h3>${local}</div>` +
+      (yt ? `<div class="card" style="margin-top:12px"><h3>Démonstration réelle (YouTube, en ligne)</h3><div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/${esc(yt[1])}" title="Démonstration" loading="lazy" allowfullscreen referrerpolicy="no-referrer"></iframe></div></div>` : '');
+  }
+
   function renderFiche(p) {
     const parts = []; let n = 0;
     const N = () => String(++n).padStart(2, '0');
@@ -116,15 +152,15 @@
       (p.alternatives ? `<h3>Alternatives / place dans la stratégie</h3>${md(p.alternatives)}` : '')
     );
     push('vue', 'Vue d\'ensemble', overview);
-    push('anatomie', 'Anatomie utile', p.anatomie ? card(`<div class="prose">${md(p.anatomie)}</div>`) : '');
+    push('anatomie', 'Anatomie utile', (p.anatomie ? card(`<div class="prose">${md(p.anatomie)}</div>`) : '') + figuresHtml(p, ['anatomie']));
     if (p.installation) {
       const i = p.installation;
-      push('installation', 'Installation', `<div class="grid2">${card(`<h3>Patient</h3><div class="prose">${md(i.patient)}</div>`)}${card(`<h3>Opérateur, écran, sonde</h3><div class="prose">${md(i.operateur)}${i.sonde ? `<h3>Réglages échographiques</h3>${md(i.sonde)}` : ''}</div>`)}</div>`);
+      push('installation', 'Installation', `<div class="grid2">${card(`<h3>Patient</h3><div class="prose">${md(i.patient)}</div>`)}${card(`<h3>Opérateur, écran, sonde</h3><div class="prose">${md(i.operateur)}${i.sonde ? `<h3>Réglages échographiques</h3>${md(i.sonde)}` : ''}</div>`)}</div>` + figuresHtml(p, ['installation']));
     }
     push('reperage', 'Repérage échographique', (p.reperage ? card(steps(p.reperage)) : '') + scenesHtml(p, 'reperage'));
     if (p.sonoanatomie && p.sonoanatomie.length) {
       const t = `<div class="tbl"><table><tr><th>Structure</th><th>Aspect échographique</th><th>Repère</th></tr>${p.sonoanatomie.map(s => `<tr><td><b>${inline(s.structure)}</b></td><td>${inline(s.aspect)}</td><td>${inline(s.repere || '')}</td></tr>`).join('')}</table></div>`;
-      push('sonoanatomie', 'Sono-anatomie', card(t) + scenesHtml(p, 'sonoanatomie'));
+      push('sonoanatomie', 'Sono-anatomie', card(t) + figuresHtml(p, ['echo']) + scenesHtml(p, 'sonoanatomie'));
     } else if ((p.scenes || []).some(s => s.section === 'sonoanatomie')) push('sonoanatomie', 'Sono-anatomie', scenesHtml(p, 'sonoanatomie'));
     push('technique', 'Technique du geste', (p.technique ? card(steps(p.technique)) : '') + scenesHtml(p, 'technique'));
     push('injectat', 'Injectat', p.injectat ? card(`<div class="prose">${md(p.injectat)}</div>`) : '');
@@ -136,6 +172,7 @@
     push('cotation', 'Cotation', p.ccam ? callout('CCAM — à vérifier sur ameli.fr avant facturation', md(p.ccam), '') : '');
     const nUnv = (p.references || []).filter(r => r.verif === false).length;
     push('references', 'Références', p.references && p.references.length ? (nUnv ? callout('Sourçage', `${nUnv} référence${nUnv > 1 ? 's' : ''} sur ${p.references.length} ${nUnv > 1 ? 'sont citées' : 'est citée'} de mémoire (marquées « à vérifier ») : existence probable, mais revue, année ou DOI non confirmés par une recherche. À confirmer avant citation.`, 'warn') : '') + card(refsHtml(p.references)) : '');
+    push('demo', 'Vidéo de démonstration', demoHtml(p));
     push('videos', 'Vidéos (liens externes)', videosHtml(p.videos));
     push('checklist', 'Checklist avant le geste', card(checklistHtml(p)));
 
@@ -145,7 +182,7 @@
     $('#content').innerHTML = head + subnav + parts.join('');
     $('#crumbs').innerHTML = `<a href="#/">Écho-algologie</a> › <a href="#/region/${p.region}">${esc((E.regions.find(r => r.id === p.region) || {}).nom || p.region)}</a> › <b>${esc(p.titreCourt || p.titre)}</b>`;
     document.title = `${p.titreCourt || p.titre} — Écho-algologie`;
-    bindScenes();
+    bindScenes(); applyCrops();
   }
 
   function bindScenes() {

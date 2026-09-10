@@ -169,3 +169,24 @@ th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--lin
   .app { display: block; } .content { max-width: none; padding: 0; } .card, .scene-wrap { box-shadow: none; break-inside: avoid; }
   body { font-size: 12.5px; }
 }
+
+/* ---- figures ---- */
+.figs { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 12px; }
+.fig { margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; box-shadow: var(--shadow); }
+.fig.missing { display: none; }
+.fig-img { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 10px; background: #f3f1ec; }
+.fig-clip { position: absolute; inset: 0; overflow: hidden; }
+.fig-clip img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; max-width: none; display: block; }
+.fig-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.fig-lines line { stroke: #d97706; stroke-width: 0.35; vector-effect: non-scaling-stroke; stroke-width: 1.6px; }
+.fig-lines circle { fill: #d97706; stroke: #fff; stroke-width: 0.3; }
+.fig-label { position: absolute; transform: translate(-50%, -50%); background: rgba(255,255,255,.92); color: #1f2937; border: 1px solid #d97706; border-radius: 6px; padding: 2px 7px; font-size: 12.5px; font-weight: 600; white-space: nowrap; box-shadow: 0 1px 3px rgba(0,0,0,.15); }
+.quiz .fig-label, .quiz .fig-lines { opacity: 0; transition: opacity .25s; } .quiz .fig:hover .fig-label, .quiz .fig:hover .fig-lines { opacity: 1; }
+.fig figcaption { font-size: 13.5px; color: var(--muted); margin: 8px 4px 0; } .fig figcaption b { color: var(--ink); }
+.fig .credit { display: block; font-size: 11.5px; margin-top: 3px; opacity: .8; }
+.fig-side { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: start; } @media (max-width: 900px) { .fig-side { grid-template-columns: 1fr; } }
+.fig-pair .us-scene { border-radius: 10px; }
+.demo-wrap video.demo { width: 100%; border-radius: 10px; background: #000; display: block; }
+.demo-wrap .demo-missing { color: var(--muted); font-size: 13.5px; }
+.yt { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; background: #000; }
+.yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }

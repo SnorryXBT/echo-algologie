@@ -3,6 +3,7 @@ window.ECHO = window.ECHO || {};
 (function (E) {
   E.procedures = E.procedures || {};
   E.order = E.order || [];
+  E.figures = E.figures || {};   // figures par fiche (js/data/figures/<id>.js)
 
   E.regions = [
     { id: 'socle',          nom: 'Socle & techniques transversales', court: 'Socle' },

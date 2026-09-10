@@ -48,7 +48,20 @@ ne traite que du projet.
 
 ## Commandes projet (skills)
 
-`/nouvelle-fiche <id>` · `/controle` · `/verif-biblio [région]` · `/deployer`
+`/nouvelle-fiche <id>` · `/controle` · `/verif-biblio [région]` · `/deployer` ·
+`/illustrer [id|région]` · `/videos [id|--all]`
+
+## Règle de reprise (décision de Mat, 10 septembre 2026)
+
+**À chaque quota de session atteint, reprendre systématiquement le travail dès que la
+limite est levée**, là où il s'était arrêté, sans attendre d'instruction. Les commits
+fréquents servent de points de reprise.
+
+## Chantier en cours : illustrations et vidéos
+
+Voir `CHANTIER-ILLUSTRATIONS.md` : planches de Gray annotées (`js/data/figures/<id>.js`,
+images dans `img/<id>/`), figures d'installation, écho-anatomie réelle côte à côte,
+vidéo par fiche (`scripts/video.js`, fichiers dans `video/`). Exécution sur le Mac.
 
 ## État (10 septembre 2026)
 
