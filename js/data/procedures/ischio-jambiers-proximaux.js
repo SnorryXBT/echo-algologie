@@ -105,7 +105,7 @@ Ne jamais inverser : pas d’injection avant d’avoir vu le nerf.`,
   injectat: `| Objectif | Produits | Volume | Commentaire |
 |---|---|---|---|
 | Bloc diagnostique | Lidocaïne 1 % ou ropivacaïne 0,2 %, seule | 3–4 mL | Volume **volontairement petit** : au-delà, la diffusion latérale bloque le sciatique et fait perdre toute valeur diagnostique. EN avant / à 20 min |
-| Bursite ischiatique documentée | Méthylprednisolone 40 mg (Dépo-Médrol®) ou bétaméthasone 5,7 mg (Diprostène® 1 mL) + lidocaïne 1 % | 3–5 mL | La meilleure indication du corticoïde ici : cible liquidienne identifiée, tendon épargné |
+| Bursite ischiatique documentée | Méthylprednisolone 40 mg (Dépo-Médrol®) ou bétaméthasone : Diprostène® 1 mL (≈ 7 mg) ou Célestène® chronodose 1 mL (5,7 mg) + lidocaïne 1 % | 3–5 mL | La meilleure indication du corticoïde ici : cible liquidienne identifiée, tendon épargné |
 | Tendinopathie sans bursite | Dexaméthasone 4–8 mg + AL, ou AL seul | 3–5 mL | Corticoïde **soluble, non particulaire, à dose basse** : le tendon conjoint est un tendon porteur, la fragilisation n’est pas un risque théorique. Beaucoup d’équipes s’abstiennent purement et simplement du corticoïde dans cette indication |
 | PRP | Plasma riche en plaquettes, préparation standardisée | 3–5 mL | Injections péri-tendineuse et intratendineuse dans la zone dégénérative. Données limitées à des séries et à quelques essais de petite taille ; hors nomenclature. Latence de 4–6 semaines à annoncer |
 | Ténotomie percutanée à l’aiguille | Lidocaïne 1 % 4–5 mL puis 20–40 passages d’une aiguille 21 G | — | Sur tendinopathie dégénérative en plateau, sans corticoïde associé. Recrudescence de 5–10 jours à annoncer |

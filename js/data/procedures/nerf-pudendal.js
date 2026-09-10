@@ -101,7 +101,7 @@ Marquer au feutre l\'**EIPS**, le **grand trochanter** et la **tubérosité isch
   injectat: `| Objectif | Produits | Volume | Commentaire |
 |---|---|---|---|
 | Bloc diagnostique (critère de Nantes) | Lidocaïne 2 % ou ropivacaïne 0,2 %, **AL seul** | 4–5 mL par côté | Un seul côté par séance pour garder la lecture. Évaluation **en position assise** à 30 min, puis EN à 2 h et à 24 h |
-| Bloc thérapeutique | AL + corticoïde : bétaméthasone 5,7 mg (Diprostène® 1 mL), méthylprednisolone 40 mg, ou dexaméthasone 4–8 mg | 5–8 mL par côté | Site au contact d\'une artère : préférer un **corticoïde non particulaire** (dexaméthasone) ou justifier explicitement le choix d\'un particulaire. L\'apport réel du corticoïde par rapport à l\'AL seul est discuté — un essai contrôlé n\'a pas retrouvé de bénéfice à 3 mois (*à confirmer*) |
+| Bloc thérapeutique | AL + corticoïde : bétaméthasone : Diprostène® 1 mL (≈ 7 mg) ou Célestène® chronodose 1 mL (5,7 mg), méthylprednisolone 40 mg, ou dexaméthasone 4–8 mg | 5–8 mL par côté | Site au contact d\'une artère : préférer un **corticoïde non particulaire** (dexaméthasone) ou justifier explicitement le choix d\'un particulaire. L\'apport réel du corticoïde par rapport à l\'AL seul est discuté — un essai contrôlé n\'a pas retrouvé de bénéfice à 3 mois (*à confirmer*) |
 | Hydrodissection (canal d\'Alcock) | G5 % 8–10 mL ± lidocaïne 1 % | 8–10 mL | Logique de libération du canal ; preuve limitée à des séries — *à confirmer* |
 | Avant PRF | Lidocaïne 1 % ou sérum physiologique | 1–2 mL | Volume minimal : ne pas éloigner le nerf de l\'électrode |
 | Geste bilatéral | Mêmes produits | Additionner | Vérifier la dose totale et l\'espacer si possible sur deux séances |

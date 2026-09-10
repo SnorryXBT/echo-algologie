@@ -165,3 +165,18 @@ protocole d'honnêteté :
 4. `evidence` : rester qualitatif là où les chiffres ne sont pas certains.
 5. Une passe de vérification (`node scripts/refs-a-verifier.js`) est faite dans une
    session ultérieure avec un budget neuf.
+
+## Pièges du moteur de scènes (retours des rédacteurs et relecteurs)
+
+- `S.spread` est une nappe **opaque** rendue au-dessus de l'anatomie : la décaler de la
+  structure clé, ou dessiner une **couronne** avec `S.spreadPath` (ellipse externe puis
+  ellipse interne en sens inverse) pour laisser le nerf visible au centre.
+- Les animations s'enchaînent (aiguille 1,6 s, nappe 1,4 s) : au-delà de deux aiguilles,
+  fixer `delay`/`dur` explicites pour finir avant ~6 s.
+- L'ombre de `S.bone` se ferme entre le premier et le dernier point du chemin, vers le bas :
+  un os superficiel noie tout ce qui est dessous (`shadow:false` si besoin), deux os
+  disjoints laissent une bande claire (faire jointer les extrémités ou combler par un
+  `region` sombre), et l'ordre d'appel compte (dessiner après l'os ce qui doit rester
+  visible sur son ombre).
+- `S.bone({x,y,rx,ry})` (ellipse) ne produit pas d'ombre.
+- Les étiquettes n'ont aucun évitement de collision : tout le placement est manuel.

@@ -89,7 +89,7 @@ Marquer l\'épine de la scapula et l\'acromion au feutre avant de désinfecter :
   injectat: `| Objectif | Produits | Volume | Commentaire |
 |---|---|---|---|
 | Bloc diagnostique | Lidocaïne 1–2 % ou ropivacaïne 0,2 % | 4–5 mL | Petit volume pour limiter la diffusion aux structures voisines ; EN avant / 30 min après |
-| Bloc thérapeutique | Ropivacaïne 0,2–0,5 % (ou bupivacaïne 0,25–0,5 %) + méthylprednisolone 40 mg, ou triamcinolone 40 mg, ou bétaméthasone 5,7 mg (Diprostène 1 mL) | 8–10 mL | Schéma de Shanahan 2003 : bupivacaïne 0,5 % 10 mL + méthylprednisolone 40 mg. Corticoïde particulaire acceptable (site non artériel terminal), mais AL seul possible et efficace |
+| Bloc thérapeutique | Ropivacaïne 0,2–0,5 % (ou bupivacaïne 0,25–0,5 %) + méthylprednisolone 40 mg, ou triamcinolone 40 mg, ou bétaméthasone : Diprostène® 1 mL (≈ 7 mg) ou Célestène® chronodose 1 mL (5,7 mg) | 8–10 mL | Schéma de Shanahan 2003 : bupivacaïne 0,5 % 10 mL + méthylprednisolone 40 mg. Corticoïde particulaire acceptable (site non artériel terminal), mais AL seul possible et efficace |
 | Épaule hémiplégique | AL seul ou AL + corticoïde | 5–10 mL | Efficacité démontrée sans corticoïde dans plusieurs ECR |
 | Hydrodissection / PRF | Sérum physiologique ou lidocaïne 1 % 2–4 mL avant PRF, puis AL ± corticoïde après | 2–4 mL | Le volume avant PRF ne doit pas déplacer le nerf hors de portée de l\'électrode |
 

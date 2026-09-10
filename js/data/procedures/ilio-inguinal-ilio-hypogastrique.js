@@ -103,7 +103,7 @@ Ponction **de médial en latéral, dans le plan** : l’aiguille progresse vers 
   injectat: `| Objectif | Produits | Volume | Commentaire |
 |---|---|---|---|
 | Bloc test diagnostique | Lidocaïne 1–2 % ou ropivacaïne 0,2 % | **4–5 mL** | Petit volume délibéré : au-delà de 10 mL la diffusion gagne le plan du TAP, le génito-fémoral et le nerf fémoral, et la valeur localisatrice s’effondre. Cartographie sensitive avant / à 30 min |
-| Bloc thérapeutique | Ropivacaïne 0,2–0,375 % (ou lévobupivacaïne 0,25 %) + méthylprednisolone 40 mg, ou bétaméthasone 5,7 mg (Diprostène 1 mL), ou dexaméthasone 4–8 mg | 5–10 mL | Site **non artériel terminal** : corticoïde particulaire acceptable. Dexaméthasone si l’on prévoit de répéter ou chez le diabétique |
+| Bloc thérapeutique | Ropivacaïne 0,2–0,375 % (ou lévobupivacaïne 0,25 %) + méthylprednisolone 40 mg, ou bétaméthasone : Diprostène® 1 mL (≈ 7 mg) ou Célestène® chronodose 1 mL (5,7 mg), ou dexaméthasone 4–8 mg | 5–10 mL | Site **non artériel terminal** : corticoïde particulaire acceptable. Dexaméthasone si l’on prévoit de répéter ou chez le diabétique |
 | Hydrodissection | Dextrose 5 % ± lidocaïne 0,5–1 % | 5–10 mL | Sépare le nerf du plan aponévrotique fibrosé sans charge cortisonique ; répétable à 3–4 semaines. Preuve directe **absente** dans cette indication (extrapolée du canal carpien et du grand occipital) |
 | Névrome cicatriciel | Lidocaïne 1 % + corticoïde non particulaire, ou dextrose 5 % | **1–3 mL** | Contact direct du nodule, volume minimal, pas de corticoïde dans la peau (atrophie, dépigmentation sur cicatrice) |
 | Avant PRF ou cryoneurolyse | Lidocaïne 1 % | 1–2 mL sur le trajet | Ne pas noyer la cible : un plan inondé déplace le nerf hors de portée de l’électrode |
