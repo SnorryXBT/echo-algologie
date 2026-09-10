@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Coude droit vu de dehors, fléchi à 90°, avant-bras en pronation posé sur la table vers la droite ; épicondyle latéral, tête radiale, interligne et tendon extenseur commun en pointillés -->
+  <path d="M118,0 C116,70 118,130 138,160 C166,192 220,198 400,194"/>
+  <path d="M192,0 C192,60 194,100 204,128 C220,138 260,140 400,140"/>
+  <path d="M0,214 L400,214" stroke-width="1" opacity=".4"/>
+  <g stroke-width="1.3" stroke-dasharray="4 4" opacity=".7">
+    <circle cx="170" cy="150" r="12"/>
+    <circle cx="218" cy="160" r="11"/>
+    <path d="M200,140 L198,178"/>
+    <path d="M180,146 C220,142 270,146 320,152"/>
+  </g>
+</svg>
