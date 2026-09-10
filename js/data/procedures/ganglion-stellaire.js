@@ -237,6 +237,7 @@ Intérêt : bloc sympathique du membre supérieur plus constant qu\'en C6 (le C6
         S.muscle({ path: 'M470 218 L640 202 L640 300 L500 300 Z', label: 'Scalène ant.', at: [566, 258], opacity: 0.4, small: true });
         S.fascia({ points: [[172, 262], [230, 236], [310, 231], [400, 240], [456, 264]], width: 2.2, opacity: 1 });
         S.bone({ path: 'M186 340 Q260 328 330 326 L392 322 Q412 300 428 306 Q440 318 436 336 L466 352 Q496 336 522 318 Q548 306 566 318' });
+        S.nerve({ x: 297, y: 240, rx: 10, ry: 6, label: 'Chaîne sympathique', lx: 306, ly: 208, anchor: 'start', small: true, lead: [300, 234] });
         S.needle({ from: [640, 152], to: [342, 240], label: '25 G 40–50 mm' });
         /* nappe sous-fasciale, plaquée sur la face antérieure du long du cou, percée autour de la chaîne */
         S.spreadPath({ path: 'M222 240 A78 11 0 1 1 378 240 A78 11 0 1 1 222 240 Z M290 240 A7 7 0 1 0 304 240 A7 7 0 1 0 290 240 Z', at: [176, 214], label: '4–5 mL' });
@@ -259,6 +260,7 @@ Intérêt : bloc sympathique du membre supérieur plus constant qu\'en C6 (le C6
         S.fascia({ points: [[176, 270], [240, 248], [312, 243], [392, 252], [438, 274]], width: 2.2, opacity: 1 });
         S.bone({ path: 'M190 350 Q270 338 350 334 L432 330 Q480 330 512 316 Q548 302 574 314', label: 'Processus transverse C7\n(pas de tubercule antérieur)', at: [226, 374], ldy: 0, small: true });
         S.artery({ x: 452, y: 306, r: 12, label: 'A. vertébrale — exposée', lx: 430, ly: 356, anchor: 'end', small: true, lead: [444, 316] });
+        S.nerve({ x: 292, y: 252, rx: 10, ry: 6, label: 'Chaîne sympathique', lx: 300, ly: 222, anchor: 'start', small: true, lead: [295, 246] });
         S.needle({ from: [640, 160], to: [332, 252], label: '25 G, Doppler impératif' });
         S.spreadPath({ path: 'M218 252 A74 11 0 1 1 366 252 A74 11 0 1 1 218 252 Z M285 252 A7 7 0 1 0 299 252 A7 7 0 1 0 285 252 Z', at: [172, 226], label: '4–5 mL' });
       },

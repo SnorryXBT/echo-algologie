@@ -40,7 +40,7 @@ ECHO.register({
   ],
   alternatives: 'Bloc **profond** du plexus cervical (paravertébral, au contact des processus transverses C2-C4) : plus complet mais nettement plus risqué (injection intrathécale ou intra-artérielle vertébrale, bloc phrénique quasi constant, bloc récurrentiel) — la littérature de chirurgie carotidienne a montré que le bloc superficiel ou intermédiaire seul suffit avec beaucoup moins de complications, et le bloc profond n\'a **aucune place en douleur chronique**. Autres options : bloc sélectif d\'une branche isolée sous échographie (grand auriculaire au bord postérieur du SCM ou sur la parotide, petit occipital au bord postérieur du SCM plus haut, supraclaviculaires au-dessus de la clavicule) quand le territoire est bien délimité ; infiltration de névrome ou hydrodissection ; blocs cervicaux postérieurs (grand occipital, troisième nerf occipital, facettes cervicales) si la douleur est postérieure. Ne pas confondre les territoires : le plexus cervical superficiel est **antéro-latéral**, il ne couvre pas la nuque médiane.',
 
-  anatomie: `Le plexus cervical superficiel naît des **rameaux ventraux de C2, C3 et C4**. Ses branches contournent le bord postérieur du **sterno-cléido-mastoïdien** en un point unique, à peu près à **mi-hauteur du muscle** (jonction tiers supérieur / tiers moyen, en regard du cartilage cricoïde et du niveau C4) : c\'est le **point d\'Erb** ou *punctum nervosum*. De là, quatre branches partent en éventail :
+  anatomie: `Le plexus cervical superficiel naît des **rameaux ventraux de C2, C3 et C4**. Ses branches contournent le bord postérieur du **sterno-cléido-mastoïdien** en un point unique, à peu près à **mi-hauteur du muscle** — le **point d\'Erb** ou *punctum nervosum*, décrit en anatomie au niveau **C4** (bord supérieur du cartilage thyroïde). En pratique échoguidée, la sonde est posée un peu plus bas, **au niveau du cartilage cricoïde (C6)**, là où les branches sont déjà individualisées en arrière du bord postérieur du SCM ; remonter de 1–2 cm si elles n\'y sont pas vues. De là, quatre branches partent en éventail :
 
 | Branche | Racines | Territoire |
 |---|---|---|
@@ -53,7 +53,7 @@ ECHO.register({
 - **Trois plans, trois blocs différents** (nomenclature de Telford et Stoneham) : *superficiel* = sous-cutané, au-dessus du fascia cervical superficiel ; *intermédiaire* = sous ce fascia, dans la nappe graisseuse en arrière du SCM et **au-dessus du fascia prévertébral** ; *profond* = en dedans du fascia prévertébral, au contact des processus transverses. Le geste échoguidé décrit ici est le bloc **intermédiaire** — c\'est lui qui donne un bloc complet et reproductible avec 5–10 mL, là où le bloc purement sous-cutané est plus aléatoire sur les branches profondes.
 - **Le fascia prévertébral est la barrière de sécurité** : tant que la pointe reste au-dessus, on ne touche ni le plexus brachial, ni le phrénique, ni les vaisseaux vertébraux. Une pointe qui le franchit fait un bloc interscalénique par accident.
 - **Nerf phrénique** : il chemine sur la face antérieure du **scalène antérieur**, sous le fascia prévertébral, à quelques millimètres en profondeur du plan cible. Une diffusion à travers le fascia (volume élevé, fascia perforé par l\'aiguille) explique les blocs phréniques rapportés après bloc « superficiel ».
-- **Nerf accessoire spinal (XI)** : il émerge lui aussi au bord postérieur du SCM, **dans le même plan interfascial**, un peu plus haut et plus superficiel, pour traverser le triangle postérieur vers le trapèze. Il est **systématiquement exposé** : une faiblesse transitoire du trapèze après le bloc n\'est pas une complication rare, c\'est de l\'anatomie.
+- **Nerf accessoire spinal (XI)** : il émerge lui aussi au bord postérieur du SCM, **dans le même plan interfascial**, un peu plus haut et plus **postérieur**, pour traverser le triangle postérieur vers le trapèze. Il est **systématiquement exposé** : une faiblesse transitoire du trapèze après le bloc n\'est pas une complication rare, c\'est de l\'anatomie.
 - **Veine jugulaire externe** : superficielle, elle croise obliquement la face externe du SCM à ce niveau, souvent pile sur la trajectoire — la voir en mode B (elle s\'écrase à la pression, se remplit à la manœuvre de Valsalva) évite un hématome disgracieux.
 - Profondeur du plan cible : **0,5 à 1,5 cm** chez l\'adulte. C\'est un bloc de surface : monter la fréquence, baisser la profondeur, et travailler avec beaucoup de gel.
 - Les branches sont visibles **en petit paquet hypoéchogène** juste sous le fascia, au coin postérieur du SCM, dans environ la moitié des cas chez le sujet mince ; l\'échec de visualisation n\'empêche pas le bloc, qui est un bloc **de plan**, pas un bloc de nerf.`,
@@ -165,8 +165,8 @@ En pratique de douleur chronique, préférer l\'intermédiaire pour le bloc thé
   evidence: `- **Périopératoire — chirurgie carotidienne** : le corpus le plus solide vient de l\'anesthésie. Les revues systématiques comparant bloc cervical superficiel/intermédiaire et bloc profond (ou combiné) concluent à une **efficacité équivalente pour l\'endartériectomie carotidienne avec significativement moins de complications graves** dans le groupe superficiel (Pandit et coll., revue systématique). C\'est l\'argument qui a fait abandonner le bloc profond en routine — et il s\'applique *a fortiori* en douleur chronique, où le rapport bénéfice/risque est encore moins favorable au profond.
 - **Nomenclature et plans anatomiques** : la distinction superficiel / intermédiaire / profond (Telford et Stoneham) est l\'apport conceptuel qui a rendu la littérature lisible ; beaucoup d\'études anciennes appelées « superficielles » étaient en réalité des blocs intermédiaires, ce qui explique une partie des divergences de résultats et des taux de bloc phrénique rapportés.
 - **Échoguidage vs repères anatomiques** : des essais randomisés en anesthésie (Tran et coll.) montrent un avantage de l\'échoguidage sur la qualité du bloc et/ou le volume nécessaire. La supériorité en termes de **complications graves** n\'a jamais été démontrée par un essai de puissance suffisante — le geste est trop sûr pour cela. Argument anatomique, pas statistique.
-- **Chirurgie de la clavicule et de l\'épaule** : le bloc du plexus cervical superficiel apporte une analgésie complémentaire du territoire des nerfs supraclaviculaires, non couvert par les blocs du plexus brachial ni par le bloc suprascapulaire. Littérature d\'ECR de petite taille, résultats cohérents.
-- **Douleur chronique** : c\'est le **trou de la littérature**. Il n\'existe, à ma connaissance, **aucun essai randomisé** du bloc du plexus cervical superficiel dans la douleur neuropathique cicatricielle cervicale, la névralgie du grand auriculaire ou la douleur post-thyroïdectomie chronique. Les données sont des séries, des cas cliniques et l\'extrapolation du périopératoire. **Grade faible, assumé** : ce bloc se justifie ici par sa valeur **diagnostique** (cartographier un territoire, valider une cible avant un geste durable) plus que par une efficacité thérapeutique prouvée à long terme. Le dire au patient fait partie du geste.
+- **Chirurgie de la clavicule et de l\'épaule** : le bloc du plexus cervical superficiel apporte une analgésie complémentaire du territoire des nerfs supraclaviculaires, non couvert par les blocs du plexus brachial ni par le bloc suprascapulaire. Littérature limitée à des séries et des cas cliniques, résultats cohérents.
+- **Douleur chronique** : c\'est le **trou de la littérature**. Il n\'existe **aucun essai randomisé publié** du bloc du plexus cervical superficiel dans la douleur neuropathique cicatricielle cervicale, la névralgie du grand auriculaire ou la douleur post-thyroïdectomie chronique. Les données sont des séries, des cas cliniques et l\'extrapolation du périopératoire. **Grade faible, assumé** : ce bloc se justifie ici par sa valeur **diagnostique** (cartographier un territoire, valider une cible avant un geste durable) plus que par une efficacité thérapeutique prouvée à long terme. Le dire au patient fait partie du geste.
 - **PRF et cryoneurolyse des branches** : séries et cas cliniques uniquement. Aucun ECR. À réserver aux patients ayant répondu de façon reproductible à deux blocs tests.`,
 
   references: [
@@ -176,7 +176,7 @@ En pratique de douleur chronique, préférer l\'intermédiaire pour le bloc thé
     { auteurs: 'Tran DQH, Dugani S, Finlayson RJ', titre: 'A randomized comparison between ultrasound-guided and landmark-based superficial cervical plexus block', revue: 'Reg Anesth Pain Med', annee: '2010', type: 'ECR', verif: false },
     { auteurs: 'Herring AA, Stone MB, Frenkel O, Chipman A, Nagdev AD', titre: 'The ultrasound-guided superficial cervical plexus block for anesthesia and analgesia in emergency care settings', revue: 'Am J Emerg Med', annee: '2012', type: 'technique', verif: false },
     { auteurs: 'Nash L, Nicholson HD, Zhang M', titre: 'Does the investing layer of the deep cervical fascia exist?', revue: 'Anesthesiology', annee: '2005', type: 'anatomie', verif: false, note: 'Remet en cause la description classique du fascia d\'enveloppement — utile pour comprendre pourquoi les plans « superficiel » et « intermédiaire » se confondent en pratique.' },
-    { auteurs: 'Choi DS, Atchabahian A, Brown AR', titre: 'Cervical plexus block provides postoperative analgesia after clavicle surgery', revue: 'Anesth Analg', annee: '2005', type: 'série / ECR de petite taille', verif: false },
+    { auteurs: 'Choi DS, Atchabahian A, Brown AR', titre: 'Cervical plexus block provides postoperative analgesia after clavicle surgery', revue: 'Anesth Analg', annee: '2005', type: 'cas cliniques / lettre', verif: false },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true, note: 'Classification du risque hémorragique des procédures de douleur interventionnelle.' },
   ],
   videos: [],
@@ -195,10 +195,10 @@ En pratique de douleur chronique, préférer l\'intermédiaire pour le bloc thé
         S.vein({ x: 274, y: 74, rx: 16, ry: 9, label: 'V. jugulaire externe', lx: 248, ly: 60, anchor: 'end', small: true });
         S.region({ path: 'M290 92 L386 116 L500 132 L540 196 L380 206 L286 178 Z', fill: '#6a747d', opacity: 0.28 });
         S.label({ x: 470, y: 196, text: 'Nappe graisseuse interfasciale', anchor: 'start', cls: 'lbl-region', small: true });
-        S.nerve({ x: 344, y: 122, r: 6 });
-        S.nerve({ x: 368, y: 134, r: 6 });
+        S.nerve({ x: 350, y: 134, r: 6 });
+        S.nerve({ x: 371, y: 142, r: 6 });
         S.nerve({ x: 392, y: 148, r: 6 });
-        S.label({ x: 336, y: 184, text: 'Branches du plexus cervical\n(point d\'Erb)', anchor: 'middle', cls: 'lbl-nerve', small: true, lead: [366, 142] });
+        S.label({ x: 320, y: 186, text: 'Branches du plexus cervical\n(point d\'Erb)', anchor: 'middle', cls: 'lbl-nerve', small: true, lead: [366, 148] });
         S.nerve({ x: 470, y: 144, r: 6, label: 'N. accessoire (XI)', lx: 496, ly: 166, anchor: 'start', small: true, lead: [477, 148] });
         S.fascia({ points: [[190, 230], [330, 236], [470, 246], [610, 258]], width: 2.2, opacity: 1 });
         S.label({ x: 614, y: 222, text: 'Fascia prévertébral', anchor: 'end', cls: 'lbl-fascia', small: true, lead: [546, 250] });
@@ -223,8 +223,8 @@ En pratique de douleur chronique, préférer l\'intermédiaire pour le bloc thé
         S.muscle({ path: 'M0 66 L280 84 L352 112 L268 172 L0 168 Z', label: 'SCM', at: [110, 126], opacity: 0.5 });
         S.fascia({ points: [[0, 62], [170, 74], [290, 86], [386, 112], [500, 128], [640, 140]], width: 2, opacity: 1 });
         S.vein({ x: 274, y: 74, rx: 16, ry: 9, label: 'VJE', lx: 246, ly: 60, anchor: 'end', small: true });
-        S.nerve({ x: 344, y: 122, r: 6 });
-        S.nerve({ x: 368, y: 134, r: 6 });
+        S.nerve({ x: 350, y: 134, r: 6 });
+        S.nerve({ x: 371, y: 142, r: 6 });
         S.nerve({ x: 392, y: 148, r: 6 });
         S.fascia({ points: [[190, 230], [330, 236], [470, 246], [610, 258]], width: 2.2, opacity: 1 });
         S.label({ x: 322, y: 222, text: 'Fascia prévertébral — limite absolue', anchor: 'middle', cls: 'lbl-fascia', small: true, lead: [340, 238] });
@@ -236,9 +236,9 @@ En pratique de douleur chronique, préférer l\'intermédiaire pour le bloc thé
         S.label({ x: 300, y: 388, text: 'Racines C5-C6 — ne jamais y arriver', anchor: 'middle', cls: 'lbl-nerve', small: true, lead: [368, 332] });
         S.artery({ x: 96, y: 300, r: 26, label: 'Carotide', lx: 96, ly: 352, small: true });
         S.vein({ x: 176, y: 282, rx: 30, ry: 18 });
-        S.target({ x: 368, y: 134, r: 17 });
         S.needle({ from: [640, 90], to: [384, 140], label: '25 G, angle 10–20°' });
-        S.spread({ x: 396, y: 152, rx: 80, ry: 15, label: '5–10 mL' });
+        /* lentille interfasciale percée autour du bouquet de branches, qui reste visible */
+        S.spreadPath({ path: 'M316 150 A84 30 0 1 1 484 150 A84 30 0 1 1 316 150 Z M337 140 A34 17 0 1 0 405 140 A34 17 0 1 0 337 140 Z', at: [214, 178], label: '5–10 mL' });
       },
     },
   ],

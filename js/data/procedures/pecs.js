@@ -16,7 +16,7 @@ ECHO.register({
     position: 'dorsal', positionNote: 'décubitus dorsal, bras du côté à traiter en abduction 90° et rotation externe, main sous la nuque ou sur un appui-bras ; léger proclive si dyspnée',
     sonde: 'lineaire', sondeNote: '6–13 MHz, profondeur 4–5 cm ; convexe si IMC élevé ou reconstruction épaisse',
     approche: 'in-plane', approcheNote: 'sonde para-sagittale oblique sous le tiers latéral de la clavicule, glissée en dehors et en bas jusqu\'à la 3e–4e côte ; ponction de médial/crânial vers latéral/caudal',
-    aiguille: '21–22 G, 80–100 mm échovisible (le trajet est long et oblique)',
+    aiguille: '21–22 G, 80–100 mm écho-visible (le trajet est long et oblique)',
     cible: 'PECS I : plan entre grand et petit pectoral, autour de la branche pectorale de l\'artère thoraco-acromiale. PECS II : plan entre la face profonde du petit pectoral et le **dentelé antérieur** (au-dessus du dentelé, pas sur la côte), à hauteur de la 3e–4e côte. Critère de fin : décollement linéaire du plan, jamais une lentille intramusculaire',
     injectat: 'PECS II 20 mL puis PECS I 10 mL, ropivacaïne 0,2–0,375 % (30 mL au total)',
     duree: '15–20 min pour les deux injections',
@@ -107,7 +107,7 @@ Ponction **dans le plan, de médial-crânial vers latéral-caudal**, l\'aiguille
 
 **Doses maximales à recalculer avant de préparer les seringues** : ropivacaïne 3 mg/kg, bupivacaïne 2–2,5 mg/kg, lidocaïne 4,5 mg/kg (7 mg/kg adrénalinée). Ordres de grandeur : 30 mL de ropivacaïne 0,375 % = **112,5 mg** ; 30 mL de ropivacaïne 0,5 % = **150 mg**, à réserver au sujet de plus de 50 kg et sans autre bloc dans la séance. Ne jamais associer un PECS complet et un bloc du plan du dentelé homolatéral sans recalculer : les deux gestes cumulés atteignent facilement 50–60 mL.
 
-Les blocs de fascia ont une **absorption systémique élevée** : diluer plutôt que concentrer, fractionner, garder l\'intralipide 20 % accessible.
+Les blocs de fascia ont une **absorption systémique élevée** : diluer plutôt que concentrer, fractionner, garder l\'émulsion lipidique 20 % accessible.
 
 **Pas de corticoïde particulaire** : aucun intérêt démontré sur un plan de fascia, risque d\'atrophie et de dépigmentation en cas de reflux sous-cutané, chez des patientes dont la peau est souvent déjà fragilisée par la radiothérapie. Si adjuvant, dexaméthasone (hors AMM en périnerveux, à tracer).`,
 
@@ -139,7 +139,7 @@ Les blocs de fascia ont une **absorption systémique élevée** : diluer plutôt
   complications: [
     '**Pneumothorax** : risque réel du temps profond, plus élevé qu\'au niveau du dentelé (plan plus profond, plèvre plus proche du trajet). CAT : arrêt du geste, échographie pleurale immédiate (perte du glissement, point poumon), surveillance, radiographie et avis si symptomatique.',
     '**Ponction d\'implant ou d\'expandeur mammaire** : dégonflement, nécessité de reprise chirurgicale. Prévention par identification échographique formelle et abandon du temps profond si l\'implant est sur le trajet.',
-    '**Toxicité systémique des AL (LAST)** : volumes cumulés élevés et absorption interfasciale importante. Prodromes (goût métallique, acouphènes, dysarthrie, agitation) → arrêt immédiat, oxygène, intralipide 20 %.',
+    '**Toxicité systémique des AL (LAST)** : volumes cumulés élevés et absorption interfasciale importante. Prodromes (goût métallique, acouphènes, dysarthrie, agitation) → arrêt immédiat, oxygène, émulsion lipidique 20 %.',
     'Ponction vasculaire : branche pectorale de l\'artère thoraco-acromiale, artère thoracique latérale, veines satellites — hématome de la loge pectorale ou axillaire, compressible. Doppler préalable.',
     'Bloc moteur transitoire des pectoraux (antépulsion, adduction) et parfois du dentelé (scapula ailée passagère) : attendu, à annoncer, 6–12 h.',
     'Extension au plexus brachial si la ponction est trop haute et trop **latérale**, vers la région infra-claviculaire sous le processus coracoïde, où les cordons cheminent sous le petit pectoral avec les vaisseaux axillaires : bloc du membre supérieur transitoire, à prévenir par un repérage costal correct (rester à hauteur de la 3e–4e côte) et par le Doppler.',
@@ -147,7 +147,7 @@ Les blocs de fascia ont une **absorption systémique élevée** : diluer plutôt
   securite: [
     'Blocs superficiels et compressibles : **faible risque hémorragique** (ASRA-ESRA 2018, procédures douleur) — pas d\'arrêt systématique des antiagrégants ; anticoagulants au cas par cas.',
     'Doppler couleur avant chaque temps ; pointe d\'aiguille jamais perdue de vue ; plèvre à l\'écran en permanence.',
-    'Dose totale d\'AL calculée en mg/kg **et écrite** avant de préparer les seringues. Voie veineuse et intralipide 20 % disponibles.',
+    'Dose totale d\'AL calculée en mg/kg **et écrite** avant de préparer les seringues. Voie veineuse et émulsion lipidique 20 % disponibles.',
     'Aspiration avant chaque bolus de 5 mL, injection fractionnée, contact verbal maintenu.',
     'Échographie pleurale de contrôle après le geste ; glissement noté dans le compte rendu.',
     'Chez toute patiente reconstruite : documenter dans le compte rendu que l\'implant a été identifié et évité.',
@@ -237,7 +237,7 @@ Les blocs de fascia ont une **absorption systémique élevée** : diluer plutôt
     'Objectif du geste tranché avant la ponction : PECS I (composante musculaire / implant) ou PECS II (composante cutanée et axillaire), ou les deux',
     'Prothèse ou expandeur recherché et identifié à l\'échographie avant de préparer les seringues ; abandon du temps profond si l\'implant est sur le trajet',
     'Dose totale d\'AL recalculée en mg/kg et écrite (30 mL cumulés, absorption interfasciale élevée)',
-    'Intralipide 20 % et voie veineuse disponibles ; surveillance 30 min',
+    'Émulsion lipidique 20 % et voie veineuse disponibles ; surveillance 30 min',
     'Glissement pleural vérifié avant ET après le geste, noté dans le compte rendu',
     'Territoire anesthésié cartographié à 20–30 min et douleur à la contraction du pectoral testée avant / après',
     'Compte rendu mentionnant les deux nomenclatures (PECS I / plan inter-pectoral ; PECS II / plan pecto-serratus) et le niveau costal',

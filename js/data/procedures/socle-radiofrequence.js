@@ -230,8 +230,8 @@ Le compromis utile en HDJ : échographie pour tout ce qui est périphérique et 
         S.region({ x: 186, y: 224, rx: 24, ry: 32, fill: '#ff7a45', opacity: 0.4, stroke: '#ffb08a' });
         S.region({ path: 'M420 244 Q424 216 470 212 Q526 208 553 221 Q570 232 557 251 Q537 276 470 278 Q428 274 420 244 Z', fill: '#ff7a45', opacity: 0.4, stroke: '#ffb08a' });
         S.label({ x: 246, y: 196, text: 'Lésion 80–90 °C', anchor: 'start', small: true, cls: 'lbl-target', lead: [212, 214] });
-        S.label({ x: 16, y: 330, text: 'Perpendiculaire\nun point du nerf, ou rien', anchor: 'start', small: true, cls: 'lbl-target' });
-        S.label({ x: 588, y: 330, text: 'Parallèle\n8–10 mm de nerf dans la lésion', anchor: 'end', small: true, cls: 'lbl-target' });
+        S.label({ x: 16, y: 314, text: 'Perpendiculaire\nun point du nerf, ou rien', anchor: 'start', small: true, cls: 'lbl-target' });
+        S.label({ x: 604, y: 314, text: 'Parallèle\n8–10 mm de nerf dans la lésion', anchor: 'end', small: true, cls: 'lbl-target' });
         S.needle({ from: [120, 60], to: [196, 250], label: 'Électrode perpendiculaire' });
         S.needle({ from: [636, 196], to: [430, 242], label: 'Électrode parallèle' });
       },

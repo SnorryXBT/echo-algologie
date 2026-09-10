@@ -249,7 +249,7 @@ Sens de ponction choisi pour arriver **tangentiellement au nerf**, dans l'interf
         S.nerve({ x: 268, y: 200, rx: 32, ry: 18, label: 'Nerf médian', lx: 268, ly: 164, small: true });
         S.target({ x: 268, y: 200, r: 44 });
         S.needle({ from: [636, 214], to: [326, 200], label: '27 G, abord ulnaire' });
-        S.spreadPath({ path: 'M178 200 A90 40 0 1 0 358 200 A90 40 0 1 0 178 200 Z M232 200 A36 21 0 1 1 304 200 A36 21 0 1 1 232 200 Z', at: [620, 262], label: 'Halo circonférentiel — 5–10 mL' });
+        S.spreadPath({ path: 'M178 200 A90 40 0 1 0 358 200 A90 40 0 1 0 178 200 Z M232 200 A36 21 0 1 1 304 200 A36 21 0 1 1 232 200 Z', at: [452, 262], label: 'Halo circonférentiel — 5–10 mL' });
         S.label({ x: 624, y: 352, text: 'Puis repositionner de l\'autre côté\npour compléter les 360°', anchor: 'end', small: true, cls: 'lbl-target' });
       },
     },

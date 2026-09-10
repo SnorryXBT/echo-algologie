@@ -104,7 +104,7 @@ Sens de ponction : **de l\'olécrâne vers l\'épicondyle** (postéro-antérieur
 | **Hydrodissection (option de première intention)** | Dextrose 5 % (D5W) seul, ou D5W + 1–2 mL de lidocaïne 1 % | 5–10 mL, répartis gouttière + arcade du FCU | Solution non ionique : elle décolle sans bloquer la conduction, ce qui permet de tester la fonction en fin de geste. C\'est le schéma des ECR d\'hydrodissection des neuropathies compressives |
 | Hydrodissection sans dextrose | Sérum physiologique 0,9 % | 5–10 mL | Alternative simple ; le rationnel « anti-nociceptif » propre au dextrose n\'est pas démontré, l\'effet mécanique de décollement l\'est |
 | Bloc diagnostique | Lidocaïne 1 % ou ropivacaïne 0,2 % | 2–3 mL | Petit volume : au-delà, on bloque aussi le nerf médian par diffusion antérieure et on perd la valeur localisatrice. EN avant / 20 min après |
-| Infiltration corticoïde péri-neurale (à discuter, preuves faibles) | Méthylprednisolone 40 mg (Dépo-Médrol®) ou bétaméthasone 5,7 mg (Diprostène® 1 mL) + lidocaïne 1 % | 2–4 mL | **Non particulaire ou particulaire acceptable** (pas d\'artère terminale), mais l\'ECR contrôlé disponible est négatif et le site est très superficiel : risque net d\'atrophie sous-cutanée et de dépigmentation en regard de la gouttière. Ne jamais répéter plus de 2 fois |
+| Infiltration corticoïde péri-neurale (à discuter, preuves faibles) | Méthylprednisolone 40 mg (Dépo-Médrol®) ou bétaméthasone 7 mg (Diprostène® 1 mL) ou 5,7 mg (Célestène® Chronodose 1 mL) + lidocaïne 1 % | 2–4 mL | **Non particulaire ou particulaire acceptable** (pas d\'artère terminale), mais l\'ECR contrôlé disponible est négatif et le site est très superficiel : risque net d\'atrophie sous-cutanée et de dépigmentation en regard de la gouttière. Ne jamais répéter plus de 2 fois |
 | Avant PRF | Lidocaïne 1 % | 1–2 mL en sous-cutané uniquement | Ne pas anesthésier le nerf avant la stimulation, sinon les seuils sensitifs sont ininterprétables |
 
 **Doses maximales à garder en tête** : lidocaïne 4,5 mg/kg (7 mg/kg adrénalinée), ropivacaïne 3 mg/kg, bupivacaïne 2–2,5 mg/kg. Les volumes de cette fiche n\'en approchent pas ; c\'est le **cumul d\'une séance multi-sites** (canal carpien controlatéral, De Quervain, doigt à ressort le même jour) qui doit être additionné.
@@ -191,14 +191,15 @@ Niveau de preuve : **séries et cas cliniques seulement** pour ce site précis ;
       build: S => {
         S.orient({ left: 'Épicondyle médial', right: 'Olécrâne' }).probeInfo({ plan: 'Transverse sur la gouttière', type: 'linéaire 12–18 MHz' });
         S.skin({ thickness: 7, fatBelow: 26 });
-        S.bone({ path: 'M0 208 Q30 140 128 110 Q200 118 238 202', label: 'Épicondyle médial', at: [96, 300], ldy: 0, small: true });
-        S.bone({ path: 'M402 202 Q440 118 512 110 Q610 140 640 208', label: 'Olécrâne', at: [548, 300], ldy: 0, small: true });
+        S.bone({ path: 'M-20 208 Q30 140 128 110 Q200 118 238 202', label: 'Épicondyle médial', at: [96, 300], ldy: 0, small: true });
+        S.region({ path: 'M236 212 L406 212 L406 424 L236 424 Z', fill: '#04060a', opacity: 0.93 });
+        S.bone({ path: 'M402 202 Q440 118 512 110 Q610 140 660 208', label: 'Olécrâne', at: [548, 300], ldy: 0, small: true });
         S.ligament({ path: 'M126 112 Q320 136 514 112 L516 124 Q320 149 124 124 Z', label: 'Rétinaculum d\'Osborne', lx: 622, ly: 92, anchor: 'end', lead: [500, 116], small: true });
         S.fascia({ points: [[236, 200], [320, 214], [404, 200]], width: 2.2, opacity: 0.85 });
         S.label({ x: 624, y: 250, text: 'Plancher : faisceau post. du LCU', cls: 'lbl-fascia', anchor: 'end', small: true, lead: [408, 204] });
         S.nerve({ x: 328, y: 172, rx: 27, ry: 15, label: 'N. ulnaire\nCSA > 10 mm² = compression', lx: 300, ly: 296, lead: [322, 190] });
         S.artery({ x: 262, y: 178, r: 8, label: 'A. collatérale ulnaire sup.', lx: 190, ly: 348, anchor: 'end', lead: [256, 184], small: true });
-        S.nerve({ x: 232, y: 62, r: 5, label: 'Br. cutanée médiale de l\'avant-bras', lx: 236, ly: 98, small: true });
+        S.nerve({ x: 200, y: 90, r: 5, label: 'Br. cutanée médiale de l\'avant-bras', lx: 206, ly: 74, anchor: 'middle', small: true });
       },
     },
     {
@@ -208,12 +209,13 @@ Niveau de preuve : **séries et cas cliniques seulement** pour ce site précis ;
       build: S => {
         S.orient({ left: 'Épicondyle médial', right: 'Olécrâne' }).probeInfo({ plan: 'Transverse sur la gouttière', type: 'in-plane' });
         S.skin({ thickness: 7, fatBelow: 26 });
-        S.bone({ path: 'M0 208 Q30 140 128 110 Q200 118 238 202' });
-        S.bone({ path: 'M402 202 Q440 118 512 110 Q610 140 640 208' });
+        S.bone({ path: 'M-20 208 Q30 140 128 110 Q200 118 238 202' });
+        S.bone({ path: 'M402 202 Q440 118 512 110 Q610 140 660 208' });
+        S.region({ path: 'M236 212 L406 212 L406 424 L236 424 Z', fill: '#04060a', opacity: 0.93 });
         S.ligament({ path: 'M126 112 Q320 136 514 112 L516 124 Q320 149 124 124 Z' });
         S.fascia({ points: [[236, 200], [320, 214], [404, 200]], width: 2.2, opacity: 0.85 });
         S.artery({ x: 256, y: 178, r: 8, label: 'A. collatérale ulnaire sup.', lx: 206, ly: 348, anchor: 'end', lead: [250, 184], small: true });
-        S.nerve({ x: 328, y: 172, rx: 27, ry: 15, label: 'N. ulnaire', lx: 328, ly: 252, small: true });
+        S.nerve({ x: 328, y: 172, rx: 27, ry: 15, label: 'N. ulnaire', lx: 328, ly: 258, small: true, lead: [328, 190] });
         S.needle({ from: [636, 100], to: [366, 160], label: '25–27 G, à plat' });
         S.spreadPath({ path: 'M270 172 A 58 40 0 1 0 386 172 A 58 40 0 1 0 270 172 Z M298 172 A 30 18 0 1 1 358 172 A 30 18 0 1 1 298 172 Z', at: [328, 302], label: '5–10 mL D5W — halo 360°' });
       },

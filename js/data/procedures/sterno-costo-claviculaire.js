@@ -15,7 +15,7 @@ ECHO.register({
   flash: {
     position: 'dorsal', positionNote: 'décubitus dorsal strict, bras le long du corps, petit coussin interscapulaire pour ouvrir la paroi antérieure ; tête légèrement tournée du côté opposé pour la sterno-claviculaire',
     sonde: 'lineaire', sondeNote: 'linéaire haute fréquence 12–18 MHz, profondeur 2–4 cm ; sonde « hockey stick » très utile dans le creux sus-sternal et chez le sujet maigre',
-    approche: 'in-plane', approcheNote: 'in-plane, latéro-médial et **tangentiel**, aiguille parallèle au plan de la paroi ; out-of-plane acceptable pour les petites articulations chondro-costales, mais uniquement en dépôt péri-chondral superficiel',
+    approche: 'in-plane', approcheNote: 'in-plane, latéro-médial et **tangentiel**, aiguille parallèle au plan de la paroi ; hors du plan acceptable pour les petites articulations chondro-costales, mais uniquement en dépôt péri-chondral superficiel',
     aiguille: '25 G, 25 mm (jusqu\'à 22 G 40 mm chez le sujet épais) ; aiguille montée sur seringue de 2 mL pour garder la sensation de résistance',
     cible: 'Sterno-claviculaire et manubrio-sternale : **intra-articulaire**, dans la fente entre les deux surfaces, en avant du disque. Chondro-costale et sterno-costale : **péri-chondral**, au contact du périchondre épaissi, sans jamais traverser le cartilage. Critère de fin : injection facile, halo anéchogène le long de l\'interligne ou du périchondre',
     injectat: '0,5–1 mL au total : corticoïde (bétaméthasone 1–2 mg ou méthylprednisolone 10–20 mg) + lidocaïne 1 %',

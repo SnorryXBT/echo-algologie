@@ -16,7 +16,7 @@ ECHO.register({
     position: 'lateral', positionNote: 'décubitus latéral, côté à bloquer vers le haut, bras en abduction-antépulsion (main sur la tête) ; décubitus dorsal bras en abduction si le décubitus latéral est trop douloureux',
     sonde: 'lineaire', sondeNote: '6–13 MHz, profondeur 3–5 cm ; convexe 2–5 MHz si IMC élevé',
     approche: 'in-plane', approcheNote: 'sonde perpendiculaire aux côtes sur la ligne axillaire moyenne, à hauteur de la 4e–5e côte ; ponction de crânial en caudal, 30–60°',
-    aiguille: '21–22 G, 50–80 mm échovisible (80–100 mm si IMC élevé) ; cathéter 18–20 G si bloc continu',
+    aiguille: '21–22 G, 50–80 mm écho-visible (80–100 mm si IMC élevé) ; cathéter 18–20 G si bloc continu',
     cible: 'Plan **profond** : décollement du dentelé antérieur du périoste costal et des intercostaux externes, sur le sommet de la côte. Plan **superficiel** : décollement du grand dorsal du dentelé, autour de l\'artère thoraco-dorsale. Critère de fin : nappe anéchogène étalée sur au moins deux espaces intercostaux',
     injectat: '20–30 mL ropivacaïne 0,2–0,375 % ± dexaméthasone 4–8 mg',
     duree: '10–15 min',
@@ -34,7 +34,7 @@ ECHO.register({
     'Absolues : refus, infection cutanée au point de ponction, allergie vraie aux amino-amides.',
     'Relatives : troubles de l\'hémostase — bloc **superficiel et compressible**, classé à **faible risque hémorragique** dans les recommandations ASRA-ESRA 2018 sur les procédures douleur ; pas d\'interruption systématique des antiagrégants, anticoagulants au cas par cas.',
     'Poids faible, insuffisance hépatique, grand âge : le volume (20–30 mL) et l\'absorption systémique élevée des blocs interfasciaux imposent de recalculer la dose en mg/kg, pas en mL.',
-    'Bloc bilatéral : ne l\'envisager qu\'après calcul de la dose cumulée, avec surveillance monitorée et intralipide disponible.',
+    'Bloc bilatéral : ne l\'envisager qu\'après calcul de la dose cumulée, avec surveillance monitorée et émulsion lipidique disponible.',
     'Anatomie modifiée : lambeau de grand dorsal, prothèse mammaire, radiodermite étendue — repérage plus difficile, plèvre parfois plus proche ; ne pas ponctionner à l\'aveugle dans une zone reconstruite.',
     'Corticoïdes : diabète déséquilibré, infection évolutive.',
   ],
@@ -84,7 +84,7 @@ Ponction **de crânial en caudal**, dans le plan, l\'aiguille entrant par le bor
     { structure: 'Dentelé antérieur', aspect: 'Muscle plus épais, penné, moulé sur les côtes et les espaces intercostaux', repere: 'Se prolonge vers l\'avant en digitations ; c\'est le muscle « qui suit l\'os »' },
     { structure: 'Côtes (4e et 5e)', aspect: 'Arcs hyperéchogènes convexes avec cône d\'ombre postérieur franc', repere: 'Deux côtes dans le champ = bonne orientation de sonde' },
     { structure: 'Muscles intercostaux', aspect: 'Bande fine et striée entre deux côtes, sous le dentelé', repere: 'Fenêtre où la plèvre devient visible' },
-    { structure: 'Plèvre', aspect: 'Ligne hyperéchogène brillante avec glissement respiratoire (« sliding »)', repere: 'Toujours dans le champ ; profondeur à noter avant la ponction' },
+    { structure: 'Plèvre', aspect: 'Ligne hyperéchogène brillante avec glissement pleural respiratoire', repere: 'Toujours dans le champ ; profondeur à noter avant la ponction' },
     { structure: 'Artère thoraco-dorsale', aspect: 'Petit vaisseau pulsatile en Doppler dans le plan superficiel', repere: 'Confirme le plan superficiel ; à éviter avec l\'aiguille' },
     { structure: 'Branches cutanées latérales / intercosto-brachial', aspect: 'Rarement individualisés ; parfois petits points en nid d\'abeilles traversant le dentelé', repere: 'Cible fonctionnelle : c\'est le plan, pas le nerf, que l\'on vise' },
   ],
@@ -142,7 +142,7 @@ Conséquence pratique : le serratus est un **outil de sélection**. Si le patien
   ],
   complications: [
     '**Pneumothorax** : rare mais rapporté, y compris sous échographie et avec l\'approche profonde. Conduite à tenir : arrêt du geste, échographie pleurale immédiate (perte du glissement, point poumon), surveillance, radiographie et avis si symptomatique.',
-    '**Toxicité systémique des AL (LAST)** : le vrai risque de ce bloc, du fait des volumes et de l\'absorption interfasciale. Prodromes (goût métallique, acouphènes, dysarthrie, agitation) → arrêt immédiat, oxygène, intralipide 20 % disponible dans la salle.',
+    '**Toxicité systémique des AL (LAST)** : le vrai risque de ce bloc, du fait des volumes et de l\'absorption interfasciale. Prodromes (goût métallique, acouphènes, dysarthrie, agitation) → arrêt immédiat, oxygène, émulsion lipidique 20 % disponible dans la salle.',
     'Ponction de l\'artère thoraco-dorsale : hématome de la loge axillaire, compressible ; Doppler avant la ponction.',
     'Bloc moteur du dentelé ou du grand dorsal : faiblesse transitoire, scapula ailée passagère si diffusion au nerf thoracique long — à annoncer, sans conséquence.',
     'Douleur ou ecchymose au point de ponction ; infection exceptionnelle (plus à craindre avec un cathéter).',
@@ -151,7 +151,7 @@ Conséquence pratique : le serratus est un **outil de sélection**. Si le patien
   securite: [
     'Bloc superficiel, site compressible : **faible risque hémorragique** (ASRA-ESRA 2018, procédures douleur) — pas d\'arrêt systématique des antiagrégants ; anticoagulants au cas par cas.',
     'La plèvre doit être visible à l\'écran pendant tout le geste ; pointe d\'aiguille jamais perdue de vue ; en cas de doute, hydrolocaliser plutôt qu\'avancer.',
-    'Dose calculée en mg/kg **avant** de préparer les seringues, et écrite. Voie veineuse et intralipide 20 % disponibles pour tout volume ≥ 20 mL.',
+    'Dose calculée en mg/kg **avant** de préparer les seringues, et écrite. Voie veineuse et émulsion lipidique 20 % disponibles pour tout volume ≥ 20 mL.',
     'Aspiration avant chaque bolus de 5 mL, contact verbal maintenu avec le patient.',
     'Échographie pleurale de contrôle après le geste (glissement conservé) : c\'est ce qui rendra interprétable une dyspnée survenant plus tard.',
     'Pas de bloc bilatéral en HDJ sans monitorage et sans marge sur la dose maximale.',
@@ -252,7 +252,7 @@ Conséquence pratique : le serratus est un **outil de sélection**. Si le patien
 
   checklist: [
     'Dose d\'AL recalculée en mg/kg et écrite avant de préparer les seringues (bloc à haut volume, absorption interfasciale élevée)',
-    'Intralipide 20 % et voie veineuse disponibles ; surveillance 30 min après l\'injection',
+    'Émulsion lipidique 20 % et voie veineuse disponibles ; surveillance 30 min après l\'injection',
     'Glissement pleural vérifié avant ET après le geste, noté dans le compte rendu',
     'Territoire anesthésié cartographié à 20–30 min (croquis) : c\'est la valeur diagnostique du bloc',
     'Plan utilisé (superficiel / profond) et niveau costal tracés dans le dossier',

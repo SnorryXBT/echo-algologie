@@ -250,7 +250,7 @@ Intérêt pour un centre de douleur travaillant avec des chirurgiens : c'est un 
       legende: 'Nerf sensitif superficiel (type cutané latéral de cuisse, ilio-inguinal, radial superficiel). La cryosonde arrive dans le plan et se couche le long du nerf : la boule de glace, allongée selon l\'axe de la sonde, congèle un segment plutôt qu\'un point. Une nappe de sérum tiède injectée entre la peau et la cible éloigne le derme de la glace — c\'est la parade à la gelure, à la dépigmentation et à l\'alopécie.',
       opts: { depth: 3 },
       build: S => {
-        S.orient({ left: 'Proximal', right: 'Distal' }).probeInfo({ plan: 'Longitudinal, aiguille dans le plan', type: 'linéaire 10–15 MHz' });
+        S.orient({ left: 'Proximal', right: 'Distal' }).probeInfo({ plan: 'Longitudinal, aiguille dans le plan', type: 'linéaire 10–18 MHz' });
         S.skin({ thickness: 9, fatBelow: 16 });
         S.fluid({ path: 'M120 68 L560 68 L560 96 L120 96 Z', label: 'Sérum tiède — protection cutanée', lx: 340, ly: 84, small: true });
         S.fat({ path: 'M0 100 L640 100 L640 156 L0 156 Z', label: 'Graisse', at: [56, 128] });
