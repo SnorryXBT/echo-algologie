@@ -33,7 +33,7 @@ ECHO.register({
   ],
   contreIndications: [
     'Absolues : refus, infection cutanée ou profonde sur le trajet, allergie vraie aux amino-amides, sepsis pelvien.',
-    'Relatives : troubles de l\'hémostase — geste **profond, non compressible, au contact de l\'artère pudendale interne** : risque hémorragique à considérer comme **intermédiaire** dans le cadre ASRA-ESRA 2018, gestion des antithrombotiques au cas par cas et jamais par simple analogie avec un bloc superficiel.',
+    'Relatives : troubles de l\'hémostase. ASRA-ESRA 2018 range les **blocs nerveux périphériques** dans la catégorie à **faible risque** et n\'individualise pas le bloc pudendal. Mais le site est **profond, non compressible et au contact direct de l\'artère pudendale interne** : le traiter avec la prudence d\'un geste à risque intermédiaire (Doppler systématique, anticoagulants oraux discutés au cas par cas avec le prescripteur) est défendable — c\'est un choix clinique argumenté, pas la lettre du texte, et il faut le présenter comme tel.',
     'Douleur ne répondant pas aux critères de Nantes, et notamment les **critères d\'exclusion** : douleur purement coccygienne, fessière, hypogastrique ou pubienne ; prurit isolé ; douleur exclusivement paroxystique ; anomalie d\'imagerie expliquant la douleur. Bloquer un patient hors critères, c\'est produire un résultat ininterprétable.',
     'Déficit sensitif objectif du territoire pudendal : il fait sortir du cadre du syndrome canalaire et impose un bilan (lésion sacrée, tumorale, radique).',
     'Patient devant conduire ou repartir seul : bloc sciatique de voisinage possible, et gêne périnéale constante.',
@@ -45,7 +45,7 @@ ECHO.register({
 
 Il donne trois branches : le **nerf rectal inférieur** (sphincter anal externe, peau péri-anale), le **nerf périnéal** (périnée, sphincter urétral, muscles périnéaux) et le **nerf dorsal du pénis / du clitoris**. Cette division peut être **précoce**, parfois avant l\'épine ischiatique — c\'est une des raisons des échecs d\'un bloc réalisé trop distalement.
 
-L\'**artère pudendale interne** accompagne le nerf à l\'épine ischiatique et constitue le repère Doppler du geste. La disposition exacte des deux structures l\'une par rapport à l\'autre **varie** et les descriptions divergent : les séries échographiques placent le plus souvent le nerf **en dedans** de l\'artère à ce niveau, l\'anatomie classique décrit l\'inverse (*point à confirmer*). La conséquence pratique est la même : on repère **l\'artère**, on injecte dans **l\'espace inter-ligamentaire** au contact de celle-ci, et l\'injectat couvre les deux dispositions.
+L\'**artère pudendale interne** accompagne le nerf à l\'épine ischiatique et constitue le repère Doppler du geste. La disposition la plus souvent décrite, en anatomie comme en échographie, va de dedans en dehors : **nerf pudendal → artère pudendale interne → nerf de l\'obturateur interne**. Le nerf est donc en règle **médial** à l\'artère, mais la disposition varie (nerf parfois postérieur ou latéral au vaisseau, division précoce en branches encadrant l\'artère) — *l\'ampleur de cette variabilité est à confirmer*. La conséquence pratique ne change pas : on repère **l\'artère**, on injecte dans **l\'espace inter-ligamentaire** au contact de celle-ci, et l\'injectat couvre toutes les dispositions. Plus latéralement encore, à distance, se trouve le **nerf sciatique**.
 
 Deux sites de conflit sont décrits : la **pince ligamentaire** entre sacro-épineux et sacro-tubéral (le plus fréquent) et le **canal d\'Alcock**.
 
@@ -149,7 +149,7 @@ Deux limites à assumer : le nerf y est **moins souvent visible** qu\'à l\'épi
     'Aggravation transitoire de la douleur 24–72 h (réaction au corticoïde ou au trajet) : prévenir, antalgiques simples.',
   ],
   securite: [
-    'Geste **profond, non compressible, au contact d\'une artère** : risque hémorragique **intermédiaire** (cadre ASRA-ESRA 2018) ; ne pas transposer la permissivité des blocs superficiels de la région.',
+    'Risque hémorragique : **faible** au sens strict d\'ASRA-ESRA 2018 (bloc nerveux périphérique), mais site **profond, non compressible, au contact d\'une artère** — prudence individuelle de niveau intermédiaire sous anticoagulant oral, et ne pas transposer la permissivité des blocs superficiels de la région.',
     'Doppler couleur obligatoire avant la ponction, réglé pour un vaisseau lent ; aspiration dans deux orientations avant chaque bolus ; injection fractionnée par 1 mL.',
     'Nerf sciatique repéré et sa position mémorisée avant de commencer ; pointe jamais latérale à l\'épine ischiatique.',
     'Pas d\'adrénaline dans l\'injectat ; corticoïde non particulaire de préférence.',
@@ -184,8 +184,7 @@ Deux limites à assumer : le nerf y est **moins souvent visible** qu\'à l\'épi
     { verif: false, auteurs: 'Peng PW, Tumber PS', titre: 'Ultrasound-guided interventional procedures for patients with chronic pelvic pain — a description of techniques and review of the literature', revue: 'Pain Physician', annee: '2008', type: 'revue technique', note: 'À confirmer.' },
     { verif: false, auteurs: 'Bendtsen TF, Parras T, Moriggl B, et al.', titre: 'Ultrasound-guided pudendal nerve block at the entrance of the pudendal (Alcock) canal: description of anatomy and clinical technique', revue: 'Regional Anesthesia and Pain Medicine', annee: '2016', type: 'anatomie / technique', note: 'Voie du canal d\'Alcock ; à confirmer.' },
     { verif: false, auteurs: 'Robert R, Labat JJ, Bensignor M, et al.', titre: 'Decompression and transposition of the pudendal nerve in pudendal neuralgia: a randomized controlled trial and long-term evaluation', revue: 'European Urology', annee: '2005', type: 'ECR', note: 'Équipe nantaise ; seule chirurgie évaluée par ECR dans cette indication. À confirmer.' },
-    { verif: false, auteurs: 'Labat JJ, Riant T, et al.', titre: 'Adding corticosteroids to the pudendal nerve block for pudendal neuralgia: a randomised, double-blind, controlled trial', revue: '', annee: '', type: 'ECR', note: 'Existence probable, revue et année à confirmer ; conditionne la recommandation sur le corticoïde.' },
-    { verif: false, auteurs: 'Hong MJ, Kim YD, et al.', titre: 'Management of pudendal neuralgia using ultrasound-guided pulsed radiofrequency', revue: '', annee: '', type: 'série de cas', note: 'Titre exact, revue et année à confirmer.' },
+    { verif: false, auteurs: 'Labat JJ, Riant T, Lassaux A, et al.', titre: 'Adding corticosteroids to the pudendal nerve block for pudendal neuralgia: a randomised, double-blind, controlled trial', revue: 'BJOG', annee: '2017', type: 'ECR', note: 'Conditionne la recommandation sur le corticoïde ; année et pagination à confirmer.' },
     { verif: true, auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco' },
   ],
   videos: [],
@@ -200,12 +199,12 @@ Deux limites à assumer : le nerf y est **moins souvent visible** qu\'à l\'épi
         S.skin({ thickness: 8, fatBelow: 26 });
         S.muscle({ path: 'M0 80 L640 80 L640 178 L0 194 Z', label: 'Grand fessier', at: [96, 136], opacity: 0.5 });
         S.ligament({ path: 'M28 214 L392 200 L396 224 L32 240 Z', label: 'Lig. sacro-tubéral (superficiel)', at: [186, 186], small: true });
-        S.ligament({ path: 'M24 288 L406 268 L410 288 L28 310 Z', label: 'Lig. sacro-épineux (profond)', at: [176, 330], small: true });
-        S.bone({ path: 'M410 274 L640 268', label: 'Épine ischiatique\n(ligne droite)', at: [540, 306], ldy: 0, small: true });
-        S.artery({ x: 342, y: 252, r: 8, label: 'A. pudendale interne (Doppler)', lx: 430, ly: 214, anchor: 'start', lead: [349, 250], small: true });
-        S.nerve({ x: 296, y: 254, rx: 11, ry: 9, label: 'N. pudendal (4–8 mm)', lx: 210, ly: 268, anchor: 'end', lead: [286, 255], small: true });
+        S.ligament({ path: 'M24 288 L406 268 L410 288 L28 310 Z', label: 'Lig. sacro-épineux (profond)', at: [180, 342], small: true });
+        S.bone({ path: 'M410 274 L640 268', label: 'Épine ischiatique\n(ligne droite)', at: [532, 312], ldy: 0, small: true });
+        S.artery({ x: 372, y: 250, r: 8, label: 'A. pudendale (Doppler)', lx: 470, ly: 250, anchor: 'start', lead: [382, 250], small: true });
+        S.nerve({ x: 334, y: 256, rx: 11, ry: 9, label: 'N. pudendal (4–8 mm)', lx: 236, ly: 250, anchor: 'end', lead: [324, 254], small: true });
         S.nerve({ x: 546, y: 218, rx: 26, ry: 11, label: 'N. sciatique (latéral)', lx: 546, ly: 180, anchor: 'middle', lead: [546, 208], small: true });
-        S.label({ x: 170, y: 366, text: 'Cible = l\'espace entre les deux ligaments', cls: 'lbl-target', small: true });
+        S.label({ x: 200, y: 386, text: 'Cible = l\'espace entre les deux ligaments', cls: 'lbl-target', small: true });
       },
     },
     {
@@ -219,12 +218,12 @@ Deux limites à assumer : le nerf y est **moins souvent visible** qu\'à l\'épi
         S.ligament({ path: 'M28 214 L392 200 L396 224 L32 240 Z', label: 'Lig. sacro-tubéral', at: [150, 186], small: true });
         S.ligament({ path: 'M24 288 L406 268 L410 288 L28 310 Z', label: 'Lig. sacro-épineux', at: [140, 332], small: true });
         S.bone({ path: 'M410 274 L640 268', label: 'Épine ischiatique', at: [540, 302], ldy: 0, small: true });
-        S.artery({ x: 342, y: 252, r: 8 });
-        S.nerve({ x: 296, y: 254, rx: 11, ry: 9 });
-        S.nerve({ x: 546, y: 218, rx: 26, ry: 11, label: 'N. sciatique — ne pas dépasser l\'épine', lx: 546, ly: 182, anchor: 'middle', lead: [546, 208], small: true });
-        S.target({ x: 344, y: 252, r: 22 });
-        S.needle({ from: [4, 112], to: [316, 250], label: '22 G 100–120 mm, 45–60°' });
-        S.spread({ x: 336, y: 254, rx: 70, ry: 22, label: '4–5 mL inter-ligamentaires' });
+        S.artery({ x: 372, y: 250, r: 8 });
+        S.nerve({ x: 334, y: 256, rx: 11, ry: 9 });
+        S.nerve({ x: 546, y: 218, rx: 26, ry: 11, label: 'N. sciatique — ne pas dépasser l\'épine', lx: 516, ly: 182, anchor: 'middle', lead: [532, 208], small: true });
+        S.target({ x: 352, y: 254, r: 20 });
+        S.needle({ from: [4, 112], to: [318, 252], label: '22 G 100–120 mm, 45–60°' });
+        S.spreadPath({ path: 'M232 240 Q350 216 466 238 Q350 250 232 240 Z', at: [160, 266], label: '4–5 mL — les ligaments s\'écartent' });
       },
     },
     {
@@ -238,11 +237,12 @@ Deux limites à assumer : le nerf y est **moins souvent visible** qu\'à l\'épi
         S.fat({ path: 'M0 190 L250 206 L250 300 L0 318 Z', label: 'Graisse ischio-rectale', at: [110, 258] });
         S.muscle({ path: 'M244 214 L636 196 L640 268 L256 300 Z', label: 'Obturateur interne', at: [470, 250], opacity: 0.55 });
         S.bone({ path: 'M268 320 Q440 300 640 288', label: 'Ischion', at: [470, 348], ldy: 0, small: true });
-        S.region({ path: 'M236 216 L308 210 L318 268 L246 288 Z', fill: '#7c8894', opacity: 0.4, label: 'Canal pudendal\n(dédoublement fascial)', at: [140, 348], small: true });
-        S.artery({ x: 288, y: 240, r: 6, label: 'A. pudendale', lx: 386, ly: 320, anchor: 'start', lead: [293, 244], small: true });
-        S.nerve({ x: 266, y: 258, rx: 9, ry: 8, label: 'N. pudendal', lx: 176, ly: 220, anchor: 'end', lead: [258, 256], small: true });
-        S.needle({ from: [638, 110], to: [300, 246], label: '22 G, in-plane latéro-médial' });
-        S.spread({ x: 282, y: 250, rx: 42, ry: 24, label: '4–5 mL (ou 8–10 mL en hydrodissection)' });
+        S.region({ path: 'M236 216 L308 210 L318 268 L246 288 Z', fill: '#7c8894', opacity: 0.4, label: 'Canal pudendal\n(dédoublement fascial)', at: [140, 356], small: true, lead: [246, 272] });
+        S.artery({ x: 296, y: 226, r: 6, label: 'A. pudendale', lx: 384, ly: 202, anchor: 'start', lead: [302, 228], small: true });
+        S.nerve({ x: 272, y: 264, rx: 9, ry: 8, label: 'N. pudendal', lx: 372, ly: 288, anchor: 'start', lead: [281, 264], small: true });
+        S.needle({ from: [638, 110], to: [314, 242], label: '22 G, in-plane latéro-médial' });
+        S.spread({ x: 288, y: 245, rx: 34, ry: 8, label: '4–5 mL' });
+        S.label({ x: 148, y: 306, text: '8–10 mL si hydrodissection\ndu canal', anchor: 'middle', cls: 'lbl-spread', small: true });
       },
     },
   ],

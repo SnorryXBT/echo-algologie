@@ -101,7 +101,7 @@ Sonde posée **obliquement dans l\'axe de l\'arcade zygomatique**, en avant du t
 
   injectat: `| Objectif | Produits | Volume | Commentaire |
 |---|---|---|---|
-| Poussée douloureuse arthrosique ou arthrite inflammatoire | Corticoïde : **bétaméthasone 5,7 mg (1 mL) ou dexaméthasone 4 mg**, dilué ou non dans 0,5 mL de lidocaïne 1 % | **0,5–1 mL** | Effet rapide sur la composante inflammatoire. **Ne pas répéter** au-delà de 2, exceptionnellement 3 fois par articulation, espacées d\'au moins 3 mois — risque de dégradation cartilagineuse et de résorption condylienne |
+| Poussée douloureuse arthrosique ou arthrite inflammatoire | Corticoïde **non ou peu particulaire** : dexaméthasone 4 mg, ou bétaméthasone **phosphate soluble** (Célestène® 4 mg/mL), dilué ou non dans 0,3–0,5 mL de lidocaïne 1 % | **0,5–1 mL** | Effet rapide sur la composante inflammatoire. **Ne pas répéter** au-delà de 2, exceptionnellement 3 fois par articulation, espacées d\'au moins 3 mois — risque de dégradation cartilagineuse et de résorption condylienne |
 | Arthrose, entretien, patient jeune | **Acide hyaluronique** de faible volume (présentations 0,5–1 mL) | **0,5–1 mL** | Schémas publiés très variables : injection unique ou série de 3 à 5 injections hebdomadaires. Efficacité globalement comparable au corticoïde à court terme, avec un meilleur profil sur la répétition |
 | Arthrose évoluée, échec des précédents | **PRP** (0,5–1 mL de plasma riche en plaquettes) | 0,5–1 mL | Signal favorable dans plusieurs revues, protocoles de préparation non standardisés, non remboursé — à présenter comme une option de deuxième intention, pas comme un standard |
 | Anesthésie locale du geste / bloc test | Lidocaïne 1 % ou ropivacaïne 0,2 % | 0,3–0,5 mL intra-articulaire, 1–2 mL en sous-cutané | Un soulagement franc et immédiat confirme l\'origine articulaire de la douleur : information de grande valeur avant tout geste répété |
@@ -109,7 +109,7 @@ Sonde posée **obliquement dans l\'axe de l\'arcade zygomatique**, en avant du t
 
 **Volumes** : l\'espace supérieur contient **1 à 1,5 mL**. Injecter davantage ne remplit pas mieux l\'articulation, cela distend la capsule et fait mal. Ici, la retenue est technique, pas prudentielle.
 
-**Corticoïde particulaire ou non ?** L\'injection est **intra-articulaire**, dans un espace clos et sans artère terminale dans l\'axe de l\'aiguille : un corticoïde particulaire n\'est pas formellement proscrit. Mais l\'artère temporale superficielle est à quelques millimètres et l\'anastomose avec le réseau orbitaire existe : à volume et bénéfice égaux, **préférer un produit non particulaire ou peu particulaire** (bétaméthasone, dexaméthasone). La **triamcinolone hexacétonide (Hexatrione®)** est réservée à l\'intra-articulaire par son RCP mais destinée aux grosses articulations : son emploi dans l\'ATM n\'est pas une pratique établie — **à confirmer avant tout usage**.
+**Corticoïde particulaire ou non ?** L\'injection est **intra-articulaire**, dans un espace clos et sans artère terminale dans l\'axe de l\'aiguille : un corticoïde particulaire n\'est pas formellement proscrit. Mais l\'artère temporale superficielle est à quelques millimètres et l\'anastomose avec le réseau orbitaire existe : à volume et bénéfice égaux, **préférer une forme soluble** — dexaméthasone 4 mg ou bétaméthasone phosphate (Célestène® injectable 4 mg/mL). Attention aux noms de marque : **Diprostène® et Célestène® Chronodose sont des suspensions particulaires** (dipropionate, acétate), tout comme Dépo-Médrol® et Kenacort retard®. La **triamcinolone hexacétonide (Hexatrione®)** est réservée à l\'intra-articulaire par son RCP mais destinée aux grosses articulations : son emploi dans l\'ATM n\'est pas une pratique établie — **à confirmer avant tout usage**.
 
 **Doses maximales d\'AL** : sans objet à ces volumes ; ne compter que le cumul si l\'on associe blocs de branche et infiltrations dans la même séance.`,
 
@@ -191,54 +191,53 @@ Résultats : gain d\'ouverture buccale et baisse de la douleur bien documentés 
   scenes: [
     {
       id: 'atm-repere', section: 'sonoanatomie', titre: 'ATM, coupe oblique pré-auriculaire, bouche fermée — repérage',
-      legende: 'Sonde en avant du tragus, dans l\'axe de l\'arcade zygomatique. Deux contours osseux hyperéchogènes : en haut, l\'éminence articulaire et la fosse mandibulaire du temporal ; en bas, la tête du condyle, coiffée du disque (bande hypoéchogène mobile avec lui). Entre le disque et le temporal : l\'espace articulaire supérieur, virtuel bouche fermée. Les vaisseaux temporaux superficiels montent verticalement, superficiels à la capsule ; le tronc du facial est plus profond et plus bas.',
+      legende: 'Sonde en avant du tragus, dans l\'axe de l\'arcade zygomatique. Contour osseux temporal : l\'éminence articulaire descend en avant (point le plus profond), la fosse mandibulaire est la concavité postérieure (point le plus superficiel). Bouche fermée, la tête du condyle est logée dans la fosse, coiffée du disque ; l\'espace articulaire supérieur, entre le disque et le temporal, n\'est qu\'une fine interface virtuelle. Les vaisseaux temporaux superficiels montent en avant du tragus, superficiels à la capsule ; le tronc du facial est plus profond et plus bas, dans la parotide.',
       opts: { depth: 3 },
       build: S => {
         S.orient({ left: 'Antérieur', right: 'Postérieur' }).probeInfo({ plan: 'Oblique, axe de l\'arcade zygomatique', type: 'linéaire 10–18 MHz' });
         S.skin({ thickness: 7, fatBelow: 16 });
-        S.muscle({ path: 'M0 66 L214 66 L214 172 L0 192 Z', label: 'Masséter', at: [88, 124], opacity: 0.45 });
-        S.organ({ path: 'M300 66 L640 66 L640 186 L332 172 Z', label: 'Parotide', at: [592, 150], opacity: 0.5 });
+        S.muscle({ path: 'M0 66 L214 66 L214 172 L0 192 Z', label: 'Masséter', at: [88, 118], opacity: 0.45 });
+        S.organ({ path: 'M300 66 L640 66 L640 186 L332 172 Z', label: 'Parotide', at: [612, 146], anchor: 'end', opacity: 0.5, small: true });
         S.artery({ x: 508, y: 94, r: 9 });
         S.vein({ x: 548, y: 98, rx: 12, ry: 9 });
-        S.label({ x: 468, y: 130, text: 'A. et V. temporales superficielles', anchor: 'end', cls: 'lbl-artery', small: true, lead: [499, 98] });
-        S.bone({ path: 'M30 286 Q100 236 170 218 Q270 192 390 186 Q470 186 540 206', shadow: false });
-        S.label({ x: 106, y: 358, text: 'Éminence articulaire\net fosse mandibulaire', anchor: 'middle', cls: 'lbl-bone', small: true, lead: [106, 258] });
-        S.region({ path: 'M200 244 Q300 214 396 208 Q470 208 528 222 L520 244 Q400 230 302 238 Q248 244 212 258 Z', fill: '#9aa4ae', opacity: 0.3 });
-        S.label({ x: 148, y: 300, text: 'Espace articulaire\nsupérieur (virtuel)', anchor: 'middle', cls: 'lbl-region', small: true, lead: [244, 248] });
-        S.cartilage({ path: 'M274 290 Q400 226 518 284 L510 304 Q400 248 284 308 Z' });
-        S.label({ x: 400, y: 324, text: 'Disque articulaire', anchor: 'middle', cls: 'lbl-cart', small: true, lead: [400, 280] });
-        S.bone({ path: 'M280 300 Q400 240 520 296', label: 'Tête du condyle', at: [400, 366], ldy: 0, small: true });
-        S.fascia({ points: [[240, 236], [320, 198], [400, 180], [490, 188], [556, 222]], width: 1.5, opacity: 0.75 });
-        S.label({ x: 420, y: 162, text: 'Capsule latérale', anchor: 'middle', cls: 'lbl-fascia', small: true, lead: [412, 180] });
-        S.nerve({ x: 604, y: 306, r: 10 });
-        S.label({ x: 596, y: 350, text: 'Tronc du n. facial\n(plus profond, plus bas)', anchor: 'end', cls: 'lbl-nerve', small: true, lead: [602, 316] });
-        S.label({ x: 628, y: 262, text: 'CAE', anchor: 'end', cls: 'lbl-bone', small: true });
+        S.label({ x: 300, y: 124, text: 'A. et V. temporales superficielles', anchor: 'middle', cls: 'lbl-artery', small: true, lead: [499, 98] });
+        S.bone({ path: 'M30 200 Q90 196 150 214 Q212 242 270 216 Q334 184 400 174 Q446 172 472 186', shadow: false });
+        S.label({ x: 168, y: 272, text: 'Éminence articulaire (en avant)\net fosse mandibulaire (en arrière)', anchor: 'middle', cls: 'lbl-bone', small: true, lead: [300, 200] });
+        S.region({ path: 'M338 208 Q420 172 502 204 L498 222 Q420 190 342 226 Z', fill: '#9aa4ae', opacity: 0.32 });
+        S.label({ x: 150, y: 322, text: 'Espace articulaire\nsupérieur (virtuel)', anchor: 'middle', cls: 'lbl-region', small: true, lead: [352, 214] });
+        S.cartilage({ path: 'M326 256 Q420 180 516 250 L508 268 Q420 200 334 274 Z' });
+        S.label({ x: 424, y: 322, text: 'Disque articulaire', anchor: 'middle', cls: 'lbl-cart', small: true, lead: [424, 240] });
+        S.bone({ path: 'M330 280 Q420 202 512 274', label: 'Tête du condyle', at: [424, 356], ldy: 0, small: true });
+        S.fascia({ points: [[340, 158], [420, 138], [500, 160], [548, 206]], width: 1.5, opacity: 0.75 });
+        S.label({ x: 604, y: 176, text: 'Capsule latérale', anchor: 'end', cls: 'lbl-fascia', small: true, lead: [532, 190] });
+        S.label({ x: 616, y: 244, text: 'CAE', anchor: 'end', cls: 'lbl-bone', small: true });
+        S.nerve({ x: 600, y: 306, r: 10 });
+        S.label({ x: 592, y: 352, text: 'Tronc du n. facial\n(plus profond, plus bas)', anchor: 'end', cls: 'lbl-nerve', small: true, lead: [598, 316] });
       },
     },
     {
       id: 'atm-geste', section: 'technique', titre: 'Infiltration de l\'espace supérieur — bouche entrouverte, aiguille in-plane',
-      legende: 'Bouche entrouverte de 15 à 25 mm : le condyle se translate en avant sur l\'éminence et l\'espace articulaire supérieur, entre le disque et le plan osseux temporal, devient ponctionnable. L\'aiguille arrive de postérieur en antérieur, franchit la capsule et s\'arrête dans cet interligne, sans contact osseux appuyé. Critère de fin : élargissement visible de l\'interligne pour 0,5 à 1 mL, sans résistance et sans diffusion postérieure dans le tissu rétro-discal.',
+      legende: 'Bouche entrouverte de 15 à 25 mm : la tête du condyle et son disque se translatent **en avant**, sous l\'éminence, et la fosse mandibulaire se vide — c\'est cette partie postérieure de l\'espace articulaire supérieur qui devient ponctionnable. L\'aiguille arrive de postérieur en antérieur, passe en arrière du bord postérieur de la fosse, franchit la capsule et s\'arrête dans l\'interligne sans contact osseux appuyé. Critère de fin : élargissement visible de l\'interligne pour 0,5 à 1 mL, sans résistance et sans diffusion dans le tissu rétro-discal, plus profond et plus postérieur.',
       opts: { depth: 3 },
       build: S => {
         S.orient({ left: 'Antérieur', right: 'Postérieur' }).probeInfo({ plan: 'Oblique pré-auriculaire, bouche entrouverte', type: 'in-plane, postéro-antérieur' });
         S.skin({ thickness: 7, fatBelow: 16 });
-        S.muscle({ path: 'M0 66 L200 66 L200 172 L0 192 Z', label: 'Masséter', at: [84, 124], opacity: 0.45 });
-        S.organ({ path: 'M300 66 L640 66 L640 186 L332 172 Z', label: 'Parotide', at: [368, 96], opacity: 0.5 });
-        S.artery({ x: 596, y: 92, r: 9 });
-        S.label({ x: 558, y: 92, text: 'A. temporale sup.', anchor: 'end', cls: 'lbl-artery', small: true, lead: [586, 92] });
-        S.bone({ path: 'M30 296 Q100 244 170 224 Q270 196 390 190 Q470 190 528 208', shadow: false });
-        S.label({ x: 104, y: 360, text: 'Éminence articulaire\net fosse mandibulaire', anchor: 'middle', cls: 'lbl-bone', small: true, lead: [104, 262] });
-        S.region({ path: 'M184 240 Q290 208 390 202 Q470 202 522 216 L512 246 Q400 226 300 234 Q240 242 198 258 Z', fill: '#9aa4ae', opacity: 0.35 });
-        S.label({ x: 144, y: 302, text: 'Espace articulaire\nsupérieur — cible', anchor: 'middle', cls: 'lbl-region', small: true, lead: [232, 244] });
-        S.cartilage({ path: 'M262 288 Q392 222 512 280 L504 300 Q392 244 272 306 Z' });
-        S.label({ x: 392, y: 324, text: 'Disque', anchor: 'middle', cls: 'lbl-cart', small: true, lead: [392, 278] });
-        S.bone({ path: 'M268 300 Q392 236 512 292', label: 'Condyle translaté en avant', at: [392, 368], ldy: 0, small: true });
-        S.fascia({ points: [[228, 240], [312, 202], [392, 184], [482, 192], [548, 226]], width: 1.5, opacity: 0.75 });
-        S.label({ x: 470, y: 164, text: 'Capsule latérale', anchor: 'middle', cls: 'lbl-fascia', small: true, lead: [460, 188] });
-        S.label({ x: 600, y: 326, text: 'Tissu rétro-discal —\nne pas y injecter', anchor: 'end', cls: 'lbl-region', small: true, lead: [540, 292] });
-        S.target({ x: 392, y: 218, r: 15 });
-        S.needle({ from: [640, 146], to: [404, 220], label: '25–27 G 25–30 mm' });
-        S.spread({ x: 348, y: 224, rx: 82, ry: 11, label: '0,5–1 mL' });
+        S.muscle({ path: 'M0 66 L200 66 L200 172 L0 192 Z', label: 'Masséter', at: [84, 110], opacity: 0.45 });
+        S.organ({ path: 'M300 66 L640 66 L640 186 L332 172 Z', label: 'Parotide', at: [540, 150], opacity: 0.5, small: true });
+        S.artery({ x: 448, y: 90, r: 9 });
+        S.label({ x: 384, y: 116, text: 'A. temporale sup.', anchor: 'end', cls: 'lbl-artery', small: true, lead: [440, 94] });
+        S.bone({ path: 'M30 200 Q90 196 150 214 Q212 242 270 216 Q334 184 400 174 Q446 172 472 186', shadow: false });
+        S.label({ x: 56, y: 274, text: 'Éminence articulaire', anchor: 'start', cls: 'lbl-bone', small: true, lead: [190, 238] });
+        S.region({ path: 'M128 290 Q215 240 320 284 Q400 320 464 300 L470 190 Q446 174 400 176 Q334 186 270 218 Q212 244 150 216 Z', fill: '#9aa4ae', opacity: 0.35 });
+        S.label({ x: 120, y: 172, text: 'Espace articulaire supérieur\n— fosse vacante = cible', anchor: 'middle', cls: 'lbl-region', small: true, lead: [330, 226] });
+        S.cartilage({ path: 'M114 310 Q215 232 322 304 L314 324 Q215 254 122 330 Z' });
+        S.label({ x: 200, y: 372, text: 'Disque', anchor: 'middle', cls: 'lbl-cart', small: true, lead: [200, 296] });
+        S.bone({ path: 'M120 338 Q215 258 316 332', label: 'Condyle translaté en avant', at: [216, 402], ldy: 0, small: true });
+        S.fascia({ points: [[290, 180], [370, 156], [450, 164], [516, 204], [566, 252]], width: 1.5, opacity: 0.75 });
+        S.label({ x: 340, y: 146, text: 'Capsule latérale', anchor: 'middle', cls: 'lbl-fascia', small: true, lead: [382, 158] });
+        S.label({ x: 610, y: 332, text: 'Tissu rétro-discal —\nne pas y injecter', anchor: 'end', cls: 'lbl-region', small: true, lead: [452, 312] });
+        S.needle({ from: [640, 100], to: [434, 248], label: '25–27 G 25–30 mm' });
+        S.spread({ x: 408, y: 252, rx: 54, ry: 16, label: '0,5–1 mL' });
       },
     },
   ],

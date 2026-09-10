@@ -268,9 +268,9 @@ Limite méthodologique importante à connaître : dans cet essai, le bras gros v
         S.label({ x: 236, y: 194, text: 'Néovaisseaux (Doppler)', cls: 'lbl-artery', small: true, lead: [250, 134] });
         S.label({ x: 430, y: 196, text: 'Paratendon', cls: 'lbl-fascia', small: true, lead: [430, 144] });
         S.label({ x: 540, y: 238, text: 'Graisse de Kager', cls: 'lbl-fat', small: true });
-        S.target({ x: 340, y: 140, r: 14 });
-        S.needle({ from: [638, 182], to: [346, 142], label: '21 G, distal → proximal' });
-        S.spread({ x: 320, y: 146, rx: 210, ry: 15, label: '10 mL AL + 30–40 mL sérum' });
+        S.target({ x: 340, y: 133, r: 13 });
+        S.needle({ from: [638, 178], to: [346, 135], label: '21 G, distal → proximal' });
+        S.spread({ x: 320, y: 136, rx: 210, ry: 11, label: '10 mL AL + 30–40 mL sérum' });
       },
     },
   ],

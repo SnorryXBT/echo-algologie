@@ -234,9 +234,9 @@ Deux temps distincts : **repérage en coupe longitudinale** (mesure de l\'épais
         S.muscle({ path: 'M118 154 L568 158 L590 224 L120 218 Z', label: 'Court fléchisseur des orteils', at: [370, 190], opacity: 0.5 });
         S.bone({ path: 'M70 274 Q330 252 626 270', label: 'Calcanéus', at: [330, 306], ldy: 0 });
         S.label({ x: 452, y: 112, text: 'Fascia plantaire', cls: 'lbl-tendon', small: true, lead: [420, 128] });
-        S.target({ x: 300, y: 158, r: 15 });
-        S.needle({ from: [2, 146], to: [294, 157], label: '22–25 G, voie médiale' });
-        S.spread({ x: 306, y: 166, rx: 86, ry: 12, label: '2–3 mL — face profonde' });
+        S.target({ x: 300, y: 152, r: 13 });
+        S.needle({ from: [2, 146], to: [294, 152], label: '22–25 G, voie médiale' });
+        S.spread({ x: 320, y: 154, rx: 86, ry: 9, label: '2–3 mL — face profonde' });
       },
     },
     {

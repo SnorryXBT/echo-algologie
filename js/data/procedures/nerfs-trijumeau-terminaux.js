@@ -237,7 +237,7 @@ Foramens de la face : ponction **in-plane, de latéral en médial**, à angle tr
         S.label({ x: 20, y: 384, text: 'Rebord orbitaire inférieur : 1 cm en crânial, hors coupe', anchor: 'start', cls: 'lbl-bone', small: true });
         S.target({ x: 350, y: 200, r: 15 });
         S.needle({ from: [640, 108], to: [356, 200], label: '27–30 G, angle 10–20°' });
-        S.spread({ x: 322, y: 196, rx: 46, ry: 15, label: '1–2 mL' });
+        S.spread({ x: 324, y: 202, rx: 46, ry: 13, label: '1–2 mL' });
       },
     },
     {

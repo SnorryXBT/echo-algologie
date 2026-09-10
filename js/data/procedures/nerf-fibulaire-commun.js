@@ -191,7 +191,7 @@ Conduite à tenir : **IRM** et **avis chirurgical**. Le traitement est l'évacua
     { auteurs: `Cass SP`, titre: `Ultrasound-guided nerve hydrodissection: what is it? A review of the literature`, revue: `Current Sports Medicine Reports`, annee: '2016', type: 'revue', verif: false },
     { auteurs: `Lam KHS, Hung CY, Chiang YP, et al.`, titre: `Ultrasound-guided nerve hydrodissection for pain management: rationale, methods, current literature, and theoretical mechanisms`, revue: `Journal of Pain Research`, annee: '2020', type: 'revue', verif: false },
     { auteurs: `Wu YT, Ho TY, Chou YC, et al.`, titre: `Six-month efficacy of perineural dextrose for carpal tunnel syndrome: a prospective, randomized, double-blind, controlled trial`, revue: `Mayo Clinic Proceedings`, annee: '2017', type: 'ECR', verif: false, note: `Base de preuve du dextrose 5 % — indication différente, extrapolation assumée.` },
-    { auteurs: `Narouze S, Benzon HT, Provenzano D, et al.`, titre: `Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP`, revue: `Regional Anesthesia and Pain Medicine`, annee: '2018', type: 'reco', verif: false },
+    { auteurs: `Narouze S, Benzon HT, Provenzano D, et al.`, titre: `Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP`, revue: `Regional Anesthesia and Pain Medicine`, annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true },
   ],
   videos: [],
 

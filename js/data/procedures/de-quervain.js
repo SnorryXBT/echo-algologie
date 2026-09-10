@@ -5,9 +5,9 @@
   function baseDQ(S, labels) {
     S.skin({ thickness: 7, fatBelow: 16 });
     S.artery({ x: 74, y: 168, r: 10, label: labels ? 'A. radiale' : null, lx: 74, ly: 236, lead: [74, 182], small: true });
-    S.nerve({ x: 250, y: 58, r: 4 });
-    S.nerve({ x: 332, y: 57, r: 4 });
-    S.bone({ path: 'M60 300 Q180 262 320 256 Q460 262 580 300', label: labels ? 'Styloïde radiale' : null, at: [320, 344], ldy: 0, small: true });
+    S.nerve({ x: 250, y: 86, r: 4 });
+    S.nerve({ x: 334, y: 84, r: 4 });
+    S.bone({ path: 'M-20 314 Q180 262 320 256 Q460 262 660 314', label: labels ? 'Styloïde radiale' : null, at: [320, 344], ldy: 0, small: true });
     S.region({ path: 'M152 224 Q320 182 488 224 Q400 250 320 254 Q240 250 152 224 Z', fill: '#0d1116', opacity: 0.9 });
     S.ligament({ path: 'M150 210 Q320 168 490 210 L490 224 Q320 182 150 224 Z' });
     S.tendon({ x: 238, y: 234, rx: 26, ry: 18 });
@@ -35,7 +35,7 @@
       approche: 'in-plane', approcheNote: 'sonde transversale sur la styloïde radiale, aiguille de distal en proximal (ou de dorsal en palmaire), à plat',
       aiguille: '25–27 G, 25 mm',
       cible: 'Intérieur de la gaine, entre le tendon et le rétinaculum : le liquide doit **cerner d\'un croissant anéchogène le LAP et le CEP** — les deux, séparément si le septum est présent',
-      injectat: 'Corticoïde 20–40 mg (méthylprednisolone ou triamcinolone) ou bétaméthasone 5,7 mg + lidocaïne 1 %, total 1–2 mL',
+      injectat: 'Corticoïde 20–40 mg (méthylprednisolone ou triamcinolone) ou bétaméthasone 7 mg (Diprostène® 1 mL) + lidocaïne 1 %, total 1–2 mL',
       duree: '5–10 min',
     },
 
@@ -110,14 +110,14 @@ Convention d\'image en transversal : **palmaire à gauche, dorsal à droite** �
       { titre: 'Anesthésie cutanée', texte: 'Habituellement inutile avec une 27 G. Si elle est faite : 0,2 mL de lidocaïne 1 % strictement en sous-cutané, à distance du champ de vue — une bulle sous-cutanée au-dessus d\'un compartiment de 5 mm ruine l\'image.' },
       { titre: 'Ponction dans le plan, de distal en proximal', texte: 'Aiguille **à plat (10–20°)**, biseau vers le tendon, suivie sur toute sa longueur. Franchir le toit du compartiment : ressaut net et léger « pop ». Amener la pointe **entre le toit et le tendon**, tangentiellement — jamais perpendiculaire au tendon, jamais au contact de la corticale.' },
       { titre: 'Test : les 0,2 premiers millilitres', texte: 'Injecter **0,2 mL** et regarder. Trois lectures possibles : (1) le liquide **cerne le tendon d\'un croissant anéchogène** → la pointe est dans la gaine, poursuivre ; (2) le tendon **se dilate**, l\'injection résiste → intratendineux, **arrêter et repositionner** ; (3) le liquide fuse en sous-cutané ou en nappe superficielle → la pointe n\'a pas franchi le toit, avancer de 1 mm.' },
-      { titre: 'Injecter les deux sous-compartiments', texte: 'Compléter à **0,5–1 mL** autour du premier tendon, puis **vérifier que le liquide entoure aussi l\'autre tendon**. S\'il s\'arrête net sur une ligne verticale, le **septum est présent** : retirer la pointe jusqu\'au plan sous-cutané, la redirigier de l\'autre côté du septum (ou repiquer par l\'autre versant) et injecter à nouveau **0,5–1 mL**. **C\'est ce temps-là qui fait la différence entre 60 % et 90 % de succès.**' },
+      { titre: 'Injecter les deux sous-compartiments', texte: 'Compléter à **0,5–1 mL** autour du premier tendon, puis **vérifier que le liquide entoure aussi l\'autre tendon**. S\'il s\'arrête net sur une ligne verticale, le **septum est présent** : retirer la pointe jusqu\'au plan sous-cutané, la rediriger de l\'autre côté du septum (ou repiquer par l\'autre versant) et injecter à nouveau **0,5–1 mL**. **C\'est ce temps-là qui fait la différence entre 60 % et 90 % de succès.**' },
       { titre: 'Critère de fin', texte: 'Croissant anéchogène **complet autour du LAP et du CEP**, sur 1,5–2 cm de long en balayage, sans dilatation tendineuse, sans fusée sous-cutanée, sans résistance à l\'injection.' },
       { titre: 'Après le geste', texte: 'Compression douce 1 min, pansement. Consignes écrites : **orthèse du poignet et de la colonne du pouce 7–10 jours** (elle prolonge l\'effet du geste), éviction du geste déclenchant 2 semaines, reprise progressive. Prévenir de la **poussée douloureuse de 24–48 h** et — systématiquement, avant le geste — du risque d\'**atrophie sous-cutanée et de dépigmentation**, particulièrement fréquent à ce site.' },
     ],
 
     injectat: `| Objectif | Produits | Volume | Commentaire |
 |---|---|---|---|
-| **Infiltration de référence** | Méthylprednisolone 20–40 mg (Dépo-Médrol®) **ou** triamcinolone acétonide 20–40 mg (Kenacort retard®) **ou** bétaméthasone 5,7 mg (Diprostène® 1 mL), + lidocaïne 1 % 0,5–1 mL | **1–2 mL au total**, répartis entre les deux sous-compartiments | La gaine est virtuelle : au-delà de 2 mL on distend et on fuse en sous-cutané. Si septum : **0,5–1 mL de chaque côté** |
+| **Infiltration de référence** | Méthylprednisolone 20–40 mg (Dépo-Médrol®) **ou** triamcinolone acétonide 20–40 mg (Kenacort retard®) **ou** bétaméthasone 7 mg (Diprostène® 1 mL) ou 5,7 mg (Célestène® Chronodose 1 mL), + lidocaïne 1 % 0,5–1 mL | **1–2 mL au total**, répartis entre les deux sous-compartiments | La gaine est virtuelle : au-delà de 2 mL on distend et on fuse en sous-cutané. Si septum : **0,5–1 mL de chaque côté** |
 | Septum présent (≈ 40 %) | Idem, en deux temps | 0,5–1 mL par sous-compartiment | Le sous-compartiment du CEP est le plus étroit et le plus souvent responsable : ne jamais le sauter |
 | Peau fine, phototype foncé, sujet maigre | Préférer un corticoïde **non particulaire** (dexaméthasone) ou réduire la dose | 0,5–1 mL | L\'atrophie et la dépigmentation sont liées au dépôt de cristaux en site superficiel. Compromis à discuter avec le patient |
 | Bloc diagnostique | Lidocaïne 1 % seule | 0,5–1 mL | EN avant / 15 min après : utile pour trancher entre De Quervain, rhizarthrose et syndrome de l\'intersection |
@@ -211,7 +211,7 @@ Convention d\'image en transversal : **palmaire à gauche, dorsal à droite** �
         build: S => {
           S.orient({ left: 'Palmaire', right: 'Dorsal' }).probeInfo({ plan: 'Transverse sur la styloïde radiale', type: 'linéaire 15–18 MHz' });
           baseDQ(S, true);
-          S.label({ x: 150, y: 86, text: 'Br. sensitives du n. radial superficiel', cls: 'lbl-nerve', small: true, lead: [252, 66] });
+          S.label({ x: 168, y: 122, text: 'Br. sensitives du n. radial superficiel', cls: 'lbl-nerve', small: true, lead: [248, 92] });
           S.label({ x: 470, y: 122, text: 'Septum intra-compartimental (≈ 40 %)', cls: 'lbl-lig', anchor: 'end', small: true, lead: [338, 208] });
           S.label({ x: 618, y: 176, text: 'Toit épaissi (> 1 mm)', cls: 'lbl-lig', anchor: 'end', small: true, lead: [452, 212] });
           S.label({ x: 190, y: 300, text: 'LAP (long abducteur)', cls: 'lbl-tendon', small: true, lead: [246, 254] });
@@ -227,9 +227,9 @@ Convention d\'image en transversal : **palmaire à gauche, dorsal à droite** �
           baseDQ(S, false);
           S.label({ x: 476, y: 128, text: 'Septum : deux injections,\npas une', cls: 'lbl-lig', anchor: 'end', small: true, lead: [338, 208] });
           S.needle({ from: [632, 110], to: [410, 222], label: '1er temps — CEP', delay: 0.2, dur: 1.0 });
-          S.spread({ x: 388, y: 232, rx: 38, ry: 22, label: '0,5–1 mL', delay: 1.2, dur: 0.8 });
-          S.needle({ from: [8, 110], to: [272, 220], label: '2e temps — LAP', delay: 2.0, dur: 1.0 });
-          S.spread({ x: 262, y: 232, rx: 56, ry: 24, label: '0,5–1 mL', delay: 3.0, dur: 0.8 });
+          S.spreadPath({ path: 'M348 234 A 40 26 0 1 0 428 234 A 40 26 0 1 0 348 234 Z M361 234 A 27 19 0 1 1 415 234 A 27 19 0 1 1 361 234 Z', at: [438, 288], label: '0,5–1 mL', delay: 1.2, dur: 0.8 });
+          S.needle({ from: [8, 86], to: [270, 214], label: '2e temps — LAP (nouveau point d\'entrée, à distance de l\'a. radiale)', delay: 2.0, dur: 1.0 });
+          S.spreadPath({ path: 'M200 234 A 62 28 0 1 0 324 234 A 62 28 0 1 0 200 234 Z M211 234 A 27 19 0 1 1 265 234 A 27 19 0 1 1 211 234 Z M266 232 A 23 18 0 1 1 312 232 A 23 18 0 1 1 266 232 Z', at: [190, 288], label: '0,5–1 mL', delay: 3.0, dur: 0.8 });
           S.label({ x: 320, y: 344, text: 'Styloïde radiale', cls: 'lbl-bone', small: true });
         },
       },

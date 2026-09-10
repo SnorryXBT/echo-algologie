@@ -33,7 +33,7 @@ ECHO.register({
   ],
   contreIndications: [
     'Absolues : refus, **infection locale** (abcès péri-anal, sinus pilonidal infecté, dermite du sillon interfessier), sepsis, coagulopathie non contrôlée, allergie vraie aux amino-amides.',
-    'Relatives : troubles de l\'hémostase — geste médian profond, **non compressible**, à proximité immédiate du rectum : ne pas le classer par analogie avec un geste superficiel ; risque **intermédiaire** dans le cadre ASRA-ESRA 2018.',
+    'Relatives : troubles de l\'hémostase — c\'est un **bloc sympathique**, catégorie classée à risque **intermédiaire** par ASRA-ESRA 2018 (avec le ganglion stellaire, le plexus cœliaque, le sympathique lombaire et le plexus hypogastrique). Site médian, profond, **non compressible**, au contact du rectum : ne jamais le classer par analogie avec un geste superficiel.',
     '**Rectum non préparé ou fécalome** : le rectum est immédiatement en avant de la cible ; un rectum distendu majore le risque de perforation et rend le geste plus incertain.',
     'Anomalie anatomique de la charnière : sacralisation, coccyx fortement luxé ou fusionné, antécédent de coccygectomie, matériel — la voie trans-articulaire peut être impraticable, la voie para-coccygienne devient alors le plan B.',
     'Neurolyse chimique en dehors du cadre cancéreux ou palliatif : rapport bénéfice/risque non favorable en douleur bénigne — s\'en tenir au bloc, voire à la radiofréquence pulsée.',
@@ -180,7 +180,6 @@ Avantages : indépendante de la perméabilité articulaire, trajet plus long don
     { verif: false, auteurs: 'Lin CS, Cheng JK, Hsu YW, et al.', titre: 'Ultrasound-guided ganglion impar block: a technical report', revue: 'Pain Medicine', annee: '2010', type: 'rapport technique', note: 'Faisabilité de l\'échoguidage ; à confirmer.' },
     { verif: false, auteurs: 'Gupta D, Jain R, Mishra S, Kumar S, Thulkar S, Bhatnagar S', titre: 'Ultrasonography reinvents the originally described technique for ganglion impar neurolysis in perianal cancer pain', revue: 'Anesthesia & Analgesia', annee: '2008', type: 'série de cas', note: 'À confirmer.' },
     { verif: false, auteurs: 'Gunduz OH, Sencan S, Kenis-Coskun O', titre: 'Pain relief due to transsacrococcygeal ganglion impar block in chronic coccygodynia: a pilot study', revue: 'Pain Medicine', annee: '2015', type: 'étude pilote', note: 'À confirmer.' },
-    { verif: false, auteurs: 'Sencan S, et al.', titre: 'Ganglion impar block improves neuropathic pain in coccygodynia: a prospective observational study', revue: '', annee: '', type: 'série prospective', note: 'Revue et année à confirmer.' },
     { verif: false, auteurs: 'Mitra R, Cheung L, Perry P', titre: 'Efficacy of fluoroscopically guided steroid injections in the management of coccydynia', revue: 'Pain Physician', annee: '2007', type: 'série', note: 'Infiltration articulaire sacro-coccygienne ; à confirmer.' },
     { verif: false, auteurs: 'Foye PM', titre: 'Coccydynia: tailbone pain', revue: 'Physical Medicine and Rehabilitation Clinics of North America', annee: '2017', type: 'revue', note: 'Cadre clinique de la coccygodynie ; à confirmer.' },
     { verif: true, auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco' },
@@ -195,8 +194,8 @@ Avantages : indépendante de la perméabilité articulaire, trajet plus long don
       build: S => {
         S.orient({ left: 'Crânial (sacrum)', right: 'Caudal (pointe du coccyx)' }).probeInfo({ plan: 'Longitudinal, ligne médiane', type: 'linéaire 6–13 MHz' });
         S.skin({ thickness: 8, fatBelow: 40 });
-        S.muscle({ path: 'M0 96 L640 96 L640 128 L0 134 Z', label: 'Plans musculo-aponévrotiques', at: [150, 116], opacity: 0.4, small: true });
-        S.ligament({ path: 'M196 140 L300 142 L300 150 L196 148 Z', label: 'Lig. sacro-coccygien post.', at: [250, 122], small: true });
+        S.muscle({ path: 'M0 96 L640 96 L640 128 L0 134 Z', label: 'Plans musculo-aponévrotiques', at: [132, 104], opacity: 0.4, small: true });
+        S.ligament({ path: 'M196 140 L300 142 L300 150 L196 148 Z', label: 'Lig. sacro-coccygien post.', lx: 186, ly: 126, anchor: 'end', lead: [220, 142], small: true });
         S.bone({ path: 'M0 152 L226 150', label: 'Sacrum (S4-S5)', at: [96, 186], ldy: 0, small: true });
         S.bone({ path: 'M266 158 L378 161' });
         S.bone({ path: 'M404 168 L502 173' });
@@ -204,10 +203,10 @@ Avantages : indépendante de la perméabilité articulaire, trajet plus long don
         S.label({ x: 322, y: 194, text: 'Co1', cls: 'lbl-bone', small: true });
         S.label({ x: 452, y: 204, text: 'Co2', cls: 'lbl-bone', small: true });
         S.label({ x: 572, y: 216, text: 'Co3 / pointe', cls: 'lbl-bone', small: true });
-        S.label({ x: 246, y: 128, text: 'Articulation\nsacro-coccygienne', cls: 'lbl-target', small: true, lead: [246, 152] });
+        S.label({ x: 380, y: 116, text: 'Articulation sacro-coccygienne', anchor: 'start', cls: 'lbl-target', small: true, lead: [252, 152] });
         S.nerve({ x: 248, y: 206, rx: 12, ry: 9, label: 'Ganglion impar (déduit,\nnon visible)', lx: 130, ly: 244, anchor: 'middle', lead: [238, 208], small: true });
         S.region({ path: 'M120 268 L560 262 L560 344 L120 350 Z', fill: '#8b959e', opacity: 0.22, label: 'Rectum — masqué par le cône d\'ombre', at: [340, 308], small: true });
-        S.label({ x: 470, y: 384, text: 'Mesurer ici la profondeur peau → cortex antérieur', cls: 'lbl-target', small: true, anchor: 'middle' });
+        S.label({ x: 452, y: 392, text: 'Mesurer la profondeur peau → cortex antérieur', cls: 'lbl-target', small: true, anchor: 'middle', lead: [254, 198] });
       },
     },
     {
@@ -241,11 +240,11 @@ Avantages : indépendante de la perméabilité articulaire, trajet plus long don
         S.bone({ path: 'M0 152 L226 150', label: 'Sacrum', at: [80, 184], ldy: 0, small: true });
         S.bone({ path: 'M266 158 L378 161', label: 'Co1', at: [322, 194], ldy: 0, small: true });
         S.bone({ path: 'M404 168 L502 173' });
-        S.bone({ path: 'M528 182 L616 191', label: 'Pointe du coccyx', at: [576, 224], ldy: 0, small: true });
+        S.bone({ path: 'M528 182 L616 191', label: 'Pointe du coccyx', at: [572, 246], ldy: 0, small: true });
         S.needle({ from: [190, 58], to: [242, 148], label: 'Infiltration articulaire (1–2 mL)' });
         S.spread({ x: 244, y: 152, rx: 24, ry: 10 });
-        S.needle({ from: [634, 268], to: [276, 216], label: 'Voie para-coccygienne — contact osseux permanent' });
-        S.spread({ x: 268, y: 214, rx: 46, ry: 16, label: '2–4 mL' });
+        S.needle({ from: [636, 216], to: [268, 194], label: 'Voie para-coccygienne (22 G 90–100 mm)' });
+        S.spread({ x: 258, y: 202, rx: 42, ry: 13, label: '2–4 mL' });
         S.region({ path: 'M120 288 L560 282 L560 352 L120 358 Z', fill: '#8b959e', opacity: 0.2, label: 'Rectum', at: [400, 322], small: true });
         S.label({ x: 430, y: 388, text: 'Perte du contact osseux = retrait immédiat', cls: 'lbl-target', small: true, anchor: 'middle' });
       },

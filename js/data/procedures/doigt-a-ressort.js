@@ -4,12 +4,13 @@
   /* Base longitudinale : gaine des fléchisseurs à hauteur de la tête métacarpienne. */
   function baseLong(S, labels) {
     S.skin({ thickness: 7, fatBelow: 18 });
-    S.tendon({ path: 'M0 152 L640 148 L640 196 L0 200 Z' });
-    S.tendon({ x: 186, y: 172, rx: 50, ry: 30 });
-    S.ligament({ path: 'M250 124 L420 122 L420 150 L250 152 Z' });
-    S.ligament({ path: 'M474 132 L624 130 L624 146 L474 148 Z' });
-    S.bone({ path: 'M0 264 L160 262 Q252 224 314 254', label: labels ? 'Tête métacarpienne' : null, at: [148, 332], ldy: 0, small: true });
-    S.bone({ path: 'M342 252 Q430 238 640 242', label: labels ? 'Base de P1' : null, at: [492, 332], ldy: 0, small: true });
+    S.tendon({ path: 'M0 160 L640 156 L640 204 L0 208 Z' });
+    S.tendon({ x: 186, y: 178, rx: 50, ry: 28 });
+    S.ligament({ path: 'M250 120 L420 118 L420 146 L250 148 Z' });
+    S.ligament({ path: 'M474 126 L624 124 L624 140 L474 142 Z' });
+    S.bone({ path: 'M-20 266 L160 262 Q252 224 314 254', label: labels ? 'Tête métacarpienne' : null, at: [148, 332], ldy: 0, small: true });
+    S.bone({ path: 'M342 252 Q430 238 660 242', label: labels ? 'Base de P1' : null, at: [492, 332], ldy: 0, small: true });
+    S.region({ path: 'M312 250 L344 250 L344 424 L312 424 Z', fill: '#04060a', opacity: 0.95 });
     S.fascia({ points: [[308, 246], [328, 238], [348, 246]], width: 2, opacity: 0.8 });
   }
 
@@ -119,7 +120,7 @@ Convention d\'image : en transversal, radial à gauche ; en longitudinal, **prox
 
     injectat: `| Objectif | Produits | Volume | Commentaire |
 |---|---|---|---|
-| **Infiltration de référence** | Triamcinolone acétonide 10–20 mg **ou** méthylprednisolone 10–20 mg **ou** bétaméthasone 5,7 mg (Diprostène®), + lidocaïne 1 % 0,5 mL | **0,5–1 mL au total** | La gaine est virtuelle : au-delà de 1 mL on distend et on fuse en sous-cutané. Dose faible suffisante — l\'efficacité ne suit pas la dose |
+| **Infiltration de référence** | Triamcinolone acétonide 10–20 mg **ou** méthylprednisolone 10–20 mg **ou** bétaméthasone 5,7 mg (Célestène® Chronodose 1 mL) ou 7 mg (Diprostène® 1 mL), + lidocaïne 1 % 0,5 mL | **0,5–1 mL au total** | La gaine est virtuelle : au-delà de 1 mL on distend et on fuse en sous-cutané. Dose faible suffisante — l\'efficacité ne suit pas la dose |
 | **Interdit à ce site** | Triamcinolone **hexacétonide** (Hexatrione®) | — | **Strictement intra-articulaire.** Dans une gaine tendineuse superficielle : atrophie et fragilisation tendineuse |
 | Position du dépôt | Intra-gaine (sous A1) **ou** péri-tendineux immédiat | 0,5–1 mL | Les essais comparant dépôt intra-gaine et péri-tendineux ne montrent **pas de différence nette d\'efficacité** — ce qui compte est d\'être hors du tendon |
 | Anesthésie avant libération percutanée | Lidocaïne 1 % (sans adrénaline) | 0,5–1 mL sous-cutané + intra-gaine | Ne pas anesthésier les collatéraux : on veut pouvoir interroger le patient pendant le geste |
@@ -204,7 +205,7 @@ Résultats : les séries prospectives rapportent des taux de succès **élevés,
     references: [
       { auteurs: 'Peters-Veluthamaningal C, van der Windt DAWM, Winters JC, Meyboom-de Jong B', titre: 'Corticosteroid injection for trigger finger in adults', revue: 'Cochrane Database of Systematic Reviews', annee: '2009', type: 'revue systématique', verif: false, note: 'Composition des auteurs et année à confirmer.' },
       { auteurs: 'Bodor M, Flossman T', titre: 'Ultrasound-guided first annular pulley injection for trigger finger', revue: 'Journal of Ultrasound in Medicine', annee: '2009', type: 'série', verif: false, note: 'Précision du placement sous échographie ; année à confirmer.' },
-      { auteurs: 'Lapègue F, André A, Brun C, et al.', titre: 'Ultrasound-guided percutaneous release of the A1 pulley (trigger finger) using a needle', revue: 'Radiology / Diagnostic and Interventional Imaging (selon la publication)', annee: 'années 2010', type: 'série prospective', verif: false, note: 'Équipe radiologique toulousaine. **Titre exact, revue, année et calibre d\'aiguille à confirmer** — plusieurs publications de cette équipe sur les libérations percutanées échoguidées (canal carpien et poulie A1).' },
+      { auteurs: 'Lapègue F, André A, et al.', titre: 'US-guided percutaneous release of the trigger finger by using a 21-gauge needle (série prospective)', revue: 'Radiology', annee: '2016', type: 'série prospective', verif: false, note: 'Équipe radiologique toulousaine — **métadonnées à confirmer** (titre exact, volume, pages) lors de la passe de vérification ; l\'existence de ce travail et la technique décrite sont en revanche bien établies.' },
       { auteurs: 'Fiorini HJ, Tamaoki MJ, Lenza M, et al.', titre: 'Surgery for trigger finger', revue: 'Cochrane Database of Systematic Reviews', annee: '2018', type: 'revue systématique', verif: false, note: 'Composition des auteurs et année à confirmer.' },
       { auteurs: 'Green DP', titre: 'Green\'s Operative Hand Surgery — classification clinique du doigt à ressort (stades I–IV)', revue: 'Elsevier (ouvrage de référence)', annee: 'éditions successives', type: 'ouvrage', verif: false, note: 'Source de la classification en stades utilisée dans cette fiche.' },
       { auteurs: 'Bianchi S, Martinoli C', titre: 'Ultrasound of the Musculoskeletal System', revue: 'Springer (ouvrage)', annee: '2007', type: 'ouvrage', verif: false, note: 'Sono-anatomie des poulies digitales et des pédicules collatéraux.' },
@@ -221,11 +222,11 @@ Résultats : les séries prospectives rapportent des taux de succès **élevés,
         build: S => {
           S.orient({ left: 'Proximal (paume)', right: 'Distal (doigt)' }).probeInfo({ plan: 'Longitudinal dans l\'axe du doigt', type: 'linéaire 15–18 MHz' });
           baseLong(S, true);
-          S.label({ x: 336, y: 96, text: 'Poulie A1 épaissie (> 0,5–1 mm)', cls: 'lbl-lig', small: true, lead: [336, 124] });
-          S.label({ x: 108, y: 100, text: 'Nodule du fléchisseur', cls: 'lbl-tendon', small: true, lead: [166, 146] });
-          S.label({ x: 534, y: 174, text: 'Fléchisseurs (FCS + FCP)', cls: 'lbl-tendon', small: true });
+          S.label({ x: 336, y: 94, text: 'Poulie A1 épaissie (> 0,5–1 mm)', cls: 'lbl-lig', small: true, lead: [336, 120] });
+          S.label({ x: 112, y: 104, text: 'Nodule du fléchisseur', cls: 'lbl-tendon', small: true, lead: [170, 152] });
+          S.label({ x: 528, y: 184, text: 'Fléchisseurs (FCS + FCP)', cls: 'lbl-tendon', small: true });
           S.label({ x: 328, y: 296, text: 'Interligne MCP', cls: 'lbl-bone', small: true, lead: [328, 250] });
-          S.label({ x: 622, y: 212, text: 'Poulie A2 en aval :\nlimite à ne jamais franchir', cls: 'lbl-lig', anchor: 'end', small: true, lead: [560, 150] });
+          S.label({ x: 626, y: 220, text: 'Poulie A2 en aval :\nlimite à ne jamais franchir', cls: 'lbl-lig', anchor: 'end', small: true, lead: [560, 142] });
         },
       },
       {
@@ -248,8 +249,8 @@ Résultats : les séries prospectives rapportent des taux de succès **élevés,
           S.label({ x: 176, y: 140, text: 'Poulie A1', cls: 'lbl-lig', small: true, lead: [244, 172] });
           S.label({ x: 320, y: 196, text: 'FCS', cls: 'lbl-tendon', small: true, dy: 4 });
           S.label({ x: 320, y: 232, text: 'FCP', cls: 'lbl-tendon', small: true, dy: 4 });
-          S.target({ x: 356, y: 182, r: 18 });
-          S.needle({ from: [636, 110], to: [356, 182], label: '25–27 G, tangentielle', delay: 0.2, dur: 1.2 });
+          S.target({ x: 356, y: 176, r: 16 });
+          S.needle({ from: [636, 104], to: [356, 176], label: '25–27 G, tangentielle', delay: 0.2, dur: 1.2 });
           S.spreadPath({ path: 'M242 214 A 78 48 0 1 0 398 214 A 78 48 0 1 0 242 214 Z M254 214 A 66 40 0 1 1 386 214 A 66 40 0 1 1 254 214 Z', at: [534, 214], label: '0,5–1 mL', delay: 1.6, dur: 1.0 });
         },
       },
@@ -260,10 +261,10 @@ Résultats : les séries prospectives rapportent des taux de succès **élevés,
         build: S => {
           S.orient({ left: 'Proximal (paume)', right: 'Distal (doigt)' }).probeInfo({ plan: 'Longitudinal dans l\'axe du doigt', type: 'in-plane' });
           baseLong(S, false);
-          S.label({ x: 116, y: 116, text: 'Poulie A1', cls: 'lbl-lig', small: true, lead: [252, 134] });
-          S.label({ x: 622, y: 212, text: 'A2 : limite distale absolue', cls: 'lbl-lig', anchor: 'end', small: true, lead: [560, 150] });
+          S.label({ x: 116, y: 112, text: 'Poulie A1', cls: 'lbl-lig', small: true, lead: [254, 130] });
+          S.label({ x: 626, y: 220, text: 'A2 : limite distale absolue', cls: 'lbl-lig', anchor: 'end', small: true, lead: [560, 140] });
           S.label({ x: 148, y: 330, text: 'Tête métacarpienne', cls: 'lbl-bone', small: true });
-          S.needle({ from: [636, 166], to: [268, 158], label: '18–21 G, biseau dans l\'axe', delay: 0.2, dur: 1.2 });
+          S.needle({ from: [636, 152], to: [262, 152], label: '18–21 G, biseau dans l\'axe, entre poulie et tendon', delay: 0.2, dur: 1.2 });
           S.arrow({ from: [300, 96], to: [420, 96], text: 'Va-et-vient longitudinal' });
         },
       },

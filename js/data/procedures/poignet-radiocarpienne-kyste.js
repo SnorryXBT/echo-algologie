@@ -6,14 +6,16 @@
     S.skin({ thickness: 7, fatBelow: 14 });
     S.ligament({ path: 'M120 64 L400 60 L400 74 L120 78 Z' });
     S.tendon({ path: 'M0 84 L498 80 L520 96 L520 110 L498 122 L0 126 Z' });
-    S.bone({ path: 'M0 254 L146 252 Q176 232 202 252 L242 248 Q296 246 314 258 L322 300' });
+    S.bone({ path: 'M-20 256 L146 252 Q176 232 202 252 L242 248 Q296 246 314 258 L322 300' });
+    S.region({ path: 'M318 296 L366 296 L366 424 L318 424 Z', fill: '#04060a', opacity: 0.95 });
+    S.region({ path: 'M544 288 L582 288 L582 424 L544 424 Z', fill: '#04060a', opacity: 0.95 });
     S.fascia({ points: [[298, 246], [348, 236], [400, 242], [452, 246]], width: 2 });
     S.fluid({ path: 'M316 252 Q344 244 366 252 L360 292 L326 298 Z' });
     S.bone({ path: 'M362 296 Q400 250 452 246 Q510 250 548 290' });
-    S.bone({ path: 'M578 292 Q608 258 640 254' });
+    S.bone({ path: 'M578 292 Q608 258 660 252' });
     if (labels) {
       S.label({ x: 120, y: 104, text: 'Tendons extenseurs (4e compartiment)', cls: 'lbl-tendon', small: true });
-      S.label({ x: 620, y: 104, text: 'Intervalle 3-4 :\nplan sans tendon', cls: 'lbl-tendon', anchor: 'end', small: true, lead: [524, 104] });
+      S.label({ x: 628, y: 262, text: 'Sonde dans l\'intervalle 3-4 ;\npoint d\'entrée en aval des tendons', cls: 'lbl-tendon', anchor: 'end', small: true, lead: [540, 118] });
       S.label({ x: 552, y: 70, text: 'Rétinaculum des extenseurs', cls: 'lbl-lig', anchor: 'end', small: true, lead: [398, 68] });
       S.label({ x: 176, y: 206, text: 'Tubercule de Lister', cls: 'lbl-bone', small: true, lead: [176, 238] });
       S.label({ x: 440, y: 200, text: 'Capsule dorsale', cls: 'lbl-fascia', small: true, lead: [398, 240] });
@@ -130,7 +132,7 @@ Convention d\'image en sagittal : **proximal (radius) à gauche, distal (carpe) 
 
     injectat: `| Objectif | Produits | Volume | Commentaire |
 |---|---|---|---|
-| **Radio-carpienne** | Triamcinolone hexacétonide (Hexatrione®) 20 mg, **ou** triamcinolone acétonide 20–40 mg, **ou** méthylprednisolone 20–40 mg, **ou** bétaméthasone 5,7 mg (Diprostène®) + lidocaïne 1 % | **1–2 mL** au total | Capacité articulaire faible : au-delà de 2–3 mL on distend et on fait mal. L\'**hexacétonide est strictement réservé à l\'intra-articulaire** — jamais dans une gaine ni en péri-tendineux |
+| **Radio-carpienne** | Triamcinolone hexacétonide (Hexatrione® 2 %) 10–20 mg — **intra-articulaire exclusivement**, indication au poignet à confirmer sur le RCP —, **ou** triamcinolone acétonide 20–40 mg, **ou** méthylprednisolone 20–40 mg, **ou** bétaméthasone 7 mg (Diprostène® 1 mL) ou 5,7 mg (Célestène® Chronodose 1 mL) + lidocaïne 1 % | **1–2 mL** au total | Capacité articulaire faible : au-delà de 2–3 mL on distend et on fait mal. L\'**hexacétonide est strictement réservé à l\'intra-articulaire** — jamais dans une gaine ni en péri-tendineux |
 | **Médio-carpienne** | Idem, dose réduite | **0,5–1 mL** | Articulation étroite ; vérifier qu\'on n\'est pas dans la radio-carpienne (les deux ne communiquent pas toujours) |
 | **Radio-ulnaire distale** | Idem, dose réduite | **0,5–1 mL** | Récessus minuscule ; injecter très lentement, arrêter à la première résistance |
 | **Ténosynovite des extenseurs** | Corticoïde **non hexacétonide** (méthylprednisolone 20–40 mg ou bétaméthasone) + lidocaïne | **1–2 mL** dans la gaine | Cible **péri-tendineuse**, jamais intratendineuse. Ne pas confondre avec l\'intra-articulaire : ce sont deux images et deux gestes |
@@ -211,7 +213,6 @@ Convention d\'image en sagittal : **proximal (radius) à gauche, distal (carpe) 
       { auteurs: 'Bianchi S, Martinoli C', titre: 'Ultrasound of the Musculoskeletal System', revue: 'Springer (ouvrage)', annee: '2007', type: 'ouvrage', verif: false, note: 'Sono-anatomie du poignet dorsal, compartiments extenseurs, kystes et pédicule.' },
       { auteurs: 'Özçakar L, Kara M, Chang KV, et al.', titre: 'EURO-MUSCULUS/USPRM basic scanning protocols for the wrist and hand', revue: 'European Journal of Physical and Rehabilitation Medicine', annee: '2015', type: 'protocole', verif: false, note: 'Protocole de balayage standardisé ; année à confirmer.' },
       { auteurs: 'Backhaus M, Burmester GR, Gerber T, et al.', titre: 'Guidelines for musculoskeletal ultrasound in rheumatology', revue: 'Annals of the Rheumatic Diseases', annee: '2001', type: 'reco', verif: false, note: 'Coupes standard et définitions (épanchement, synovite) ; année à confirmer.' },
-      { auteurs: 'Gaspar MP, Kane PM, Zohn RC, et al.', titre: 'Ganglion cysts of the wrist and hand — aspiration versus excision: outcomes and recurrence', revue: 'Journal of Hand Surgery / Hand (selon la publication)', annee: 'années 2010', type: 'série', verif: false, note: 'Référence incertaine : à remplacer par la série effectivement retrouvée lors de la passe de vérification.' },
       { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'reco', note: 'Métadonnées reprises de la fiche nerf-suprascapulaire, vérifiées lors d\'une session antérieure.' },
     ],
     videos: [],
@@ -236,7 +237,7 @@ Convention d\'image en sagittal : **proximal (radius) à gauche, distal (carpe) 
           S.label({ x: 130, y: 336, text: 'Radius', cls: 'lbl-bone', small: true });
           S.label({ x: 456, y: 336, text: 'Lunatum', cls: 'lbl-bone', small: true });
           S.label({ x: 616, y: 214, text: '25 G 25 mm, 30–40°', cls: 'lbl-needle', anchor: 'end', small: true });
-          S.label({ x: 620, y: 104, text: 'Intervalle 3-4 :\nl\'aiguille passe\nentre les tendons', cls: 'lbl-tendon', anchor: 'end', small: true, lead: [524, 104] });
+          S.label({ x: 628, y: 300, text: 'Entrée distale :\nl\'aiguille glisse sous les tendons', cls: 'lbl-tendon', anchor: 'end', small: true, lead: [540, 118] });
           S.target({ x: 342, y: 272, r: 30 });
           S.needle({ from: [636, 80], to: [346, 268] });
           S.spread({ x: 344, y: 272, rx: 24, ry: 16, label: '1–2 mL' });
@@ -251,16 +252,17 @@ Convention d\'image en sagittal : **proximal (radius) à gauche, distal (carpe) 
           S.skin({ thickness: 7, fatBelow: 14 });
           S.tendon({ x: 116, y: 112, rx: 28, ry: 17 });
           S.tendon({ x: 178, y: 122, rx: 26, ry: 16 });
-          S.tendon({ x: 474, y: 116, rx: 28, ry: 17 });
-          S.tendon({ x: 540, y: 124, rx: 26, ry: 16 });
-          S.bone({ path: 'M30 322 Q118 258 208 254 Q248 258 266 278', label: 'Scaphoïde', at: [110, 350], ldy: 0, small: true });
-          S.bone({ path: 'M334 278 Q356 256 398 252 Q490 258 570 322', label: 'Lunatum', at: [470, 350], ldy: 0, small: true });
+          S.tendon({ x: 546, y: 102, rx: 28, ry: 17 });
+          S.tendon({ x: 616, y: 110, rx: 24, ry: 15 });
+          S.bone({ path: 'M-20 336 Q118 258 208 254 Q248 258 266 278', label: 'Scaphoïde', at: [110, 350], ldy: 0, small: true });
+          S.bone({ path: 'M334 278 Q356 256 398 252 Q490 258 660 336', label: 'Lunatum', at: [470, 350], ldy: 0, small: true });
+          S.region({ path: 'M264 274 L338 274 L338 424 L264 424 Z', fill: '#04060a', opacity: 0.95 });
           S.ligament({ path: 'M268 256 L332 254 L334 268 L270 270 Z', label: 'Lig. scapho-lunaire (faisceau dorsal)', lx: 300, ly: 316, small: true, lead: [300, 272] });
           S.fluid({ x: 300, y: 158, rx: 82, ry: 52, label: 'Kyste synovial', lx: 300, ly: 158 });
           S.fluid({ path: 'M286 206 L316 206 L308 254 L294 254 Z', label: 'Pédicule', lx: 210, ly: 234, anchor: 'end', small: true, lead: [286, 230] });
           S.label({ x: 116, y: 84, text: 'Tendons extenseurs refoulés', cls: 'lbl-tendon', small: true });
           S.target({ x: 300, y: 158, r: 30 });
-          S.needle({ from: [636, 92], to: [326, 152], label: '18 G — aspiration puis fenestration' });
+          S.needle({ from: [636, 142], to: [330, 154], label: '18 G — aspiration puis fenestration' });
         },
       },
     ],

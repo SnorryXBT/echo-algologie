@@ -4,11 +4,13 @@
   /* Base : coupe longitudinale dorso-radiale sur la colonne du pouce (scaphoïde → trapèze → M1). */
   function baseTMC(S, labels) {
     S.skin({ thickness: 7, fatBelow: 14 });
-    S.nerve({ x: 404, y: 60, r: 4 });
+    S.nerve({ x: 404, y: 88, r: 4 });
     S.artery({ x: 250, y: 160, r: 11 });
-    S.bone({ path: 'M0 252 Q40 220 96 216 Q130 218 150 234', label: labels ? 'Scaphoïde' : null, at: [64, 322], ldy: 0, small: true });
+    S.bone({ path: 'M-20 258 Q40 220 96 216 Q130 218 150 234', label: labels ? 'Scaphoïde' : null, at: [64, 322], ldy: 0, small: true });
     S.bone({ path: 'M176 234 Q212 206 262 202 Q320 206 346 230', label: labels ? 'Trapèze' : null, at: [256, 322], ldy: 0, small: true });
-    S.bone({ path: 'M382 228 Q414 202 470 198 L640 202', label: labels ? 'Base de M1' : null, at: [530, 322], ldy: 0, small: true });
+    S.bone({ path: 'M382 228 Q414 202 470 198 L660 202', label: labels ? 'Base de M1' : null, at: [530, 322], ldy: 0, small: true });
+    S.region({ path: 'M146 230 L182 230 L182 424 L146 424 Z', fill: '#04060a', opacity: 0.95 });
+    S.region({ path: 'M342 224 L388 224 L388 424 L342 424 Z', fill: '#04060a', opacity: 0.95 });
     S.bone({ path: 'M328 212 L344 188 L352 216', shadow: false, width: 3 });
     S.bone({ path: 'M378 214 L390 190 L400 212', shadow: false, width: 3 });
     S.fascia({ points: [[324, 206], [364, 194], [404, 196]], width: 1.8, opacity: 0.75 });
@@ -122,7 +124,7 @@ Convention d\'image en longitudinal : **proximal (scaphoïde, trapèze) à gauch
 
     injectat: `| Objectif | Produits | Volume | Commentaire |
 |---|---|---|---|
-| **Corticoïde (option de première intention)** | Triamcinolone hexacétonide (Hexatrione®) 10–20 mg **ou** triamcinolone acétonide 10–20 mg **ou** méthylprednisolone 10–20 mg **ou** bétaméthasone 5,7 mg, + lidocaïne 1 % | **0,3–0,5 mL** (max 1 mL) | Site **strictement intra-articulaire** : l\'hexacétonide est ici autorisé, contrairement à De Quervain ou au doigt à ressort. Effet attendu : modeste et de quelques semaines à quelques mois — le dire |
+| **Corticoïde (option de première intention)** | Triamcinolone hexacétonide (Hexatrione®) 10–20 mg **ou** triamcinolone acétonide 10–20 mg **ou** méthylprednisolone 10–20 mg **ou** bétaméthasone 5,7 mg (Célestène® Chronodose 1 mL) ou 7 mg (Diprostène® 1 mL), + lidocaïne 1 % | **0,3–0,5 mL** (max 1 mL) | Site **strictement intra-articulaire** : l\'hexacétonide est ici autorisé, contrairement à De Quervain ou au doigt à ressort. Effet attendu : modeste et de quelques semaines à quelques mois — le dire |
 | **Acide hyaluronique** | AH de bas ou haut poids moléculaire, présentation adaptée aux petites articulations | **0,3–0,5 mL**, 1 à 3 injections hebdomadaires selon le produit | Dans les essais comparatifs, **équivalent au corticoïde** sans supériorité démontrée sur le placebo. Non remboursé dans cette indication. À réserver au patient chez qui le corticoïde est indésirable, informé du niveau de preuve |
 | **PRP** | Plasma riche en plaquettes autologue | 0,5–1 mL | Preuves **insuffisantes** dans cette localisation ; coût, cadre réglementaire à sécuriser. Pas de proposition en routine |
 | **Bloc diagnostique** | Lidocaïne 1 % seule | **0,3 mL par articulation** | L\'usage le mieux justifié : trancher entre TMC, STT et MCP avant décision chirurgicale. EN avant / 15 min après, une articulation à la fois |
@@ -219,7 +221,7 @@ Convention d\'image en longitudinal : **proximal (scaphoïde, trapèze) à gauch
           S.label({ x: 152, y: 122, text: 'A. radiale (tabatière)', cls: 'lbl-artery', small: true, lead: [240, 158] });
           S.label({ x: 372, y: 116, text: 'Ostéophytes dorsaux', cls: 'lbl-bone', small: true, lead: [368, 186] });
           S.label({ x: 618, y: 210, text: 'Insertion du LAP', cls: 'lbl-tendon', anchor: 'end', small: true, lead: [560, 176] });
-          S.label({ x: 552, y: 88, text: 'Br. n. radial superficiel', cls: 'lbl-nerve', anchor: 'end', small: true, lead: [408, 66] });
+          S.label({ x: 566, y: 118, text: 'Br. n. radial superficiel', cls: 'lbl-nerve', anchor: 'end', small: true, lead: [408, 94] });
           S.label({ x: 148, y: 386, text: 'Interligne STT', cls: 'lbl-bone', small: true, lead: [163, 238] });
           S.label({ x: 396, y: 386, text: 'Interligne TMC', cls: 'lbl-fluid', small: true, lead: [370, 268] });
         },

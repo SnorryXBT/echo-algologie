@@ -223,7 +223,7 @@ Ponction **in-plane**, dans le grand axe de la sonde, de latéral en médial ou 
         S.muscle({ path: 'M0 278 L640 278 L640 372 L0 372 Z', label: 'Soléaire', at: [320, 328], opacity: 0.45 });
         S.label({ x: 150, y: 156, text: 'Petite veine saphène', cls: 'lbl-vein', small: true, lead: [294, 96] });
         S.label({ x: 496, y: 156, text: 'N. cutané sural médial', cls: 'lbl-nerve', small: true, lead: [350, 102] });
-        S.label({ x: 140, y: 106, text: 'Fascia crural', cls: 'lbl-fascia', small: true });
+        S.label({ x: 140, y: 72, text: 'Fascia crural', cls: 'lbl-fascia', small: true, lead: [200, 80] });
       },
     },
     {
@@ -244,8 +244,8 @@ Ponction **in-plane**, dans le grand axe de la sonde, de latéral en médial ou 
         S.label({ x: 214, y: 258, text: 'N. sural (1–2 mm)', cls: 'lbl-nerve', small: true, lead: [298, 112] });
         S.label({ x: 570, y: 250, text: 'Tendons fibulaires', cls: 'lbl-tendon', small: true, anchor: 'end', lead: [500, 134] });
         S.target({ x: 306, y: 104, r: 14 });
-        S.needle({ from: [636, 74], to: [330, 110], label: '25–27 G, in-plane' });
-        S.spread({ x: 352, y: 124, rx: 36, ry: 20, label: '2–3 mL' });
+        S.needle({ from: [636, 74], to: [334, 108], label: '25–27 G, in-plane' });
+        S.spreadPath({ path: 'M282 106 A 30 20 0 1 0 342 106 A 30 20 0 1 0 282 106 Z M300 104 A 9 8 0 1 1 318 104 A 9 8 0 1 1 300 104 Z', at: [370, 176], label: '2–3 mL — couronne péri-nerveuse' });
       },
     },
   ],

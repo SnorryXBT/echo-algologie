@@ -183,7 +183,7 @@ Données : séries prospectives et cohortes rétrospectives (Yoon 2013 : réduct
     { titre: 'Ilioinguinal and iliohypogastric nerves cannot be selectively blocked by using ultrasound guidance: a volunteer study', revue: 'Br J Anaesth', type: 'étude de volontaires', verif: true, note: 'Auteurs et année non vus dans la source consultée. Démontre l’absence de sélectivité entre les deux nerfs.' },
     { titre: 'Review of ilioinguinal nerve blocks for ilioinguinal neuralgia post hernia surgery', revue: 'Curr Pain Headache Rep', annee: '2020', doi: '10.1007/s11916-020-00913-4', type: 'revue', verif: true },
     { titre: 'Understanding the role of pulsed radiofrequency in the early management of chronic postsurgical groin pain', revue: 'Pain Med', url: 'https://academic.oup.com/painmedicine/article/23/6/1186/6427641', type: 'série / revue', verif: true, note: 'Année non vue dans la source ; plaide pour une PRF précoce dans la douleur inguinale post-chirurgicale.' },
-    { auteurs: 'Rozen D, Ahn J', titre: 'Pulsed radiofrequency for the treatment of ilioinguinal neuralgia after inguinal herniorrhaphy', revue: 'Mt Sinai J Med', annee: '2006', pmid: '16878278', type: 'série', verif: false, note: 'Titre, année et PMID vus ; auteurs et revue cités de mémoire.' },
+    { auteurs: 'Rozen D, Ahn J', titre: 'Pulsed radiofrequency for the treatment of ilioinguinal neuralgia after inguinal herniorrhaphy', revue: 'Mt Sinai J Med', annee: '2006', type: 'série', verif: false, note: 'Titre et année vus ; auteurs et revue cités de mémoire — à revérifier avant citation.' },
     { titre: 'Recalcitrant pelvic pain: evaluating the effectiveness of radiofrequency ablation for pudendal, genitofemoral, and ilioinguinal neuropathy', annee: '2025', url: 'https://www.mdpi.com/2673-592X/5/4/28', type: 'cohorte', verif: true },
     { titre: 'Impact of different neurectomy techniques on managing chronic pain after inguinal hernia repair: a meta-analysis and systematic review', annee: '2025', pmid: '40794295', type: 'méta-analyse', verif: true, note: 'Environ 90 % d’amélioration après neurectomie ; triple neurectomie 98,2 %, double neurectomie 80,1 % de rémission complète pour 15,3 % de complications.' },
     { titre: 'Management of chronic post-herniorrhaphy pain: a systematic review', pmid: '41337757', type: 'revue systématique', verif: true, note: 'Algorithme : blocs / PRF, puis neurostimulation, puis neurectomie. Revue et année non vues.' },
@@ -223,7 +223,7 @@ Données : séries prospectives et cohortes rétrospectives (Yoon 2013 : réduct
     },
     {
       id: 'iiih-bloc', section: 'technique', titre: 'Bloc dans le plan, de médial en latéral — la crête iliaque sert de butoir',
-      legende: 'Aiguille in-plane à angle plat, progressant vers l’os : chaque millimètre éloigne la pointe du péritoine. Deux ressauts aponévrotiques ; l’hydrolocalisation de 0,3–0,5 mL doit écarter oblique interne et transverse. Critère de fin : lentille anéchogène de 3–4 cm englobant les deux nerfs et le signal Doppler.',
+      legende: 'Aiguille in-plane à angle plat, progressant vers l’os : chaque millimètre éloigne la pointe du péritoine. Deux ressauts aponévrotiques ; l’hydrolocalisation de 0,3–0,5 mL doit écarter oblique interne et transverse. Critère de fin : lentille anéchogène de 3–4 cm englobant les deux nerfs et le signal Doppler. Sur le schéma, la nappe soulève l’oblique interne et les deux nerfs apparaissent alors appliqués sur le transverse, à sa face profonde — c’est l’image réelle après injection.',
       opts: { depth: 4 },
       build: S => {
         S.orient({ left: 'Médial (ombilic)', right: 'Latéral (EIAS)' }).probeInfo({ plan: 'Transverse oblique', type: 'in-plane, médio-latéral' });
@@ -237,12 +237,12 @@ Données : séries prospectives et cohortes rétrospectives (Yoon 2013 : réduct
         S.bowel({ path: 'M40 300 q60 -34 130 -4 q66 30 130 -2 q60 -30 120 4 L420 400 L40 400 Z', label: 'Péritoine, anses', at: [190, 348] });
         S.bone({ path: 'M528 260 Q580 214 640 168' });
         S.label({ x: 596, y: 156, text: 'Crête iliaque', cls: 'lbl-bone', small: true });
-        S.nerve({ x: 470, y: 212, r: 7 });
-        S.nerve({ x: 396, y: 210, r: 7 });
-        S.artery({ x: 434, y: 214, r: 6 });
-        S.target({ x: 470, y: 212, r: 20 });
-        S.needle({ from: [0, 96], to: [386, 208], label: '22–25 G 50 mm, angle 15–25°' });
-        S.spread({ x: 442, y: 211, rx: 96, ry: 13, label: '5–10 mL' });
+        S.nerve({ x: 470, y: 222, r: 7 });
+        S.nerve({ x: 396, y: 220, r: 7 });
+        S.artery({ x: 434, y: 224, r: 6 });
+        S.target({ x: 434, y: 223, r: 30 });
+        S.needle({ from: [0, 96], to: [380, 206], label: '22–25 G 50 mm, angle 15–25°' });
+        S.spreadPath({ path: 'M332 208 Q432 184 516 198 Q432 212 332 208 Z', at: [246, 190], label: '5–10 mL' });
         S.label({ x: 512, y: 348, text: 'Butoir osseux :\nla pointe s’éloigne du péritoine', cls: 'lbl-target', small: true, anchor: 'middle' });
       },
     },
@@ -262,9 +262,9 @@ Données : séries prospectives et cohortes rétrospectives (Yoon 2013 : réduct
         S.label({ x: 540, y: 268, text: 'Plaque de renfort', cls: 'lbl-fascia', small: true, anchor: 'middle', lead: [545, 244] });
         S.nerve({ rx: 40, ry: 15, x: 306, y: 146, label: 'Névrome', lx: 306, ly: 108, anchor: 'middle', small: true, lead: [306, 132] });
         S.nerve({ x: 400, y: 152, rx: 8, ry: 5, label: 'Cordon nerveux d’amont', lx: 470, ly: 196, anchor: 'middle', small: true, lead: [408, 154] });
-        S.target({ x: 306, y: 146, r: 30 });
-        S.needle({ from: [24, 78], to: [262, 146], label: '25 G 40 mm' });
-        S.spread({ x: 306, y: 146, rx: 52, ry: 22, label: '1–3 mL' });
+        S.target({ x: 306, y: 146, r: 34 });
+        S.needle({ from: [24, 78], to: [254, 146], label: '25 G 40 mm' });
+        S.spread({ x: 254, y: 150, rx: 28, ry: 12, label: '1–3 mL' });
       },
     },
   ],
