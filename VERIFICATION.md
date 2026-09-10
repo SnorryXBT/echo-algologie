@@ -32,7 +32,7 @@ ASRA, Clarius) **vus dans un résultat de recherche**, jamais reconstitués.
   dans `js/data/procedures/<id>.js`, champ `references`.
 - Ne pas modifier le contenu clinique hors `references`, `videos`, `evidence`, `grade`.
 - Après chaque fiche : `node scripts/build-index.js` puis
-  `NODE_PATH=/opt/node22/lib/node_modules node scripts/check-all.js` (0 erreur), commit.
+  `NODE_PATH=$(npm root -g) node scripts/check-all.js` (0 erreur), commit.
 - Rapport final : références confirmées / corrigées / supprimées par fiche, vidéos ajoutées.
 
 ## Commande de lancement suggérée

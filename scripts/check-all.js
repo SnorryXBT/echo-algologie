@@ -4,7 +4,7 @@ const path = require('path'), fs = require('fs');
 (async () => {
   const dir = path.join(__dirname, '../js/data/procedures');
   const ids = fs.readdirSync(dir).filter(f => f.endsWith('.js')).map(f => f.replace('.js', '')).sort();
-  const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+  const browser = await chromium.launch({ ...(process.env.PW_CHROME ? { executablePath: process.env.PW_CHROME } : {}) });
   const page = await browser.newPage({ viewport: { width: 1300, height: 900 } });
   const errs = [];
   page.on('pageerror', e => errs.push('PAGEERROR ' + e.message));

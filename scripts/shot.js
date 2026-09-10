@@ -4,7 +4,7 @@ const { chromium } = require('playwright');
 const path = require('path');
 (async () => {
   const [hash = '#/', out = 'shot.png', theme = 'light', selector, nth = '0'] = process.argv.slice(2);
-  const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+  const browser = await chromium.launch({ ...(process.env.PW_CHROME ? { executablePath: process.env.PW_CHROME } : {}) });
   const page = await browser.newPage({ viewport: { width: 1400, height: 1000 }, colorScheme: theme === 'dark' ? 'dark' : 'light' });
   const errors = [];
   page.on('pageerror', e => errors.push('PAGEERROR ' + e.message));

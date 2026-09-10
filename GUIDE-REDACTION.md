@@ -136,7 +136,7 @@ Exigences des schémas :
 scène et la regarder (outil Read sur le PNG), corriger, recapturer :
 
 ```
-NODE_PATH=/opt/node22/lib/node_modules node scripts/shot.js '#/fiche/<id>' /tmp/claude-0/-home-user/895ae325-8569-5f29-ac91-37f679763805/scratchpad/shots/<id>-0.png light '.scene-wrap' 0
+NODE_PATH=$(npm root -g) node scripts/shot.js '#/fiche/<id>' /tmp/claude-0/-home-user/895ae325-8569-5f29-ac91-37f679763805/scratchpad/shots/<id>-0.png light '.scene-wrap' 0
 ```
 
 (index `0`, `1`, `2`… = ordre des scènes dans la page : d'abord celles de la section
