@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Bassin et racine de cuisse droite vus de face, patient en décubitus dorsal : EIAS en haut à gauche, pli inguinal oblique, cuisse en bas à gauche -->
+  <path d="M40,0 C36,60 40,120 60,160 C78,196 98,236 104,300"/>
+  <path d="M360,0 C364,60 360,120 340,160 C322,196 302,236 296,300"/>
+  <path d="M200,0 L200,120" stroke-dasharray="5 6" stroke-width="1.3" opacity=".6"/>
+  <path d="M86,110 C130,150 176,176 200,192 C224,176 270,150 314,110" stroke-width="1.6" opacity=".8"/>
+  <path d="M168,300 C176,250 190,216 200,196 C210,216 224,250 232,300"/>
+  <g stroke-width="1.3" stroke-dasharray="4 4" opacity=".7">
+    <circle cx="82" cy="104" r="9"/><circle cx="318" cy="104" r="9"/>
+    <path d="M82,104 C110,110 150,130 190,178 M318,104 C290,110 250,130 210,178"/>
+    <path d="M200,172 L200,196"/>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Genou droit vu de face, patient en décubitus dorsal, genou légèrement fléchi sur un coussin ; cuisse en haut, jambe en bas -->
+  <path d="M120,0 C118,60 122,100 132,140 C136,156 134,176 130,196 C126,236 128,270 132,300"/>
+  <path d="M290,0 C294,60 290,100 278,140 C272,158 274,178 278,196 C284,236 282,270 278,300"/>
+  <g stroke-width="1.3" stroke-dasharray="4 4" opacity=".7">
+    <path d="M176,118 C176,100 234,100 234,118 C236,142 228,166 205,170 C182,166 174,142 176,118 Z"/>
+    <path d="M150,190 C170,178 240,178 262,190"/>
+    <path d="M192,200 L204,236 L216,200"/>
+    <path d="M144,196 L146,214 M266,196 L264,214"/>
+  </g>
+  <path d="M156,28 L154,60 M254,28 L256,60" stroke-width="1" opacity=".5"/>
+</svg>
