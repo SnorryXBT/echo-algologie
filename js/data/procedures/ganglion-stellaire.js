@@ -13,8 +13,8 @@ ECHO.register({
   resume: 'Le « bloc du ganglion stellaire » est en réalité, dans sa forme échoguidée moderne, un bloc du **tronc sympathique cervical** déposé sous le fascia prévertébral, sur le muscle long du cou, au niveau de C6 ou C7 : l\'injectat diffuse ensuite en caudal jusqu\'au ganglion cervico-thoracique en C7-T1. C\'est le geste sympathique de référence du membre supérieur et de l\'hémiface. L\'échographie a changé sa sécurité (visualisation de l\'œsophage, de la thyroïde, des artères thyroïdienne inférieure, cervicale ascendante et vertébrale) et son volume (4–5 mL au lieu de 8–10 mL à l\'aveugle), mais pas son statut : geste de niveau 3, à faire dans un environnement où l\'on sait gérer une convulsion immédiate et une détresse respiratoire. Le critère de réussite n\'est pas le syndrome de Claude Bernard-Horner seul mais l\'élévation thermique cutanée homolatérale ≥ 1,5 °C par rapport au côté opposé.',
 
   flash: {
-    position: 'dorsal', positionNote: 'nuque en légère extension (coussin fin sous les épaules), tête tournée de 15–30° du côté opposé ; ne pas hyperextension­ner (rapproche la carotide de la cible)',
-    sonde: 'lineaire', sondeNote: '8–15 MHz, profondeur 3–4 cm, focale 2–3 cm, Doppler couleur à basse PRF obligatoire avant toute ponction',
+    position: 'dorsal', positionNote: 'nuque en légère extension (coussin fin sous les épaules), tête tournée de 15–30° du côté opposé ; ne pas hyperétendre (la carotide se rapproche alors de la cible)',
+    sonde: 'lineaire', sondeNote: '8–15 MHz, profondeur 3–4 cm, focale 2–3 cm, Doppler couleur réglé bas débit, obligatoire avant toute ponction',
     approche: 'in-plane', approcheNote: 'latéro-médiale, rétro-carotidienne (« paracarotidien latéral ») ; voie out-of-plane paracarotidienne antérieure possible mais aiguille moins contrôlée',
     aiguille: '25 G 40–50 mm (ou 22–25 G 50 mm échovisible) sur prolongateur ; aiguille RF 22 G 50–54 mm à extrémité active 5 mm pour la PRF',
     cible: 'Sous le fascia prévertébral, au contact de la face antérieure du **muscle long du cou**, en dedans de l\'artère carotide et en avant du processus transverse ; critère de fin : nappe anéchogène qui décolle le fascia prévertébral et s\'étend en caudal, sans diffusion dans la gaine carotidienne',
@@ -33,7 +33,7 @@ ECHO.register({
     'Bloc **diagnostique** avant PRF du tronc sympathique cervical ou avant discussion d\'une sympathectomie.',
   ],
   contreIndications: [
-    '**Absolues** : refus, infection cutanée ou cervicale profonde, bloc controlatéral récent (< 48 h) ou paralysie récurrentielle / phrénique controlatérale connue, pneumonectomie controlatérale, insuffisance respiratoire sévère, glaucome aigu non contrôlé, troubles de conduction majeurs non appareillés (BAV de haut degré) pour un bloc **gauche**, infarctus du myocarde récent.',
+    '**Absolues** : refus, infection cutanée ou cervicale profonde, bloc controlatéral récent (< 48 h) ou paralysie récurrentielle / phrénique controlatérale connue, pneumonectomie controlatérale, insuffisance respiratoire sévère, glaucome aigu non contrôlé, troubles de conduction majeurs non appareillés (BAV de haut degré), infarctus du myocarde récent.',
     '**Relatives** : anticoagulation curative, antiagrégation double, coagulopathie — **procédure de risque hémorragique intermédiaire** dans les recommandations ASRA-ESRA 2018 sur les procédures interventionnelles de la douleur ; la discussion d\'un arrêt de l\'aspirine et des AINS y est explicitement envisagée pour le bloc stellaire lorsque la configuration anatomique majore le risque et les conséquences d\'un saignement (hématome rétropharyngé compressif). Le site n\'est pas compressible : ne pas raisonner comme pour un bloc superficiel.',
     'Anatomie défavorable repérée au balayage préalable : trajet aberrant de l\'artère vertébrale en avant du processus transverse à C6, artère thyroïdienne inférieure ou cervicale ascendante croisant la trajectoire, œsophage latéralisé sur le trajet — **rescanner et changer de niveau ou de côté plutôt que forcer**.',
     'Dysphagie, dysphonie ou trouble de la déglutition préexistants : le bloc récurrentiel iatrogène sera mal toléré.',
@@ -41,7 +41,7 @@ ECHO.register({
   ],
   alternatives: 'Blocs sympathiques de rang équivalent : bloc paravertébral thoracique haut T2-T3 (sympathectomie du membre supérieur plus complète, sans Horner, plèvre à proximité) ; bloc plexique ou perfusion de lidocaïne IV si l\'objectif est antalgique et non sympatholytique. Dans le SDRC, le bloc sympathique n\'est **pas** un traitement de fond : les recommandations récentes le placent en adjuvant d\'un programme de rééducation active (imagerie motrice graduée, désensibilisation, thérapie miroir) et d\'un traitement médicamenteux (gabapentinoïde, bisphosphonate IV en phase précoce). Un bloc qui soulage sans être exploité par la rééducation dans les jours qui suivent est un bloc perdu — c\'est le principal argument pour le programmer un jour d\'HDJ où le kiné voit le patient dans la foulée. PRF du tronc sympathique cervical si réponse au bloc test franche mais brève ; sympathectomie thoracoscopique en dernier recours.',
 
-  anatomie: `Le **tronc sympathique cervical** chemine dans l\'espace prévertébral, **en arrière du fascia prévertébral** (fascia alaire), plaqué sur la face antérieure du **muscle long du cou** (*longus colli*), lui-même appliqué sur les corps vertébraux et les processus transverses de C3 à T3. Le **ganglion cervico-thoracique (stellaire)** naît de la fusion du ganglion cervical inférieur et du premier ganglion thoracique : il est situé **en regard du col de la 1re côte, à hauteur de C7-T1**, en arrière de l\'artère vertébrale à son origine et en dehors du dôme pleural. Il fusionne avec T1 dans environ 80 % des cas.
+  anatomie: `Le **tronc sympathique cervical** chemine dans l\'espace prévertébral, **en arrière du fascia prévertébral** (fascia alaire), plaqué sur la face antérieure du **muscle long du cou** (*longus colli*), lui-même appliqué sur les corps vertébraux et les processus transverses de C3 à T3. Le **ganglion cervico-thoracique (stellaire)** naît de la fusion du ganglion cervical inférieur et du premier ganglion thoracique : il est situé **en regard du col de la 1re côte, à hauteur de C7-T1**, en arrière de l\'origine de l\'artère vertébrale et immédiatement **au-dessus du dôme pleural**. Il fusionne avec T1 dans environ 80 % des cas.
 
 Conséquence pratique majeure : **on ne pique jamais le ganglion**. On dépose l\'anesthésique local plus haut, en C6 ou C7, sous le fascia prévertébral, et on laisse la diffusion caudale faire le travail. C\'est ce que l\'échographie a démontré et permis (Narouze 2007, 2014) : elle identifie le bon plan fascial, ce que la fluoroscopie ne fait pas.
 
@@ -63,7 +63,7 @@ Voie veineuse périphérique posée, scope (SpO₂, PA, ECG), oxygène et matér
 
 Certains opérateurs préfèrent la voie **paracarotidienne antérieure hors du plan** : on comprime la gaine carotidienne latéralement avec la sonde et on pique de dehors en dedans sur un trajet court. Elle raccourcit la distance mais on ne voit que la pointe : à réserver à ceux qui la pratiquent régulièrement.`,
     sonde: `- Linéaire 8–15 MHz, preset « nerf » ou « small parts », **profondeur 3–4 cm**, focale sur le long du cou, gain permettant de distinguer le fascia prévertébral (fine ligne blanche) du muscle sous-jacent.
-- **Doppler couleur systématique** sur toute la trajectoire prévue, à basse PRF (les artères thyroïdienne inférieure et cervicale ascendante sont de petit calibre et à flux lent) ; refaire un Doppler après chaque repositionnement de sonde.
+- **Doppler couleur systématique** sur toute la trajectoire prévue, réglé pour les bas débits (échelle de vitesse basse, filtre de paroi bas : les artères thyroïdienne inférieure et cervicale ascendante sont de petit calibre et à flux lent) ; refaire un Doppler après chaque repositionnement de sonde.
 - Balayage préalable **complet de C4 à T1** avant de désinfecter : compter les tubercules, identifier le niveau, repérer l\'œsophage en faisant déglutir le patient une fois (il bouge et se remplit d\'air), vérifier la position de l\'artère vertébrale à C6 et à C7.
 - Housse stérile ou gel stérile, aiguille sur prolongateur pour que l\'injection soit faite par l\'aide sans mobiliser la pointe.`,
   },
@@ -106,7 +106,7 @@ Certains opérateurs préfèrent la voie **paracarotidienne antérieure hors du 
 | Série thérapeutique | Même schéma, 1 séance par semaine × 3–6 selon la réponse | 4–5 mL | Poursuivre seulement si gain fonctionnel objectivé ; arrêter après 2 blocs sans effet |
 | Adjuvant discuté | Dexaméthasone 2–4 mg (**non particulaire**) | — | Aucun bénéfice démontré sur ce site ; **jamais de corticoïde particulaire** (bétaméthasone, méthylprednisolone, triamcinolone) : artères terminales encéphaliques à proximité immédiate |
 
-**Volumes.** Le passage à l\'échoguidage a fait chuter le volume : 8–10 mL par voie antérieure aveugle, **4–5 mL** sous échographie en dépôt sous-fascial (Kapral 1995 : 5 mL de bupivacaïne 0,25 % échoguidée vs 8 mL à l\'aveugle, installation plus rapide en moins de 10 min). Un ECR à trois bras (*J Clin Med* 2019, 102 patients, 4 vs 6 vs 8 mL de lidocaïne 1 %) a spécifiquement testé cette question ; je n\'ai pas pu vérifier le détail de ses critères de jugement dans les sources consultées — retenir la tendance, pas un chiffre d\'autorité. **Plus de volume = plus de bloc récurrentiel et phrénique, pas plus de sympatholyse.**
+**Volumes.** Le passage à l\'échoguidage a fait chuter le volume : 8–10 mL par voie antérieure aveugle, **4–5 mL** sous échographie en dépôt sous-fascial (Kapral 1995 : 5 mL de bupivacaïne 0,25 % échoguidée vs 8 mL à l\'aveugle, installation plus rapide en moins de 10 min). Un ECR à trois bras (*J Clin Med* 2019, 102 patients, 4 vs 6 vs 8 mL de lidocaïne 1 %) a spécifiquement testé cette question ; le détail de ses critères de jugement n\'a pas pu être vérifié dans les sources consultées — retenir la tendance, pas un chiffre d\'autorité. **Plus de volume = plus de bloc récurrentiel et phrénique, pas plus de sympatholyse.**
 
 **Doses maximales** : ropivacaïne 3 mg/kg, lidocaïne 4,5 mg/kg (7 mg/kg adrénalinée), bupivacaïne 2–2,5 mg/kg. Un bloc stellaire n\'en approche jamais : le risque ici n\'est pas la dose cumulée, c\'est la **voie d\'administration** (< 0,5 mL en intra-vertébral suffit à convulser).`,
 
@@ -120,7 +120,7 @@ Intérêt : bloc sympathique du membre supérieur plus constant qu\'en C6 (le C6
   ],
 
   pearls: [
-    'Le repère n\'est pas l\'os, c\'est le **plan fascial** : « do not follow the bone, follow the fascia ». Une pointe au contact du tubercule est trop latérale et trop profonde.',
+    'Le repère n\'est pas l\'os, c\'est le **plan sous-fascial** (« do not follow the bone, follow the nerve », correspondance *Reg Anesth Pain Med* 2019). Une pointe au contact du tubercule est trop latérale et trop profonde.',
     'Prendre la **température cutanée bilatérale avant** le geste. Sans valeur de départ, on n\'a aucun critère objectif de réussite, et le Horner seul est un mauvais juge.',
     'Faire **déglutir une fois** au balayage : l\'œsophage bouge et se remplit d\'air — c\'est le moyen le plus rapide de le démasquer, surtout à gauche.',
     'Compter les niveaux **en remontant depuis C7** (artère vertébrale antérieure, tubercule antérieur absent) plutôt qu\'en partant du cricoïde : plus fiable, notamment sur les cous courts.',
@@ -147,7 +147,7 @@ Intérêt : bloc sympathique du membre supérieur plus constant qu\'en C6 (le C6
   ],
   securite: [
     '**Risque hémorragique intermédiaire (ASRA-ESRA 2018)** : site non compressible, conséquences potentiellement graves d\'un saignement. L\'arrêt de l\'aspirine et des AINS est à discuter au cas par cas ; anticoagulants curatifs : fenêtre selon la molécule et la clairance, en concertation avec le prescripteur. Ne pas transposer la règle « bloc superficiel, on ne touche à rien ».',
-    '**Doppler couleur systématique sur la trajectoire complète, à basse PRF**, refait après chaque repositionnement — artère vertébrale (variante antérieure à C6), thyroïdienne inférieure, cervicale ascendante.',
+    '**Doppler couleur systématique sur la trajectoire complète, réglé bas débit**, refait après chaque repositionnement — artère vertébrale (variante antérieure à C6), thyroïdienne inférieure, cervicale ascendante.',
     '**Aspiration entre chaque bolus de 1 mL** et contact verbal continu. Une aspiration négative n\'exclut rien (paroi artérielle collabée) : c\'est le fractionnement qui protège.',
     '**Aiguille de petit calibre (25 G)** : moins de dégâts en cas de ponction vasculaire ou œsophagienne ; le prix est une visibilité moindre, à compenser par un angle plat et une aiguille échovisible.',
     '**Jamais bilatéral dans la même séance**, jamais en ambulatoire sans surveillance de 30 min, jamais sans VVP ni intralipide disponible.',
@@ -163,7 +163,7 @@ Intérêt : bloc sympathique du membre supérieur plus constant qu\'en C6 (le C6
 
   evidence: `- **SDRC du membre supérieur — méta-analyse (Indian J Anaesth 2023, 8 études dont 4 ECR)** : réduction significative des scores de douleur jusqu\'à 2 semaines puis de 4 à 28 semaines, amélioration des scores d\'incapacité et des amplitudes ; **hétérogénéité marquée**, effectifs faibles. Preuve **modérée à faible** : le geste marche, mais la taille d\'effet et sa durée restent mal définies.
 - **Sécurité de l\'échoguidage** : Kapral 1995 (première description échoguidée, 12 patients : 5 mL échoguidés vs 8 mL à l\'aveugle, installation < 10 min) puis Narouze 2007 (prévention d\'une ponction œsophagienne) et Narouze 2014 (revue sécurité/efficacité). L\'échographie **n\'a jamais été comparée à la fluoroscopie dans un ECR de puissance suffisante sur les complications graves** — l\'argument est anatomique et de bon sens, pas statistique. Trou de la littérature à assumer.
-- **Anatomie appliquée (Bhatia 2012, Can J Anaesth, 100 patients)** : sono-anatomie comparée C6/C7, œsophage latéralisé à gauche dans 48 % des cas à C6 et 72 % à C7. C\'est la meilleure justification chiffrée du repérage échographique préalable.
+- **Anatomie appliquée (Bhatia 2012, Can J Anaesth, 100 patients)** : sono-anatomie comparée C6/C7, œsophage latéralisé à gauche dans environ 50 % des cas à C6 et 74 % à C7. C\'est la meilleure justification chiffrée du repérage échographique préalable.
 - **Névralgie post-zostérienne / zona (Front Neurosci 2019, 84 patients, sous scanner)** : SGB vs PRF du stellaire dans la NPZ de la face et du membre supérieur — baisse de l\'EVA dans les deux groupes, avantage à la PRF à 1 mois. Étude non aveugle, guidage scanner : transposable avec prudence.
 - **PRF échoguidée du tronc sympathique cervical dans le SDRC** : série rétrospective observationnelle (2017), > 50 % des patients en soulagement complet. Niveau **faible** (pas de groupe contrôle).
 - **Bouffées vasomotrices (ECR 2023, 40 femmes périménopausées, 6 SGB vs sérum salé)** : baisse significative du score de bouffées, du score de Kupperman et de la qualité du sommeil sur 12 semaines. Petit effectif, monocentrique.
@@ -178,7 +178,7 @@ Intérêt : bloc sympathique du membre supérieur plus constant qu\'en C6 (le C6
     { titre: 'Do not follow the bone, follow the nerve — ultrasound-guided stellate ganglion block: a reconfirmation', revue: 'Reg Anesth Pain Med (correspondance)', annee: '2019', pmid: '31656628', type: 'technique' , verif: true },
     { titre: 'Efficacy of stellate ganglion interventions for complex regional pain syndrome in the upper limb — a systematic review and meta-analysis', revue: 'Indian J Anaesth', annee: '2023;67(8)', pmid: '37693027', type: 'méta-analyse' , verif: true },
     { titre: 'CT-guided stellate ganglion pulsed radiofrequency stimulation for facial and upper limb postherpetic neuralgia', revue: 'Front Neurosci', annee: '2019;13:170', doi: '10.3389/fnins.2019.00170', type: 'étude comparative' , verif: true },
-    { titre: 'Ultrasound-guided pulsed radiofrequency treatment of the cervical sympathetic chain for complex regional pain syndrome: a retrospective observational study', annee: '2017', pmid: '28072749', type: 'série rétrospective', note: 'Auteurs et revue non confirmés dans la recherche — vérifier sur PubMed avant citation.' , verif: true },
+    { titre: 'Ultrasound-guided pulsed radiofrequency treatment of the cervical sympathetic chain for complex regional pain syndrome: a retrospective observational study', annee: '2017', type: 'série rétrospective', note: 'Auteurs, revue et identifiant non confirmés — à vérifier sur PubMed avant toute citation.' , verif: false },
     { titre: 'Tonic–clonic seizure during the ultrasound-guided stellate ganglion block because of an injection into an unrecognized variant vertebral artery: a case report', annee: '2019', url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6890314/', type: 'cas clinique', note: 'Le cas de référence pour la convulsion immédiate sur variante vasculaire.' , verif: true },
     { titre: 'Atypical course of vertebral artery identified by ultrasound prescan before performing a stellate ganglion block', annee: '2022', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9272721/', type: 'cas clinique', note: 'Justifie le balayage Doppler préalable systématique.' , verif: true },
     { titre: 'Effects of stellate ganglion block on perimenopausal hot flashes: a randomized controlled trial', annee: '2023', url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10715304/', type: 'ECR', note: '40 femmes, 6 blocs vs sérum salé, suivi 12 semaines.' , verif: true },
@@ -209,15 +209,15 @@ Intérêt : bloc sympathique du membre supérieur plus constant qu\'en C6 (le C6
         S.organ({ x: 150, y: 268, rx: 34, ry: 26, label: 'Œsophage', lx: 150, ly: 330, small: true, lead: [150, 292] });
         S.artery({ x: 262, y: 196, r: 30, label: 'Carotide commune', lx: 262, ly: 152, small: true });
         S.vein({ x: 350, y: 176, rx: 44, ry: 24, label: 'VJI', lx: 396, ly: 176, small: true });
-        S.muscle({ path: 'M176 258 Q210 234 300 232 Q400 232 452 262 L452 316 L180 316 Z', label: 'Long du cou', at: [300, 292], opacity: 0.55 });
+        S.muscle({ path: 'M180 268 Q214 246 300 244 Q396 244 448 270 L448 320 L184 320 Z', label: 'Long du cou', at: [300, 296], opacity: 0.55 });
         S.fascia({ points: [[172, 262], [230, 236], [310, 231], [400, 240], [456, 264]], width: 2.2, opacity: 1 });
         S.label({ x: 500, y: 240, text: 'Fascia prévertébral', anchor: 'start', cls: 'lbl-fascia', small: true, lead: [430, 246] });
         S.bone({ path: 'M186 340 Q260 328 330 326 L392 322 Q412 300 428 306 Q440 318 436 336 L466 352 Q496 336 522 318 Q548 306 566 318', label: 'Processus transverse C6', at: [250, 372], ldy: 0, small: true });
         S.label({ x: 446, y: 288, text: 'Tubercule ant. (Chassaignac)', anchor: 'start', cls: 'lbl-bone', small: true, lead: [430, 304] });
         S.nerve({ x: 470, y: 340, r: 11, label: 'Racine C6', lx: 542, ly: 358, anchor: 'start', small: true, lead: [480, 342] });
         S.label({ x: 396, y: 398, text: 'A. vertébrale : dans le foramen à C6 (masquée par l\'ombre)', anchor: 'middle', cls: 'lbl-artery', small: true });
-        S.nerve({ x: 296, y: 246, rx: 12, ry: 7 });
-        S.label({ x: 302, y: 220, text: 'Chaîne sympathique', anchor: 'start', cls: 'lbl-nerve', small: true, lead: [298, 240] });
+        S.nerve({ x: 296, y: 238, rx: 12, ry: 6 });
+        S.label({ x: 306, y: 208, text: 'Chaîne sympathique (sous le fascia)', anchor: 'start', cls: 'lbl-nerve', small: true, lead: [300, 232] });
       },
     },
     {
@@ -233,13 +233,13 @@ Intérêt : bloc sympathique du membre supérieur plus constant qu\'en C6 (le C6
         S.organ({ x: 150, y: 268, rx: 34, ry: 26, label: 'Œsophage', lx: 118, ly: 334, small: true, lead: [142, 292] });
         S.artery({ x: 262, y: 196, r: 30, label: 'Carotide', lx: 262, ly: 150, small: true });
         S.vein({ x: 350, y: 176, rx: 44, ry: 24 });
-        S.muscle({ path: 'M176 258 Q210 234 300 232 Q400 232 452 262 L452 316 L180 316 Z', label: 'Long du cou', at: [296, 296], opacity: 0.55 });
+        S.muscle({ path: 'M180 268 Q214 246 300 244 Q396 244 448 270 L448 320 L184 320 Z', label: 'Long du cou', at: [296, 298], opacity: 0.55 });
         S.muscle({ path: 'M470 218 L640 202 L640 300 L500 300 Z', label: 'Scalène ant.', at: [566, 258], opacity: 0.4, small: true });
         S.fascia({ points: [[172, 262], [230, 236], [310, 231], [400, 240], [456, 264]], width: 2.2, opacity: 1 });
         S.bone({ path: 'M186 340 Q260 328 330 326 L392 322 Q412 300 428 306 Q440 318 436 336 L466 352 Q496 336 522 318 Q548 306 566 318' });
-        S.target({ x: 330, y: 244, r: 17 });
-        S.needle({ from: [640, 152], to: [340, 244], label: '25 G 40–50 mm' });
-        S.spread({ x: 300, y: 250, rx: 82, ry: 15, label: '4–5 mL' });
+        S.needle({ from: [640, 152], to: [342, 240], label: '25 G 40–50 mm' });
+        /* nappe sous-fasciale, plaquée sur la face antérieure du long du cou, percée autour de la chaîne */
+        S.spreadPath({ path: 'M222 240 A78 11 0 1 1 378 240 A78 11 0 1 1 222 240 Z M290 240 A7 7 0 1 0 304 240 A7 7 0 1 0 290 240 Z', at: [176, 214], label: '4–5 mL' });
       },
     },
     {
@@ -254,14 +254,13 @@ Intérêt : bloc sympathique du membre supérieur plus constant qu\'en C6 (le C6
         S.organ({ x: 148, y: 272, rx: 32, ry: 24, label: 'Œsophage (74 % à gauche)', lx: 120, ly: 336, small: true, lead: [140, 296] });
         S.artery({ x: 258, y: 200, r: 30, label: 'Carotide', lx: 258, ly: 154, small: true });
         S.vein({ x: 346, y: 180, rx: 42, ry: 23 });
-        S.muscle({ path: 'M180 266 Q220 246 300 244 Q380 244 434 272 L434 322 L184 322 Z', label: 'Long du cou', at: [300, 302], opacity: 0.55 });
+        S.muscle({ path: 'M184 278 Q222 260 300 258 Q380 258 430 284 L430 328 L188 328 Z', label: 'Long du cou', at: [300, 306], opacity: 0.55 });
         S.muscle({ path: 'M456 226 L640 210 L640 306 L490 306 Z', label: 'Scalène ant.', at: [560, 262], opacity: 0.4, small: true });
         S.fascia({ points: [[176, 270], [240, 248], [312, 243], [392, 252], [438, 274]], width: 2.2, opacity: 1 });
         S.bone({ path: 'M190 350 Q270 338 350 334 L432 330 Q480 330 512 316 Q548 302 574 314', label: 'Processus transverse C7\n(pas de tubercule antérieur)', at: [226, 374], ldy: 0, small: true });
         S.artery({ x: 452, y: 306, r: 12, label: 'A. vertébrale — exposée', lx: 430, ly: 356, anchor: 'end', small: true, lead: [444, 316] });
-        S.target({ x: 320, y: 256, r: 16 });
-        S.needle({ from: [640, 160], to: [330, 256], label: '25 G, Doppler impératif' });
-        S.spread({ x: 292, y: 262, rx: 76, ry: 14, label: '4–5 mL' });
+        S.needle({ from: [640, 160], to: [332, 252], label: '25 G, Doppler impératif' });
+        S.spreadPath({ path: 'M218 252 A74 11 0 1 1 366 252 A74 11 0 1 1 218 252 Z M285 252 A7 7 0 1 0 299 252 A7 7 0 1 0 285 252 Z', at: [172, 226], label: '4–5 mL' });
       },
     },
   ],

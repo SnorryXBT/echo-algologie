@@ -209,9 +209,11 @@ Conséquence pratique : le serratus est un **outil de sélection**. Si le patien
         S.bone({ path: 'M104 246 Q175 200 246 246', label: 'Côte (4e)', at: [175, 322] });
         S.bone({ path: 'M374 246 Q445 200 516 246', label: 'Côte (5e)', at: [445, 300] });
         S.pleura({ points: [[0, 278], [46, 286], [96, 282]] });
-        S.pleura({ points: [[254, 288], [310, 296], [366, 288]], label: 'Plèvre', at: [310, 318], small: true });
+        S.pleura({ points: [[254, 288], [310, 296], [366, 288]], label: 'Plèvre', at: [310, 316], small: true });
         S.pleura({ points: [[524, 284], [582, 288], [640, 278]] });
-        S.lung({ path: 'M250 298 L370 298 L378 420 L242 420 Z', label: 'Poumon', at: [310, 362], small: true });
+        S.lung({ path: 'M0 288 L94 290 L100 420 L0 420 Z' });
+        S.lung({ path: 'M250 298 L370 298 L378 420 L242 420 Z', label: 'Poumon', at: [310, 358], small: true });
+        S.lung({ path: 'M526 290 L640 286 L640 420 L534 420 Z' });
         S.artery({ x: 524, y: 124, r: 5.5, label: 'A. thoraco-dorsale', lx: 546, ly: 100, small: true, lead: [528, 117] });
         S.nerve({ x: 162, y: 126, r: 4.5, label: 'N. thoracique long', lx: 244, ly: 100, small: true, lead: [167, 122] });
         S.nerve({ x: 302, y: 236, r: 4, label: 'Br. cutanées latérales (T2–T9)', lx: 470, ly: 334, anchor: 'middle', small: true, lead: [306, 240] });
@@ -235,10 +237,14 @@ Conséquence pratique : le serratus est un **outil de sélection**. Si le patien
         S.pleura({ points: [[254, 288], [310, 296], [366, 288]], label: 'Plèvre — jamais hors champ', at: [312, 316], small: true });
         S.pleura({ points: [[0, 278], [46, 286], [96, 282]] });
         S.pleura({ points: [[524, 284], [582, 288], [640, 278]] });
+        S.lung({ path: 'M0 288 L94 290 L100 420 L0 420 Z' });
+        S.lung({ path: 'M250 298 L370 298 L378 420 L242 420 Z', label: 'Poumon', at: [310, 356], small: true });
+        S.lung({ path: 'M526 290 L640 286 L640 420 L534 420 Z' });
         S.artery({ x: 524, y: 124, r: 5.5 });
-        S.target({ x: 176, y: 214, r: 15 });
+        S.target({ x: 176, y: 232, r: 11 });
         S.needle({ from: [10, 92], to: [172, 216], label: '21–22 G, 30–60°, de crânial en caudal' });
-        S.spread({ x: 190, y: 226, rx: 108, ry: 11, label: '20–30 mL — plan profond' });
+        S.spread({ x: 176, y: 213, rx: 92, ry: 8, label: '20–30 mL — plan profond' });
+        S.label({ x: 300, y: 250, text: 'Pointe sur le sommet de la côte,\npuis retrait de 1–2 mm', cls: 'lbl-target', small: true, anchor: 'start', lead: [188, 230] });
         S.arrow({ from: [470, 176], to: [470, 130], text: 'Plan superficiel (variante)' });
       },
     },

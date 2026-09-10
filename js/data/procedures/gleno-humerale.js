@@ -44,7 +44,7 @@ ECHO.register({
 
 **Par voie postérieure**, la fenêtre est simple : sous l\'épine de la scapula, le **deltoïde postérieur** puis l\'**infra-épineux** recouvrent la **capsule postérieure**. Celle-ci s\'insère sur le col de la glène et sur le col anatomique de l\'humérus, et ménage un **récessus postérieur** entre le labrum postérieur et le cartilage de la tête humérale : c\'est la cible.
 
-**En avant**, l\'**intervalle des rotateurs** est l\'espace triangulaire entre le bord antérieur du supra-épineux et le bord supérieur du subscapulaire, comblé par le **ligament coraco-huméral** et traversé par le **tendon du long biceps** dans sa gouttière. C\'est un accès direct à l\'articulation, et c\'est aussi la zone dont l\'épaississement signe la capsulite en imagerie.
+**En avant**, l\'**intervalle des rotateurs** est l\'espace triangulaire entre le bord antérieur du supra-épineux et le bord supérieur du subscapulaire, comblé par le **ligament coraco-huméral** et traversé par le **tendon du long biceps**, encore intra-articulaire à ce niveau (il n\'entre dans la gouttière bicipitale qu\'un peu plus bas). C\'est un accès direct à l\'articulation, et c\'est aussi la zone dont l\'épaississement signe la capsulite en imagerie.
 
 ### Ce qui compte pour le geste
 - **La cible est un espace, pas une cavité** : hors épanchement, le récessus postérieur est virtuel. On ne « rentre » pas dans un liquide, on décolle un plan — le critère de réussite est le **décollement de la capsule** par les premiers dixièmes de millilitre, pas un reflux articulaire.
@@ -107,7 +107,7 @@ Ponction **in-plane, de latéral en médial**, l\'aiguille entrant par le bord l
 
   injectat: `| Objectif | Produits | Volume | Commentaire |
 |---|---|---|---|
-| Infiltration de corticoïde (omarthrose, arthrite, capsulite douloureuse) | **Triamcinolone hexacétonide** (Hexatrione®) 20 mg, **ou** méthylprednisolone (Dépo-Médrol®) 40 mg, **ou** bétaméthasone (Diprostène®) 7 mg | 2–5 mL avec le diluant | L\'hexacétonide est le corticoïde de plus longue durée d\'action et son AMM est **strictement intra-articulaire** — c\'est ici l\'une des rares indications où il est à sa place |
+| Infiltration de corticoïde (omarthrose, arthrite, capsulite douloureuse) | **Triamcinolone hexacétonide** (Hexatrione® 2 %, 20 mg/mL) 20–40 mg, **ou** méthylprednisolone (Dépo-Médrol®) 40 mg, **ou** bétaméthasone (Diprostène®) 7 mg | 2–5 mL avec le diluant | L\'hexacétonide est le corticoïde de plus longue durée d\'action et son AMM est **strictement intra-articulaire** — c\'est ici l\'une des rares indications où il est à sa place |
 | Test diagnostique | Lidocaïne 1 % ou ropivacaïne 0,2 % | 5 mL | **À ne pas répéter** (chondrotoxicité). Évaluation à 20–30 min, tracée |
 | Acide hyaluronique | Une seringue de viscosupplémentation, 2 mL | 2 mL | En relais ou en alternative au corticoïde dans l\'omarthrose, notamment chez le diabétique. Preuve **faible** à l\'épaule, et prise en charge non garantie : le dire au patient |
 | **Hydrodilatation** (capsulite) | Sérum physiologique + AL (lidocaïne 1 % ou ropivacaïne 0,2 %, 5–10 mL) + corticoïde (triamcinolone hexacétonide 20 mg ou méthylprednisolone 40 mg) | **20–40 mL au total** | Arrêt sur douleur, résistance franche ou rupture capsulaire. Le volume réellement toléré dans une capsulite serrée est souvent de 15–25 mL seulement — c\'est normal |
@@ -213,12 +213,12 @@ Aucune de ces trois stratégies n\'a démontré sa supériorité de façon conva
         S.muscle({ path: 'M0 74 L640 74 L640 114 L0 118 Z', label: 'Deltoïde postérieur', at: [116, 98] });
         S.fascia({ points: [[0, 118], [640, 114]], width: 1.5 });
         S.muscle({ path: 'M0 122 L640 118 L640 186 Q550 182 470 188 Q380 212 300 246 Q240 246 0 236 Z', label: 'Infra-épineux', at: [122, 172], opacity: 0.5 });
-        S.fascia({ points: [[238, 240], [300, 250], [380, 220], [470, 196], [560, 192], [640, 202]], width: 2, label: 'Capsule postérieure', at: [452, 168], small: true, lead: [452, 198] });
-        S.bone({ path: 'M0 246 L246 250', label: 'Glène', at: [104, 300] });
-        S.bone({ path: 'M296 260 Q470 172 640 226', label: 'Tête humérale', at: [486, 256] });
-        S.cartilage({ path: 'M300 250 Q470 164 640 216 L640 226 Q470 172 296 260 Z' });
-        S.ligament({ path: 'M242 242 L294 250 L262 288 Z', label: 'Labrum postérieur', at: [214, 322], small: true, lead: [262, 286] });
-        S.label({ x: 372, y: 296, text: 'Récessus postérieur — cible', cls: 'lbl-target', small: true, lead: [306, 266] });
+        S.fascia({ points: [[236, 236], [262, 248], [310, 242], [380, 212], [470, 192], [560, 188], [640, 198]], width: 2, label: 'Capsule postérieure', at: [452, 164], small: true, lead: [452, 194] });
+        S.bone({ path: 'M-20 250 L258 250', label: 'Glène', at: [104, 300] });
+        S.bone({ path: 'M256 268 Q470 176 660 228', label: 'Tête humérale', at: [486, 260] });
+        S.cartilage({ path: 'M258 258 Q470 168 660 218 L660 228 Q470 176 256 268 Z' });
+        S.ligament({ path: 'M248 232 L248 260 L292 250 Z', label: 'Labrum postérieur', at: [190, 300], anchor: 'start', small: true, lead: [262, 250] });
+        S.label({ x: 400, y: 290, text: 'Récessus postérieur — cible', cls: 'lbl-target', small: true, lead: [312, 254] });
       },
     },
     {
@@ -231,14 +231,14 @@ Aucune de ces trois stratégies n\'a démontré sa supériorité de façon conva
         S.muscle({ path: 'M0 74 L640 74 L640 114 L0 118 Z', label: 'Deltoïde', at: [92, 98] });
         S.fascia({ points: [[0, 118], [640, 114]], width: 1.5 });
         S.muscle({ path: 'M0 122 L640 118 L640 186 Q550 182 470 188 Q380 212 300 246 Q240 246 0 236 Z', label: 'Infra-épineux', at: [116, 176], opacity: 0.5 });
-        S.fascia({ points: [[238, 240], [300, 250], [380, 220], [470, 196], [560, 192], [640, 202]], width: 2 });
-        S.bone({ path: 'M0 246 L246 250', label: 'Glène', at: [96, 302] });
-        S.bone({ path: 'M296 260 Q470 172 640 226', label: 'Tête humérale', at: [500, 262] });
-        S.cartilage({ path: 'M300 250 Q470 164 640 216 L640 226 Q470 172 296 260 Z' });
-        S.ligament({ path: 'M242 242 L294 250 L262 288 Z', label: 'Labrum — butée médiale', at: [186, 324], small: true, lead: [258, 288] });
-        S.target({ x: 308, y: 264, r: 15 });
-        S.needle({ from: [636, 116], to: [314, 262], label: '21–22 G, 30–45°, de latéral en médial' });
-        S.spread({ x: 306, y: 268, rx: 46, ry: 17, label: '2–5 mL' });
+        S.fascia({ points: [[236, 236], [262, 248], [310, 242], [380, 212], [470, 192], [560, 188], [640, 198]], width: 2 });
+        S.bone({ path: 'M-20 250 L258 250', label: 'Glène', at: [96, 302] });
+        S.bone({ path: 'M256 268 Q470 176 660 228', label: 'Tête humérale', at: [500, 266] });
+        S.cartilage({ path: 'M258 258 Q470 168 660 218 L660 228 Q470 176 256 268 Z' });
+        S.ligament({ path: 'M248 232 L248 260 L292 250 Z', label: 'Labrum — butée médiale', at: [150, 300], anchor: 'start', small: true, lead: [260, 250] });
+        S.target({ x: 308, y: 252, r: 14 });
+        S.needle({ from: [636, 116], to: [306, 254], label: '21–22 G, 30–45°, de latéral en médial' });
+        S.spread({ x: 348, y: 238, rx: 56, ry: 12, label: '2–5 mL' });
       },
     },
     {
@@ -251,15 +251,15 @@ Aucune de ces trois stratégies n\'a démontré sa supériorité de façon conva
         S.muscle({ path: 'M0 74 L640 74 L640 114 L0 118 Z', label: 'Deltoïde', at: [92, 98] });
         S.fascia({ points: [[0, 118], [640, 114]], width: 1.5 });
         S.muscle({ path: 'M0 122 L640 118 L640 136 Q550 128 470 130 Q380 150 300 224 Q240 238 0 236 Z', label: 'Infra-épineux refoulé', at: [132, 182], opacity: 0.5 });
-        S.fluid({ path: 'M244 246 L300 232 Q380 156 470 136 Q560 140 636 152 L636 208 Q560 196 470 200 Q380 222 302 252 Z' });
-        S.fascia({ points: [[238, 242], [300, 230], [380, 156], [470, 136], [560, 140], [640, 150]], width: 2.2, label: 'Capsule distendue', at: [368, 120], small: true, lead: [368, 158] });
-        S.bone({ path: 'M0 246 L246 250', label: 'Glène', at: [96, 302] });
-        S.bone({ path: 'M296 260 Q470 172 640 226', label: 'Tête humérale', at: [504, 268] });
-        S.cartilage({ path: 'M300 250 Q470 164 640 216 L640 226 Q470 172 296 260 Z' });
-        S.ligament({ path: 'M242 242 L294 250 L262 288 Z' });
-        S.target({ x: 316, y: 250, r: 14 });
-        S.needle({ from: [636, 108], to: [322, 246], label: 'Aiguille + robinet 3 voies' });
-        S.spreadPath({ path: 'M244 246 L300 232 Q380 156 470 136 Q560 140 636 152 L636 208 Q560 196 470 200 Q380 222 302 252 Z', at: [456, 180], label: '20–40 mL — distension capsulaire' });
+        S.fluid({ path: 'M246 248 L302 236 Q380 158 470 138 Q560 142 656 154 L656 214 Q560 204 470 208 Q380 230 304 258 Z' });
+        S.fascia({ points: [[238, 244], [302, 234], [380, 158], [470, 138], [560, 142], [656, 152]], width: 2.2, label: 'Capsule distendue', at: [368, 118], small: true, lead: [368, 158] });
+        S.bone({ path: 'M-20 250 L258 250', label: 'Glène', at: [96, 302] });
+        S.bone({ path: 'M256 268 Q470 176 660 228', label: 'Tête humérale', at: [504, 272] });
+        S.cartilage({ path: 'M258 258 Q470 168 660 218 L660 228 Q470 176 256 268 Z' });
+        S.ligament({ path: 'M248 232 L248 260 L292 250 Z' });
+        S.target({ x: 316, y: 246, r: 14 });
+        S.needle({ from: [636, 106], to: [318, 244], label: 'Aiguille + robinet 3 voies' });
+        S.spreadPath({ path: 'M246 248 L302 236 Q380 158 470 138 Q560 142 656 154 L656 214 Q560 204 470 208 Q380 230 304 258 Z', at: [456, 180], label: '20–40 mL — distension capsulaire' });
       },
     },
   ],

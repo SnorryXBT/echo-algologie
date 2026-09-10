@@ -39,7 +39,7 @@ ECHO.register({
   ],
   alternatives: 'Pour la douleur de hanche : infiltration intra-articulaire (fiche coxo-fémorale) en première intention, puis **bloc PENG** qui couvre les branches articulaires fémorales et de l’obturateur accessoire (fiche dédiée). Le bloc obturateur et le PENG sont **complémentaires, pas concurrents** : le PENG atteint la capsule antéro-supérieure, l’obturateur la capsule antéro-inférieure. Un bloc test complet de la hanche associe donc les deux. Ensuite : radiofréquence (pulsée ou thermique) des branches articulaires fémorale et obturatrice, historiquement décrite et validée **sous scopie** sur des repères osseux fiables, l’échoguidage venant en complément ou en repérage préalable. Enfin : arthroplastie chez le patient opérable — le geste neuro-ablatif ne doit jamais servir à repousser une chirurgie qui reste indiquée.',
 
-  anatomie: `Le nerf obturateur naît des racines **L2-L3-L4**, émerge du **bord médial du psoas**, descend contre la paroi latérale du petit bassin et franchit le **canal obturateur**, sous la **branche supérieure du pubis** et au-dessus de la membrane obturatrice, accompagné des **vaisseaux obturateurs** (l’artère et la veine étant le plus souvent supérieures et latérales au nerf dans le canal).
+  anatomie: `Le nerf obturateur naît des racines **L2-L3-L4**, émerge du **bord médial du psoas**, descend contre la paroi latérale du petit bassin et franchit le **canal obturateur**, sous la **branche supérieure du pubis** et au-dessus de la membrane obturatrice, accompagné des **vaisseaux obturateurs** : dans le canal, le **nerf occupe la position la plus supérieure (antérieure)**, l’artère et la veine cheminant au-dessous de lui. À la sortie du canal, la disposition devient variable — d’où le Doppler systématique avant de ponctionner.
 
 À la sortie du canal, il se divise en deux branches, séparées par le **court adducteur** :
 - la **branche antérieure** passe **en avant du court adducteur** et en arrière du pectiné puis du long adducteur. Elle innerve long adducteur, court adducteur et gracile, donne un rameau cutané inconstant à la face médiale de la cuisse, et surtout — pour ce qui nous occupe — des **branches articulaires pour la hanche** ;
@@ -106,7 +106,7 @@ Deux seringues préparées et étiquetées si l’on réalise le double bloc int
   injectat: `| Objectif | Produits | Volume | Commentaire |
 |---|---|---|---|
 | Bloc test avant RF | Lidocaïne 1 % ou ropivacaïne 0,2 %, seule | 5 mL par plan (10 mL) ou 8 mL en proximal | Pas de corticoïde : on cherche une **information**, pas un effet prolongé. Utiliser la lidocaïne quand on veut une récupération rapide de la marche |
-| Bloc thérapeutique | Ropivacaïne 0,2 % + dexaméthasone 4–8 mg, ou bétaméthasone 5,7 mg | 5 mL par plan (10 mL) | **Corticoïde non particulaire recommandé** : proximité des vaisseaux obturateurs, notamment en voie proximale. Le particulaire n’est acceptable qu’en voie inter-fasciale distale, et sans justification forte il n’apporte rien |
+| Bloc thérapeutique | Ropivacaïne 0,2 % + **dexaméthasone 4–8 mg** (ou bétaméthasone phosphate soluble, Célestène® 4 mg) | 5 mL par plan (10 mL) | **Corticoïde non particulaire recommandé** : proximité des vaisseaux obturateurs, notamment en voie proximale. Les formes retard particulaires (Diprostène®/Célestène Chronodose®, Kenacort retard®, Dépo-Médrol®) ne sont acceptables qu’en voie inter-fasciale distale, et sans justification forte elles n’apportent rien |
 | Voie proximale sous-pubienne | Ropivacaïne 0,2 % ± dexaméthasone 4 mg | 8–10 mL | Un seul point ; volume plus élevé pour couvrir le tronc avant division |
 | Avant PRF / RF | Lidocaïne 1 % | 0,5–1 mL par site | Volume minimal : un volume important déplace la cible hors de portée de l’électrode et fausse la stimulation |
 | Après PRF / RF | Ropivacaïne 0,2 % ± dexaméthasone 4 mg | 2–3 mL par site | Confort post-geste, limitation de la névrite post-RF |
@@ -236,21 +236,21 @@ En pratique, chez un candidat à la dénervation : **PENG 15 mL + bloc obturateu
     },
     {
       id: 'obt-proximal', section: 'technique', titre: 'Voie proximale sous-pubienne — le tronc avant sa division',
-      legende: 'Sonde au pli inguinal sur le pectiné. La branche supérieure du pubis donne le repère osseux ; sous elle, entre pectiné et obturateur externe, le tronc obturateur chemine avec les vaisseaux obturateurs. Un seul point d’injection, 8–10 mL, aspiration répétée — l’espace est profond et non compressible.',
+      legende: 'Sonde au pli inguinal sur le pectiné. La branche supérieure du pubis donne le repère osseux ; sous elle, entre pectiné et obturateur externe, le tronc obturateur chemine avec les vaisseaux obturateurs, qui restent au-dessous de lui dans le canal (disposition plus variable à la sortie : Doppler systématique). Un seul point d’injection, 8–10 mL, aspiration répétée — l’espace est profond et non compressible.',
       opts: { depth: 6 },
       build: S => {
         S.orient({ left: 'Médial (pubis)', right: 'Latéral' }).probeInfo({ plan: 'Transverse, pli inguinal', type: 'convexe 2–5 MHz, in-plane' });
         S.skin({ thickness: 8, fatBelow: 30 });
         S.muscle({ path: 'M0 84 L640 80 L640 212 L0 224 Z', label: 'Pectiné', at: [130, 150], opacity: 0.5 });
         S.fascia({ points: [[150, 230], [400, 226], [640, 218]], width: 2 });
-        S.muscle({ path: 'M96 262 L640 238 L640 386 L128 396 Z', label: 'Obturateur externe', at: [472, 358], opacity: 0.5 });
-        S.bone({ path: 'M0 268 Q130 224 252 244', label: 'Branche sup. du pubis', at: [122, 330] });
-        S.nerve({ x: 306, y: 240, rx: 16, ry: 7, label: 'N. obturateur (tronc)', lx: 352, ly: 302, anchor: 'start', small: true, lead: [320, 248] });
-        S.artery({ x: 300, y: 210, r: 7, label: 'Vaisseaux obturateurs', lx: 322, ly: 180, anchor: 'start', small: true, lead: [307, 205] });
-        S.vein({ x: 272, y: 216, rx: 10, ry: 7 });
-        S.target({ x: 308, y: 244, r: 14 });
-        S.needle({ from: [636, 112], to: [326, 242], label: '22 G 90 mm, latéro-médial' });
-        S.spread({ x: 292, y: 250, rx: 62, ry: 12, label: '8–10 mL' });
+        S.muscle({ path: 'M96 284 L640 258 L640 392 L128 400 Z', label: 'Obturateur externe', at: [472, 366], opacity: 0.5 });
+        S.bone({ path: 'M0 268 Q130 224 252 244', label: 'Branche sup. du pubis', at: [110, 330] });
+        S.nerve({ x: 300, y: 240, rx: 16, ry: 7, label: 'N. obturateur (tronc)\n— le plus superficiel', lx: 368, ly: 186, anchor: 'start', small: true, lead: [314, 236] });
+        S.artery({ x: 306, y: 262, r: 6, label: 'Vaisseaux obturateurs\n(sous le nerf)', lx: 356, ly: 306, anchor: 'start', small: true, lead: [312, 264] });
+        S.vein({ x: 272, y: 264, rx: 9, ry: 6 });
+        S.target({ x: 302, y: 242, r: 13 });
+        S.needle({ from: [636, 116], to: [324, 244], label: '22 G 90 mm, latéro-médial' });
+        S.spread({ x: 268, y: 252, rx: 58, ry: 7, label: '8–10 mL' });
       },
     },
   ],

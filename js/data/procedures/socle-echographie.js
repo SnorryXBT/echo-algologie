@@ -212,7 +212,7 @@ Ces images ne sont pas décoratives : elles documentent que le guidage a réelle
 
   evidence: `- **Bénéfice de l’échoguidage lui-même : preuve forte** en anesthésie locorégionale (réduction des ponctions vasculaires, des volumes d’anesthésique local, amélioration du taux de succès). En algologie interventionnelle périphérique, la démonstration est **extrapolée** de l’anesthésie locorégionale et de séries : les essais comparant directement échoguidage et repères anatomiques sur des critères cliniques à distance restent peu nombreux — c’est un trou assumé de la littérature.
 - **Angle d’insonation et visibilité de l’aiguille : consensus physique et clinique**. La revue de référence sur les artefacts liés à l’aiguille (*Needle-related ultrasound artifacts and their importance in anaesthetic practice*, Br J Anaesth 2014) décrit réverbération, queue de comète, lobes latéraux, largeur de faisceau et artefact en baïonnette, et rappelle que ces artefacts culminent quand l’aiguille est perpendiculaire au faisceau et se réduisent en abaissant l’angle et le gain lointain.
-- **Aiguilles écho-visibles : bénéfice réel mais circonscrit.** Les essais randomisés montrent un avantage aux angles raides (> 30–45°) sur le confort de l’opérateur et la qualité perçue de l’image, une réduction du temps de procédure et de l’inconfort du patient dans un essai sur bloc sciatique continu (Br J Anaesth 2015), mais des scores de visibilité parfois **non différents**, et une netteté tissulaire parfois supérieure avec l’aiguille conventionnelle. Preuve **modérée**, effet dépendant du contexte.
+- **Aiguilles écho-visibles : bénéfice réel mais circonscrit.** Les essais randomisés disponibles montrent un avantage aux angles raides (> 30–45°) sur le confort de l’opérateur et la qualité perçue de l’image, avec une réduction du temps de procédure, mais des scores de visibilité parfois **non différents** et une netteté tissulaire parfois supérieure avec l’aiguille conventionnelle. Preuve **modérée**, effet dépendant du contexte (références précises à reconfirmer lors de la passe de vérification bibliographique).
 - **Systèmes de suivi d’aiguille (tracking électromagnétique) : preuve faible à modérée, essentiellement sur fantôme et chez le novice** — réduction du nombre de repositionnements et du temps d’exécution, surtout hors du plan (études sur fantôme, Anaesthesia 2014 ; travaux plus récents sur le suivi électromagnétique miniaturisé, Sci Rep 2024). Aucun bénéfice clinique démontré sur les complications.
 - **Hydrolocalisation** : technique ancienne, validée par l’usage et décrite dans les revues de visualisation de l’aiguille (injection de ~1 mL de sérum déplaçant les tissus à la pointe et la rendant visible). Niveau de preuve **faible formellement**, rapport bénéfice/coût imbattable.
 - **Doppler pour la détection des petits vaisseaux** : le Doppler puissance est plus sensible que le Doppler couleur pour les flux lents et de petit calibre ; les réglages déterminants sont une **PRF basse** et un filtre de paroi bas (tutoriels d’optimisation Doppler, RadioGraphics 2019). Preuve **forte** sur le plan technique.
@@ -220,25 +220,18 @@ Ces images ne sont pas décoratives : elles documentent que le guidage a réelle
 - **Formation** : les recommandations conjointes ASRA-ESRA (Reg Anesth Pain Med 2010) restent la référence pour structurer l’apprentissage par compétences ; elles n’ont pas d’équivalent français spécifique à l’algologie interventionnelle — trou à signaler.`,
 
   references: [
-    { titre: 'Needle-related ultrasound artifacts and their importance in anaesthetic practice', revue: 'Br J Anaesth', annee: '2014', url: 'https://academic.oup.com/bja/article/112/5/794/272899', type: 'revue', verif: false, note: 'Référence sur réverbération, queue de comète, lobes latéraux et artefact en baïonnette ; année déduite du volume, à confirmer.' },
+    { auteurs: 'Reusz G, Sarkany P, Gal J, Csomos A', titre: 'Needle-related ultrasound artifacts and their importance in anaesthetic practice', revue: 'Br J Anaesth', annee: '2014', type: 'revue', verif: false, note: 'Référence sur réverbération, queue de comète, lobes latéraux et artefact en baïonnette. Auteurs et année cités de mémoire, à confirmer.' },
     { titre: 'Challenges, solutions, and advances in ultrasound-guided regional anaesthesia', revue: 'BJA Education', annee: '2017', url: 'https://www.bjaed.org/article/S2058-5349(17)30023-9/fulltext', type: 'revue', verif: true, note: 'Optimisation d’image, compound spatial, harmoniques, visualisation de l’aiguille.' },
-    { titre: 'Essential knobology for ultrasound-guided regional anesthesia and interventional pain management', revue: 'chapitre d’ouvrage, Springer', annee: '2018', doi: '10.1007/978-1-4939-7754-3_3', type: 'référence technique', verif: false, note: 'Fréquence, profondeur, gain, TGC, focale, presets, Doppler, compound, harmoniques ; année à confirmer.' },
-    { titre: 'The American Society of Regional Anesthesia and Pain Medicine and the European Society of Regional Anaesthesia and Pain Therapy joint committee recommendations for education and training in ultrasound-guided regional anesthesia', revue: 'Reg Anesth Pain Med', annee: '2010', pmid: '20216029', type: 'reco', verif: false, note: 'Décrit les tâches élémentaires de l’échoguidage et les parcours de formation par compétences ; revue et année à confirmer.' },
+    { titre: 'Essential knobology for ultrasound-guided regional anesthesia and interventional pain management', revue: 'chapitre d’ouvrage, Springer', type: 'référence technique', verif: false, note: 'Fréquence, profondeur, gain, TGC, focale, presets, Doppler, compound, harmoniques ; ouvrage, année et DOI à confirmer.' },
+    { titre: 'The American Society of Regional Anesthesia and Pain Medicine and the European Society of Regional Anaesthesia and Pain Therapy joint committee recommendations for education and training in ultrasound-guided regional anesthesia', revue: 'Reg Anesth Pain Med', annee: '2010', type: 'reco', verif: false, note: 'Décrit les tâches élémentaires de l’échoguidage et la formation par compétences ; année et pagination à confirmer.' },
     { titre: 'Prévention du risque infectieux associé aux actes d’échographie — préconisations du groupe de travail national, mars 2019', revue: 'SF2H / Mission nationale', annee: '2019', url: 'https://www.sf2h.net/k-stock/data/uploads/2019/04/Preconisations_Mission_Nationale_Sonde-Endocavitaire_Vallidees_Mars_2019.pdf', type: 'reco', verif: true, note: 'Désinfection de niveau intermédiaire après chaque acte à risque, protection de sonde, gel stérile unidose.' },
-    { titre: 'L’asepsie en échographie interventionnelle', url: 'https://www.sciencedirect.com/science/article/abs/pii/S187862271500082X', type: 'revue', verif: false, note: 'Revue française : désinfection cutanée, gants, protection de sonde, distance sonde-aiguille ; revue et année à confirmer.' },
-    { titre: 'Ultrasound physics and instrumentation', revue: 'StatPearls, NCBI Bookshelf', url: 'https://www.ncbi.nlm.nih.gov/books/NBK570593/', type: 'référence technique', verif: false, note: 'Physique de l’image et genèse des artefacts ; année de révision à confirmer.' },
-    { titre: 'Comparative evaluation of the visibility and block characteristics of a stimulating needle and catheter vs an echogenic needle and catheter for sciatic nerve block with a low-frequency ultrasound probe', revue: 'Br J Anaesth', annee: '2015', pmid: '26582852', type: 'ECR', verif: false, note: 'Aiguille échogène : temps de procédure et inconfort réduits, scores de visibilité non différents ; année déduite du volume.' },
-    { titre: 'Enhanced visual acuity with echogenic needles in ultrasound-guided axillary brachial plexus block: a randomized, comparative, observer-blinded study', pmid: '25057930', type: 'ECR', verif: false, note: 'Bénéfice de l’aiguille échogène surtout aux angles d’insertion raides ; revue et année à confirmer.' },
+    { titre: 'Ultrasound physics and instrumentation', revue: 'StatPearls, NCBI Bookshelf', type: 'référence technique', verif: false, note: 'Physique de l’image et genèse des artefacts ; identifiant de chapitre et année de révision à confirmer.' },
     { auteurs: 'Tielens LKP, et al.', titre: 'Ultrasound-guided needle handling using a guidance positioning system in a phantom', revue: 'Anaesthesia', annee: '2014', doi: '10.1111/anae.12461', type: 'étude sur fantôme', verif: true, note: 'Suivi électromagnétique : gain chez le novice, surtout hors du plan.' },
     { titre: 'Miniaturized electromagnetic tracking enables efficient ultrasound-navigated needle insertions', revue: 'Sci Rep', annee: '2024', doi: '10.1038/s41598-024-64530-6', type: 'étude expérimentale', verif: true },
     { titre: 'Optimizing image quality when evaluating blood flow at Doppler US: a tutorial', revue: 'RadioGraphics', annee: '2019', doi: '10.1148/rg.2019180055', type: 'revue technique', verif: true, note: 'PRF, filtre de paroi, gain couleur, angle : les réglages qui font apparaître ou disparaître un petit vaisseau.' },
-    { titre: 'A water cushion improved needle visualization by artificial beam steering during ultrasound-guided in-plane technique: an in vitro simulation study', pmid: '40384640', type: 'étude expérimentale', verif: false, note: 'Illustre le rôle central de l’angle d’insonation ; revue et année à confirmer.' },
   ],
   videos: [
-    { titre: 'A crash course in ultrasound needle guidance', source: 'YouTube', url: 'https://www.youtube.com/watch?v=yRFf2erCqpA', note: 'Comparaison pratique dans le plan / hors du plan' },
-    { titre: 'Visualize your needle: ultrasound for painless and accurate MSK injections', source: 'YouTube', url: 'https://www.youtube.com/watch?v=MJiW0sWMsmA', note: 'Alignement, angle, hydrolocalisation' },
     { titre: 'Ultrasound technical aspects: how to improve needle visibility', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-technical-aspects-how-to-improve-needle-visibility/' },
-    { titre: 'Webinar: needle navigation in ultrasound-guided procedures', source: 'YouTube · Fujifilm Sonosite', url: 'https://www.youtube.com/watch?v=qfvu9E2iy2k' },
   ],
 
   scenes: [
@@ -249,7 +242,7 @@ Ces images ne sont pas décoratives : elles documentent que le guidage a réelle
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Coupe transversale', type: 'linéaire 6–13 MHz' });
         S.skin({ thickness: 8, fatBelow: 22 });
-        S.fascia({ points: [[0, 74], [640, 74]], width: 1.6 });
+        S.fascia({ points: [[0, 75], [640, 73]], width: 1.6 });
         S.muscle({ path: 'M0 74 L640 74 L640 292 L0 300 Z', label: 'Muscle', at: [60, 132], opacity: 0.45 });
         S.nerve({ x: 120, y: 150, rx: 22, ry: 15, label: 'Nerf (nid d’abeilles)', lx: 120, ly: 202, small: true, lead: [120, 166] });
         S.tendon({ path: 'M240 132 L360 122 L360 150 L240 160 Z', label: 'Tendon (fibrillaire)', at: [300, 108], small: true });
@@ -285,7 +278,7 @@ Ces images ne sont pas décoratives : elles documentent que le guidage a réelle
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Dans le plan (in-plane)', type: 'linéaire' });
         S.skin({ thickness: 8, fatBelow: 22 });
-        S.fascia({ points: [[0, 74], [640, 74]], width: 1.6 });
+        S.fascia({ points: [[0, 75], [640, 73]], width: 1.6 });
         S.muscle({ path: 'M0 74 L640 74 L640 300 L0 306 Z', label: 'Muscle', at: [70, 286], opacity: 0.4 });
         S.bone({ path: 'M0 310 Q200 300 340 304 Q500 308 640 302' });
         S.fascia({ points: [[0, 196], [640, 188]], width: 1.8, label: 'Plan cible', at: [96, 178], small: true });
@@ -303,7 +296,7 @@ Ces images ne sont pas décoratives : elles documentent que le guidage a réelle
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Hors du plan (out-of-plane)', type: 'linéaire' });
         S.skin({ thickness: 8, fatBelow: 20 });
-        S.fascia({ points: [[0, 72], [640, 72]], width: 1.6 });
+        S.fascia({ points: [[0, 73], [640, 71]], width: 1.6 });
         S.muscle({ path: 'M0 72 L640 72 L640 268 L0 276 Z', label: 'Muscle', at: [80, 240], opacity: 0.4 });
         S.bone({ path: 'M0 280 Q200 268 340 272 Q500 276 640 268', label: 'Butée osseuse', at: [470, 250], small: true });
         S.artery({ x: 205, y: 196, r: 14, label: 'Artère (Doppler)', lx: 205, ly: 240, small: true, lead: [205, 211] });

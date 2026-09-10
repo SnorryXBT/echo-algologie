@@ -37,7 +37,7 @@ ECHO.register({
 
 **Anesthésiques locaux.** Ce sont des bases faibles qui bloquent le canal sodique voltage-dépendant sous forme non ionisée. Trois paramètres physico-chimiques expliquent presque tout : le **pKa** (plus il est proche du pH tissulaire, plus la latence est courte — d’où la rapidité de la lidocaïne face à la bupivacaïne), la **liposolubilité** (elle détermine la puissance) et la **liaison protéique** (elle détermine la durée). En milieu **acide** — tissu inflammatoire, abcès — la fraction non ionisée s’effondre et le bloc échoue : c’est la raison pharmacologique de l’échec d’une infiltration en zone inflammatoire aiguë, pas un défaut de technique. L’ajout de **lidocaïne** à un anesthésique de longue durée raccourcit la latence mais **réduit la durée d’action** du produit long : le mélange n’est pas gratuit.
 
-**Corticoïdes.** L’effet local repose sur l’inhibition de la phospholipase A2 et de la cascade inflammatoire, la réduction de la perméabilité capillaire et une action directe sur les fibres C. Deux familles galéniques : les **particulaires** (esters peu solubles — méthylprednisolone acétate, triamcinolone acétonide et hexacétonide, bétaméthasone en suspension) dont les cristaux forment un dépôt de libération prolongée, et les **non particulaires** (dexaméthasone phosphate, solutions vraies) à durée d’action plus courte mais sans risque embolique. La taille et l’agrégation des cristaux des préparations particulaires sont précisément ce qui provoque les infarctus médullaires et cérébelleux décrits après injection intra-artérielle accidentelle.
+**Corticoïdes.** L’effet local repose sur l’inhibition de la phospholipase A2 et de la cascade inflammatoire, la réduction de la perméabilité capillaire et une action directe sur les fibres C. Deux familles galéniques : les **particulaires** (esters peu solubles — méthylprednisolone acétate, triamcinolone acétonide et hexacétonide, bétaméthasone en suspension) dont les cristaux forment un dépôt de libération prolongée, et les **non particulaires** (dexaméthasone phosphate, solutions vraies) à durée d’action plus courte mais sans risque embolique. Attention au raccourci fréquent : le **phosphate de bétaméthasone** seul est bien une solution, mais les spécialités françaises (Célestène chronodose, Diprostène) associent un ester retard cristallin — elles sont donc **particulaires** et ne remplacent pas la dexaméthasone sur un site à risque artériel. La taille et l’agrégation des cristaux des préparations particulaires sont précisément ce qui provoque les infarctus médullaires et cérébelleux décrits après injection intra-artérielle accidentelle.
 
 **Dextrose 5 %.** Solution isotonique **sans effet anesthésique** : elle sépare mécaniquement le nerf de son enveloppe adhérente sans bloquer la conduction, ce qui laisse intacte toute évaluation fonctionnelle ou toute stimulation ultérieure. C’est aussi pour cette raison qu’elle est le vecteur de choix des hydrodissections répétées.
 
@@ -72,13 +72,13 @@ ECHO.register({
 
 ### Corticoïdes injectables disponibles en France
 
-| Produit (DCI) | Spécialités | Type | Équivalence anti-inflammatoire | Dose usuelle par site | Commentaire |
+| Produit (DCI) | Spécialités françaises | Type | Équivalence anti-inflammatoire | Dose usuelle par site | Commentaire |
 |---|---|---|---|---|---|
-| Bétaméthasone | Diprostène®, Célestène® chronodose | Particulaire (suspension) | ~0,75 mg ≡ 5 mg de prednisolone | 1 ampoule (se reporter au RCP pour la teneur exacte) | Le plus utilisé en France en péri-articulaire et péri-nerveux hors site à risque artériel |
-| Méthylprednisolone acétate | Dépo-Médrol® | Particulaire | 4 mg ≡ 5 mg de prednisolone | 20–40 mg grosse articulation ; 4–20 mg petite articulation ou site péri-tendineux | Effet de dépôt prolongé ; atrophie sous-cutanée en cas de reflux superficiel |
-| Triamcinolone acétonide | Kenacort® retard | Particulaire | 4 mg ≡ 5 mg de prednisolone | 20–40 mg grosse articulation | Flush facial et atrophie cutanée plus fréquents qu’avec les autres |
-| Triamcinolone hexacétonide | Hexatrione® 2 % (20 mg/mL) | Particulaire, la moins soluble | 4 mg ≡ 5 mg de prednisolone | 10–40 mg (0,5–2 mL) selon la taille de l’articulation ; ne pas dépasser deux ampoules de 40 mg | **Voie intra-articulaire stricte selon le RCP** — jamais péri-articulaire ni périneural |
-| Dexaméthasone phosphate | (solution injectable) | **Non particulaire** | 0,75 mg ≡ 5 mg de prednisolone | 4–10 mg par site | Seul choix acceptable en site à risque artériel ; durée d’action locale plus courte |
+| Bétaméthasone | **Célestène® chronodose 5,70 mg/mL** (acétate + phosphate disodique) ; **Diprostène®** (dipropionate + phosphate disodique, ≈ 7 mg de bétaméthasone par mL : 5 mg sous forme dipropionate + 2 mg sous forme phosphate — *teneur à revérifier sur le RCP en vigueur*) | Particulaire (suspension) : la fraction ester retard est cristalline | 0,75 mg ≡ 5 mg de prednisolone | 1 mL = 1 ampoule, soit 5,70 mg (Célestène chronodose) ou ≈ 7 mg (Diprostène) de bétaméthasone | Les plus utilisés en France en péri-articulaire et péri-nerveux **hors site à risque artériel**. Ne pas confondre les deux dosages quand on transpose un protocole |
+| Méthylprednisolone acétate | Dépo-Médrol® 40 mg/mL | Particulaire | 4 mg ≡ 5 mg de prednisolone | 20–40 mg grosse articulation ; 4–20 mg petite articulation ou site péri-tendineux | Effet de dépôt prolongé ; atrophie sous-cutanée en cas de reflux superficiel |
+| Triamcinolone acétonide | Kenacort® retard 40 mg/mL et 80 mg/2 mL | Particulaire | 4 mg ≡ 5 mg de prednisolone | 20–40 mg grosse articulation ; 5–20 mg petite articulation | Flush facial et atrophie cutanée plus fréquents qu’avec les autres |
+| Triamcinolone hexacétonide | Hexatrione® 2 % (20 mg/mL, ampoule de 2 mL = 40 mg) | Particulaire, **le moins soluble** | 4 mg ≡ 5 mg de prednisolone | 10–40 mg (0,5–2 mL) selon la taille de l’articulation | **Voie intra-articulaire stricte selon le RCP** — jamais péri-articulaire, péri-tendineuse ni périneurale |
+| Dexaméthasone phosphate | Dexaméthasone phosphate 4 mg/mL, solution injectable | **Non particulaire** (solution vraie) | 0,75 mg ≡ 5 mg de prednisolone | 4–10 mg par site | Seul choix acceptable en site à risque artériel ; durée d’action locale plus courte. Voie périneurale **hors AMM** |
 
 ### Autres injectables
 
@@ -112,7 +112,7 @@ Le tableau peut être **atypique** : début cardiovasculaire d’emblée, ou sur
 - **Arrêter l’injection**, appeler à l’aide, demander le kit d’émulsion lipidique.
 - **Ventiler en oxygène 100 %**, contrôler les voies aériennes ; éviter l’hyperventilation excessive.
 - **Convulsions** : benzodiazépine en première intention. Éviter le propofol chez un patient instable sur le plan hémodynamique.
-- **Émulsion lipidique 20 %** dès les premiers signes sérieux : patient **< 70 kg** — bolus **1,5 mL/kg** en 2–3 min puis perfusion **0,25 mL/kg/min** ; patient **> 70 kg** — bolus **100 mL** en 2–3 min puis **250 mL** sur 15–20 min. Si l’instabilité persiste : **répéter le bolus et doubler le débit** de perfusion. Poursuivre au moins 10 à 15 minutes après la stabilisation hémodynamique. L’ordre bolus/perfusion et le mode de perfusion ne sont pas critiques : ne pas perdre de temps à optimiser la procédure.
+- **Émulsion lipidique 20 %** dès les premiers signes sérieux : patient **< 70 kg** — bolus **1,5 mL/kg** en 2–3 min puis perfusion **0,25 mL/kg/min** ; patient **> 70 kg** — bolus **100 mL** en 2–3 min puis **250 mL** sur 15–20 min. Si l’instabilité persiste : **répéter le bolus et doubler le débit** de perfusion. Poursuivre au moins 10 à 15 minutes après la stabilisation hémodynamique. **Plafond usuel de dose totale ≈ 12 mL/kg**, rarement atteint. L’ordre bolus/perfusion et le mode de perfusion ne sont pas critiques : ne pas perdre de temps à optimiser la procédure.
 - **Réanimation adaptée** : adrénaline à doses **réduites** (bolus ≤ 1 µg/kg), éviter vasopressine, inhibiteurs calciques, bêtabloquants et tout nouvel anesthésique local.
 - **Envisager la CEC / ECMO** en cas de réfractarité : le pronostic reste bon si la circulation est maintenue le temps de la redistribution du toxique.
 - **Surveillance prolongée** après l’événement : plusieurs heures en unité surveillée, et non un retour immédiat en salle d’attente.
@@ -230,11 +230,11 @@ Position d’ensemble : aucun adjuvant périneural n’a d’AMM pour cet usage,
     { titre: 'American Society of Regional Anesthesia and Pain Medicine local anesthetic systemic toxicity checklist: 2020 version', annee: '2020', pmid: '33148630', type: 'reco', verif: true, note: 'Doses d’émulsion lipidique 20 % et séquence de prise en charge ; revue exacte à confirmer.' },
     { auteurs: 'McAlindon TE, et al.', titre: 'Effect of intra-articular triamcinolone vs saline on knee cartilage volume and pain in patients with knee osteoarthritis: a randomized clinical trial', revue: 'JAMA', annee: '2017', type: 'ECR', verif: true, note: 'Perte cartilagineuse supérieure sous triamcinolone trimestrielle pendant 2 ans, sans bénéfice sur la douleur.' },
     { auteurs: 'Jayaram P, et al.', titre: 'Chondrotoxic effects of local anesthetics on human knee articular cartilage: a systematic review', revue: 'PM&R', annee: '2019', doi: '10.1002/pmrj.12007', type: 'revue systématique', verif: true },
-    { titre: 'Single-dose local anesthetics exhibit a type-, dose-, and time-dependent chondrotoxic effect on chondrocytes and cartilage: a systematic review of the current literature', pmid: '28289821', type: 'revue systématique', verif: false, note: 'Revue et année à confirmer.' },
+    { auteurs: 'Kreuz PC, Steinwachs M, Angele P', titre: 'Single-dose local anesthetics exhibit a type-, dose-, and time-dependent chondrotoxic effect on chondrocytes and cartilage: a systematic review of the current literature', revue: 'Knee Surg Sports Traumatol Arthrosc', type: 'revue systématique', verif: false, note: 'Auteurs et revue cités de mémoire, année à confirmer — c’est la source de la hiérarchie de chondrotoxicité entre molécules.' },
     { titre: 'Six-month efficacy of perineural dextrose for carpal tunnel syndrome: a prospective, randomized, double-blind, controlled trial', revue: 'Mayo Clin Proc', annee: '2017', type: 'ECR', verif: true, note: 'D5W périneural : douleur, fonction, électrophysiologie et section du nerf médian améliorées à 6 mois.' },
     { titre: 'Impact of intra-articular corticosteroid injection on glycemic control: a population-based cohort study', revue: 'Clinical Diabetes', annee: '2024', type: 'cohorte', verif: true, note: 'Retour de la glycémie à la valeur de base en 1 à 2 semaines ; élévation d’HbA1c plus marquée que prévu chez une minorité de patients.' },
-    { titre: 'Local and systemic side effects of corticosteroid injections for musculoskeletal indications', revue: 'AJR Am J Roentgenol', annee: '2023', doi: '10.2214/AJR.23.30458', type: 'revue', verif: false, note: 'Flush facial, effets systémiques, complications locales ; année à confirmer.' },
-    { titre: 'Local anesthetic peripheral nerve block adjuvants for prolongation of analgesia: a systematic qualitative review', revue: 'PLOS One', annee: '2015', doi: '10.1371/journal.pone.0137312', type: 'revue systématique', verif: false, note: 'Année à confirmer.' },
+    { titre: 'Local and systemic side effects of corticosteroid injections for musculoskeletal indications', revue: 'AJR Am J Roentgenol', type: 'revue', verif: false, note: 'Flush facial, effets systémiques, complications locales ; revue, année et DOI à confirmer.' },
+    { titre: 'Local anesthetic peripheral nerve block adjuvants for prolongation of analgesia: a systematic qualitative review', revue: 'PLOS One', annee: '2015', type: 'revue systématique', verif: false, note: 'Revue, année et DOI à confirmer.' },
     { titre: 'Perineural adjuncts for peripheral nerve block', revue: 'BJA Education', annee: '2019', url: 'https://www.bjaed.org/article/S2058-5349(19)30079-4/fulltext', type: 'revue', verif: true, note: 'Dexaméthasone +4–8 h, clonidine +2 h, effet plafond de la dexaméthasone vers 4 mg.' },
     { titre: 'Use of botulinum neurotoxin in the treatment of piriformis syndrome: a systematic review', annee: '2022', type: 'revue systématique', verif: false, note: 'Sept études, trois ECR, ~150 patients, doses 100–300 U ; revue de publication à confirmer.' },
     { titre: 'Hexatrione® 2 % (hexacétonide de triamcinolone), suspension injectable intra-articulaire — résumé des caractéristiques du produit', revue: 'Base de données publique des médicaments (ANSM)', url: 'https://base-donnees-publique.medicaments.gouv.fr/extrait.php?specid=62232169', type: 'RCP', verif: true, note: 'Voie intra-articulaire stricte ; 10 à 40 mg selon la taille de l’articulation.' },
@@ -243,7 +243,6 @@ Position d’ensemble : aucun adjuvant périneural n’a d’AMM pour cet usage,
   ],
   videos: [
     { titre: 'Local anesthetic systemic toxicity (LAST)', source: 'NYSORA', url: 'https://nysora.com/anesthesia/local-anesthetic-systemic-toxicity-last/', note: 'Prévention, reconnaissance, traitement' },
-    { titre: 'LAST (local anesthetic systemic toxicity): a practical update for clinicians', source: 'YouTube', url: 'https://www.youtube.com/watch?v=6dnfkEsySKU' },
     { titre: 'Checklist for treatment of local anesthetic systemic toxicity', source: 'ASRA Pain Medicine', url: 'https://asra.com/news-publications/asra-updates/blog-landing/guidelines/2020/11/01/checklist-for-treatment-of-local-anesthetic-systemic-toxicity', note: 'À imprimer et afficher en salle' },
     { titre: 'Clinical pharmacology of local anesthetics', source: 'NYSORA', url: 'https://www.nysora.com/topics/pharmacology/clinical-pharmacology-local-anesthetics/' },
   ],
@@ -256,7 +255,7 @@ Position d’ensemble : aucun adjuvant périneural n’a d’AMM pour cet usage,
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Coupe transversale', type: 'linéaire' });
         S.skin({ thickness: 8, fatBelow: 22 });
-        S.fascia({ points: [[0, 76], [640, 76]], width: 1.6 });
+        S.fascia({ points: [[0, 77], [640, 75]], width: 1.6 });
         S.muscle({ path: 'M0 76 L640 76 L640 150 L0 158 Z', label: 'Muscle superficiel', at: [110, 118], opacity: 0.45 });
         S.fascia({ points: [[0, 158], [640, 150]], width: 2, label: 'Fascia', at: [78, 146], small: true });
         S.muscle({ path: 'M0 158 L640 150 L640 300 L0 308 Z', label: 'Muscle profond', at: [110, 276], opacity: 0.4 });
@@ -273,7 +272,7 @@ Position d’ensemble : aucun adjuvant périneural n’a d’AMM pour cet usage,
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Coupe transversale', type: 'in-plane' });
         S.skin({ thickness: 8, fatBelow: 22 });
-        S.fascia({ points: [[0, 76], [640, 76]], width: 1.6 });
+        S.fascia({ points: [[0, 77], [640, 75]], width: 1.6 });
         S.muscle({ path: 'M0 76 L640 76 L640 290 L0 298 Z', label: 'Muscle', at: [92, 264], opacity: 0.4 });
         S.nerve({ x: 200, y: 196, rx: 20, ry: 15, label: 'Calibre normal', lx: 200, ly: 250, small: true, lead: [200, 212] });
         S.nerve({ x: 400, y: 196, rx: 40, ry: 30, label: 'Nerf gonflé par l’injectat', lx: 400, ly: 262, small: true, lead: [400, 228] });
@@ -289,7 +288,7 @@ Position d’ensemble : aucun adjuvant périneural n’a d’AMM pour cet usage,
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Coupe transversale', type: 'in-plane' });
         S.skin({ thickness: 8, fatBelow: 20 });
-        S.fascia({ points: [[0, 72], [640, 72]], width: 1.6 });
+        S.fascia({ points: [[0, 73], [640, 71]], width: 1.6 });
         S.muscle({ path: 'M0 72 L640 72 L640 286 L0 294 Z', label: 'Muscle', at: [96, 258], opacity: 0.4 });
         S.artery({ x: 404, y: 166, r: 16, label: 'Artère nourricière', lx: 470, ly: 140, anchor: 'start', small: true, lead: [419, 161] });
         S.nerve({ x: 318, y: 202, rx: 19, ry: 14, label: 'Nerf', lx: 196, ly: 202, anchor: 'end', small: true, lead: [298, 202] });

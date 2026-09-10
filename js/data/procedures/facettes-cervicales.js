@@ -98,7 +98,7 @@ Marquer le niveau au feutre à la fin du repérage. Main non dominante en appui 
 
   technique: [
     { titre: 'Préparation et time-out', texte: 'Checklist (fin de fiche). Time-out : côté, niveau(x), produit, dose, **volume maximal annoncé à voix haute (1 mL)**. Désinfection large, gel stérile ou housse de sonde, gants stériles. Seringue de 2 mL (une seringue de 5 mL rend l\'appréciation de la résistance imprécise), aiguille écho-visible 25 G 50 mm.' },
-    { titre: 'Anesthésie cutanée', texte: '0,5 mL de lidocaïne 1 % au point d\'entrée uniquement. **Ne pas infiltrer en profondeur** : outre la perte de valeur diagnostique, un cas de tétraplégie transitoire après simple infiltration d\'anesthésique local avant infiltration facettaire cervicale a été publié — la profondeur n\'est jamais anodine à ce niveau.' },
+    { titre: 'Anesthésie cutanée', texte: '0,5 mL de lidocaïne 1 % au point d\'entrée uniquement. **Ne pas infiltrer en profondeur** : outre la perte de valeur diagnostique, une infiltration profonde généreuse expose à des diffusions imprévues (des déficits neurologiques transitoires après anesthésie locale profonde au rachis cervical ont été rapportés — *à confirmer*). La profondeur n\'est jamais anodine à ce niveau.' },
     { titre: 'Ponction dans le plan, de caudal en crânial', texte: 'Entrée 2–3 cm sous l\'interligne, aiguille suivant l\'obliquité du plan articulaire (≈ 45° par voie latérale). **Pointe visible en permanence.** Traverser trapèze, splénius, semi-épineux. Si l\'on perd la pointe : arrêter, réaligner la sonde, ne jamais avancer « au jugé ».' },
     { titre: 'Franchissement capsulaire', texte: 'Progresser jusqu\'au contact osseux du versant inférieur de l\'articulation, puis **marcher** le long de l\'os vers l\'interligne : le franchissement de la capsule donne un ressaut discret et une chute de résistance. La pointe doit apparaître **dans la fente**, pas au-dessus. En cas d\'échec après deux tentatives, ne pas s\'acharner — passer au bloc des branches médiales.' },
     { titre: 'Test, injection et critère de fin', texte: 'Aspiration dans deux plans. Injecter **0,2 mL de test** : l\'injectat doit rester **contenu** dans la cavité, avec distension visible de la capsule, sans fuite fusiforme dans les tissus mous. Puis compléter jusqu\'à **0,5–1 mL au total, pas davantage**. **Critère de fin = montée nette de la résistance** : c\'est la capsule qui prévient qu\'elle est pleine. Forcer au-delà, c\'est la déchirer et envoyer le produit vers l\'épidural ou le foramen.' },
@@ -180,7 +180,7 @@ C\'est la voie la mieux étudiée. Elle a été validée en cadavre avec contrô
 - **Efficacité clinique : faible et fragile.**
   - Méta-analyse 2022 (*Pain Physician*, Appeadu et al.) des infiltrations intra-articulaires de corticoïdes dans la **céphalée cervicogénique** : **3 études seulement, n = 64**, aucune randomisée ; réduction moyenne d\'EVA de **3,30 points** (IC 95 % 2,05–4,55). Les auteurs eux-mêmes appellent à une interprétation prudente.
   - Le seul ECR contre placebo publié dans la cervicalgie facettaire **n\'a pas montré de bénéfice**, avec des réserves méthodologiques sur la sélection des patients et la technique.
-  - Une série multicentrique prospective récente (2025) s\'est concentrée sur les patients à **hypersignal STIR péri-facettaire** : phénotypage prometteur, mais série non contrôlée.
+  - Une série multicentrique prospective récente (2025) s\'est concentrée sur les patients à **hypersignal STIR péri-facettaire** : phénotypage prometteur, mais série non contrôlée — **référence à confirmer**.
   - Un ECR 2026 en double aveugle comparant PRP peu concentré et corticoïde intra-articulaire ne retrouve **aucune différence** entre les deux groupes à 6 mois, les deux s\'améliorant significativement au premier mois seulement.
 - **Comparaison au bloc des branches médiales : nettement en faveur de ce dernier.** La prévalence de la douleur facettaire cervicale (≈ 49 % par blocs contrôlés), la sélection avant radiofréquence et l\'efficacité de la neurotomie (ECR de Lord 1996) reposent toutes sur les **branches médiales**, pas sur l\'intra-articulaire. Aucune recommandation ne fait de l\'infiltration intra-articulaire cervicale un test diagnostique valide.
 - **Sécurité : rare mais réelle.** Les complications graves des gestes facettaires cervicaux — atteinte médullaire, infarctus vertébro-basilaire, abcès épidural, méningite — sont **extraordinairement rares** mais publiées ; le rachis cervical est la seule région où l\'atteinte de l\'artère vertébrale et la paralysie phrénique sont possibles.
@@ -196,7 +196,7 @@ C\'est la voie la mieux étudiée. Elle a été validée en cadavre avec contrô
     { auteurs: '—', titre: 'Ultrasound-guided cervical facet joint injections', revue: 'Spine J', annee: '2022', pmid: '35093557', type: 'revue technique' },
     { auteurs: '—', titre: 'Ultrasound-guided axial facet joint interventions for chronic spinal pain: a narrative review', revue: 'Can J Pain', annee: '2023', doi: '10.1080/24740527.2023.2193617', type: 'revue narrative' },
     { auteurs: '—', titre: 'Ultrasound-guided procedures in the cervical spine', revue: '—', annee: '2021', pmid: '34934598', type: 'revue', note: 'Panorama des gestes cervicaux échoguidés et de leurs limites.' },
-    { auteurs: '—', titre: 'Intra-articular cervical facet joint corticosteroid injections in patients with increased peri-facet MRI STIR signal: a prospective, multi-center case series', revue: 'Interv Pain Med', annee: '2025', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12547228/', type: 'série prospective', verif: false, note: 'Titre et contenu vus en recherche ; revue et année à confirmer.' },
+    { auteurs: '—', titre: 'Intra-articular cervical facet joint corticosteroid injections in patients with increased peri-facet MRI STIR signal: a prospective, multi-center case series', revue: 'Interv Pain Med', annee: '2025', type: 'série prospective', verif: false, note: 'Revue, année et existence exacte à confirmer — aucun identifiant retenu.' },
     { auteurs: 'Manchikanti L, et al.', titre: 'Assessment of prevalence of cervical facet joint pain with diagnostic cervical medial branch blocks: analysis based on chronic pain model', revue: 'Pain Physician', annee: '2020', pmid: '33185369', type: 'étude de prévalence' },
     { auteurs: 'Lord SM, Barnsley L, Wallis BJ, McDonald GJ, Bogduk N', titre: 'Percutaneous radio-frequency neurotomy for chronic cervical zygapophyseal-joint pain', revue: 'N Engl J Med', annee: '1996', doi: '10.1056/NEJM199612053352302', pmid: '8929263', type: 'ECR', note: 'Ce sur quoi repose réellement la prise en charge facettaire cervicale : les branches médiales, pas l\'intra-articulaire.' },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco' },
@@ -221,13 +221,17 @@ C\'est la voie la mieux étudiée. Elle a été validée en cadavre avec contrô
         S.bone({ path: 'M176 246 Q240 212 302 240' });
         S.bone({ path: 'M330 242 Q394 208 456 236' });
         S.bone({ path: 'M484 240 Q548 206 610 234' });
-        S.fluid({ path: 'M150 244 L174 246 L180 288 L156 286 Z', label: 'Interligne', lx: 164, ly: 320, small: true });
+        /* bandes sans ombre entre deux cônes osseux disjoints : les combler pour ne pas laisser de bande claire */
+        S.region({ path: 'M148 242 L176 245 L176 420 L148 420 Z', fill: '#05070a', opacity: 0.94 });
+        S.region({ path: 'M302 238 L330 241 L330 420 L302 420 Z', fill: '#05070a', opacity: 0.94 });
+        S.region({ path: 'M456 234 L484 239 L484 420 L456 420 Z', fill: '#05070a', opacity: 0.94 });
+        S.fluid({ path: 'M150 244 L174 246 L180 288 L156 286 Z', label: 'Interligne', lx: 164, ly: 332, small: true });
         S.fluid({ path: 'M304 240 L328 242 L334 284 L310 282 Z' });
         S.fluid({ path: 'M458 236 L482 240 L488 282 L464 278 Z' });
         S.label({ x: 86, y: 208, text: 'Proc. articulaires', cls: 'lbl-bone', small: true });
-        S.label({ x: 394, y: 200, text: 'C4-C5', cls: 'lbl-bone', small: true });
-        S.label({ x: 240, y: 204, text: 'C3-C4', cls: 'lbl-bone', small: true });
-        S.label({ x: 548, y: 198, text: 'C5-C6', cls: 'lbl-bone', small: true });
+        S.label({ x: 162, y: 204, text: 'C3-C4', cls: 'lbl-target', small: true });
+        S.label({ x: 316, y: 200, text: 'C4-C5', cls: 'lbl-target', small: true });
+        S.label({ x: 470, y: 198, text: 'C5-C6', cls: 'lbl-target', small: true });
         S.artery({ x: 500, y: 190, r: 6, label: 'A. cervicale profonde', lx: 612, ly: 172, anchor: 'end', lead: [506, 188], small: true });
         S.target({ x: 320, y: 258, r: 16 });
       },
@@ -246,15 +250,18 @@ C\'est la voie la mieux étudiée. Elle a été validée en cadavre avec contrô
         S.bone({ path: 'M176 246 Q240 212 302 240' });
         S.bone({ path: 'M330 242 Q394 208 456 236' });
         S.bone({ path: 'M484 240 Q548 206 610 234' });
+        /* bandes sans ombre entre deux cônes osseux disjoints : les combler pour ne pas laisser de bande claire */
+        S.region({ path: 'M148 242 L176 245 L176 420 L148 420 Z', fill: '#05070a', opacity: 0.94 });
+        S.region({ path: 'M302 238 L330 241 L330 420 L302 420 Z', fill: '#05070a', opacity: 0.94 });
+        S.region({ path: 'M456 234 L484 239 L484 420 L456 420 Z', fill: '#05070a', opacity: 0.94 });
         S.fluid({ path: 'M304 240 L328 242 L334 284 L310 282 Z' });
         S.fluid({ path: 'M150 244 L174 246 L180 288 L156 286 Z' });
         S.fluid({ path: 'M458 236 L482 240 L488 282 L464 278 Z' });
         S.label({ x: 240, y: 202, text: 'Proc. articulaires', cls: 'lbl-bone', small: true });
-        S.label({ x: 396, y: 318, text: 'Fentes = interlignes', cls: 'lbl-fluid', small: true });
+        S.label({ x: 470, y: 332, text: 'Fentes = interlignes', cls: 'lbl-fluid', small: true });
         S.artery({ x: 500, y: 190, r: 6, label: 'A. cervicale profonde', lx: 610, ly: 174, anchor: 'end', lead: [506, 188], small: true });
-        S.target({ x: 320, y: 256, r: 15 });
-        S.needle({ from: [640, 128], to: [330, 254], label: '25 G écho-visible, ≈ 45°' });
-        S.spread({ x: 320, y: 262, rx: 20, ry: 22, label: '0,5–1 mL' });
+        S.needle({ from: [530, 48], to: [322, 254], label: '25 G écho-visible, ≈ 45°' });
+        S.spread({ x: 320, y: 262, rx: 20, ry: 21, label: '0,5–1 mL' });
       },
     },
   ],

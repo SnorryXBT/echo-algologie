@@ -224,19 +224,19 @@ Limite : l’aiguille pointe **vers le foramen**. Fixer visuellement une limite 
         S.muscle({ path: 'M0 74 L640 74 L640 116 L0 122 Z', label: 'Trapèze / rhomboïde', at: [110, 98], opacity: 0.42, small: true });
         S.fascia({ points: [[0, 122], [640, 116]], width: 1.5 });
         S.muscle({ path: 'M0 122 L640 116 L640 212 L0 220 Z', label: 'Érecteurs du rachis', at: [120, 172], opacity: 0.55 });
-        S.bone({ path: 'M40 232 Q140 212 240 232', label: 'Processus transverse', at: [130, 268], small: true, ldy: 0 });
-        S.bone({ path: 'M400 232 Q500 212 600 232', label: 'Processus transverse', at: [500, 268], small: true, ldy: 0 });
-        S.ligament({ path: 'M236 226 L404 226 L404 248 L236 248 Z', label: 'Lig. costo-transversaire supérieur', at: [320, 210], small: true });
-        S.region({ path: 'M236 250 L404 250 L400 292 L240 292 Z', fill: '#7d8790', opacity: 0.32, label: 'Espace paravertébral', at: [286, 274], small: true });
+        S.bone({ path: 'M44 236 L76 220 L204 220 L236 236', label: 'Processus transverse\n(sommet aplati)', at: [132, 272], small: true, ldy: 0 });
+        S.bone({ path: 'M404 236 L436 220 L564 220 L596 236', label: 'Processus transverse\n(sommet aplati)', at: [500, 272], small: true, ldy: 0 });
+        S.ligament({ path: 'M236 228 L404 228 L404 250 L236 250 Z', label: 'Lig. costo-transversaire supérieur', at: [320, 208], small: true });
+        S.region({ path: 'M236 252 L404 252 L400 292 L240 292 Z', fill: '#7d8790', opacity: 0.32, label: 'Espace paravertébral', at: [286, 276], small: true });
         S.pleura({ points: [[214, 298], [320, 294], [426, 298]] });
-        S.label({ x: 524, y: 310, text: 'Plèvre (glissement)', cls: 'lbl-pleura', small: true, anchor: 'middle', lead: [430, 298] });
-        S.lung({ rect: [0, 302, 640, 118], label: 'Poumon — lignes A', at: [200, 356], small: true });
-        S.target({ x: 386, y: 268, r: 13 });
+        S.label({ x: 520, y: 316, text: 'Plèvre (glissement)', cls: 'lbl-pleura', small: true, anchor: 'middle', lead: [430, 298] });
+        S.lung({ path: 'M216 304 L424 304 L432 420 L208 420 Z', label: 'Poumon\n(lignes A)', at: [320, 350], small: true });
+        S.target({ x: 386, y: 270, r: 13 });
       },
     },
     {
       id: 'pvt-sagittal-bloc', section: 'technique', titre: 'Abord sagittal paramédian — aiguille dans le plan, caudo-crâniale',
-      legende: 'Technique de sécurité : prendre le contact osseux du processus transverse, reculer, puis progresser au maximum de 1 à 1,5 cm au-delà de son bord caudal — jamais plus. Franchissement du ligament costo-transversaire supérieur (ressaut à l’aiguille à biseau court), puis hydrolocalisation par 1–2 mL. Critère de fin : la plèvre RECULE et l’espace s’élargit. Limite de l’abord : l’angle d’insonation est défavorable et l’aiguille se voit mal — ne jamais avancer sans voir la pointe.',
+      legende: 'Technique de sécurité : prendre le contact osseux du processus transverse, NOTER SA PROFONDEUR, reculer, puis passer au-delà de son bord sans jamais dépasser 1 à 1,5 cm au-delà de cette profondeur — la règle porte sur la profondeur, pas sur la distance horizontale à l’écran. Franchissement du ligament costo-transversaire supérieur (ressaut à l’aiguille à biseau court), puis hydrolocalisation par 1–2 mL. Critère de fin : la plèvre RECULE et l’espace s’élargit. Limite de l’abord : l’angle d’insonation est défavorable et l’aiguille se voit mal — ne jamais avancer sans voir la pointe.',
       opts: { depth: 5 },
       build: S => {
         S.orient({ left: 'Crânial', right: 'Caudal' }).probeInfo({ plan: 'Sagittal paramédian', type: 'in-plane, caudo-crânial' });
@@ -244,16 +244,16 @@ Limite : l’aiguille pointe **vers le foramen**. Fixer visuellement une limite 
         S.muscle({ path: 'M0 74 L640 74 L640 116 L0 122 Z', opacity: 0.42 });
         S.fascia({ points: [[0, 122], [640, 116]], width: 1.5 });
         S.muscle({ path: 'M0 122 L640 116 L640 212 L0 220 Z', label: 'Érecteurs du rachis', at: [110, 168], opacity: 0.55, small: true });
-        S.bone({ path: 'M40 232 Q140 212 240 232', label: 'PT', at: [130, 266], small: true, ldy: 0 });
-        S.bone({ path: 'M400 232 Q500 212 600 232', label: 'PT', at: [500, 266], small: true, ldy: 0 });
-        S.ligament({ path: 'M236 226 L404 226 L404 248 L236 248 Z', label: 'Lig. costo-transversaire sup.', at: [320, 208], small: true });
-        S.region({ path: 'M236 250 L404 250 L400 292 L240 292 Z', fill: '#7d8790', opacity: 0.32 });
+        S.bone({ path: 'M44 236 L76 220 L204 220 L236 236', label: 'PT', at: [130, 268], small: true, ldy: 0 });
+        S.bone({ path: 'M404 236 L436 220 L564 220 L596 236', label: 'PT', at: [500, 268], small: true, ldy: 0 });
+        S.ligament({ path: 'M236 228 L404 228 L404 250 L236 250 Z', label: 'Lig. costo-transversaire sup.', at: [320, 208], small: true });
+        S.region({ path: 'M236 252 L404 252 L400 292 L240 292 Z', fill: '#7d8790', opacity: 0.32 });
         S.pleura({ points: [[214, 300], [320, 296], [426, 300]] });
-        S.lung({ rect: [0, 304, 640, 116], label: 'Poumon', at: [110, 350], small: true });
-        S.target({ x: 322, y: 258, r: 18 });
-        S.needle({ from: [636, 86], to: [332, 254], label: '20–22 G 80–100 mm, biseau court' });
-        S.spread({ x: 320, y: 272, rx: 80, ry: 22, label: '10–20 mL' });
-        S.label({ x: 500, y: 340, text: 'Plèvre repoussée en avant =\ncritère de fin', cls: 'lbl-pleura', small: true, anchor: 'middle', lead: [420, 302] });
+        S.lung({ path: 'M216 306 L424 306 L432 420 L208 420 Z', label: 'Poumon', at: [320, 356], small: true });
+        S.target({ x: 322, y: 262, r: 16 });
+        S.needle({ from: [638, 96], to: [330, 258], label: '20–22 G 80–100 mm, biseau court' });
+        S.spread({ x: 318, y: 274, rx: 76, ry: 18, label: '10–20 mL' });
+        S.label({ x: 520, y: 330, text: 'Plèvre repoussée en avant =\ncritère de fin', cls: 'lbl-pleura', small: true, anchor: 'middle', lead: [424, 302] });
       },
     },
     {
@@ -268,15 +268,15 @@ Limite : l’aiguille pointe **vers le foramen**. Fixer visuellement une limite 
         S.muscle({ path: 'M0 120 L300 120 L312 214 L0 224 Z', label: 'Muscles intercostaux', at: [128, 174], opacity: 0.45, small: true });
         S.fascia({ points: [[0, 240], [300, 244], [472, 282]], width: 2.4 });
         S.label({ x: 120, y: 232, text: 'Membrane intercostale interne', cls: 'lbl-fascia', small: true, anchor: 'middle' });
-        S.region({ path: 'M300 252 L474 290 L448 314 L288 300 Z', fill: '#7d8790', opacity: 0.34, label: 'Espace paravertébral', at: [360, 342], small: true, lead: [368, 296] });
+        S.region({ path: 'M300 252 L474 290 L448 314 L288 300 Z', fill: '#7d8790', opacity: 0.34, label: 'Espace paravertébral', at: [318, 234], small: true, lead: [350, 274] });
         S.bone({ path: 'M496 206 Q562 178 632 174', label: 'Lame / processus épineux', at: [556, 240], small: true, ldy: 0 });
         S.pleura({ points: [[74, 308], [280, 302], [452, 314]] });
-        S.label({ x: 100, y: 330, text: 'Plèvre', cls: 'lbl-pleura', small: true, anchor: 'middle', lead: [110, 308] });
-        S.lung({ rect: [0, 318, 640, 102], label: 'Poumon', at: [210, 372], small: true });
-        S.target({ x: 382, y: 282, r: 18 });
+        S.label({ x: 96, y: 332, text: 'Plèvre', cls: 'lbl-pleura', small: true, anchor: 'middle', lead: [110, 308] });
+        S.lung({ path: 'M0 316 L468 328 L468 420 L0 420 Z', label: 'Poumon', at: [200, 374], small: true });
+        S.target({ x: 378, y: 278, r: 17 });
         S.needle({ from: [0, 138], to: [398, 278], label: 'in-plane, visible sur toute sa longueur' });
-        S.spread({ x: 368, y: 288, rx: 66, ry: 20, label: '10–20 mL' });
-        S.label({ x: 500, y: 372, text: 'Limite médiale : ne pas dépasser —\nau-delà, le foramen', cls: 'lbl-target', small: true, anchor: 'middle' });
+        S.spread({ x: 362, y: 280, rx: 64, ry: 15, label: '10–20 mL' });
+        S.label({ x: 512, y: 378, text: 'Limite médiale : ne pas dépasser —\nau-delà, le foramen', cls: 'lbl-target', small: true, anchor: 'middle' });
       },
     },
   ],

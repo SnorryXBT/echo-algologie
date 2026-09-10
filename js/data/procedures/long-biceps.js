@@ -17,7 +17,7 @@ ECHO.register({
     sonde: 'lineaire', sondeNote: '10–18 MHz, profondeur 3–4 cm, focale à 1,5–2 cm ; Doppler couleur basse PRF obligatoire sur la gouttière',
     approche: 'in-plane', approcheNote: 'coupe transversale de la gouttière, aiguille latéro-médiale au-dessus de la branche ascendante de l\'artère circonflexe ; hors du plan possible en coupe transversale, in-plane distal-proximal en coupe longitudinale',
     aiguille: '22–25 G, 40–50 mm',
-    cible: 'Espace périt endineux (gaine) au contact du tendon — critère de fin : liseré anéchogène qui cercle le tendon sur toute sa circonférence, sans image intratendineuse',
+    cible: 'Espace péri-tendineux (gaine) au contact du tendon — critère de fin : liseré anéchogène qui cercle le tendon sur toute sa circonférence, sans image intratendineuse',
     injectat: '2–3 mL : méthylprednisolone 20–40 mg (ou bétaméthasone 1 mL) + lidocaïne 1 % ou ropivacaïne 0,2 %',
     duree: '5–10 min',
   },
@@ -193,7 +193,7 @@ Si l\'artère occupe toute la fenêtre latérale, deux solutions : descendre de 
         S.fluid({ x: 322, y: 232, rx: 37, ry: 25 });
         S.bone({ path: 'M0 242 Q92 208 180 197 Q234 195 258 226 L268 258 Q292 274 322 274 Q352 274 376 258 L386 226 Q410 195 464 193 Q560 201 640 232' });
         S.tendon({ x: 322, y: 232, rx: 27, ry: 16, label: 'Tendon du long biceps', lx: 146, ly: 318, anchor: 'middle', lead: [296, 242] });
-        S.artery({ x: 372, y: 218, r: 6, label: 'A. circonflexe ant.\n(branche ascendante)', lx: 470, ly: 268, anchor: 'start', lead: [379, 220] });
+        S.artery({ x: 380, y: 220, r: 6, label: 'A. circonflexe ant.\n(branche ascendante)', lx: 470, ly: 268, anchor: 'start', lead: [387, 222] });
         S.label({ x: 96, y: 184, text: 'Petite tubérosité', cls: 'lbl-bone', small: true });
         S.label({ x: 546, y: 178, text: 'Grande tubérosité', cls: 'lbl-bone', small: true });
         S.label({ x: 322, y: 356, text: 'Gaine (liseré anéchogène) = cible', cls: 'lbl-fluid', small: true, lead: [330, 258] });
@@ -211,11 +211,11 @@ Si l\'artère occupe toute la fenêtre latérale, deux solutions : descendre de 
         S.fluid({ x: 322, y: 232, rx: 37, ry: 25 });
         S.bone({ path: 'M0 242 Q92 208 180 197 Q234 195 258 226 L268 258 Q292 274 322 274 Q352 274 376 258 L386 226 Q410 195 464 193 Q560 201 640 232' });
         S.tendon({ x: 322, y: 232, rx: 27, ry: 16, label: 'Cible : la gaine,\njamais le tendon', lx: 126, ly: 314, anchor: 'middle', lead: [292, 242] });
-        S.artery({ x: 384, y: 212, r: 6, label: 'A. circonflexe ant.', lx: 470, ly: 284, anchor: 'start', lead: [390, 216] });
+        S.artery({ x: 380, y: 220, r: 6, label: 'A. circonflexe ant.', lx: 470, ly: 284, anchor: 'start', lead: [387, 224] });
         S.label({ x: 96, y: 184, text: 'Petite tubérosité', cls: 'lbl-bone', small: true });
         S.label({ x: 546, y: 178, text: 'Grande tubérosité', cls: 'lbl-bone', small: true });
-        S.needle({ from: [636, 92], to: [354, 210], label: '22–25 G, 40–50 mm' });
-        S.spreadPath({ path: 'M280 232 A 42 28 0 1 1 364 232 A 42 28 0 1 1 280 232 Z M294 232 A 28 17 0 1 0 350 232 A 28 17 0 1 0 294 232 Z', at: [322, 356], label: '2–3 mL — liseré circonférentiel' });
+        S.needle({ from: [636, 86], to: [344, 214], label: '22–25 G, 40–50 mm — au-dessus de l\'artère' });
+        S.spreadPath({ path: 'M280 232 A 42 28 0 1 1 364 232 A 42 28 0 1 1 280 232 Z M294 232 A 28 17 0 1 0 350 232 A 28 17 0 1 0 294 232 Z', at: [322, 308], label: '2–3 mL — liseré circonférentiel' });
       },
     },
   ],

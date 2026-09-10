@@ -107,7 +107,7 @@ Prévoir une aiguille fine (25 G) : elle suffit largement à ce niveau et diminu
   injectat: `| Objectif | Produits | Volume | Commentaire |
 |---|---|---|---|
 | Bloc diagnostique | Lidocaïne 1 % ou ropivacaïne 0,2 %, seule | **2–3 mL** | Volume délibérément faible : au-delà, la diffusion médiale atteint le nerf fémoral et fait perdre toute spécificité au test. Cartographier la zone d’hypoesthésie obtenue |
-| Bloc thérapeutique | Ropivacaïne 0,2 % ou lidocaïne 1 % + **dexaméthasone 4 mg** ou bétaméthasone 5,7 mg | 3–5 mL | **Corticoïde non particulaire de préférence** : nerf très superficiel, risque d’atrophie graisseuse et de dépigmentation avec les particulaires. Ne pas répéter plus de 2–3 fois |
+| Bloc thérapeutique | Ropivacaïne 0,2 % ou lidocaïne 1 % + **dexaméthasone 4 mg** (ou bétaméthasone phosphate soluble, Célestène® 4 mg) | 3–5 mL | **Corticoïde non particulaire** : nerf très superficiel, risque d’atrophie graisseuse et de dépigmentation avec les particulaires — écarter ici les formes retard particulaires (Diprostène®/Célestène Chronodose®, Kenacort retard®, Dépo-Médrol®). Ne pas répéter plus de 2–3 fois |
 | Hydrodissection | **Dextrose 5 % (D5W)** seul, ou D5W + 1 mL de lidocaïne 1 % | 5–10 mL | Technique de choix pour la libération mécanique du nerf au site de conflit. Le D5W n’est ni neurotoxique ni bloquant moteur, ce qui permet des séances **répétées** (3 à 5 séances espacées de 2–4 semaines) et évite tout risque de chute |
 | Avant PRF | Lidocaïne 1 % | 0,5–1 mL | Volume minimal : un volume important déplace le nerf hors de portée de l’électrode |
 | Après PRF ou cryoneurolyse | Ropivacaïne 0,2 % ± dexaméthasone 4 mg | 2–3 mL | Confort post-geste |
@@ -209,11 +209,11 @@ Le choix appartient au patient, informé de ce compromis. Aucun essai comparatif
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Transverse, 1–3 cm sous l’EIAS', type: 'linéaire 12–18 MHz' });
         S.skin({ thickness: 8, fatBelow: 46 });
         S.artery({ x: 196, y: 84, r: 5, label: 'A. circonflexe iliaque superf.', lx: 214, ly: 78, anchor: 'start', small: true, lead: [202, 84] });
-        S.fascia({ points: [[0, 110], [320, 106], [640, 110]], width: 2.2, label: 'Fascia lata', at: [72, 132], small: true });
+        S.fascia({ points: [[0, 110], [320, 106], [640, 110]], width: 2.2, label: 'Fascia lata', lx: 60, ly: 98, anchor: 'start', small: true, lead: [140, 108] });
         S.muscle({ path: 'M30 116 L296 112 L250 248 L56 236 Z', label: 'Sartorius', at: [152, 186], opacity: 0.5 });
         S.fat({ path: 'M296 112 L392 110 L424 242 L250 250 Z', label: 'Tunnel graisseux', at: [340, 226], small: true });
         S.muscle({ path: 'M392 110 L618 116 L600 240 L424 242 Z', label: 'Tenseur du fascia lata', at: [512, 186], opacity: 0.5 });
-        S.nerve({ x: 342, y: 156, rx: 9, ry: 6, label: 'N. cutané latéral de la cuisse', lx: 464, ly: 150, anchor: 'start', small: true, lead: [352, 156] });
+        S.nerve({ x: 342, y: 138, rx: 9, ry: 6, label: 'N. cutané latéral\nde la cuisse', lx: 342, ly: 184, small: true, lead: [342, 146] });
         S.muscle({ path: 'M0 258 L640 250 L640 306 L0 314 Z', label: 'Droit fémoral', at: [104, 286], opacity: 0.4, small: true });
         S.bone({ path: 'M0 326 Q320 306 640 320', label: 'Ilion (sous l’EIAS)', at: [330, 366] });
       },
@@ -225,15 +225,15 @@ Le choix appartient au patient, informé de ce compromis. Aucun essai comparatif
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Transverse, 1–3 cm sous l’EIAS', type: 'in-plane, latéro-médial' });
         S.skin({ thickness: 8, fatBelow: 46 });
-        S.fascia({ points: [[0, 110], [320, 106], [640, 110]], width: 2.2, label: 'Fascia lata', at: [72, 132], small: true });
+        S.fascia({ points: [[0, 110], [320, 106], [640, 110]], width: 2.2, label: 'Fascia lata', lx: 60, ly: 98, anchor: 'start', small: true, lead: [140, 108] });
         S.muscle({ path: 'M30 116 L296 112 L250 248 L56 236 Z', label: 'Sartorius', at: [140, 196], opacity: 0.5 });
         S.fat({ path: 'M296 112 L392 110 L424 242 L250 250 Z' });
         S.muscle({ path: 'M392 110 L618 116 L600 240 L424 242 Z', label: 'Tenseur du fascia lata', at: [520, 200], opacity: 0.5 });
-        S.nerve({ x: 342, y: 156, rx: 9, ry: 6, label: 'NCLC', lx: 342, ly: 116, small: true });
+        S.nerve({ x: 342, y: 138, rx: 9, ry: 6, label: 'NCLC', lx: 462, ly: 250, anchor: 'start', small: true, lead: [352, 140] });
         S.muscle({ path: 'M0 258 L640 250 L640 306 L0 314 Z', opacity: 0.4 });
         S.bone({ path: 'M0 326 Q320 306 640 320', label: 'Ilion', at: [140, 362] });
-        S.needle({ from: [636, 124], to: [378, 162], label: '25 G, angle plat' });
-        S.spreadPath({ path: 'M290 158 A 52 30 0 1 0 394 158 A 52 30 0 1 0 290 158 Z M329 156 A 15 10 0 1 1 359 156 A 15 10 0 1 1 329 156 Z', at: [342, 212], label: '3–5 mL — nerf entouré sur 360°' });
+        S.needle({ from: [636, 118], to: [372, 144], label: '25 G, angle plat' });
+        S.spreadPath({ path: 'M292 140 A 50 26 0 1 0 392 140 A 50 26 0 1 0 292 140 Z M329 138 A 15 10 0 1 1 359 138 A 15 10 0 1 1 329 138 Z', at: [342, 196], label: '3–5 mL — nerf entouré sur 360°' });
       },
     },
   ],

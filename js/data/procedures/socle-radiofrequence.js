@@ -107,7 +107,7 @@ Sens de ponction choisi pour que le **trajet de l'aiguille soit le plus tangenti
 |---|---|---|---|
 | Anesthésie cutanée | Lidocaïne 1 % | 1–2 mL | Peau et sous-cutané seulement — ne pas infiltrer la cible, sous peine d'abolir la stimulation |
 | Avant chaque lésion thermique | Lidocaïne 2 % (ou 1 %) par la canule | 1–2 mL par lésion | Injectée **après** la stimulation, 60–90 s avant la montée en température |
-| Après PRF | Ropivacaïne 0,2 % ou lidocaïne 1 % ± dexaméthasone 4 mg ou bétaméthasone 5,7 mg | 2–4 mL | Corticoïde **non particulaire** dès qu'une artère satellite est dans le champ (occipitaux, pudendal, intercostaux, géniculés) |
+| Après PRF | Ropivacaïne 0,2 % ou lidocaïne 1 % ± corticoïde | 2–4 mL | **Dexaméthasone 4 mg (non particulaire) dès qu'une artère satellite est dans le champ** — occipitaux, pudendal, intercostaux, géniculés. La bétaméthasone (Célestène chronodose 5,70 mg/mL, Diprostène) est une **suspension particulaire** : elle ne se substitue pas à la dexaméthasone sur ces sites, et ne se justifie que sur une cible sans voisinage artériel |
 | Après RF thermique | AL ± corticoïde | 2–4 mL | Objectif : confort immédiat et limitation de la neurite ; pas de bénéfice démontré, pratique courante |
 | Multi-cibles (3–5 géniculés) | Lidocaïne 1–2 % | 1–2 mL par cible | **Additionner les doses** : lidocaïne 4,5 mg/kg (7 mg/kg adrénalinée) ; 10 mL de lidocaïne 2 % = 200 mg, soit déjà la moitié de la dose d'un patient de 60 kg |
 
@@ -225,7 +225,7 @@ Le compromis utile en HDJ : échographie pour tout ce qui est périphérique et 
         S.orient({ left: 'Proximal', right: 'Distal' }).probeInfo({ plan: 'Coupe longitudinale du nerf', type: 'schéma de principe' });
         S.skin({ thickness: 8, fatBelow: 20 });
         S.muscle({ path: 'M0 70 L640 70 L640 318 L0 318 Z', label: 'Plan musculaire traversé', at: [96, 100], opacity: 0.3 });
-        S.bone({ path: 'M0 344 L640 344', label: 'Plan osseux', at: [80, 366], ldy: 0 });
+        S.bone({ path: 'M0 345 Q320 341 640 343', label: 'Plan osseux', at: [80, 372], ldy: 0 });
         S.nerve({ path: 'M0 246 L640 246 L640 268 L0 268 Z', label: 'Nerf cible (coupe longitudinale)', lx: 320, ly: 300, small: true });
         S.region({ x: 186, y: 224, rx: 24, ry: 32, fill: '#ff7a45', opacity: 0.4, stroke: '#ffb08a' });
         S.region({ path: 'M420 244 Q424 216 470 212 Q526 208 553 221 Q570 232 557 251 Q537 276 470 278 Q428 274 420 244 Z', fill: '#ff7a45', opacity: 0.4, stroke: '#ffb08a' });
@@ -245,19 +245,19 @@ Le compromis utile en HDJ : échographie pour tout ce qui est périphérique et 
         S.skin({ thickness: 8, fatBelow: 22 });
         S.muscle({ path: 'M0 74 L640 74 L640 240 L0 252 Z', label: 'Muscle', at: [70, 162], opacity: 0.38 });
         S.fascia({ points: [[0, 252], [640, 240]], width: 1.5 });
-        S.artery({ path: 'M0 274 L640 252 L640 266 L0 288 Z', label: 'Artère satellite (Doppler)', lx: 130, ly: 210, anchor: 'start', lead: [210, 268] });
-        S.nerve({ path: 'M0 300 L640 278 L640 296 L0 318 Z', label: 'Nerf cible', lx: 96, ly: 354, anchor: 'start', lead: [96, 314] });
-        S.bone({ path: 'M0 336 Q320 328 640 322', label: 'Corticale — contact puis retrait 1 mm', at: [604, 358], anchor: 'end', ldy: 0 });
-        S.region({ path: 'M288 274 Q330 260 412 256 Q450 258 452 278 Q454 302 406 312 Q330 322 292 306 Q276 292 288 274 Z', fill: '#ff7a45', opacity: 0.38, stroke: '#ffb08a' });
-        S.region({ path: 'M300 282 L404 264 L406 272 L302 290 Z', fill: '#ffd166', opacity: 0.9 });
-        S.target({ x: 302, y: 286, r: 13 });
-        S.label({ x: 626, y: 212, text: 'Lésion 80–90 °C · 60–90 s', anchor: 'end', small: true, cls: 'lbl-target', lead: [452, 270] });
+        S.nerve({ path: 'M0 290 L640 268 L640 286 L0 308 Z', label: 'Nerf cible', lx: 24, ly: 264, anchor: 'start', lead: [120, 292] });
+        S.artery({ path: 'M0 324 L640 302 L640 316 L0 338 Z', label: 'Artère satellite (Doppler) — hors du volume de lésion', lx: 24, ly: 372, anchor: 'start', lead: [150, 332] });
+        S.bone({ path: 'M0 356 Q320 348 640 342', label: 'Corticale — contact puis retrait 1 mm', at: [626, 388], anchor: 'end', ldy: 0 });
+        S.region({ path: 'M288 264 Q330 250 412 246 Q450 248 452 268 Q454 292 406 302 Q330 312 292 296 Q276 282 288 264 Z', fill: '#ff7a45', opacity: 0.38, stroke: '#ffb08a' });
+        S.region({ path: 'M300 274 L404 257 L406 265 L302 282 Z', fill: '#ffd166', opacity: 0.9 });
+        S.target({ x: 302, y: 278, r: 13 });
+        S.label({ x: 626, y: 330, text: 'Lésion 80–90 °C · 60–90 s', anchor: 'end', small: true, cls: 'lbl-target', lead: [452, 288] });
         S.label({ x: 16, y: 100, text: 'Stimulation 50 Hz : douleur reproduite < 0,5 V', anchor: 'start', small: true });
         S.label({ x: 16, y: 118, text: 'Stimulation 2 Hz : aucune réponse motrice < 2 V', anchor: 'start', small: true });
-        S.label({ x: 176, y: 250, text: 'Extrémité active 10 mm', anchor: 'end', small: true, cls: 'lbl-target', lead: [306, 280] });
-        S.label({ x: 626, y: 160, text: 'Électrode RF 22 G', anchor: 'end', small: true, cls: 'lbl-needle' });
-        S.needle({ from: [636, 234], to: [300, 288] });
-        S.spread({ x: 376, y: 250, rx: 44, ry: 11, label: '1–2 mL lidocaïne' });
+        S.label({ x: 250, y: 222, text: 'Extrémité active 10 mm', anchor: 'end', small: true, cls: 'lbl-target', lead: [330, 266] });
+        S.label({ x: 626, y: 166, text: 'Électrode RF 22 G', anchor: 'end', small: true, cls: 'lbl-needle' });
+        S.needle({ from: [636, 224], to: [300, 278] });
+        S.spread({ x: 380, y: 240, rx: 44, ry: 10, label: '1–2 mL lidocaïne' });
       },
     },
   ],

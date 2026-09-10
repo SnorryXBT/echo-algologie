@@ -196,7 +196,7 @@ L'ECR contre sham de **Radnovich 2017** porte sur la cryoneurolyse des branches 
     { auteurs: `Erdem Y, Sir E`, titre: `The efficacy of ultrasound-guided pulsed radiofrequency of genicular nerves in the treatment of chronic knee pain due to severe degenerative disease or previous total knee arthroplasty`, revue: `Medical Science Monitor`, annee: '2019', type: 'série', verif: false },
     { auteurs: `Sari S, Aydın ON, Turan Y, et al.`, titre: `Which one is more effective for the clinical treatment of chronic pain in knee osteoarthritis: radiofrequency neurotomy of the genicular nerves or intra-articular injection?`, revue: `International Journal of Rheumatic Diseases`, annee: '2018', type: 'ECR', verif: false },
     { auteurs: `McAlindon TE, LaValley MP, Harvey WF, et al.`, titre: `Effect of intra-articular triamcinolone vs saline on knee cartilage volume and pain in patients with knee osteoarthritis: a randomized clinical trial`, revue: `JAMA`, annee: '2017', type: 'ECR', verif: false, note: `Justifie de chercher une alternative à la répétition des corticoïdes.` },
-    { auteurs: `Narouze S, Benzon HT, Provenzano D, et al.`, titre: `Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP`, revue: `Regional Anesthesia and Pain Medicine`, annee: '2018', type: 'reco', verif: false },
+    { auteurs: `Narouze S, Benzon HT, Provenzano D, et al.`, titre: `Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP`, revue: `Regional Anesthesia and Pain Medicine`, annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true },
   ],
   videos: [],
 
@@ -225,12 +225,12 @@ L'ECR contre sham de **Radnovich 2017** porte sur la cryoneurolyse des branches 
         S.skin({ thickness: 8, fatBelow: 20 });
         S.ligament({ path: 'M56 98 L620 118 L622 150 L54 130 Z', label: 'LCM', at: [180, 124] });
         S.bone({ path: 'M0 226 Q120 214 220 226 Q300 238 400 258 L640 268', label: 'Tibia', at: [128, 304] });
-        S.artery({ x: 324, y: 240, r: 7, label: 'A. géniculée inf.-médiale', lx: 476, ly: 204, lead: [330, 234] });
-        S.nerve({ x: 300, y: 244, r: 5, label: 'NG inféro-médial', lx: 148, ly: 196, lead: [296, 239] });
+        S.artery({ x: 324, y: 236, r: 6, label: 'A. géniculée inf.-médiale', lx: 470, ly: 208, lead: [330, 236] });
+        S.nerve({ x: 300, y: 234, r: 5, label: 'NG inféro-médial', lx: 148, ly: 196, lead: [296, 230] });
         S.label({ x: 432, y: 330, text: 'Jonction métaphyso-épiphysaire', cls: 'lbl-bone', small: true, lead: [370, 268] });
-        S.target({ x: 312, y: 244, r: 16 });
-        S.needle({ from: [640, 168], to: [318, 240], label: '22 G, contact périosté puis recul 1–2 mm' });
-        S.spread({ x: 240, y: 232, rx: 54, ry: 10, label: '1–2 mL' });
+        S.target({ x: 311, y: 236, r: 15 });
+        S.needle({ from: [640, 168], to: [318, 238], label: '22 G, contact périosté puis recul 1–2 mm' });
+        S.spreadPath({ path: 'M222 219 Q290 228 356 242 L358 232 Q292 218 226 209 Z', at: [270, 194], label: '1–2 mL, nappe périostée' });
       },
     },
     {
@@ -246,7 +246,7 @@ L'ECR contre sham de **Radnovich 2017** porte sur la cryoneurolyse des branches 
         S.nerve({ x: 384, y: 258, r: 5, label: 'NG supéro-latéral', lx: 214, ly: 228, anchor: 'end', lead: [379, 257] });
         S.region({ x: 400, y: 254, rx: 40, ry: 15, fill: '#ff8f3f', opacity: 0.32, label: 'Lésion 80 °C / 90 s', lx: 430, ly: 342, small: true, lead: [408, 270] });
         S.target({ x: 396, y: 256, r: 18 });
-        S.needle({ from: [640, 168], to: [386, 246], label: 'Électrode RF 22 G, pointe active 10 mm' });
+        S.needle({ from: [4, 190], to: [376, 268], label: 'Électrode RF 22 G, pointe active 10 mm' });
       },
     },
   ],

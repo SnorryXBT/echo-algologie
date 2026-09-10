@@ -57,7 +57,7 @@ Sous elle, le **tendon du supra-épineux** (puis, plus en arrière, l\'infra-ép
     patient: `**Assis** sur le bord du lit ou sur un tabouret à dossier, dos droit, opérateur derrière ou latéralement. Deux positions du bras :
 
 - **Neutre** : main posée à plat sur la cuisse homolatérale, coude fléchi à 90°, épaule en rotation neutre. C\'est la position d\'exploration de première intention et elle suffit pour la bourse.
-- **Crass modifiée (position de Middleton)** : main du patient posée dans le creux lombaire ou sur la fesse homolatérale, coude fléchi et tiré vers l\'arrière. L\'extension-rotation interne fait sortir le supra-épineux de sous l\'auvent acromial et déroule le tendon sur la tête humérale : c\'est la position d\'analyse du tendon et celle qui expose le mieux la bourse dans son débordement antéro-latéral. Position de Crass « pure » (main sur l\'omoplate opposée, dos de la main sur le rachis) souvent mal tolérée sur une épaule douloureuse ou raide.
+- **Crass modifiée (position de Middleton)** : main du patient posée dans le creux lombaire ou sur la fesse homolatérale, coude fléchi et tiré vers l\'arrière. L\'extension-rotation interne fait sortir le supra-épineux de sous l\'auvent acromial et déroule le tendon sur la tête humérale : c\'est la position d\'analyse du tendon et celle qui expose le mieux la bourse dans son débordement antéro-latéral. Position de Crass « pure » (extension-rotation interne maximale, paume posée sur l\'aile iliaque postérieure homolatérale, coude ramené en avant) : elle déroule davantage le tendon mais elle est souvent mal tolérée sur une épaule douloureuse ou raide.
 
 Patient anxieux ou sujet au malaise vagal : **décubitus latéral**, côté à traiter vers le haut.`,
     operateur: `Écran **en face de l\'opérateur**, dans l\'axe du regard, au-delà de l\'épaule du patient. Main non dominante tenant la sonde, appuyée sur le moignon de l\'épaule pour stabiliser malgré les mouvements respiratoires. La ponction se fait de **latéral en médial**, l\'aiguille entrant à 1 cm du bord latéral de la sonde ; le trajet reste alors parallèle au tendon et tangentiel à la bourse — l\'inverse (médio-latéral, sous l\'acromion) impose un angle plus vertical, une aiguille moins visible et un risque plus élevé de traverser le tendon.
@@ -72,7 +72,7 @@ Marquer le bord latéral de l\'acromion avant la désinfection : repère de seco
 
   reperage: [
     { titre: 'Grande tubérosité en coupe transversale', texte: 'Sonde **transversale** sur la face antéro-externe de l\'épaule, bras en position neutre : repérer la **gouttière bicipitale** (échancrure en V du cortex, tendon du long biceps en son fond) — c\'est le repère fixe qui oriente tout le reste. En dehors, le cortex de la **grande tubérosité** ; en dedans, la petite tubérosité et le subscapulaire.' },
-    { titre: 'Basculer dans l\'axe long du supra-épineux', texte: 'Depuis la gouttière, tourner la sonde d\'environ 90° pour se placer dans l\'**axe long du supra-épineux** (plan coronal oblique, dirigé vers l\'oreille controlatérale). Passer le bras en **Crass modifiée** : le tendon apparaît en « bec de perroquet », convexe, s\'insérant sur la facette supérieure de la grande tubérosité, avec l\'acromion et son cône d\'ombre à l\'extrémité médiale de l\'image.' },
+    { titre: 'Basculer dans l\'axe long du supra-épineux', texte: 'Depuis la gouttière, tourner la sonde d\'environ 90° pour se placer dans l\'**axe long du supra-épineux** : plan coronal oblique, sonde alignée sur l\'axe du tendon, à peu près **parallèle à l\'avant-bras** du patient en Crass modifiée. Passer le bras en **Crass modifiée** : le tendon apparaît en « bec de perroquet », convexe, s\'insérant sur la facette supérieure de la grande tubérosité, avec l\'acromion et son cône d\'ombre à l\'extrémité médiale de l\'image.' },
     { titre: 'Identifier le sandwich bursal', texte: 'Entre le **deltoïde** (strié, gris moyen) et la surface du tendon, chercher le triplet : liseré hyperéchogène (graisse péri-bursale superficielle) — **lame hypoéchogène fine** (bourse) — liseré hyperéchogène (graisse péri-bursale profonde). Épaisseur normale < 2 mm. C\'est la cible.' },
     { titre: 'Balayage latéral et antérieur', texte: 'Translater la sonde vers le **dehors et l\'avant**, au-delà de la grande tubérosité : la bourse y déborde, s\'y épaissit souvent et c\'est le point d\'abord le plus sûr, hors de l\'ombre acromiale. Chercher un épanchement déclive, la zone la plus épaisse devient le point d\'entrée.' },
     { titre: 'Manœuvre dynamique', texte: 'Abduction active lente, sonde en coronal sur le bord latéral de l\'acromion : normalement tendon et bourse coulissent sans accrochage. Un **bourrelet bursal qui se plisse et bute** sous l\'auvent objective le conflit et localise la zone à infiltrer.' },
@@ -188,16 +188,16 @@ Marquer le bord latéral de l\'acromion avant la désinfection : repère de seco
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Coronal oblique (axe long)', type: 'linéaire 6–15 MHz' });
         S.skin({ thickness: 8, fatBelow: 18 });
-        S.muscle({ path: 'M0 68 L640 68 L640 150 Q320 168 0 152 Z', label: 'Deltoïde', at: [455, 108], opacity: 0.5 });
-        S.bone({ path: 'M0 150 L70 154 L128 166', label: 'Acromion', at: [54, 136], small: true });
-        S.fascia({ points: [[134, 174], [350, 184], [575, 194]], width: 1.8 });
-        S.fluid({ path: 'M136 177 L575 197 L575 205 L136 185 Z', label: 'Bourse SAD\n(< 2 mm)', lx: 288, ly: 132, anchor: 'middle', lead: [292, 182], small: true });
-        S.fascia({ points: [[136, 186], [350, 196], [575, 206]], width: 1.8 });
-        S.tendon({ path: 'M132 187 L572 206 L574 242 L558 288 L516 246 Q448 222 330 226 Q212 234 128 262 Z', label: 'Tendon supra-épineux', at: [300, 208] });
-        S.bone({ path: 'M124 280 Q214 252 332 244 Q450 240 520 258 L560 292 L640 340' });
-        S.cartilage({ path: 'M150 266 Q244 240 332 226 Q450 222 518 242 L516 252 Q450 232 334 236 Q248 248 156 276 Z', label: 'Cartilage', lx: 168, ly: 340, anchor: 'middle', lead: [216, 250], small: true });
-        S.label({ x: 372, y: 340, text: 'Tête humérale', cls: 'lbl-bone', small: true });
-        S.label({ x: 556, y: 382, text: 'Grande tubérosité', cls: 'lbl-bone', small: true });
+        S.muscle({ path: 'M0 68 L640 68 L640 158 Q320 176 0 160 Z', label: 'Deltoïde', at: [470, 112], opacity: 0.5 });
+        S.bone({ path: 'M-20 148 L96 154 L168 172', label: 'Acromion', at: [62, 132], small: true });
+        S.fascia({ points: [[172, 182], [360, 190], [600, 202]], width: 2, label: 'Graisse péri-bursale', at: [452, 174], anchor: 'middle', small: true });
+        S.fluid({ path: 'M174 185 L600 205 L600 214 L174 194 Z', label: 'Bourse SAD\n(lame < 2 mm)', lx: 262, ly: 138, anchor: 'middle', lead: [300, 190], small: true });
+        S.fascia({ points: [[174, 197], [360, 205], [600, 217]], width: 2 });
+        S.tendon({ path: 'M176 199 L604 221 L596 262 L558 282 Q470 246 340 242 Q250 250 178 272 Z', label: 'Tendon supra-épineux', at: [352, 224] });
+        S.cartilage({ path: 'M180 276 Q250 254 340 246 Q450 244 540 260 L538 270 Q450 254 342 256 Q252 264 186 286 Z', label: 'Cartilage', lx: 214, ly: 330, anchor: 'middle', lead: [252, 252], small: true });
+        S.bone({ path: 'M160 288 Q250 264 340 256 Q452 254 542 270 L590 302 L660 336' });
+        S.label({ x: 360, y: 330, text: 'Tête humérale', cls: 'lbl-bone', small: true });
+        S.label({ x: 566, y: 356, text: 'Grande tubérosité', cls: 'lbl-bone', small: true });
       },
     },
     {
@@ -207,18 +207,18 @@ Marquer le bord latéral de l\'acromion avant la désinfection : repère de seco
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Coronal oblique', type: 'in-plane, latéro-médial' });
         S.skin({ thickness: 8, fatBelow: 18 });
-        S.muscle({ path: 'M0 68 L640 68 L640 150 Q320 168 0 152 Z', label: 'Deltoïde', at: [130, 112], opacity: 0.5 });
-        S.bone({ path: 'M0 150 L70 154 L128 166', label: 'Acromion', at: [54, 136], small: true });
-        S.fascia({ points: [[134, 174], [350, 184], [575, 194]], width: 1.8 });
-        S.fluid({ path: 'M136 177 L575 197 L575 205 L136 185 Z' });
-        S.fascia({ points: [[136, 186], [350, 196], [575, 206]], width: 1.8 });
-        S.tendon({ path: 'M132 187 L572 206 L574 242 L558 288 L516 246 Q448 222 330 226 Q212 234 128 262 Z', label: 'Jamais intratendineux', at: [252, 212] });
-        S.bone({ path: 'M124 280 Q214 252 332 244 Q450 240 520 258 L560 292 L640 340' });
-        S.cartilage({ path: 'M150 266 Q244 240 332 226 Q450 222 518 242 L516 252 Q450 232 334 236 Q248 248 156 276 Z' });
-        S.label({ x: 372, y: 340, text: 'Tête humérale', cls: 'lbl-bone', small: true });
-        S.target({ x: 398, y: 191, r: 15 });
-        S.needle({ from: [636, 74], to: [404, 190], label: '22–25 G, 40–50 mm — angle 15–30°' });
-        S.spreadPath({ path: 'M150 182 Q360 172 564 202 Q360 216 150 192 Z', at: [288, 146], label: '4–6 mL — distension en fuseau' });
+        S.muscle({ path: 'M0 68 L640 68 L640 158 Q320 176 0 160 Z', label: 'Deltoïde', at: [128, 112], opacity: 0.5 });
+        S.bone({ path: 'M-20 148 L96 154 L168 172', label: 'Acromion', at: [62, 132], small: true });
+        S.fascia({ points: [[172, 182], [360, 190], [600, 202]], width: 2 });
+        S.fluid({ path: 'M174 185 L600 205 L600 214 L174 194 Z' });
+        S.fascia({ points: [[174, 197], [360, 205], [600, 217]], width: 2 });
+        S.tendon({ path: 'M176 199 L604 221 L596 262 L558 282 Q470 246 340 242 Q250 250 178 272 Z', label: 'Jamais intratendineux', at: [318, 246] });
+        S.cartilage({ path: 'M180 276 Q250 254 340 246 Q450 244 540 260 L538 270 Q450 254 342 256 Q252 264 186 286 Z' });
+        S.bone({ path: 'M160 288 Q250 264 340 256 Q452 254 542 270 L590 302 L660 336' });
+        S.label({ x: 360, y: 330, text: 'Tête humérale', cls: 'lbl-bone', small: true });
+        S.target({ x: 424, y: 200, r: 13 });
+        S.needle({ from: [636, 110], to: [420, 200], label: '22–25 G, 40–50 mm — angle 15–30°' });
+        S.spreadPath({ path: 'M188 184 Q400 166 596 196 Q400 222 188 200 Z', at: [372, 190], label: '4–6 mL — distension en fuseau' });
       },
     },
   ],

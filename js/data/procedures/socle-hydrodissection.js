@@ -107,7 +107,7 @@ Sens de ponction choisi pour arriver **tangentiellement au nerf**, dans l'interf
 | Hydrodissection de référence | **Dextrose 5 % (G5)** | 5–10 mL (canal carpien) ; 10–20 mL pour un long segment ou un nerf profond | Injectat le mieux étayé : le plus efficace sur les scores fonctionnels à 4, 12 et 24 semaines dans la méta-analyse en réseau du canal carpien. Aucune toxicité systémique, répétable, utilisable chez le diabétique |
 | Hydrodissection neutre | Sérum physiologique | 5–20 mL | Alternative simple et disponible ; sert de comparateur dans les essais. Effet mécanique identique, sans l'effet propre supposé du dextrose |
 | Confort de l'injection | Lidocaïne 1 % | 1–2 mL, mélangée ou injectée en premier | À limiter : l'AL soulage le patient pendant le geste mais brouille l'interprétation du résultat immédiat et le bloc moteur peut inquiéter |
-| Composante inflammatoire | Corticoïde **non particulaire** (dexaméthasone 4 mg) ou méthylprednisolone 20–40 mg | Ajouté au volume d'hydrodissection | Indiqué si la ténosynovite ou l'inflammation locale domine. À éviter chez le diabétique, à proximité d'une artère terminale, et en répétition |
+| Composante inflammatoire | **Dexaméthasone 4 mg (non particulaire)** en première intention. Méthylprednisolone 20–40 mg ou triamcinolone 20–40 mg **seulement** sur un site sans artère satellite dans le champ — ce sont des suspensions particulaires | Ajouté au volume d'hydrodissection | Indiqué si la ténosynovite ou l'inflammation locale domine. À éviter chez le diabétique et en répétition sur un même nerf |
 | PRP | Plasma riche en plaquettes | 2–4 mL | Signal favorable au canal carpien à 12–24 semaines dans la méta-analyse en réseau. Coût, préparation, encadrement réglementaire : hors périmètre courant d'une HDJ douleur |
 
 **Doses maximales à garder en tête** dès que l'on met de l'anesthésique local dans le volume : lidocaïne 4,5 mg/kg (7 mg/kg adrénalinée), ropivacaïne 3 mg/kg, bupivacaïne 2–2,5 mg/kg. Un volume de 20 mL de lidocaïne 1 % représente déjà 200 mg — c'est l'argument principal pour hydrodisséquer au **dextrose ou au sérum** et non à l'anesthésique local, en particulier sur les séances à plusieurs cibles.
@@ -218,12 +218,13 @@ Sens de ponction choisi pour arriver **tangentiellement au nerf**, dans l'interf
         S.orient({ left: 'Avant', right: 'Après' }).probeInfo({ plan: 'Transverse, nerf en coupe', type: 'linéaire 10–18 MHz' });
         S.skin({ thickness: 9, fatBelow: 22 });
         S.fat({ path: 'M0 78 L640 78 L640 140 L0 140 Z', label: 'Graisse sous-cutanée', at: [90, 110] });
-        S.fascia({ points: [[0, 142], [640, 142]], width: 1.6 });
+        S.fascia({ points: [[0, 143], [640, 141]], width: 1.6 });
         S.tendon({ x: 118, y: 300, rx: 46, ry: 22, label: 'Tendons fléchisseurs', lx: 118, ly: 350, small: true });
         S.tendon({ x: 452, y: 300, rx: 46, ry: 22 });
-        S.fascia({ points: [[16, 254], [300, 254]], width: 2.4 });
-        S.fascia({ points: [[348, 254], [624, 254]], width: 2.4 });
-        S.label({ x: 300, y: 240, text: 'Plan profond', anchor: 'end', small: true, cls: 'lbl-fascia' });
+        S.fascia({ points: [[16, 257], [300, 255]], width: 3.2 });
+        S.fascia({ points: [[348, 273], [624, 271]], width: 3.2 });
+        S.label({ x: 296, y: 300, text: 'Plan profond', anchor: 'end', small: true, cls: 'lbl-fascia' });
+        S.label({ x: 620, y: 316, text: 'Plan profond repoussé', anchor: 'end', small: true, cls: 'lbl-fascia' });
         S.nerve({ x: 158, y: 236, rx: 30, ry: 17, label: 'Nerf plaqué, sans interface', lx: 158, ly: 186, small: true });
         S.fluid({ x: 452, y: 224, rx: 58, ry: 40, label: 'Halo 360°', lx: 546, ly: 180, anchor: 'start', lead: [500, 200] });
         S.nerve({ x: 452, y: 224, rx: 30, ry: 17, label: 'Nerf décollé, mobile', lx: 452, ly: 172, small: true });
@@ -233,23 +234,23 @@ Sens de ponction choisi pour arriver **tangentiellement au nerf**, dans l'interf
     },
     {
       id: 'hydro-approche', section: 'technique', titre: 'Approche in-plane : ouvrir le plan devant l\'aiguille',
-      legende: 'Aiguille 25–27 G in-plane, biseau tourné vers le nerf, prolongateur souple. On injecte 0,2–0,5 mL avant chaque avancée : le liquide ouvre le plan devant la pointe et confirme la position. Le premier versant décollé, on repositionne l\'aiguille de l\'autre côté du nerf pour compléter les 360°, puis on avance et recule la pointe pour étendre le décollement à tout le segment adhérent.',
+      legende: 'Aiguille 25–27 G in-plane par **abord ulnaire** (le trajet reste à distance de l\'artère et du nerf), biseau tourné vers le nerf, prolongateur souple. On injecte 0,2–0,5 mL avant chaque avancée : le liquide ouvre le plan devant la pointe et confirme la position. Le premier versant décollé, on repositionne l\'aiguille de l\'autre côté du nerf pour compléter les 360°, puis on avance et recule la pointe pour étendre le décollement à tout le segment adhérent.',
       opts: { depth: 2 },
       build: S => {
         S.orient({ left: 'Radial', right: 'Ulnaire' }).probeInfo({ plan: 'Transverse, aiguille dans le plan', type: 'linéaire 10–18 MHz' });
         S.skin({ thickness: 9, fatBelow: 20 });
-        S.fat({ path: 'M0 76 L640 76 L640 128 L0 128 Z', label: 'Graisse', at: [56, 104] });
-        S.ligament({ path: 'M120 132 Q320 118 520 132 L520 148 Q320 136 120 148 Z', label: 'Rétinaculum', at: [320, 108], small: true });
-        S.fascia({ points: [[0, 300], [640, 300]], width: 2.2 });
-        S.label({ x: 60, y: 322, text: 'Plan profond', anchor: 'start', small: true, cls: 'lbl-fascia' });
-        S.tendon({ x: 230, y: 268, rx: 42, ry: 22, label: 'Tendons', lx: 176, ly: 332, small: true });
-        S.tendon({ x: 400, y: 272, rx: 40, ry: 20 });
-        S.artery({ x: 500, y: 208, r: 9, label: 'Artère (Doppler)', lx: 592, ly: 186, anchor: 'end', lead: [508, 202] });
-        S.nerve({ x: 302, y: 200, rx: 32, ry: 18, label: 'Nerf médian', lx: 302, ly: 166, small: true });
-        S.target({ x: 302, y: 200, r: 40 });
-        S.needle({ from: [8, 128], to: [258, 196], label: '27 G + prolongateur, biseau vers le nerf' });
-        S.spread({ x: 292, y: 216, rx: 56, ry: 26, label: 'Halo — 5–10 mL' });
-        S.label({ x: 624, y: 348, text: 'Puis repositionner de l\'autre côté\npour compléter les 360°', anchor: 'end', small: true, cls: 'lbl-target' });
+        S.fat({ path: 'M0 76 L640 76 L640 128 L0 128 Z', label: 'Graisse', at: [60, 104] });
+        S.ligament({ path: 'M100 132 Q300 118 490 132 L490 148 Q300 136 100 148 Z', label: 'Rétinaculum des fléchisseurs', at: [150, 112], anchor: 'start', small: true });
+        S.fascia({ points: [[0, 307], [640, 305]], width: 3 });
+        S.label({ x: 24, y: 300, text: 'Plan profond', anchor: 'start', small: true, cls: 'lbl-fascia' });
+        S.tendon({ x: 200, y: 272, rx: 44, ry: 22, label: 'Tendons fléchisseurs', lx: 200, ly: 336, small: true });
+        S.tendon({ x: 340, y: 278, rx: 40, ry: 20 });
+        S.artery({ x: 566, y: 172, r: 10, label: 'A. ulnaire (Doppler)', lx: 624, ly: 142, anchor: 'end', lead: [572, 166] });
+        S.nerve({ x: 268, y: 200, rx: 32, ry: 18, label: 'Nerf médian', lx: 268, ly: 164, small: true });
+        S.target({ x: 268, y: 200, r: 44 });
+        S.needle({ from: [636, 214], to: [326, 200], label: '27 G, abord ulnaire' });
+        S.spreadPath({ path: 'M178 200 A90 40 0 1 0 358 200 A90 40 0 1 0 178 200 Z M232 200 A36 21 0 1 1 304 200 A36 21 0 1 1 232 200 Z', at: [620, 262], label: 'Halo circonférentiel — 5–10 mL' });
+        S.label({ x: 624, y: 352, text: 'Puis repositionner de l\'autre côté\npour compléter les 360°', anchor: 'end', small: true, cls: 'lbl-target' });
       },
     },
   ],

@@ -203,13 +203,13 @@ Ponction **dans le plan, de latéral en médial**, sur l\'axe long ou l\'axe cou
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Axe long du supra-épineux', type: 'linéaire 6–15 MHz' });
         S.skin({ thickness: 8, fatBelow: 18 });
-        S.muscle({ path: 'M0 68 L640 68 L640 150 Q320 168 0 152 Z', label: 'Deltoïde', at: [82, 106], opacity: 0.5 });
-        S.bone({ path: 'M0 150 L70 154 L128 166', label: 'Acromion', at: [50, 136], small: true });
-        S.fascia({ points: [[134, 174], [350, 184], [575, 194]], width: 1.8 });
-        S.fluid({ path: 'M136 177 L575 197 L575 205 L136 185 Z', label: 'Bourse SAD', lx: 566, ly: 172, anchor: 'end', lead: [540, 192], small: true });
-        S.fascia({ points: [[136, 186], [350, 196], [575, 206]], width: 1.8 });
-        S.tendon({ path: 'M132 187 L572 206 L574 242 L558 288 L516 246 Q448 222 330 226 Q212 234 128 262 Z', label: 'Supra-épineux', at: [468, 214] });
-        S.bone({ path: 'M124 280 Q214 252 332 244 Q450 240 520 258 L560 292 L640 340' });
+        S.muscle({ path: 'M0 68 L640 68 L640 158 Q320 176 0 160 Z', label: 'Deltoïde', at: [86, 108], opacity: 0.5 });
+        S.bone({ path: 'M-20 148 L96 154 L168 172', label: 'Acromion', at: [58, 132], small: true });
+        S.fascia({ points: [[172, 182], [360, 190], [600, 202]], width: 2 });
+        S.fluid({ path: 'M174 185 L600 205 L600 214 L174 194 Z', label: 'Bourse SAD', lx: 596, ly: 168, anchor: 'end', lead: [560, 196], small: true });
+        S.fascia({ points: [[174, 197], [360, 205], [600, 217]], width: 2 });
+        S.tendon({ path: 'M176 199 L604 221 L596 262 L558 282 Q470 246 340 242 Q250 250 178 272 Z', label: 'Supra-épineux', at: [474, 232] });
+        S.bone({ path: 'M160 288 Q250 264 340 256 Q452 254 542 270 L590 302 L660 336' });
         S.region({ x: 214, y: 216, rx: 26, ry: 10, fill: '#e2e8ee', opacity: 0.9, label: 'Type C — sans ombre', lx: 196, ly: 148, anchor: 'middle', lead: [210, 206], small: true });
         S.bone({ path: 'M320 220 Q356 202 392 220', width: 6, label: 'Calcification type A/B\narc + cône d\'ombre', lx: 386, ly: 126, anchor: 'middle', lead: [370, 206] });
         S.label({ x: 356, y: 368, text: 'Cône d\'ombre acoustique', cls: 'lbl-bone', small: true });
@@ -222,19 +222,19 @@ Ponction **dans le plan, de latéral en médial**, sur l\'axe long ou l\'axe cou
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Axe long du supra-épineux', type: 'in-plane, deux aiguilles 18 G' });
         S.skin({ thickness: 8, fatBelow: 18 });
-        S.muscle({ path: 'M0 68 L640 68 L640 150 Q320 168 0 152 Z', label: 'Deltoïde', at: [82, 106], opacity: 0.5 });
-        S.bone({ path: 'M0 150 L70 154 L128 166', label: 'Acromion', at: [50, 136], small: true });
-        S.fascia({ points: [[134, 174], [350, 184], [575, 194]], width: 1.8 });
-        S.fluid({ path: 'M136 177 L575 197 L575 205 L136 185 Z' });
-        S.fascia({ points: [[136, 186], [350, 196], [575, 206]], width: 1.8 });
-        S.tendon({ path: 'M132 187 L572 206 L574 242 L558 288 L516 246 Q448 222 330 226 Q212 234 128 262 Z', label: 'Supra-épineux', at: [196, 212] });
-        S.bone({ path: 'M124 280 Q214 252 332 244 Q450 240 520 258 L560 292 L640 340' });
-        S.bone({ path: 'M264 224 Q306 204 348 224', width: 6 });
-        S.target({ x: 306, y: 216, r: 19 });
-        S.needle({ from: [634, 78], to: [340, 210], label: 'Aiguille haute — injection' });
-        S.needle({ from: [630, 132], to: [332, 228], label: 'Aiguille basse — sortie passive' });
-        S.spread({ x: 300, y: 218, rx: 30, ry: 13, label: 'Sérum tiède 37 °C' });
-        S.arrow({ from: [452, 224], to: [546, 196], text: 'Retour lacté' });
+        S.muscle({ path: 'M0 68 L640 68 L640 158 Q320 176 0 160 Z', label: 'Deltoïde', at: [86, 108], opacity: 0.5 });
+        S.bone({ path: 'M-20 148 L96 154 L168 172', label: 'Acromion', at: [58, 132], small: true });
+        S.fascia({ points: [[172, 182], [360, 190], [600, 202]], width: 2 });
+        S.fluid({ path: 'M174 185 L600 205 L600 214 L174 194 Z' });
+        S.fascia({ points: [[174, 197], [360, 205], [600, 217]], width: 2 });
+        S.tendon({ path: 'M176 199 L604 221 L596 262 L558 282 Q470 246 340 242 Q250 250 178 272 Z', label: 'Supra-épineux', at: [212, 250] });
+        S.bone({ path: 'M160 288 Q250 264 340 256 Q452 254 542 270 L590 302 L660 336' });
+        S.bone({ path: 'M262 222 Q306 200 350 222', width: 6, label: 'Dépôt calcique', lx: 200, ly: 208, anchor: 'end', small: true, lead: [280, 212] });
+        S.target({ x: 306, y: 220, r: 19 });
+        S.needle({ from: [634, 82], to: [326, 214], label: 'Aiguille haute — injection' });
+        S.needle({ from: [630, 136], to: [312, 230], label: 'Aiguille basse — sortie passive' });
+        S.spread({ x: 302, y: 236, rx: 30, ry: 9, label: 'Sérum tiède 37 °C' });
+        S.arrow({ from: [474, 208], to: [560, 182], text: 'Retour lacté' });
       },
     },
     {
@@ -244,18 +244,18 @@ Ponction **dans le plan, de latéral en médial**, sur l\'axe long ou l\'axe cou
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Axe long du supra-épineux', type: 'needling puis bourse' });
         S.skin({ thickness: 8, fatBelow: 18 });
-        S.muscle({ path: 'M0 68 L640 68 L640 150 Q320 168 0 152 Z', label: 'Deltoïde', at: [82, 106], opacity: 0.5 });
-        S.bone({ path: 'M0 150 L70 154 L128 166', label: 'Acromion', at: [50, 136], small: true });
-        S.fascia({ points: [[134, 174], [350, 184], [575, 194]], width: 1.8 });
-        S.fluid({ path: 'M136 177 L575 197 L575 205 L136 185 Z' });
-        S.fascia({ points: [[136, 186], [350, 196], [575, 206]], width: 1.8 });
-        S.tendon({ path: 'M132 187 L572 206 L574 242 L558 288 L516 246 Q448 222 330 226 Q212 234 128 262 Z', label: 'Supra-épineux', at: [196, 212] });
-        S.bone({ path: 'M124 280 Q214 252 332 244 Q450 240 520 258 L560 292 L640 340' });
-        S.bone({ path: 'M264 226 Q306 208 348 226', width: 5 });
-        S.needle({ from: [634, 92], to: [302, 212], label: '18–20 G — 10 à 20 passages en éventail', dur: 1.0, delay: 0.2 });
-        S.needle({ from: [634, 92], to: [286, 226], dur: 0.7, delay: 1.3 });
-        S.needle({ from: [634, 92], to: [320, 232], dur: 0.7, delay: 2.0 });
-        S.spreadPath({ path: 'M150 182 Q360 172 564 202 Q360 216 150 192 Z', at: [300, 148], label: 'Corticoïde sous-acromial — 4–6 mL', delay: 2.8, dur: 1.0 });
+        S.muscle({ path: 'M0 68 L640 68 L640 158 Q320 176 0 160 Z', label: 'Deltoïde', at: [86, 108], opacity: 0.5 });
+        S.bone({ path: 'M-20 148 L96 154 L168 172', label: 'Acromion', at: [58, 132], small: true });
+        S.fascia({ points: [[172, 182], [360, 190], [600, 202]], width: 2 });
+        S.fluid({ path: 'M174 185 L600 205 L600 214 L174 194 Z' });
+        S.fascia({ points: [[174, 197], [360, 205], [600, 217]], width: 2 });
+        S.tendon({ path: 'M176 199 L604 221 L596 262 L558 282 Q470 246 340 242 Q250 250 178 272 Z', label: 'Supra-épineux', at: [462, 236] });
+        S.bone({ path: 'M160 288 Q250 264 340 256 Q452 254 542 270 L590 302 L660 336' });
+        S.bone({ path: 'M262 234 Q306 212 350 234', width: 6, label: 'Dépôt calcique', lx: 204, ly: 222, anchor: 'end', small: true, lead: [278, 226] });
+        S.needle({ from: [634, 96], to: [306, 226], label: '18–20 G — 10 à 20 passages en éventail', dur: 1.0, delay: 0.2 });
+        S.needle({ from: [634, 96], to: [288, 238], dur: 0.7, delay: 1.3 });
+        S.needle({ from: [634, 96], to: [324, 242], dur: 0.7, delay: 2.0 });
+        S.spreadPath({ path: 'M188 184 Q400 168 596 198 Q400 216 188 200 Z', at: [312, 152], label: 'Corticoïde sous-acromial — 4–6 mL', delay: 2.8, dur: 1.0 });
       },
     },
   ],

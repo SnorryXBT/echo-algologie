@@ -14,7 +14,7 @@ ECHO.register({
 
   flash: {
     position: 'dorsal', positionNote: 'variable selon la cible ; reproduire l\'installation du bloc test',
-    sonde: 'lineaire', sondeNote: '6–13 MHz, profondeur 2–5 cm ; la cible doit être à moins de 4–5 cm sous la peau pour que la sonde l\'atteigne',
+    sonde: 'lineaire', sondeNote: '6–13 MHz, profondeur 2–5 cm (10–18 MHz pour un nerf très superficiel) ; la cible doit être à moins de 4–5 cm sous la peau pour que la boule de glace l\'englobe et reste visible',
     approche: 'in-plane', approcheNote: 'la boule de glace doit être vue se former autour du nerf : hors du plan, on ne contrôle rien',
     aiguille: 'Cryosonde 14–18 G (1,3–2,0 mm) selon le système, 80–120 mm ; introducteur ou trocart 12–14 G pour les sondes larges ; certains dispositifs utilisent des micro-aiguilles fines à protoxyde d\'azote pour les nerfs très superficiels',
     cible: 'Boule de glace hyperéchogène avec cône d\'ombre englobant le nerf sur tout son diamètre — c\'est le critère de fin visuel',
@@ -232,7 +232,7 @@ Intérêt pour un centre de douleur travaillant avec des chirurgiens : c'est un 
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Transverse, nerf en coupe', type: 'linéaire 6–13 MHz' });
         S.skin({ thickness: 8, fatBelow: 26 });
         S.fat({ path: 'M0 76 L640 76 L640 132 L0 132 Z', label: 'Graisse sous-cutanée', at: [96, 106] });
-        S.fascia({ points: [[0, 134], [640, 134]], width: 1.6 });
+        S.fascia({ points: [[0, 135], [640, 133]], width: 1.6 });
         S.muscle({ path: 'M0 134 L640 134 L640 360 L0 360 Z', label: 'Muscle', at: [70, 320], opacity: 0.34 });
         S.artery({ x: 396, y: 214, r: 16, label: 'Artère satellite\n(puits de chaleur)', lx: 500, ly: 176, anchor: 'start', lead: [410, 206] });
         S.nerve({ x: 320, y: 224, rx: 20, ry: 15, label: 'Nerf cible', lx: 236, ly: 300, anchor: 'end', lead: [306, 236] });
@@ -260,7 +260,7 @@ Intérêt pour un centre de douleur travaillant avec des chirurgiens : c'est un 
         S.region({ path: 'M228 194 Q262 176 330 174 Q404 174 434 196 Q452 214 438 244 Q404 274 330 276 Q256 276 228 250 Q212 222 228 194 Z', fill: '#bfe6ff', opacity: 0.32, stroke: '#dff2ff' });
         S.fascia({ path: 'M228 194 Q262 176 330 174 Q404 174 434 196', width: 3.2, opacity: 1 });
         S.region({ path: 'M224 236 L442 236 L482 400 L188 400 Z', fill: '#04070a', opacity: 0.7 });
-        S.label({ x: 332, y: 160, text: 'Boule de glace — gel 2 min / dégel 1 min × 2–3', anchor: 'middle', small: true, cls: 'lbl-target' });
+        S.label({ x: 300, y: 144, text: 'Boule de glace — gel 2 min / dégel 1 min × 2–3', anchor: 'middle', small: true, cls: 'lbl-target' });
         S.label({ x: 336, y: 350, text: 'Cône d\'ombre : le nerf n\'est plus vérifiable après le 1er cycle', anchor: 'middle', small: true, cls: 'lbl-bone' });
         S.needle({ from: [636, 176], to: [300, 222], label: 'Cryosonde 18 G, couchée le long du nerf' });
         S.target({ x: 300, y: 224, r: 12 });

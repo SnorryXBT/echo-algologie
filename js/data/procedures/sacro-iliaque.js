@@ -34,14 +34,14 @@ ECHO.register({
     '**Absolues** : refus, infection cutanée en regard, sepsis, allergie vraie aux amino-amides.',
     '**Sacro-iliite infectieuse** : contre-indication formelle à l\'infiltration de corticoïde. Y penser devant une douleur inflammatoire fébrile — ponction à visée bactériologique d\'abord.',
     '**Relatives** : morphotype (au-delà d\'un IMC de 35, la fente n\'est plus identifiable de façon fiable et l\'échoguidage devient illusoire — passer au scanner ou à la fluoroscopie), articulation ankylosée (spondyloarthrite évoluée : l\'espace n\'existe plus, l\'infiltration est impossible et inutile), matériel d\'arthrodèse sacro-iliaque.',
-    '**Hémostase** : geste superficiel sur site compressible, à distance du névraxe — **risque faible** dans la stratification ASRA-ESRA 2018 pour l\'infiltration articulaire ; le classement des blocs des branches latérales et de la radiofréquence sacrée n\'est pas individualisé dans le texte (*à confirmer*). En pratique : pas d\'arrêt des antiagrégants, anticoagulants discutés.',
+    '**Hémostase** : l\'infiltration sacro-iliaque et les blocs des branches latérales sacrées relèvent des procédures **à faible risque** de la stratification ASRA-ESRA 2018 (site périphérique, à distance du névraxe) — à la différence des gestes facettaires, caudaux et épiduraux, classés intermédiaires. En pratique : pas d\'arrêt des antiagrégants, anticoagulants oraux discutés au cas par cas. *La radiofréquence sacrée n\'est pas individualisée dans la table : la traiter comme le bloc correspondant.*',
     'Corticoïde : diabète déséquilibré, infection évolutive, corticothérapie récente sur le même site (espacer de 3 mois, maximum 3 infiltrations par an et par articulation).',
   ],
   alternatives: 'La **fluoroscopie et le scanner restent les références** pour l\'infiltration intra-articulaire : ils confirment la position par le contraste (arthrogramme), ce que l\'échographie ne fait pas. L\'échographie se justifie pour éviter les rayons, pour voir les parties molles (kyste, épanchement, ligament sacro-iliaque long dorsal, tendinopathie de l\'insertion du grand fessier) et pour un plateau technique sans arceau. Autres options selon le phénotype : infiltration **péri-articulaire** ou du ligament sacro-iliaque long dorsal (plus facile, effet réel sur la composante ligamentaire), bloc et radiofréquence des branches latérales, prolothérapie (données faibles), arthrodèse sacro-iliaque mini-invasive en dernier recours après tests positifs répétés. Chez le patient dont l\'articulation est ankylosée ou la fente inaccessible, l\'infiltration péri-articulaire échoguidée est un compromis honnête — à condition de le dire au patient.',
 
   anatomie: `L\'articulation sacro-iliaque est une articulation **mixte** : sa moitié postéro-supérieure est **syndesmotique** (ligaments interosseux et sacro-iliaques postérieurs, épais et puissants — il n\'y a pas d\'espace articulaire à y chercher), et seule sa portion **antéro-inférieure** est **synoviale**, avec une capsule et un espace virtuel de 1 à 2,5 mL de capacité. En pratique, **le seul accès postérieur possible est le tiers caudal**, où la fente articulaire s\'ouvre en arrière : c\'est la fenêtre de tous les gestes intra-articulaires, quelle que soit la modalité de guidage.
 
-Le repère cutané est la ligne entre l\'**épine iliaque postéro-supérieure (EIPS)** et le **hiatus sacré** : le pôle caudal de l\'articulation se situe à l\'union du tiers moyen et du tiers inférieur de cette ligne, en général 1 à 2 cm au-dessus du pôle caudal osseux de l\'articulation.
+Le repère cutané est la ligne entre l\'**épine iliaque postéro-supérieure (EIPS)** et le **hiatus sacré** : le **point de ponction** se situe à l\'union du tiers moyen et du tiers inférieur de cette ligne, soit **1 à 2 cm au-dessus du pôle caudal osseux** de l\'articulation — plus bas on sort de l\'articulation, plus haut on retombe dans le massif ligamentaire.
 
 L\'**innervation postérieure** provient des **branches latérales des rameaux dorsaux de S1, S2 et S3** (avec une contribution inconstante du rameau dorsal de L5 et de S4). Elles émergent des **foramens sacrés postérieurs** et cheminent en éventail, en dehors et en bas, dans le plan situé entre le périoste sacré et le ligament sacro-iliaque postérieur, pour rejoindre la face postérieure de l\'articulation. L\'innervation **antérieure**, issue des rameaux ventraux L4-S2, est débattue et de toute façon inaccessible : c\'est une limite structurelle de toute dénervation sacro-iliaque.
 
@@ -92,14 +92,14 @@ Pour les branches latérales, la sonde reste transversale sur le sacrum et l\'on
     { titre: 'Ponction in-plane, de médial en latéral (intra-articulaire)', texte: 'Aiguille 22 G 80–90 mm engagée à 40–60°, visualisée en continu, dirigée **dans l\'axe de la fente**. Traverser le grand fessier puis les fibres du ligament sacro-iliaque postérieur — on sent un ressaut au franchissement. Si l\'aiguille bute sur le bord osseux du sacrum ou de l\'ilium, **ne pas forcer** : la retirer de 5 mm et corriger l\'angulation de quelques degrés.' },
     { titre: 'Test d\'injection et contrôle Doppler', texte: 'Aspiration, puis injecter **0,5 mL sous Doppler couleur**. Le signe recherché est un **flux confiné entre les deux corticales**, s\'étendant en profondeur et en crânial le long de la fente, **sans nappe dans le muscle ni reflux le long de l\'aiguille**. Un reflux musculaire signe une position péri-articulaire : soit on corrige, soit on assume et on requalifie le geste (et on le note comme tel).' },
     { titre: 'Injection et critère de fin', texte: 'Injecter **2 à 3 mL au total** lentement. La capacité articulaire étant de 1 à 2,5 mL, une **résistance croissante après 1,5–2 mL est normale** ; une résistance d\'emblée franche signe une position extra-articulaire. Critère de fin : injectat confiné dans la fente et résistance de fin de capacité. Ne jamais forcer au-delà — la rupture capsulaire diffuse vers le plexus lombo-sacré et fausse le test.' },
-    { titre: 'Blocs des branches latérales S1–S3', texte: 'Sonde transversale sur le sacrum, foramen par foramen. Aiguille 22 G in-plane, cible : le plan **sous-ligamentaire au contact du périoste sacré, immédiatement en dehors du bord latéral du foramen**, à distance du foramen lui-même (ne jamais y pénétrer). Aspiration, puis **1 à 1,5 mL par site**, en cherchant une nappe qui s\'étale en arc du foramen vers la ligne articulaire. Répéter à S1, S2 et S3, et ajouter le rameau dorsal de L5 (gouttière aile du sacrum / PAS de S1) si l\'on veut couvrir toute l\'innervation postérieure.' },
+    { titre: 'Blocs des branches latérales S1–S3', texte: 'Sonde transversale sur le sacrum, foramen par foramen. Aiguille 22 G in-plane **de médial en latéral** — de sorte qu\'un dépassement éloigne la pointe du foramen au lieu de l\'y conduire. Cible : le plan **sous-ligamentaire au contact du périoste sacré, immédiatement en dehors du bord latéral du foramen**, à distance du foramen lui-même (ne jamais y pénétrer). Aspiration, puis **1 à 1,5 mL par site**, en cherchant une nappe qui s\'étale en arc du foramen vers la ligne articulaire. Répéter à S1, S2 et S3, et ajouter le rameau dorsal de L5 (gouttière aile du sacrum / PAS de S1) si l\'on veut couvrir toute l\'innervation postérieure.' },
     { titre: 'Après le geste', texte: 'Surveillance 20–30 min avec **test de la marche systématique** (une diffusion vers le plexus sacré ou le nerf sciatique donne une faiblesse transitoire du membre inférieur). EN avant / à 30 min notée. Carnet de douleur sur 8 h si le geste est diagnostique. Consignes : pas de conduite le jour même, reprise progressive, pas de sport d\'impact 48 h.' },
   ],
 
   injectat: `| Objectif | Produits | Volume | Commentaire |
 |---|---|---|---|
 | Bloc diagnostique intra-articulaire | Lidocaïne 2 % **seule** | 1–1,5 mL | Petit volume : au-delà, la diffusion péri-articulaire et vers le plexus sacré fait chuter la spécificité. Seuil de positivité usuel ≥ 75 % de soulagement |
-| Infiltration thérapeutique intra-articulaire | AL (lidocaïne 1 % ou ropivacaïne 0,2 %) + **corticoïde** : bétaméthasone 5,7 mg (Diprostène® 1 mL), méthylprednisolone 40 mg (Dépo-Médrol®), ou triamcinolone hexacétonide 20 mg (Hexatrione®) | **2–3 mL au total** | **Corticoïde particulaire acceptable et même préférable** : site articulaire, sans artère terminale ni risque médullaire. L\'Hexatrione® est réservée à l\'intra-articulaire strict : ne l\'utiliser que si la position articulaire est certaine |
+| Infiltration thérapeutique intra-articulaire | AL (lidocaïne 1 % ou ropivacaïne 0,2 %) + **corticoïde** : bétaméthasone 5,7 mg (Diprostène® 1 mL) ou méthylprednisolone 40 mg (Dépo-Médrol®) | **2–3 mL au total** | **Corticoïde particulaire acceptable** : site articulaire, sans artère terminale ni risque médullaire. En revanche l\'**hexacétonide de triamcinolone (Hexatrione®) est réservé à l\'intra-articulaire strict** : comme l\'échographie ne certifie pas la position articulaire, ne pas l\'utiliser en sacro-iliaque échoguidée — le réserver au geste contrôlé par arthrogramme |
 | Bloc des branches latérales S1–S3 (diagnostique) | Lidocaïne 2 % ou bupivacaïne 0,5 % | **1–1,5 mL par site**, 3 à 4 sites | Sans corticoïde. Le volume ne doit pas fuser vers le foramen (bloc radiculaire = faux positif) |
 | Bloc des branches latérales (thérapeutique) | AL + dexaméthasone 4 mg ou méthylprednisolone 20–40 mg répartis | 1–1,5 mL par site | Ici, **non particulaire** : la proximité des foramens sacrés impose la prudence |
 | Ligament sacro-iliaque long dorsal | AL + corticoïde, ou dextrose 5 % (prolothérapie) | 2–3 mL | Cible péri-articulaire assumée, utile quand la fente est inaccessible |
@@ -155,7 +155,7 @@ Ce n\'est **pas** un geste intra-articulaire et cela doit être écrit comme tel
     'Volume limité et injection lente : la capacité articulaire est de 1 à 2,5 mL, pas plus.',
     'Corticoïde **particulaire** réservé à l\'intra-articulaire certain ; **non particulaire** pour tout dépôt péri-articulaire ou péri-foraminal.',
     'Ne jamais engager l\'aiguille dans un foramen sacré ; contact périosté maintenu en dehors du bord latéral du foramen.',
-    'Risque hémorragique faible (site compressible, à distance du névraxe) : pas d\'arrêt des antiagrégants ; anticoagulants au cas par cas. *Le classement précis des blocs de branches latérales sacrées et de la RF sacrée dans ASRA-ESRA 2018 est à confirmer.*',
+    'Risque hémorragique **faible** (ASRA-ESRA 2018 : infiltration sacro-iliaque et bloc des branches latérales sacrées) : pas d\'arrêt des antiagrégants ; anticoagulants oraux au cas par cas.',
     'Surveillance 20–30 min avec test de la marche et évaluation de la force du membre inférieur avant la sortie.',
   ],
 
@@ -213,33 +213,49 @@ Ce n\'est **pas** un geste intra-articulaire et cela doit être écrit comme tel
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Transverse, tiers caudal', type: 'in-plane médio-latéral' });
         S.skin({ thickness: 8, fatBelow: 28 });
         S.muscle({ path: 'M0 78 L640 78 L640 220 L0 232 Z', label: 'Grand fessier', at: [116, 156], opacity: 0.5 });
-        S.bone({ path: 'M12 262 Q60 226 104 260 Q200 250 300 262', label: 'Sacrum', at: [150, 306], small: true });
-        S.bone({ path: 'M348 250 Q430 222 520 230 L634 240', label: 'Ilium', at: [546, 278], small: true });
-        S.region({ path: 'M300 258 L348 246 L364 344 L316 350 Z', fill: '#05080b', opacity: 0.92 });
-        S.label({ x: 452, y: 336, text: 'Fente articulaire', anchor: 'start', cls: 'lbl-fluid', small: true, lead: [356, 320] });
-        S.target({ x: 328, y: 272, r: 14 });
-        S.needle({ from: [8, 108], to: [322, 268], label: '22 G 90 mm' });
-        S.spread({ x: 334, y: 300, rx: 17, ry: 40, label: '2–3 mL' });
+        S.bone({ path: 'M12 268 Q60 232 106 266 Q200 256 296 256', label: 'Sacrum', at: [150, 310], small: true });
+        S.bone({ path: 'M348 244 Q432 216 522 226 L634 236', label: 'Ilium', at: [556, 274], small: true });
+        S.region({ path: 'M296 258 L346 246 L404 336 L354 348 Z', fill: '#0b1319', opacity: 0.9 });
+        S.label({ x: 428, y: 376, text: 'Fente articulaire\n(axe oblique, ouverte en arrière)', anchor: 'start', cls: 'lbl-fluid', small: true, lead: [392, 336] });
+        S.target({ x: 330, y: 272, r: 14 });
+        S.needle({ from: [128, 78], to: [318, 268], label: '22 G 90 mm, 40–60°' });
+        S.spreadPath({ path: 'M308 266 L350 254 L392 320 L350 332 Z', at: [252, 306], label: '2–3 mL' });
       },
     },
     {
-      id: 'si-foramens', section: 'technique', titre: 'Foramens sacrés postérieurs — blocs des branches latérales S1–S3',
-      legende: 'En coupe para-sagittale sur le sacrum, les foramens postérieurs se succèdent en creux réguliers. Les branches latérales ne sont jamais visibles : le dépôt se fait au contact du périoste, en arc, immédiatement en dehors du bord latéral de chaque foramen, jamais dans le foramen. Ajouter le rameau dorsal de L5 pour couvrir toute l\'innervation postérieure. **Cette vue sert à compter et à marquer les niveaux** : l\'extension latérale du dépôt, du foramen vers la ligne articulaire, se fait hors du plan de coupe — basculer la sonde en transversal pour la contrôler.',
+      id: 'si-foramens', section: 'reperage', titre: 'Coupe para-sagittale sur le sacrum — compter les foramens S1, S2, S3',
+      legende: 'C\'est la vue du **comptage**, pas celle de la ponction : les foramens sacrés postérieurs se succèdent en creux réguliers dans la ligne osseuse, à 1,5–2 cm en dehors de la ligne médiane. On les compte de haut en bas et on marque chaque niveau au feutre. Le dépôt lui-même se fait en dehors du bord latéral du foramen, donc hors de ce plan de coupe : basculer la sonde en transversal (scène suivante).',
       opts: { depth: 5 },
       build: S => {
-        S.orient({ left: 'Crânial', right: 'Caudal' }).probeInfo({ plan: 'Para-sagittal sur le sacrum', type: 'convexe 2–5 MHz' });
+        S.orient({ left: 'Crânial', right: 'Caudal' }).probeInfo({ plan: 'Para-sagittal, 1,5–2 cm de la ligne médiane', type: 'convexe 2–5 MHz' });
         S.skin({ thickness: 8, fatBelow: 26 });
         S.muscle({ path: 'M0 76 L640 76 L640 244 L0 244 Z', label: 'Grand fessier', at: [110, 140], opacity: 0.5 });
         S.bone({ path: 'M18 252 L120 252 Q160 300 200 252 L300 252 Q340 298 380 252 L480 252 Q518 296 556 252 L624 254' });
-        S.label({ x: 160, y: 330, text: 'Foramen S1', cls: 'lbl-bone', small: true });
-        S.label({ x: 340, y: 330, text: 'Foramen S2', cls: 'lbl-bone', small: true });
-        S.label({ x: 518, y: 328, text: 'Foramen S3', cls: 'lbl-bone', small: true });
-        S.target({ x: 198, y: 260, r: 12 });
-        S.target({ x: 378, y: 260, r: 12 });
-        S.needle({ from: [8, 100], to: [194, 254], label: '22 G 90 mm' });
-        S.spread({ x: 204, y: 260, rx: 30, ry: 11, label: '1–1,5 mL' });
-        S.spread({ x: 384, y: 260, rx: 30, ry: 11, label: '1–1,5 mL' });
-        S.label({ x: 300, y: 200, text: 'Dépôt en arc, en dehors du bord latéral\ndu foramen — jamais dans le foramen', small: true });
+        S.label({ x: 160, y: 332, text: 'Foramen S1', cls: 'lbl-bone', small: true });
+        S.label({ x: 340, y: 332, text: 'Foramen S2', cls: 'lbl-bone', small: true });
+        S.label({ x: 518, y: 330, text: 'Foramen S3', cls: 'lbl-bone', small: true });
+        S.label({ x: 250, y: 202, text: 'Creux réguliers = foramens sacrés postérieurs\n→ compter et marquer les niveaux', small: true });
+      },
+    },
+    {
+      id: 'si-branches', section: 'technique', titre: 'Coupe transversale à S2 — bloc de branche latérale, dépôt en arc',
+      legende: 'De médial en latéral : crête sacrée médiane, surface dorsale du sacrum, **interruption anéchogène du foramen sacré postérieur** (par où sort le rameau dorsal, jamais visible), crête sacrée latérale, puis la ligne articulaire sacro-iliaque et l\'ilium, plus superficiel. La cible est le plan sous-ligamentaire au contact du périoste, **entre le bord latéral du foramen et la ligne articulaire**. L\'aiguille va de médial en latéral : un dépassement éloigne alors la pointe du foramen au lieu de l\'y conduire.',
+      opts: { depth: 6 },
+      build: S => {
+        S.orient({ left: 'Médial (ligne médiane)', right: 'Latéral' }).probeInfo({ plan: 'Transverse, niveau S2', type: 'in-plane médio-latéral' });
+        S.skin({ thickness: 8, fatBelow: 26 });
+        S.muscle({ path: 'M0 76 L640 76 L640 232 L0 240 Z', label: 'Grand fessier', at: [104, 138], opacity: 0.5 });
+        S.fascia({ points: [[0, 240], [320, 246], [640, 232]], width: 1.6, opacity: 0.75, label: 'Ligament sacro-iliaque postérieur', lx: 150, ly: 226, anchor: 'start', small: true });
+        S.bone({ path: 'M14 300 Q54 262 96 296 Q160 288 214 290' });
+        S.label({ x: 60, y: 336, text: 'Crête sacrée médiane', cls: 'lbl-bone', small: true, anchor: 'start' });
+        S.fluid({ path: 'M214 288 Q256 340 296 288 Z', label: 'Foramen sacré\npostérieur S2', lx: 256, ly: 364, small: true });
+        S.bone({ path: 'M296 292 Q332 276 362 288 Q400 284 432 288' });
+        S.label({ x: 392, y: 330, text: 'Crête sacrée latérale', cls: 'lbl-bone', small: true });
+        S.bone({ path: 'M486 264 Q560 240 634 250', label: 'Ilium', at: [576, 300], small: true });
+        S.label({ x: 462, y: 390, text: 'Ligne articulaire SI', cls: 'lbl-fluid', small: true, lead: [460, 300] });
+        S.target({ x: 318, y: 282, r: 14 });
+        S.needle({ from: [96, 84], to: [316, 282], label: '22 G, in-plane médio-latéral' });
+        S.spreadPath({ path: 'M328 264 Q386 248 444 260 Q386 280 328 276 Z', at: [408, 230], label: '1–1,5 mL, en arc' });
       },
     },
   ],

@@ -58,7 +58,7 @@ ECHO.register({
 
 | Produit / matériel | Pour quoi | Repère de posologie | Commentaire |
 |---|---|---|---|
-| Émulsion lipidique 20 % | Toxicité systémique des anesthésiques locaux | < 70 kg : bolus 1,5 mL/kg en 2–3 min puis 0,25 mL/kg/min ; > 70 kg : bolus 100 mL en 2–3 min puis 250 mL sur 15–20 min ; répéter le bolus et doubler la perfusion si instabilité | Volume suffisant pour un adulte, posologie **affichée au mur**, péremption vérifiée |
+| Émulsion lipidique 20 % | Toxicité systémique des anesthésiques locaux | < 70 kg : bolus **1,5 mL/kg** (poids idéal) en 2–3 min puis perfusion **0,25 mL/kg/min** ; > 70 kg : bolus **100 mL** en 2–3 min puis **200–250 mL** sur 15–20 min. Si l’instabilité persiste : **répéter le bolus** et doubler le débit. Plafond usuel **≈ 12 mL/kg** | Prévoir au moins 500 mL par adulte, posologie **affichée au mur**, péremption vérifiée |
 | Oxygène + moyen de ventilation | Toute complication neurologique ou cardiovasculaire | O₂ 100 % | Premier geste de la check-list LAST |
 | Benzodiazépine injectable | Convulsions | Titration | Éviter le propofol chez un patient instable |
 | Adrénaline | Arrêt circulatoire, choc anaphylactique | En cas de LAST : bolus **réduits**, ≤ 1 µg/kg | Doses habituelles de réanimation dans l’anaphylaxie |
@@ -77,25 +77,25 @@ ECHO.register({
 | Classe | Exemples (à reconfronter au texte source) | Conduite usuelle |
 |---|---|---|
 | **Faible** | Blocs nerveux périphériques, infiltrations articulaires périphériques, points-gâchettes, bloc du nerf grand occipital, sacro-iliaque, blocs de paroi, la quasi-totalité des gestes échoguidés périphériques | **Pas d’interruption** des antiagrégants ; anticoagulants poursuivis dans la plupart des cas, au cas par cas |
-| **Intermédiaire** | Gestes rachidiens interlaminaires et transforaminaux, branches médiales et radiofréquence facettaire, blocs sympathiques (stellaire, sympathique lombaire, hypogastrique), gestes intradiscaux | Décision partagée ; interruption des anticoagulants selon les délais ci-dessous ; aspirine souvent poursuivie |
+| **Intermédiaire** | Gestes épiduraux interlaminaires, **caudaux** et transforaminaux, blocs **paravertébraux**, branches médiales et radiofréquence facettaire, blocs sympathiques (stellaire, sympathique lombaire, hypogastrique, plexus cœliaque), gestes intradiscaux | Décision partagée ; interruption des anticoagulants selon les délais ci-dessous ; aspirine souvent poursuivie |
 | **Élevé** | Stimulation médullaire (test et implantation), cathéter et pompe intrathécaux, vertébroplastie et cyphoplastie, décompression percutanée, épiduroscopie | Interruption des antithrombotiques selon les délais, y compris de l’aspirine |
 
 **Délais d’interruption — aide-mémoire, à reconfronter au texte original avant tout protocole de service**
 
 | Molécule | Geste à faible risque | Geste à risque intermédiaire ou élevé | Reprise |
 |---|---|---|---|
-| Aspirine (75–325 mg) | Poursuivre | Poursuivre le plus souvent en intermédiaire ; arrêt ~6 jours pour le risque élevé | 24 h |
-| Clopidogrel | Poursuivre | 5–7 jours | 12–24 h |
-| Prasugrel | Poursuivre | 7–10 jours | 24 h |
-| Ticagrelor | Poursuivre | 5–7 jours | 24 h |
-| AINS | Poursuivre | Poursuivre en intermédiaire ; arrêt selon la demi-vie pour le risque élevé (1 jour pour l’ibuprofène, plusieurs jours pour les demi-vies longues) | 24 h |
-| ISRS / IRSNa | Poursuivre | Poursuivre ; effet antiagrégant faible, à prendre en compte en cas d’association | — |
-| AVK (warfarine, fluindione) | Poursuivre avec un INR dans la zone thérapeutique | Arrêt ~5 jours, INR contrôlé avant le geste | 24 h |
-| HBPM prophylactique | Poursuivre | 12 h | 12–24 h |
-| HBPM curative | Décision partagée | 24 h | 24 h |
-| HNF sous-cutanée / intraveineuse | Poursuivre | 6 h (SC) / 4–6 h (IV), TCA normalisé | 2–4 h (IV) |
-| Dabigatran | Poursuivre | 3 à 5 jours selon la clairance de la créatinine (allongé si insuffisance rénale) | 24 h |
-| Rivaroxaban, apixaban, edoxaban | Poursuivre | ~3 jours (règle des 5 demi-vies) | 24 h |
+| Aspirine (75–325 mg) | **Pas d’arrêt** | Poursuivie le plus souvent en risque intermédiaire ; **4 à 6 jours** pour le risque élevé | 24 h |
+| Clopidogrel | **Pas d’arrêt** | **7 jours** | 12–24 h |
+| Prasugrel | **Pas d’arrêt** | 7–10 jours | 24 h |
+| Ticagrelor | **Pas d’arrêt** | 5–7 jours | 24 h |
+| AINS | **Pas d’arrêt** | Poursuivis en risque intermédiaire ; arrêt selon la demi-vie pour le risque élevé (1 jour pour l’ibuprofène, 4 jours pour le piroxicam et les demi-vies longues) | 24 h |
+| ISRS / IRSNa | **Pas d’arrêt** | Poursuivis ; effet antiagrégant faible, à prendre en compte en cas d’association | — |
+| AVK (warfarine, fluindione) | Poursuivi, INR dans la zone thérapeutique | Arrêt **5 jours** et INR contrôlé le jour du geste : **≤ 1,2 pour le risque élevé**, normalisé (≤ 1,4) pour l’intermédiaire | 24 h |
+| HBPM dose prophylactique | Poursuivie | **12 h** | 12–24 h |
+| HBPM dose curative | Décision partagée | **24 h** | 24 h |
+| HNF sous-cutanée / intraveineuse | Poursuivie | 6 h (SC) / 4–6 h (IV), TCA normalisé | 2–4 h (IV) |
+| Dabigatran | Poursuivi | **4 à 5 jours** selon la clairance de la créatinine (4 j si ClCr ≥ 80 mL/min, 5 j si 50–79, jusqu’à 6 j si 30–49) | 24 h |
+| Rivaroxaban, apixaban, edoxaban | Poursuivis | **3 jours** (règle des 5 demi-vies) | 24 h |
 
 **Points qui font la différence en pratique**
 - **Ne pas arrêter par réflexe.** Pour un bloc suprascapulaire, une infiltration de genou ou un bloc de paroi, l’arrêt d’un antiagrégant chez un coronarien stenté est un risque net et gratuit.
@@ -105,7 +105,7 @@ ECHO.register({
 - **Mise à jour à connaître** : les recommandations ASRA sur l’**anesthésie locorégionale** ont été révisées en janvier 2025 (cinquième édition, Kopp et al.), avec notamment des seuils de concentration plasmatique pour les AOD. Elles concernent l’anesthésie locorégionale et la neuraxiale, **pas** les procédures interventionnelles de la douleur, qui restent régies par le texte de 2018 — ne pas mélanger les deux référentiels.` },
     { titre: 'Complications : conduite à tenir immédiate', texte: `**Malaise vagal.** La complication la plus fréquente en pratique interventionnelle : incidence de l’ordre de **1 à 8 %** selon les séries, plus élevée pour les gestes cervicaux que lombaires. Facteurs de risque : sujet jeune, sexe masculin, antécédent de réaction vagale. Prévention : décubitus, information, éviter le jeûne prolongé, ne pas laisser le patient assis pour un geste qui peut se faire couché. Traitement : décubitus dorsal, jambes surélevées, remplissage si besoin, atropine si bradycardie persistante. Chez un patient ayant déjà réagi, une sédation légère prévient efficacement la récidive — à mettre en balance avec les contraintes de sortie en HDJ.
 
-**Toxicité systémique des anesthésiques locaux (LAST).** Arrêt de l’injection, appel à l’aide, oxygène 100 %, benzodiazépine si convulsions, **émulsion lipidique 20 %** selon la check-list ASRA 2020 (posologies dans la section *Injectat*), adrénaline à doses réduites, éviter vasopressine, inhibiteurs calciques, bêtabloquants et tout nouvel anesthésique local. Envisager l’assistance circulatoire en cas de réfractarité. Surveillance prolongée : le tableau peut débuter **15 à 30 minutes** après la fin de l’injection. Détail complet dans le chapitre *Pharmacologie des injectables*.
+**Toxicité systémique des anesthésiques locaux (LAST).** Arrêt de l’injection, appel à l’aide, oxygène 100 %, benzodiazépine si convulsions, **émulsion lipidique 20 %** selon la check-list ASRA 2020 — bolus 1,5 mL/kg puis 0,25 mL/kg/min, bolus répétable si l’instabilité persiste, plafond usuel ≈ 12 mL/kg (posologies détaillées dans la section *Injectat*) —, adrénaline à doses réduites (bolus ≤ 1 µg/kg), éviter vasopressine, inhibiteurs calciques, bêtabloquants et tout nouvel anesthésique local. Envisager l’assistance circulatoire en cas de réfractarité. Surveillance prolongée : le tableau peut débuter **15 à 30 minutes** après la fin de l’injection. Détail complet dans le chapitre *Pharmacologie des injectables*.
 
 **Injection intravasculaire.** Signes : absence de nappe visible à l’écran alors qu’on injecte, apparition de signes systémiques, goût métallique. Conduite : arrêt immédiat, repositionnement, réaspiration, surveillance. La prévention tient à trois gestes — Doppler préalable sur le trajet, aspiration avant chaque fraction, injection fractionnée et lente. L’aspiration négative ne prouve rien avec un vaisseau de petit calibre.
 
@@ -211,14 +211,12 @@ C’est aussi ce qui rend le geste descriptible et défendable en cas de contrô
     { titre: 'La check-list générique « sécurité du patient au bloc opératoire »', revue: 'Haute Autorité de Santé', url: 'https://www.has-sante.fr/jcms/p_3419374/fr/la-check-list-generique-securite-du-patient-au-bloc-operatoire', type: 'reco', verif: true, note: 'Document personnalisable, base d’une check-list de plateau interventionnel hors bloc.' },
     { titre: 'Recommandations formalisées d’experts — anesthésie loco-régionale périnerveuse (ALR-PN)', revue: 'SFAR', annee: '2019', url: 'https://sfar.org/wp-content/uploads/2019/10/rfe-anesthesie-loco-regionale-perinerveuse.pdf', type: 'reco', verif: true, note: 'Surveillance, sédation associée, conditions de sortie avant levée complète du bloc.' },
     { titre: 'Prévention du risque infectieux associé aux actes d’échographie — préconisations du groupe de travail national, mars 2019', revue: 'SF2H / Mission nationale', annee: '2019', url: 'https://www.sf2h.net/k-stock/data/uploads/2019/04/Preconisations_Mission_Nationale_Sonde-Endocavitaire_Vallidees_Mars_2019.pdf', type: 'reco', verif: true, note: 'Désinfection de niveau intermédiaire après chaque acte à risque, protection de sonde, gel stérile unidose.' },
-    { titre: 'Vasovagal reactions during interventional pain management procedures — a review of pathophysiology, incidence, risk factors, prevention, and management', annee: '2022', type: 'revue', verif: false, note: 'Incidence 1–8 %, plus élevée en cervical ; revue de publication à confirmer.' },
-    { titre: 'FactFinders for patient safety: preventing potential procedure-related complications — vasovagal reactions and spinal cord stimulator lead migration', revue: 'Interventional Pain Medicine', annee: '2023', url: 'https://www.sciencedirect.com/science/article/pii/S2772594423001000', type: 'synthèse', verif: false, note: 'Revue et année à confirmer.' },
-    { titre: 'Diagnosis and management of infections related to spinal pain interventions', revue: 'Anesth Pain Med (Seoul)', url: 'https://www.anesth-pain-med.org/journal/view.php?number=1286', type: 'revue', verif: false, note: 'Incidence, abcès épidural, S. aureus, délai d’apparition ; année à confirmer.' },
+    { titre: 'FactFinders for patient safety: preventing potential procedure-related complications — vasovagal reactions and spinal cord stimulator lead migration', revue: 'Interventional Pain Medicine', annee: '2023', type: 'synthèse', verif: false, note: 'Source de l’incidence des réactions vagales (1 à 8 %) ; revue, année et pagination à confirmer.' },
+    { titre: 'Diagnosis and management of infections related to spinal pain interventions', revue: 'Anesth Pain Med (Seoul)', type: 'revue', verif: false, note: 'Incidence, abcès épidural, S. aureus, délai d’apparition ; année et référence exacte à confirmer.' },
   ],
   videos: [
     { titre: 'Regional anesthesia in anticoagulated patients', source: 'NYSORA', url: 'https://www.nysora.com/topics/sub-specialties/regional-anesthesia-in-anticoagulated-patients/', note: 'Synthèse des délais d’interruption' },
     { titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition)', source: 'ASRA Pain Medicine', url: 'https://asra.com/news-publications/asra-updates/blog-landing/guidelines/2022/12/14/interventional-spine-and-pain-procedures-in-patients-on-antiplatelet-and-anticoagulant-medications-(second-edition)', note: 'Page de la recommandation de 2018' },
-    { titre: 'ASRA Coags — application de poche', source: 'App Store', url: 'https://apps.apple.com/app/id858796572', note: 'Aide à la décision au lit du patient' },
     { titre: 'Les check-lists pour la sécurité du patient', source: 'Haute Autorité de Santé', url: 'https://www.has-sante.fr/jcms/c_1518984/fr/les-check-lists-pour-la-securite-du-patient' },
   ],
 
@@ -230,15 +228,15 @@ C’est aussi ce qui rend le geste descriptible et défendable en cas de contrô
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Coupe transversale', type: 'linéaire, Doppler puissance' });
         S.skin({ thickness: 8, fatBelow: 22 });
-        S.fascia({ points: [[0, 76], [640, 76]], width: 1.6 });
+        S.fascia({ points: [[0, 77], [640, 75]], width: 1.6 });
         S.muscle({ path: 'M0 76 L640 76 L640 296 L0 304 Z', label: 'Muscle', at: [84, 268], opacity: 0.4 });
         S.artery({ x: 300, y: 186, r: 17, label: 'Artère sur le trajet', lx: 300, ly: 138, small: true, lead: [300, 170] });
         S.vein({ x: 236, y: 196, rx: 20, ry: 13, label: 'Veine', lx: 176, ly: 234, anchor: 'end', small: true, lead: [228, 208] });
-        S.nerve({ x: 424, y: 228, rx: 19, ry: 14, label: 'Cible', lx: 424, ly: 282, small: true, lead: [424, 242] });
+        S.nerve({ x: 424, y: 228, rx: 19, ry: 14, label: 'Cible', lx: 540, ly: 200, anchor: 'start', small: true, lead: [444, 222] });
         S.bone({ path: 'M0 308 Q200 298 340 302 Q500 306 640 298' });
         S.needle({ from: [20, 84], to: [402, 232], label: 'Trajet abandonné' });
         S.needle({ from: [628, 100], to: [446, 224], label: 'Fenêtre retenue', delay: 2.0 });
-        S.spread({ x: 424, y: 244, rx: 44, ry: 14, label: 'Diffusion', delay: 3.4 });
+        S.spreadPath({ path: 'M370 230 A54 27 0 1 0 478 230 A54 27 0 1 0 370 230 Z M400 228 A24 18 0 1 1 448 228 A24 18 0 1 1 400 228 Z', at: [424, 290], label: 'Diffusion autour de la cible', delay: 3.4 });
       },
     },
     {
@@ -248,13 +246,13 @@ C’est aussi ce qui rend le geste descriptible et défendable en cas de contrô
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Coupe sagittale, perpendiculaire aux côtes', type: 'linéaire' });
         S.skin({ thickness: 8, fatBelow: 20 });
-        S.fascia({ points: [[0, 72], [640, 72]], width: 1.6 });
+        S.fascia({ points: [[0, 73], [640, 71]], width: 1.6 });
         S.muscle({ path: 'M0 72 L640 72 L640 172 L0 180 Z', label: 'Plans musculaires de la paroi', at: [180, 124], opacity: 0.42 });
         S.fascia({ points: [[0, 180], [640, 172]], width: 2 });
         S.bone({ path: 'M28 208 Q106 182 184 206', label: 'Côte', at: [106, 168], small: true });
         S.bone({ path: 'M456 206 Q534 182 612 208', label: 'Côte', at: [534, 168], small: true });
         S.lung({ path: 'M196 262 L444 262 L444 420 L196 420 Z', label: 'Poumon', at: [320, 340] });
-        S.pleura({ points: [[198, 256], [442, 256]], label: 'Ligne pleurale (glissement)', at: [320, 292], small: true });
+        S.pleura({ points: [[198, 257], [320, 255], [442, 257]], label: 'Ligne pleurale (glissement)', at: [320, 292], small: true });
         S.target({ x: 320, y: 178, r: 22 });
         S.needle({ from: [10, 96], to: [296, 176], label: 'Trajet tangentiel dans le plan' });
         S.spread({ x: 322, y: 178, rx: 66, ry: 12, label: 'Diffusion dans le plan' });
@@ -267,7 +265,7 @@ C’est aussi ce qui rend le geste descriptible et défendable en cas de contrô
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Coupe transversale', type: 'in-plane' });
         S.skin({ thickness: 8, fatBelow: 20 });
-        S.fascia({ points: [[0, 72], [640, 72]], width: 1.6 });
+        S.fascia({ points: [[0, 73], [640, 71]], width: 1.6 });
         S.muscle({ path: 'M0 72 L640 72 L640 288 L0 296 Z', label: 'Muscle', at: [92, 262], opacity: 0.4 });
         S.artery({ x: 210, y: 190, r: 15, label: 'Artère', lx: 210, ly: 244, small: true, lead: [210, 206] });
         S.vein({ x: 350, y: 198, rx: 36, ry: 21, label: 'Veine', lx: 350, ly: 148, small: true, lead: [350, 178] });

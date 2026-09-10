@@ -31,7 +31,7 @@ ECHO.register({
   ],
   contreIndications: [
     '**Absolues** : refus, infection cutanée au point de ponction, sepsis, hypertension intracrânienne, allergie vraie aux amino-amides, **troubles majeurs de l\'hémostase non corrigés**.',
-    '**Risque hémorragique — le point sur lequel il ne faut pas se tromper.** Dans la stratification ASRA-ESRA 2018, les infiltrations épidurales interlaminaires (cervicales comme lombaires) relèvent de la catégorie **intermédiaire**, la catégorie **élevée** étant réservée aux gestes de stimulation médullaire, aux cathéters intrathécaux, à la vertébroplastie et à l\'adhésiolyse épidurale (*classement à confirmer sur la table du texte princeps*). Mais la **conséquence** d\'un saignement est ici la plus grave de toute la région : l\'**hématome épidural compressif**, urgence chirurgicale. De nombreuses équipes appliquent donc une prudence de niveau « élevé » : interruption des anticoagulants selon les délais recommandés, décision partagée avec le prescripteur, antiagrégants discutés au cas par cas. **En cas de doute, la voie caudale est l\'alternative** — même espace épidural, risque hématique sans conséquence compressive.',
+    '**Risque hémorragique — le point sur lequel il ne faut pas se tromper.** Dans la stratification ASRA-ESRA 2018, les infiltrations épidurales interlaminaires (cervicales comme lombaires) relèvent de la catégorie **intermédiaire**, la catégorie **élevée** étant réservée aux gestes de stimulation médullaire, aux cathéters et pompes intrathécaux, à la vertébroplastie et à l\'adhésiolyse épidurale. Mais la **conséquence** d\'un saignement est ici la plus grave de toute la région : l\'**hématome épidural compressif**, urgence chirurgicale. De nombreuses équipes appliquent donc une prudence de niveau « élevé » : interruption des anticoagulants selon les délais recommandés, décision partagée avec le prescripteur, antiagrégants discutés au cas par cas. **En cas de doute, la voie caudale est l\'alternative** — même espace épidural, risque hématique sans conséquence compressive.',
     '**Relatives** : arthrodèse instrumentée au niveau visé (fenêtre interlaminaire absente), scoliose sévère, spondylolisthésis évolué, patient incapable de tenir la position.',
     'Corticoïde : diabète déséquilibré, infection évolutive, insuffisance cardiaque décompensée.',
     '**Écho-assistance chez le patient très obèse** : la fenêtre est souvent inexploitable au-delà d\'un IMC de 40 — ce qui, paradoxalement, est le patient chez qui elle serait la plus utile. Ne pas transformer un repérage impossible en tentative de ponction hasardeuse : passer sous arceau.',
@@ -145,7 +145,7 @@ Ce qui fonctionne : on voit la trajectoire, on corrige en continu, et on visuali
   ],
   complications: [
     '**Hématome épidural compressif** : la complication redoutée. Rare, mais c\'est une **urgence neurochirurgicale** — douleur rachidienne intense et croissante, puis déficit moteur et troubles sphinctériens dans les heures suivant le geste. Conduite à tenir : IRM en urgence et avis neurochirurgical immédiat, le pronostic dépendant du délai de décompression.',
-    '**Brèche dure-mérienne** (2–5 % selon l\'expérience) : reflux de LCS. Céphalées posturales retardées de 24–48 h → repos, hydratation, caféine, antalgiques ; blood patch si elles persistent au-delà de 48–72 h ou si elles sont invalidantes.',
+    '**Brèche dure-mérienne** : moins de 1 % en mains entraînées, jusqu\'à quelques pour cent chez l\'opérateur peu expérimenté ou en anatomie difficile — reflux de LCS. Céphalées posturales retardées de 24–48 h → repos, hydratation, caféine, antalgiques ; blood patch si elles persistent au-delà de 48–72 h ou si elles sont invalidantes.',
     '**Rachianesthésie totale** en cas d\'injection intrathécale non reconnue d\'un volume important d\'AL : bloc moteur ascendant, hypotension, détresse respiratoire — urgence vitale. Prévention : dose test et injection fractionnée.',
     '**Abcès épidural et méningite** : exceptionnels mais gravissimes. Fièvre, douleur rachidienne, syndrome méningé, déficit → IRM en urgence. Justifient l\'asepsie chirurgicale complète, casaque et masque compris.',
     'Injection intravasculaire dans le plexus veineux épidural : signes de toxicité systémique → arrêt, oxygène, émulsion lipidique 20 % 1,5 mL/kg puis 0,25 mL/kg/min.',
@@ -228,16 +228,16 @@ Ce qui fonctionne : on voit la trajectoire, on corrige en continu, et on visuali
         S.muscle({ path: 'M0 76 L640 76 L640 266 L0 266 Z', label: 'Érecteurs du rachis', at: [96, 148], opacity: 0.48 });
         S.bone({ path: 'M56 292 Q116 256 176 292', label: 'Proc. articulaire', at: [116, 312], small: true });
         S.bone({ path: 'M464 292 Q524 256 584 292', label: 'Proc. articulaire', at: [524, 312], small: true });
-        S.region({ path: 'M212 306 L428 306 L428 366 L212 366 Z', fill: '#03060a', opacity: 0.92 });
-        S.fascia({ points: [[208, 300], [432, 300]], width: 3.5 });
-        S.fascia({ points: [[206, 372], [434, 372]], width: 3.5 });
-        S.label({ x: 604, y: 352, text: 'Complexe postérieur', anchor: 'end', cls: 'lbl-fascia', small: true, lead: [430, 302] });
-        S.label({ x: 320, y: 346, text: 'Sac dural', cls: 'lbl-fluid', small: true });
-        S.label({ x: 604, y: 398, text: 'Complexe antérieur', anchor: 'end', cls: 'lbl-fascia', small: true, lead: [432, 374] });
+        S.region({ path: 'M212 326 L428 326 L428 372 L212 372 Z', fill: '#03060a', opacity: 0.92 });
+        S.fascia({ points: [[200, 284], [320, 288], [440, 292]], width: 4 });
+        S.fascia({ points: [[200, 376], [320, 380], [440, 384]], width: 4 });
+        S.label({ x: 604, y: 336, text: 'Complexe postérieur', anchor: 'end', cls: 'lbl-fascia', small: true, lead: [438, 290] });
+        S.label({ x: 320, y: 356, text: 'Sac dural', cls: 'lbl-fluid', small: true });
+        S.label({ x: 604, y: 404, text: 'Complexe antérieur', anchor: 'end', cls: 'lbl-fascia', small: true, lead: [438, 382] });
         S.label({ x: 16, y: 232, text: 'Profondeur mesurée : 4–7 cm\nAngle relevé : 10–25° céphalique', anchor: 'start', small: true });
-        S.target({ x: 320, y: 302, r: 14 });
-        S.needle({ from: [320, 50], to: [320, 296], label: 'Ligne médiane — trajectoire mesurée' });
-        S.spread({ x: 320, y: 311, rx: 94, ry: 7, label: '5–10 mL' });
+        S.target({ x: 320, y: 288, r: 14 });
+        S.needle({ from: [320, 50], to: [320, 282], label: 'Trajectoire planifiée (pas de guidage temps réel)' });
+        S.spread({ x: 320, y: 310, rx: 84, ry: 7, label: '5–10 mL' });
       },
     },
   ],

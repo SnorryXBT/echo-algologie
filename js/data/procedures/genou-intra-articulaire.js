@@ -61,7 +61,7 @@ Pour le **kyste de Baker** : **décubitus ventral**, cheville sur un coussin, ge
 Marquer au feutre le bord supérieur et le bord latéral de la patella avant la désinfection.`,
     operateur: `Opérateur du **côté latéral** du genou à traiter, écran en face de lui, de l'autre côté de la table, dans l'axe du regard. Sonde tenue en main non dominante, hypothénar en appui sur la cuisse. Ponction **de latéral en médial**, dans le plan : le trajet est court, entièrement visible, et s'éloigne du nerf saphène et du paquet fémoral, tous deux médiaux.
 
-Pour le kyste poplité : opérateur du côté médial, ponction **de médial en latéral**, ce qui met l'aiguille en éloignement de l'artère poplitée — jamais l'inverse.`,
+Pour le kyste poplité : opérateur du côté médial, ponction **de médial en latéral**. Le point d'entrée et tout le trajet restent alors dans la moitié médiale et superficielle du creux poplité, à distance du paquet vasculo-nerveux qui est latéral et profond ; la pointe s'arrête dans le kyste et ne franchit jamais son bord latéral. L'abord latéro-médial, qui ferait entrer l'aiguille au voisinage immédiat de l'artère poplitée, est proscrit.`,
     sonde: `- Linéaire 8–14 MHz, preset MSK, **profondeur 3–5 cm**, focale au niveau du récessus (1,5–3 cm).
 - **Doppler couleur** systématique avant toute ponction du creux poplité, et utile en avant pour repérer une synovite hypervascularisée (qui n'est pas ponctionnable).
 - Gain réglé pour que le liquide soit franchement noir : un gain trop élevé fait « disparaître » un petit épanchement.
@@ -116,7 +116,7 @@ Pour le kyste poplité : opérateur du côté médial, ponction **de médial en 
     { titre: `Ponction d'un épanchement abondant`, texte: `Aiguille **18 G** (20 G au minimum) montée sur prolongateur et robinet trois voies : on aspire, on ferme, on change de seringue, on aspire à nouveau, sans jamais mobiliser la pointe. Compression manuelle des culs-de-sac médial et latéral pendant l'aspiration. Une hémarthrose franche impose de chercher la cause (fracture ostéochondrale, rupture ligamentaire, coagulopathie) avant tout corticoïde ; un liquide lactescent ou trouble impose la bactériologie et l'abstention.` },
     { titre: `Kyste poplité de Baker — ponction-infiltration échoguidée`, texte: `Patient en **décubitus ventral**. Sonde **transversale** dans le creux poplité, côté médial. Identifier successivement : le tendon du **semi-membraneux** (médial), le chef médial du **gastrocnémien** (latéral), et entre les deux le **collet** en virgule qui signe le kyste. **Doppler couleur obligatoire** : l'artère poplitée, la veine et le nerf tibial sont **latéraux** — un anévrisme poplité ou une thrombose veineuse se présentent comme une masse anéchogène et ne se ponctionnent pas.
 
-Aiguille 18–21 G in-plane, **de médial en latéral**, entrant dans le corps du kyste par sa portion la plus superficielle et la plus médiale ; on s'éloigne ainsi du paquet vasculo-nerveux à chaque millimètre d'avancée. Vidange complète (contenu souvent gélatineux : privilégier une 18 G, parfois fragmenter le contenu par mouvements doux de la pointe), puis injection de 1–2 mL de corticoïde. Compression et bandage 24 h.
+Aiguille 18–21 G in-plane, **de médial en latéral**, entrant dans le corps du kyste par sa portion la plus superficielle et la plus médiale. Le trajet reste ainsi entièrement médial et superficiel ; la pointe est visible en permanence et **ne dépasse jamais le bord latéral du kyste**, seule règle qui protège de l'artère poplitée. Vidange complète (contenu souvent gélatineux : privilégier une 18 G, parfois fragmenter le contenu par mouvements doux de la pointe), puis injection de 1–2 mL de corticoïde. Compression et bandage 24 h.
 
 Le taux de récidive est élevé si la pathologie intra-articulaire sous-jacente (arthrose, lésion méniscale, synovite) n'est pas traitée : le geste articulaire dans le même temps est la règle. Les données publiées sont des **séries prospectives**, pas des essais randomisés (Di Sante 2010) — annoncer une efficacité probable mais non démontrée.` },
     { titre: `Ce qui n'a pas sa place ici`, texte: `Pas de radiofréquence ni de cryoneurolyse **intra-articulaire**. Quand l'articulation ne répond plus, on change de cible et on passe aux **nerfs géniculés** (fiche dédiée) : c'est une dénervation sensitive péri-articulaire, pas un geste intra-articulaire. De même, l'hydrodissection n'a pas d'objet dans une cavité articulaire.` },
@@ -145,7 +145,7 @@ Le taux de récidive est élevé si la pathologie intra-articulaire sous-jacente
     `**Atrophie cutanée et dépigmentation** sur le trajet si reflux sous-cutané de corticoïde : retirer l'aiguille en aspirant, ou rincer le trajet avec 0,5 mL de sérum.`,
     `**Dégradation cartilagineuse** avec les corticoïdes répétés : perte de volume cartilagineux significative à 2 ans dans l'essai de McAlindon 2017 (triamcinolone trimestrielle vs sérum), sans bénéfice antalgique. C'est l'argument qui doit limiter la répétition.`,
     `**Progression accélérée de l'arthrose / ostéonécrose / fracture sous-chondrale** : signal rapporté sur séries d'imagerie (Kompel 2019), non démontré causalement mais suffisant pour ne pas banaliser le geste chez le sujet jeune.`,
-    `**Kyste de Baker** : hématome, ponction vasculaire, lésion du nerf tibial — évitables par la voie médio-latérale et le Doppler. Récidive fréquente.`,
+    `**Kyste de Baker** : hématome, ponction vasculaire, lésion du nerf tibial — évitables par l'abord médial, la pointe gardée en permanence à l'écran et en dedans du bord latéral du kyste, et le Doppler préalable. Récidive fréquente.`,
   ],
   securite: [
     `Asepsie chirurgicale : le seul risque véritablement grave du geste est infectieux. Détersion-désinfection en deux temps, gel stérile ou housse, gants stériles, pas de repalpation après désinfection.`,
@@ -225,7 +225,7 @@ Le taux de récidive est élevé si la pathologie intra-articulaire sous-jacente
     },
     {
       id: 'genou-baker', section: 'technique', titre: `Kyste poplité de Baker — ponction-infiltration, de médial en latéral`,
-      legende: `Décubitus ventral, coupe transversale du creux poplité. Le **collet** passe entre le tendon du semi-membraneux (médial) et le chef médial du gastrocnémien. Le paquet vasculo-nerveux est **latéral** : la ponction médio-latérale s'en éloigne à chaque millimètre. Doppler obligatoire avant l'aiguille.`,
+      legende: `Décubitus ventral, coupe transversale du creux poplité. Le **collet** passe entre le tendon du semi-membraneux (médial) et le chef médial du gastrocnémien. Le paquet vasculo-nerveux (nerf tibial superficiel, puis veine, puis artère poplitée) est **latéral et profond** : le point d'entrée médial et le trajet superficiel l'évitent, à condition que la pointe reste en dedans du bord latéral du kyste. Doppler obligatoire avant l'aiguille.`,
       opts: { depth: 4 },
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Transverse, creux poplité', type: 'in-plane' });

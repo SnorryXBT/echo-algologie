@@ -212,14 +212,14 @@ Les données sont anciennes et contrastées. La cryoanalgésie intercostale **pe
         S.muscle({ path: 'M206 258 Q318 253 434 258 L434 272 Q318 268 206 272 Z', label: 'Intime', at: [330, 268], opacity: 0.4, small: true });
         S.bone({ path: 'M20 208 Q115 148 210 206', label: 'Côte', at: [110, 240], small: true, ldy: 0 });
         S.bone({ path: 'M430 206 Q525 148 620 208', label: 'Côte', at: [525, 240], small: true, ldy: 0 });
-        S.vein({ x: 224, y: 212, rx: 6, ry: 5 });
-        S.artery({ x: 226, y: 226, r: 5 });
-        S.nerve({ x: 228, y: 240, r: 6 });
-        S.label({ x: 106, y: 292, text: 'Paquet V-A-N\n(souvent non visible)', cls: 'lbl-nerve', small: true, anchor: 'middle', lead: [222, 232] });
+        S.vein({ x: 224, y: 224, rx: 6, ry: 5 });
+        S.artery({ x: 226, y: 238, r: 5 });
+        S.nerve({ x: 228, y: 252, r: 6 });
+        S.label({ x: 104, y: 300, text: 'Paquet V-A-N\n(souvent non visible)', cls: 'lbl-nerve', small: true, anchor: 'middle', lead: [220, 244] });
         S.pleura({ points: [[186, 288], [318, 283], [452, 288]] });
-        S.label({ x: 500, y: 300, text: 'Plèvre (glissement)', cls: 'lbl-pleura', small: true, anchor: 'middle', lead: [440, 288] });
-        S.lung({ rect: [0, 296, 640, 124], label: 'Poumon — lignes A, queues de comète', at: [300, 356], small: true });
-        S.target({ x: 262, y: 258, r: 16 });
+        S.label({ x: 512, y: 312, text: 'Plèvre (glissement)', cls: 'lbl-pleura', small: true, anchor: 'middle', lead: [448, 289] });
+        S.lung({ path: 'M188 294 L450 294 L458 420 L180 420 Z', label: 'Poumon\n(lignes A)', at: [318, 344], small: true });
+        S.target({ x: 268, y: 258, r: 16 });
       },
     },
     {
@@ -236,15 +236,15 @@ Les données sont anciennes et contrastées. La cryoanalgésie intercostale **pe
         S.muscle({ path: 'M206 258 Q318 253 434 258 L434 272 Q318 268 206 272 Z', opacity: 0.4 });
         S.bone({ path: 'M20 208 Q115 148 210 206', label: 'Côte', at: [110, 240], small: true, ldy: 0 });
         S.bone({ path: 'M430 206 Q525 148 620 208', label: 'Côte', at: [525, 240], small: true, ldy: 0 });
-        S.vein({ x: 224, y: 212, rx: 6, ry: 5 });
-        S.artery({ x: 226, y: 226, r: 5 });
-        S.nerve({ x: 228, y: 240, r: 6 });
+        S.vein({ x: 224, y: 224, rx: 6, ry: 5 });
+        S.artery({ x: 226, y: 238, r: 5 });
+        S.nerve({ x: 228, y: 252, r: 6 });
         S.pleura({ points: [[186, 288], [318, 283], [452, 288]] });
-        S.lung({ rect: [0, 296, 640, 124], label: 'Poumon', at: [520, 340], small: true });
-        S.target({ x: 258, y: 256, r: 18 });
-        S.needle({ from: [636, 78], to: [278, 252], label: '22–25 G 40–50 mm' });
-        S.spread({ x: 262, y: 258, rx: 62, ry: 14, label: '3–5 mL' });
-        S.label({ x: 200, y: 316, text: 'Progresser parallèlement à la plèvre — jamais vers elle', cls: 'lbl-target', small: true, anchor: 'middle' });
+        S.lung({ path: 'M188 294 L450 294 L458 420 L180 420 Z', label: 'Poumon', at: [318, 340], small: true });
+        S.target({ x: 252, y: 258, r: 16 });
+        S.needle({ from: [638, 104], to: [272, 252], label: '22–25 G 40–50 mm, angle plat' });
+        S.spread({ x: 300, y: 260, rx: 56, ry: 12, label: '3–5 mL' });
+        S.label({ x: 320, y: 380, text: 'Progresser parallèlement à la plèvre — jamais vers elle', cls: 'lbl-target', small: true, anchor: 'middle' });
       },
     },
   ],

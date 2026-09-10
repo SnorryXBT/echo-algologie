@@ -40,10 +40,10 @@ ECHO.register({
   ],
   alternatives: 'Bloc du nerf grand occipital (première cible, fiche dédiée) ; bloc du nerf occipital III et des branches médiales cervicales si la douleur est facettaire (fiche dédiée) ; bloc du plexus cervical superficiel « en bloc » si les trois branches sont concernées ; bloc du nerf auriculo-temporal ou du ganglion sphénopalatin pour une otalgie de territoire trigéminal ; PRF ou cryoneurolyse du grand auriculaire dans les névralgies et névromes réfractaires (données limitées à des cas cliniques) ; exérèse ou enfouissement chirurgical d\'un névrome d\'amputation post-parotidectomie. En pratique : ces deux nerfs sont un **complément** du bloc occipital, rarement un premier geste isolé — sauf dans la névralgie du grand auriculaire, où ils sont le traitement.',
 
-  anatomie: `Le **petit occipital (LON)** et le **grand auriculaire (GAN)** sont deux branches cutanées ascendantes du **plexus cervical superficiel** (rameaux ventraux de C2, C3). Elles contournent le bord postérieur du sterno-cléido-mastoïdien à son **tiers moyen** — le *punctum nervosum* ou **point d\'Erb** — puis divergent :
+  anatomie: `Le **petit occipital (LON)** et le **grand auriculaire (GAN)** sont deux branches cutanées ascendantes du **plexus cervical superficiel**, issues des rameaux ventraux cervicaux via l\'anse cervicale superficielle : le petit occipital naît principalement de **C2** (parfois C2-C3), le grand auriculaire de **C2-C3**. Elles contournent le bord postérieur du sterno-cléido-mastoïdien à son **tiers moyen** — le *punctum nervosum* ou **point d\'Erb** — puis divergent :
 
 - le **petit occipital** monte **le long du bord postérieur du SCM**, contourne l\'insertion mastoïdienne et innerve la peau de l\'occiput **latéral**, la face médiale et la partie supérieure du pavillon, la région rétro-auriculaire ;
-- le **grand auriculaire**, la plus volumineuse des branches cutanées du plexus cervical, croise **obliquement la face superficielle du SCM** en direction du lobule, sous le fascia d\'enveloppe et à proximité de la veine jugulaire externe. Il se divise en rameaux antérieur (angle de la mandibule, région parotidienne) et postérieur (mastoïde, face postérieure du pavillon, lobule).
+- le **grand auriculaire**, la plus volumineuse des branches cutanées du plexus cervical, croise **obliquement la face superficielle du SCM** en direction du lobule, sous le fascia d\'enveloppe et parallèlement à la **veine jugulaire externe**, le plus souvent **immédiatement en arrière d\'elle** — rapport variable, à vérifier au Doppler avant de ponctionner. Il se divise en rameaux antérieur (angle de la mandibule, région parotidienne) et postérieur (mastoïde, face postérieure du pavillon, lobule).
 
 Le **nerf occipital III (TON)**, lui, n\'a rien à voir : c\'est la branche superficielle du ramus **dorsal** de C3, qui croise l\'articulation zygapophysaire C2-C3 et innerve la région occipitale haute paramédiane. Il ne passe **jamais** par le point d\'Erb. Rappel utile parce qu\'en pratique il est la troisième cible de la « cartographie occipitale » : GON médian, LON latéral, TON paramédian haut (fiche dédiée).
 
@@ -75,7 +75,7 @@ Main non dominante en appui sur la clavicule ou la mandibule : le cou est mobile
   },
 
   reperage: [
-    { titre: '1. Poser sur le SCM au niveau du cricoïde', texte: 'Sonde **transversale** sur la face latérale du cou, au niveau du **cartilage cricoïde** (C6), c\'est-à-dire au tiers moyen du SCM. Le muscle apparaît en **lentille biconvexe** hypoéchogène striée, occupant la moitié antérieure du champ.' },
+    { titre: '1. Poser sur le SCM au niveau du cricoïde', texte: 'Sonde **transversale** sur la face latérale du cou, au niveau du **cartilage cricoïde** (C6) — repère des protocoles échoguidés de bloc du plexus cervical superficiel. Le *punctum nervosum* anatomique est décrit au **milieu du bord postérieur du SCM**, parfois un peu plus haut (niveau C4) : si les branches ne sont pas vues au cricoïde, remonter de 1–2 cm. Le muscle apparaît en **lentille biconvexe** hypoéchogène striée, occupant la moitié antérieure du champ.' },
     { titre: '2. Trouver le bord postérieur (point d\'Erb)', texte: 'Glisser la sonde en arrière jusqu\'à ce que le SCM **s\'effile en biseau** et disparaisse du champ. Ce biseau est le point d\'Erb. En profondeur apparaît la ligne hyperéchogène du **fascia prévertébral**, recouvrant l\'élévateur de la scapula et le scalène moyen.' },
     { titre: '3. Identifier le plexus superficiel', texte: 'Chercher l\'**amas de 2 à 4 nodules hypoéchogènes** (aspect en nid d\'abeilles, 1–3 mm chacun) dans le tissu graisseux **entre le biseau du SCM et le fascia prévertébral**. C\'est le plexus cervical superficiel : le petit occipital en est la branche la plus postéro-supérieure.' },
     { titre: '4. Suivre le grand auriculaire en balayage crânial', texte: 'Depuis le point d\'Erb, **remonter lentement la sonde vers la mastoïde** en gardant la coupe transversale : on voit une des branches quitter le plan profond, contourner le bord postérieur et **passer à la face superficielle du SCM** — c\'est le grand auriculaire. Il chemine ensuite entre le SCM et le fascia d\'enveloppe, souvent accolé à la **veine jugulaire externe**.' },
@@ -181,7 +181,7 @@ Deux réserves : la valeur diagnostique disparaît (on ne saura pas quel nerf po
     { auteurs: 'Fenech M, Gallagher J, Berry C', titre: 'Sonographic anatomy and imaging of the great auricular nerve', revue: 'Surg Radiol Anat', annee: '2025', doi: '10.1007/s00276-025-03765-y', pmid: '41233613', type: 'anatomie / imagerie' },
     { auteurs: '—', titre: 'Treatment of great auricular neuralgia with real-time ultrasound-guided great auricular nerve block: a case report and review of the literature', revue: 'Medicine (Baltimore)', annee: '2017', pmid: '28328811', type: 'cas clinique / revue' },
     { auteurs: '—', titre: 'Ultrasound-guided greater auricular nerve block as sole anesthetic for ear surgery', revue: '—', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC4943106/', type: 'série de cas', note: 'Territoire réellement couvert par le bloc, utile pour informer le patient.' },
-    { auteurs: '—', titre: 'Ultrasound-guided selective pulsed radiofrequency treatment of great auricular nerve for post-herpetic neuralgia of the head and neck: a case report', revue: 'J Pain Res', doi: '10.2147/JPR.S312805', type: 'cas clinique' },
+    { auteurs: '—', titre: 'Ultrasound-guided selective pulsed radiofrequency treatment of great auricular nerve for post-herpetic neuralgia of the head and neck: a case report', revue: 'J Pain Res', annee: '2021', doi: '10.2147/JPR.S312805', type: 'cas clinique' },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco' },
   ],
   videos: [
@@ -193,7 +193,7 @@ Deux réserves : la valeur diagnostique disparaît (on ne saura pas quel nerf po
   scenes: [
     {
       id: 'lon-gan-erb', section: 'sonoanatomie', titre: 'Point d\'Erb — coupe transversale au bord postérieur du SCM (niveau cricoïde)',
-      legende: 'Le SCM s\'effile en biseau ; le plexus cervical superficiel apparaît en nodules hypoéchogènes juste en arrière de ce biseau, **au-dessus du fascia prévertébral** (ligne à ne jamais franchir). Le petit occipital est la branche postéro-supérieure ; le grand auriculaire passe à la face superficielle du SCM, accolé à la jugulaire externe. L\'axe carotidien est en avant et en profondeur.',
+      legende: 'Le SCM s\'effile en biseau ; le plexus cervical superficiel apparaît en nodules hypoéchogènes juste en arrière de ce biseau, **au-dessus du fascia prévertébral** (ligne à ne jamais franchir). Le petit occipital est la branche postéro-supérieure ; le grand auriculaire passe à la face superficielle du SCM, immédiatement en arrière de la jugulaire externe. L\'axe carotidien est en avant et en profondeur.',
       opts: { depth: 3 },
       build: S => {
         S.orient({ left: 'Antérieur', right: 'Postérieur' }).probeInfo({ plan: 'Transversale, niveau du cricoïde', type: 'linéaire 12–18 MHz' });
@@ -201,13 +201,13 @@ Deux réserves : la valeur diagnostique disparaît (on ne saura pas quel nerf po
         S.muscle({ path: 'M0 68 L640 68 L640 84 L0 86 Z', label: 'Platysma', at: [560, 80], opacity: 0.35, small: true });
         S.muscle({ path: 'M0 92 L110 88 L240 94 L330 122 L296 160 L150 178 L0 176 Z', label: 'Sterno-cléido-mastoïdien', at: [130, 136], opacity: 0.55 });
         S.fascia({ points: [[236, 176], [360, 196], [470, 208], [640, 214]], width: 2.2, opacity: 0.95 });
-        S.label({ x: 500, y: 200, text: 'Fascia prévertébral', cls: 'lbl-fascia', small: true });
+        S.label({ x: 560, y: 188, text: 'Fascia prévertébral', cls: 'lbl-fascia', small: true, anchor: 'end' });
         S.muscle({ path: 'M250 186 L640 216 L640 336 L280 320 Z', label: 'Élévateur de la scapula / scalène moyen', at: [452, 276], opacity: 0.45, small: true });
-        S.vein({ x: 286, y: 92, rx: 15, ry: 8, label: 'V. jugulaire externe', lx: 380, ly: 70, anchor: 'start', lead: [300, 90], small: true });
-        S.nerve({ x: 212, y: 84, r: 6, label: 'N. grand auriculaire', lx: 116, ly: 62, anchor: 'end', lead: [206, 80] });
-        S.nerve({ x: 352, y: 146, r: 6, label: 'N. petit occipital', lx: 452, ly: 128, anchor: 'start', lead: [359, 144] });
-        S.nerve({ x: 344, y: 168, r: 5 });
-        S.nerve({ x: 328, y: 184, r: 5, label: 'Plexus cervical superficiel', lx: 440, ly: 176, anchor: 'start', lead: [334, 182], small: true });
+        S.vein({ x: 196, y: 84, rx: 15, ry: 8, label: 'V. jugulaire externe', lx: 92, ly: 66, anchor: 'start', lead: [184, 79], small: true });
+        S.nerve({ x: 262, y: 92, r: 6, label: 'N. grand auriculaire', lx: 300, ly: 64, anchor: 'start', lead: [268, 88] });
+        S.nerve({ x: 352, y: 158, r: 6, label: 'N. petit occipital', lx: 452, ly: 138, anchor: 'start', lead: [359, 155] });
+        S.nerve({ x: 338, y: 174, r: 5 });
+        S.nerve({ x: 326, y: 182, r: 5, label: 'Plexus cervical sup.', lx: 424, ly: 164, anchor: 'start', lead: [332, 182], small: true });
         S.artery({ x: 76, y: 246, r: 20, label: 'Carotide', lx: 76, ly: 292, small: true });
         S.vein({ x: 148, y: 232, rx: 26, ry: 16, label: 'JI', lx: 148, ly: 236, small: true });
         S.label({ x: 330, y: 118, text: 'Biseau = point d\'Erb', cls: 'lbl-target', small: true, anchor: 'start' });
@@ -220,21 +220,20 @@ Deux réserves : la valeur diagnostique disparaît (on ne saura pas quel nerf po
       build: S => {
         S.orient({ left: 'Antérieur', right: 'Postérieur' }).probeInfo({ plan: 'Transversale, bord postérieur du SCM', type: 'in-plane' });
         S.skin({ thickness: 7, fatBelow: 18 });
-        S.muscle({ path: 'M0 68 L640 68 L640 84 L0 86 Z', label: 'Platysma', at: [560, 80], opacity: 0.35, small: true });
+        S.muscle({ path: 'M0 68 L640 68 L640 84 L0 86 Z', label: 'Platysma', at: [92, 80], opacity: 0.35, small: true });
         S.muscle({ path: 'M0 92 L110 88 L240 94 L330 122 L296 160 L150 178 L0 176 Z', label: 'SCM', at: [120, 136], opacity: 0.55 });
         S.fascia({ points: [[236, 176], [360, 196], [470, 208], [640, 214]], width: 2.2, opacity: 0.95 });
         S.label({ x: 528, y: 200, text: 'Fascia prévertébral — limite', cls: 'lbl-fascia', small: true, anchor: 'end' });
         S.muscle({ path: 'M250 186 L640 216 L640 336 L280 320 Z', label: 'Élévateur de la scapula', at: [452, 282], opacity: 0.45, small: true });
-        S.vein({ x: 286, y: 92, rx: 15, ry: 8 });
-        S.nerve({ x: 212, y: 84, r: 6, label: 'GAN', lx: 172, ly: 62, anchor: 'end', lead: [207, 80], small: true });
-        S.nerve({ x: 352, y: 146, r: 6, label: 'LON', lx: 402, ly: 122, anchor: 'start', lead: [358, 143], small: true });
-        S.nerve({ x: 336, y: 176, r: 5 });
+        S.vein({ x: 196, y: 84, rx: 15, ry: 8, label: 'JE', lx: 196, ly: 66, small: true });
+        S.nerve({ x: 262, y: 92, r: 6, label: 'GAN', lx: 300, ly: 64, anchor: 'start', lead: [268, 88], small: true });
+        S.nerve({ x: 352, y: 158, r: 6, label: 'LON', lx: 442, ly: 138, anchor: 'start', lead: [359, 155], small: true });
         S.artery({ x: 76, y: 246, r: 20, label: 'Carotide', lx: 76, ly: 294, small: true });
-        S.target({ x: 344, y: 160, r: 17 });
-        S.needle({ from: [640, 116], to: [368, 158], label: '25 G — plan interfascial' });
-        S.spread({ x: 322, y: 166, rx: 58, ry: 14, label: '2–3 mL' });
-        S.needle({ from: [640, 60], to: [232, 80], label: '2e point : grand auriculaire' });
-        S.spread({ x: 210, y: 84, rx: 32, ry: 11, label: '2 mL' });
+        S.needle({ from: [640, 116], to: [392, 160], label: '25 G — plan interfascial' });
+        /* nappe interfasciale percée autour du LON : la diffusion englobe le nerf sans le masquer */
+        S.spreadPath({ path: 'M288 170 A62 22 0 1 1 412 170 A62 22 0 1 1 288 170 Z M343 158 A9 9 0 1 0 361 158 A9 9 0 1 0 343 158 Z', at: [200, 200], label: '2–3 mL' });
+        S.needle({ from: [640, 60], to: [284, 86], label: '2e point : grand auriculaire' });
+        S.spreadPath({ path: 'M222 92 A34 14 0 1 1 290 92 A34 14 0 1 1 222 92 Z M253 92 A9 9 0 1 0 271 92 A9 9 0 1 0 253 92 Z', at: [334, 104], label: '2 mL' });
       },
     },
   ],

@@ -101,7 +101,7 @@ Certains opérateurs restent en coupe longitudinale et ponctionnent dans le plan
 
   technique: [
     { titre: 'Préparation et time-out', texte: 'Checklist (fin de fiche). **Time-out renforcé** : côté, niveaux, nombre de blocs, protocole diagnostique (simple ou comparatif), produit utilisé et sa durée d\'action — un bloc comparatif dont on ne sait plus quel AL a été injecté est un bloc perdu. Désinfection large, gel stérile ou housse. Seringues de 1 mL étiquetées par niveau.' },
-    { titre: 'Anesthésie cutanée', texte: '0,5 mL de lidocaïne 1 % au point d\'entrée, **sans infiltrer en profondeur** : une anesthésie profonde généreuse fausse le bloc diagnostique en anesthésiant les tissus voisins, et un cas de tétraplégie transitoire après simple infiltration cutanée avant infiltration facettaire cervicale a été publié. Systématique avant aiguille RF.' },
+    { titre: 'Anesthésie cutanée', texte: '0,5 mL de lidocaïne 1 % au point d\'entrée, **sans infiltrer en profondeur** : une anesthésie profonde généreuse fausse le bloc diagnostique en anesthésiant les tissus voisins et expose à des diffusions imprévues (des accidents neurologiques transitoires après infiltration cervicale ont été rapportés — *à confirmer*). Systématique avant aiguille RF.' },
     { titre: 'Ponction dans le plan, de postérieur vers antérieur', texte: 'Sonde transversale sur le niveau marqué. Aiguille écho-visible entrée au bord postérieur de la sonde, angle 20–35°, **pointe visible en permanence**. Traverser trapèze, splénius, semi-épineux. Progresser jusqu\'au **contact osseux franc** au point le plus profond de la concavité, puis reculer de 1 mm. Ne jamais avancer au-delà du plateau osseux : en avant, c\'est le foramen et l\'artère vertébrale.' },
     { titre: 'Bloc du TON', texte: 'Même principe à l\'articulation C2-C3, où le nerf est visible : amener la pointe **à côté** du nerf, contre l\'os, sans le traverser. Prévenir le patient de l\'**ataxie transitoire** qui accompagne très fréquemment le bloc et la neurotomie du TON (voir Complications) : c\'est attendu, pas une complication.' },
     { titre: 'Test, aspiration et injection', texte: 'Aspiration dans deux plans. **0,3 à 0,5 mL par niveau, pas plus** : au-delà, l\'injectat diffuse aux niveaux et aux structures voisines, et le bloc perd toute valeur diagnostique — c\'est l\'erreur qui invalide le plus de bilans. L\'injectat doit former un petit dôme anéchogène **plaqué contre l\'os**. Une diffusion large, fusiforme, intramusculaire = repositionner ou considérer le niveau comme non interprétable.' },
@@ -230,15 +230,14 @@ Paramètres usuels de la RF thermique (fluoroscopie) : 80 °C, 60–90 s, lésio
         S.label({ x: 326, y: 198, text: 'C3-C4', cls: 'lbl-bone', small: true });
         S.label({ x: 442, y: 198, text: 'C4-C5', cls: 'lbl-bone', small: true });
         S.label({ x: 558, y: 200, text: 'C5-C6', cls: 'lbl-bone', small: true });
-        S.nerve({ x: 180, y: 232, r: 5 });
         S.nerve({ x: 268, y: 234, r: 5 });
         S.nerve({ x: 384, y: 234, r: 5 });
         S.nerve({ x: 500, y: 234, r: 5 });
-        S.label({ x: 180, y: 272, text: 'Pilier C3', cls: 'lbl-bone', small: true });
-        S.label({ x: 268, y: 272, text: 'C4', cls: 'lbl-bone', small: true });
-        S.label({ x: 384, y: 272, text: 'C5', cls: 'lbl-bone', small: true });
-        S.label({ x: 500, y: 272, text: 'C6', cls: 'lbl-bone', small: true });
-        S.label({ x: 296, y: 302, text: 'Creux (waist) = cible des branches médiales', cls: 'lbl-target', small: true });
+        S.label({ x: 152, y: 276, text: 'Masse lat. C2', cls: 'lbl-bone', small: true });
+        S.label({ x: 268, y: 276, text: 'Pilier C3', cls: 'lbl-bone', small: true });
+        S.label({ x: 384, y: 276, text: 'Pilier C4', cls: 'lbl-bone', small: true });
+        S.label({ x: 500, y: 276, text: 'Pilier C5', cls: 'lbl-bone', small: true });
+        S.label({ x: 330, y: 312, text: 'Creux (waist) = cible des branches médiales', cls: 'lbl-target', small: true });
         S.artery({ x: 442, y: 176, r: 6, label: 'A. cervicale profonde', lx: 560, ly: 160, anchor: 'end', lead: [448, 174], small: true });
       },
     },
@@ -249,17 +248,17 @@ Paramètres usuels de la RF thermique (fluoroscopie) : 80 °C, 60–90 s, lésio
       build: S => {
         S.orient({ left: 'Postérieur', right: 'Antérieur' }).probeInfo({ plan: 'Transversale sur le pilier articulaire', type: 'in-plane' });
         S.skin({ thickness: 8, fatBelow: 20 });
-        S.muscle({ path: 'M0 70 L640 70 L640 104 L0 110 Z', label: 'Trapèze / splénius', at: [96, 90], opacity: 0.42, small: true });
+        S.muscle({ path: 'M0 70 L640 70 L640 104 L0 110 Z', label: 'Trapèze / splénius', at: [438, 90], opacity: 0.42, small: true });
         S.fascia({ points: [[0, 110], [640, 104]], width: 1.4 });
         S.muscle({ path: 'M0 110 L640 104 L640 180 L0 214 Z', label: 'Semi-épineux du cou', at: [110, 158], opacity: 0.48, small: true });
         S.bone({ path: 'M20 306 Q120 268 200 248 L286 232 Q368 224 428 242 L462 268 Q486 302 496 344', label: 'Pilier articulaire (plateau)', at: [200, 330], small: true, ldy: 0 });
         S.artery({ x: 232, y: 206, r: 6, label: 'A. cervicale profonde', lx: 128, ly: 194, anchor: 'end', lead: [226, 205], small: true });
-        S.nerve({ x: 366, y: 220, r: 5, label: 'Branche médiale', lx: 462, ly: 194, anchor: 'start', lead: [372, 218] });
+        S.nerve({ x: 366, y: 218, r: 5, label: 'Branche médiale', lx: 452, ly: 186, anchor: 'start', lead: [371, 216] });
         S.artery({ x: 566, y: 296, r: 17, label: 'A. vertébrale (foramen)', lx: 566, ly: 344, small: true });
         S.nerve({ x: 508, y: 262, r: 7, label: 'Racine', lx: 540, ly: 244, anchor: 'start', lead: [514, 260], small: true });
-        S.target({ x: 372, y: 224, r: 15 });
-        S.needle({ from: [0, 96], to: [362, 222], label: '25 G écho-visible — contact osseux' });
-        S.spread({ x: 368, y: 226, rx: 26, ry: 10, label: '0,3–0,5 mL' });
+        S.needle({ from: [0, 96], to: [358, 216], label: '25 G écho-visible — contact osseux' });
+        /* dôme plaqué contre l'os, percé autour de la branche médiale pour ne pas la masquer */
+        S.spreadPath({ path: 'M338 218 A30 13 0 1 1 398 218 A30 13 0 1 1 338 218 Z M358 218 A8 8 0 1 0 374 218 A8 8 0 1 0 358 218 Z', at: [286, 176], label: '0,3–0,5 mL' });
       },
     },
     {
@@ -271,16 +270,15 @@ Paramètres usuels de la RF thermique (fluoroscopie) : 80 °C, 60–90 s, lésio
         S.skin({ thickness: 8, fatBelow: 20 });
         S.muscle({ path: 'M0 70 L640 70 L640 106 L0 112 Z', label: 'Splénius / trapèze', at: [96, 92], opacity: 0.42, small: true });
         S.fascia({ points: [[0, 112], [640, 106]], width: 1.4 });
-        S.muscle({ path: 'M0 112 L640 106 L640 194 L0 206 Z', label: 'Semi-épineux de la tête', at: [116, 156], opacity: 0.48, small: true });
+        S.muscle({ path: 'M0 112 L640 106 L640 194 L0 206 Z', label: 'Semi-épineux de la tête', at: [112, 130], opacity: 0.48, small: true });
         S.bone({ path: 'M0 226 L60 214 Q120 198 186 196 Q252 200 300 232 Q360 268 420 220 Q484 266 546 220 L640 230' });
-        S.label({ x: 78, y: 194, text: 'Masse latérale de C2', cls: 'lbl-bone', small: true, anchor: 'start' });
+        S.label({ x: 26, y: 234, text: 'Masse latérale de C2', cls: 'lbl-bone', small: true, anchor: 'start' });
         S.label({ x: 420, y: 200, text: 'C3-C4', cls: 'lbl-bone', small: true });
         S.label({ x: 358, y: 296, text: 'Pilier C3', cls: 'lbl-bone', small: true });
-        S.nerve({ x: 214, y: 182, r: 6, label: 'Nerf occipital III (TON)', lx: 300, ly: 152, anchor: 'start', lead: [221, 180] });
+        S.nerve({ x: 214, y: 182, r: 6, label: 'Nerf occipital III (TON)', lx: 302, ly: 158, anchor: 'end', lead: [222, 178] });
         S.label({ x: 200, y: 254, text: 'Articulation C2-C3', cls: 'lbl-target', small: true });
-        S.target({ x: 214, y: 182, r: 15 });
-        S.needle({ from: [640, 118], to: [232, 184], label: '25 G — de caudal en crânial' });
-        S.spread({ x: 210, y: 186, rx: 30, ry: 11, label: '0,5 mL' });
+        S.needle({ from: [640, 118], to: [234, 184], label: '25 G — de caudal en crânial' });
+        S.spreadPath({ path: 'M182 186 A30 13 0 1 1 242 186 A30 13 0 1 1 182 186 Z M206 182 A8 8 0 1 0 222 182 A8 8 0 1 0 206 182 Z', at: [318, 212], label: '0,5 mL' });
       },
     },
   ],

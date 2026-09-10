@@ -201,7 +201,7 @@ Les blocs de fascia ont une **absorption systémique élevée** : diluer plutôt
         S.lung({ path: 'M260 348 L402 348 L410 420 L252 420 Z', label: 'Poumon', at: [330, 400], small: true });
         S.artery({ x: 386, y: 141, r: 5.5, label: 'A. thoraco-acromiale\n(br. pectorale)', lx: 434, ly: 106, small: true, lead: [391, 134] });
         S.nerve({ x: 200, y: 145, r: 4.5, label: 'N. pectoral latéral', lx: 200, ly: 118, small: true, lead: [200, 140] });
-        S.label({ x: 552, y: 156, text: 'Plan inter-pectoral (PECS I)', cls: 'lbl-target', small: true });
+        S.label({ x: 508, y: 154, text: 'Plan inter-pectoral (PECS I)', cls: 'lbl-target', small: true });
         S.label({ x: 300, y: 208, text: 'Plan pecto-serratus (PECS II)', cls: 'lbl-target', small: true });
         S.label({ x: 500, y: 244, text: 'Bord latéro-inférieur\ndu petit pectoral', small: true, lead: [458, 194] });
       },
@@ -224,10 +224,10 @@ Les blocs de fascia ont une **absorption systémique élevée** : diluer plutôt
         S.artery({ x: 386, y: 141, r: 5.5, label: 'A. thoraco-acromiale', lx: 470, ly: 120, small: true, lead: [392, 136] });
         S.target({ x: 440, y: 204, r: 15 });
         S.target({ x: 296, y: 146, r: 13 });
-        S.needle({ from: [6, 100], to: [432, 205], delay: 0.2, dur: 1.2, label: '① 22 G 80 mm — PECS II (profond)' });
         S.spread({ x: 396, y: 207, rx: 112, ry: 9, delay: 1.4, dur: 1.0, label: '20 mL' });
-        S.needle({ from: [6, 100], to: [292, 148], delay: 2.4, dur: 1.0 });
-        S.spread({ x: 274, y: 146, rx: 98, ry: 8, delay: 3.4, dur: 0.9, label: '10 mL' });
+        S.spread({ x: 268, y: 146, rx: 92, ry: 8, delay: 3.4, dur: 0.9, label: '10 mL' });
+        S.needle({ from: [6, 100], to: [432, 205], delay: 0.2, dur: 1.2, label: '① 22 G 80 mm — PECS II (profond)' });
+        S.needle({ from: [6, 100], to: [300, 149], delay: 2.4, dur: 1.0 });
         S.label({ x: 120, y: 320, text: '② même point de ponction :\nretrait dans le plan inter-pectoral (PECS I)', cls: 'lbl-needle', small: true, anchor: 'middle' });
       },
     },

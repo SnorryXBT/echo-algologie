@@ -187,14 +187,14 @@ L\'approche standard est **hors du plan** : la sonde reste coronale sur la fente
         S.orient({ left: 'Médial', right: 'Latéral' }).probeInfo({ plan: 'Coronal, sur la fente AC', type: 'linéaire 12–18 MHz' });
         S.skin({ thickness: 10, fatBelow: 24 });
         S.muscle({ path: 'M0 76 L640 76 L640 122 L0 128 Z', label: 'Chape delto-trapézienne', at: [516, 102], opacity: 0.4 });
-        S.ligament({ path: 'M242 140 L410 152 L408 172 L244 158 Z', label: 'Capsule / lig. AC supérieur', at: [318, 128], small: true });
-        S.bone({ path: 'M0 176 L130 170 L232 164 L288 160', label: 'Clavicule', at: [124, 150], small: true });
-        S.bone({ path: 'M356 178 L470 184 L640 190', label: 'Acromion', at: [516, 164], small: true });
-        S.fluid({ path: 'M288 158 L356 176 L334 268 L312 268 Z' });
-        S.region({ path: 'M284 256 L360 256 L360 420 L284 420 Z', fill: '#0a0d10', opacity: 0.8 });
+        S.ligament({ path: 'M242 140 L410 152 L408 172 L244 158 Z', label: 'Capsule / lig. AC supérieur', at: [430, 132], anchor: 'start', small: true, lead: [392, 152] });
+        S.bone({ path: 'M-20 178 L130 170 L232 164 L290 160', label: 'Clavicule', at: [124, 148], small: true });
+        S.bone({ path: 'M354 186 L470 192 L660 198', label: 'Acromion', at: [516, 170], small: true });
+        S.fluid({ path: 'M290 158 L354 184 L334 268 L312 268 Z' });
+        S.region({ path: 'M286 256 L360 256 L360 424 L286 424 Z', fill: '#04060a', opacity: 0.97 });
         S.cartilage({ x: 322, y: 196, rx: 13, ry: 24, label: 'Disque', lx: 448, ly: 236, anchor: 'start', lead: [336, 200], small: true });
         S.label({ x: 162, y: 244, text: 'Interligne en V\n(1–3 mm)', cls: 'lbl-fluid', small: true, lead: [304, 212] });
-        S.arrow({ from: [232, 112], to: [288, 154], text: 'Marche d\'escalier', anchor: 'end' });
+        S.arrow({ from: [214, 118], to: [286, 156], text: 'Marche d\'escalier', anchor: 'middle' });
       },
     },
     {
@@ -206,12 +206,13 @@ L\'approche standard est **hors du plan** : la sonde reste coronale sur la fente
         S.skin({ thickness: 10, fatBelow: 24 });
         S.muscle({ path: 'M0 76 L640 76 L640 122 L0 128 Z', label: 'Chape delto-trapézienne', at: [140, 102], opacity: 0.4 });
         S.ligament({ path: 'M242 140 L410 152 L408 172 L244 158 Z' });
-        S.bone({ path: 'M0 176 L130 170 L232 164 L288 160', label: 'Clavicule', at: [124, 150], small: true });
-        S.bone({ path: 'M356 178 L470 184 L640 190', label: 'Acromion', at: [516, 164], small: true });
-        S.fluid({ path: 'M288 158 L356 176 L334 268 L312 268 Z' });
-        S.region({ path: 'M284 256 L360 256 L360 420 L284 420 Z', fill: '#0a0d10', opacity: 0.8 });
-        S.needle({ from: [322, 134], to: [322, 176], label: '25 G — pointe vue en coupe' });
-        S.spread({ x: 322, y: 200, rx: 20, ry: 30, label: '0,5–1 mL' });
+        S.bone({ path: 'M-20 178 L130 170 L232 164 L290 160', label: 'Clavicule', at: [124, 148], small: true });
+        S.bone({ path: 'M354 186 L470 192 L660 198', label: 'Acromion', at: [516, 170], small: true });
+        S.fluid({ path: 'M290 158 L354 184 L334 268 L312 268 Z' });
+        S.region({ path: 'M286 256 L360 256 L360 424 L286 424 Z', fill: '#04060a', opacity: 0.97 });
+        S.target({ x: 322, y: 196, r: 14 });
+        S.needle({ from: [322, 150], to: [322, 172], label: '25 G — seule la pointe est vue' });
+        S.spread({ x: 322, y: 202, rx: 19, ry: 28, label: '0,5–1 mL' });
         S.label({ x: 128, y: 232, text: 'Capsule qui bombe\n= critère de fin', small: true, lead: [268, 152] });
         S.label({ x: 494, y: 268, text: 'Ne pas dépasser :\nespace sous-acromial', small: true, anchor: 'middle', lead: [340, 262] });
       },

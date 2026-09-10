@@ -91,7 +91,7 @@ Prolongateur souple systématique pour l'hydrodissection. Pour la PRF, générat
     { titre: 'Partir du nerf, pas de la masse', texte: 'Identifier le nerf en amont, en territoire sain, là où il est facile, puis le suivre en balayage transversal jusqu\'à la cicatrice. C\'est la seule façon de prouver la continuité et d\'éviter de prendre pour un névrome un fil, un granulome ou un ganglion.' },
     { titre: 'Reconnaître le renflement', texte: 'Masse **hypoéchogène**, ovalaire ou en bulbe, à contours nets, homogène, sans dessin fasciculaire ou avec un dessin appauvri, en continuité avec le nerf. En coupe longitudinale, on voit le nerf entrer dans la masse et s\'y arrêter (névrome terminal) ou la traverser (névrome en continuité).' },
     { titre: 'Tinel échographique', texte: 'Appuyer précisément sur la masse avec la sonde et demander au patient si sa douleur habituelle est reproduite, puis appuyer 1–2 cm à côté pour vérifier la sélectivité. C\'est le test clé : une masse indolore n\'explique pas la douleur, même si elle est bien un névrome.' },
-    { titre: 'Doppler et diagnostic différentiel', texte: 'Absence de flux intralésionnel. Éliminer : granulome sur fil (souvent hyperéchogène ou avec cône d\'ombre, non relié à un nerf), collection ou sérome (anéchogène, compressible), récidive tumorale (vascularisée, contexte), endométriose de cicatrice (masse hétérogène, femme en âge de procréer, douleur cataméniale), schwannome (excentré sur le nerf, vascularisé, parfois avec cône d\'ombre postérieur en renforcement).' },
+    { titre: 'Doppler et diagnostic différentiel', texte: 'Absence de flux intralésionnel. Éliminer : granulome sur fil (souvent hyperéchogène ou avec cône d\'ombre, non relié à un nerf), collection ou sérome (anéchogène, compressible), récidive tumorale (vascularisée, contexte), endométriose de cicatrice (masse hétérogène, femme en âge de procréer, douleur cataméniale), schwannome (masse excentrée sur le nerf, souvent vascularisée, avec **renforcement postérieur** et cônes d\'ombre latéraux).' },
     { titre: 'Chercher les autres nerfs', texte: 'Sur un moignon d\'amputation, systématiquement explorer tous les troncs sectionnés. Sur une cicatrice inguinale ou de Pfannenstiel, explorer les trois nerfs candidats. Une douleur persistante après traitement d\'un seul névrome est souvent une douleur de névrome voisin non traité.' },
     { titre: 'Si on ne trouve rien', texte: 'Une douleur cicatricielle typique sans névrome visible reste possible : le nerf peut être simplement piégé dans la fibrose, sans renflement. Le geste reste alors une **hydrodissection au point de Tinel**, guidée sur le nerf et non sur une masse — et le bloc test garde toute sa valeur.' },
   ],
@@ -248,12 +248,12 @@ Ce qu'il faut dire au patient et au chirurgien : la **résection simple d'un né
         S.orient({ left: 'Proximal (nerf sain)', right: 'Distal (extrémité du moignon)' }).probeInfo({ plan: 'Longitudinal, le long du nerf', type: 'linéaire 10–18 MHz' });
         S.skin({ thickness: 9, fatBelow: 24 });
         S.fat({ path: 'M0 78 L640 78 L640 136 L0 136 Z', label: 'Graisse sous-cutanée', at: [88, 108] });
-        S.fascia({ points: [[0, 138], [640, 138]], width: 1.6 });
+        S.fascia({ points: [[0, 139], [640, 137]], width: 1.6 });
         S.muscle({ path: 'M0 138 L640 138 L640 366 L0 366 Z', label: 'Muscle du moignon', at: [72, 336], opacity: 0.3 });
-        S.region({ path: 'M300 160 L620 160 L620 344 L300 344 Z', fill: '#8d9aa6', opacity: 0.22, label: 'Fibrose cicatricielle', at: [546, 182] });
+        S.region({ path: 'M300 160 L620 160 L620 344 L300 344 Z', fill: '#8d9aa6', opacity: 0.22, label: 'Fibrose cicatricielle', at: [556, 330] });
         S.nerve({ path: 'M0 214 L338 210 L338 240 L0 244 Z', label: 'Nerf d\'amont (aspect fasciculaire)', lx: 130, ly: 288, anchor: 'start', lead: [130, 240] });
-        S.nerve({ x: 404, y: 226, rx: 68, ry: 44, label: 'Névrome en bulbe\nhypoéchogène, avasculaire', lx: 404, ly: 314, small: true });
-        S.label({ x: 512, y: 178, text: 'Le nerf entre et s\'arrête', anchor: 'start', small: true, cls: 'lbl-nerve', lead: [468, 208] });
+        S.region({ path: 'M336 226 A68 44 0 1 0 472 226 A68 44 0 1 0 336 226 Z', fill: '#0f1419', opacity: 0.92, stroke: '#ffe08a', label: 'Névrome en bulbe\nhypoéchogène, avasculaire', at: [404, 322], small: true });
+        S.label({ x: 470, y: 168, text: 'Le nerf entre et s\'arrête', anchor: 'middle', small: true, cls: 'lbl-nerve', lead: [432, 210] });
         S.target({ x: 404, y: 226, r: 78 });
         S.label({ x: 404, y: 128, text: 'Tinel reproduit par la pression de la sonde ICI', anchor: 'middle', small: true, cls: 'lbl-target' });
       },
@@ -265,41 +265,42 @@ Ce qu'il faut dire au patient et au chirurgien : la **résection simple d'un né
       build: S => {
         S.orient({ left: 'Proximal', right: 'Distal' }).probeInfo({ plan: 'Longitudinal, aiguille dans le plan', type: 'linéaire 10–18 MHz' });
         S.skin({ thickness: 9, fatBelow: 22 });
-        S.fat({ path: 'M0 76 L640 76 L640 130 L0 130 Z', label: 'Graisse', at: [52, 104] });
-        S.fascia({ points: [[0, 132], [640, 132]], width: 1.6 });
+        S.fat({ path: 'M0 76 L640 76 L640 130 L0 130 Z', label: 'Graisse', at: [300, 104] });
+        S.fascia({ points: [[0, 133], [640, 131]], width: 1.6 });
         S.muscle({ path: 'M0 132 L640 132 L640 366 L0 366 Z', label: 'Muscle', at: [66, 340], opacity: 0.3 });
-        S.region({ path: 'M300 156 L622 156 L622 348 L300 348 Z', fill: '#8d9aa6', opacity: 0.22, label: 'Fibrose', at: [578, 176] });
+        S.region({ path: 'M300 156 L622 156 L622 348 L300 348 Z', fill: '#8d9aa6', opacity: 0.22, label: 'Fibrose', at: [578, 336] });
         S.nerve({ path: 'M0 214 L336 210 L336 240 L0 244 Z' });
-        S.nerve({ x: 404, y: 226, rx: 66, ry: 42, label: 'Névrome — ne jamais injecter dedans', lx: 470, ly: 316, anchor: 'start', lead: [432, 264] });
-        S.label({ x: 150, y: 196, text: 'Nerf d\'amont = la cible', anchor: 'middle', small: true, cls: 'lbl-nerve' });
-        S.target({ x: 292, y: 226, r: 26 });
+        S.region({ path: 'M338 226 A66 42 0 1 0 470 226 A66 42 0 1 0 338 226 Z', fill: '#0f1419', opacity: 0.92, stroke: '#ffe08a' });
+        S.label({ x: 404, y: 320, text: 'Névrome — ne jamais injecter dedans', anchor: 'middle', small: true, cls: 'lbl-nerve', lead: [404, 268] });
+        S.label({ x: 168, y: 172, text: 'Nerf d\'amont = la cible', anchor: 'middle', small: true, cls: 'lbl-nerve', lead: [140, 212] });
+        S.target({ x: 276, y: 226, r: 26 });
         S.needle({ from: [8, 122], to: [268, 214], label: '25–27 G + prolongateur' });
-        S.spread({ x: 286, y: 226, rx: 62, ry: 30, label: '1–3 mL (test) · 3–10 mL (halo)' });
+        S.spreadPath({ path: 'M166 227 A82 38 0 1 0 330 227 A82 38 0 1 0 166 227 Z M182 227 A66 15 0 1 1 314 227 A66 15 0 1 1 182 227 Z', at: [230, 296], label: '1–3 mL (test) · 3–10 mL (halo)' });
       },
     },
     {
       id: 'nevrome-inguinal', section: 'technique', titre: 'Cicatrice inguinale ou de Pfannenstiel — nerfs ilio-inguinal et ilio-hypogastrique',
-      legende: 'Coupe transversale au-dessus et en dedans de l\'épine iliaque antéro-supérieure. Les deux nerfs cheminent dans le plan entre l\'oblique interne et le transverse de l\'abdomen, souvent accompagnés d\'une branche de l\'artère circonflexe iliaque profonde. Bloc test sélectif de 1 à 2 mL par nerf pour identifier lequel est en cause, puis hydrodissection du plan cicatriciel. Repérer le treillis prothétique avant de ponctionner, et garder le péritoine à l\'écran.',
+      legende: 'Coupe transversale au-dessus et en dedans de l\'épine iliaque antéro-supérieure. Les deux nerfs cheminent dans le plan entre l\'oblique interne et le transverse de l\'abdomen — l\'ilio-inguinal le plus près de l\'EIAS, l\'ilio-hypogastrique plus médial, la branche de l\'artère circonflexe iliaque profonde le plus souvent entre les deux. Bloc test sélectif de 1 à 2 mL par nerf pour identifier lequel est en cause, puis hydrodissection du plan cicatriciel. Repérer le treillis prothétique avant de ponctionner, et garder le péritoine à l\'écran.',
       opts: { depth: 4 },
       build: S => {
         S.orient({ left: 'Médial', right: 'Latéral (EIAS)' }).probeInfo({ plan: 'Transverse, oblique vers l\'EIAS', type: 'linéaire 6–13 MHz' });
         S.skin({ thickness: 8, fatBelow: 28 });
-        S.fat({ path: 'M0 78 L640 78 L640 140 L0 140 Z', label: 'Graisse sous-cutanée', at: [92, 110] });
+        S.fat({ path: 'M0 78 L640 78 L640 140 L0 140 Z', label: 'Graisse sous-cutanée', at: [430, 110] });
         S.muscle({ path: 'M0 142 L640 130 L640 178 L0 192 Z', label: 'Oblique externe', at: [110, 166], opacity: 0.42 });
         S.fascia({ points: [[0, 192], [640, 178]], width: 1.5 });
         S.muscle({ path: 'M0 192 L640 178 L640 236 L0 252 Z', label: 'Oblique interne', at: [110, 220], opacity: 0.42 });
         S.fascia({ points: [[0, 252], [640, 236]], width: 1.8 });
         S.muscle({ path: 'M0 252 L640 236 L640 296 L0 314 Z', label: 'Transverse de l\'abdomen', at: [130, 278], opacity: 0.42 });
         S.fascia({ points: [[0, 314], [640, 296]], width: 2, opacity: 0.85 });
-        S.label({ x: 128, y: 336, text: 'Fascia transversalis / péritoine', anchor: 'start', small: true, cls: 'lbl-fascia' });
+        S.label({ x: 24, y: 344, text: 'Fascia transversalis / péritoine', anchor: 'start', small: true, cls: 'lbl-fascia' });
         S.organ({ path: 'M0 330 L640 312 L640 400 L0 400 Z', label: 'Contenu abdominal', at: [478, 366], opacity: 0.5 });
         S.bone({ path: 'M596 250 Q622 262 636 288', label: 'EIAS', at: [592, 226], ldy: 0 });
-        S.nerve({ x: 376, y: 246, r: 9, label: 'N. ilio-inguinal', lx: 306, ly: 186, anchor: 'end', lead: [368, 240] });
-        S.nerve({ x: 434, y: 243, r: 8, label: 'N. ilio-hypogastrique', lx: 520, ly: 200, anchor: 'start', lead: [442, 238] });
-        S.artery({ x: 406, y: 248, r: 6, label: 'A. circonflexe iliaque profonde', lx: 406, ly: 350, small: true, lead: [406, 256] });
-        S.target({ x: 404, y: 246, r: 44 });
-        S.needle({ from: [10, 128], to: [340, 244], label: '25 G, in-plane, médio-latéral' });
-        S.spread({ x: 400, y: 246, rx: 62, ry: 12, label: '1–2 mL par nerf (test)' });
+        S.nerve({ x: 352, y: 250, r: 10, label: 'N. ilio-hypogastrique\n(le plus médial)', lx: 296, ly: 180, anchor: 'end', lead: [344, 242] });
+        S.nerve({ x: 458, y: 247, r: 10, label: 'N. ilio-inguinal\n(près de l\'EIAS)', lx: 486, ly: 180, anchor: 'start', lead: [470, 239] });
+        S.artery({ x: 405, y: 249, r: 8, label: 'A. circonflexe iliaque profonde', lx: 300, ly: 344, anchor: 'start', small: true, lead: [400, 258] });
+        S.target({ x: 405, y: 248, r: 48 });
+        S.needle({ from: [10, 140], to: [318, 250], label: '25 G, in-plane, médio-latéral' });
+        S.spreadPath({ path: 'M297 249 A108 20 0 1 0 513 249 A108 20 0 1 0 297 249 Z M338 250 A14 14 0 1 1 366 250 A14 14 0 1 1 338 250 Z M394 249 A11 11 0 1 1 416 249 A11 11 0 1 1 394 249 Z M444 247 A14 14 0 1 1 472 247 A14 14 0 1 1 444 247 Z', at: [405, 208], label: '1–2 mL par nerf (test)' });
       },
     },
   ],

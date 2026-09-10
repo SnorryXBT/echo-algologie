@@ -34,7 +34,7 @@ ECHO.register({
     '**Absolues** : refus, infection cutanée ou pilonidale en regard du hiatus (fréquente à cet endroit — l\'inspecter systématiquement), sepsis, allergie vraie aux amino-amides, hypertension intracrânienne.',
     '**Anatomiques** : **absence ou ossification du hiatus sacré** (variante rencontrée chez quelques pour cent des sujets) — le geste est alors impossible et l\'échographie le dit en 30 secondes, ce qui est en soi un service rendu ; agénésie sacrée, kyste de Tarlov volumineux.',
     '**Sac dural bas inséré** : le cul-de-sac dural se termine normalement en **S2**, mais peut descendre plus bas. C\'est le seul mécanisme de brèche dure-mérienne par cette voie : il impose de limiter la progression de l\'aiguille à **1–2 cm** au-delà du ligament.',
-    '**Hémostase** : ASRA-ESRA 2018 classe l\'épidurale caudale parmi les procédures à **risque intermédiaire** — pas d\'arrêt systématique des antiagrégants, gestion des anticoagulants au cas par cas et en concertation avec le prescripteur (*classement conforme à la logique de la stratification, à confirmer sur la table du texte princeps*). C\'est en pratique la voie épidurale la plus tolérante sur ce plan.',
+    '**Hémostase** : ASRA-ESRA 2018 classe l\'épidurale caudale parmi les procédures à **risque intermédiaire**, comme l\'épidurale interlaminaire et les gestes facettaires — pas d\'arrêt systématique des antiagrégants, gestion des anticoagulants au cas par cas et en concertation avec le prescripteur. C\'est en pratique la voie épidurale la plus tolérante sur ce plan, l\'espace abordé étant bas et le sac dural non traversé.',
     'Corticoïde : diabète déséquilibré, insuffisance cardiaque décompensée (rétention hydrosodée avec les fortes doses), infection évolutive.',
   ],
   alternatives: 'L\'**épidurale transforaminale** est plus sélective et plus efficace sur une radiculalgie mono-radiculaire documentée, mais expose au risque artériel médullaire et impose la fluoroscopie et un corticoïde non particulaire. L\'**épidurale interlaminaire** cible mieux les niveaux hauts, au prix d\'un risque de brèche et d\'hématome épidural (fiche dédiée). La **voie caudale** est le choix quand on veut du volume, plusieurs niveaux, un accès bas, ou une marge de sécurité chez un patient à risque hémorragique ou déjà opéré. La **fluoroscopie** reste la référence quand la certitude de position et la détection du passage vasculaire comptent : l\'écho-guidage confirme la ponction, pas la diffusion.',
@@ -213,9 +213,11 @@ Prévenir le patient de la nature du site et de la position : c\'est un geste bi
         S.region({ path: 'M0 162 L232 174 L462 190 L618 204 L618 262 L0 250 Z', fill: '#04070a', opacity: 0.92 });
         S.bone({ path: 'M0 254 L640 270' });
         S.label({ x: 150, y: 292, text: 'Table osseuse antérieure', cls: 'lbl-bone', small: true });
-        S.target({ x: 400, y: 172, r: 13 });
-        S.needle({ from: [630, 118], to: [292, 192], label: '22 G 50–90 mm' });
-        S.spread({ x: 176, y: 214, rx: 120, ry: 22, label: '10–20 mL' });
+        S.target({ x: 296, y: 194, r: 14 });
+        S.needle({ from: [600, 96], to: [452, 178], label: '22 G — 40–50° jusqu\'au ressaut' });
+        S.needle({ from: [452, 180], to: [294, 194] });
+        S.label({ x: 398, y: 240, text: 'Redresser à 15–20° dès le ressaut,\npuis 1–2 cm — pas plus', anchor: 'start', small: true });
+        S.spread({ x: 172, y: 212, rx: 116, ry: 20, label: '10–20 mL' });
       },
     },
     {

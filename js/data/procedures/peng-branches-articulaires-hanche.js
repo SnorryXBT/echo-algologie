@@ -195,7 +195,7 @@ Ces cibles étant définies par des **repères osseux**, la dénervation de hanc
     { auteurs: 'Tran J, Agur A, Peng P', titre: 'Anatomical study of the innervation of anterior knee joint capsule: implication for image-guided intervention', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', type: 'anatomie', verif: false, note: 'Même équipe, méthodologie transposée ; cité pour la logique de cartographie des branches articulaires.' },
     { auteurs: 'Kawaguchi M, Hashizume K, Iwata T, Furuya H', titre: 'Percutaneous radiofrequency lesioning of sensory branches of the obturator and femoral nerves for the treatment of hip joint pain', revue: 'Regional Anesthesia and Pain Medicine', annee: '2001', type: 'série', verif: false },
     { auteurs: 'Locher S, Burmeister H, Böhlen T, et al.', titre: 'Radiological anatomy of the obturator nerve and its articular branches: basis to develop a method of radiofrequency denervation for hip joint pain', revue: 'Pain Medicine', annee: '2008', type: 'anatomie', verif: false },
-    { auteurs: 'Yeung T, Peng P', titre: 'Pericapsular nerve group (PENG) block: a review of the literature', revue: 'Regional Anesthesia and Pain Medicine', annee: '2021', type: 'revue', verif: false, note: 'Revue de synthèse ; auteurs, revue et année à confirmer.' },
+    { auteurs: 'Birnbaum K, Prescher A, Hessler S, Heller KD', titre: 'The sensory innervation of the hip joint — an anatomical study', revue: 'Surgical and Radiologic Anatomy', annee: '1997', type: 'anatomie', verif: false, note: 'Étude cadavérique classique de l’innervation sensitive de la hanche, antérieure aux travaux de Short.' },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'recommandation', verif: true, note: 'Antérieur à la description du PENG : ce bloc n’y figure pas, la classification retenue dans la fiche est une extrapolation.' },
   ],
   videos: [],
@@ -210,7 +210,7 @@ Ces cibles étant définies par des **repères osseux**, la dénervation de hanc
         S.skin({ thickness: 8, fatBelow: 28 });
         S.muscle({ path: 'M470 82 L640 78 L640 148 L482 154 Z', label: 'Sartorius / droit fémoral', at: [556, 116], opacity: 0.45, small: true });
         S.muscle({ path: 'M232 118 L560 112 L560 246 Q460 266 380 266 Q300 266 244 242 Z', label: 'Ilio-psoas', at: [346, 150], opacity: 0.5 });
-        S.tendon({ x: 384, y: 240, rx: 62, ry: 22, label: 'Tendon du psoas', lx: 384, ly: 196, small: true });
+        S.tendon({ x: 384, y: 214, rx: 62, ry: 18, label: 'Tendon du psoas', lx: 384, ly: 178, small: true });
         S.bone({ path: 'M0 322 Q140 294 268 278 L400 274 Q472 270 522 242 Q570 220 640 232' });
         S.label({ x: 250, y: 330, text: 'Éminence ilio-pubienne', cls: 'lbl-bone' });
         S.label({ x: 596, y: 204, text: 'EIAI', cls: 'lbl-bone', small: true, lead: [566, 230] });
@@ -218,7 +218,7 @@ Ces cibles étant définies par des **repères osseux**, la dénervation de hanc
         S.artery({ x: 136, y: 186, r: 17, label: 'A. fémorale', lx: 136, ly: 146, small: true });
         S.nerve({ x: 202, y: 200, rx: 14, ry: 8, label: 'N. fémoral', lx: 208, ly: 158, anchor: 'start', small: true, lead: [206, 194] });
         S.artery({ x: 448, y: 138, r: 6, label: 'A. circonflexe fém. lat.', lx: 466, ly: 172, anchor: 'start', small: true, lead: [453, 143] });
-        S.target({ x: 384, y: 268, r: 14 });
+        S.target({ x: 384, y: 258, r: 12 });
       },
     },
     {
@@ -230,34 +230,34 @@ Ces cibles étant définies par des **repères osseux**, la dénervation de hanc
         S.skin({ thickness: 8, fatBelow: 28 });
         S.muscle({ path: 'M470 82 L640 78 L640 148 L482 154 Z', opacity: 0.45 });
         S.muscle({ path: 'M232 118 L560 112 L560 246 Q460 266 380 266 Q300 266 244 242 Z', label: 'Ilio-psoas', at: [346, 148], opacity: 0.5 });
-        S.tendon({ x: 384, y: 240, rx: 62, ry: 22, label: 'Tendon du psoas', lx: 384, ly: 198, small: true });
+        S.tendon({ x: 384, y: 214, rx: 62, ry: 18, label: 'Tendon du psoas', lx: 384, ly: 178, small: true });
         S.bone({ path: 'M0 322 Q140 294 268 278 L400 274 Q472 270 522 242 Q570 220 640 232' });
         S.label({ x: 232, y: 336, text: 'Éminence ilio-pubienne', cls: 'lbl-bone' });
         S.artery({ x: 136, y: 186, r: 17, label: 'A. fémorale', lx: 136, ly: 146, small: true });
         S.nerve({ x: 202, y: 200, rx: 14, ry: 8, label: 'N. fémoral', lx: 208, ly: 158, anchor: 'start', small: true, lead: [206, 194] });
-        S.label({ x: 96, y: 268, text: 'Limite médiale\n— ne pas franchir', cls: 'lbl-target', small: true });
-        S.target({ x: 386, y: 268, r: 14 });
-        S.needle({ from: [636, 104], to: [398, 266], label: '22 G 100 mm' });
-        S.spread({ x: 340, y: 270, rx: 86, ry: 11, label: '10–15 mL (test) · 20 mL (aigu)' });
+        S.label({ x: 84, y: 272, text: 'Limite médiale\n— ne pas franchir', cls: 'lbl-target', small: true, anchor: 'start', lead: [218, 204] });
+        S.target({ x: 386, y: 258, r: 12 });
+        S.needle({ from: [636, 104], to: [398, 270], label: '22 G 100 mm' });
+        S.spread({ x: 340, y: 254, rx: 86, ry: 18, label: '10–15 mL (test) · 20 mL (aigu)' });
       },
     },
     {
-      id: 'peng-rf', section: 'technique', titre: 'Radiofréquence des branches articulaires — électrode parallèle à la corticale',
-      legende: 'Après bloc test positif. L’aiguille RF est amenée au même endroit mais placée parallèlement au plateau osseux, de façon à ce que son extrémité active longe la corticale. Stimulation sensitive à 50 Hz pour reproduire la douleur, stimulation motrice à 2 Hz pour exclure la proximité du nerf fémoral : toute contraction du quadriceps impose de repositionner. Deux à trois positions successives couvrent la variabilité anatomique.',
+      id: 'peng-rf', section: 'technique', titre: 'Radiofréquence des branches articulaires — extrémité active couchée sur la corticale',
+      legende: 'Après bloc test positif. L’aiguille RF est amenée au même endroit, aussi tangentiellement que possible au plateau osseux, de façon que son extrémité active longe la corticale sous le tendon du psoas. Stimulation sensitive à 50 Hz pour reproduire la douleur, stimulation motrice à 2 Hz pour exclure la proximité du nerf fémoral : toute contraction du quadriceps impose de repositionner. Deux à trois positions successives couvrent la variabilité anatomique.',
       opts: { depth: 8 },
       build: S => {
         S.orient({ left: 'Médial (pubis)', right: 'Latéral (EIAI)' }).probeInfo({ plan: 'Oblique 45°, branche sup. du pubis', type: 'aiguille RF 22 G, extrémité active 10 mm' });
         S.skin({ thickness: 8, fatBelow: 28 });
         S.muscle({ path: 'M470 82 L640 78 L640 148 L482 154 Z', opacity: 0.45 });
         S.muscle({ path: 'M232 118 L560 112 L560 246 Q460 266 380 266 Q300 266 244 242 Z', label: 'Ilio-psoas', at: [346, 148], opacity: 0.5 });
-        S.tendon({ x: 384, y: 240, rx: 62, ry: 22, label: 'Tendon du psoas', lx: 384, ly: 198, small: true });
+        S.tendon({ x: 384, y: 214, rx: 62, ry: 18, label: 'Tendon du psoas', lx: 384, ly: 178, small: true });
         S.bone({ path: 'M0 322 Q140 294 268 278 L400 274 Q472 270 522 242 Q570 220 640 232' });
         S.label({ x: 232, y: 336, text: 'Éminence ilio-pubienne', cls: 'lbl-bone' });
         S.nerve({ x: 202, y: 200, rx: 14, ry: 8, label: 'N. fémoral', lx: 208, ly: 158, anchor: 'start', small: true, lead: [206, 194] });
         S.label({ x: 130, y: 254, text: 'Contraction du quadriceps\nà 2 Hz = repositionner', cls: 'lbl-target', small: true });
-        S.needle({ from: [636, 116], to: [352, 272], label: 'Position 1' });
-        S.needle({ from: [636, 152], to: [286, 278], label: 'Position 2' });
-        S.spread({ x: 320, y: 276, rx: 58, ry: 9, label: '3–5 mL après lésion' });
+        S.needle({ from: [636, 116], to: [352, 268], label: 'Position 1' });
+        S.needle({ from: [636, 176], to: [286, 272], label: 'Position 2' });
+        S.spread({ x: 320, y: 260, rx: 58, ry: 10, label: '3–5 mL après lésion' });
       },
     },
   ],
