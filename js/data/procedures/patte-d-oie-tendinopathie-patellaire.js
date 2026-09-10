@@ -186,7 +186,7 @@ Le **tendon patellaire** s'étend de la pointe de la patella à la tubérosité 
     { auteurs: `Finnoff JT, Nutz DJ, Henning PT, et al.`, titre: `Accuracy of ultrasound-guided versus unguided pes anserinus bursa injections`, revue: `PM&R`, annee: '2010', type: 'cadavérique', verif: false },
     { auteurs: `Yoon HS, Kim SE, Suh YR, Seo YI, Kim HA`, titre: `Correlation between ultrasonographic findings and the response to corticosteroid injection in pes anserinus tendinobursitis syndrome in knee osteoarthritis patients`, revue: `Journal of Korean Medical Science`, annee: '2005', type: 'série', verif: false },
     { auteurs: `Alvarez-Nemegyei J, Canoso JJ`, titre: `Evidence-based soft tissue rheumatology IV: anserine bursitis`, revue: `Journal of Clinical Rheumatology`, annee: '2004', type: 'revue', verif: false },
-    { auteurs: `Narouze S, Benzon HT, Provenzano D, et al.`, titre: `Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP`, revue: `Regional Anesthesia and Pain Medicine`, annee: '2018', type: 'reco', verif: false },
+    { auteurs: `Narouze S, Benzon HT, Provenzano D, et al.`, titre: `Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP`, revue: `Regional Anesthesia and Pain Medicine`, annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true },
   ],
   videos: [],
 
@@ -221,7 +221,7 @@ Le **tendon patellaire** s'étend de la pointe de la patella à la tubérosité 
         S.bone({ path: 'M60 240 Q340 258 600 236', label: 'Tibia', at: [180, 300] });
         S.target({ x: 292, y: 160, r: 15 });
         S.needle({ from: [0, 106], to: [286, 158], label: '25 G, tangentielle' });
-        S.spread({ x: 382, y: 160, rx: 60, ry: 12, label: '2–3 mL' });
+        S.spread({ x: 350, y: 159, rx: 82, ry: 11, label: '2–3 mL' });
       },
     },
     {

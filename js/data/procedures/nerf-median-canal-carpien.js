@@ -6,12 +6,12 @@
             'hamulus'   (coupe un peu plus distale, niveau de la ponction) */
   function baseCarpe(S, ulnar, labels) {
     S.skin({ thickness: 7, fatBelow: 16 });
-    S.bone({ path: 'M0 296 Q46 244 98 234 Q152 246 176 296', label: labels ? 'Scaphoïde' : null, at: [88, 258], ldy: 0, small: true });
+    S.bone({ path: 'M-20 300 Q46 244 98 234 Q152 246 176 296', label: labels ? 'Scaphoïde' : null, at: [88, 258], ldy: 0, small: true });
     if (ulnar === 'pisiforme') {
-      S.bone({ path: 'M470 292 Q506 206 546 204 Q596 224 616 292', label: labels ? 'Pisiforme' : null, at: [548, 320], ldy: 0, small: true });
+      S.bone({ path: 'M470 292 Q506 206 546 204 Q596 224 660 300', label: labels ? 'Pisiforme' : null, at: [548, 320], ldy: 0, small: true });
       S.ligament({ path: 'M104 232 Q322 152 538 204 L540 214 Q322 164 106 242 Z' });
     } else {
-      S.bone({ path: 'M446 218 Q506 214 522 262 L526 320' });
+      S.bone({ path: 'M446 218 Q506 214 522 262 L528 320 Q570 350 660 366' });
       S.ligament({ path: 'M104 232 Q286 156 460 210 L462 220 Q286 168 106 242 Z' });
     }
     S.tendon({ x: 300, y: 104, rx: 22, ry: 10 });
@@ -20,10 +20,11 @@
     S.tendon({ x: 338, y: 284, rx: 30, ry: 20 });
     S.tendon({ x: 418, y: 288, rx: 28, ry: 19 });
     S.tendon({ x: 128, y: 322, rx: 24, ry: 18 });
+    S.tendon({ x: 124, y: 366, rx: 22, ry: 14 });
     S.tendon({ x: 214, y: 344, rx: 30, ry: 20 });
     S.tendon({ x: 300, y: 346, rx: 30, ry: 20 });
     S.tendon({ x: 386, y: 344, rx: 30, ry: 20 });
-    S.bone({ path: 'M40 382 Q320 404 600 378' });
+    S.bone({ path: 'M-20 386 Q320 406 660 380' });
     S.artery({ x: 452, y: 154, r: 9 });
     S.nerve({ x: 502, y: 152, r: 8 });
   }
@@ -235,7 +236,7 @@ Intérêt majeur en pratique HDJ : pas de corticoïde, donc geste répétable, u
           S.label({ x: 420, y: 118, text: 'A. ulnaire', cls: 'lbl-artery', anchor: 'end', small: true, lead: [446, 146] });
           S.label({ x: 634, y: 118, text: 'N. ulnaire (loge de Guyon)', cls: 'lbl-nerve', anchor: 'end', small: true, lead: [508, 145] });
           S.nerve({ x: 215, y: 224, rx: 30, ry: 15, label: 'N. médian\nCSA ≥ 10 mm² · ratio > 1,4', lx: 132, ly: 142, lead: [190, 212] });
-          S.label({ x: 250, y: 410, text: 'Tendons fléchisseurs : 4 FDS + 4 FDP + LFP', cls: 'lbl-tendon', small: true });
+          S.label({ x: 268, y: 404, text: 'Tendons fléchisseurs : 4 FDS + 4 FDP + LFP', cls: 'lbl-tendon', small: true });
           S.label({ x: 622, y: 366, text: 'Os du carpe (plancher)', cls: 'lbl-bone', anchor: 'end', small: true });
         },
       },
@@ -264,7 +265,7 @@ Intérêt majeur en pratique HDJ : pas de corticoïde, donc geste répétable, u
           S.nerve({ x: 215, y: 226, rx: 30, ry: 15 });
           S.label({ x: 108, y: 160, text: 'N. médian', cls: 'lbl-nerve', small: true, lead: [176, 208] });
           S.needle({ from: [636, 200], to: [268, 214], label: '2e temps : berge ulnaire' });
-          S.spreadPath({ path: 'M153 226 A 62 42 0 1 0 277 226 A 62 42 0 1 0 153 226 Z M181 226 A 34 20 0 1 1 249 226 A 34 20 0 1 1 181 226 Z', at: [300, 150], label: '5 mL D5W — halo 360°' });
+          S.spreadPath({ path: 'M159 230 A 56 30 0 1 0 271 230 A 56 30 0 1 0 159 230 Z M181 226 A 34 19 0 1 1 249 226 A 34 19 0 1 1 181 226 Z', at: [300, 150], label: '5 mL D5W — halo 360°' });
         },
       },
     ],
@@ -272,7 +273,7 @@ Intérêt majeur en pratique HDJ : pas de corticoïde, donc geste répétable, u
     checklist: [
       'Surface de section mesurée à l\'entrée du canal + mesure de référence à l\'avant-bras (ratio) — notées dans le compte rendu',
       'Doppler passé : artère médiane persistante, nerf médian bifide, artère ulnaire de la loge de Guyon',
-      'Absence d\'amyotrophie thénarienne et d\'déficit d\'opposition vérifiée (sinon : avis chirurgical, pas d\'infiltration)',
+      'Absence d\'amyotrophie thénarienne et de déficit d\'opposition vérifiée (sinon : avis chirurgical, pas d\'infiltration)',
       'Plan de ponction choisi au crochet de l\'hamatum, corridor paquet ulnaire / hamulus identifié',
       'Doigts détendus en semi-flexion (pas de poing fermé) pendant tout le geste',
       'Nombre d\'infiltrations déjà reçues sur ce poignet vérifié (maximum 2–3, espacées de 3 mois)',

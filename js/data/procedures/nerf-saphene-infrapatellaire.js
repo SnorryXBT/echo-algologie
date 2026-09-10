@@ -180,6 +180,7 @@ Pour l'IPBSN, même orientation mais trajet très court : on reste dans le plan 
     { auteurs: `Clendenen S, Greengrass R, Whalen J, O'Connor MI`, titre: `Infrapatellar saphenous neuralgia after TKA can be improved with ultrasound-guided local treatments`, revue: `Clinical Orthopaedics and Related Research`, annee: '2015', type: 'série', verif: false },
     { auteurs: `Wu YT, Ho TY, Chou YC, et al.`, titre: `Six-month efficacy of perineural dextrose for carpal tunnel syndrome: a prospective, randomized, double-blind, controlled trial`, revue: `Mayo Clinic Proceedings`, annee: '2017', type: 'ECR', verif: false, note: `Base de preuve du dextrose 5 % péri-nerveux — indication différente.` },
     { auteurs: `Cass SP`, titre: `Ultrasound-guided nerve hydrodissection: what is it? A review of the literature`, revue: `Current Sports Medicine Reports`, annee: '2016', type: 'revue', verif: false },
+    { auteurs: `Lam KHS, Hung CY, Chiang YP, et al.`, titre: `Ultrasound-guided nerve hydrodissection for pain management: rationale, methods, current literature, and theoretical mechanisms`, revue: `Journal of Pain Research`, annee: '2020', type: 'revue', verif: false },
     { auteurs: `Radnovich R, Scott D, Patel AT, et al.`, titre: `Cryoneurolysis to treat the pain and symptoms of knee osteoarthritis: a multicenter, randomized, double-blind, sham-controlled trial`, revue: `Osteoarthritis and Cartilage`, annee: '2017', type: 'ECR', verif: false },
   ],
   videos: [],
@@ -190,11 +191,11 @@ Pour l'IPBSN, même orientation mais trajet très court : on reste dans le plan 
       legende: `Le **sartorius** est le toit du canal ; l'**artère fémorale** en est le repère. Le nerf saphène est le petit faisceau **antéro-latéral à l'artère**, juste sous le sartorius ; le nerf du vaste médial lui est plus latéral — c'est lui qu'on bloque par erreur quand on monte trop haut ou qu'on injecte trop de volume.`,
       opts: { depth: 5 },
       build: S => {
-        S.orient({ left: 'Vaste médial', right: 'Adducteurs' }).probeInfo({ plan: 'Transverse, tiers inférieur de cuisse', type: 'linéaire 10–15 MHz' });
+        S.orient({ left: 'Antéro-latéral (vaste médial)', right: 'Postéro-médial (adducteurs)' }).probeInfo({ plan: 'Transverse, tiers inférieur de cuisse', type: 'linéaire 10–15 MHz' });
         S.skin({ thickness: 8, fatBelow: 26 });
         S.muscle({ path: 'M0 86 L176 88 Q170 150 200 200 L120 262 L0 250 Z', label: 'Vaste médial', at: [76, 168], opacity: 0.5 });
         S.muscle({ path: 'M466 88 L640 84 L640 266 L470 252 Q430 200 462 148 Z', label: 'Adducteurs', at: [556, 182], opacity: 0.5 });
-        S.muscle({ path: 'M180 84 Q320 74 460 86 Q472 130 400 148 Q320 158 240 148 Q176 134 180 84 Z', label: 'Sartorius', at: [320, 112], opacity: 0.62 });
+        S.muscle({ path: 'M126 100 Q300 70 460 86 Q472 130 400 148 Q320 158 240 152 Q152 146 126 100 Z', label: 'Sartorius', at: [320, 112], opacity: 0.62 });
         S.artery({ x: 322, y: 192, r: 22, label: 'A. fémorale', lx: 396, ly: 192, anchor: 'start', lead: [345, 192] });
         S.vein({ x: 354, y: 240, rx: 26, ry: 17, label: 'V. fémorale', lx: 392, ly: 254, anchor: 'start', lead: [378, 244] });
         S.nerve({ x: 288, y: 166, r: 8, label: 'N. saphène', lx: 190, ly: 132, anchor: 'end', lead: [282, 162] });
@@ -204,28 +205,26 @@ Pour l'IPBSN, même orientation mais trajet très court : on reste dans le plan 
     },
     {
       id: 'sap-bloc', section: 'technique', titre: `Bloc du canal des adducteurs — aiguille in-plane, latéro-médiale`,
-      legende: `L'aiguille traverse le vaste médial puis perce le sartorius (ressaut net) et se place **du côté antéro-latéral de l'artère**, jamais de front. Critère de fin : croissant anéchogène qui décolle le sartorius et contourne l'artère. 5–10 mL, pas plus — au-delà on bloque le nerf du vaste médial et le patient repart avec un quadriceps faible.`,
+      legende: `L'aiguille traverse le vaste médial puis perce le sartorius (ressaut net) et se place **du côté antéro-latéral de l'artère**, jamais de front. Critère de fin : nappe anéchogène qui décolle le sartorius et vient border l'artère par son côté antéro-latéral, puis la contourne. 5–10 mL, pas plus — au-delà on bloque le nerf du vaste médial et le patient repart avec un quadriceps faible.`,
       opts: { depth: 5 },
       build: S => {
-        S.orient({ left: 'Vaste médial', right: 'Adducteurs' }).probeInfo({ plan: 'Transverse, tiers inférieur de cuisse', type: 'in-plane' });
+        S.orient({ left: 'Antéro-latéral (vaste médial)', right: 'Postéro-médial (adducteurs)' }).probeInfo({ plan: 'Transverse, tiers inférieur de cuisse', type: 'in-plane' });
         S.skin({ thickness: 8, fatBelow: 26 });
         S.muscle({ path: 'M0 86 L176 88 Q170 150 200 200 L120 262 L0 250 Z', opacity: 0.5 });
         S.muscle({ path: 'M466 88 L640 84 L640 266 L470 252 Q430 200 462 148 Z', label: 'Adducteurs', at: [560, 190], small: true, opacity: 0.5 });
-        S.muscle({ path: 'M180 84 Q320 74 460 86 Q472 130 400 148 Q320 158 240 148 Q176 134 180 84 Z', label: 'Sartorius', at: [352, 112], opacity: 0.62 });
+        S.muscle({ path: 'M126 100 Q300 70 460 86 Q472 130 400 148 Q320 158 240 152 Q152 146 126 100 Z', label: 'Sartorius', at: [352, 112], opacity: 0.62 });
         S.artery({ x: 322, y: 192, r: 22, label: 'A. fémorale', lx: 400, ly: 196, anchor: 'start', lead: [345, 193] });
         S.vein({ x: 354, y: 240, rx: 26, ry: 17 });
         S.nerve({ x: 288, y: 166, r: 8, label: 'N. saphène', lx: 196, ly: 174, anchor: 'end', lead: [281, 168] });
         S.bone({ path: 'M100 302 Q320 332 560 302' });
         S.target({ x: 292, y: 168, r: 18 });
-        S.needle({ from: [0, 96], to: [280, 166], label: '22 G 80 mm, in-plane' });
-        S.spread({ x: 288, y: 144, rx: 62, ry: 10 });
-        S.spreadPath({ path: 'M252 156 Q234 190 250 228 L272 222 Q258 190 272 162 Z' });
-        S.label({ x: 190, y: 244, text: '5–10 mL', cls: 'lbl-spread', small: true, lead: [246, 216] });
+        S.needle({ from: [0, 100], to: [284, 168], label: '22 G 80 mm, in-plane' });
+        S.spread({ x: 268, y: 180, rx: 44, ry: 18, label: '5–10 mL' });
       },
     },
     {
       id: 'sap-ipbsn', section: 'technique', titre: `Branche infrapatellaire (IPBSN) au condyle médial — bloc sous-cutané`,
-      legende: `Sonde posée sur le **point de Tinel** repéré au doigt, au bord postérieur du tendon du sartorius, au niveau du condyle médial / tubercule de l'adducteur. Le nerf est un fin faisceau sous-cutané de 1–2 mm, souvent divisé en 2–3 rameaux, voisin de la veine grande saphène — qui, elle, se vide à la compression. Aiguille 25 G tangentielle, 2–3 mL.`,
+      legende: `Sonde posée sur le **point de Tinel** repéré au doigt, au bord postérieur du tendon du sartorius, au niveau du condyle médial / tubercule de l'adducteur. Le tronc du saphène reste **postérieur** au tendon ; la **branche infrapatellaire** le contourne (ou le traverse) et croise **en avant**, au-dessus du condyle : c'est là qu'on la bloque. Fin faisceau sous-cutané de 1–2 mm, souvent divisé en 2–3 rameaux, voisin de la veine grande saphène — qui, elle, se vide à la compression. Aiguille 25 G tangentielle, 2–3 mL.`,
       opts: { depth: 3 },
       build: S => {
         S.orient({ left: 'Antérieur (patella)', right: 'Postérieur' }).probeInfo({ plan: 'Transverse, condyle fémoral médial', type: 'in-plane' });

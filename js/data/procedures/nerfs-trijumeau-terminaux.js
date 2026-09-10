@@ -40,7 +40,7 @@ ECHO.register({
     '**Corticoïdes** : **non particulaires exclusivement** (dexaméthasone). Les artères de la face sont des artères terminales anastomosées au réseau ophtalmique — un corticoïde particulaire injecté sous pression dans l\'artère supra-orbitaire ou angulaire peut emboliser vers la rétine. Cette règle ne souffre aucune exception.',
     'Injection **jamais forcée** : une résistance élevée signe une pointe intra-canalaire — retirer, ne pas pousser.',
   ],
-  alternatives: 'Traitement médical de première ligne dans la névralgie essentielle (carbamazépine, oxcarbazépine ; lamotrigine, baclofène en seconde intention) ; en cas d\'échec ou d\'intolérance : décompression vasculaire microchirurgicale, thermocoagulation ou compression par ballonnet du ganglion de Gasser, radiochirurgie stéréotaxique. Ces options relèvent d\'une filière neurochirurgicale et doivent être proposées explicitement — le rôle de l\'algologue est aussi de ne pas retarder l\'adressage. En douleur neuropathique post-traumatique ou post-chirurgicale de la face : traitement topique (lidocaïne 5 %, capsaïcine 8 % hors visage de principe), gabapentinoïdes, antidépresseurs, puis bloc de branche et, si réponse reproductible, PRF ou cryoneurolyse. Ne jamais proposer de **neurolyse chimique** (alcool, phénol) sur une branche faciale sensitive : le risque d\'anesthésie douloureuse et de nécrose cutanée est disproportionné en pathologie bénigne.',
+  alternatives: 'Traitement médical de première ligne dans la névralgie essentielle (carbamazépine, oxcarbazépine ; lamotrigine, baclofène en seconde intention) ; en cas d\'échec ou d\'intolérance : décompression vasculaire microchirurgicale, thermocoagulation ou compression par ballonnet du ganglion de Gasser, radiochirurgie stéréotaxique. Ces options relèvent d\'une filière neurochirurgicale et doivent être proposées explicitement — le rôle de l\'algologue est aussi de ne pas retarder l\'adressage. En douleur neuropathique post-traumatique ou post-chirurgicale de la face : traitement topique (lidocaïne 5 % ; la capsaïcine 8 % n\'est pas applicable au visage), gabapentinoïdes, antidépresseurs, puis bloc de branche et, si réponse reproductible, PRF ou cryoneurolyse. Ne jamais proposer de **neurolyse chimique** (alcool, phénol) sur une branche faciale sensitive : le risque d\'anesthésie douloureuse et de nécrose cutanée est disproportionné en pathologie bénigne.',
 
   anatomie: `Le trijumeau se divise en trois branches : **V1 (ophtalmique)** par la fissure orbitaire supérieure, **V2 (maxillaire)** par le foramen rond vers la **fosse ptérygo-palatine**, **V3 (mandibulaire)** par le foramen ovale vers la **fosse infratemporale**. Chacune donne des branches terminales qui émergent à la face par un foramen repérable à l\'échographie.
 
@@ -71,7 +71,7 @@ Prévenir explicitement de l\'**ecchymose péri-orbitaire** possible après un b
 Foramens de la face : ponction **in-plane, de latéral en médial**, à angle très plat, la pointe abordant l\'ostium tangentiellement. Voie coronoïde : ponction **in-plane à travers la fenêtre de l\'échancrure**, entrée juste en avant du col du condyle, direction antéro-médiale et caudale vers la lame ptérygoïdienne.`,
     sonde: `- **Hockey stick ou linéaire compacte 12–18 MHz** pour les foramens : profondeur **1,5–2,5 cm**, focale à 0,5–1 cm, gain bas (l\'os doit être franchement blanc et l\'interruption corticale lisible).
 - **Beaucoup de gel** et **appui minimal** : le plan cible est à moins d\'1 cm, et toute compression écrase le tissu péri-foraminal.
-- **Doppler couleur à basse PRF systématique** : artère supra-orbitaire, infra-orbitaire, mentonnière, temporale superficielle, maxillaire. L\'artère satellite **confirme** le foramen autant qu\'elle signale le danger.
+- **Doppler couleur systématique, réglé bas débit** : artère supra-orbitaire, infra-orbitaire, mentonnière, temporale superficielle, maxillaire. L\'artère satellite **confirme** le foramen autant qu\'elle signale le danger.
 - Voie coronoïde : sonde **linéaire 6–13 MHz** (ou convexe petit rayon sur morphotype épais), profondeur **5–6 cm**, focale sur la lame ptérygoïdienne, Doppler impératif sur l\'artère maxillaire.
 - Aiguille de très petit calibre (27–30 G) : peu échovisible — travailler à angle plat et s\'aider de l\'**hydrolocalisation** par bolus de 0,1–0,2 mL.`,
   },
@@ -89,7 +89,7 @@ Foramens de la face : ponction **in-plane, de latéral en médial**, à angle tr
   sonoanatomie: [
     { structure: 'Ligne corticale (frontal, maxillaire, mandibule)', aspect: 'Ligne hyperéchogène continue avec cône d\'ombre net', repere: 'Le foramen est son **interruption**' },
     { structure: 'Foramen / échancrure', aspect: 'Solution de continuité de la corticale, contenu hypoéchogène', repere: 'Confirmé par le Doppler ; profondeur 0,4–1,2 cm' },
-    { structure: 'Artère satellite (supra-orbitaire, infra-orbitaire, mentonnière)', aspect: 'Petit signal pulsatile en Doppler couleur à basse PRF', repere: 'Signe le foramen **et** la structure à éviter' },
+    { structure: 'Artère satellite (supra-orbitaire, infra-orbitaire, mentonnière)', aspect: 'Petit signal pulsatile en Doppler couleur réglé bas débit', repere: 'Signe le foramen **et** la structure à éviter' },
     { structure: 'Nerf terminal', aspect: 'Petite structure ovalaire de 1–2 mm, souvent non individualisée en mode B', repere: 'Cible = l\'espace péri-foraminal, pas le nerf lui-même' },
     { structure: 'Muscles peauciers (frontal, orbiculaire, élévateur de la lèvre)', aspect: 'Fines couches musculaires striées entre peau et os', repere: 'Traversés par l\'aiguille ; injecter dessous, au contact osseux' },
     { structure: 'Artère temporale superficielle (auriculo-temporal)', aspect: 'Artère superficielle très pulsatile en avant du tragus', repere: 'Le nerf est **juste en arrière** d\'elle' },
@@ -113,7 +113,7 @@ Foramens de la face : ponction **in-plane, de latéral en médial**, à angle tr
 | Bloc diagnostique d\'une branche | Lidocaïne 1 % ou ropivacaïne 0,2 % | **0,5–1 mL** | Petit volume **délibéré** : au-delà de 2 mL la diffusion couvre les branches voisines et le bloc ne dit plus rien du territoire |
 | Bloc thérapeutique (névralgie post-traumatique, NPZ) | Ropivacaïne 0,2 % + **dexaméthasone 2–4 mg** | 1–2 mL par branche | Corticoïde **non particulaire obligatoire** — artères terminales anastomosées au réseau ophtalmique |
 | Migraine / céphalée (association au bloc grand occipital) | Lidocaïne 1–2 % ou ropivacaïne 0,2 %, ± dexaméthasone | 1–2 mL par site | Schémas publiés sans corticoïde également efficaces ; le corticoïde n\'est pas indispensable |
-| Nerf auriculo-temporal | Ropivacaïne 0,2 % | 1–2 mL | Rester superficiel à l\'artère temporale ; risque de parésie faciale si trop profond |
+| Nerf auriculo-temporal | Ropivacaïne 0,2 % | 1–2 mL | Cible **en arrière** de l\'artère temporale superficielle, dans le plan sous-cutané ; ne pas plonger vers la parotide (tronc du nerf facial) |
 | Nerf maxillaire (V2) ou mandibulaire (V3), voie coronoïde | Ropivacaïne 0,2–0,375 %, ± dexaméthasone 4 mg | **2–4 mL** | Fractionner par 1 mL, aspiration entre chaque ; artère maxillaire à proximité immédiate |
 | Avant PRF / cryoneurolyse | Sérum physiologique ou lidocaïne 1 % | 0,3–0,5 mL | Volume minimal : ne pas déplacer le nerf hors de portée de l\'électrode ou de la sonde cryo |
 
@@ -162,7 +162,7 @@ Foramens de la face : ponction **in-plane, de latéral en médial**, à angle tr
   securite: [
     '**Foramens de la face : faible risque hémorragique** (ASRA-ESRA 2018, sites superficiels et compressibles) ; pas d\'interruption systématique des antiagrégants. **Voie coronoïde / fosse ptérygo-palatine : site profond non compressible longeant l\'artère maxillaire** — non explicitement listée dans ces recommandations, à gérer par prudence comme une procédure de risque au moins intermédiaire (**à confirmer**).',
     '**Corticoïde non particulaire exclusivement.** Règle sans exception à la face.',
-    '**Doppler couleur avant chaque ponction**, à basse PRF : l\'artère satellite localise le foramen et signale le vaisseau à éviter.',
+    '**Doppler couleur avant chaque ponction**, réglé bas débit : l\'artère satellite localise le foramen et signale le vaisseau à éviter.',
     '**Ne jamais engager la pointe dans un foramen ; ne jamais forcer une injection.** Résistance élevée ou décharge électrique = retrait immédiat.',
     'Seringue **Luer-lock de petit volume (1–2 mL)** : elle permet de sentir la pression d\'injection, ce qu\'une seringue de 10 mL ne permet pas.',
     'Protection oculaire pour tout geste sur V1/V2 ; antiseptique non alcoolique au voisinage de l\'œil.',
@@ -260,7 +260,6 @@ Foramens de la face : ponction **in-plane, de latéral en médial**, à angle tr
         S.label({ x: 186, y: 296, text: 'Fosse ptérygo-palatine (V2)', anchor: 'end', cls: 'lbl-region', small: true, lead: [212, 322] });
         S.nerve({ x: 382, y: 334, r: 11 });
         S.label({ x: 402, y: 360, text: 'N. mandibulaire (V3)', anchor: 'start', cls: 'lbl-nerve', small: true, lead: [390, 340] });
-        S.target({ x: 232, y: 330, r: 16 });
         S.needle({ from: [560, 66], to: [246, 326], label: '22–25 G 50–80 mm' });
         S.spread({ x: 226, y: 336, rx: 34, ry: 18, label: '2–4 mL' });
       },

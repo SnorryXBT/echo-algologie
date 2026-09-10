@@ -33,7 +33,7 @@ ECHO.register({
   ],
   contreIndications: [
     'Absolues : refus, infection cutanée ou profonde au point de ponction, allergie vraie aux amino-amides ; pour la toxine : myasthénie et syndromes myasthéniques, grossesse et allaitement, infection au site.',
-    'Relatives : troubles de l\'hémostase — geste **profond et non compressible**, au contact de l\'artère glutéale inférieure : classer en risque **intermédiaire** dans le cadre ASRA-ESRA 2018 et gérer les anticoagulants en conséquence (à l\'inverse des blocs superficiels).',
+    'Relatives : troubles de l\'hémostase. ASRA-ESRA 2018 range explicitement l\'infiltration du piriforme parmi les procédures **à faible risque** (avec les infiltrations de points gâchettes) : pas d\'arrêt systématique des antiagrégants ni des anticoagulants. Mais le site est **profond et non compressible**, au contact de l\'artère glutéale inférieure : chez un patient sous anticoagulant oral, un repérage Doppler soigneux et une discussion au cas par cas restent justifiés — c\'est une prudence clinique, pas une exigence du texte.',
     'Déficit neurologique du membre inférieur préexistant : documenter précisément avant le geste, sous peine de ne plus pouvoir interpréter l\'après.',
     'Patient qui doit conduire ou repartir seul le jour même : le **bloc sciatique moteur transitoire** est une éventualité réelle, pas une complication rare — organiser le retour avant, pas après.',
     'Corticoïde : diabète déséquilibré ; injections répétées dans le même muscle (risque de myopathie et d\'atrophie locale).',
@@ -42,7 +42,7 @@ ECHO.register({
 
   anatomie: `Le **piriforme** naît de la face antérieure du sacrum (S2-S4), sort du bassin par la **grande incisure ischiatique** et se termine par un tendon sur le bord supérieur du **grand trochanter**. Il est rotateur externe hanche en extension et abducteur hanche fléchie — d\'où la manœuvre FAIR (flexion-adduction-rotation interne) qui le met en tension.
 
-Le **nerf sciatique** quitte le bassin par la même incisure. La disposition la plus fréquente est un passage **sous** le piriforme (environ 80–85 % des sujets selon les descriptions classiques — *chiffre à confirmer*), les variantes de Beaton décrivant un nerf qui traverse le muscle, se divise de part et d\'autre du corps musculaire, ou passe au-dessus. Ces variantes sont invoquées comme facteur favorisant, sans qu\'aucune ne soit prouvée comme cause.
+Le **nerf sciatique** quitte le bassin par la même incisure. La disposition la plus fréquente est un passage **sous** le piriforme, nerf non divisé (type A de Beaton : de l\'ordre de **85 à 95 %** des sujets selon les séries anatomiques — *fourchette à confirmer, elle varie beaucoup d\'une série à l\'autre*), les variantes de Beaton décrivant un nerf qui traverse le muscle, se divise de part et d\'autre du corps musculaire, ou passe au-dessus. Ces variantes sont invoquées comme facteur favorisant, sans qu\'aucune ne soit prouvée comme cause.
 
 Autour du nerf, à ne pas oublier : l\'**artère glutéale inférieure** et le nerf glutéal inférieur, qui sortent médialement au nerf sciatique sous le piriforme, le nerf cutané postérieur de la cuisse, le nerf du muscle carré fémoral, et le pédicule pudendal qui contourne l\'épine ischiatique plus en dedans et en bas.
 
@@ -100,7 +100,7 @@ Repérer et marquer au feutre l\'**EIPS**, le **grand trochanter** et la ligne q
 |---|---|---|---|
 | Injection intramusculaire thérapeutique | Ropivacaïne 0,2 % ou lidocaïne 1 % + corticoïde : bétaméthasone 5,7 mg (Diprostène® 1 mL), méthylprednisolone 40 mg (Dépo-Médrol®) ou dexaméthasone 4–8 mg | 5–10 mL | Le corticoïde particulaire est acceptable ici (site musculaire, pas d\'artère terminale) ; la dexaméthasone évite le risque de myopathie locale en cas d\'injections répétées |
 | Bloc péri-sciatique **diagnostique** (sous-piriforme) | Lidocaïne 1–2 % ou ropivacaïne 0,2 %, **sans corticoïde** | 2–3 mL | Petit volume : au-delà, la diffusion perd toute spécificité. Bloc moteur attendu — organiser la sortie du patient |
-| Toxine botulique (**hors AMM**) | OnabotulinumtoxinA (Botox®) : ordre de grandeur **100–200 U** · AbobotulinumtoxinA (Dysport®) : **200–300 U**, reconstituées et diluées selon la RCP | Volume de dilution 2–5 mL, réparti en 2–3 points intramusculaires | *Doses à confirmer sur les protocoles publiés et la RCP avant utilisation* : les schémas varient d\'une équipe à l\'autre et les unités **ne sont pas interchangeables** entre spécialités. Prescription hors AMM à tracer et à expliquer au patient |
+| Toxine botulique (**hors AMM**) | OnabotulinumtoxinA (Botox®) : ordre de grandeur **100–200 U** · AbobotulinumtoxinA (Dysport®) : **200–300 U**, reconstituées et diluées selon la RCP | Volume de dilution 2–5 mL, réparti en 2–3 points intramusculaires | *Doses à confirmer sur les protocoles publiés et la RCP avant utilisation* : les schémas varient d\'une équipe à l\'autre et les unités **ne sont pas interchangeables** (rapport usuel Dysport®/Botox® de l\'ordre de 2,5 à 3 pour 1 — les deux fourchettes ci-dessus ne sont donc pas équipotentes et ne se convertissent pas l\'une dans l\'autre). Prescription hors AMM à tracer et à expliquer au patient |
 | Hydrodissection péri-sciatique | G5 % 5–10 mL ± lidocaïne 1 % | 5–10 mL | Logique de libération des adhérences péri-nerveuses dans le syndrome du muscle profond fessier ; preuve limitée pour cette cible — *à confirmer* |
 
 **Doses maximales à garder en tête** : ropivacaïne 3 mg/kg, bupivacaïne 2–2,5 mg/kg, lidocaïne 4,5 mg/kg (7 mg/kg adrénalinée). Avec 10 mL d\'AL dilué on reste très en deçà, mais ce geste s\'associe souvent à d\'autres blocs dans la même séance : additionner et tracer.
@@ -145,7 +145,7 @@ Les essais contrôlés existent mais sont **de petite taille, anciens et hétér
     'Infection profonde : exceptionnelle, mais le site est profond et mal drainé — asepsie chirurgicale.',
   ],
   securite: [
-    'Geste **profond, non compressible, au contact d\'un tronc nerveux mixte et d\'une artère** : le classer en risque hémorragique **intermédiaire** dans le cadre ASRA-ESRA 2018 et gérer les antithrombotiques en conséquence (à la différence des blocs superficiels de la région).',
+    'Risque hémorragique **faible** au sens d\'ASRA-ESRA 2018 (l\'infiltration du piriforme y figure avec les points gâchettes) — mais site **profond, non compressible, au contact d\'un tronc mixte et de l\'artère glutéale inférieure** : Doppler préalable systématique et prudence individuelle sous anticoagulant oral.',
     'Examen neurologique du membre **documenté avant** le geste : sans cela, tout déficit post-geste est ininterprétable.',
     'Nerf sciatique et artère glutéale inférieure affichés en permanence ; Doppler avant la ponction ; aspiration avant chaque bolus ; injection fractionnée par 2 mL.',
     'Aucune radiofréquence **thermique** sur le nerf sciatique (tronc mixte) : PRF uniquement.',
@@ -175,16 +175,12 @@ Les essais contrôlés existent mais sont **de petite taille, anciens et hétér
   references: [
     { verif: true, auteurs: 'Smith J, Hurdle MF, Locketz AJ, Wisniewski SJ', titre: 'Ultrasound-guided piriformis injection: technique description and verification', revue: 'Archives of Physical Medicine and Rehabilitation', annee: '2006', pmid: '17141652', type: 'technique', note: 'Description princeps validée de la technique échoguidée.' },
     { verif: true, auteurs: 'Finnoff JT, Hurdle MF, Smith J', titre: 'Accuracy of ultrasound-guided versus fluoroscopically guided contrast-controlled piriformis injections: a cadaveric study', revue: 'Journal of Ultrasound in Medicine', annee: '2008;27(8):1157-63', type: 'étude cadavérique', note: '95 % de précision sous échographie contre 30 % sous scopie.' },
-    { verif: false, auteurs: 'Fowler IM, et al.', titre: 'A randomized comparison of the efficacy of 2 techniques for piriformis muscle injection: ultrasound-guided versus nerve stimulator with fluoroscopic guidance', revue: '', annee: '2014', pmid: '24509422', type: 'ECR', note: 'Revue et pagination à confirmer.' },
+    { verif: false, auteurs: 'Fowler IM, et al.', titre: 'A randomized comparison of the efficacy of 2 techniques for piriformis muscle injection: ultrasound-guided versus nerve stimulator with fluoroscopic guidance', revue: 'Regional Anesthesia and Pain Medicine', annee: '2014', type: 'ECR', note: 'Pagination à confirmer.' },
     { verif: true, auteurs: '—', titre: 'Ultrasound-guided injection of the piriformis muscle', revue: 'American Journal of Physical Medicine & Rehabilitation', annee: '2011', type: 'technique', note: 'Auteurs à confirmer.' },
-    { verif: false, auteurs: '—', titre: 'Efficacy of ultrasound-guided piriformis muscle corticosteroid injection versus extracorporeal shockwave therapy in patients with piriformis syndrome: a randomized controlled trial', revue: '', annee: '2025', type: 'ECR', note: 'Revue à confirmer.' },
-    { verif: false, auteurs: 'Childers MK, et al.', titre: 'Botulinum toxin type A use in piriformis muscle syndrome: a pilot study', revue: '', annee: '2002', pmid: '12362115', type: 'étude pilote', note: 'Revue et année à confirmer.' },
-    { verif: false, auteurs: 'Fishman LM, et al.', titre: 'Botulinum neurotoxin type B and physical therapy in the treatment of piriformis syndrome: a dose-finding study', revue: '', annee: '', type: 'étude de dose', note: 'Revue et année à confirmer.' },
-    { verif: false, auteurs: '—', titre: 'Low-dose botulinum toxin type A for the treatment of refractory piriformis syndrome', revue: '', annee: '', pmid: '17461700', type: 'étude', note: 'Revue et année à confirmer.' },
+    { verif: false, auteurs: 'Childers MK, et al.', titre: 'Botulinum toxin type A use in piriformis muscle syndrome: a pilot study', revue: 'American Journal of Physical Medicine & Rehabilitation', annee: '2002', type: 'étude pilote', note: 'Pagination à confirmer.' },
+    { verif: false, auteurs: 'Fishman LM, et al.', titre: 'Botulinum neurotoxin type B and physical therapy in the treatment of piriformis syndrome: a dose-finding study', revue: 'American Journal of Physical Medicine & Rehabilitation', annee: '2004', type: 'étude de dose', note: 'Année et pagination à confirmer.' },
     { verif: false, auteurs: 'Michel F, et al.', titre: 'Le syndrome du muscle piriforme : critères diagnostiques et traitement d\'une série monocentrique', revue: 'Annals of Physical and Rehabilitation Medicine', annee: '2013', type: 'série clinique', note: 'Série française de référence ; titre exact, revue et année à confirmer.' },
-    { verif: false, auteurs: 'Martin HD, Reddy M, Gómez-Hoyos J', titre: 'Deep gluteal syndrome', revue: 'Journal of Hip Preservation Surgery', annee: '2015', type: 'revue', note: 'Cadre nosologique ; revue et année à confirmer.' },
-    { verif: false, auteurs: '—', titre: 'Find the piriformis muscle easily: from anatomical landmark to sonographic target', revue: '', annee: '', pmid: '38264595', type: 'technique', note: 'Revue et année à confirmer.' },
-    { verif: false, auteurs: '—', titre: 'Ultrasound-guided injections for the retrotrochanteric region: a cadaveric investigation', revue: '', annee: '', type: 'étude cadavérique', note: 'Revue et année à confirmer.' },
+    { verif: false, auteurs: 'Martin HD, Reddy M, Gómez-Hoyos J', titre: 'Deep gluteal syndrome', revue: 'Journal of Hip Preservation Surgery', annee: '2015', type: 'revue', note: 'Cadre nosologique du syndrome du muscle profond fessier.' },
     { verif: true, auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco' },
   ],
   videos: [],
@@ -241,9 +237,8 @@ Les essais contrôlés existent mais sont **de petite taille, anciens et hétér
         S.bone({ path: 'M296 366 Q440 356 540 356 Q600 358 640 366', label: 'Ischion', at: [408, 396], ldy: 0, small: true });
         S.artery({ x: 306, y: 302, r: 7, label: 'A. glutéale inf.', lx: 200, ly: 316, anchor: 'end', lead: [300, 303], small: true });
         S.nerve({ x: 434, y: 302, rx: 30, ry: 12, label: 'Nerf sciatique', lx: 528, ly: 262, anchor: 'start', lead: [458, 296], small: true });
-        S.target({ x: 434, y: 284, r: 16 });
         S.needle({ from: [638, 116], to: [462, 284], label: '22 G, pointe dans le plan sous-piriforme' });
-        S.spread({ x: 434, y: 292, rx: 48, ry: 20, label: '2–3 mL' });
+        S.spreadPath({ path: 'M394 308 Q434 262 474 308 Q434 282 394 308 Z', at: [330, 274], label: '2–3 mL en croissant' });
       },
     },
   ],

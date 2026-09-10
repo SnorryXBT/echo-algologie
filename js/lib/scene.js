@@ -89,8 +89,8 @@ window.ECHO = window.ECHO || {};
       <linearGradient id="${id}-shadow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0.92"/><stop offset="1" stop-color="#000" stop-opacity="0.35"/></linearGradient>
       <linearGradient id="${id}-boneg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#cfd6dd"/></linearGradient>
       <filter id="${id}-speckle" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0.75  0 0 0 0 0.78  0 0 0 0 0.82  0 0 0 0.55 0"/></filter>
-      <filter id="${id}-glow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      <filter id="${id}-soft" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.2"/></filter>
+      <filter id="${id}-glow" filterUnits="userSpaceOnUse" x="-20" y="-20" width="${W + 40}" height="${H + 40}"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="${id}-soft" filterUnits="userSpaceOnUse" x="-20" y="-20" width="${W + 40}" height="${H + 40}"><feGaussianBlur stdDeviation="1.2"/></filter>
       <pattern id="${id}-muscle" width="26" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-8)"><path d="M0 4.5 h14" stroke="#cfd5da" stroke-opacity="0.32" stroke-width="1.3" stroke-linecap="round"/></pattern>
       <pattern id="${id}-tendon" width="14" height="4" patternUnits="userSpaceOnUse"><path d="M0 2 h14" stroke="#f2f4f6" stroke-opacity="0.75" stroke-width="1.4"/></pattern>
       <pattern id="${id}-nerve" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="2.4" fill="#0d1115"/><circle cx="3.5" cy="3.5" r="2.9" fill="none" stroke="#e8edf2" stroke-opacity="0.9" stroke-width="1"/></pattern>

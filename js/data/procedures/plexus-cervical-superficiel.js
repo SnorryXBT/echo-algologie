@@ -238,7 +238,7 @@ En pratique de douleur chronique, préférer l\'intermédiaire pour le bloc thé
         S.vein({ x: 176, y: 282, rx: 30, ry: 18 });
         S.needle({ from: [640, 90], to: [384, 140], label: '25 G, angle 10–20°' });
         /* lentille interfasciale percée autour du bouquet de branches, qui reste visible */
-        S.spreadPath({ path: 'M316 150 A84 30 0 1 1 484 150 A84 30 0 1 1 316 150 Z M337 140 A34 17 0 1 0 405 140 A34 17 0 1 0 337 140 Z', at: [214, 178], label: '5–10 mL' });
+        S.spreadPath({ path: 'M316 150 A84 30 0 1 1 484 150 A84 30 0 1 1 316 150 Z M337 140 A34 17 0 1 0 405 140 A34 17 0 1 0 337 140 Z', at: [424, 202], label: '5–10 mL' });
       },
     },
   ],
