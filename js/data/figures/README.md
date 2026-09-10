@@ -22,3 +22,21 @@ ECHO.figures['nerf-suprascapulaire'] = [
 Règles : images libres seulement (Gray 1918 domaine public ; articles CC BY de PMC ; Radiopaedia CC BY-NC-SA
 pour usage privé ; Servier Medical Art CC BY 4.0) ; `credit` et `source` obligatoires ; étiquettes en
 français ; 1 à 3 figures « anatomie », 1 « installation », 0 à 2 « echo » par fiche.
+
+## Outils (chantier illustrations)
+
+- `node scripts/gray.js --info 810 203` — taille et description Commons d'une planche ; `node scripts/gray.js <id> 810 203`
+  télécharge dans `img/<id>/gray-0810.png`. Les planches Commons font ≈ 500 px de large : crop modéré (≥ 50 % de l'image)
+  sinon flou.
+- `node scripts/echo-search.js "suprascapular nerve block ultrasound" 10` — articles Europe PMC en libre accès sous licence
+  CC (préférer CC BY ; BY-NC / BY-NC-ND acceptables pour ce mémo privé, à mentionner tel quel dans `credit`), avec leurs
+  figures échographiques et légendes. `node scripts/echo-search.js --get PMC13380194 gr2 <id> 1` → `img/<id>/echo-1.jpg`,
+  et imprime les lignes `credit` / `source` à recopier. Toujours lire l'image (Read) avant d'étiqueter : ne pas dupliquer
+  les annotations déjà présentes, décrire dans `legende` les abréviations en langue étrangère.
+- Figure d'installation : entrée `type: 'installation'` avec `src: 'img/<id>/installation.svg'` et un champ `spec`
+  (voir en-tête de `scripts/installation.js`), puis `node scripts/installation.js <id>`. Silhouettes disponibles dans
+  `img/_silhouettes/` (viewBox 400×300, trait `#1f2937` 2 px, fond transparent) ; en créer une si la région manque,
+  même style, nom en kebab-case (`epaule-anterieure`, `coude-lateral`, `poignet-palmaire`…).
+- Contrôle : `node scripts/build-index.js` puis `NODE_PATH=$(npm root -g) node scripts/shot.js '#/fiche/<id>' out.png light '.fig' <n>`
+  pour la n-ième figure de la fiche (ordre : anatomie, installation, echo) ; lire chaque capture et corriger les
+  étiquettes (x, y = point désigné ; dx, dy = décalage du texte) jusqu'à ce que chaque point soit sur la bonne structure.

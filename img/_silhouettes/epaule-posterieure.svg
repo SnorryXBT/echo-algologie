@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Épaule droite vue de dos (patient assis) : tête en haut, bras du côté droit de l'image -->
+  <path d="M124,58 C124,26 176,26 176,58 C176,84 164,96 150,96 C136,96 124,84 124,58 Z"/>
+  <path d="M138,94 L134,120"/><path d="M162,94 L168,118"/>
+  <path d="M168,118 C224,120 292,132 340,152"/>
+  <path d="M134,120 C96,122 62,132 34,148 C22,196 16,248 16,300"/>
+  <path d="M340,152 C362,172 372,220 366,300"/>
+  <path d="M300,196 C308,234 308,264 306,300"/>
+  <path d="M151,122 L146,300" stroke-dasharray="5 6" stroke-width="1.3" opacity=".6"/>
+  <g stroke-width="1.3" stroke-dasharray="4 4" opacity=".7">
+    <path d="M206,148 L194,280 L304,182 L326,158 Z"/>
+    <path d="M206,166 L326,158"/>
+  </g>
+</svg>
