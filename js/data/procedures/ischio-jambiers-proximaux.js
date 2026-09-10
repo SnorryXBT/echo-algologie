@@ -176,15 +176,17 @@ Objectif : convertir une tendinopathie dégénérative chronique en réponse cic
 - **Conclusion honnête** : c’est l’une des fiches où l’écart est le plus grand entre la fréquence du geste en pratique et la solidité des données qui le soutiennent. La prudence technique y compte plus que la promesse d’efficacité. *Références à confirmer lors de la passe de vérification bibliographique.*`,
 
   references: [
-    { auteurs: 'Zissen MH, Wallace G, Stevens KJ, Fredericson M, Beaulieu CF', titre: 'High hamstring tendinopathy: MRI and ultrasound imaging and therapeutic efficacy of percutaneous corticosteroid injection', revue: 'American Journal of Roentgenology', annee: '2010', type: 'série rétrospective', verif: false },
-    { auteurs: 'Cacchio A, Rompe JD, Furia JP, Susi P, Santilli V, De Paulis F', titre: 'Shockwave therapy for the treatment of chronic proximal hamstring tendinopathy in professional athletes', revue: 'American Journal of Sports Medicine', annee: '2011', type: 'ECR', verif: false },
-    { auteurs: 'Fredericson M, Moore W, Guillet M, Beaulieu C', titre: 'High hamstring tendinopathy in runners: meeting the challenges of diagnosis, treatment, and rehabilitation', revue: 'The Physician and Sportsmedicine', annee: '2005', type: 'revue', verif: false },
-    { auteurs: 'Wetzel RJ, Patel RM, Terry MA', titre: 'Platelet-rich plasma as an effective treatment for proximal hamstring injuries', revue: 'Orthopedics', annee: '2013', type: 'série', verif: false },
-    { auteurs: 'Miller SL, Gill J, Webb GR', titre: 'The proximal origin of the hamstrings and surrounding anatomy encountered during repair', revue: 'Journal of Bone and Joint Surgery (American volume)', annee: '2007', type: 'anatomie', verif: false, note: 'Rapports du tendon conjoint et du nerf sciatique à la tubérosité ischiatique.' },
-    { auteurs: 'Goom TSH, Malliaras P, Reiman MP, Purdam CR', titre: 'Proximal hamstring tendinopathy: clinical aspects of assessment and management', revue: 'Journal of Orthopaedic and Sports Physical Therapy', annee: '2016', type: 'revue', verif: false, note: 'Base du programme de charge progressive proposé au patient.' },
+    { auteurs: 'Zissen MH, Wallace G, Stevens KJ, Fredericson M, Beaulieu CF', titre: 'High hamstring tendinopathy: MRI and ultrasound imaging and therapeutic efficacy of percutaneous corticosteroid injection', revue: 'American Journal of Roentgenology', annee: '2010', doi: '10.2214/AJR.09.3674', type: 'série rétrospective', verif: true },
+    { auteurs: 'Cacchio A, Rompe JD, Furia JP, Susi P, Santilli V, De Paulis F', titre: 'Shockwave therapy for the treatment of chronic proximal hamstring tendinopathy in professional athletes', revue: 'American Journal of Sports Medicine', annee: '2011', doi: '10.1177/0363546510379324', type: 'ECR', verif: true },
+    { auteurs: 'Fredericson M, Moore W, Guillet M, Beaulieu C', titre: 'High hamstring tendinopathy in runners: meeting the challenges of diagnosis, treatment, and rehabilitation', revue: 'The Physician and Sportsmedicine', annee: '2005', doi: '10.1080/23263660.2005.11675757', type: 'revue', verif: true },
+    { auteurs: 'Wetzel RJ, Patel RM, Terry MA', titre: 'Platelet-rich plasma as an effective treatment for proximal hamstring injuries', revue: 'Orthopedics', annee: '2013', doi: '10.3928/01477447-20121217-20', type: 'série', verif: true },
+    { auteurs: 'Miller SL, Gill J, Webb GR', titre: 'The proximal origin of the hamstrings and surrounding anatomy encountered during repair', revue: 'Journal of Bone and Joint Surgery (American volume)', annee: '2007', url: 'https://www.jbjs.org/reader.php?rsuite_id=1034666', type: 'anatomie', verif: true, note: 'Rapports du tendon conjoint et du nerf sciatique à la tubérosité ischiatique.' },
+    { auteurs: 'Goom TSH, Malliaras P, Reiman MP, Purdam CR', titre: 'Proximal hamstring tendinopathy: clinical aspects of assessment and management', revue: 'Journal of Orthopaedic and Sports Physical Therapy', annee: '2016', doi: '10.2519/jospt.2016.5986', type: 'revue', verif: true, note: 'Base du programme de charge progressive proposé au patient.' },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'recommandation', verif: true },
   ],
-  videos: [],
+  videos: [
+    { titre: '3D How To: Ultrasound Guided Injection of the Proximal Hamstring', source: 'YouTube (SonoSite)', url: 'https://www.youtube.com/watch?v=33KIHnD9si0', note: 'Animation 3D et échographie : infiltration échoguidée de l\'insertion proximale des ischio-jambiers.' },
+  ],
 
   scenes: [
     {

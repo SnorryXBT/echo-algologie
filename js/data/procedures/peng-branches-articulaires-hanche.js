@@ -190,15 +190,17 @@ Ces cibles étant définies par des **repères osseux**, la dénervation de hanc
 - **Seuil de 50 % au bloc test** : jamais validé formellement pour la hanche ; repris par analogie avec les branches médiales lombaires et les nerfs géniculés. *Extrapolation assumée.*`,
 
   references: [
-    { auteurs: 'Girón-Arango L, Peng PWH, Chin KJ, Brull R, Perlas A', titre: 'Pericapsular nerve group (PENG) block for hip fracture', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', type: 'description technique', verif: false },
-    { auteurs: 'Short AJ, Barnett JJG, Gofeld M, et al.', titre: 'Anatomic study of innervation of the anterior hip capsule: implication for image-guided intervention', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', type: 'anatomie', verif: false },
-    { auteurs: 'Tran J, Agur A, Peng P', titre: 'Anatomical study of the innervation of anterior knee joint capsule: implication for image-guided intervention', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', type: 'anatomie', verif: false, note: 'Même équipe, méthodologie transposée ; cité pour la logique de cartographie des branches articulaires.' },
-    { auteurs: 'Kawaguchi M, Hashizume K, Iwata T, Furuya H', titre: 'Percutaneous radiofrequency lesioning of sensory branches of the obturator and femoral nerves for the treatment of hip joint pain', revue: 'Regional Anesthesia and Pain Medicine', annee: '2001', type: 'série', verif: false },
-    { auteurs: 'Locher S, Burmeister H, Böhlen T, et al.', titre: 'Radiological anatomy of the obturator nerve and its articular branches: basis to develop a method of radiofrequency denervation for hip joint pain', revue: 'Pain Medicine', annee: '2008', type: 'anatomie', verif: false },
-    { auteurs: 'Birnbaum K, Prescher A, Hessler S, Heller KD', titre: 'The sensory innervation of the hip joint — an anatomical study', revue: 'Surgical and Radiologic Anatomy', annee: '1997', type: 'anatomie', verif: false, note: 'Étude cadavérique classique de l’innervation sensitive de la hanche, antérieure aux travaux de Short.' },
+    { auteurs: 'Girón-Arango L, Peng PWH, Chin KJ, Brull R, Perlas A', titre: 'Pericapsular nerve group (PENG) block for hip fracture', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', doi: '10.1097/AAP.0000000000000847', type: 'description technique', verif: true },
+    { auteurs: 'Short AJ, Barnett JJG, Gofeld M, et al.', titre: 'Anatomic study of innervation of the anterior hip capsule: implication for image-guided intervention', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', pmid: '29140962', type: 'anatomie', verif: true },
+    { auteurs: 'Tran J, Peng PWH, Lam K, Baig E, Agur AMR, Gofeld M', titre: 'Anatomical study of the innervation of anterior knee joint capsule: implication for image-guided intervention', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', pmid: '29557887', type: 'anatomie', verif: true, note: 'Même équipe, méthodologie transposée ; cité pour la logique de cartographie des branches articulaires.' },
+    { auteurs: 'Kawaguchi M, Hashizume K, Iwata T, Furuya H', titre: 'Percutaneous radiofrequency lesioning of sensory branches of the obturator and femoral nerves for the treatment of hip joint pain', revue: 'Regional Anesthesia and Pain Medicine', annee: '2001', url: 'https://www.wikidata.org/wiki/Q39412971', type: 'série', verif: true },
+    { auteurs: 'Locher S, Burmeister H, Böhlen T, et al.', titre: 'Radiological anatomy of the obturator nerve and its articular branches: basis to develop a method of radiofrequency denervation for hip joint pain', revue: 'Pain Medicine', annee: '2008', pmid: '18366509', type: 'anatomie', verif: true },
+    { auteurs: 'Birnbaum K, Prescher A, Hessler S, Heller KD', titre: 'The sensory innervation of the hip joint — an anatomical study', revue: 'Surgical and Radiologic Anatomy', annee: '1997', doi: '10.1007/BF01628504', type: 'anatomie', verif: true, note: 'Étude cadavérique classique de l’innervation sensitive de la hanche, antérieure aux travaux de Short.' },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'recommandation', verif: true, note: 'Antérieur à la description du PENG : ce bloc n’y figure pas, la classification retenue dans la fiche est une extrapolation.' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Ultrasound-Guided PENG Block | Anatomy, Sonoanatomy & Technique', source: 'YouTube', url: 'https://www.youtube.com/watch?v=mvqvDk0N0w0', note: 'Anatomie, sonoanatomie et technique du bloc PENG.' },
+  ],
 
   scenes: [
     {

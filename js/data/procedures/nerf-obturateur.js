@@ -185,16 +185,18 @@ En pratique, chez un candidat à la dénervation : **PENG 15 mL + bloc obturateu
 - *L’ensemble de ces références est à confirmer lors de la passe de vérification bibliographique.*`,
 
   references: [
-    { auteurs: 'Taha AM', titre: 'Brief reports: ultrasound-guided obturator nerve block — a proximal interfascial technique', revue: 'Anesthesia and Analgesia', annee: '2012', type: 'technique', verif: false },
-    { auteurs: 'Yoshida T, Nakamoto T, Kamibayashi T', titre: 'Ultrasound-guided obturator nerve block: a focused review on anatomy and updated techniques', revue: 'BioMed Research International', annee: '2017', type: 'revue', verif: false },
-    { auteurs: 'Short AJ, Barnett JJG, Gofeld M, et al.', titre: 'Anatomic study of innervation of the anterior hip capsule: implication for image-guided intervention', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', type: 'anatomie', verif: false },
-    { auteurs: 'Locher S, Burmeister H, Böhlen T, et al.', titre: 'Radiological anatomy of the obturator nerve and its articular branches: basis to develop a method of radiofrequency denervation for hip joint pain', revue: 'Pain Medicine', annee: '2008', type: 'anatomie', verif: false },
-    { auteurs: 'Kawaguchi M, Hashizume K, Iwata T, Furuya H', titre: 'Percutaneous radiofrequency lesioning of sensory branches of the obturator and femoral nerves for the treatment of hip joint pain', revue: 'Regional Anesthesia and Pain Medicine', annee: '2001', type: 'série', verif: false },
-    { auteurs: 'Choquet O, Capdevila X, Bennourine K, Feugeas JL, Bringuier-Branchereau S, Manelli JC', titre: 'A new inguinal approach for the obturator nerve block: anatomical and randomized clinical studies', revue: 'Anesthesiology', annee: '2005', type: 'ECR / anatomie', verif: false },
-    { auteurs: 'Sinha SK, Abrams JH, Houle TT, Weller RS', titre: 'Ultrasound-guided obturator nerve block: an interfascial injection approach without nerve stimulation', revue: 'Regional Anesthesia and Pain Medicine', annee: '2009', type: 'technique', verif: false },
+    { auteurs: 'Taha AM', titre: 'Brief reports: ultrasound-guided obturator nerve block — a proximal interfascial technique', revue: 'Anesthesia and Analgesia', annee: '2012', doi: '10.1213/ane.0b013e318237fb40', type: 'technique', verif: true },
+    { auteurs: 'Yoshida T, Nakamoto T, Kamibayashi T', titre: 'Ultrasound-guided obturator nerve block: a focused review on anatomy and updated techniques', revue: 'BioMed Research International', annee: '2017', doi: '10.1155/2017/7023750', type: 'revue', verif: true },
+    { auteurs: 'Short AJ, Barnett JJG, Gofeld M, et al.', titre: 'Anatomic study of innervation of the anterior hip capsule: implication for image-guided intervention', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', pmid: '29140962', type: 'anatomie', verif: true },
+    { auteurs: 'Locher S, Burmeister H, Böhlen T, et al.', titre: 'Radiological anatomy of the obturator nerve and its articular branches: basis to develop a method of radiofrequency denervation for hip joint pain', revue: 'Pain Medicine', annee: '2008', pmid: '18366509', type: 'anatomie', verif: true },
+    { auteurs: 'Kawaguchi M, Hashizume K, Iwata T, Furuya H', titre: 'Percutaneous radiofrequency lesioning of sensory branches of the obturator and femoral nerves for the treatment of hip joint pain', revue: 'Regional Anesthesia and Pain Medicine', annee: '2001', url: 'https://www.wikidata.org/wiki/Q39412971', type: 'série', verif: true },
+    { auteurs: 'Choquet O, Capdevila X, Bennourine K, Feugeas JL, Bringuier-Branchereau S, Manelli JC', titre: 'A new inguinal approach for the obturator nerve block: anatomical and randomized clinical studies', revue: 'Anesthesiology', annee: '2005', doi: '10.1097/00000542-200512000-00020', type: 'ECR / anatomie', verif: true },
+    { auteurs: 'Sinha SK, Abrams JH, Houle TT, Weller RS', titre: 'Ultrasound-guided obturator nerve block: an interfascial injection approach without nerve stimulation', revue: 'Regional Anesthesia and Pain Medicine', annee: '2009', pmid: '19587627', type: 'technique', verif: true },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'recommandation', verif: true },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Obturator Nerve Block', source: 'USRA', url: 'https://usra.ca/regional-anesthesia/specific-blocks/lower-limb/obturatornerve.php', note: 'Page technique USRA : sonoanatomie et bloc interfascial échoguidé du nerf obturateur.' },
+  ],
 
   scenes: [
     {
