@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Cheville droite, face latérale : jambe en haut à droite, pied vers la gauche ; malléole latérale, tendon d'Achille et nerf sural en pointillés -->
+  <path d="M280,0 C278,60 282,120 288,170 C292,200 304,222 316,238 C330,256 340,270 342,286 L342,300"/>
+  <path d="M188,0 C190,60 188,110 186,150 C184,176 188,194 200,208"/>
+  <path d="M200,208 C180,224 140,238 90,244 C60,248 38,256 28,270 L26,300"/>
+  <path d="M26,300 L342,300" stroke-width="1" opacity=".4"/>
+  <g stroke-width="1.3" stroke-dasharray="4 4" opacity=".7">
+    <path d="M228,150 C228,130 274,130 274,150 C274,176 262,200 250,204 C238,200 228,176 228,150 Z"/>
+    <path d="M290,20 C292,80 292,150 298,220"/>
+    <path d="M262,60 C270,120 276,180 282,232"/>
+    <path d="M230,206 C210,214 186,220 160,224"/>
+  </g>
+</svg>

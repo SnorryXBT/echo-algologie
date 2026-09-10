@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Genou et jambe droits vus de dehors (patient en décubitus latéral ou dorsal, genou fléchi) : cuisse en haut à gauche, jambe vers le bas à droite ; tête de la fibula et nerf fibulaire commun en pointillés -->
+  <path d="M0,60 C60,50 120,52 170,72 C200,84 222,104 236,130"/>
+  <path d="M0,168 C50,166 100,160 140,170 C168,178 182,196 196,224"/>
+  <path d="M236,130 C260,160 290,210 316,300"/>
+  <path d="M196,224 C214,244 232,268 244,300"/>
+  <g stroke-width="1.3" stroke-dasharray="4 4" opacity=".7">
+    <path d="M150,84 C150,68 200,66 202,84 C204,104 190,124 176,126 C160,124 148,102 150,84 Z"/>
+    <path d="M198,178 C198,166 224,164 226,178 C228,192 218,204 212,206 C204,204 196,190 198,178 Z"/>
+    <path d="M170,150 C186,158 200,166 212,178 C222,192 234,200 250,204"/>
+  </g>
+</svg>

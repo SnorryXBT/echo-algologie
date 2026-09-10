@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Cuisse droite vue de face, patient en décubitus dorsal : pli inguinal en haut, genou en bas ; fémur et sartorius en pointillés -->
+  <path d="M96,0 C86,40 82,90 88,150 C94,210 100,250 104,300"/>
+  <path d="M312,0 C322,40 326,90 318,150 C310,210 302,250 296,300"/>
+  <path d="M80,30 C140,54 210,62 300,30" stroke-width="1.6" opacity=".8"/>
+  <g stroke-width="1.3" stroke-dasharray="4 4" opacity=".7">
+    <circle cx="86" cy="26" r="9"/>
+    <path d="M110,42 C160,110 230,170 250,300"/>
+    <path d="M300,44 C270,60 250,130 230,300 M310,44 C282,60 262,130 246,300"/>
+    <path d="M184,40 L184,60"/>
+  </g>
+</svg>
