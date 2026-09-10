@@ -84,7 +84,7 @@ Ponction **de latéral en médial, dans le plan** : on aborde le cordon par son 
     { structure: 'Cordon spermatique / ligament rond', aspect: 'Ovale de 1,5–2,5 cm à contenu hétérogène (homme) ; structure fusiforme de 3–6 mm (femme)', repere: 'Entre tubercule pubien et milieu du ligament inguinal' },
     { structure: 'Canal déférent', aspect: 'Tube à paroi épaisse hyperéchogène, lumière fine, non compressible, sans Doppler', repere: 'Dans le cordon ; à ne pas confondre avec un vaisseau' },
     { structure: 'Plexus pampiniforme', aspect: 'Lacis de petites structures anéchogènes, compressibles, flux veineux lent, dilatées au Valsalva', repere: 'Majorité du volume du cordon' },
-    { structure: 'Artère testiculaire', aspect: 'Petit vaisseau pulsatile central', repere: '**Vascularisation terminale du testicule** — interdit tout corticoïde particulaire' },
+    { structure: 'Artère testiculaire', aspect: 'Petit vaisseau pulsatile central', repere: 'Assure l\u2019essentiel de la vascularisation testiculaire ; ses anastomoses avec les artères crémastérique et déférentielle sont **inconstantes et insuffisantes** — d\u2019où l\u2019interdit du corticoïde particulaire et de l\u2019adrénaline' },
     { structure: 'Artère spermatique externe (crémastérique)', aspect: 'Signal Doppler pulsatile plaqué en postéro-latéral du cordon', repere: 'Le repère de la branche génitale' },
     { structure: 'Branche génitale du génito-fémoral', aspect: 'Ovale hyperéchogène de 1–2 mm, souvent non individualisé', repere: 'Face postéro-latérale du cordon, contre l’artère spermatique externe' },
     { structure: 'Vaisseaux épigastriques inférieurs', aspect: 'Artère et deux veines, en Doppler, plus profonds et plus latéraux', repere: 'Bordent l’anneau inguinal profond en dedans — limite de progression de l’aiguille' },
@@ -212,8 +212,8 @@ C’est dans l’**orchialgie chronique post-chirurgicale** que les données son
         S.vein({ x: 378, y: 166, rx: 10, ry: 8 });
         S.vein({ x: 336, y: 186, rx: 11, ry: 8, label: 'Plexus pampiniforme', lx: 300, ly: 226, anchor: 'middle', small: true, lead: [334, 194] });
         S.artery({ x: 300, y: 176, r: 7, label: 'A. testiculaire', lx: 150, ly: 190, anchor: 'end', small: true, lead: [293, 176] });
-        S.nerve({ x: 418, y: 200, r: 7, label: 'Branche génitale', lx: 470, ly: 252, anchor: 'start', small: true, lead: [424, 205] });
-        S.artery({ x: 440, y: 210, r: 5, label: 'A. spermatique externe', lx: 470, ly: 276, anchor: 'start', small: true, lead: [445, 214] });
+        S.nerve({ x: 436, y: 206, r: 7, label: 'Branche génitale', lx: 486, ly: 252, anchor: 'start', small: true, lead: [443, 212] });
+        S.artery({ x: 458, y: 216, r: 5, label: 'A. spermatique externe', lx: 492, ly: 282, anchor: 'start', small: true, lead: [463, 221] });
         S.fascia({ points: [[0, 244], [200, 240], [460, 244], [640, 238]], width: 1.6, opacity: 0.75 });
         S.artery({ x: 560, y: 268, r: 7, label: 'Vx épigastriques inf.', lx: 560, ly: 306, anchor: 'middle', small: true, lead: [560, 276] });
         S.bone({ path: 'M0 330 Q90 300 190 328', label: 'Tubercule pubien', at: [96, 356], small: true, ldy: 0 });
@@ -234,14 +234,14 @@ C’est dans l’**orchialgie chronique post-chirurgicale** que les données son
         S.vein({ x: 378, y: 166, rx: 10, ry: 8 });
         S.vein({ x: 336, y: 186, rx: 11, ry: 8 });
         S.artery({ x: 300, y: 176, r: 7, label: 'A. testiculaire\n(jamais de particulaire)', lx: 206, ly: 258, anchor: 'middle', small: true, lead: [296, 184] });
-        S.nerve({ x: 418, y: 200, r: 7 });
-        S.artery({ x: 440, y: 210, r: 5 });
+        S.nerve({ x: 436, y: 206, r: 7 });
+        S.artery({ x: 458, y: 216, r: 5 });
         S.fascia({ points: [[0, 244], [200, 240], [460, 244], [640, 238]], width: 1.6, opacity: 0.75 });
         S.artery({ x: 560, y: 268, r: 7 });
         S.bone({ path: 'M0 330 Q90 300 190 328' });
-        S.target({ x: 424, y: 203, r: 24 });
-        S.needle({ from: [640, 106], to: [462, 194], label: '25 G 40 mm' });
-        S.spread({ x: 412, y: 208, rx: 56, ry: 24, label: '2–4 mL' });
+        S.target({ x: 446, y: 210, r: 26 });
+        S.needle({ from: [640, 106], to: [468, 212], label: '25 G 40 mm' });
+        S.spread({ x: 474, y: 231, rx: 50, ry: 13, label: '2–4 mL en croissant' });
         S.label({ x: 300, y: 372, text: 'Rester CONTRE le cordon, jamais dedans', cls: 'lbl-target', small: true, anchor: 'middle' });
       },
     },

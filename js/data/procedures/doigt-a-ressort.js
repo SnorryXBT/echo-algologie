@@ -226,7 +226,7 @@ Résultats : les séries prospectives rapportent des taux de succès **élevés,
           S.label({ x: 112, y: 104, text: 'Nodule du fléchisseur', cls: 'lbl-tendon', small: true, lead: [170, 152] });
           S.label({ x: 528, y: 184, text: 'Fléchisseurs (FCS + FCP)', cls: 'lbl-tendon', small: true });
           S.label({ x: 328, y: 296, text: 'Interligne MCP', cls: 'lbl-bone', small: true, lead: [328, 250] });
-          S.label({ x: 626, y: 220, text: 'Poulie A2 en aval :\nlimite à ne jamais franchir', cls: 'lbl-lig', anchor: 'end', small: true, lead: [560, 142] });
+          S.label({ x: 612, y: 236, text: 'Poulie A2 en aval :\nlimite à ne jamais franchir', cls: 'lbl-lig', anchor: 'end', small: true, lead: [560, 142] });
         },
       },
       {
@@ -236,7 +236,7 @@ Résultats : les séries prospectives rapportent des taux de succès **élevés,
         build: S => {
           S.orient({ left: 'Radial', right: 'Ulnaire' }).probeInfo({ plan: 'Transverse sur la tête métacarpienne', type: 'in-plane' });
           S.skin({ thickness: 7, fatBelow: 16 });
-          S.bone({ path: 'M100 340 Q320 184 540 340', label: 'Tête métacarpienne', at: [320, 366], ldy: 0, small: true });
+          S.bone({ path: 'M-20 372 Q320 176 660 372', label: 'Tête métacarpienne', at: [320, 372], ldy: 0, small: true });
           S.ligament({ path: 'M200 240 Q320 76 440 240 L440 254 Q320 90 200 254 Z' });
           S.tendon({ x: 320, y: 196, rx: 62, ry: 18 });
           S.tendon({ x: 320, y: 232, rx: 54, ry: 20 });
@@ -262,10 +262,10 @@ Résultats : les séries prospectives rapportent des taux de succès **élevés,
           S.orient({ left: 'Proximal (paume)', right: 'Distal (doigt)' }).probeInfo({ plan: 'Longitudinal dans l\'axe du doigt', type: 'in-plane' });
           baseLong(S, false);
           S.label({ x: 116, y: 112, text: 'Poulie A1', cls: 'lbl-lig', small: true, lead: [254, 130] });
-          S.label({ x: 626, y: 220, text: 'A2 : limite distale absolue', cls: 'lbl-lig', anchor: 'end', small: true, lead: [560, 140] });
+          S.label({ x: 616, y: 306, text: 'A2 : limite distale absolue', cls: 'lbl-lig', anchor: 'end', small: true, lead: [566, 142] });
           S.label({ x: 148, y: 330, text: 'Tête métacarpienne', cls: 'lbl-bone', small: true });
-          S.needle({ from: [636, 152], to: [262, 152], label: '18–21 G, biseau dans l\'axe, entre poulie et tendon', delay: 0.2, dur: 1.2 });
-          S.arrow({ from: [300, 96], to: [420, 96], text: 'Va-et-vient longitudinal' });
+          S.needle({ from: [636, 152], to: [262, 152], label: '18–21 G, entre poulie et tendon', delay: 0.2, dur: 1.2 });
+          S.arrow({ from: [288, 106], to: [412, 106], text: 'Va-et-vient longitudinal' });
         },
       },
     ],

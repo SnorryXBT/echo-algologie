@@ -106,7 +106,7 @@ Ponction **de latéral en médial, dans le plan** : la pointe progresse depuis l
 | Infiltration test diagnostique | Lidocaïne 1 % (ou 2 %) | **5–10 mL** | C’est le protocole validé contre placebo : le critère est ≥ 50 % de réduction de la douleur **à la palpation** à 15–20 min. Faire un seul niveau à la fois, sinon on ne sait plus ce qu’on a testé |
 | Infiltration thérapeutique | Lidocaïne 1 % ou ropivacaïne 0,2 % + méthylprednisolone 20–40 mg, ou bétaméthasone 5,7 mg, ou dexaméthasone 4–8 mg | 5–10 mL | Site **non artériel terminal** : particulaire acceptable. Sur une paroi maigre, préférer une dose faible ou la dexaméthasone (atrophie et dépigmentation visibles sur l’abdomen) |
 | Série d’infiltrations | Même schéma, répété à 2–4 semaines | 5–10 mL | Une part notable des patients répond à une **série de 2 à 3** infiltrations plutôt qu’à une seule. Au-delà de 3–4 sans effet durable, changer de stratégie plutôt que de continuer |
-| Neurolyse chimique | Phénol 5–6 % ou alcool absolu, après bloc test positif | 1–3 mL | Protocole décrit par l’équipe hollandaise. Petit volume, contact strict, jamais à l’aveugle. Risque de névrite de désafférentation à annoncer |
+| Neurolyse chimique | Phénol 5–6 % ou alcool absolu, après bloc test positif | 1–3 mL | Étape intermédiaire décrite entre infiltrations et chirurgie (*concentrations et protocole exact à confirmer sur la source*). Petit volume, contact strict, jamais à l’aveugle, jamais sous la ligne arquée sans certitude sur la position du péritoine. Risque de névrite de désafférentation à annoncer |
 | Hydrodissection | Dextrose 5 % ± lidocaïne 0,5 % | 5–10 mL | Ouvrir le canal fibreux sans corticoïde ; répétable. Aucune preuve directe dans l’ACNES — à présenter comme tel |
 | Avant PRF | Lidocaïne 1 % | 1–2 mL sur le trajet | Ne pas noyer la cible |
 
@@ -210,8 +210,8 @@ Message opérationnel : **poser la question chirurgicale après 2 à 3 infiltrat
         S.muscle({ path: 'M462 100 L640 92 L640 132 L466 138 Z', label: 'Oblique externe', at: [566, 116], opacity: 0.42, small: true });
         S.muscle({ path: 'M466 138 L640 132 L640 172 L470 178 Z', label: 'Oblique interne', at: [566, 156], opacity: 0.5, small: true });
         S.muscle({ path: 'M470 178 L640 172 L640 210 L472 214 Z', label: 'Transverse', at: [566, 194], opacity: 0.4, small: true });
-        S.artery({ x: 322, y: 194, r: 6 });
-        S.vein({ x: 344, y: 196, rx: 8, ry: 6, label: 'Vaisseaux épigastriques', lx: 300, ly: 268, anchor: 'middle', small: true, lead: [332, 202] });
+        S.artery({ x: 150, y: 194, r: 6 });
+        S.vein({ x: 174, y: 196, rx: 8, ry: 6, label: 'Vaisseaux épigastriques', lx: 178, ly: 268, anchor: 'middle', small: true, lead: [166, 202] });
         S.nerve({ x: 392, y: 86, r: 7, label: 'Perforation de la gaine antérieure —\nsiège du piégeage', lx: 250, ly: 116, anchor: 'middle', small: true, lead: [385, 88] });
         S.nerve({ x: 524, y: 176, r: 6, label: 'N. intercostal (plan TAP)', lx: 560, ly: 300, anchor: 'middle', small: true, lead: [528, 182] });
         S.fascia({ points: [[0, 226], [300, 228], [640, 222]], width: 1.5, opacity: 0.8 });
@@ -235,16 +235,17 @@ Message opérationnel : **poser la question chirurgicale après 2 à 3 infiltrat
         S.muscle({ path: 'M462 100 L640 92 L640 132 L466 138 Z', opacity: 0.42 });
         S.muscle({ path: 'M466 138 L640 132 L640 172 L470 178 Z', opacity: 0.5 });
         S.muscle({ path: 'M470 178 L640 172 L640 210 L472 214 Z', opacity: 0.4 });
-        S.artery({ x: 322, y: 194, r: 6 });
-        S.vein({ x: 344, y: 196, rx: 8, ry: 6 });
+        S.artery({ x: 150, y: 194, r: 6 });
+        S.vein({ x: 174, y: 196, rx: 8, ry: 6 });
+        S.label({ x: 152, y: 254, text: 'Vaisseaux épigastriques\n(Doppler avant la ponction)', cls: 'lbl-artery', small: true, anchor: 'middle', lead: [164, 202] });
         S.nerve({ x: 392, y: 86, r: 7 });
         S.target({ x: 392, y: 86, r: 20 });
         S.label({ x: 336, y: 132, text: 'Variante : canal fibreux (1–3 mL)', cls: 'lbl-target', small: true, anchor: 'middle', lead: [392, 104] });
         S.fascia({ points: [[0, 226], [300, 228], [640, 222]], width: 1.5, opacity: 0.8 });
         S.bowel({ path: 'M30 300 q60 -36 130 -6 q66 30 130 -2 q56 -28 110 2 L400 400 L30 400 Z', label: 'Péritoine, anses', at: [180, 350] });
-        S.needle({ from: [640, 118], to: [338, 192], label: '22–25 G 50 mm' });
-        S.spread({ x: 258, y: 197, rx: 116, ry: 13, label: '5–10 mL' });
-        S.label({ x: 210, y: 250, text: 'Plan cible : muscle décollé de la gaine postérieure', cls: 'lbl-spread', small: true, anchor: 'middle' });
+        S.needle({ from: [640, 118], to: [388, 192], label: '22–25 G 50 mm' });
+        S.spread({ x: 300, y: 198, rx: 80, ry: 12, label: '5–10 mL' });
+        S.label({ x: 380, y: 250, text: 'Plan cible : muscle décollé\nde la gaine postérieure', cls: 'lbl-spread', small: true, anchor: 'middle' });
       },
     },
   ],
