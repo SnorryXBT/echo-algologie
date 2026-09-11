@@ -47,7 +47,12 @@
 
   /* ---------- rendu d'une fiche ---------- */
   const secs = [];
-  const sec = (id, titre, inner, n) => inner ? `<section class="sec" id="${id}"><h2><span class="n">${n}</span>${titre}</h2>${inner}</section>` : '';
+  /* Sections opératoires toujours dépliées ; les autres repliées par défaut, choix mémorisé. */
+  const SEC_OPEN = ['vue', 'installation', 'reperage', 'sonoanatomie', 'technique', 'injectat', 'securite', 'checklist'];
+  let secState = {}; try { secState = JSON.parse(localStorage.getItem('echo-sections') || '{}'); } catch (e) { secState = {}; }
+  const secOpen = id => secState[id] === undefined ? SEC_OPEN.includes(id) : !!secState[id];
+  const saveSecState = () => { try { localStorage.setItem('echo-sections', JSON.stringify(secState)); } catch (e) {} };
+  const sec = (id, titre, inner, n) => inner ? `<section class="sec ${secOpen(id) ? '' : 'closed'}" id="${id}"><h2><button class="sec-toggle" type="button" aria-expanded="${secOpen(id)}" aria-controls="body-${id}"><span class="n">${n}</span><span class="tt">${titre}</span><span class="chev" aria-hidden="true"></span></button></h2><div class="sec-body" id="body-${id}">${inner}</div></section>` : '';
   const card = (inner, cls) => `<div class="card ${cls || ''}">${inner}</div>`;
   const callout = (t, inner, cls) => inner ? `<div class="callout ${cls || ''}"><div class="t">${t}</div>${inner}</div>` : '';
   const steps = arr => arr && arr.length ? `<ol class="steps">${arr.map(s => `<li>${s.titre ? `<b>${inline(s.titre)}</b>` : ''}${md(s.texte || s)}</li>`).join('')}</ol>` : '';
@@ -182,7 +187,33 @@
     $('#content').innerHTML = head + subnav + parts.join('');
     $('#crumbs').innerHTML = `<a href="#/">Écho-algologie</a> › <a href="#/region/${p.region}">${esc((E.regions.find(r => r.id === p.region) || {}).nom || p.region)}</a> › <b>${esc(p.titreCourt || p.titre)}</b>`;
     document.title = `${p.titreCourt || p.titre} — Écho-algologie`;
-    bindScenes(); applyCrops();
+    bindScenes(); applyCrops(); bindSections();
+  }
+
+  function bindSections() {
+    const list = [...document.querySelectorAll('section.sec')];
+    list.forEach(s => {
+      const btn = s.querySelector('h2 > .sec-toggle');
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        const open = s.classList.toggle('closed') === false;
+        btn.setAttribute('aria-expanded', String(open));
+        secState[s.id] = open; saveSecState();
+      });
+    });
+    /* un lien profond #/fiche/<id>/<section> doit ouvrir la section qu'il cible */
+    const deep = (location.hash.match(/^#\/fiche\/[^/]+\/([^/]+)/) || [])[1];
+    if (deep) { const s = document.getElementById(deep); if (s && s.classList.contains('closed')) s.querySelector('.sec-toggle').click(); }
+    /* section courante surlignée dans la sous-navigation */
+    if (window.IntersectionObserver) {
+      const links = new Map([...document.querySelectorAll('.subnav a')].map(a => [(a.getAttribute('href').match(/\/([^/]+)$/) || [])[1], a]));
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        links.forEach(l => l.classList.remove('active'));
+        const l = links.get(e.target.id); if (l) l.classList.add('active');
+      }), { rootMargin: '-120px 0px -70% 0px' });
+      list.forEach(s => io.observe(s));
+    }
   }
 
   function bindScenes() {
@@ -250,6 +281,24 @@
     $('#themeBtn').addEventListener('click', () => { const dark = document.documentElement.getAttribute('data-theme') === 'dark'; state.theme = dark ? 'light' : 'dark'; try { localStorage.setItem('echo-theme', state.theme); } catch (e) {} applyTheme(); });
     $('#quizBtn').addEventListener('click', () => { state.quiz = !state.quiz; try { localStorage.setItem('echo-quiz', state.quiz ? '1' : '0'); } catch (e) {} applyQuiz(); });
     $('#printBtn').addEventListener('click', () => window.print());
+    const foldBtn = $('#foldBtn');
+    if (foldBtn) foldBtn.addEventListener('click', () => {
+      const list = [...document.querySelectorAll('section.sec')];
+      if (!list.length) return;
+      const allOpen = list.every(s => !s.classList.contains('closed'));
+      list.forEach(s => {
+        s.classList.toggle('closed', allOpen);
+        const b = s.querySelector('.sec-toggle'); if (b) b.setAttribute('aria-expanded', String(!allOpen));
+        secState[s.id] = !allOpen;
+      });
+      saveSecState();
+      foldBtn.textContent = allOpen ? '⤢ Tout déplier' : '⤡ Tout replier';
+    });
+    const toTop = $('#toTop');
+    if (toTop) {
+      toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      addEventListener('scroll', () => toTop.classList.toggle('show', scrollY > 500), { passive: true });
+    }
     applyTheme(); applyQuiz(); route();
   });
 })(window.ECHO);

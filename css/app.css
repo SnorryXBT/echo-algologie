@@ -84,6 +84,19 @@ main { min-width: 0; }
 section.sec { margin-top: 30px; scroll-margin-top: 110px; }
 section.sec > h2 { font-family: var(--serif); font-size: 24px; font-weight: 600; margin: 0 0 10px; display: flex; align-items: baseline; gap: 10px; }
 section.sec > h2 .n { font-family: var(--sans); font-size: 12px; color: var(--muted); font-weight: 700; letter-spacing: .08em; }
+section.sec > h2 .sec-toggle { all: unset; box-sizing: border-box; display: flex; align-items: baseline; gap: 10px; width: 100%; padding: 3px 8px; margin-left: -8px; border-radius: 8px; cursor: pointer; font: inherit; color: inherit; }
+section.sec > h2 .sec-toggle:hover { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+section.sec > h2 .sec-toggle .tt { flex: 1; text-align: left; }
+section.sec > h2 .sec-toggle:hover .tt { color: var(--accent); }
+section.sec > h2 .chev { flex: none; font-family: var(--sans); font-size: 17px; line-height: 1; color: var(--muted); transition: transform .18s, color .18s; }
+section.sec > h2 .chev::before { content: '▾'; }
+/* une section repliée signale son contenu caché par un chevron accentué */
+section.sec.closed > h2 .chev { transform: rotate(-90deg); color: var(--accent); }
+section.sec.closed > h2 { margin-bottom: 0; }
+section.sec.closed > .sec-body { display: none; }
+.subnav a.active { background: var(--accent); color: var(--accent-ink); }
+#toTop { position: fixed; right: 18px; bottom: 18px; z-index: 6; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); background: var(--panel); color: var(--ink); font-size: 17px; line-height: 1; cursor: pointer; box-shadow: var(--shadow); opacity: 0; pointer-events: none; transition: opacity .2s; }
+#toTop.show { opacity: 1; pointer-events: auto; }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 18px; box-shadow: var(--shadow); }
 .card + .card { margin-top: 12px; }
 .card h3, .prose h3, .prose h4 { font-size: 15px; margin: 14px 0 6px; } .card h3:first-child { margin-top: 0; }
@@ -165,7 +178,8 @@ th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--lin
   .topbar { padding: 8px 14px; }
 }
 @media print {
-  .sidebar, .topbar, .subnav, .scene-title button, .side-foot { display: none !important; }
+  .sidebar, .topbar, .subnav, .scene-title button, .side-foot, #toTop, section.sec > h2 .chev { display: none !important; }
+  section.sec.closed > .sec-body { display: block !important; }
   .app { display: block; } .content { max-width: none; padding: 0; } .card, .scene-wrap { box-shadow: none; break-inside: avoid; }
   body { font-size: 12.5px; }
 }
