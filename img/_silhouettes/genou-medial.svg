@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Genou droit vu par sa face médiale, patient en décubitus dorsal, hanche en rotation externe ; cuisse en haut, jambe en bas, antérieur à gauche (patella), postérieur à droite (creux poplité) -->
+  <path d="M148,0 C146,48 150,96 156,132 C160,152 166,168 170,182 C176,196 178,206 176,218 C172,252 172,276 174,300"/>
+  <path d="M286,0 C288,50 284,98 276,130 C270,146 266,158 268,170 C274,190 278,212 276,236 C274,266 268,284 262,300"/>
+  <g stroke-width="1.3" stroke-dasharray="4 4" opacity=".7">
+    <!-- patella, de profil : relief antérieur -->
+    <path d="M164,140 C158,148 158,166 166,174"/>
+    <!-- condyle fémoral médial -->
+    <path d="M176,148 C176,128 226,124 236,146 C244,166 228,184 200,184 C180,182 174,166 176,148 Z"/>
+    <!-- interligne articulaire médial -->
+    <path d="M160,190 L272,184"/>
+    <!-- métaphyse tibiale médiale (site NG inféro-médial, patte d'oie 4-6 cm sous l'interligne) -->
+    <path d="M168,212 L268,206"/>
+    <!-- tubérosité tibiale antérieure -->
+    <path d="M172,196 C182,200 184,210 178,216"/>
+    <!-- diaphyse fémorale distale (site NG supéro-médial) -->
+    <path d="M196,62 L200,124"/>
+  </g>
+  <path d="M172,24 L174,52 M268,24 L266,52" stroke-width="1" opacity=".5"/>
+</svg>
