@@ -1,0 +1,58 @@
+/* Figures — rhizarthrose, articulation trapézo-métacarpienne (planche de Gray annotée, installation, écho réelle) */
+ECHO.figures['rhizarthrose-tmc'] = [
+  {
+    type: 'anatomie',
+    src: 'img/rhizarthrose-tmc/gray-0220.png',
+    titre: 'Carpe et métacarpe, face dorsale : colonne du pouce',
+    legende: 'La trapézo-métacarpienne est une articulation en selle entre le trapèze et la base du premier métacarpien, sous le scaphoïde. Sur la face dorso-radiale, l\'interligne est directement sous-cutané entre les tendons du premier compartiment (en palmaire) et le long extenseur du pouce (en dorsal) ; la traction axiale du pouce l\'ouvre.',
+    credit: 'Gray\'s Anatomy (1918), planche 220 — domaine public, Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Gray220.png',
+    crop: [0.0, 0.0, 0.70, 0.50],
+    labels: [
+      { x: 0.43, y: 0.26, text: 'Trapèze', dx: -0.14, dy: -0.10 },
+      { x: 0.40, y: 0.43, text: 'Base du 1er métacarpien', dx: -0.14, dy: 0.16 },
+      { x: 0.39, y: 0.38, text: 'Interligne trapézo-métacarpien', dx: 0.30, dy: 0.10 },
+      { x: 0.67, y: 0.12, text: 'Scaphoïde', dx: 0.16, dy: -0.04 },
+      { x: 0.30, y: 0.58, text: '1er métacarpien', dx: 0.14, dy: 0.16 },
+      { x: 0.59, y: 0.30, text: 'Trapézoïde', dx: 0.22, dy: 0.06 },
+    ],
+  },
+  {
+    type: 'installation',
+    src: 'img/rhizarthrose-tmc/installation.svg',
+    titre: 'Installation : avant-bras en demi-pronation, bord ulnaire de la main sur un billot',
+    legende: 'Pouce détendu, traction douce dans son axe pour ouvrir l\'interligne. Sonde linéaire (« hockey ») longitudinale sur la face dorso-radiale de la colonne du pouce, du trapèze à la base du métacarpien ; aiguille dans le plan, de distal en proximal, tangente à la base du métacarpien. Hors du plan acceptable si l\'interligne est très pincé.',
+    credit: 'Schéma original du mémo',
+    spec: {
+      silhouette: 'poignet-radial',
+      sonde: { x: 236, y: 122, angle: -24, w: 54, h: 11 },
+      aiguille: { from: [304, 82], to: [258, 108] },
+      position: 'assis',
+      labels: [{ x: 150, y: 172, text: 'trapèze' }, { x: 300, y: 150, text: 'base de M1' }],
+      note: 'Sonde longitudinale dorso-radiale sur l\'interligne trapézo-métacarpien ; ponction distale, dans le plan, pouce en traction',
+    },
+  },
+  {
+    type: 'echo',
+    src: 'img/rhizarthrose-tmc/echo-1.jpg',
+    pair: 'tmc-longitudinal',
+    titre: 'Coupe longitudinale réelle de la trapézo-métacarpienne',
+    legende: 'Image d\'origine annotée (anglais) : T = trapèze, MC = premier métacarpien ; la flèche pointillée figure le trajet de l\'aiguille dans le plan, de distal en proximal, vers l\'interligne en V entre les deux corticales. Panneau b d\'une planche dont le a montre la sonde sur la colonne du pouce, main en poing sur son bord ulnaire.',
+    credit: 'Patel RP, McGill K, Motamedi D et al., Skeletal Radiology 2022, fig. 12b — CC BY 4.0',
+    source: 'https://doi.org/10.1007/s00256-022-04148-9',
+    crop: [0.40, 0.0, 0.60, 1.0],
+    labels: [
+      { x: 0.50, y: 0.58, text: 'Interligne TMC (cible)', dx: -0.14, dy: 0.28 },
+    ],
+  },
+  {
+    type: 'echo',
+    src: 'img/rhizarthrose-tmc/echo-2.jpg',
+    pair: 'tmc-injection',
+    titre: 'Rhizarthrose sévère : aiguille en place malgré les ostéophytes',
+    legende: 'Image d\'origine annotée (anglais) : MC = métacarpien, T = trapèze ; la flèche marque la pointe de l\'aiguille dans l\'interligne, par un passage trouvé au balayage entre les ostéophytes. Panneau c d\'une planche dont le a est la radiographie et le b l\'ossification qui barrait l\'accès (flèche).',
+    credit: 'Patel RP, McGill K, Motamedi D et al., Skeletal Radiology 2022, fig. 13c — CC BY 4.0',
+    source: 'https://doi.org/10.1007/s00256-022-04148-9',
+    crop: [0.0, 0.535, 0.60, 0.465],
+  },
+];
