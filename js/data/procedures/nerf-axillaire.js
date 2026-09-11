@@ -15,7 +15,7 @@ ECHO.register({
   flash: {
     position: 'assis', positionNote: 'assis dos à l\'opérateur, bras pendant ou main sur la cuisse opposée ; décubitus latéral côté à traiter vers le haut, ou décubitus ventral, si risque vagal',
     sonde: 'lineaire', sondeNote: '6–13 MHz, profondeur 4–6 cm ; convexe 2–5 MHz si morphotype épais (le nerf est à 3–5 cm)',
-    approche: 'in-plane', approcheNote: 'sonde **sagittale**, appliquée sur la face postérieure de l\'épaule, 2–3 cm sous l\'angle postéro-latéral de l\'acromion ; ponction de crânial en caudal',
+    approche: 'in-plane', approcheNote: 'sonde **sagittale**, appliquée sur la face postérieure de l\'épaule, 2–3 cm sous l\'angle postéro-latéral de l\'acromion ; ponction de caudal en crânial',
     aiguille: '22 G, 50–80 mm échovisible ; aiguille RF 22 G 100 mm à extrémité active 5–10 mm pour la PRF',
     cible: 'Espace quadrilatère : nerf et artère circonflexe postérieure, entre petit rond (crânial) et grand rond (caudal), contre le col chirurgical. Critère de fin : nappe anéchogène entourant le signal Doppler, contre l\'os',
     injectat: '5–10 mL ropivacaïne 0,2–0,5 % ± corticoïde (méthylprednisolone 40 mg ou équivalent)',
@@ -64,7 +64,7 @@ Chez le patient à risque vagal, ou pour enchaîner avec un bloc suprascapulaire
 Marquer l\'**angle postéro-latéral de l\'acromion** et l\'**épine de la scapula** au feutre avant la désinfection : ce sont les deux repères qui ramènent à la fenêtre quand elle est perdue.`,
     operateur: `Opérateur **derrière le patient**, du côté à traiter ; écran en face, de l\'autre côté du patient, dans l\'axe du regard. Main non dominante sur la sonde, en appui ferme sur le deltoïde postérieur (l\'appui est nécessaire : la cible est profonde et le moindre mouvement de sonde la fait sortir du plan).
 
-Sonde **sagittale**, appliquée 2–3 cm sous l\'angle postéro-latéral de l\'acromion, puis glissée vers le bas jusqu\'à voir le col chirurgical et le signal Doppler. Ponction **in-plane, de crânial en caudal** : ce sens amène l\'aiguille tangentiellement au plan osseux et permet d\'utiliser le col comme butée. Enchaîner logiquement : suprascapulaire d\'abord (sonde plus haut, sur la fosse), axillaire ensuite, même installation, même champ.`,
+Sonde **sagittale**, appliquée 2–3 cm sous l\'angle postéro-latéral de l\'acromion, puis glissée vers le bas jusqu\'à voir le col chirurgical et le signal Doppler. Ponction **in-plane, de caudal en crânial** : ce sens amène l\'aiguille tangentiellement au plan osseux et permet d\'utiliser le col comme butée. Enchaîner logiquement : suprascapulaire d\'abord (sonde plus haut, sur la fosse), axillaire ensuite, même installation, même champ.`,
     sonde: `- Linéaire 6–13 MHz, preset nerf, profondeur **4–6 cm**, focale sur le col chirurgical, gain modéré (le col doit rester une ligne blanche franche).
 - **Doppler couleur à basse PRF** : l\'artère circonflexe postérieure de l\'humérus est le repère du bloc — on cherche l\'artère, pas le nerf.
 - Morphotype épais ou deltoïde très musclé : convexe 2–5 MHz.
@@ -77,7 +77,7 @@ Sonde **sagittale**, appliquée 2–3 cm sous l\'angle postéro-latéral de l\'a
     { titre: 'Trouver le col chirurgical', texte: 'Poursuivre la descente jusqu\'à voir, en profondeur, la **ligne osseuse convexe et régulière du col chirurgical de l\'humérus**, avec son cône d\'ombre. C\'est le plancher du geste et son garde-fou. Si l\'on voit une surface articulaire ou la glène, on est trop haut et trop médial.' },
     { titre: 'Encadrer l\'espace quadrilatère', texte: 'Identifier le **petit rond** (crânial) et le **grand rond** (caudal) : deux ventres musculaires séparés par un intervalle graisseux triangulaire, appliqué sur le col — c\'est l\'espace quadrilatère en coupe. La longue portion du triceps est médiale, **hors du plan** : ne pas la chercher dans l\'image.' },
     { titre: 'Doppler', texte: 'Activer le Doppler couleur : l\'**artère circonflexe postérieure de l\'humérus** pulse dans l\'espace, contre l\'os. C\'est le repère décisif. Le **nerf axillaire** est adjacent — le plus souvent **crânial** à l\'artère sur cette coupe, parfois accolé — et n\'apparaît comme une structure ovalaire en nid d\'abeilles de 3–5 mm que chez le sujet mince.' },
-    { titre: 'Vérifier avant de piquer', texte: 'Balayer de haut en bas pour vérifier la continuité de l\'artère et l\'absence de branche sur le trajet prévu ; mesurer la profondeur du col ; repérer le point d\'entrée cutané au bord crânial de la sonde.' },
+    { titre: 'Vérifier avant de piquer', texte: 'Balayer de haut en bas pour vérifier la continuité de l\'artère et l\'absence de branche sur le trajet prévu ; mesurer la profondeur du col ; repérer le point d\'entrée cutané au bord caudal de la sonde.' },
     { titre: 'Si l\'on ne trouve ni l\'espace ni l\'artère', texte: 'Deux options. **Descendre** : suivre le col chirurgical vers le bas jusqu\'au niveau sous-deltoïdien, où la branche antérieure et l\'artère contournent l\'os — cible plus distale, plus sélective, souvent plus facile chez le sujet épais. Ou **renoncer à l\'axillaire** et vérifier d\'abord que le bloc suprascapulaire a été fait correctement : dans la majorité des épaules, c\'est lui qui manque, pas l\'axillaire.' },
   ],
 
@@ -94,8 +94,8 @@ Sonde **sagittale**, appliquée 2–3 cm sous l\'angle postéro-latéral de l\'a
 
   technique: [
     { titre: 'Préparation', texte: 'Checklist (fin de fiche). Désinfection large de l\'épaule postérieure (champ commun avec le bloc suprascapulaire si les deux sont prévus), gel stérile ou housse. Seringue de 10 mL (AL ± corticoïde), aiguille 22 G 50–80 mm échovisible sur prolongateur purgé.' },
-    { titre: 'Anesthésie cutanée', texte: '1–2 mL de lidocaïne 1 % au bord crânial de la sonde, à 1–2 cm du bord. Le trajet est long et traverse un muscle épais : la faire, contrairement au bloc suprascapulaire où elle est optionnelle.' },
-    { titre: 'Ponction in-plane, de crânial en caudal', texte: 'Angle 40–60° (la cible est profonde). Visualiser l\'aiguille sur toute sa longueur ; si le corps de l\'aiguille disparaît, corriger l\'alignement de la sonde avant d\'avancer, jamais l\'inverse. Traverser le deltoïde puis progresser dans l\'intervalle entre petit et grand rond jusqu\'au **contact du col chirurgical**, à distance du signal Doppler, puis reculer de 1–2 mm.' },
+    { titre: 'Anesthésie cutanée', texte: '1–2 mL de lidocaïne 1 % au bord caudal de la sonde, à 1–2 cm du bord. Le trajet est long et traverse un muscle épais : la faire, contrairement au bloc suprascapulaire où elle est optionnelle.' },
+    { titre: 'Ponction in-plane, de caudal en crânial', texte: 'Angle 40–60° (la cible est profonde). Visualiser l\'aiguille sur toute sa longueur ; si le corps de l\'aiguille disparaît, corriger l\'alignement de la sonde avant d\'avancer, jamais l\'inverse. Traverser le deltoïde puis progresser dans l\'intervalle entre petit et grand rond jusqu\'au **contact du col chirurgical**, à distance du signal Doppler, puis reculer de 1–2 mm.' },
     { titre: 'Hydrolocalisation et test', texte: 'Aspiration. Injecter 0,5–1 mL de sérum ou d\'AL : l\'injectat doit s\'étaler **contre l\'os, autour du signal Doppler**, en soulevant les ventres musculaires. Une lentille dans le grand rond ou le deltoïde signe une pointe trop superficielle. Douleur fulgurante ou paresthésie du moignon de l\'épaule = pointe intraneurale → **arrêt immédiat, retrait de 2 mm**, ne jamais forcer.' },
     { titre: 'Injection fractionnée', texte: '5–10 mL par bolus de 2–3 mL, avec aspiration entre chaque, en surveillant la diffusion dans l\'espace et le long du col. Contact verbal maintenu.' },
     { titre: 'Critère de fin', texte: 'Nappe hypoéchogène contre le col chirurgical, englobant le signal Doppler et s\'étalant en crânial et en caudal dans l\'espace quadrilatère, sans injection intramusculaire ni disparition brutale de l\'injectat. Retrait, pansement.' },
@@ -212,8 +212,8 @@ Niveau de preuve : **faible** — séries et pratique d\'experts, extrapolation 
       },
     },
     {
-      id: 'ax-bloc', section: 'technique', titre: 'Bloc dans l\'espace quadrilatère — aiguille dans le plan, de crânial en caudal',
-      legende: 'Ponction in-plane à 40–60°, de crânial en caudal : le col chirurgical sert de butée. La pointe est posée au contact de l\'os à distance du signal Doppler, puis retirée de 1–2 mm. L\'injectat doit s\'étaler contre l\'os en englobant l\'artère et le nerf, jamais en lentille intramusculaire. Bloc moteur du deltoïde attendu 2 à 6 h.',
+      id: 'ax-bloc', section: 'technique', titre: 'Bloc dans l\'espace quadrilatère — aiguille dans le plan, de caudal en crânial',
+      legende: 'Ponction in-plane à 40–60°, de caudal en crânial : le col chirurgical sert de butée. La pointe est posée au contact de l\'os à distance du signal Doppler, puis retirée de 1–2 mm. L\'injectat doit s\'étaler contre l\'os en englobant l\'artère et le nerf, jamais en lentille intramusculaire. Bloc moteur du deltoïde attendu 2 à 6 h.',
       opts: { depth: 5 },
       build: S => {
         S.orient({ left: 'Crânial', right: 'Caudal' }).probeInfo({ plan: 'Sagittale postérieure', type: 'in-plane' });
@@ -226,7 +226,7 @@ Niveau de preuve : **faible** — séries et pratique d\'experts, extrapolation 
         S.nerve({ x: 300, y: 248, r: 7, label: 'N. axillaire', lx: 246, ly: 236, anchor: 'end', small: true, lead: [294, 246] });
         S.artery({ x: 344, y: 260, r: 6, label: 'A. circonflexe post.', lx: 400, ly: 244, anchor: 'start', small: true, lead: [350, 258] });
         S.target({ x: 316, y: 262, r: 14 });
-        S.needle({ from: [6, 110], to: [300, 268], label: '22 G 80 mm, 40–60°' });
+        S.needle({ from: [636, 100], to: [366, 266], label: '22 G 80 mm, 40–60°' });
         S.spread({ x: 330, y: 272, rx: 62, ry: 9, label: '5–10 mL' });
       },
     },
