@@ -20,7 +20,8 @@ ne traite que du projet.
 - `DEPLOIEMENT.md` — hébergement privé Cloudflare Pages + Access.
 - `scripts/` — `build-index.js` (régénère `index.html` après ajout d'une fiche),
   `audit.js` (champs, longueurs, références), `check-all.js` (rendu de chaque fiche en
-  Chromium, erreurs JS), `shot.js` (capture d'une scène), `refs-a-verifier.js`.
+  Chromium, erreurs JS), `shot.js` (capture d'une scène), `refs-a-verifier.js`,
+  `audit-axes.js` (axes des paires écho/schéma, images référencées absentes).
 
 ## Règles non négociables
 
