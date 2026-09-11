@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="-apple-system, Helvetica, Arial, sans-serif">
+<rect width="400" height="300" fill="#f8fafc"/>
+<g fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Cuisse droite vue de face, patient en décubitus dorsal : pli inguinal en haut, genou en bas ; fémur et sartorius en pointillés -->
+  <path d="M96,0 C86,40 82,90 88,150 C94,210 100,250 104,300"/>
+  <path d="M312,0 C322,40 326,90 318,150 C310,210 302,250 296,300"/>
+  <path d="M80,30 C140,54 210,62 300,30" stroke-width="1.6" opacity=".8"/>
+  <g stroke-width="1.3" stroke-dasharray="4 4" opacity=".7">
+    <circle cx="86" cy="26" r="9"/>
+    <path d="M110,42 C160,110 230,170 250,300"/>
+    <path d="M300,44 C270,60 250,130 230,300 M310,44 C282,60 262,130 246,300"/>
+    <path d="M184,40 L184,60"/>
+  </g>
+</g>
+<g transform="translate(282,74) rotate(4)"><rect x="-28" y="-6" width="56" height="12" rx="3" fill="#1d4ed8" fill-opacity=".85" stroke="#1e3a8a"/><rect x="-26" y="3" width="52" height="2" fill="#93c5fd" stroke="none"/><circle cx="-22" cy="-11" r="3" fill="#1d4ed8" stroke="none"/></g><line x1="206" y1="88" x2="252" y2="76" stroke="#b91c1c" stroke-width="3"/><circle cx="206" cy="88" r="4" fill="#b91c1c" stroke="none"/><text x="292" y="106" font-size="10.5" font-weight="600" fill="#1f2937" stroke="#fff" stroke-width="3" paint-order="stroke">loge des adducteurs</text><text x="150" y="46" font-size="10.5" font-weight="600" fill="#1f2937" stroke="#fff" stroke-width="3" paint-order="stroke">pli inguinal</text><g transform="translate(6,232)"><rect x="0" y="0" width="52" height="48" rx="6" fill="#fff" fill-opacity=".9" stroke="#9ca3af" stroke-width="1"/><path d="M8,24 a4,4 0 1,0 0.1,0 M12,24 L44,24 M20,24 L22,17 M34,24 L44,26 M6,30 L46,30" stroke="#1f2937" stroke-width="2.2" fill="none" stroke-linecap="round"/><text x="26" y="58" text-anchor="middle" font-size="9" fill="#374151" stroke="none">Décubitus dorsal</text></g><g font-size="9.5" fill="#374151" stroke="none" transform="translate(330,262)"><rect x="0" y="0" width="14" height="8" rx="2" fill="#1d4ed8"/><text x="18" y="8">sonde</text><line x1="0" y1="22" x2="14" y2="22" stroke="#b91c1c" stroke-width="3"/><text x="18" y="26">aiguille</text></g><text x="200" y="13" text-anchor="middle" font-size="9.5" fill="#374151" stroke="none"><tspan x="200" dy="0">Sonde transversale sous le pli inguinal, en dedans du paquet fémoral ;</tspan><tspan x="200" dy="12">ponction latérale, dans le plan, plans inter-adducteurs</tspan></text>
+</svg>
