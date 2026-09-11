@@ -19,6 +19,16 @@ Test du 10/09/2026 : une requête anonyme sur `/`, sur un fichier JS et sur une 
 prévisualisation `<hash>.echo-algologie.pages.dev` renvoie un 302 vers la page de
 connexion Access. Le site n'est pas public.
 
+**Déploiement du 11/09/2026** (69 fichiers sur 312 renvoyés) : déploiement
+`7c72b45c`, vérifié `Environment: Production`, `Branch: main`, `Source: 1e21ae6` —
+la source affichée par `wrangler pages deployment list` permet de confirmer *quel
+commit* est réellement en ligne, à faire systématiquement. Test anonyme refait et
+concluant sur `/`, `/index.html`, `/js/app.js`, `/css/app.css` et sur la nouvelle URL
+de prévisualisation : 302 vers `bitter-feather-66ff.cloudflareaccess.com` partout.
+Rappel de la raison d'être de ce test sur l'URL de prévisualisation : chaque
+déploiement en crée une nouvelle, et sans le wildcard `*.echo-algologie.pages.dev`
+elle serait une porte publique sur tout le mémo.
+
 ## Mises à jour du site
 
 Le projet est en **direct upload** : un `git push` ne redéploie **pas**. Après chaque
