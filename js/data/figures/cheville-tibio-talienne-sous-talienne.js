@@ -1,0 +1,71 @@
+/* Figures — cheville : tibio-talienne, sous-talienne et sinus du tarse
+   (planches de Gray annotées, installation, écho-anatomie réelle sous licence CC) */
+ECHO.figures['cheville-tibio-talienne-sous-talienne'] = [
+  {
+    type: 'anatomie',
+    src: 'img/cheville-tibio-talienne-sous-talienne/gray-0356.png',
+    titre: 'Capsule talo-crurale distendue — cheville gauche, vue latérale',
+    legende: 'Vue latérale de la cheville gauche : l\'**avant est à gauche** de l\'image, l\'arrière à droite — Commons titre la planche « Capsule of left talocrural articulation (distended). Lateral aspect », et une cheville gauche regardée par sa face latérale présente nécessairement les orteils du côté gauche de l\'image. La capsule a été distendue sur la pièce : le renflement bleuté antérieur, entre la marge antérieure du tibia et le col du talus, **est exactement le récessus antérieur** que l\'on cherche à voir se remplir en fin d\'injection tibio-talienne. Les étiquettes anglaises d\'origine nomment les ligaments latéraux (talo-fibulaire antérieur et postérieur, calcanéo-fibulaire, talo-calcanéen latéral et talo-calcanéen antérieur). Ce que la planche **ne montre pas** et qui décide du point de ponction : le pédicule tibial antérieur, en avant de l\'interligne, à mi-distance des malléoles — d\'où la fenêtre antéro-médiale.',
+    credit: 'Gray\'s Anatomy (1918), planche 356 — domaine public, Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Gray356.png',
+    labels: [
+      { x: 0.29, y: 0.14, text: 'Tibia', dx: -0.16, dy: 0.045 },
+      { x: 0.45, y: 0.20, text: 'Fibula (malléole latérale)', dx: 0.27, dy: -0.015 },
+      { x: 0.21, y: 0.42, text: 'Récessus antérieur (cible)', dx: 0.07, dy: -0.18 },
+      { x: 0.135, y: 0.57, text: 'Tête du talus', dx: 0.075, dy: 0.11 },
+      { x: 0.60, y: 0.72, text: 'Calcanéus', dx: 0.19, dy: 0.08 },
+    ],
+  },
+  {
+    type: 'anatomie',
+    src: 'img/cheville-tibio-talienne-sous-talienne/gray-0357.png',
+    titre: 'Coupe coronale — articulations talo-crurale et talo-calcanéenne',
+    legende: 'Coupe coronale de la cheville droite : **médial à gauche, latéral à droite**. Les deux interlignes sont empilés — talo-crural (tibio-talien) sous la mortaise, puis talo-calcanéen (sous-talien) sous le corps du talus. Entre eux, le **ligament talo-calcanéen interosseux** ferme le canal du tarse : c\'est lui qui explique que le sinus du tarse (son évasement antéro-latéral) et la sous-talienne postérieure **ne communiquent pas** dans la majorité des cas — un bloc négatif sur l\'un ne disculpe pas l\'autre. En dedans, la coupe montre le paquet postéro-médial (tibial postérieur, fléchisseurs, nerfs plantaires) : contenu du tunnel tarsien, hors trajet de la voie antérieure. En dehors, les tendons fibulaires longent la malléole latérale, repère de la voie postéro-latérale.',
+    credit: 'Gray\'s Anatomy (1918), planche 357 — domaine public, Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Gray357.png',
+    labels: [
+      { x: 0.50, y: 0.347, text: 'Interligne talo-crural', dx: -0.08, dy: -0.207 },
+      { x: 0.325, y: 0.375, text: 'Malléole médiale', dx: -0.155, dy: -0.115 },
+      { x: 0.655, y: 0.44, text: 'Malléole latérale', dx: 0.165, dy: -0.14 },
+      { x: 0.47, y: 0.527, text: 'Interligne sous-talien', dx: -0.23, dy: 0.36 },
+      { x: 0.625, y: 0.535, text: 'Lig. talo-calcanéen interosseux', dx: 0.015, dy: 0.405 },
+    ],
+  },
+  {
+    type: 'installation',
+    src: 'img/cheville-tibio-talienne-sous-talienne/installation.svg',
+    titre: 'Installation : décubitus dorsal, genou fléchi, pied plat, cheville en légère flexion plantaire',
+    legende: 'Voie antéro-médiale de la tibio-talienne. La flexion plantaire ouvre le récessus antérieur et écarte la marge tibiale du col du talus ; le pied plat sur la table (billot sous le creux poplité) supprime les tremblements. Sonde **sagittale, en dedans du tendon tibial antérieur** — fenêtre la plus éloignée du pédicule tibial antérieur, repéré au Doppler sur une coupe transversale préalable. Aiguille in-plane par le bord **distal** de la sonde, de distal en proximal, à plat (30–45°), parallèle au col du talus. Pour le sinus du tarse, même décubitus mais pied en rotation interne et inversion douce, sonde dans l\'axe de l\'entonnoir par l\'ouverture antéro-latérale.',
+    credit: 'Schéma original du mémo',
+    spec: {
+      silhouette: 'cheville-mediale',
+      sonde: { x: 210, y: 186, angle: 76, w: 62, h: 13 },
+      aiguille: { from: [268, 240], to: [214, 205] },
+      position: 'dorsal',
+      labels: [
+        { x: 96, y: 132, text: 'malléole médiale' },
+        { x: 232, y: 168, text: 'récessus antérieur' },
+        { x: 108, y: 272, text: 'ponction distale → proximale' },
+      ],
+      note: 'Sonde sagittale en dedans du tendon tibial antérieur, centrée sur l\'interligne ; aiguille in-plane, de distal en proximal',
+    },
+  },
+  {
+    type: 'echo',
+    src: 'img/cheville-tibio-talienne-sous-talienne/echo-1.jpg',
+    pair: 'ankle-tibiotalienne',
+    titre: 'Récessus antérieur de la tibio-talienne — coupe réelle, épanchement',
+    legende: 'Annotations d\'origine conservées (rouges). **A** : coupe **longitudinale (sagittale) antérieure** — sous la peau et les tendons extenseurs, la plage anéchogène de l\'angle tibio-talien est l\'épanchement du récessus antérieur (astérisque), traversé ici par une bride fibreuse intra-articulaire (flèche) ; la corticale osseuse hyperéchogène ferme le fond (les auteurs ne précisent pas le sens proximal-distal de l\'image). **B** : même récessus en coupe **axiale (transversale)**, bride confirmée (flèche). C\'est l\'image cible du geste : ce récessus est ce qu\'on ponctionne et ce qu\'on doit voir se distendre. Pas d\'aiguille sur cette image — cas de conflit antérieur post-traumatique, indication typique de la fiche.',
+    credit: 'Soualili A, Arfi A, Retal H, Khabet MK, Kadi R, Cureus 2025, figure 5 — CC BY 4.0',
+    source: 'https://doi.org/10.7759/cureus.97012',
+  },
+  {
+    type: 'echo',
+    src: 'img/cheville-tibio-talienne-sous-talienne/echo-2.jpg',
+    pair: 'ankle-sinus-tarse',
+    titre: 'Sinus du tarse — coupe réelle dans un syndrome du sinus du tarse',
+    legende: 'Annotations anglaises d\'origine conservées (*Talus*, *Calcaneus*, *Cuboid*). **B** (à retenir) : **coupe coronale oblique sur le sinus du tarse** — les deux corticales divergent de part et d\'autre du sinus, **talus à gauche, calcanéus à droite**, et l\'entonnoir graisseux qui les sépare est ici **hypoéchogène** (astérisque) au lieu d\'être hyperéchogène : c\'est le signe échographique du syndrome du sinus du tarse (fibrose et synovite de la graisse). **C** : même coupe en Doppler — hyperhémie intra-sinusienne, argument d\'activité. **A** : coupe longitudinale de l\'articulation calcanéo-cuboïdienne du même patient (séquelle d\'entorse : fragment d\'arrachement, flèche blanche ; discontinuité ligamentaire, flèche noire) — cible voisine, distincte de celle de la fiche.',
+    credit: 'Kim YH, Chai JW, Kim DH, Kim HJ, Seo J, Ultrasonography 2022, fig. 15 — CC BY-NC 4.0',
+    source: 'https://doi.org/10.14366/usg.21069',
+  },
+];
