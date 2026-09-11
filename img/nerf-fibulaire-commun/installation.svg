@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="-apple-system, Helvetica, Arial, sans-serif">
+<rect width="400" height="300" fill="#f8fafc"/>
+<g fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Genou et jambe droits vus de dehors (patient en décubitus latéral ou dorsal, genou fléchi) : cuisse en haut à gauche, jambe vers le bas à droite ; tête de la fibula et nerf fibulaire commun en pointillés -->
+  <path d="M0,60 C60,50 120,52 170,72 C200,84 222,104 236,130"/>
+  <path d="M0,168 C50,166 100,160 140,170 C168,178 182,196 196,224"/>
+  <path d="M236,130 C260,160 290,210 316,300"/>
+  <path d="M196,224 C214,244 232,268 244,300"/>
+  <g stroke-width="1.3" stroke-dasharray="4 4" opacity=".7">
+    <path d="M150,84 C150,68 200,66 202,84 C204,104 190,124 176,126 C160,124 148,102 150,84 Z"/>
+    <path d="M198,178 C198,166 224,164 226,178 C228,192 218,204 212,206 C204,204 196,190 198,178 Z"/>
+    <path d="M170,150 C186,158 200,166 212,178 C222,192 234,200 250,204"/>
+  </g>
+</g>
+<g transform="translate(236,203) rotate(-55)"><rect x="-28" y="-7" width="56" height="14" rx="3" fill="#1d4ed8" fill-opacity=".85" stroke="#1e3a8a"/><rect x="-26" y="4" width="52" height="2" fill="#93c5fd" stroke="none"/><circle cx="-22" cy="-12" r="3" fill="#1d4ed8" stroke="none"/></g><line x1="262" y1="169" x2="239" y2="206" stroke="#b91c1c" stroke-width="3"/><circle cx="262" cy="169" r="4" fill="#b91c1c" stroke="none"/><text x="88" y="140" font-size="10.5" font-weight="600" fill="#1f2937" stroke="#fff" stroke-width="3" paint-order="stroke">Creux poplité</text><text x="108" y="182" font-size="10.5" font-weight="600" fill="#1f2937" stroke="#fff" stroke-width="3" paint-order="stroke">Tête de la fibula</text><text x="196" y="258" font-size="10.5" font-weight="600" fill="#1f2937" stroke="#fff" stroke-width="3" paint-order="stroke">N. fibulaire commun</text><g transform="translate(6,232)"><rect x="0" y="0" width="52" height="48" rx="6" fill="#fff" fill-opacity=".9" stroke="#9ca3af" stroke-width="1"/><path d="M10,14 a4,4 0 1,0 0.1,0 M10,18 L14,30 L24,34 L34,30 M14,30 L30,26 M6,36 L44,36" stroke="#1f2937" stroke-width="2.2" fill="none" stroke-linecap="round"/><text x="26" y="58" text-anchor="middle" font-size="9" fill="#374151" stroke="none">Décubitus latéral</text></g><g font-size="9.5" fill="#374151" stroke="none" transform="translate(330,262)"><rect x="0" y="0" width="14" height="8" rx="2" fill="#1d4ed8"/><text x="18" y="8">sonde</text><line x1="0" y1="22" x2="14" y2="22" stroke="#b91c1c" stroke-width="3"/><text x="18" y="26">aiguille</text></g><text x="200" y="13" text-anchor="middle" font-size="9.5" fill="#374151" stroke="none"><tspan x="200" dy="0">Sonde transversale sur le col, perpendiculaire au trajet du nerf ; aiguille</tspan><tspan x="200" dy="12">25 G in-plane, très tangentielle.</tspan></text>
+</svg>
