@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Pied droit vu par le dos (patient en décubitus dorsal, genou fléchi, pied à plat sur la table ; opérateur au bout du pied) : cheville en bas, orteils en haut, hallux à DROITE de l'image (côté médial), 5e orteil à gauche. Pointillés : ligne des têtes métatarsiennes, rayons M1-M5, 3e espace intermétatarsien, pli de cheville. Tout est décalé vers le bas pour laisser la bande supérieure libre pour la note. -->
+  <g transform="translate(24,30) scale(0.88)">
+    <path d="M250,292 C290,292 304,262 302,224 C300,180 290,130 280,90 C272,60 250,34 210,26 C168,18 128,30 112,60 C98,90 100,130 108,170 C116,210 122,250 138,278 C152,296 200,296 250,292 Z"/>
+    <path d="M280,66 C286,48 276,32 262,34 C248,36 246,56 254,68" opacity=".8"/>
+    <path d="M236,44 C240,30 230,20 220,22 C210,24 210,40 216,46 M200,36 C202,24 192,16 184,18 C176,20 176,34 182,40 M166,36 C166,24 156,18 148,20 C140,22 140,36 146,42 M134,46 C132,36 124,32 118,34 C112,38 112,50 118,54" opacity=".8" stroke-width="1.6"/>
+    <g stroke-width="1.4" stroke-dasharray="4 4" opacity=".7">
+      <path d="M272,92 C232,80 178,82 132,98"/>
+      <path d="M250,180 L264,92 M224,186 L228,84 M205,188 L190,84 M186,186 L154,86 M168,182 L128,98"/>
+      <path d="M160,190 C190,198 228,194 254,182"/>
+      <path d="M124,246 C166,256 240,256 292,244"/>
+      <circle cx="172" cy="70" r="9"/>
+    </g>
+  </g>
+</svg>
