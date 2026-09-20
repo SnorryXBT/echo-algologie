@@ -64,25 +64,32 @@ Voir `CHANTIER-ILLUSTRATIONS.md` : planches de Gray annotées (`js/data/figures/
 images dans `img/<id>/`), figures d'installation, écho-anatomie réelle côte à côte,
 vidéo par fiche (`scripts/video.js`, fichiers dans `video/`). Exécution sur le Mac.
 
-## État des illustrations (11 septembre 2026)
+## État des illustrations (20 septembre 2026)
 
-**Membre supérieur (14 fiches) et membre inférieur (17 fiches) complets** : par fiche,
-1 à 3 planches de Gray annotées en français, une figure d'installation, et 1 à 2 images
-échographiques réelles appariées aux schémas — crédit, DOI et licence vérifiés article
-par article. Restent à illustrer : rachis-bassin, tête-cou, thorax, socle. Silhouettes
-ajoutées : `genou-medial`, `cheville-posterieure`, `pied-dorsal`, `talon-plantaire`.
+**Membre supérieur (14 fiches), membre inférieur (17 fiches) et tête-cou (9 fiches)
+complets** : par fiche, 1 à 3 planches de Gray annotées en français, une figure
+d'installation, et 1 à 2 images échographiques réelles appariées aux schémas — crédit,
+DOI et licence vérifiés article par article. Restent à illustrer : rachis-bassin,
+thorax, socle. Silhouettes ajoutées : `genou-medial`, `cheville-posterieure`,
+`pied-dorsal`, `talon-plantaire`, puis `cou-lateral`, `nuque`, `face-anterieure`,
+`face-laterale`.
 
-Trois pièges du chantier, tous rencontrés pour de vrai :
+Quatre pièges du chantier, tous rencontrés pour de vrai :
 - `scripts/echo-search.js` attribue parfois les *academic editors* de la revue (Cureus,
   MDPI) à la place des auteurs → recouper par `authorString` de l'API core Europe PMC.
-  **Correctif de fond encore à faire dans le script.**
+  **Correctif de fond encore à faire dans le script** (le piège s'est redéclenché cinq
+  fois sur la seule région tête-cou).
 - une étiquette placée « au raisonnement » tombe souvent sur la structure voisine : le
-  contrôle par `scripts/shot.js` + lecture de la capture n'est pas optionnel. L'en-tête
-  collant masque ≈ 6 % de la hauteur de l'image dans la capture : une étiquette qui y
-  atterrit est non vérifiable, la déplacer.
+  contrôle par `scripts/shot.js` + lecture de la capture n'est pas optionnel — environ un
+  tiers des étiquettes est faux au premier jet. L'en-tête collant masque ≈ 6 % de la
+  hauteur de l'image dans la capture : une étiquette qui y atterrit est non vérifiable,
+  la déplacer.
 - vérifier que les fichiers image référencés existent bien (`grep -o "img/<id>/[^']*"`
   puis `ls`) : une image absente ne produit **aucune** erreur JS, seulement un 404
   silencieux, et `check-all` la laisse passer.
+- les sections des fiches étant repliables depuis `1e21ae6`, `scripts/shot.js` déplie
+  désormais les sections avant de capturer ; sans cela la figure est « not visible » et
+  la capture échoue en timeout — donc aucun contrôle visuel possible.
 
 ## État (10 septembre 2026)
 
