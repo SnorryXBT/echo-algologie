@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Face vue de face, patient en décubitus dorsal -->
+  <path d="M200,22 C146,22 116,62 116,110 C116,152 128,196 152,226 C168,246 184,256 200,256 C216,256 232,246 248,226 C272,196 284,152 284,110 C284,62 254,22 200,22 Z"/>
+  <!-- oreilles -->
+  <path d="M116,116 C104,112 100,132 110,144 C116,152 124,152 126,146"/>
+  <path d="M284,116 C296,112 300,132 290,144 C284,152 276,152 274,146"/>
+  <!-- sourcils / arcades -->
+  <path d="M138,104 C154,94 178,94 190,102" stroke-width="1.8"/>
+  <path d="M210,102 C222,94 246,94 262,104" stroke-width="1.8"/>
+  <!-- yeux -->
+  <path d="M146,120 C158,110 180,110 190,120 C180,132 158,132 146,120 Z" stroke-width="1.6"/>
+  <path d="M210,120 C220,110 242,110 254,120 C242,132 220,132 210,120 Z" stroke-width="1.6"/>
+  <!-- nez -->
+  <path d="M200,118 L194,168 C190,178 210,178 206,168 L200,118" stroke-width="1.6"/>
+  <path d="M182,178 C190,186 210,186 218,178" stroke-width="1.6"/>
+  <!-- bouche -->
+  <path d="M168,206 C184,198 216,198 232,206 C216,216 184,216 168,206 Z" stroke-width="1.6"/>
+  <!-- ligne médiane et ligne pupillaire -->
+  <g stroke-dasharray="5 6" stroke-width="1.2" opacity=".65">
+    <path d="M200,16 L200,264"/>
+    <path d="M168,60 L168,244"/>
+    <path d="M232,60 L232,244"/>
+  </g>
+</svg>

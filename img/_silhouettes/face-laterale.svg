@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Tête droite vue de profil (visage à gauche) : arcade zygomatique, ATM, mandibule -->
+  <path d="M170,22 C110,26 80,72 84,118 C86,136 92,148 100,154"/>
+  <path d="M170,22 C236,24 264,72 260,124 C258,152 250,170 240,180"/>
+  <!-- front -> nez -> lèvres -> menton -->
+  <path d="M100,154 C90,160 84,168 92,174 L106,178 C98,188 102,196 110,200 C104,210 110,220 124,222"/>
+  <!-- oreille -->
+  <path d="M228,110 C218,94 238,80 250,92 C262,106 256,134 242,142 C234,148 228,142 228,136"/>
+  <!-- arcade zygomatique -->
+  <path d="M126,126 C164,112 200,108 226,112" stroke-width="1.8"/>
+  <!-- condyle (ATM), branche montante, corps de la mandibule -->
+  <circle cx="226" cy="126" r="8" stroke-width="1.8"/>
+  <path d="M226,134 C228,164 224,188 206,202 C176,220 146,226 124,222" stroke-width="1.8"/>
+  <path d="M206,202 C204,182 208,158 212,142" stroke-width="1.4" opacity=".7"/>
+  <!-- cou et épaule -->
+  <path d="M128,224 C136,248 142,266 148,280"/>
+  <path d="M240,180 C248,204 256,228 264,244"/>
+  <path d="M148,280 C196,288 248,286 292,282 C330,280 360,286 390,296"/>
+  <path d="M264,244 C300,248 340,254 372,264"/>
+</svg>

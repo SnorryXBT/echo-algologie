@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Cou droit vu de côté (patient en décubitus dorsal, tête tournée) : visage à gauche, épaule à droite -->
+  <!-- crâne -->
+  <path d="M140,26 C86,30 62,72 66,112 C68,130 74,140 82,146"/>
+  <path d="M140,26 C196,28 216,70 214,112 C212,136 206,150 198,158"/>
+  <!-- front, nez, lèvres, menton -->
+  <path d="M82,146 C74,152 70,158 76,162 L88,166 C82,174 84,182 92,186 C88,194 92,202 104,204"/>
+  <!-- mandibule : menton -> angle -->
+  <path d="M104,204 C134,212 172,202 192,176" stroke-width="1.8"/>
+  <!-- oreille -->
+  <path d="M182,100 C174,86 192,74 202,86 C212,98 206,124 194,132 C188,136 182,130 182,124"/>
+  <!-- bords du cou -->
+  <path d="M108,204 C120,226 134,242 148,254"/>
+  <path d="M200,158 C212,186 224,208 238,224"/>
+  <!-- épaule, thorax -->
+  <path d="M148,254 C188,262 244,262 286,258 C324,256 356,266 386,284"/>
+  <path d="M238,224 C276,228 316,234 346,244"/>
+  <path d="M160,262 L176,300"/>
+  <!-- SCM (pointillés) : mastoïde -> sternum et clavicule -->
+  <g stroke-dasharray="5 5" stroke-width="1.4" opacity=".75">
+    <path d="M192,134 C196,172 192,216 180,252"/>
+    <path d="M192,134 C210,172 222,206 238,226"/>
+  </g>
+  <!-- clavicule -->
+  <path d="M170,258 C216,250 280,248 330,254" stroke-width="1.6" opacity=".8"/>
+</svg>
