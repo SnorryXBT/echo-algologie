@@ -42,6 +42,19 @@ function meta(x) {
       const r = await fetch(u, H); if (!r.ok || !(r.headers.get('content-type') || '').startsWith('image')) continue;
       fs.writeFileSync(out, Buffer.from(await r.arrayBuffer())); ok = true; console.log(`→ ${path.relative(process.cwd(), out)} depuis ${u}`); break;
     }
+    if (!ok) {   /* PMC répond parfois par une page reCAPTCHA : repli sur l'archive des figures d'origine d'Europe PMC */
+      try {
+        const os = require('os'), cp = require('child_process'), tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'epmc-'));
+        const r = await fetch(`${EP}/${pmc}/supplementaryFiles?includeInlineImage=true`, H);
+        if (r.ok) {
+          fs.writeFileSync(path.join(tmp, 'f.zip'), Buffer.from(await r.arrayBuffer()));
+          cp.execSync(`unzip -o -j -q f.zip -d x`, { cwd: tmp });
+          const hit = fs.readdirSync(path.join(tmp, 'x')).find(n => n.replace(/\.\w+$/, '') === base && /\.(jpe?g|png)$/i.test(n));
+          if (hit) { fs.copyFileSync(path.join(tmp, 'x', hit), /\.png$/i.test(hit) ? out.replace(/\.jpg$/, '.png') : out); ok = true; console.log(`→ ${path.relative(process.cwd(), out)} depuis l'archive Europe PMC (${hit})`); }
+        }
+        fs.rmSync(tmp, { recursive: true, force: true });
+      } catch (e) { console.error('repli Europe PMC : ' + e.message); }
+    }
     if (!ok) { console.error('image introuvable'); process.exit(1); }
     const f = m.figs.find(f => f.href.replace(/\.\w+$/, '') === base);
     /* source d'autorité pour les auteurs : authorString de l'API core */
