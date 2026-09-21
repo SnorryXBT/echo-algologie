@@ -80,15 +80,21 @@ socle : `/illustrer` d'abord. **Une coupe reste `valide: false` (bandeau visible
 jamais d'auto-validation. 41 des 75 images portent des annotations incrustées : préférer une image vierge quand elle
 existe. Export hors mémo : CC BY / images personnelles uniquement (37 des 75 images sont CC BY).
 
-## État des illustrations (20 septembre 2026)
+## État des illustrations (21 septembre 2026)
 
-**Membre supérieur (14 fiches), membre inférieur (17 fiches) et tête-cou (9 fiches)
-complets** : par fiche, 1 à 3 planches de Gray annotées en français, une figure
-d'installation, et 1 à 2 images échographiques réelles appariées aux schémas — crédit,
-DOI et licence vérifiés article par article. Restent à illustrer : rachis-bassin,
-thorax, socle. Silhouettes ajoutées : `genou-medial`, `cheville-posterieure`,
-`pied-dorsal`, `talon-plantaire`, puis `cou-lateral`, `nuque`, `face-anterieure`,
-`face-laterale`.
+**Toutes les régions sont illustrées** : membre supérieur (14 fiches), membre inférieur (17), tête-cou (9),
+rachis-bassin (12), thorax (5), et au socle `nevrome-cicatriciel`, `socle-echographie`, `socle-hydrodissection`,
+`socle-cryoneurolyse`. Par fiche : 1 à 3 planches de Gray annotées en français (ou un schéma SVG original quand Gray
+ne couvre pas la cible : branches médiales, ESP, ACNES, clunéaux, ganglion impar, plans PECS/dentelé), une figure
+d'installation, 1 à 2 images échographiques réelles appariées aux schémas — auteurs recoupés par `authorString`, licence
+lue dans la balise `<license>`. Restent **sans figure, délibérément** : `socle-radiofrequence` (aucune image libre
+n'illustre la géométrie de lésion), `socle-securite` et `socle-injectables` (pas de section sono-anatomie : il faudrait
+que `js/app.js` affiche des figures `echo` hors de cette section). Scènes encore sans image réelle : clunéal moyen sous
+le ligament sacro-iliaque long, névrome ilio-inguinal, bloc pudendal, injection intramusculaire du piriforme.
+Silhouettes ajoutées le 21 septembre : `dos-lombaire`, `sacrum-posterieur`, `abdomen-anterieur`, `bassin-posterieur`,
+`dos-thoracique`, `thorax-anterieur`, `thorax-lateral`. Presque aucune image écho de ces régions n'est vierge
+d'annotations (exceptions : intercostal 1, sterno-claviculaire 1, serratus 1, hydrodissection 2) — à savoir pour les
+coupes anatomiques.
 
 Quatre pièges du chantier, tous rencontrés pour de vrai :
 - `scripts/echo-search.js` attribue parfois les *academic editors* de la revue (Cureus,
