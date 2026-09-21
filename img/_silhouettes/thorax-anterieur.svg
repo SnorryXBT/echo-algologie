@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Thorax vu de face (décubitus dorsal) : tête en haut, côté droit du patient à gauche de l'image ; clavicules, sternum, cartilages costaux et coracoïdes en pointillés -->
+  <path d="M180,26 L176,46"/><path d="M220,26 L224,46"/>
+  <path d="M176,46 C140,50 92,58 58,80 C40,94 32,122 30,152 C26,200 26,250 28,300"/>
+  <path d="M224,46 C260,50 308,58 342,80 C360,94 368,122 370,152 C374,200 374,250 372,300"/>
+  <path d="M84,162 C80,210 78,256 78,300"/>
+  <path d="M316,162 C320,210 322,256 322,300"/>
+  <path d="M84,162 C92,208 98,256 100,300"/>
+  <path d="M316,162 C308,208 302,256 300,300"/>
+  <!-- plis axillaires antérieurs (bord du grand pectoral) -->
+  <path d="M84,162 C92,148 100,132 104,112" stroke-width="1.4" opacity=".6"/>
+  <path d="M316,162 C308,148 300,132 296,112" stroke-width="1.4" opacity=".6"/>
+  <!-- mamelons -->
+  <g stroke-width="1.3" opacity=".7"><circle cx="130" cy="196" r="4"/><circle cx="270" cy="196" r="4"/></g>
+  <g stroke-width="1.3" stroke-dasharray="4 4" opacity=".7">
+    <!-- sternum : manubrium, corps, xiphoïde -->
+    <path d="M184,66 C192,70 208,70 216,66 L220,78 L212,100 L188,100 L180,78 Z"/>
+    <path d="M188,100 L186,206 C192,214 208,214 214,206 L212,100"/>
+    <path d="M194,212 L200,230 L206,212"/>
+    <!-- clavicules -->
+    <path d="M182,68 C156,58 112,58 68,78"/><path d="M180,78 C152,70 110,70 72,88"/>
+    <path d="M218,68 C244,58 288,58 332,78"/><path d="M220,78 C248,70 290,70 328,88"/>
+    <!-- coracoïdes -->
+    <circle cx="92" cy="100" r="6"/><circle cx="308" cy="100" r="6"/>
+    <!-- côtes 2 à 6 et cartilages -->
+    <path d="M188,104 C160,104 124,110 100,126"/><path d="M187,126 C158,126 120,134 96,152"/>
+    <path d="M187,150 C160,150 124,160 100,180"/><path d="M186,174 C162,176 130,188 106,210"/>
+    <path d="M186,198 C166,202 140,216 118,240"/>
+    <path d="M212,104 C240,104 276,110 300,126"/><path d="M213,126 C242,126 280,134 304,152"/>
+    <path d="M213,150 C240,150 276,160 300,180"/><path d="M214,174 C238,176 270,188 294,210"/>
+    <path d="M214,198 C234,202 260,216 282,240"/>
+  </g>
+</svg>
