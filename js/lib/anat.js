@@ -125,7 +125,9 @@
       case 'bourse': {   // complexe graisse péribursale + lame bursale ; `lame: [f0, f1]` = position de la lame, en fraction de l'épaisseur depuis le bord bas
         const A = resample(b.haut, 36), B = resample(b.bas, 36), f = s.lame || [0.28, 0.72];
         const mix = t => B.map((q, i) => [q[0] + (A[i][0] - q[0]) * t, q[1] + (A[i][1] - q[1]) * t]);
-        g.push(`<path d="${d}" fill="#e9bd4f" filter="url(#${id}-lob)"/><path d="${pathOf({ haut: mix(f[1]), bas: mix(f[0]) })}" fill="#4f9fd0" stroke="#2f6f9c" stroke-width="1"/>`); break;
+        /* graisse péribursale : feuillet fibro-adipeux pâle, strié dans l'axe — volontairement distinct des lobules de la graisse sous-cutanée ;
+           lame bursale bleue bordée de sa synoviale rosée */
+        g.push(`<path d="${d}" fill="#f3e2b3" stroke="#c9a65e" stroke-width="1.2"/>${lignes(fibres(b, 7, 1.4, 23), '#dcbd78', '#fff6dc', 1.3, 0.85)}<path d="${pathOf({ haut: mix(f[1]), bas: mix(f[0]) })}" fill="#4f9fd0" stroke="#c9747a" stroke-width="1.8" paint-order="stroke"/>`); break;
       }
       case 'cartilage':
         g.push(`<path d="${d}" fill="#a9cfe0" stroke="#6d9db3" stroke-width="1.2"/>`); break;
