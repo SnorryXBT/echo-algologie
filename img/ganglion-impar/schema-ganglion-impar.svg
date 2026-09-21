@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 470" font-family="-apple-system, Helvetica, Arial, sans-serif">
+<rect width="950" height="470" fill="#f8fafc"/>
+<text x="14" y="20" font-size="11" font-weight="400" fill="#475569" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Coupe sagittale médiane — arrière (peau, sonde) en haut, crânial à gauche : même orientation que les schémas échographiques</text>
+<!-- peau, graisse -->
+<path d="M30,52 Q330,44 600,96" fill="none" stroke="#1f2937" stroke-width="2"/>
+<path d="M30,52 Q330,44 600,96 L600,140 Q330,96 30,110 Z" fill="#fde9c8" opacity=".7"/>
+<!-- rectum et espace rétro-rectal -->
+<path d="M30,336 Q300,282 470,326 Q566,366 600,470 L30,470 Z" fill="#f4c7c3" stroke="#9f5a52" stroke-width="1.4"/>
+<path d="M30,358 Q300,304 458,346 Q546,382 576,470" fill="none" stroke="#9f5a52" stroke-width="1" stroke-dasharray="5 4" opacity=".7"/>
+<path d="M30,270 Q300,264 470,298 Q574,330 618,410" fill="none" stroke="#64748b" stroke-width="1.6" stroke-dasharray="7 4"/>
+<!-- cône d'ombre (indicatif) -->
+<path d="M60,205 L326,231 L326,300 L60,290 Z" fill="#0f172a" opacity=".07"/>
+<path d="M356,233 L572,292 L590,360 L356,300 Z" fill="#0f172a" opacity=".07"/>
+<!-- os -->
+<g fill="#e7e2d3" stroke="#1f2937" stroke-width="1.8" stroke-linejoin="round">
+  <path d="M60,138 L236,150 L250,170 L326,172 L326,231 L60,205 Z"/>
+  <path d="M356,170 L452,192 L446,252 L356,233 Z"/>
+  <path d="M460,195 L522,218 L512,270 L454,254 Z"/>
+  <path d="M530,222 L574,248 L560,292 L520,272 Z"/>
+</g>
+<!-- canal sacré (fin) et hiatus -->
+<path d="M60,156 L236,166 L246,178 L60,172 Z" fill="#fff" stroke="#1f2937" stroke-width="1"/>
+<!-- disque sacro-coccygien -->
+<path d="M326,172 L356,170 L356,233 L326,231 Z" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.4"/>
+<!-- ligament sacro-coccygien postérieur -->
+<path d="M232,147 Q300,160 392,174" fill="none" stroke="#15803d" stroke-width="6" opacity=".8" stroke-linecap="round"/>
+<!-- chaînes sympathiques et ganglion impar -->
+<g fill="none" stroke="#ca8a04" stroke-width="3" stroke-linecap="round">
+  <path d="M40,224 Q200,236 330,250"/>
+  <path d="M40,238 Q200,250 330,256"/>
+</g>
+<g fill="#ca8a04" stroke="none"><circle cx="110" cy="230" r="5"/><circle cx="112" cy="243" r="5"/><circle cx="220" cy="240" r="5"/><circle cx="222" cy="251" r="5"/></g>
+<ellipse cx="344" cy="254" rx="15" ry="8.5" fill="#facc15" stroke="#a16207" stroke-width="1.6"/>
+<!-- sonde et aiguille -->
+<rect x="196" y="22" width="160" height="18" rx="4" fill="#1d4ed8" fill-opacity=".85" stroke="#1e3a8a"/>
+<line x1="372" y1="28" x2="343" y2="250" stroke="#b91c1c" stroke-width="3"/><circle cx="372" cy="28" r="4.5" fill="#b91c1c"/>
+<!-- orientation -->
+<text x="34" y="450" font-size="11" font-weight="400" fill="#475569" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Crânial</text><text x="560" y="450" font-size="11" font-weight="400" fill="#475569" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Caudal</text>
+<!-- étiquettes -->
+<text x="150" y="196" font-size="11.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#e7e2d3" stroke-width="3.5" paint-order="stroke" >Sacrum (S5)</text><text x="372" y="218" font-size="11.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#e7e2d3" stroke-width="3.5" paint-order="stroke" >Co1</text><text x="470" y="238" font-size="11" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#e7e2d3" stroke-width="3.5" paint-order="stroke" >Co2</text>
+<text x="250" y="410" font-size="13" font-weight="600" fill="#1f2937" text-anchor="start" stroke="#f4c7c3" stroke-width="3.5" paint-order="stroke" >Rectum</text>
+<line x1="650" y1="60" x2="358" y2="32" stroke="#475569" stroke-width="1.1"/><circle cx="358" cy="32" r="2.2" fill="#475569"/><text x="654" y="64" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Sonde linéaire, longitudinale médiane</text>
+<line x1="650" y1="100" x2="366" y2="80" stroke="#b91c1c" stroke-width="1.1"/><circle cx="366" cy="80" r="2.2" fill="#b91c1c"/><text x="654" y="104" font-size="12.5" font-weight="600" fill="#b91c1c" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Aiguille : dans le plan, entrée caudale,</text><text x="654" y="119" font-size="10.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >à travers le disque, arrêt juste en avant</text><text x="654" y="132" font-size="10.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >du cortex antérieur</text>
+<line x1="650" y1="166" x2="384" y2="172" stroke="#15803d" stroke-width="1.1"/><circle cx="384" cy="172" r="2.2" fill="#15803d"/><text x="654" y="170" font-size="12.5" font-weight="600" fill="#166534" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Lig. sacro-coccygien postérieur</text>
+<line x1="650" y1="204" x2="350" y2="204" stroke="#1d4ed8" stroke-width="1.1"/><circle cx="350" cy="204" r="2.2" fill="#1d4ed8"/><text x="654" y="208" font-size="12.5" font-weight="600" fill="#1d4ed8" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Disque sacro-coccygien (S5–Co1)</text><text x="654" y="223" font-size="10.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >la fenêtre acoustique et la voie du geste</text>
+<line x1="650" y1="258" x2="360" y2="255" stroke="#a16207" stroke-width="1.1"/><circle cx="360" cy="255" r="2.2" fill="#a16207"/><text x="654" y="262" font-size="12.5" font-weight="600" fill="#a16207" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Ganglion impar</text><text x="654" y="277" font-size="10.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >face antérieure de la jonction, rétro-péritonéal</text>
+<line x1="650" y1="312" x2="520" y2="312" stroke="#475569" stroke-width="1.1"/><circle cx="520" cy="312" r="2.2" fill="#475569"/><text x="654" y="316" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Fascia pré-sacré et espace rétro-rectal</text><text x="654" y="331" font-size="10.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >quelques millimètres de graisse</text>
+<line x1="650" y1="366" x2="520" y2="346" stroke="#475569" stroke-width="1.1"/><circle cx="520" cy="346" r="2.2" fill="#475569"/><text x="654" y="370" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Paroi postérieure du rectum</text><text x="654" y="385" font-size="10.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >le rapport qui commande la sécurité</text>
+<line x1="110" y1="300" x2="160" y2="246" stroke="#a16207" stroke-width="1.1"/><circle cx="160" cy="246" r="2.2" fill="#a16207"/><text x="36" y="314" font-size="12.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Chaînes sympathiques sacrées</text><text x="36" y="328" font-size="10.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >(convergence médiane)</text>
+<line x1="120" y1="126" x2="200" y2="168" stroke="#475569" stroke-width="1.1"/><circle cx="200" cy="168" r="2.2" fill="#475569"/><text x="36" y="124" font-size="12.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Canal sacré, hiatus</text>
+<text x="200" y="286" font-size="10" font-weight="400" fill="#475569" text-anchor="start" stroke="none" stroke-width="3.5" paint-order="stroke" font-style="italic">cône d'ombre osseux</text>
+</svg>
