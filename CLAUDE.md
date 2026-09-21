@@ -93,8 +93,9 @@ thorax, socle. Silhouettes ajoutées : `genou-medial`, `cheville-posterieure`,
 Quatre pièges du chantier, tous rencontrés pour de vrai :
 - `scripts/echo-search.js` attribue parfois les *academic editors* de la revue (Cureus,
   MDPI) à la place des auteurs → recouper par `authorString` de l'API core Europe PMC.
-  **Correctif de fond encore à faire dans le script** (le piège s'est redéclenché cinq
-  fois sur la seule région tête-cou).
+  **Corrigé dans le script le 21 septembre 2026** (auteurs pris dans `contrib-group` puis remplacés par
+  l'`authorString` ; alerte si l'URL et le texte de la licence divergent) — variante rencontrée : auteurs de la
+  *bibliographie* ajoutés au crédit (Valera-Calero 2026, auteur unique). Recouper reste la règle.
 - une étiquette placée « au raisonnement » tombe souvent sur la structure voisine : le
   contrôle par `scripts/shot.js` + lecture de la capture n'est pas optionnel — environ un
   tiers des étiquettes est faux au premier jet. L'en-tête collant masque ≈ 6 % de la
