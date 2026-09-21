@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="-apple-system, Helvetica, Arial, sans-serif">
+<rect width="400" height="300" fill="#f8fafc"/>
+<g fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Dos thoracique vu de dos (procubitus ou assis) : tête en haut, côté gauche du patient à gauche de l'image ; épineuses, scapulas, côtes basses et 12e côte en pointillés -->
+  <path d="M182,40 L178,60"/><path d="M218,40 L222,60"/>
+  <path d="M178,60 C140,64 96,74 62,94 C44,118 40,170 42,232"/>
+  <path d="M222,60 C260,64 304,74 338,94 C356,118 360,170 358,232"/>
+  <path d="M98,146 C94,178 90,208 88,232"/>
+  <path d="M302,146 C306,178 310,208 312,232"/>
+  <path d="M98,146 C106,196 112,248 114,300"/>
+  <path d="M302,146 C294,196 288,248 286,300"/>
+  <!-- ligne des épineuses, C7 et T7 (pointe de la scapula) -->
+  <path d="M200,44 L200,300" stroke-dasharray="5 6" stroke-width="1.3" opacity=".7"/>
+  <g stroke-width="1.3" opacity=".7">
+    <circle cx="200" cy="64" r="4"/>
+    <circle cx="200" cy="186" r="4"/>
+  </g>
+  <g stroke-width="1.3" stroke-dasharray="4 4" opacity=".7">
+    <!-- scapulas -->
+    <path d="M176,96 L120,88 L104,104 L146,190 Z"/><path d="M172,112 L108,100"/>
+    <path d="M224,96 L280,88 L296,104 L254,190 Z"/><path d="M228,112 L292,100"/>
+    <!-- côtes basses droites et gauches -->
+    <path d="M208,196 C240,198 270,210 288,230"/><path d="M208,218 C238,220 266,232 284,252"/>
+    <path d="M208,240 C236,242 262,254 280,274"/><path d="M208,262 C228,264 246,272 260,286"/>
+    <path d="M192,196 C160,198 130,210 112,230"/><path d="M192,218 C162,220 134,232 116,252"/>
+    <path d="M192,240 C164,242 138,254 120,274"/><path d="M192,262 C172,264 154,272 140,286"/>
+  </g>
+</g>
+<g transform="translate(223,152) rotate(90)"><rect x="-27" y="-6" width="54" height="12" rx="3" fill="#1d4ed8" fill-opacity=".85" stroke="#1e3a8a"/><rect x="-25" y="3" width="50" height="2" fill="#93c5fd" stroke="none"/><circle cx="-21" cy="-11" r="3" fill="#1d4ed8" stroke="none"/></g><line x1="219" y1="88" x2="223" y2="121" stroke="#b91c1c" stroke-width="3"/><circle cx="219" cy="88" r="4" fill="#b91c1c" stroke="none"/><text x="146" y="58" font-size="10.5" font-weight="600" fill="#1f2937" stroke="#fff" stroke-width="3" paint-order="stroke">C7</text><text x="44" y="206" font-size="10.5" font-weight="600" fill="#1f2937" stroke="#fff" stroke-width="3" paint-order="stroke">T7 (pointe de la scapula)</text><text x="238" y="156" font-size="10.5" font-weight="600" fill="#1f2937" stroke="#fff" stroke-width="3" paint-order="stroke">3 cm</text><text x="300" y="130" font-size="10.5" font-weight="600" fill="#1f2937" stroke="#fff" stroke-width="3" paint-order="stroke">scapula</text><g transform="translate(6,232)"><rect x="0" y="0" width="52" height="48" rx="6" fill="#fff" fill-opacity=".9" stroke="#9ca3af" stroke-width="1"/><path d="M8,22 a4,4 0 1,0 0.1,0 M12,22 C20,20 26,16 30,16 C36,16 40,20 44,24 M22,26 L36,26 M6,31 L46,31" stroke="#1f2937" stroke-width="2.2" fill="none" stroke-linecap="round"/><text x="26" y="58" text-anchor="middle" font-size="9" fill="#374151" stroke="none">Procubitus</text></g><g font-size="9.5" fill="#374151" stroke="none" transform="translate(330,262)"><rect x="0" y="0" width="14" height="8" rx="2" fill="#1d4ed8"/><text x="18" y="8">sonde</text><line x1="0" y1="22" x2="14" y2="22" stroke="#b91c1c" stroke-width="3"/><text x="18" y="26">aiguille</text></g><text x="200" y="13" text-anchor="middle" font-size="9.5" fill="#374151" stroke="none"><tspan x="200" dy="0">Sonde para-sagittale à 3 cm des épineuses, sur la pointe des processus</tspan><tspan x="200" dy="12">transverses ; aiguille dans le plan, de crânial en caudal</tspan></text>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 500" font-family="-apple-system, Helvetica, Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1d4ed8"/></marker></defs>
+<rect width="860" height="500" fill="#f8fafc"/>
+<text x="14" y="20" font-size="11" font-weight="400" fill="#475569" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Coupe transversale thoracique, moitié droite — arrière en haut (côté sonde), ligne médiane à gauche</text>
+<!-- peau et graisse -->
+<path d="M120,52 Q400,34 600,70" fill="none" stroke="#1f2937" stroke-width="2"/>
+<!-- poumon / plèvre -->
+<path d="M262,500 Q262,420 300,372 Q330,338 400,330 Q520,322 600,372 L600,500 Z" fill="#dbeafe" stroke="none"/>
+<path d="M262,500 Q262,420 300,372 Q330,338 400,330 Q520,322 600,372" fill="none" stroke="#0891b2" stroke-width="3"/>
+<!-- trapèze, rhomboïde -->
+<path d="M150,66 Q400,50 596,84 L590,104 Q400,72 152,88 Z" fill="#f3c6c0" stroke="#9f5a52" stroke-width="1"/>
+<path d="M230,90 Q400,78 588,108 L582,128 Q400,100 232,112 Z" fill="#efb8b0" stroke="#9f5a52" stroke-width="1"/>
+<!-- érecteur du rachis -->
+<path d="M168,100 Q170,96 232,116 Q400,104 560,136 Q580,190 548,262 L470,246 L392,226 L352,204 L262,246 L172,250 Z" fill="#e79a8f" stroke="#9f5a52" stroke-width="1.2"/>
+<path d="M300,112 L318,220 M420,112 L430,234" stroke="#9f5a52" stroke-width="1" stroke-dasharray="4 4" fill="none" opacity=".8"/>
+<!-- os : corps, arc postérieur, épineuse, processus transverse, côte -->
+<g fill="#e7e2d3" stroke="#1f2937" stroke-width="1.8" stroke-linejoin="round">
+  <path d="M150,346 Q232,340 250,400 Q262,470 210,500 L150,500 Z"/>
+  <path d="M150,96 L166,100 L172,250 L262,246 L352,204 Q372,200 374,216 Q372,232 352,238 L286,270 L250,300 Q238,330 232,344 L214,340 Q214,300 196,286 L150,286 Z"/>
+  <path d="M252,352 Q262,318 300,286 L352,246 Q380,228 410,236 Q500,252 600,330 L592,350 Q500,278 410,262 Q384,256 364,268 L316,306 Q286,332 274,366 Z"/>
+</g>
+<!-- canal et moelle -->
+<path d="M150,290 Q196,290 208,316 Q210,340 150,344 Z" fill="#fff" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M150,300 Q180,300 184,318 Q180,334 150,334 Z" fill="#fde68a" stroke="#ca8a04" stroke-width="1.2"/>
+<!-- ligament costo-transversaire supérieur (projection) -->
+<path d="M300,286 L340,252" stroke="#15803d" stroke-width="5" opacity=".75" fill="none"/>
+<!-- nerfs -->
+<g fill="none" stroke="#ca8a04" stroke-linecap="round">
+  <path d="M188,322 Q220,340 246,338" stroke-width="5"/>
+  <path d="M246,338 L304,348" stroke-width="3.5" stroke-dasharray="6 4"/>
+  <path d="M304,348 Q350,300 420,296 Q505,300 590,357" stroke-width="3.5"/>
+  <path d="M246,338 Q268,300 286,282 Q300,262 306,238 Q308,226 300,214" stroke-width="3" stroke-dasharray="6 4"/>
+  <path d="M300,214 Q280,180 262,150 M300,214 Q340,180 384,150" stroke-width="2.2"/>
+</g>
+<circle cx="262" cy="396" r="6" fill="#ca8a04"/>
+<!-- nappe d'anesthésique local dans le plan -->
+<path d="M196,250 L262,240 L352,198 Q380,196 396,222 L470,240 L520,252 L516,262 L468,252 L392,234 Q372,206 352,210 L264,252 L196,258 Z" fill="#3b82f6" fill-opacity=".55" stroke="#1d4ed8" stroke-width="1.2"/>
+<path d="M336,232 Q322,262 306,296" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+<!-- pointe de l'aiguille et sonde vues en bout -->
+<circle cx="340" cy="203" r="5" fill="#b91c1c"/>
+<rect x="318" y="30" width="44" height="16" rx="3" fill="#1d4ed8" fill-opacity=".85" stroke="#1e3a8a"/>
+<path d="M340,48 L340,196" stroke="#1d4ed8" stroke-width="1" stroke-dasharray="3 4"/>
+<path d="M150,30 L150,500" stroke="#475569" stroke-width="1" stroke-dasharray="8 5"/>
+<!-- étiquettes -->
+<text x="366" y="42" font-size="11.5" font-weight="600" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Sonde para-sagittale, à 3 cm de la ligne médiane</text>
+<text x="470" y="96" font-size="11" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f3c6c0" stroke-width="3.5" paint-order="stroke" font-style="italic">Trapèze</text><text x="470" y="121" font-size="11" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#efb8b0" stroke-width="3.5" paint-order="stroke" font-style="italic">Rhomboïde</text>
+<text x="196" y="168" font-size="11" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#e79a8f" stroke-width="3.5" paint-order="stroke" font-style="italic">Épineux</text><text x="336" y="150" font-size="11" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#e79a8f" stroke-width="3.5" paint-order="stroke" font-style="italic">Longissimus</text><text x="456" y="176" font-size="11" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#e79a8f" stroke-width="3.5" paint-order="stroke" font-style="italic">Ilio-costal</text>
+<line x1="640" y1="150" x2="540" y2="190" stroke="#475569" stroke-width="1.1"/><circle cx="540" cy="190" r="2.2" fill="#475569"/><text x="644" y="148" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Érecteur du rachis</text><text x="644" y="163" font-size="10.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >(trois colonnes)</text>
+<line x1="640" y1="196" x2="344" y2="204" stroke="#b91c1c" stroke-width="1.1"/><circle cx="344" cy="204" r="2.2" fill="#b91c1c"/><text x="644" y="194" font-size="12.5" font-weight="600" fill="#b91c1c" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Pointe de l'aiguille : contact du</text><text x="644" y="209" font-size="12.5" font-weight="600" fill="#b91c1c" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >processus transverse</text><text x="644" y="224" font-size="10.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >aiguille dans le plan para-sagittal,</text><text x="644" y="237" font-size="10.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >perpendiculaire à cette coupe</text>
+<line x1="640" y1="262" x2="500" y2="252" stroke="#1d4ed8" stroke-width="1.1"/><circle cx="500" cy="252" r="2.2" fill="#1d4ed8"/><text x="644" y="260" font-size="12.5" font-weight="600" fill="#1d4ed8" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Nappe d'AL sous l'érecteur</text><text x="644" y="275" font-size="10.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >lames, processus transverses, côtes</text>
+<line x1="640" y1="304" x2="560" y2="322" stroke="#475569" stroke-width="1.1"/><circle cx="560" cy="322" r="2.2" fill="#475569"/><text x="644" y="302" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Côte</text>
+<line x1="640" y1="334" x2="470" y2="300" stroke="#475569" stroke-width="1.1"/><circle cx="470" cy="300" r="2.2" fill="#475569"/><text x="644" y="332" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Rameau ventral (n. intercostal)</text><text x="644" y="347" font-size="10.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >atteint de façon inconstante</text>
+<line x1="640" y1="380" x2="560" y2="350" stroke="#0891b2" stroke-width="1.1"/><circle cx="560" cy="350" r="2.2" fill="#0891b2"/><text x="644" y="384" font-size="12.5" font-weight="600" fill="#0e7490" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Plèvre et poumon</text>
+<line x1="96" y1="196" x2="262" y2="150" stroke="#475569" stroke-width="1.1"/><circle cx="262" cy="150" r="2.2" fill="#475569"/><text x="8" y="186" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Rameau dorsal :</text><text x="8" y="201" font-size="10.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >traverse le plan</text><text x="8" y="214" font-size="10.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >entre deux PT</text>
+<line x1="100" y1="272" x2="222" y2="268" stroke="#475569" stroke-width="1.1"/><circle cx="222" cy="268" r="2.2" fill="#475569"/><text x="8" y="276" font-size="12.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Lame</text>
+<line x1="100" y1="128" x2="160" y2="140" stroke="#475569" stroke-width="1.1"/><circle cx="160" cy="140" r="2.2" fill="#475569"/><text x="8" y="132" font-size="12.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Proc. épineux</text>
+<line x1="330" y1="440" x2="316" y2="300" stroke="#1d4ed8" stroke-width="1.1"/><circle cx="316" cy="300" r="2.2" fill="#1d4ed8"/><text x="286" y="456" font-size="12.5" font-weight="600" fill="#1d4ed8" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Diffusion vers l'espace paravertébral</text><text x="286" y="471" font-size="10.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >en avant du lig. costo-transversaire sup. (vert) : inconstante</text>
+<line x1="96" y1="410" x2="262" y2="396" stroke="#475569" stroke-width="1.1"/><circle cx="262" cy="396" r="2.2" fill="#475569"/><text x="8" y="406" font-size="12.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Chaîne</text><text x="8" y="420" font-size="12.5" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >sympathique</text>
+<text x="176" y="440" font-size="11" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >Corps</text><text x="176" y="453" font-size="11" font-weight="400" fill="#1f2937" text-anchor="start" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke" >vertébral</text>
+</svg>
