@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <!-- Thorax vu de face (décubitus dorsal) : tête en haut, côté droit du patient à gauche de l'image ; clavicules, sternum, cartilages costaux et coracoïdes en pointillés -->
   <path d="M180,26 L176,46"/><path d="M220,26 L224,46"/>
-  <path d="M176,46 C140,50 92,58 58,80 C40,94 32,122 30,152 C26,200 26,250 28,300"/>
-  <path d="M224,46 C260,50 308,58 342,80 C360,94 368,122 370,152 C374,200 374,250 372,300"/>
+  <path d="M176,46 C140,50 92,58 58,80 C40,94 32,122 30,152 C28,178 27,202 27,226"/>
+  <path d="M224,46 C260,50 308,58 342,80 C360,94 368,122 370,152 C372,178 373,202 373,226"/>
   <path d="M84,162 C80,210 78,256 78,300"/>
   <path d="M316,162 C320,210 322,256 322,300"/>
   <path d="M84,162 C92,208 98,256 100,300"/>
