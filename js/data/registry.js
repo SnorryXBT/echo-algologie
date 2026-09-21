@@ -4,6 +4,7 @@ window.ECHO = window.ECHO || {};
   E.procedures = E.procedures || {};
   E.order = E.order || [];
   E.figures = E.figures || {};   // figures par fiche (js/data/figures/<id>.js)
+  E.anat = E.anat || {};         // coupes anatomiques recalées sur les échos réelles (js/data/anat/<id>.js)
 
   E.regions = [
     { id: 'socle',          nom: 'Socle & techniques transversales', court: 'Socle' },

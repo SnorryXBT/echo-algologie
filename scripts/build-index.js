@@ -6,11 +6,13 @@ const dir = path.join(root, 'js/data/procedures');
 const files = fs.readdirSync(dir).filter(f => f.endsWith('.js')).sort();
 const figDir = path.join(root, 'js/data/figures');
 const figs = fs.existsSync(figDir) ? fs.readdirSync(figDir).filter(f => f.endsWith('.js')).sort() : [];
+const anatDir = path.join(root, 'js/data/anat');
+const anats = fs.existsSync(anatDir) ? fs.readdirSync(anatDir).filter(f => f.endsWith('.js')).sort() : [];
 const vidDir = path.join(root, 'video');
 const vids = {};
 if (fs.existsSync(vidDir)) for (const f of fs.readdirSync(vidDir)) { const m = f.match(/^(.+)\.(mp4|webm)$/); if (m) (vids[m[1]] = vids[m[1]] || []).push(m[2]); }
 fs.writeFileSync(path.join(root, 'js/data/videos.js'), `/* généré par scripts/build-index.js — vidéos locales présentes dans video/ */\nwindow.ECHO = window.ECHO || {}; ECHO.videosLocales = ${JSON.stringify(vids)};\n`);
-const tags = files.map(f => `  <script src="js/data/procedures/${f}"></script>`).concat(figs.map(f => `  <script src="js/data/figures/${f}"></script>`)).join('\n');
+const tags = files.map(f => `  <script src="js/data/procedures/${f}"></script>`).concat(figs.map(f => `  <script src="js/data/figures/${f}"></script>`)).concat(anats.map(f => `  <script src="js/data/anat/${f}"></script>`)).join('\n');
 const html = `<!doctype html>
 <html lang="fr">
 <head>
@@ -23,6 +25,7 @@ const html = `<!doctype html>
   <script src="js/lib/md.js"></script>
   <script src="js/lib/icons.js"></script>
   <script src="js/lib/scene.js"></script>
+  <script src="js/lib/anat.js"></script>
   <script src="js/data/videos.js"></script>
 ${tags}
   <script src="js/app.js" defer></script>
@@ -34,7 +37,7 @@ ${tags}
     <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Rechercher un geste, une indication…" autocomplete="off"></div>
     <div class="filters"><button data-type="all" class="on">Tout</button><button data-type="infiltration">Infiltrations</button><button data-type="bloc">Blocs</button><button data-type="interventionnel">Interventionnel</button></div>
     <nav id="nav" class="nav"></nav>
-    <div class="side-foot">Schémas = représentations schématiques animées de la sono-anatomie. Vérifier posologies et références avant tout geste.</div>
+    <div class="side-foot">Schémas = représentations schématiques animées de la sono-anatomie. Vérifier posologies et références avant tout geste.<br><a href="#/validation">Validation des coupes anatomiques</a></div>
   </aside>
   <main>
     <div class="topbar"><div class="crumbs" id="crumbs"></div><div class="spacer"></div><button id="foldBtn" title="Déplier ou replier toutes les sections de la fiche">⤢ Tout déplier</button><button id="quizBtn" title="Masquer les étiquettes des schémas (survol pour révéler)">🎓 Mode quiz</button><button id="themeBtn">☾ Sombre</button><button id="printBtn">⎙ Imprimer</button></div>
@@ -46,4 +49,4 @@ ${tags}
 </html>
 `;
 fs.writeFileSync(path.join(root, 'index.html'), html);
-console.log(`index.html régénéré — ${files.length} fiche(s), ${figs.length} fichier(s) de figures, ${Object.keys(vids).length} vidéo(s) locale(s)`);
+console.log(`index.html régénéré — ${files.length} fiche(s), ${figs.length} fichier(s) de figures, ${anats.length} de coupes anatomiques, ${Object.keys(vids).length} vidéo(s) locale(s)`);

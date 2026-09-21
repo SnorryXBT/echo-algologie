@@ -18,13 +18,15 @@ const path = require('path'), fs = require('fs');
     const r = await page.evaluate(() => ({
       scenes: document.querySelectorAll('.scene-wrap svg.us-scene').length,
       sceneErr: document.querySelectorAll('.scene-wrap .callout.danger').length,
+      anat: document.querySelectorAll('.anat-host svg.anat-svg').length / 2,
+      anatErr: document.querySelectorAll('.anat-host .callout.danger').length + document.querySelectorAll('.anat-host:empty').length,
       secs: [...document.querySelectorAll('section.sec > h2')].map(h => h.textContent.replace(/^\d+/, '').trim()).length,
       h1: (document.querySelector('.fiche-head h1') || {}).textContent || '',
       labelsOut: [...document.querySelectorAll('.us-label')].filter(t => { const b = t.getBBox(); return b.x < 0 || b.x + b.width > 640 || b.y > 420; }).length,
     }));
-    const flag = errs.length || r.sceneErr || !r.h1 ? ' <<<' : '';
+    const flag = errs.length || r.sceneErr || r.anatErr || !r.h1 ? ' <<<' : '';
     if (flag) bad++;
-    console.log(`${id.padEnd(52)} scènes ${r.scenes} err ${r.sceneErr} sections ${String(r.secs).padStart(2)} étiquettes hors cadre ${r.labelsOut}${flag}${errs.length ? '\n   ' + errs.join('\n   ') : ''}`);
+    console.log(`${id.padEnd(52)} scènes ${r.scenes} err ${r.sceneErr} sections ${String(r.secs).padStart(2)} étiquettes hors cadre ${r.labelsOut}${r.anat ? ` coupes anat. ${r.anat}${r.anatErr ? ' ERR ' + r.anatErr : ''}` : ''}${flag}${errs.length ? '\n   ' + errs.join('\n   ') : ''}`);
   }
   console.log(`\n${ids.length} fiches, ${bad} avec problème`);
   await browser.close();

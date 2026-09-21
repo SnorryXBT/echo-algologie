@@ -116,6 +116,12 @@
     const labels = (f.labels || []).map((l, i) => `<div class="fig-label" data-i="${i}" style="left:${(l.x + (l.dx || 0)) * 100}%;top:${(l.y + (l.dy || 0)) * 100}%">${inline(l.text)}</div>`).join('');
     const lines = (f.labels || []).map(l => `<line x1="${(l.x + (l.dx || 0)) * 100}" y1="${(l.y + (l.dy || 0)) * 100}" x2="${l.x * 100}" y2="${l.y * 100}"/><circle cx="${l.x * 100}" cy="${l.y * 100}" r="0.9"/>`).join('');
     const img = `<div class="fig-img" data-crop="${crop.join(',')}"><div class="fig-clip"><img src="${esc(f.src)}" alt="${esc(f.titre || '')}" loading="lazy" onerror="this.closest('figure').classList.add('missing')"></div><svg class="fig-lines" viewBox="0 0 100 100" preserveAspectRatio="none">${lines}</svg>${labels}</div>`;
+    /* coupe anatomique recalée sur cette image (js/data/anat/<id>.js) : elle remplace l'image étiquetée, le schéma passe dessous */
+    const an = f.type === 'echo' ? (E.anat[p.id] || []).find(a => a.fig === f.src) : null;
+    if (an) {
+      const sc = f.pair && (p.scenes || []).find(x => x.id === f.pair);
+      return `<figure class="fig fig-echo has-anat"><div class="anat-host" data-fiche="${esc(p.id)}" data-fig="${esc(f.src)}"></div>${sc ? `<div class="fig-pair fig-pair-under">${safeScene(sc)}</div>` : ''}<figcaption>${an.valide ? '' : '<span class="anat-badge" title="Contours proposés par Claude, non encore relus par Mat : ne pas s\'y fier sans vérifier">Coupe anatomique non validée</span> '}${f.titre ? `<b>${inline(f.titre)}</b> ` : ''}${inline(f.legende || '')}${f.credit ? `<span class="credit">${inline(f.credit)}${f.source ? ` · <a href="${esc(f.source)}" target="_blank" rel="noopener">source</a>` : ''} · coupe anatomique : dessin original du mémo</span>` : ''}</figcaption></figure>`;
+    }
     let pair = '';
     if (f.type === 'echo' && f.pair) { const sc = (p.scenes || []).find(x => x.id === f.pair); if (sc) pair = `<div class="fig-pair">${safeScene(sc)}</div>`; }
     return `<figure class="fig fig-${esc(f.type || 'anatomie')}${pair ? ' has-pair' : ''}">${pair ? '<div class="fig-side">' : ''}${img}${pair}${pair ? '</div>' : ''}<figcaption>${f.titre ? `<b>${inline(f.titre)}</b> ` : ''}${inline(f.legende || '')}${f.credit ? `<span class="credit">${inline(f.credit)}${f.source ? ` · <a href="${esc(f.source)}" target="_blank" rel="noopener">source</a>` : ''}</span>` : ''}</figcaption></figure>`;
@@ -137,6 +143,38 @@
       if (img.complete) fit(); else img.addEventListener('load', fit);
     });
   }
+  function bindAnat() {
+    const hosts = [...document.querySelectorAll('.anat-host')];
+    const draw = h => {
+      if (h.dataset.done) return; h.dataset.done = '1';
+      const an = (E.anat[h.dataset.fiche] || []).find(a => a.fig === h.dataset.fig), f = (E.figures[h.dataset.fiche] || []).find(x => x.src === h.dataset.fig) || {};
+      try { window.ANAT.render(h, Object.assign({}, an, { src: h.dataset.fig, crop: f.crop }), { mode: h.dataset.mode || 'paire' }); } catch (e) { console.error(e); h.innerHTML = `<div class="callout danger">Erreur de rendu de la coupe anatomique : ${esc(e.message)}</div>`; }
+    };
+    if (hosts.length > 8 && window.IntersectionObserver) { const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { draw(e.target); io.unobserve(e.target); } }), { rootMargin: '600px' }); hosts.forEach(h => io.observe(h)); }
+    else hosts.forEach(draw);
+  }
+
+  /* ---------- validation des coupes anatomiques : #/validation[/<région|fiche>] ---------- */
+  function renderValidation(filtre) {
+    let notes = {}; try { notes = JSON.parse(localStorage.getItem('echo-anat-notes') || '{}'); } catch (e) {}
+    const items = [];
+    E.regions.forEach(r => Object.keys(E.anat).sort().forEach(id => { const p = E.procedures[id]; if (!p || p.region !== r.id) return; if (filtre && filtre !== r.id && filtre !== id) return; E.anat[id].forEach(a => items.push({ id, p, a, r })); }));
+    const tot = Object.values(E.anat).reduce((n, l) => n + l.length, 0), ok = Object.values(E.anat).reduce((n, l) => n + l.filter(a => a.valide).length, 0);
+    let html = `<div class="home"><h1>Validation des coupes anatomiques</h1><p class="lead">${ok} validée${ok > 1 ? 's' : ''} sur ${tot}. Pour chaque coupe : les contours proposés sur l'écho (pointillé = dessiné sans signal, par connaissance anatomique), la lecture annoncée avec son niveau de confiance, puis le rendu. Cocher ou noter la correction, puis « Copier le bilan » et le coller à Claude, qui corrige et passe la coupe en <code>valide: true</code>.</p><p><a href="#/validation">Toutes</a> · ${E.regions.map(r => `<a href="#/validation/${r.id}">${esc(r.nom)}</a>`).join(' · ')} &nbsp; <button id="anatCopy" class="replay">Copier le bilan</button></p>`;
+    items.forEach(({ id, p, a }) => {
+      const k = id + '|' + a.fig, n = notes[k] || {};
+      html += `<div class="card anat-valid" data-k="${esc(k)}"><h3><a href="#/fiche/${id}/sonoanatomie">${esc(p.titreCourt || p.titre)}</a> <small>${esc(a.fig)}</small> ${a.valide ? '<span class="tag grade">validée</span>' : '<span class="anat-badge">à valider</span>'}</h3>${a.lecture ? `<ul class="anat-lecture">${a.lecture.map(t => `<li>${inline(t)}</li>`).join('')}</ul>` : ''}<div class="anat-host" data-mode="contours" data-fiche="${esc(id)}" data-fig="${esc(a.fig)}"></div><div class="anat-host" data-fiche="${esc(id)}" data-fig="${esc(a.fig)}" style="margin-top:12px"></div><div class="anat-verdict"><label><input type="checkbox" ${n.ok ? 'checked' : ''}> Contours exacts</label><input type="text" placeholder="Correction à apporter (structure, limite, orientation…)" value="${esc(n.note || '')}"></div></div>`;
+    });
+    if (!items.length) html += '<div class="empty">Aucune coupe anatomique pour ce filtre.</div>';
+    $('#content').innerHTML = html + '</div>';
+    $('#crumbs').innerHTML = '<a href="#/">Écho-algologie</a> › <b>Validation des coupes anatomiques</b>';
+    document.title = 'Validation des coupes anatomiques — Écho-algologie';
+    const save = () => { document.querySelectorAll('.anat-valid').forEach(c => { notes[c.dataset.k] = { ok: c.querySelector('input[type=checkbox]').checked, note: c.querySelector('input[type=text]').value.trim() }; }); try { localStorage.setItem('echo-anat-notes', JSON.stringify(notes)); } catch (e) {} };
+    document.querySelectorAll('.anat-verdict input').forEach(i => i.addEventListener('change', save));
+    $('#anatCopy').addEventListener('click', () => { save(); const txt = 'Bilan de validation des coupes anatomiques\n' + items.map(({ id, a }) => { const n = notes[id + '|' + a.fig] || {}; return `- ${id} | ${a.fig} : ${n.ok ? 'OK' : n.note ? 'À CORRIGER' : 'non relue'}${n.note ? ' — ' + n.note : ''}`; }).join('\n'); (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(() => { $('#anatCopy').textContent = 'Bilan copié'; }, () => window.prompt('Copier ce bilan :', txt)); });
+    bindAnat();
+  }
+
   function demoHtml(p) {
     const yt = (p.videos || []).map(v => (v.url || '').match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{6,})/)).find(Boolean);
     const exts = (E.videosLocales || {})[p.id] || [];
@@ -187,7 +225,7 @@
     $('#content').innerHTML = head + subnav + parts.join('');
     $('#crumbs').innerHTML = `<a href="#/">Écho-algologie</a> › <a href="#/region/${p.region}">${esc((E.regions.find(r => r.id === p.region) || {}).nom || p.region)}</a> › <b>${esc(p.titreCourt || p.titre)}</b>`;
     document.title = `${p.titreCourt || p.titre} — Écho-algologie`;
-    bindScenes(); applyCrops(); bindSections();
+    bindScenes(); applyCrops(); bindSections(); bindAnat();
   }
 
   function bindSections() {
@@ -261,6 +299,7 @@
       if (p) { renderFiche(p); if (m[2]) { const el = document.getElementById(m[2]); if (el) el.scrollIntoView({ block: 'start' }); } else window.scrollTo(0, 0); }
       else { $('#content').innerHTML = `<div class="empty"><h2>Fiche « ${esc(m[1])} » non encore rédigée</h2><p>Elle figure au plan mais son fichier n'est pas encore présent.</p></div>`; }
     } else if ((m = h.match(/^#\/region\/([^/]+)/))) { renderHome(m[1]); window.scrollTo(0, 0); }
+    else if ((m = h.match(/^#\/validation(?:\/([^/]+))?/))) { renderValidation(m[1]); window.scrollTo(0, 0); }
     else { renderHome(); }
     renderNav();
   }

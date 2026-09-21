@@ -21,7 +21,11 @@ ne traite que du projet.
 - `scripts/` — `build-index.js` (régénère `index.html` après ajout d'une fiche),
   `audit.js` (champs, longueurs, références), `check-all.js` (rendu de chaque fiche en
   Chromium, erreurs JS), `shot.js` (capture d'une scène), `refs-a-verifier.js`,
-  `audit-axes.js` (axes des paires écho/schéma, images référencées absentes).
+  `audit-axes.js` (axes des paires écho/schéma, images référencées absentes), `anat-grid.js`
+  (grille cotée + profils de brillance avant tracé), `anat-check.js` (contrôle statique et état de validation des
+  coupes anatomiques), `anat-export.js` (export PNG pour l'enseignement, licences diffusables seulement).
+- `js/lib/anat.js` — moteur des coupes anatomiques recalées sur les échos réelles ; données dans
+  `js/data/anat/<id>.js` ; page de validation `#/validation`.
 
 ## Règles non négociables
 
@@ -50,7 +54,7 @@ ne traite que du projet.
 ## Commandes projet (skills)
 
 `/nouvelle-fiche <id>` · `/controle` · `/verif-biblio [région]` · `/deployer` ·
-`/illustrer [id|région]` · `/videos [id|--all]`
+`/illustrer [id|région]` · `/videos [id|--all]` · `/echo-anatomie [id|région|--bilan]`
 
 ## Règle de reprise (décision de Mat, 10 septembre 2026)
 
@@ -63,6 +67,17 @@ fréquents servent de points de reprise.
 Voir `CHANTIER-ILLUSTRATIONS.md` : planches de Gray annotées (`js/data/figures/<id>.js`,
 images dans `img/<id>/`), figures d'installation, écho-anatomie réelle côte à côte,
 vidéo par fiche (`scripts/video.js`, fichiers dans `video/`). Exécution sur le Mac.
+
+## Chantier coupes anatomiques (lancé le 21 septembre 2026)
+
+Décision de Mat : chaque image échographique réelle du mémo reçoit sa **coupe anatomique recalée** (tissus colorés,
+mêmes contours, étiquettes communes, fondu écho ↔ anatomie) — skill `/echo-anatomie`. Socle livré : moteur, palette
+de 18 tissus, page de validation, export, contrôles. Ordre convenu : (1) socle — fait ; (2) pilote de 5 coupes
+hétérogènes (sous-acromiale — tracée, à valider ; canal carpien ; genou ; ganglion stellaire ; fémoral ou LFCN) pour
+éprouver la palette ; (3) production région par région avec lot de validation par région ; (4) rachis-bassin, thorax,
+socle : `/illustrer` d'abord. **Une coupe reste `valide: false` (bandeau visible) tant que Mat ne l'a pas relue** ;
+jamais d'auto-validation. 41 des 75 images portent des annotations incrustées : préférer une image vierge quand elle
+existe. Export hors mémo : CC BY / images personnelles uniquement (37 des 75 images sont CC BY).
 
 ## État des illustrations (20 septembre 2026)
 

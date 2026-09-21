@@ -23,6 +23,13 @@ Règles : images libres seulement (Gray 1918 domaine public ; articles CC BY de 
 pour usage privé ; Servier Medical Art CC BY 4.0) ; `credit` et `source` obligatoires ; étiquettes en
 français ; 1 à 3 figures « anatomie », 1 « installation », 0 à 2 « echo » par fiche.
 
+## Coupe anatomique recalée
+
+Une figure `type: 'echo'` qui possède une entrée dans `js/data/anat/<id>.js` (champ `fig` = son `src`) est affichée en
+paire écho / coupe anatomique (étiquettes communes, fondu, survol) ; ses `labels` propres ne servent plus, le schéma
+apparié passe dessous. Format, méthode et garde-fous : `.claude/skills/echo-anatomie/SKILL.md`. Changer le `crop`
+d'une figure déjà tracée décale tout le tracé : `node scripts/anat-check.js` le détecte.
+
 ## Outils (chantier illustrations)
 
 - `node scripts/gray.js --info 810 203` — taille et description Commons d'une planche ; `node scripts/gray.js <id> 810 203`

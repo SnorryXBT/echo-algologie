@@ -55,10 +55,10 @@ ECHO.figures['sous-acromiale'] = [
     src: 'img/sous-acromiale/echo-2.jpg',
     pair: 'sad-sono',
     titre: 'Coupe de repérage réelle : supra-épineux en grand axe',
-    legende: 'Deltoïde en surface, fine bande hypoéchogène de la bourse, puis tendon fibrillaire convexe du supra-épineux qui s\'insère sur le grand tubercule ; la tête humérale dessine la convexité profonde, avec le liseré hypoéchogène du cartilage. Panneau c (échographe fixe) d\'une planche composite.',
+    legende: 'Deltoïde en surface, fine bande hypoéchogène de la bourse, puis tendon fibrillaire convexe du supra-épineux qui s\'insère sur le grand tubercule ; la tête humérale dessine la convexité profonde, avec le liseré hypoéchogène du cartilage. Latéral à gauche : orientation inverse de celle du schéma apparié. Panneau c (échographe fixe) d\'une planche composite.',
     credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 6c — CC BY-NC-SA 4.0',
     source: 'https://doi.org/10.4103/jmu.JMU-D-25-00156',
-    crop: [0.0, 0.5, 0.5, 0.5],
+    crop: [0.0, 0.5163, 0.488, 0.4837],
     labels: [
       { x: 0.50, y: 0.14, text: 'Deltoïde', dx: 0.00, dy: -0.08 },
       { x: 0.42, y: 0.30, text: 'Bourse sous-acromio-deltoïdienne', dx: 0.20, dy: -0.10 },
