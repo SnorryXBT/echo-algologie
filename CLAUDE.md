@@ -73,8 +73,9 @@ vidéo par fiche (`scripts/video.js`, fichiers dans `video/`). Exécution sur le
 Décision de Mat : chaque image échographique réelle du mémo reçoit sa **coupe anatomique recalée** (tissus colorés,
 mêmes contours, étiquettes communes, fondu écho ↔ anatomie) — skill `/echo-anatomie`. Socle livré : moteur, palette
 de 18 tissus, page de validation, export, contrôles. Ordre convenu : (1) socle — fait ; (2) pilote de 5 coupes
-hétérogènes (sous-acromiale — tracée, à valider ; canal carpien ; genou ; ganglion stellaire ; fémoral ou LFCN) pour
-éprouver la palette ; (3) production région par région avec lot de validation par région ; (4) rachis-bassin, thorax,
+hétérogènes pour éprouver la palette — fait le 21 septembre : sous-acromiale, canal carpien, genou (image remplacée),
+ganglion stellaire tracés, tous `valide: false` ; LFCN **non tracé**, lecture indécidable sur l'image actuelle, soumis à
+Mat (leçons consignées dans la skill) ; (3) production région par région avec lot de validation par région ; (4) rachis-bassin, thorax,
 socle : `/illustrer` d'abord. **Une coupe reste `valide: false` (bandeau visible) tant que Mat ne l'a pas relue** ;
 jamais d'auto-validation. 41 des 75 images portent des annotations incrustées : préférer une image vierge quand elle
 existe. Export hors mémo : CC BY / images personnelles uniquement (37 des 75 images sont CC BY).

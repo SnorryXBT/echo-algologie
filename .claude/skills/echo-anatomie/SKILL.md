@@ -78,6 +78,28 @@ l'épaisseur depuis le bas). Un tissu manquant s'ajoute dans `js/lib/anat.js` (`
 qu'à l'écran (cône d'ombre, anisotropie, artéfacts de réverbération), `vue: 'anat'` pour ce que l'écho ne montre pas.
 Signaler les pièges d'interprétation : ce sont eux qui forment l'étudiant.
 
+## Leçons du pilote (21 septembre 2026 — sous-acromiale, canal carpien, genou, ganglion stellaire, LFCN)
+
+- **Le corrigé des auteurs est la meilleure source de certitude** : panneau voisin annoté (canal carpien 2B, épaule
+  6d) ou contours en pointillé incrustés (stellaire). Il donne l'identité et l'orientation (« Certain ») ; il n'est
+  presque jamais recalé au pixel sur le panneau vierge → s'en servir pour les positions relatives, tracer sur l'écho.
+- **Image vierge, basse résolution, sans corrigé exploitable = ne pas tracer.** Cas du LFCN (fig. 4c, 270 px) : deux
+  lectures des masses musculaires restent possibles et le nerf lui-même n'est que supposé. Soumettre la grille à Mat
+  avec les questions précises, ou remplacer l'image. Une planche dont la cible est « Supposition » n'apprend rien.
+- **Environ une image sur quatre est impropre** : sur-annotée (texte sur 40 % de la surface) ou de lecture douteuse
+  (genou : « Femur » posé sur une plage sans cône d'ombre). La remplacer (auteurs et licence recoupés) plutôt que de
+  dessiner par-dessus ; viser le CC BY, qui rend la planche exportable.
+- Image déjà annotée par ses auteurs : ne pas dupliquer leurs sigles sur l'écho — étiquettes françaises en
+  `vue: 'anat'`, et sur l'écho seulement ce qu'ils n'ont pas désigné.
+- Ce que l'écho ne montre pas mais que l'étudiant doit situer (chaîne sympathique sous le fascia prévertébral, nerf
+  ulnaire non résolu) : structure `extrapole: true`, étiquette `vue: 'anat'`, ligne « Extrapolé — » dans `lecture`.
+- Le recadrage d'origine mord souvent sur le panneau voisin (3 cas sur 4) : le resserrer avant de tracer.
+- Panneau bas (H < 500) : étiquettes sur deux rangées en haut et une en bas ; la taille des pastilles est bornée par
+  la hauteur. Contrôler les collisions sur la planche exportée (`anat-export.js … --prive`), plus lisible que la capture
+  de la fiche, dont l'en-tête collant masque le haut.
+- `scripts/echo-search.js` : le piège des éditeurs Cureus (« Muacevic A, Adler JR ») a encore été trouvé dans un crédit
+  existant ; `grep -l "Muacevic\|Adler JR" js/data/figures/*.js` avant de clore une région.
+
 ## Règles
 
 - Dessin **original** : ne jamais décalquer ni reproduire une planche d'un atlas ou d'une application commerciale
