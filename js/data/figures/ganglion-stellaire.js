@@ -63,6 +63,7 @@ ECHO.figures['ganglion-stellaire'] = [
     legende: 'Annotations d\'origine conservées : *CCA* = artère carotide commune, *LC Muscle* = muscle long du cou, *AT* et *PT* = tubercules antérieur et postérieur du processus transverse de C6, *C6 NR* = racine C6, *LA* = anesthésique local, ligne verte pointillée = **fascia prévertébral**, flèches bleues = aiguille. C\'est exactement la fin de geste recherchée : la nappe d\'injectat décolle le fascia prévertébral de la face antérieure du long du cou et s\'étale en dedans, sans envahir le muscle. **Attention à l\'orientation : l\'image est inversée par rapport au schéma en regard** — ici le **médial est à droite** (la carotide est à droite de l\'image), alors que la scène du mémo place le médial à gauche. L\'aiguille y progresse donc de la gauche vers la droite de l\'écran, ce qui reste un trajet **latéro-médial**. Repère de profondeur : l\'échelle latérale montre que la cible est à 2 cm environ chez ce sujet.',
     credit: 'Yang L, Liu J, Yang Y, Zhao H, Fan Z, Yin G, Xuan Q, Drug Design, Development and Therapy 2026, figure 1 — CC BY-NC (Europe PMC)',
     source: 'https://doi.org/10.2147/DDDT.S609398',
+    crop: [0, 0.05, 1, 0.57],
   },
   {
     type: 'echo',

@@ -68,7 +68,7 @@ ECHO.anat['<fiche>'] = [{
 ```
 
 Tissus : `peau graisse muscle tendon ligament fascia bourse cartilage os nerf artere veine plevre poumon glande disque
-liquide conjonctif`. Options : `enthese: 0.38` (tendon, ligament : fraction du bord bas, depuis le début du tracé, sur
+liquide conjonctif aiguille`. Options : `enthese: 0.38` (tendon, ligament : fraction du bord bas, depuis le début du tracé, sur
 laquelle les fibres s'insèrent) ; `guide: […]` (muscle : bord bas lissé pour orienter les fibres quand le vrai bord fait
 une épingle) ; `lame: [f0, f1]` (bourse : position de la lame liquidienne dans le complexe graisseux, en fraction de
 l'épaisseur depuis le bas). Un tissu manquant s'ajoute dans `js/lib/anat.js` (`TISSUS` + `peindre`) et dans

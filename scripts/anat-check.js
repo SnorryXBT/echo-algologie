@@ -6,7 +6,7 @@ const fs = require('fs'), path = require('path');
 const root = path.join(__dirname, '..');
 global.window = global; global.ECHO = { figures: {}, anat: {} };
 for (const d of ['figures', 'anat']) { const dir = path.join(root, 'js/data', d); if (fs.existsSync(dir)) for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.js'))) eval(fs.readFileSync(path.join(dir, f), 'utf8')); }
-const TISSUS = ['peau', 'graisse', 'muscle', 'tendon', 'bourse', 'cartilage', 'os', 'nerf', 'artere', 'veine', 'ligament', 'fascia', 'plevre', 'poumon', 'glande', 'disque', 'liquide', 'conjonctif'];
+const TISSUS = ['peau', 'graisse', 'muscle', 'tendon', 'bourse', 'cartilage', 'os', 'nerf', 'artere', 'veine', 'ligament', 'fascia', 'plevre', 'poumon', 'glande', 'disque', 'liquide', 'conjonctif', 'aiguille'];
 function size(file) {                    // dimensions JPEG / PNG sans dépendance
   const b = fs.readFileSync(file);
   if (b[0] === 0x89) return [b.readUInt32BE(16), b.readUInt32BE(20)];

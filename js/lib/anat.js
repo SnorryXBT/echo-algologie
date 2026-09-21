@@ -23,6 +23,7 @@
     disque:    { nom: 'Disque', trait: '#9db7c9' },
     liquide:   { nom: 'Liquide', trait: '#39b7ff' },
     conjonctif:{ nom: 'Tissu conjonctif', trait: '#e9c7b5' },
+    aiguille:  { nom: 'Aiguille', trait: '#7fe0ff' },
   };
 
   /* ---------- géométrie ---------- */
@@ -159,6 +160,8 @@
         g.push(`<path d="${d}" fill="#9db7c9"/>${lignes(fibres(b, 7, 1, 19), '#c9dbe6', '#6f8da1', 1.2, 0.8)}<path d="${d}" fill="none" stroke="#5f7d91" stroke-width="1.3"/>`); break;
       case 'liquide':
         g.push(`<path d="${d}" fill="#2f9fe0" opacity=".9" stroke="#1d6fa3" stroke-width="1.2"/>`); break;
+      case 'aiguille':   // `ligne` du point d'entrée à la pointe, ep ≈ 5
+        g.push(`<path d="${d}" fill="#dfe4ea" stroke="#4b5563" stroke-width="1.4"/><path d="${smooth(s.ligne)}" fill="none" stroke="#ffffff" stroke-width="1" opacity=".9"/>`); break;
       case 'conjonctif':
         g.push(`<path d="${d}" fill="#e3bfae" filter="url(#${id}-lob)"/>`); break;
       default:
@@ -181,7 +184,7 @@
     }).join('');
   }
   function etiquettes(spec, id, vue, W, large) {
-    const fs = large ? W / 58 : W / 40;   // panneau large (calque) ou demi-largeur (paire) : ≈ 12–13 px à l'écran
+    const H = spec.vb[1], fs = large ? Math.min(W / 58, H / 30) : Math.min(W / 40, H / 21);   // panneau large (calque) ou demi-largeur (paire) : ≈ 12–13 px à l'écran
     return (spec.labels || []).filter(l => !l.vue || l.vue === vue).map(l => {
       const tx = l.x + (l.dx || 0), ty = l.y + (l.dy || 0);
       return `<g class="anat-l" data-s="${l.s || ''}"><line x1="${tx}" y1="${ty}" x2="${l.x}" y2="${l.y}" marker-end="url(#${id}-fl)"/><g class="anat-pill" data-x="${tx}" data-y="${ty}"><rect rx="${fs * 0.4}"/><text x="${tx}" y="${ty}" font-size="${fs}" text-anchor="middle" dominant-baseline="central">${l.text}</text></g></g>`;
