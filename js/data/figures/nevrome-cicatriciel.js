@@ -51,7 +51,7 @@ ECHO.figures['nevrome-cicatriciel'] = [
         { x: 212, y: 172, text: 'ombilic' },
         { x: 150, y: 222, text: 'Tinel marqué au feutre' },
       ],
-      note: 'Sonde sur le point de Tinel, tournée dans l\'axe du nerf ; aiguille in-plane par le versant proximal, le long du nerf, jamais dans le névrome',
+      note: 'Sonde sur le Tinel, dans l\'axe du nerf ; aiguille in-plane par le versant proximal, jamais dans le névrome',
     },
   },
   {

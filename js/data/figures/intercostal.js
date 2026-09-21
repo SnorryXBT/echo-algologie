@@ -47,11 +47,11 @@ ECHO.figures['intercostal'] = [
       aiguille: { from: [149, 282], to: [148, 252] },
       position: 'ventral',
       labels: [
-        { x: 206, y: 60, text: 'C7' },
+        { x: 206, y: 84, text: 'C7' },
         { x: 208, y: 180, text: '≈ T7 (pointe des scapulas)' },
         { x: 70, y: 180, text: 'angle costal, 6–8 cm' },
       ],
-      note: 'Décubitus ventral ; sonde sagittale perpendiculaire aux côtes, à 6–8 cm de la ligne médiane ; aiguille in-plane caudo-crâniale, tangentielle à la plèvre',
+      note: 'Décubitus ventral ; sonde sagittale, perpendiculaire aux côtes, à 6–8 cm de la ligne médiane ; aiguille in-plane caudo-crâniale',
     },
   },
   {
