@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <!-- Bassin vu de dos centré sur le sacrum, patient en procubitus : tête en haut, sillon interfessier en bas -->
-  <path d="M78,0 C70,40 50,84 42,132 C34,190 44,250 60,300"/>
-  <path d="M322,0 C330,40 350,84 358,132 C366,190 356,250 340,300"/>
+  <path d="M84,0 C76,40 50,84 38,132 C30,166 28,198 32,226"/>
+  <path d="M316,0 C324,40 350,84 362,132 C370,166 372,198 368,226"/>
   <!-- sillon interfessier -->
   <path d="M200,236 L200,300"/>
   <!-- ligne des épineuses lombaires -->
