@@ -10,9 +10,9 @@ ECHO.figures['branches-mediales-lombaires'] = [
     labels: [
       { x: 0.26, y: 0.36, text: 'Processus transverse', dx: -0.08, dy: 0.17 },
       { x: 0.37, y: 0.44, text: 'Proc. articulaire supérieur', dx: -0.16, dy: 0.38 },
-      { x: 0.665, y: 0.47, text: 'Processus mamillaire', dx: 0.16, dy: 0.30 },
+      { x: 0.665, y: 0.47, text: 'Processus mamillaire', dx: 0.07, dy: 0.45 },
       { x: 0.725, y: 0.505, text: 'Processus accessoire', dx: 0.15, dy: 0.13 },
-      { x: 0.695, y: 0.50, text: 'Passage de la branche médiale', dx: 0.10, dy: 0.42 },
+      { x: 0.695, y: 0.50, text: 'Passage de la branche médiale', dx: 0.14, dy: 0.27 },
       { x: 0.45, y: 0.82, text: 'Corps vertébral', dx: -0.24, dy: 0.10 },
       { x: 0.56, y: 0.14, text: 'Processus épineux', dx: -0.22, dy: -0.02 },
     ],
