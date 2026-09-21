@@ -58,7 +58,7 @@ ECHO.figures['nerf-median-canal-carpien'] = [
     legende: 'Nerf médian « en nid d\'abeilles » sous le rétinaculum, plus superficiel et plus radial que les tendons fléchisseurs ; scaphoïde en dehors, pisiforme en dedans, avec le paquet ulnaire en surface du rétinaculum. Panneau 2A d\'une planche dont le panneau 2B, annoté par les auteurs, sert de corrigé.',
     credit: 'Manske RC, Wolfe C, Page P et al., International Journal of Sports Physical Therapy 2026, fig. 2A — CC BY-NC 4.0',
     source: 'https://doi.org/10.26603/001c.165287',
-    crop: [0.0, 0.0, 0.5, 1.0],
+    crop: [0, 0, 0.474, 1],
     labels: [
       { x: 0.36, y: 0.35, text: 'N. médian', dx: -0.02, dy: -0.22 },
       { x: 0.48, y: 0.27, text: 'Rétinaculum', dx: 0.20, dy: -0.16 },
@@ -74,7 +74,7 @@ ECHO.figures['nerf-median-canal-carpien'] = [
     pair: 'cc-hydrodissection',
     titre: 'Hydrodissection réelle sous le rétinaculum',
     legende: 'Coupe longitudinale oblique : le rétinaculum est surligné en vert, le nerf médian en jaune ; l\'aiguille, dans le plan, vient ici de distal (entrée unique depuis la base du pouce, technique des auteurs) et l\'injectat décolle le nerf du rétinaculum en halo. Panneau B d\'une planche composite (A : avant injection).',
-    credit: 'Muacevic A, Adler JR, Suhaimi A et al., Cureus 2026, fig. 2B — CC BY 4.0',
+    credit: 'Suhaimi A, Yoon Y, Suryadi T et al., Cureus 2026, fig. 2B — CC BY 4.0',
     source: 'https://doi.org/10.7759/cureus.107717',
     crop: [0.0, 0.5, 1.0, 0.5],
   },

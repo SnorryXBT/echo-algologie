@@ -102,6 +102,8 @@
       ${blots('chair', '0.012 0.09', 2, [0.45, 0.10, 0.09], 5, -2.6)}
       ${blots('alv', '0.07 0.07', 6, [0.98, 0.86, 0.88], 6, -2.7)}
       ${blots('grain', '0.22 0.22', 8, [0.80, 0.45, 0.33], 4, -1.9)}
+      <pattern id="${id}-tpa" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(24)"><rect width="7" height="7" fill="#ece9e1"/><circle cx="2" cy="2" r="1.3" fill="#b9b4a8"/><circle cx="5.5" cy="5.5" r="1.3" fill="#ffffff"/></pattern>
+      <pattern id="${id}-mpa" width="16" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)"><rect width="16" height="14" fill="#8e2f27"/><ellipse cx="4.5" cy="3.5" rx="4" ry="3" fill="#b8493d"/><ellipse cx="12.5" cy="10.5" rx="4" ry="3" fill="#b8493d"/></pattern>
       <pattern id="${id}-fasc" width="10" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(18)"><rect width="10" height="9" fill="#d9a521"/><circle cx="3" cy="2.5" r="2.6" fill="#f7e27a"/><circle cx="8" cy="7" r="2.6" fill="#f7e27a"/></pattern>
       ${blots('soie', '0.008 0.12', 5, [0.72, 0.70, 0.66], 5, -2.6)}
       <filter id="${id}-main" ${box}><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
@@ -119,8 +121,10 @@
       case 'graisse':
         g.push(`<path d="${d}" fill="#e3b341" filter="url(#${id}-lob)"/>${lignes(fibres(b, 34, 10, 11), '#fff6d8', '#fff6d8', 2, 0.75)}`); break;
       case 'muscle':
+        if (b.contour) { g.push(`<path d="${d}" fill="url(#${id}-mpa)" stroke="#eee3d6" stroke-width="3"/>`); break; }   // petit axe : faisceaux vus en bout
         g.push(`<clipPath id="${id}-cp-${s.id}"><path d="${d}"/></clipPath><path d="${d}" fill="#a8392f" filter="url(#${id}-chair)"/><g clip-path="url(#${id}-cp-${s.id})">${lignes(fibres(b, 9, 1.6, 5, 0, s.guide), '#cf6a5c', '#7a221d', 1.5, 0.6)}</g><path d="${smooth(b.haut)}" fill="none" stroke="#eee3d6" stroke-width="4" opacity=".95"/>`); break;
       case 'tendon':
+        if (b.contour) { g.push(`<path d="${d}" fill="url(#${id}-tpa)" stroke="#8d897f" stroke-width="2"/>`); break; }    // petit axe : fibres vues en bout
         g.push(`<path d="${d}" fill="#ece9e1" filter="url(#${id}-soie)"/>${lignes(fibres(b, 5.5, 1.2, 3, s.enthese), '#ffffff', '#a9a498', 1.3, 0.8)}<path d="${d}" fill="none" stroke="#8d897f" stroke-width="1.5"/>`); break;
       case 'bourse': {   // complexe graisse péribursale + lame bursale ; `lame: [f0, f1]` = position de la lame, en fraction de l'épaisseur depuis le bord bas
         const A = resample(b.haut, 36), B = resample(b.bas, 36), f = s.lame || [0.28, 0.72];
@@ -132,6 +136,7 @@
       case 'cartilage':
         g.push(`<path d="${d}" fill="#a9cfe0" stroke="#6d9db3" stroke-width="1.2"/>`); break;
       case 'os':
+        if (b.contour) { g.push(`<path d="${d}" fill="#b5473e" filter="url(#${id}-spong)"/><path d="${d}" fill="none" stroke="#a88a58" stroke-width="12"/><path d="${d}" fill="none" stroke="#ead7ae" stroke-width="8.5"/>`); break; }   // petit os entier (pisiforme, sésamoïde)
         g.push(`<path d="${d}" fill="#b5473e" filter="url(#${id}-spong)"/><path d="${smooth(b.haut)}" fill="none" stroke="#a88a58" stroke-width="13" stroke-linecap="round"/><path d="${smooth(b.haut)}" fill="none" stroke="#ead7ae" stroke-width="9.5" stroke-linecap="round"/>`); break;
       case 'nerf':     // petit axe : fascicules en nid d'abeille ; grand axe (haut/bas) : fibres jaunes
         g.push(b.contour ? `<path d="${d}" fill="url(#${id}-fasc)" stroke="#a87c10" stroke-width="2.5"/>`
@@ -171,7 +176,7 @@
       const b = bords(s, H), c = (TISSUS[s.tissu] || {}).trait || '#fff';
       const d = b.os ? smooth(b.haut) : pathOf(b), cls = `anat-c${visible ? ' on' : ''}`;
       /* sans signal écho (dessiné par connaissance anatomique) : pointillé. Corticale : `vu: [i0, i1]` = segment réellement vu */
-      if (b.os && s.vu) return `<path class="${cls} ex" data-s="${s.id}" d="${d}" style="--c:${c}" fill="none"/><path class="${cls}" data-s="${s.id}" d="${smooth(s.cortex.slice(s.vu[0], s.vu[1] + 1))}" style="--c:${c}" fill="none"/>`;
+      if (s.vu) return `<path class="${cls} ex" data-s="${s.id}" d="${d}" style="--c:${c}" ${b.os ? 'fill="none"' : ''}/><path class="${cls}" data-s="${s.id}" d="${smooth((s.cortex || s.contour).slice(s.vu[0], s.vu[1] + 1))}" style="--c:${c}" fill="none"/>`;
       return `<path class="${cls}${s.extrapole ? ' ex' : ''}" data-s="${s.id}" d="${d}" style="--c:${c}" ${b.os ? 'fill="none"' : ''}/>`;
     }).join('');
   }
@@ -182,10 +187,9 @@
       return `<g class="anat-l" data-s="${l.s || ''}"><line x1="${tx}" y1="${ty}" x2="${l.x}" y2="${l.y}" marker-end="url(#${id}-fl)"/><g class="anat-pill" data-x="${tx}" data-y="${ty}"><rect rx="${fs * 0.4}"/><text x="${tx}" y="${ty}" font-size="${fs}" text-anchor="middle" dominant-baseline="central">${l.text}</text></g></g>`;
     }).join('');
   }
-  function orient(spec, W) {
-    const o = spec.orient || {}, fs = W / 60;
-    const t = (x, a, s) => s ? `<text class="anat-o" x="${x}" y="${fs * 1.6}" font-size="${fs}" text-anchor="${a}">${s.toUpperCase()}</text>` : '';
-    return t(W * 0.012, 'start', o.left) + t(W * 0.988, 'end', o.right);
+  function orient(spec) {                 // dans le titre du panneau : jamais masquée par une pastille
+    const o = spec.orient || {};
+    return o.left && o.right ? `<span class="anat-o">← ${o.left} · ${o.right} →</span>` : '';
   }
   function panneau(spec, id, vue, W, H) {
     const c = spec.crop || [0, 0, 1, 1];
@@ -194,12 +198,12 @@
       : vue === 'contours' ? img + coucheContours(spec, H, true)
       : img + `<g class="anat-fondu" style="opacity:0">${coucheAnat(spec, id + 'f', W, H)}</g>` + coucheContours(spec, H, false);
     const extra = vue === 'anat' ? coucheContours(spec, H, false) : '';
-    return `<svg class="anat-svg" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">${defs(id, W, H)}${vue === 'echo' ? defs(id + 'f', W, H) : ''}${corps}${extra}${orient(spec, W)}${etiquettes(spec, id, vue === 'contours' ? 'echo' : vue, W, vue === 'contours')}</svg>`;
+    return `<svg class="anat-svg" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">${defs(id, W, H)}${vue === 'echo' ? defs(id + 'f', W, H) : ''}${corps}${extra}${etiquettes(spec, id, vue === 'contours' ? 'echo' : vue, W, vue === 'contours')}</svg>`;
   }
   const CSS = `.anat{display:grid;gap:10px}.anat.paire{grid-template-columns:1fr 1fr}@media(max-width:900px){.anat.paire{grid-template-columns:1fr}}
 .anat-p{position:relative;margin:0}.anat-p h4{margin:0 0 4px;font:600 13px var(--sans,system-ui);color:var(--muted,#6b7280)}.anat-svg{display:block;width:100%;border-radius:10px;background:#0a0a0c}
 .anat-l line{stroke:#d97706;stroke-width:2.2}.anat-pill rect{fill:rgba(255,255,255,.94);stroke:#d97706;stroke-width:1.4}.anat-pill text{font-family:system-ui,sans-serif;font-weight:600;fill:#1f2937}
-.anat-l{cursor:default}.anat-o{font-family:system-ui,sans-serif;font-weight:700;letter-spacing:.08em;fill:#fff;opacity:.75;paint-order:stroke;stroke:#000;stroke-width:3px}
+.anat-l{cursor:default}.anat-o{float:right;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:11.5px}
 .anat-c{fill:var(--c);fill-opacity:0;stroke:var(--c);stroke-opacity:0;stroke-width:3;transition:all .15s;pointer-events:all}
 .anat-c.ex{stroke-dasharray:9 7}.quiz .anat-l{opacity:0;transition:opacity .25s}.quiz .anat-p:hover .anat-l{opacity:1}
 .anat-c.on{stroke-opacity:.95;fill-opacity:.10;stroke-width:2.5}.anat-c.hl{stroke-opacity:1;fill-opacity:.28;stroke-width:4}
@@ -211,8 +215,8 @@
     if (!document.getElementById('anat-css')) { const st = document.createElement('style'); st.id = 'anat-css'; st.textContent = CSS; document.head.appendChild(st); }
     el.classList.add('anat'); el.classList.toggle('paire', mode === 'paire');
     el.innerHTML = mode === 'contours'
-      ? `<figure class="anat-p"><h4>Calque de validation — contours proposés</h4>${panneau(spec, id, 'contours', W, H)}</figure>`
-      : `<figure class="anat-p"><h4>Échographie</h4>${panneau(spec, id + 'e', 'echo', W, H)}</figure><figure class="anat-p"><h4>Coupe anatomique correspondante</h4>${panneau(spec, id + 'a', 'anat', W, H)}</figure><label class="anat-bar">Fondu de l'anatomie sur l'écho <input type="range" min="0" max="100" value="${opts.fondu || 0}"></label>`;
+      ? `<figure class="anat-p"><h4>Calque de validation — contours proposés ${orient(spec)}</h4>${panneau(spec, id, 'contours', W, H)}</figure>`
+      : `<figure class="anat-p"><h4>Échographie ${orient(spec)}</h4>${panneau(spec, id + 'e', 'echo', W, H)}</figure><figure class="anat-p"><h4>Coupe anatomique correspondante ${orient(spec)}</h4>${panneau(spec, id + 'a', 'anat', W, H)}</figure><label class="anat-bar">Fondu de l'anatomie sur l'écho <input type="range" min="0" max="100" value="${opts.fondu || 0}"></label>`;
     /* pastilles : le rectangle épouse le texte mesuré */
     el.querySelectorAll('.anat-pill').forEach(p => {
       const t = p.querySelector('text'), r = p.querySelector('rect'), bb = t.getBBox(), px = bb.height * 0.45, py = bb.height * 0.22;
