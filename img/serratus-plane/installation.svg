@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="-apple-system, Helvetica, Arial, sans-serif">
+<rect width="400" height="300" fill="#f8fafc"/>
+<g fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Thorax droit vu de profil, bras en abduction au-dessus de la tête : tête en haut, avant à gauche de l'image, dos à droite ; côtes, ligne axillaire moyenne, bord du grand dorsal et du grand pectoral en pointillés -->
+  <!-- bras relevé -->
+  <path d="M150,96 C140,76 132,56 127,38"/>
+  <path d="M236,84 C226,66 214,50 207,38"/>
+  <!-- creux axillaire -->
+  <path d="M150,96 C166,112 214,108 236,84" stroke-width="1.4" opacity=".6"/>
+  <!-- paroi antérieure : pectoral, sein, abdomen -->
+  <path d="M150,96 C128,110 104,134 98,164 C96,180 104,192 114,200 C116,234 118,268 120,300"/>
+  <!-- dos -->
+  <path d="M236,84 C270,96 296,130 300,176 C302,220 294,262 290,300"/>
+  <!-- mamelon -->
+  <circle cx="98" cy="172" r="3.5" stroke-width="1.3" opacity=".7"/>
+  <g stroke-width="1.3" stroke-dasharray="4 4" opacity=".7">
+    <!-- côtes 3 à 8, obliques en bas et en avant -->
+    <path d="M286,124 C246,120 196,130 142,158"/><path d="M294,148 C252,144 200,154 132,186"/>
+    <path d="M298,172 C256,168 204,178 128,212"/><path d="M299,196 C258,192 208,202 134,238"/>
+    <path d="M298,220 C260,216 214,226 146,262"/><path d="M296,244 C262,240 222,250 162,284"/>
+    <!-- ligne axillaire moyenne -->
+    <path d="M196,108 L204,300" stroke-dasharray="7 5"/>
+    <!-- bord antérieur du grand dorsal -->
+    <path d="M228,96 C240,150 256,210 268,290" stroke-dasharray="2 5"/>
+    <!-- bord latéral du grand pectoral -->
+    <path d="M158,102 C146,124 128,144 110,156" stroke-dasharray="2 5"/>
+  </g>
+</g>
+<g transform="translate(198,168) rotate(78)"><rect x="-28" y="-6" width="56" height="12" rx="3" fill="#1d4ed8" fill-opacity=".85" stroke="#1e3a8a"/><rect x="-26" y="3" width="52" height="2" fill="#93c5fd" stroke="none"/><circle cx="-22" cy="-11" r="3" fill="#1d4ed8" stroke="none"/></g><line x1="185" y1="108" x2="192" y2="139" stroke="#b91c1c" stroke-width="3"/><circle cx="185" cy="108" r="4" fill="#b91c1c" stroke="none"/><text x="208" y="292" font-size="10.5" font-weight="600" fill="#1f2937" stroke="#fff" stroke-width="3" paint-order="stroke">ligne axillaire moyenne</text><text x="268" y="236" font-size="10.5" font-weight="600" fill="#1f2937" stroke="#fff" stroke-width="3" paint-order="stroke">grand dorsal</text><text x="40" y="176" font-size="10.5" font-weight="600" fill="#1f2937" stroke="#fff" stroke-width="3" paint-order="stroke">mamelon</text><text x="212" y="160" font-size="10.5" font-weight="600" fill="#1f2937" stroke="#fff" stroke-width="3" paint-order="stroke">4e–5e côtes</text><g transform="translate(6,232)"><rect x="0" y="0" width="52" height="48" rx="6" fill="#fff" fill-opacity=".9" stroke="#9ca3af" stroke-width="1"/><path d="M10,14 a4,4 0 1,0 0.1,0 M10,18 L14,30 L24,34 L34,30 M14,30 L30,26 M6,36 L44,36" stroke="#1f2937" stroke-width="2.2" fill="none" stroke-linecap="round"/><text x="26" y="58" text-anchor="middle" font-size="9" fill="#374151" stroke="none">Décubitus latéral</text></g><g font-size="9.5" fill="#374151" stroke="none" transform="translate(330,262)"><rect x="0" y="0" width="14" height="8" rx="2" fill="#1d4ed8"/><text x="18" y="8">sonde</text><line x1="0" y1="22" x2="14" y2="22" stroke="#b91c1c" stroke-width="3"/><text x="18" y="26">aiguille</text></g><text x="200" y="13" text-anchor="middle" font-size="9.5" fill="#374151" stroke="none"><tspan x="200" dy="0">Décubitus latéral, bras relevé ; sonde perpendiculaire aux côtes, ligne</tspan><tspan x="200" dy="12">axillaire moyenne ; aiguille in-plane crânio-caudale</tspan></text>
+</svg>

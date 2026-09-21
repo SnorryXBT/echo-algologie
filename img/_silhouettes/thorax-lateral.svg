@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <!-- Thorax droit vu de profil, bras en abduction au-dessus de la tête : tête en haut, avant à gauche de l'image, dos à droite ; côtes, ligne axillaire moyenne, bord du grand dorsal et du grand pectoral en pointillés -->
   <!-- bras relevé -->
-  <path d="M150,96 C138,70 128,44 122,8"/>
-  <path d="M236,84 C222,58 206,34 196,4"/>
+  <path d="M150,96 C140,76 132,56 127,38"/>
+  <path d="M236,84 C226,66 214,50 207,38"/>
   <!-- creux axillaire -->
   <path d="M150,96 C166,112 214,108 236,84" stroke-width="1.4" opacity=".6"/>
   <!-- paroi antérieure : pectoral, sein, abdomen -->

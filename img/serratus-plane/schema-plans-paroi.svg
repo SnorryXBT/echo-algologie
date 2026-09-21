@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" font-family="-apple-system, Helvetica, Arial, sans-serif">
+<rect width="760" height="500" fill="#f8fafc"/>
+<!-- Coupe horizontale schématique, déroulée, de la paroi thoracique antéro-latérale droite à hauteur de la 4e côte. Sternum à gauche, dos à droite, peau en haut. Schéma de principe, non à l'échelle. Dessin original du mémo. -->
+<path d="M20,96 L740,96" stroke="#1f2937" stroke-width="3" fill="none"/>
+<rect x="20" y="98" width="720" height="92" fill="#fdf3c7" opacity=".55"/>
+<g transform="translate(0,30)">
+<rect x="20" y="384" width="720" height="66" fill="#dbe4ee" opacity=".7"/>
+<path d="M20,382 L740,382" stroke="#64748b" stroke-width="2.4" fill="none"/>
+<rect x="24" y="300" width="70" height="72" rx="10" fill="#ece6d2" stroke="#1f2937" stroke-width="1.6"/>
+<path d="M94,322 L740,322 L740,370 L94,370 Z" fill="#ece6d2" stroke="#1f2937" stroke-width="1.6" stroke-linejoin="round"/>
+<g stroke="#a8a08a" stroke-width="1" opacity=".7"><path d="M110,334 L730,334 M110,346 L730,346"/></g>
+<path d="M94,166 L380,166 Q440,178 452,206 Q440,236 380,244 L94,244 Z" fill="#e9b4a8" stroke="#1f2937" stroke-width="1.6" stroke-linejoin="round"/>
+<g stroke="#b4695a" stroke-width="1" opacity=".45"><path d="M110,186 L410,188 M106,206 L436,206 M110,226 L410,226"/></g>
+<path d="M188,321 Q204,256 270,252 L360,252 Q412,256 430,284 Q400,290 360,288 L266,288 Q224,292 188,321 Z" fill="#e9b4a8" opacity=".85" stroke="#1f2937" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M300,318 Q312,296 350,294 L740,294 L740,318 Z" fill="#d99a8c" stroke="#1f2937" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M528,262 Q540,232 590,226 L740,226 L740,286 L590,286 Q544,284 528,262 Z" fill="#e9b4a8" stroke="#1f2937" stroke-width="1.6" stroke-linejoin="round"/>
+<g stroke="#b4695a" stroke-width="1" opacity=".45"><path d="M566,246 L735,246 M560,266 L735,266"/></g>
+<ellipse cx="300" cy="248" rx="96" ry="4.5" fill="none" stroke="#3b82f6" stroke-width="1.4" stroke-dasharray="5 4" opacity=".8"/>
+<ellipse cx="372" cy="291" rx="52" ry="4.5" fill="none" stroke="#3b82f6" stroke-width="1.4" stroke-dasharray="5 4" opacity=".8"/>
+<ellipse cx="630" cy="290" rx="92" ry="6.5" fill="#3b82f6" opacity=".55"/>
+<ellipse cx="520" cy="320" rx="96" ry="6.5" fill="#3b82f6" opacity=".55"/>
+<g fill="none" stroke="#ca8a04" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M740,364 L112,364" stroke-width="4"/>
+  <path d="M488,364 L488,186 M488,186 Q470,146 424,120 M488,186 Q506,146 552,120" stroke-width="3"/>
+  <path d="M112,364 Q104,300 108,244 L108,96" stroke-width="3"/>
+  <path d="M392,290 Q388,262 380,236" stroke-width="3"/>
+</g>
+<circle cx="300" cy="248" r="5.5" fill="#ca8a04" stroke="#713f12" stroke-width="1.2"/>
+<circle cx="318" cy="248" r="5" fill="#dc2626" stroke="#7f1d1d" stroke-width="1.2"/>
+<circle cx="560" cy="290" r="5.5" fill="#ca8a04" stroke="#713f12" stroke-width="1.2"/>
+<circle cx="640" cy="290" r="5.5" fill="#ca8a04" stroke="#713f12" stroke-width="1.2"/>
+<circle cx="658" cy="290" r="5" fill="#dc2626" stroke="#7f1d1d" stroke-width="1.2"/>
+</g>
+<!-- repères de surface -->
+<g stroke="#64748b" stroke-width="1.2" stroke-dasharray="3 4"><path d="M452,78 L452,96 M488,64 L488,96 M528,78 L528,96"/></g>
+<g font-size="11.5" fill="#475569"><text x="456" y="76" text-anchor="end">l. axillaire ant.</text><text x="488" y="60" text-anchor="middle">l. axillaire moyenne</text><text x="524" y="76">l. axillaire post.</text></g>
+<!-- renvois -->
+<g stroke="#475569" stroke-width="1.1" fill="none"><path d="M299,272 L292,92 M319,272 L330,50 M381,264 L380,172 M560,314 L584,222 M649,314 L690,246"/></g>
+<!-- étiquettes -->
+<g font-size="13" font-weight="600" fill="#1f2937" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke">
+  <text x="24" y="24">Médial — sternum</text><text x="736" y="24" text-anchor="end">Latéral puis postérieur — dos</text>
+  <text x="200" y="240" text-anchor="middle">Grand pectoral</text>
+  <text x="262" y="306" text-anchor="middle" font-size="12">Petit pectoral</text>
+  <text x="590" y="341" text-anchor="middle" font-size="12">Dentelé antérieur</text>
+  <text x="690" y="284" text-anchor="middle">Grand dorsal</text>
+  <text x="280" y="378" text-anchor="middle" font-size="12">4e côte et muscles intercostaux</text>
+  <text x="59" y="370" text-anchor="middle" font-size="12">Sternum</text>
+  <text x="40" y="432" font-size="12">Plèvre</text><text x="200" y="462" text-anchor="middle" font-size="12" fill="#475569">Poumon</text>
+  <text x="736" y="120" font-size="12" text-anchor="end">Tissu sous-cutané</text>
+  <text x="290" y="88" text-anchor="end" font-size="12">N. pectoral latéral</text>
+  <text x="300" y="46" font-size="12">Br. pectorale de l'a. thoraco-acromiale</text>
+  <text x="380" y="168" text-anchor="middle" font-size="12">N. pectoral médial</text>
+  <text x="584" y="216" text-anchor="middle" font-size="12">N. thoracique long</text>
+  <text x="736" y="240" text-anchor="end" font-size="12">N. et a. thoraco-dorsaux</text>
+</g>
+<g font-size="12" font-weight="600" fill="#713f12" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke">
+  <text x="736" y="388" text-anchor="end">N. intercostal</text>
+  <text x="418" y="142" text-anchor="end">r. antérieur</text><text x="560" y="142">r. postérieur</text>
+  <text x="498" y="172">Branche cutanée latérale</text>
+  <text x="498" y="186" font-weight="500" font-size="11">(en T2 : n. intercosto-brachial)</text>
+  <text x="120" y="124">Br. cutanée antérieure</text>
+  <text x="120" y="138" font-weight="500" font-size="11">(non couverte par ces blocs)</text>
+</g>
+<!-- plans -->
+<g font-size="12.5" font-weight="700" fill="#1d4ed8" stroke="#f8fafc" stroke-width="3.5" paint-order="stroke">
+  <text x="196" y="270" text-anchor="end" opacity=".7">PECS I</text>
+  <text x="432" y="336" opacity=".7">PECS II</text>
+  <text x="440" y="452" text-anchor="middle">Plan profond du dentelé</text>
+  <text x="650" y="452" text-anchor="middle">Plan superficiel du dentelé</text>
+</g>
+<g stroke="#1d4ed8" stroke-width="1.1" fill="none" opacity=".8"><path d="M440,440 L486,357 M650,440 L676,326"/></g>
+<text x="380" y="490" text-anchor="middle" font-size="11.5" fill="#475569">Schéma de principe, déroulé, non à l'échelle — en bleu plein les plans visés par la fiche, en pointillé ceux des blocs PECS</text>
+</svg>
