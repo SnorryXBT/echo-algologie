@@ -15,7 +15,9 @@ function meta(x) {
   const journal = strip((x.match(/<journal-title>([\s\S]*?)<\/journal-title>/) || [])[1]);
   const year = (x.match(/<pub-date[^>]*>[\s\S]*?<year>(\d{4})<\/year>/) || [])[1];
   const title = strip((x.match(/<article-title>([\s\S]*?)<\/article-title>/) || [])[1]);
-  const auth = [...x.matchAll(/<name[^>]*>\s*<surname>([^<]+)<\/surname>\s*<given-names[^>]*>([^<]+)<\/given-names>/g)].map(m => `${m[1]} ${m[2].replace(/[^A-ZÀ-Ý]/g, '')}`);
+  /* Auteurs : uniquement les <contrib contrib-type="author"> — jamais tout le XML, qui ramène les éditeurs académiques (Cureus : Muacevic, Adler ;
+     MDPI) et même les auteurs de la bibliographie (cas Valera-Calero 2026). `--get` les remplace de toute façon par l'authorString d'Europe PMC. */
+  const auth = [...x.matchAll(/<contrib\b[^>]*contrib-type="author"[^>]*>([\s\S]*?)<\/contrib>/g)].map(c => c[1].match(/<surname>([^<]+)<\/surname>\s*<given-names[^>]*>([^<]+)<\/given-names>/)).filter(Boolean).map(m => `${m[1]} ${m[2].replace(/[^A-ZÀ-Ý]/g, '')}`);
   const doi = (x.match(/<article-id pub-id-type="doi">([^<]+)</) || [])[1];
   const figs = [...x.matchAll(/<fig[^>]*>([\s\S]*?)<\/fig>/g)].map(m => ({
     label: strip((m[1].match(/<label>([\s\S]*?)<\/label>/) || [])[1]),
@@ -42,6 +44,10 @@ function meta(x) {
     }
     if (!ok) { console.error('image introuvable'); process.exit(1); }
     const f = m.figs.find(f => f.href.replace(/\.\w+$/, '') === base);
+    /* source d'autorité pour les auteurs : authorString de l'API core */
+    try { const c = await (await fetch(`${EP}/search?query=PMCID:${pmc}&format=json&resultType=lite`, H)).json(); const as = ((c.resultList || {}).result || [])[0]; if (as && as.authorString) m.auth = as.authorString.replace(/\.$/, '').split(', '); } catch (e) { console.error('authorString indisponible : auteurs tirés du XML (contrib-group), à recouper'); }
+    const lu = (m.licUrl.match(/licenses\/([a-z-]+)/) || [])[1], lt = /No ?Deriv/i.test(m.lic) ? 'nd' : /Share ?Alike/i.test(m.lic) ? 'sa' : '';
+    if (lu && lt && !lu.includes(lt)) console.error(`ATTENTION licence ambiguë à la source : l'URL dit ${lu.toUpperCase()}, le texte dit -${lt.toUpperCase()} — l'écrire tel quel dans credit, et retenir la plus restrictive.`);
     console.log(`credit: '${m.auth.slice(0, 3).join(', ')}${m.auth.length > 3 ? ' et al.' : ''}, ${m.journal} ${m.year}, ${f ? f.label : ''} — ${m.lic.match(/CC BY[\w -]*|Creative Commons[\w -]*/) ? (m.licUrl || m.lic) : 'LICENCE À VÉRIFIER : ' + m.lic}'`);
     console.log(`source: 'https://doi.org/${m.doi}'  (PMC : https://europepmc.org/article/PMC/${pmc.replace('PMC', '')})`);
     console.log(`légende originale : ${f ? f.caption : '?'}`);
@@ -51,7 +57,7 @@ function meta(x) {
   const url = `${EP}/search?query=${encodeURIComponent(`(${q}) AND OPEN_ACCESS:y AND (LICENSE:cc-by OR LICENSE:cc)`)}&format=json&pageSize=${n}&resultType=lite`;
   const j = await (await fetch(url, H)).json();
   console.log(`${j.hitCount} résultats CC en libre accès`);
-  for (const r of j.resultList.result) {
+  for (const r of (j.resultList || {}).result || []) {
     if (!r.pmcid) continue;
     const m = meta(await xml(r.pmcid));
     const us = m.figs.filter(f => /ultraso|sonogra|echo|probe|transducer|needle/i.test(f.caption));

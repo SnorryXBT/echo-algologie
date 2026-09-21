@@ -54,7 +54,7 @@ ECHO.figures['calcifications-coiffe-barbotage'] = [
     pair: 'calc-sono',
     titre: 'Calcification compacte du supra-épineux, coupe réelle',
     legende: 'Image d\'origine annotée (anglais) : DEL = deltoïde, GT = grand tubercule, SS T = tendon du supra-épineux ; les flèches noires marquent un foyer calcique compact, hyperéchogène avec cône d\'ombre postérieur — forme dure, peu propice au lavage, à distinguer du dépôt nuageux sans ombre (phase résorptive, idéal pour le barbotage). Panneau c d\'une planche composite.',
-    credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 12c — CC BY-NC-SA 4.0',
+    credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 12c — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-25-00156',
     crop: [0.0, 0.5, 0.5, 0.5],
   },

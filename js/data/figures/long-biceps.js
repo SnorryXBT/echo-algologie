@@ -54,7 +54,7 @@ ECHO.figures['long-biceps'] = [
     pair: 'lhb-sono',
     titre: 'Coupe transversale réelle de la gouttière bicipitale',
     legende: 'Deltoïde en surface ; le tendon du long biceps est l\'ovale hyperéchogène (si la sonde est bien perpendiculaire) au fond du U osseux, entre grand tubercule en dehors et petit tubercule en dedans, sous le ligament huméral transverse. Panneau c (échographe fixe) d\'une planche composite ; le panneau d annoté sert de corrigé.',
-    credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 1c — CC BY-NC-SA 4.0',
+    credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 1c — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-25-00156',
     crop: [0.0, 0.5, 0.5, 0.5],
     labels: [

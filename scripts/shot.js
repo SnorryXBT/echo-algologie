@@ -16,6 +16,9 @@ const path = require('path');
     s.classList.remove('closed');
     const b = s.querySelector('[aria-expanded]'); if (b) b.setAttribute('aria-expanded', 'true');
   }));
+  /* L'en-tête et la sous-navigation collants masquaient ≈ 6 % du haut des captures d'élément : on les rend statiques,
+     et on agrandit la fenêtre pour qu'une figure haute ne soit pas tronquée. */
+  if (selector) { await page.addStyleTag({ content: '.topbar, .subnav, .fiche-head { position: static !important; }' }); await page.setViewportSize({ width: 1400, height: 3000 }); }
   await page.waitForTimeout(selector ? 4000 : 1000);
   if (selector) await page.locator(selector).nth(+nth).screenshot({ path: out });
   else await page.screenshot({ path: out, fullPage: !selector });

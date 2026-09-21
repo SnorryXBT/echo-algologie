@@ -54,7 +54,7 @@ ECHO.figures['bourse-trochanterienne-gtps'] = [
     pair: 'gt-transverse',
     titre: 'Coupe transversale réelle du grand trochanter : facettes et tendons',
     legende: 'De gauche à droite, facette antérieure coiffée du tendon du petit fessier, facette latérale coiffée du tendon du moyen fessier, puis facette postérieure sous le grand fessier ; la bandelette ilio-tibiale glisse en surface. Panneau c (échographe fixe) d\'une planche dont le panneau d annoté sert de corrigé.',
-    credit: 'Lin TY, Chang KV, Wu WT et al., Journal of Medical Ultrasound 2026, fig. 6c — CC BY-NC-SA 4.0',
+    credit: 'Lin TY, Chang KV, Wu WT et al., Journal of Medical Ultrasound 2026, fig. 6c — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-26-00004',
     crop: [0.0, 0.5, 0.5, 0.5],
     labels: [

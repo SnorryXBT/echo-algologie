@@ -56,7 +56,7 @@ ECHO.figures['coxo-femorale'] = [
     pair: 'hanche-long',
     titre: 'Coupe longitudinale oblique réelle de la hanche antérieure',
     legende: 'Sonde dans l\'axe du col : de la surface vers la profondeur, droit fémoral et sartorius, ilio-psoas, puis la capsule qui suit la convexité de la tête et le col ; le récessus antérieur est la fente hypoéchogène entre capsule et jonction tête-col. Panneau c (échographe fixe) d\'une planche dont le panneau d annoté sert de corrigé.',
-    credit: 'Lin TY, Chang KV, Wu WT et al., Journal of Medical Ultrasound 2026, fig. 1c — CC BY-NC-SA 4.0',
+    credit: 'Lin TY, Chang KV, Wu WT et al., Journal of Medical Ultrasound 2026, fig. 1c — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-26-00004',
     crop: [0.0, 0.5, 0.5, 0.5],
     labels: [

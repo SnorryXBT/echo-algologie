@@ -56,7 +56,7 @@ ECHO.figures['sous-acromiale'] = [
     pair: 'sad-sono',
     titre: 'Coupe de repérage réelle : supra-épineux en grand axe',
     legende: 'Deltoïde en surface, fine bande hypoéchogène de la bourse, puis tendon fibrillaire convexe du supra-épineux qui s\'insère sur le grand tubercule ; la tête humérale dessine la convexité profonde, avec le liseré hypoéchogène du cartilage. Latéral à gauche : orientation inverse de celle du schéma apparié. Panneau c (échographe fixe) d\'une planche composite.',
-    credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 6c — CC BY-NC-SA 4.0',
+    credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 6c — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-25-00156',
     crop: [0.0, 0.5163, 0.488, 0.4837],
     labels: [
@@ -73,7 +73,7 @@ ECHO.figures['sous-acromiale'] = [
     pair: 'sad-geste',
     titre: 'Aiguille dans le plan, de latéral en médial, sous l\'acromion',
     legende: 'Image d\'origine annotée (anglais) : CLA = clavicule, ACR = acromion, SS T = tendon du supra-épineux ; les têtes de flèche marquent l\'aiguille, qui vient du bord latéral et avance sous l\'auvent acromial, dans la bourse, au-dessus du tendon. Panneau d d\'une planche composite (le panneau c montre la prise en main).',
-    credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 17d — CC BY-NC-SA 4.0',
+    credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 17d — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-25-00156',
     crop: [0.5, 0.5, 0.5, 0.5],
   },

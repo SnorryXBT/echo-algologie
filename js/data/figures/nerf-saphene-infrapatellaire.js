@@ -59,7 +59,7 @@ ECHO.figures['nerf-saphene-infrapatellaire'] = [
     pair: 'sap-canal',
     titre: 'Nerf saphène dans le canal des adducteurs — coupe transversale réelle',
     legende: 'Annotations anglaises d\'origine. **a** : positionnement de la sonde à la face médiale de cuisse. **b** : coupe transversale — *Sartorius* = sartorius, toit du canal ; *Adductor longus* = long adducteur ; *Vastus medialis* = vaste médial ; *Rectus femoris* = droit fémoral ; **SaN** (cerclé) = nerf saphène, petit faisceau hyperéchogène sous l\'aponévrose du sartorius. Réserve à connaître : cette coupe est prise au **tiers moyen** de cuisse, plus haut que le tiers inférieur visé par la fiche — le nerf y est encore proche du nerf du vaste médial. L\'artère fémorale, repère central du geste, n\'est pas annotée sur l\'image d\'origine : elle se cherche au Doppler juste en arrière et en dedans du nerf.',
-    credit: 'Valera-Calero JA, Lewis SR, Price A et al., Ultrasound International Open 2026, fig. 9 — CC BY-NC-ND 4.0',
+    credit: 'Valera-Calero JA, Ultrasound International Open 2026, fig. 9 — CC BY-NC-ND 4.0',
     source: 'https://doi.org/10.1055/a-2920-0129',
   },
   {

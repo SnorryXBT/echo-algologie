@@ -54,7 +54,7 @@ ECHO.figures['gleno-humerale'] = [
     pair: 'gh-repere',
     titre: 'Coupe de repérage réelle : interligne gléno-huméral postérieur',
     legende: 'Sonde transversale sous l\'épine : deltoïde, puis infra-épineux (muscle et tendon), tête humérale convexe hyperéchogène à droite, glène à gauche, labrum triangulaire hypoéchogène dans l\'angle. Panneau c (échographe fixe) d\'une planche composite.',
-    credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 10c — CC BY-NC-SA 4.0',
+    credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 10c — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-25-00156',
     crop: [0.0, 0.5, 0.5, 0.5],
     labels: [
@@ -71,7 +71,7 @@ ECHO.figures['gleno-humerale'] = [
     pair: 'gh-aiguille',
     titre: 'Aiguille dans le plan, de latéral en médial',
     legende: 'Image d\'origine annotée (anglais) : DEL = deltoïde, IS M = infra-épineux, HH = tête humérale, G = glène, * = labrum ; les têtes de flèche marquent le trajet de l\'aiguille, qui vient du bord latéral de la sonde et glisse sur la tête humérale vers l\'espace tête–labrum. Panneau d d\'une planche composite (le panneau c montre la prise en main : sonde en médial, seringue en latéral).',
-    credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 19d — CC BY-NC-SA 4.0',
+    credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 19d — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-25-00156',
     crop: [0.5, 0.5, 0.5, 0.5],
   },

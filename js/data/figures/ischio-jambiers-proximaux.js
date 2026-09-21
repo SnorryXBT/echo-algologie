@@ -56,7 +56,7 @@ ECHO.figures['ischio-jambiers-proximaux'] = [
     pair: 'ij-transverse',
     titre: 'Coupe transversale réelle : tendon conjoint et nerf sciatique',
     legende: 'Grand fessier en surface ; le tendon conjoint, hyperéchogène, se détache de la tubérosité ischiatique ; le nerf sciatique est l\'ovale en nid d\'abeilles en dehors et en profondeur, sur le carré fémoral, entre tubérosité et grand trochanter. Panneau c d\'une planche dont le panneau d annoté sert de corrigé.',
-    credit: 'Lin TY, Chang KV, Wu WT et al., Journal of Medical Ultrasound 2026, fig. 9c — CC BY-NC-SA 4.0',
+    credit: 'Lin TY, Chang KV, Wu WT et al., Journal of Medical Ultrasound 2026, fig. 9c — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-26-00004',
     crop: [0.0, 0.5, 0.5, 0.5],
     labels: [
@@ -73,7 +73,7 @@ ECHO.figures['ischio-jambiers-proximaux'] = [
     pair: 'ij-geste',
     titre: 'Coupe longitudinale réelle du tendon conjoint',
     legende: 'Sonde dans l\'axe de la cuisse : grand fessier en surface, tendon conjoint fibrillaire qui s\'insère sur la tubérosité ischiatique (cône d\'ombre), semi-membraneux en profondeur puis grand adducteur ; l\'aiguille suit ce plan de distal en proximal jusqu\'à l\'enthèse. Panneau c d\'une planche dont le panneau d annoté sert de corrigé.',
-    credit: 'Lin TY, Chang KV, Wu WT et al., Journal of Medical Ultrasound 2026, fig. 10c — CC BY-NC-SA 4.0',
+    credit: 'Lin TY, Chang KV, Wu WT et al., Journal of Medical Ultrasound 2026, fig. 10c — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-26-00004',
     crop: [0.0, 0.5, 0.5, 0.5],
     labels: [

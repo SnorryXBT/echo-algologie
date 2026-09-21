@@ -54,7 +54,7 @@ ECHO.figures['nerf-cutane-lateral-cuisse'] = [
     pair: 'lfcn-tunnel',
     titre: 'Coupe transversale réelle sous l\'EIAS : le nerf entre sartorius et tenseur du fascia lata',
     legende: 'Le nerf est le petit ovale hypoéchogène cerné d\'un liseré clair, juste sous le fascia lata, dans le sillon graisseux entre sartorius en dedans et tenseur du fascia lata en dehors ; le droit fémoral est en profondeur. Panneau c d\'une planche dont le panneau d annoté (têtes de flèche) sert de corrigé.',
-    credit: 'Lin TY, Chang KV, Wu WT et al., Journal of Medical Ultrasound 2026, fig. 4c — CC BY-NC-SA 4.0',
+    credit: 'Lin TY, Chang KV, Wu WT et al., Journal of Medical Ultrasound 2026, fig. 4c — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-26-00004',
     crop: [0.0, 0.5, 0.5, 0.5],
     labels: [
