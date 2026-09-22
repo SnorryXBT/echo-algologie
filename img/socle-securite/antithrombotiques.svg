@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="1000" height="640"><rect width="1000" height="640" fill="#f7f5f1"/><text x="34" y="44" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="22" fill="#14181d" text-anchor="start" font-weight="700">Antithrombotiques : combien de jours avant le geste</text><text x="34" y="68" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="14.5" fill="#5b6672" text-anchor="start" font-weight="400">Délais pour un geste à risque intermédiaire ou élevé. En risque faible, on n'arrête rien.</text>
+<rect x="34" y="92" width="932" height="386" rx="10" fill="#ffffff" stroke="#d5cfc5" stroke-width="1.5"/>
+<line x1="700" y1="132" x2="700" y2="444" stroke="#d5cfc5" stroke-width="1"/>
+<text x="700" y="124" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="11.5" fill="#14181d" text-anchor="middle" font-weight="700">Geste</text>
+<line x1="620" y1="132" x2="620" y2="444" stroke="#d5cfc5" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="620" y="124" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="11.5" fill="#5b6672" text-anchor="middle" font-weight="400">J-2</text>
+<line x1="540" y1="132" x2="540" y2="444" stroke="#d5cfc5" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="540" y="124" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="11.5" fill="#5b6672" text-anchor="middle" font-weight="400">J-4</text>
+<line x1="460" y1="132" x2="460" y2="444" stroke="#d5cfc5" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="460" y="124" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="11.5" fill="#5b6672" text-anchor="middle" font-weight="400">J-6</text>
+<line x1="380" y1="132" x2="380" y2="444" stroke="#d5cfc5" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="380" y="124" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="11.5" fill="#5b6672" text-anchor="middle" font-weight="400">J-8</text>
+<line x1="300" y1="132" x2="300" y2="444" stroke="#d5cfc5" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="300" y="124" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="11.5" fill="#5b6672" text-anchor="middle" font-weight="400">J-10</text>
+<text x="286" y="160" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.6" fill="#14181d" text-anchor="end" font-weight="600">Aspirine 75–325 mg</text>
+<rect x="460" y="150" width="80" height="12" rx="6" fill="#047857" fill-opacity=".22"/>
+<line x1="700" y1="156" x2="700" y2="156" stroke="#047857" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="700" cy="156" r="4.5" fill="#047857"/>
+<text x="716" y="160" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.4" fill="#5b6672" text-anchor="start" font-weight="400">4 à 6 j si risque élevé — sinon poursuivie</text>
+<text x="286" y="184" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.6" fill="#14181d" text-anchor="end" font-weight="600">AINS</text>
+<rect x="540" y="174" width="120" height="12" rx="6" fill="#047857" fill-opacity=".22"/>
+<line x1="700" y1="180" x2="700" y2="180" stroke="#047857" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="700" cy="180" r="4.5" fill="#047857"/>
+<text x="716" y="184" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.4" fill="#5b6672" text-anchor="start" font-weight="400">1 à 4 j si risque élevé — sinon poursuivis</text>
+<text x="286" y="208" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.6" fill="#14181d" text-anchor="end" font-weight="600">ISRS / IRSNa</text>
+<line x1="700" y1="204" x2="700" y2="204" stroke="#047857" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="700" cy="204" r="4.5" fill="#047857"/>
+<text x="716" y="208" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.4" fill="#5b6672" text-anchor="start" font-weight="400">Poursuivis</text>
+<text x="286" y="232" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.6" fill="#14181d" text-anchor="end" font-weight="600">Clopidogrel</text>
+<line x1="420" y1="228" x2="700" y2="228" stroke="#b45309" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="420" cy="228" r="4.5" fill="#b45309"/>
+<text x="716" y="232" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.4" fill="#5b6672" text-anchor="start" font-weight="400">7 jours</text>
+<text x="286" y="256" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.6" fill="#14181d" text-anchor="end" font-weight="600">Prasugrel</text>
+<rect x="300" y="246" width="120" height="12" rx="6" fill="#b45309" fill-opacity=".22"/>
+<line x1="300" y1="252" x2="700" y2="252" stroke="#b45309" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="300" cy="252" r="4.5" fill="#b45309"/>
+<text x="716" y="256" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.4" fill="#5b6672" text-anchor="start" font-weight="400">7 à 10 jours</text>
+<text x="286" y="280" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.6" fill="#14181d" text-anchor="end" font-weight="600">Ticagrelor</text>
+<rect x="420" y="270" width="80" height="12" rx="6" fill="#b45309" fill-opacity=".22"/>
+<line x1="420" y1="276" x2="700" y2="276" stroke="#b45309" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="420" cy="276" r="4.5" fill="#b45309"/>
+<text x="716" y="280" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.4" fill="#5b6672" text-anchor="start" font-weight="400">5 à 7 jours</text>
+<text x="286" y="304" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.6" fill="#14181d" text-anchor="end" font-weight="600">AVK (warfarine, fluindione)</text>
+<line x1="500" y1="300" x2="700" y2="300" stroke="#b91c1c" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="500" cy="300" r="4.5" fill="#b91c1c"/>
+<text x="716" y="304" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.4" fill="#5b6672" text-anchor="start" font-weight="400">5 jours, puis INR du jour même</text>
+<text x="286" y="328" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.6" fill="#14181d" text-anchor="end" font-weight="600">Dabigatran</text>
+<rect x="460" y="318" width="80" height="12" rx="6" fill="#b91c1c" fill-opacity=".22"/>
+<line x1="460" y1="324" x2="700" y2="324" stroke="#b91c1c" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="460" cy="324" r="4.5" fill="#b91c1c"/>
+<text x="716" y="328" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.4" fill="#5b6672" text-anchor="start" font-weight="400">4 à 6 jours selon la clairance</text>
+<text x="286" y="352" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.6" fill="#14181d" text-anchor="end" font-weight="600">Rivaroxaban, apixaban, edoxaban</text>
+<line x1="580" y1="348" x2="700" y2="348" stroke="#b91c1c" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="580" cy="348" r="4.5" fill="#b91c1c"/>
+<text x="716" y="352" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.4" fill="#5b6672" text-anchor="start" font-weight="400">3 jours</text>
+<text x="286" y="376" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.6" fill="#14181d" text-anchor="end" font-weight="600">HBPM curative</text>
+<line x1="660" y1="372" x2="700" y2="372" stroke="#0f6fff" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="660" cy="372" r="4.5" fill="#0f6fff"/>
+<text x="716" y="376" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.4" fill="#5b6672" text-anchor="start" font-weight="400">24 heures</text>
+<text x="286" y="400" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.6" fill="#14181d" text-anchor="end" font-weight="600">HBPM prophylactique</text>
+<line x1="680" y1="396" x2="700" y2="396" stroke="#0f6fff" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="680" cy="396" r="4.5" fill="#0f6fff"/>
+<text x="716" y="400" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.4" fill="#5b6672" text-anchor="start" font-weight="400">12 heures</text>
+<text x="286" y="424" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.6" fill="#14181d" text-anchor="end" font-weight="600">HNF sous-cutanée / intraveineuse</text>
+<line x1="690" y1="420" x2="700" y2="420" stroke="#0f6fff" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="690" cy="420" r="4.5" fill="#0f6fff"/>
+<text x="716" y="424" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.4" fill="#5b6672" text-anchor="start" font-weight="400">6 h (SC) · 4–6 h (IV), TCA normalisé</text>
+<line x1="700" y1="132" x2="700" y2="444" stroke="#14181d" stroke-width="1.6"/>
+<rect x="34" y="498" width="932" height="106" rx="10" fill="#ffffff" stroke="#d5cfc5" stroke-width="1.5"/>
+<text x="54" y="524" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.8" fill="#14181d" text-anchor="start" font-weight="400">AVK : ce n'est pas le délai qui décide, mais l'INR du jour même — ≤ 1,2 en risque élevé, ≤ 1,4 en intermédiaire.</text><text x="54" y="544" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.8" fill="#14181d" text-anchor="start" font-weight="400">Dabigatran : 4 j si ClCr ≥ 80 · 5 j si 50–79 · 6 j si 30–49 mL/min. Rivaroxaban, apixaban, edoxaban : règle des 5 demi-vies.</text><text x="54" y="564" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.8" fill="#14181d" text-anchor="start" font-weight="400">Reprise : 24 h après le geste en règle — 12 à 24 h pour le clopidogrel, 2 à 4 h pour l'HNF intraveineuse.</text><text x="54" y="584" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.8" fill="#14181d" text-anchor="start" font-weight="400">Toute interruption se décide avec le prescripteur et se trace dans le dossier.</text>
+<text x="34" y="622" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#5b6672" text-anchor="start" font-weight="400" font-style="italic">Schéma original — délais repris du tableau de cette fiche (ASRA-ESRA 2018) ; barres pâles = fourchette annoncée.</text></svg>

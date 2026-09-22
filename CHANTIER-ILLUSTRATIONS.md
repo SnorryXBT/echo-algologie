@@ -94,3 +94,23 @@ déjà des annotations, ne pas les dupliquer.
   et d'une paire écho/schéma pour contrôle visuel, commit, push sur `main`.
 - Relecture finale par région (rapports anatomiques des étiquettes, crédits présents).
 - Ordre : membre-sup, membre-inf, rachis-bassin, tête-cou, thorax, socle.
+
+## État au 22 septembre 2026 — chantier illustrations terminé
+
+**64 fiches sur 64 illustrées.** Les trois derniers chapitres transversaux (injectables,
+radiofréquence, sécurité) n'avaient ni anatomie régionale, ni installation, ni
+écho-anatomie à montrer : ils reçoivent à la place **sept schémas explicatifs originaux**,
+générés par `node scripts/schemas.js` et dessinés à partir des tableaux déjà relus de
+leurs fiches —
+
+| Fiche | Schémas |
+|---|---|
+| `socle-injectables` | mécanisme de l'embole particulaire ; doses maximales d'AL converties en millilitres pour 70 kg |
+| `socle-radiofrequence` | courbes thermique contre pulsée ; géométrie de l'électrode et de sa lésion |
+| `socle-securite` | les trois classes de risque ASRA-ESRA ; délais d'arrêt des antithrombotiques ; séquence LAST |
+
+Régénérer après modification : `node scripts/schemas.js [nom]`, puis
+`node scripts/build-index.js` et `check-all`.
+
+**Reste au chantier global** : les vidéos (`/videos`, 1 fiche sur 64 générée) et la fin de
+la vérification bibliographique (`/verif-biblio`).

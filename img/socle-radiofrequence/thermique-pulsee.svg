@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500"><rect width="1000" height="500" fill="#f7f5f1"/><text x="34" y="44" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="22" fill="#14181d" text-anchor="start" font-weight="700">Radiofréquence thermique et pulsée : la même aiguille, deux intentions</text><text x="34" y="68" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="14.5" fill="#5b6672" text-anchor="start" font-weight="400">Ce qui sépare une neurolyse d'une neuromodulation tient à une courbe de température.</text>
+<rect x="34" y="92" width="600" height="356" rx="10" fill="#ffffff" stroke="#d5cfc5" stroke-width="1.5"/>
+<rect x="60" y="130" width="560" height="185.625" fill="#fdeceb"/>
+<text x="612" y="143.5" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12" fill="#b91c1c" text-anchor="end" font-weight="400">Au-dessus de 45 °C : dénaturation protéique</text>
+<line x1="60" y1="400" x2="620" y2="400" stroke="#d5cfc5" stroke-width="1"/>
+<text x="50" y="404" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="11.5" fill="#5b6672" text-anchor="end" font-weight="400">20</text>
+<line x1="60" y1="332.5" x2="620" y2="332.5" stroke="#d5cfc5" stroke-width="1"/>
+<text x="50" y="336.5" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="11.5" fill="#5b6672" text-anchor="end" font-weight="400">40</text>
+<line x1="60" y1="265" x2="620" y2="265" stroke="#d5cfc5" stroke-width="1"/>
+<text x="50" y="269" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="11.5" fill="#5b6672" text-anchor="end" font-weight="400">60</text>
+<line x1="60" y1="197.5" x2="620" y2="197.5" stroke="#d5cfc5" stroke-width="1"/>
+<text x="50" y="201.5" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="11.5" fill="#5b6672" text-anchor="end" font-weight="400">80</text>
+<line x1="60" y1="130" x2="620" y2="130" stroke="#d5cfc5" stroke-width="1"/>
+<text x="50" y="134" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="11.5" fill="#5b6672" text-anchor="end" font-weight="400">100</text>
+<text x="26" y="118" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12" fill="#5b6672" text-anchor="start" font-weight="400">°C</text>
+<text x="60" y="418" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="11.5" fill="#5b6672" text-anchor="middle" font-weight="400">0</text>
+<text x="200" y="418" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="11.5" fill="#5b6672" text-anchor="middle" font-weight="400">25</text>
+<text x="340" y="418" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="11.5" fill="#5b6672" text-anchor="middle" font-weight="400">50</text>
+<text x="480" y="418" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="11.5" fill="#5b6672" text-anchor="middle" font-weight="400">75</text>
+<text x="620" y="418" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="11.5" fill="#5b6672" text-anchor="middle" font-weight="400">100</text>
+<text x="340" y="438" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12" fill="#5b6672" text-anchor="middle" font-weight="400">secondes</text>
+<path d="M60 342.625 C 93.6 258.25, 116 190.75, 138.4 180.625 L 564 180.625 L 564 180.625 C 586.4 265, 603.1999999999999 325.75, 620 342.625" fill="none" stroke="#b91c1c" stroke-width="3"/>
+<text x="340" y="168.625" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13.5" fill="#b91c1c" text-anchor="middle" font-weight="700">Thermique : 80–90 °C, 60 à 90 s</text>
+<path d="M60 342.625 L71.2 325.75 L74.56 339.25 L93.6 325.75 L96.96000000000001 339.25 L116 325.75 L119.36 339.25 L138.4 325.75 L141.76 339.25 L160.8 325.75 L164.16000000000003 339.25 L183.2 325.75 L186.56 339.25 L205.6 325.75 L208.96 339.25 L228 325.75 L231.35999999999999 339.25 L250.4 325.75 L253.76000000000002 339.25 L272.8 325.75 L276.15999999999997 339.25 L295.2 325.75 L298.56 339.25 L317.6 325.75 L320.96000000000004 339.25 L340 325.75 L343.36 339.25 L362.40000000000003 325.75 L365.76000000000005 339.25 L384.79999999999995 325.75 L388.15999999999997 339.25 L407.2 325.75 L410.56 339.25 L429.6 325.75 L432.96 339.25 L452 325.75 L455.35999999999996 339.25 L474.4 325.75 L477.76 339.25 L496.8 325.75 L500.15999999999997 339.25 L519.2 325.75 L522.56 339.25 L541.5999999999999 325.75 L544.96 339.25 L564 325.75 L567.3599999999999 339.25 L586.4 325.75 L589.76 339.25 L608.8 325.75 L612.16 339.25" fill="none" stroke="#0f6fff" stroke-width="2.4"/>
+<line x1="60" y1="325.75" x2="620" y2="325.75" stroke="#0f6fff" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="340" y="351.75" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13.5" fill="#0f6fff" text-anchor="middle" font-weight="700">Pulsée : plafonnée à 42 °C, 120 à 360 s</text>
+<line x1="60" y1="400" x2="620" y2="400" stroke="#14181d" stroke-width="1.5"/>
+<line x1="60" y1="130" x2="60" y2="400" stroke="#14181d" stroke-width="1.5"/>
+<rect x="654" y="92" width="312" height="186" rx="10" fill="#e8f0ff" stroke="#0f6fff" stroke-width="1.5"/>
+<text x="674" y="120" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="14.5" fill="#0f6fff" text-anchor="start" font-weight="700">Ce que « pulsée » veut dire</text>
+<line x1="674" y1="190" x2="946" y2="190" stroke="#5b6672" stroke-width="1.2"/>
+<rect x="674" y="160" width="10" height="30" fill="#0f6fff"/>
+<rect x="742" y="160" width="10" height="30" fill="#0f6fff"/>
+<rect x="810" y="160" width="10" height="30" fill="#0f6fff"/>
+<rect x="878" y="160" width="10" height="30" fill="#0f6fff"/>
+<text x="674" y="212" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#14181d" text-anchor="start" font-weight="400">20 ms de courant, 480 ms de silence</text>
+<text x="674" y="230" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#14181d" text-anchor="start" font-weight="400">2 Hz — le tissu a le temps de refroidir.</text>
+<text x="674" y="250" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#5b6672" text-anchor="start" font-weight="400">C'est le champ électrique, non la chaleur,</text>
+<text x="674" y="266" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#5b6672" text-anchor="start" font-weight="400">qui module la transmission.</text>
+<rect x="654" y="286" width="312" height="162" rx="10" fill="#ffffff" stroke="#d5cfc5" stroke-width="1.5"/>
+<text x="674" y="312" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="14.5" fill="#14181d" text-anchor="start" font-weight="700">Conséquence pratique</text>
+<text x="674" y="334" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.8" fill="#14181d" text-anchor="start" font-weight="400">Thermique : lésion définitive, réservée aux</text><text x="674" y="351.5" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.8" fill="#14181d" text-anchor="start" font-weight="400">nerfs purement sensitifs. Repousse en 6 à 12</text><text x="674" y="369" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.8" fill="#14181d" text-anchor="start" font-weight="400">mois, parfois avec névrite de déafférentation.</text><text x="674" y="386.5" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.8" fill="#14181d" text-anchor="start" font-weight="400"></text><text x="674" y="404" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.8" fill="#14181d" text-anchor="start" font-weight="400">Pulsée : pas de lésion. Répétable, utilisable</text><text x="674" y="421.5" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.8" fill="#14181d" text-anchor="start" font-weight="400">sur un nerf mixte — au prix d'un effet plus</text><text x="674" y="439" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.8" fill="#14181d" text-anchor="start" font-weight="400">court et d'une preuve plus faible.</text>
+<text x="34" y="482" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#5b6672" text-anchor="start" font-weight="400" font-style="italic">Schéma original — courbes de principe, non des relevés ; paramètres repris du texte de cette fiche.</text></svg>

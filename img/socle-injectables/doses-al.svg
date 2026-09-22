@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560"><rect width="1000" height="560" fill="#f7f5f1"/><text x="34" y="44" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="22" fill="#14181d" text-anchor="start" font-weight="700">Anesthésiques locaux : le plafond d'une séance, pour un adulte de 70 kg</text><text x="34" y="68" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="14.5" fill="#5b6672" text-anchor="start" font-weight="400">Les doses maximales s'entendent par séance, tous blocs confondus — c'est le cumul qui compte.</text>
+<rect x="34" y="92" width="932" height="300" rx="10" fill="#ffffff" stroke="#d5cfc5" stroke-width="1.5"/>
+<text x="232" y="135" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="14.5" fill="#14181d" text-anchor="end" font-weight="600">Lidocaïne adrénalinée</text>
+<text x="232" y="152" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#5b6672" text-anchor="end" font-weight="400">7 mg/kg</text>
+<rect x="250" y="118" width="353" height="24" rx="4" fill="#0f6fff" fill-opacity=".82"/>
+<text x="613" y="135" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13.5" fill="#0f6fff" text-anchor="start" font-weight="700">490 mg</text>
+<text x="681" y="135" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13" fill="#5b6672" text-anchor="start" font-weight="400">49 mL à 1 % · 24 mL à 2 %</text>
+<text x="232" y="187" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="14.5" fill="#14181d" text-anchor="end" font-weight="600">Lidocaïne</text>
+<text x="232" y="204" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#5b6672" text-anchor="end" font-weight="400">4,5 mg/kg</text>
+<rect x="250" y="170" width="227" height="24" rx="4" fill="#0f6fff" fill-opacity=".82"/>
+<text x="487" y="187" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13.5" fill="#0f6fff" text-anchor="start" font-weight="700">315 mg</text>
+<text x="555" y="187" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13" fill="#5b6672" text-anchor="start" font-weight="400">31 mL à 1 % · 16 mL à 2 %</text>
+<text x="232" y="239" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="14.5" fill="#14181d" text-anchor="end" font-weight="600">Ropivacaïne</text>
+<text x="232" y="256" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#5b6672" text-anchor="end" font-weight="400">3 mg/kg</text>
+<rect x="250" y="222" width="151" height="24" rx="4" fill="#047857" fill-opacity=".82"/>
+<text x="411" y="239" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13.5" fill="#047857" text-anchor="start" font-weight="700">210 mg</text>
+<text x="479" y="239" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13" fill="#5b6672" text-anchor="start" font-weight="400">105 mL à 0,2 % · 42 mL à 0,5 %</text>
+<text x="232" y="291" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="14.5" fill="#14181d" text-anchor="end" font-weight="600">Bupivacaïne</text>
+<text x="232" y="308" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#5b6672" text-anchor="end" font-weight="400">2–2,5 mg/kg</text>
+<rect x="250" y="274" width="126" height="24" rx="4" fill="#b91c1c" fill-opacity=".82"/>
+<text x="386" y="291" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13.5" fill="#b91c1c" text-anchor="start" font-weight="700">175 mg</text>
+<text x="454" y="291" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13" fill="#5b6672" text-anchor="start" font-weight="400">70 mL à 0,25 % · 35 mL à 0,5 %</text>
+<text x="232" y="343" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="14.5" fill="#14181d" text-anchor="end" font-weight="600">Lévobupivacaïne</text>
+<text x="232" y="360" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#5b6672" text-anchor="end" font-weight="400">2–2,5 mg/kg</text>
+<rect x="250" y="326" width="126" height="24" rx="4" fill="#b45309" fill-opacity=".82"/>
+<text x="386" y="343" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13.5" fill="#b45309" text-anchor="start" font-weight="700">175 mg</text>
+<text x="454" y="343" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13" fill="#5b6672" text-anchor="start" font-weight="400">70 mL à 0,25 % · 35 mL à 0,5 %</text>
+<line x1="250" y1="108" x2="250" y2="378" stroke="#d5cfc5" stroke-width="1.5"/>
+<text x="250" y="372" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12" fill="#5b6672" text-anchor="middle" font-weight="400">0</text>
+<rect x="34" y="412" width="452" height="106" rx="10" fill="#fff5e6" stroke="#b45309" stroke-width="1.5"/>
+<text x="54" y="440" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="14.5" fill="#b45309" text-anchor="start" font-weight="700">Conversion</text>
+<text x="54" y="464" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13.5" fill="#14181d" text-anchor="start" font-weight="400">1 % = 10 mg/mL. 10 mL de ropivacaïne 0,5 % = 50 mg.</text><text x="54" y="484" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13.5" fill="#14181d" text-anchor="start" font-weight="400">Réduire chez le sujet âgé, dénutri, insuffisant hépatique</text>
+<text x="54" y="503" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13.5" fill="#14181d" text-anchor="start" font-weight="400">ou cardiaque.</text>
+<rect x="514" y="412" width="452" height="106" rx="10" fill="#e8f0ff" stroke="#0f6fff" stroke-width="1.5"/>
+<text x="534" y="440" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="14.5" fill="#0f6fff" text-anchor="start" font-weight="700">En pratique d'algologie</text>
+<text x="534" y="464" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13.5" fill="#14181d" text-anchor="start" font-weight="400">Un bloc isolé n'approche jamais ces plafonds.</text><text x="534" y="484" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13.5" fill="#14181d" text-anchor="start" font-weight="400">Ils deviennent réels quand on enchaîne plusieurs blocs</text><text x="534" y="504" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13.5" fill="#14181d" text-anchor="start" font-weight="400">dans la même séance : additionner avant de piquer.</text>
+<text x="34" y="542" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#5b6672" text-anchor="start" font-weight="400" font-style="italic">Schéma original — volumes calculés depuis le tableau de la fiche pour 70 kg ; arrondis au millilitre.</text></svg>

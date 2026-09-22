@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 486" width="1000" height="486"><rect width="1000" height="486" fill="#f7f5f1"/><text x="34" y="44" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="22" fill="#14181d" text-anchor="start" font-weight="700">L'électrode et la forme de sa lésion</text><text x="34" y="68" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="14.5" fill="#5b6672" text-anchor="start" font-weight="400">La lésion naît autour de la partie active, pas devant la pointe : c'est toute la règle de placement.</text>
+<rect x="34" y="92" width="932" height="258" rx="10" fill="#ffffff" stroke="#d5cfc5" stroke-width="1.5"/>
+<rect x="120" y="203" width="380" height="14" rx="3" fill="#9aa4ae" stroke="#6b737b" stroke-width="1.2"/>
+<rect x="500" y="203" width="150" height="14" rx="3" fill="#e5b567" stroke="#a9812f" stroke-width="1.2"/>
+<path d="M650 203 L686 210 L650 217 Z" fill="#e5b567" stroke="#a9812f" stroke-width="1.2"/>
+<rect x="74" y="197" width="46" height="26" rx="4" fill="#4b5158"/>
+<ellipse cx="588" cy="210" rx="118" ry="34" fill="#b91c1c" fill-opacity=".16" stroke="#b91c1c" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="588" y="162" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13" fill="#b91c1c" text-anchor="middle" font-weight="600">Lésion : un ellipsoïde autour de la partie active</text>
+<line x1="500" y1="250" x2="650" y2="250" stroke="#14181d" stroke-width="1.2"/>
+<line x1="500" y1="244" x2="500" y2="256" stroke="#14181d" stroke-width="1.2"/>
+<line x1="650" y1="244" x2="650" y2="256" stroke="#14181d" stroke-width="1.2"/>
+<text x="575" y="270" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13" fill="#14181d" text-anchor="middle" font-weight="600">Extrémité active : 5 ou 10 mm</text>
+<text x="310" y="188" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#5b6672" text-anchor="middle" font-weight="400">Canule isolée — aucune énergie délivrée sur cette longueur</text>
+<line x1="686" y1="224" x2="700" y2="264" stroke="#5b6672" stroke-width="1"/>
+<text x="704" y="278" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#5b6672" text-anchor="start" font-weight="400">Thermocouple en pointe : il lit la température</text>
+<text x="704" y="294" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#5b6672" text-anchor="start" font-weight="400">du tissu le plus chaud, pas celle du nerf.</text>
+<text x="68" y="250" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#5b6672" text-anchor="start" font-weight="400">Embase</text>
+<rect x="34" y="366" width="932" height="84" rx="10" fill="#fff5e6" stroke="#b45309" stroke-width="1.5"/>
+<text x="54" y="394" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="14.5" fill="#b45309" text-anchor="start" font-weight="700">Ce qu'il faut en retenir</text>
+<text x="54" y="416" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13" fill="#14181d" text-anchor="start" font-weight="400">La lésion déborde à peine latéralement : une électrode perpendiculaire au nerf ne le touche qu'en un point, et aucune montée</text><text x="54" y="435" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="13" fill="#14181d" text-anchor="start" font-weight="400">en puissance ne compense. On couche la partie active le long du trajet, contact osseux quand il existe, quitte à repositionner.</text>
+<text x="34" y="468" font-family="-apple-system, 'Segoe UI', Inter, Roboto, sans-serif" font-size="12.5" fill="#5b6672" text-anchor="start" font-weight="400" font-style="italic">Schéma original — proportions indicatives ; les dimensions exactes de lésion dépendent du générateur et du tissu.</text></svg>
