@@ -1,58 +1,49 @@
 /* Coupes anatomiques recalées — ganglion stellaire, bloc en C6 (format : .claude/skills/echo-anatomie/SKILL.md).
-   Points relevés sur la grille de l'image entière puis ramenés au repère après crop vertical (y − 39). */
+   Image : Lin et al., PLOS One 2025, fig. 2B (après injection). Les mentions med/lat des auteurs sont inversées :
+   l'anatomie (thyroïde médiale, jugulaire latérale) impose latéral à gauche, médial à droite. */
 (function () {
-  const T = pts => pts.map(p => [p[0], p[1] - 39]);
-  const FASCIA = T([[0,170],[120,180],[250,195],[350,202],[450,207],[560,212],[650,214],[700,222],[745,250]]);
-  const TOIT = FASCIA.concat(T([[760,205],[810,195],[880,210],[950,200]]));
-  const CORTEX = T([[150,486],[158,430],[175,400],[200,385],[232,390],[255,410],[280,432],[320,442],[352,438],[368,405],[385,378],[420,365],[443,340],[440,283],[462,283],[490,320],[497,405],[540,415],[600,412],[660,398],[720,355],[790,305],[850,292],[950,287]]);
-  const ovale = (cx, cy, rx, ry) => { const o = []; for (let i = 0; i < 12; i++) { const t = i / 12 * 2 * Math.PI; o.push([Math.round(cx + rx * Math.cos(t)), Math.round(cy + ry * Math.sin(t))]); } return o; };
+  const ovale = (cx, cy, rx, ry) => { const o = []; for (let i = 0; i < 14; i++) { const t = i / 14 * 2 * Math.PI; o.push([Math.round(cx + rx * Math.cos(t)), Math.round(cy + ry * Math.sin(t))]); } return o; };
+  const SCM_BAS = [[0,245],[100,250],[200,252],[300,240],[400,205],[450,168],[500,152],[600,150],[700,148],[800,140],[900,122],[1000,102]];
+  const FASCIA = [[200,382],[300,392],[400,396],[500,400],[600,403],[660,405],[715,398],[760,383],[820,390],[855,425],[900,455],[1000,470]];
+  const TUB = [[0,400],[100,396],[200,393],[300,395],[400,400],[500,406],[600,418],[650,438],[685,470],[700,520],[705,640]];
   ECHO.anat['ganglion-stellaire'] = [{
     fig: 'img/ganglion-stellaire/echo-1.jpg',
     valide: false,
-    vb: [1000, 447], orient: { left: 'Latéral', right: 'Médial' },
+    vb: [1000, 640], orient: { left: 'Latéral', right: 'Médial' },
     lecture: [
-      'Certain — orientation : carotide commune à droite de l\'image, donc médial à droite ; image en miroir du schéma apparié (déjà dit dans la légende).',
-      'Certain — long du cou, racine C6, tubercules antérieur et postérieur de C6, fascia prévertébral, aiguille et nappe d\'anesthésique : contours repris du corrigé en pointillé incrusté par les auteurs.',
-      'Probable — surface du corps vertébral de C6 : bande hyperéchogène sous le long du cou, prolongée en dedans sous la carotide.',
-      'Supposition — plans superficiels : contraste écrasé (noir sur noir) au-dessus du fascia ; le sterno-cléido-mastoïdien est dessiné comme une couche unique, la veine jugulaire interne (collabée par la sonde ?) n\'est pas individualisable et n\'est pas dessinée.',
-      'Probable — scalène antérieur en avant de la racine C6 (inséré sur le tubercule antérieur) et scalène moyen en dehors, sur le tubercule postérieur : disposition reprise de la coupe de référence fournie par Mat (RAAPM, bloc en C6) ; sur cette image les deux masses ne sont pas séparées par un signal propre.',
-      'Probable — au-delà du dépôt latéral (LA), la nappe se prolonge en dedans sous le fascia, sur la face antérieure du long du cou : c\'est la lame fine comprise entre le pointillé vert et le pointillé jaune des auteurs. C\'est le plan de la chaîne sympathique, que l\'injectat doit envelopper (remarque de Mat).',
-      'Extrapolé — profondeur des corticales (cône d\'ombre). La chaîne sympathique cervicale elle-même n\'est pas visible : dessinée dans la nappe sous-fasciale, en avant du long du cou — étiquetée sur la coupe anatomique seulement.',
+      'Certain — orientation : la thyroïde (médiale) est à droite, la jugulaire interne (latérale à la carotide) à gauche ; les mentions med/lat incrustées par les auteurs sont donc inversées. Latéral à gauche, image en miroir du schéma apparié (dit dans la légende).',
+      'Certain — SCM, jugulaire interne, carotide commune, thyroïde, tubercule antérieur de C6 (T), long du cou (LCo) et nappe d\'anesthésique (flèches) : désignés par les auteurs ; les auteurs décrivent l\'injection « sous le fascia prévertébral, en surface du long du cou », ce qui est la cible de la fiche et de la coupe de référence fournie par Mat.',
+      'Probable — fascia prévertébral : ligne brillante continue sous la carotide, soulevée par la nappe en dedans du tubercule.',
+      'Supposition — masse latérale sous le SCM, en dehors de la jugulaire : scalène antérieur, par analogie avec la coupe de référence (aucun signal propre à 339 px).',
+      'Extrapolé — chaîne sympathique, non visible : dessinée dans la nappe, en avant du long du cou. Corps vertébral sous le long du cou (ligne brillante en bas à droite) ; tissu sous le tubercule : réverbérations, rempli comme de l\'os. Aiguille non identifiable sur ce panneau (retirée ?) : non dessinée.',
     ],
     structures: [
-      { id: 'peau', tissu: 'peau', haut: [[0,0],[950,0]], bas: [[0,18],[950,18]] },
-      { id: 'sc', tissu: 'graisse', haut: [[0,18],[950,18]], bas: [[0,62],[950,62]] },
-      { id: 'scm', tissu: 'muscle', haut: [[0,62],[950,62]], bas: TOIT, extrapole: true },
-      /* scalène antérieur : en avant de la racine, inséré sur le tubercule antérieur ; scalène moyen : en dehors et en arrière, sur le tubercule postérieur —
-         disposition calquée sur la coupe de référence fournie par Mat (RAAPM, bloc stellaire en C6), pas sur un signal propre de cette image */
-      { id: 'scal-ant', tissu: 'muscle', contour: T([[232,197],[440,210],[442,282],[425,300],[380,296],[340,284],[300,282],[262,296],[240,262],[228,225]]) },
-      { id: 'scal-moy', tissu: 'muscle', contour: T([[0,178],[228,197],[226,240],[238,300],[236,335],[222,360],[200,385],[175,400],[158,430],[0,450]]) },
-      { id: 'lc', tissu: 'muscle', contour: T([[560,225],[640,222],[680,230],[750,275],[800,290],[780,310],[720,350],[650,395],[560,410],[520,400],[515,340],[500,300],[530,280],[555,245]]) },
-      { id: 'cca', tissu: 'artere', contour: ovale(812, 240 - 39, 66, 37) },
-      { id: 'racine', tissu: 'nerf', contour: ovale(296, 376 - 39, 50, 47) },
-      { id: 'al', tissu: 'liquide', contour: T([[430,215],[520,212],[560,222],[552,250],[522,275],[470,280],[440,265]]) },
-      /* diffusion sous-fasciale en dedans, sur la face antérieure du long du cou : c'est là que passe la chaîne sympathique, et c'est elle que la nappe doit envelopper —
-         lame fine entre le pointillé vert (fascia) et le pointillé jaune (long du cou) des auteurs */
-      { id: 'nappe', tissu: 'liquide', haut: T([[550,214],[600,213],[650,215],[700,223],[745,250]]), bas: T([[550,228],[600,225],[650,223],[700,232],[745,270]]) },
-      { id: 'chaine', tissu: 'nerf', contour: ovale(612, 219 - 39, 13, 5), extrapole: true },
+      { id: 'peau', tissu: 'peau', haut: [[0,0],[1000,0]], bas: [[0,24],[1000,24]] },
+      { id: 'sc', tissu: 'graisse', haut: [[0,24],[1000,24]], bas: [[0,88],[300,92],[600,90],[800,78],[1000,60]] },
+      { id: 'scm', tissu: 'muscle', haut: [[0,88],[300,92],[600,90],[800,78],[1000,60]], bas: SCM_BAS },
+      { id: 'loge', tissu: 'conjonctif', haut: SCM_BAS, bas: [[0,400],[200,382]].concat(FASCIA.slice(1, 5), [[600,403],[660,405]]).concat([[700,395],[760,383],[820,390],[855,425],[900,455],[1000,470]]) },
+      { id: 'thy', tissu: 'glande', contour: [[655,205],[760,188],[860,205],[950,258],[965,360],[905,418],[800,402],[700,392],[662,338]] },
+      { id: 'scal-ant', tissu: 'muscle', contour: [[0,255],[120,258],[190,290],[200,340],[190,382],[100,394],[0,398]], extrapole: true },
+      { id: 'ijv', tissu: 'veine', contour: ovale(310, 336, 108, 42) },
+      { id: 'cca', tissu: 'artere', contour: ovale(565, 253, 92, 82) },
       { id: 'fascia', tissu: 'fascia', ligne: FASCIA, ep: 5 },
-      { id: 'aiguille', tissu: 'aiguille', ligne: T([[0,146],[485,251]]), ep: 5 },
-      { id: 'c6', tissu: 'os', cortex: CORTEX, vu: [1, 21] },
+      { id: 'nappe', tissu: 'liquide', contour: [[712,402],[760,386],[822,392],[852,430],[842,490],[790,506],[735,500],[706,460]] },
+      { id: 'chaine', tissu: 'nerf', contour: ovale(776, 452, 12, 7), extrapole: true },
+      { id: 'lc', tissu: 'muscle', contour: [[650,508],[705,480],[760,508],[842,496],[905,520],[935,580],[890,640],[705,640],[645,600]] },
+      { id: 'corps', tissu: 'os', contour: [[705,640],[730,600],[800,610],[900,604],[1000,588],[1000,640]], extrapole: true },
+      { id: 'tub', tissu: 'os', cortex: TUB, vu: [0, 9] },
     ],
     labels: [
-      { s: 'scm', x: 450, y: 82, dx: 0, dy: -52, text: 'Sterno-cléido-mastoïdien (supposé)' },
-      { s: 'aiguille', x: 200, y: 150, dx: -50, dy: -105, text: 'Aiguille', vue: 'anat' },
-      { s: 'al', x: 480, y: 205, dx: -150, dy: -105, text: 'Dépôt d\'anesthésique local', vue: 'anat' },
-      { s: 'chaine', x: 612, y: 186, dx: -10, dy: -86, text: 'Chaîne sympathique, dans la nappe', vue: 'anat' },
-      { s: 'fascia', x: 700, y: 181, dx: 200, dy: -121, text: 'Fascia prévertébral', vue: 'anat' },
-      { s: 'cca', x: 840, y: 182, dx: 60, dy: -72, text: 'Carotide commune', vue: 'anat' },
-      { s: 'scal-ant', x: 340, y: 205, dx: -150, dy: -55, text: 'Scalène antérieur' },
-      { s: 'scal-moy', x: 110, y: 260, dx: -20, dy: 62, text: 'Scalène moyen' },
-      { s: 'c6', x: 195, y: 352, dx: -95, dy: 33, text: 'Tubercule postérieur', vue: 'anat' },
-      { s: 'racine', x: 296, y: 345, dx: 0, dy: 82, text: 'Racine C6', vue: 'anat' },
-      { s: 'c6', x: 465, y: 300, dx: 100, dy: 127, text: 'Tubercule de Chassaignac (C6)', vue: 'anat' },
-      { s: 'lc', x: 650, y: 290, dx: 225, dy: 137, text: 'Long du cou', vue: 'anat' },
-      { s: 'c6', x: 900, y: 252, dx: 5, dy: 40, text: 'Corps vertébral de C6' },
+      { s: 'scm', x: 250, y: 135, dx: -60, dy: -90, text: 'Sterno-cléido-mastoïdien', vue: 'anat' },
+      { s: 'cca', x: 565, y: 253, dx: 55, dy: -208, text: 'Carotide commune', vue: 'anat' },
+      { s: 'thy', x: 830, y: 300, dx: 70, dy: -255, text: 'Thyroïde', vue: 'anat' },
+      { s: 'scal-ant', x: 95, y: 330, dx: 65, dy: -210, text: 'Scalène antérieur (supposé)' },
+      { s: 'nappe', x: 778, y: 440, dx: -18, dy: -320, text: 'Nappe sous-fasciale sur le long du cou (cible)' },
+      { s: 'ijv', x: 310, y: 336, dx: -185, dy: 264, text: 'V. jugulaire interne', vue: 'anat' },
+      { s: 'fascia', x: 520, y: 400, dx: -120, dy: 200, text: 'Fascia prévertébral' },
+      { s: 'tub', x: 400, y: 430, dx: 230, dy: 170, text: 'Tubercule ant. C6', vue: 'anat' },
+      { s: 'chaine', x: 776, y: 452, dx: 124, dy: 88, text: 'Chaîne sympathique', vue: 'anat' },
+      { s: 'lc', x: 800, y: 560, dx: 100, dy: 40, text: 'Long du cou', vue: 'anat' },
     ],
   }];
 })();
