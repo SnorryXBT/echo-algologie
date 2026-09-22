@@ -97,6 +97,10 @@ Signaler les pièges d'interprétation : ce sont eux qui forment l'étudiant.
 - Panneau bas (H < 500) : étiquettes sur deux rangées en haut et une en bas ; la taille des pastilles est bornée par
   la hauteur. Contrôler les collisions sur la planche exportée (`anat-export.js … --prive`), plus lisible que la capture
   de la fiche, dont l'en-tête collant masque le haut.
+- **Une image dont les annotations contredisent l'anatomie est disqualifiée, pas réinterprétée.** Cas Lin et al., PLOS One
+  2025 (stellaire) : mentions med/lat inversées par rapport à la thyroïde et à la jugulaire ; lues telles quelles, elles
+  impliquent une aiguille à travers la thyroïde. Mat a tranché : on ne construit pas une planche d'enseignement sur une
+  figure dont on doit d'abord corriger les auteurs. Retour à l'image précédente.
 - `scripts/echo-search.js` : le piège des éditeurs Cureus (« Muacevic A, Adler JR ») a encore été trouvé dans un crédit
   existant ; `grep -l "Muacevic\|Adler JR" js/data/figures/*.js` avant de clore une région.
 
