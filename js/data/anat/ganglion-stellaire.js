@@ -16,7 +16,8 @@
       'Probable — surface du corps vertébral de C6 : bande hyperéchogène sous le long du cou, prolongée en dedans sous la carotide.',
       'Supposition — plans superficiels : contraste écrasé (noir sur noir) au-dessus du fascia ; le sterno-cléido-mastoïdien est dessiné comme une couche unique, la veine jugulaire interne (collabée par la sonde ?) n\'est pas individualisable et n\'est pas dessinée.',
       'Probable — scalène antérieur en avant de la racine C6 (inséré sur le tubercule antérieur) et scalène moyen en dehors, sur le tubercule postérieur : disposition reprise de la coupe de référence fournie par Mat (RAAPM, bloc en C6) ; sur cette image les deux masses ne sont pas séparées par un signal propre.',
-      'Extrapolé — profondeur des corticales (cône d\'ombre). La chaîne sympathique cervicale elle-même n\'est pas visible : elle chemine dans le dédoublement du fascia prévertébral, en avant du long du cou — étiquetée sur la coupe anatomique seulement.',
+      'Probable — au-delà du dépôt latéral (LA), la nappe se prolonge en dedans sous le fascia, sur la face antérieure du long du cou : c\'est la lame fine comprise entre le pointillé vert et le pointillé jaune des auteurs. C\'est le plan de la chaîne sympathique, que l\'injectat doit envelopper (remarque de Mat).',
+      'Extrapolé — profondeur des corticales (cône d\'ombre). La chaîne sympathique cervicale elle-même n\'est pas visible : dessinée dans la nappe sous-fasciale, en avant du long du cou — étiquetée sur la coupe anatomique seulement.',
     ],
     structures: [
       { id: 'peau', tissu: 'peau', haut: [[0,0],[950,0]], bas: [[0,18],[950,18]] },
@@ -29,8 +30,11 @@
       { id: 'lc', tissu: 'muscle', contour: T([[560,225],[640,222],[680,230],[750,275],[800,290],[780,310],[720,350],[650,395],[560,410],[520,400],[515,340],[500,300],[530,280],[555,245]]) },
       { id: 'cca', tissu: 'artere', contour: ovale(812, 240 - 39, 66, 37) },
       { id: 'racine', tissu: 'nerf', contour: ovale(296, 376 - 39, 50, 47) },
-      { id: 'chaine', tissu: 'nerf', contour: ovale(612, 188, 15, 8), extrapole: true },
       { id: 'al', tissu: 'liquide', contour: T([[430,215],[520,212],[560,222],[552,250],[522,275],[470,280],[440,265]]) },
+      /* diffusion sous-fasciale en dedans, sur la face antérieure du long du cou : c'est là que passe la chaîne sympathique, et c'est elle que la nappe doit envelopper —
+         lame fine entre le pointillé vert (fascia) et le pointillé jaune (long du cou) des auteurs */
+      { id: 'nappe', tissu: 'liquide', haut: T([[550,214],[600,213],[650,215],[700,223],[745,250]]), bas: T([[550,228],[600,225],[650,223],[700,232],[745,270]]) },
+      { id: 'chaine', tissu: 'nerf', contour: ovale(612, 219 - 39, 13, 5), extrapole: true },
       { id: 'fascia', tissu: 'fascia', ligne: FASCIA, ep: 5 },
       { id: 'aiguille', tissu: 'aiguille', ligne: T([[0,146],[485,251]]), ep: 5 },
       { id: 'c6', tissu: 'os', cortex: CORTEX, vu: [1, 21] },
@@ -38,8 +42,8 @@
     labels: [
       { s: 'scm', x: 450, y: 82, dx: 0, dy: -52, text: 'Sterno-cléido-mastoïdien (supposé)' },
       { s: 'aiguille', x: 200, y: 150, dx: -50, dy: -105, text: 'Aiguille', vue: 'anat' },
-      { s: 'al', x: 480, y: 205, dx: -150, dy: -105, text: 'Anesthésique local', vue: 'anat' },
-      { s: 'chaine', x: 612, y: 186, dx: -10, dy: -86, text: 'Chaîne sympathique', vue: 'anat' },
+      { s: 'al', x: 480, y: 205, dx: -150, dy: -105, text: 'Dépôt d\'anesthésique local', vue: 'anat' },
+      { s: 'chaine', x: 612, y: 186, dx: -10, dy: -86, text: 'Chaîne sympathique, dans la nappe', vue: 'anat' },
       { s: 'fascia', x: 700, y: 181, dx: 200, dy: -121, text: 'Fascia prévertébral', vue: 'anat' },
       { s: 'cca', x: 840, y: 182, dx: 60, dy: -72, text: 'Carotide commune', vue: 'anat' },
       { s: 'scal-ant', x: 340, y: 205, dx: -150, dy: -55, text: 'Scalène antérieur' },
