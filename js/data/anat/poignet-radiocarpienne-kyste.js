@@ -13,7 +13,7 @@
   ECHO.anat['poignet-radiocarpienne-kyste'] = [{
     fig: 'img/poignet-radiocarpienne-kyste/echo-1.jpg',
     valide: false,
-    vb: [1000, 549], orient: { left: 'Proximal (radius)', right: 'Distal (carpe)' },
+    vb: [1000, 549], orient: { left: 'Proximal', right: 'Distal' },
     lecture: [
       'Probable — corticale dorsale du radius : deux lignes hyperéchogènes convergent vers le rebord distal (arc supérieur, y ≈ 78–105 de x 340 à 490 ; ligne inférieure, y ≈ 108–130, plus longue). La ligne inférieure, suivie jusqu\'au bord gauche, est retenue comme corticale ; l\'arc supérieur, ≈ 1 mm au-dessus, est laissé dans le plan dorsal non attribué (face profonde d\'un tendon ? relief du tubercule de Lister hors plan ?). Si c\'est lui la corticale, le radius est à remonter d\'autant.',
       'Certain — orientation et os : épiphyse distale du radius (R) à gauche, scaphoïde (S) à droite — sigles et légende des auteurs ; proximal à gauche, comme le schéma apparié.',

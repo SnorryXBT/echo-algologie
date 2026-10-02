@@ -16,7 +16,7 @@
   ECHO.anat['doigt-a-ressort'] = [{
     fig: 'img/doigt-a-ressort/echo-1.jpg',
     valide: false,
-    vb: [1000, 484], orient: { left: 'Proximal (paume)', right: 'Distal (doigt)' },
+    vb: [1000, 484], orient: { left: 'Proximal', right: 'Distal' },
     lecture: [
       'Supposition — limite profonde des tendons en regard de la tête métacarpienne : deux lectures. Retenue : tendons de y ≈ 140 à ≈ 320 (≈ 4 mm à l\'échelle de l\'appareil), dont la moitié profonde, à fibres obliques et moins échogène (anisotropie), repose sur la plaque palmaire — cohérent avec l\'épaisseur mesurée sur la phalange (≈ 3,4 mm). Écartée : tendons limités à la bande fibrillaire brillante (y ≈ 140–220, moins de 2 mm), la plage grise sous-jacente étant la plaque palmaire. Les sigles FDS / FDP des auteurs ne tranchent pas ; l\'interface entre les deux tendons n\'est pas tracée.',
       'Certain — orientation : tête métacarpienne à gauche, phalange proximale à droite (sigles des auteurs) ; proximal à gauche, comme le schéma apparié.',
