@@ -118,13 +118,15 @@
     const img = `<div class="fig-img" data-crop="${crop.join(',')}"><div class="fig-clip"><img src="${esc(f.src)}" alt="${esc(f.titre || '')}" loading="lazy" onerror="this.closest('figure').classList.add('missing')"></div><svg class="fig-lines" viewBox="0 0 100 100" preserveAspectRatio="none">${lines}</svg>${labels}</div>`;
     /* coupe anatomique recalée sur cette image (js/data/anat/<id>.js) : elle remplace l'image étiquetée, le schéma passe dessous */
     const an = f.type === 'echo' ? (E.anat[p.id] || []).find(a => a.fig === f.src) : null;
-    if (an) {
+    if (an && !an.crop) {
       const sc = f.pair && (p.scenes || []).find(x => x.id === f.pair);
       return `<figure class="fig fig-echo has-anat"><div class="anat-host" data-fiche="${esc(p.id)}" data-fig="${esc(f.src)}"></div>${sc ? `<div class="fig-pair fig-pair-under">${safeScene(sc)}</div>` : ''}<figcaption>${an.valide ? '' : '<span class="anat-badge" title="Contours proposés par Claude, non encore relus par Mat : ne pas s\'y fier sans vérifier">Coupe anatomique non validée</span> '}${f.titre ? `<b>${inline(f.titre)}</b> ` : ''}${inline(f.legende || '')}${f.credit ? `<span class="credit">${inline(f.credit)}${f.source ? ` · <a href="${esc(f.source)}" target="_blank" rel="noopener">source</a>` : ''} · coupe anatomique : dessin original du mémo</span>` : ''}</figcaption></figure>`;
     }
+    /* coupe tracée sur un seul panneau d'une planche composite (`crop` propre à l'entrée anat) : la planche reste entière, la paire s'ajoute dessous */
+    const sous = an && an.crop ? `<div class="anat-sous"><div class="anat-sous-t">Coupe anatomique du panneau ${an.panneau ? esc(an.panneau) : 'échographique'}${an.valide ? '' : ' <span class="anat-badge" title="Contours proposés par Claude, non encore relus par Mat">non validée</span>'}</div><div class="anat-host" data-fiche="${esc(p.id)}" data-fig="${esc(f.src)}"></div></div>` : '';
     let pair = '';
     if (f.type === 'echo' && f.pair) { const sc = (p.scenes || []).find(x => x.id === f.pair); if (sc) pair = `<div class="fig-pair">${safeScene(sc)}</div>`; }
-    return `<figure class="fig fig-${esc(f.type || 'anatomie')}${pair ? ' has-pair' : ''}">${pair ? '<div class="fig-side">' : ''}${img}${pair}${pair ? '</div>' : ''}<figcaption>${f.titre ? `<b>${inline(f.titre)}</b> ` : ''}${inline(f.legende || '')}${f.credit ? `<span class="credit">${inline(f.credit)}${f.source ? ` · <a href="${esc(f.source)}" target="_blank" rel="noopener">source</a>` : ''}</span>` : ''}</figcaption></figure>`;
+    return `<figure class="fig fig-${esc(f.type || 'anatomie')}${pair ? ' has-pair' : ''}">${pair ? '<div class="fig-side">' : ''}${img}${pair}${pair ? '</div>' : ''}${sous}<figcaption>${f.titre ? `<b>${inline(f.titre)}</b> ` : ''}${inline(f.legende || '')}${f.credit ? `<span class="credit">${inline(f.credit)}${f.source ? ` · <a href="${esc(f.source)}" target="_blank" rel="noopener">source</a>` : ''}</span>` : ''}</figcaption></figure>`;
   }
   function figuresHtml(p, types) {
     const list = (E.figures[p.id] || []).filter(f => types.includes(f.type || 'anatomie'));
@@ -148,7 +150,7 @@
     const draw = h => {
       if (h.dataset.done) return; h.dataset.done = '1';
       const an = (E.anat[h.dataset.fiche] || []).find(a => a.fig === h.dataset.fig), f = (E.figures[h.dataset.fiche] || []).find(x => x.src === h.dataset.fig) || {};
-      try { window.ANAT.render(h, Object.assign({}, an, { src: h.dataset.fig, crop: f.crop }), { mode: h.dataset.mode || 'paire' }); } catch (e) { console.error(e); h.innerHTML = `<div class="callout danger">Erreur de rendu de la coupe anatomique : ${esc(e.message)}</div>`; }
+      try { window.ANAT.render(h, Object.assign({}, an, { src: h.dataset.fig, crop: an.crop || f.crop }), { mode: h.dataset.mode || 'paire' }); } catch (e) { console.error(e); h.innerHTML = `<div class="callout danger">Erreur de rendu de la coupe anatomique : ${esc(e.message)}</div>`; }
     };
     if (hosts.length > 8 && window.IntersectionObserver) { const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { draw(e.target); io.unobserve(e.target); } }), { rootMargin: '600px' }); hosts.forEach(h => io.observe(h)); }
     else hosts.forEach(draw);

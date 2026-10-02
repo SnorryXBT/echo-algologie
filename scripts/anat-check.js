@@ -6,7 +6,7 @@ const fs = require('fs'), path = require('path');
 const root = path.join(__dirname, '..');
 global.window = global; global.ECHO = { figures: {}, anat: {} };
 for (const d of ['figures', 'anat']) { const dir = path.join(root, 'js/data', d); if (fs.existsSync(dir)) for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.js'))) eval(fs.readFileSync(path.join(dir, f), 'utf8')); }
-const TISSUS = ['peau', 'graisse', 'muscle', 'tendon', 'bourse', 'cartilage', 'os', 'nerf', 'artere', 'veine', 'ligament', 'fascia', 'plevre', 'poumon', 'glande', 'disque', 'liquide', 'conjonctif', 'aiguille'];
+const TISSUS = ['peau', 'graisse', 'muscle', 'tendon', 'bourse', 'cartilage', 'os', 'nerf', 'artere', 'veine', 'ligament', 'fascia', 'plevre', 'poumon', 'glande', 'disque', 'liquide', 'conjonctif', 'aiguille', 'indetermine'];
 function size(file) {                    // dimensions JPEG / PNG sans dépendance
   const b = fs.readFileSync(file);
   if (b[0] === 0x89) return [b.readUInt32BE(16), b.readUInt32BE(20)];
@@ -20,7 +20,7 @@ for (const id of Object.keys(ECHO.anat).sort()) for (const a of ECHO.anat[id]) {
   const f = (ECHO.figures[id] || []).find(x => x.src === a.fig);
   if (!f || f.type !== 'echo') { bad('aucune figure type echo avec ce src dans js/data/figures/' + id + '.js'); continue; }
   const file = path.join(root, a.fig); if (!fs.existsSync(file)) { bad('image absente'); continue; }
-  const s = size(file), c = f.crop || [0, 0, 1, 1];
+  const s = size(file), c = a.crop || f.crop || [0, 0, 1, 1];   // `crop` propre à la coupe : sous-panneau d'une planche composite
   if (s && a.vb) { const H = 1000 * (s[1] * c[3]) / (s[0] * c[2]); if (a.vb[0] !== 1000 || Math.abs(a.vb[1] - H) / H > 0.02) bad(`vb ${JSON.stringify(a.vb)} incohérent avec l'image après crop (attendu [1000, ${Math.round(H)}]) — le crop a-t-il changé après le tracé ?`); }
   if (!a.lecture || !a.lecture.length) bad('`lecture` absente : la confiance de la lecture doit être annoncée');
   if (!a.orient || !a.orient.left || !a.orient.right) bad('`orient` absent');

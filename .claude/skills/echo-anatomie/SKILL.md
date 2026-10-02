@@ -68,7 +68,7 @@ ECHO.anat['<fiche>'] = [{
 ```
 
 Tissus : `peau graisse muscle tendon ligament fascia bourse cartilage os nerf artere veine plevre poumon glande disque
-liquide conjonctif aiguille`. Options : `enthese: 0.38` (tendon, ligament : fraction du bord bas, depuis le début du tracé, sur
+liquide conjonctif aiguille indetermine` (`indetermine` : plan visible mais non identifiable, gris hachuré — préférable à un nom inventé). Options : `enthese: 0.38` (tendon, ligament : fraction du bord bas, depuis le début du tracé, sur
 laquelle les fibres s'insèrent) ; `guide: […]` (muscle : bord bas lissé pour orienter les fibres quand le vrai bord fait
 une épingle) ; `fin: true` (liquide : film synovial translucide, pas une collection) ; `lame: [f0, f1]` (bourse : position de la lame liquidienne dans le complexe graisseux, en fraction de
 l'épaisseur depuis le bas). Un tissu manquant s'ajoute dans `js/lib/anat.js` (`TISSUS` + `peindre`) et dans
@@ -103,6 +103,21 @@ Signaler les pièges d'interprétation : ce sont eux qui forment l'étudiant.
   figure dont on doit d'abord corriger les auteurs. Retour à l'image précédente.
 - `scripts/echo-search.js` : le piège des éditeurs Cureus (« Muacevic A, Adler JR ») a encore été trouvé dans un crédit
   existant ; `grep -l "Muacevic\|Adler JR" js/data/figures/*.js` avant de clore une région.
+
+## Planche composite : tracer un seul panneau
+
+Quand la figure affichée est une planche à plusieurs panneaux dont la légende décrit l'ensemble, ne pas la recadrer :
+donner à l'entrée anat son propre `crop: [x, y, l, h]` (fractions de l'image entière) et, facultatif, `panneau: 'A
+(Doppler)'`. La planche reste affichée entière dans la fiche, la paire écho / coupe anatomique du panneau vient dessous.
+Repérage : `node scripts/anat-grid.js <fiche> <n> <dossier> x,y,l,h`. Un réflecteur osseux court se dessine avec
+`cortex` + `profondeur: 60` (os limité à cette épaisseur, pas rempli jusqu'au bas du cadre).
+
+## Rendement réel (première vague de production, 2 octobre 2026)
+
+Sur le lot tête-cou A, 3 images sur 9 étaient traçables : les autres étaient des planches composites, des images de
+moins de 350 px sans corrigé, ou des figures dont les annotations contredisent l'anatomie. C'est le résultat attendu de
+la règle « ne pas tracer l'indécidable », pas un échec : chaque refus doit arriver à Mat avec la question précise
+(remplacer l'image ? quel panneau ? quelle lecture ?).
 
 ## Règles
 

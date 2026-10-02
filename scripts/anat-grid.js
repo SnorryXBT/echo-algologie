@@ -8,13 +8,13 @@
 const { chromium } = require('playwright');
 const fs = require('fs'), path = require('path');
 const root = path.join(__dirname, '..');
-const [fiche, n = '0', outDir = '.'] = process.argv.slice(2);
+const [fiche, n = '0', outDir = '.', cropArg] = process.argv.slice(2);   // cropArg « x,y,l,h » : sous-panneau d'une planche composite (à reporter dans le `crop` de l'entrée anat)
 if (!fiche) { console.error('usage : node scripts/anat-grid.js <fiche> <n> [dossier-sortie]'); process.exit(1); }
 global.window = global; global.ECHO = { figures: {} };
 eval(fs.readFileSync(path.join(root, 'js/data/figures', fiche + '.js'), 'utf8'));
 const fig = (ECHO.figures[fiche] || []).filter(f => f.type === 'echo')[+n];
 if (!fig) { console.error(`pas de figure echo n° ${n} dans ${fiche}`); process.exit(1); }
-const file = path.join(root, fig.src), crop = fig.crop || [0, 0, 1, 1];
+const file = path.join(root, fig.src), crop = cropArg ? cropArg.split(',').map(Number) : fig.crop || [0, 0, 1, 1];
 const data = 'data:image/' + (/\.png$/i.test(file) ? 'png' : 'jpeg') + ';base64,' + fs.readFileSync(file).toString('base64');
 
 (async () => {

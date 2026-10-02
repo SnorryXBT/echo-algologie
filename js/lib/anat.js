@@ -24,6 +24,7 @@
     liquide:   { nom: 'Liquide', trait: '#39b7ff' },
     conjonctif:{ nom: 'Tissu conjonctif', trait: '#e9c7b5' },
     aiguille:  { nom: 'Aiguille', trait: '#7fe0ff' },
+    indetermine: { nom: 'Plan non attribué', trait: '#b8bcc4' },
   };
 
   /* ---------- géométrie ---------- */
@@ -58,6 +59,7 @@
     });
   }
   function bords(s, H) {                  // → { haut, bas } ou { contour } normalisés
+    if (s.cortex && s.profondeur) return { haut: s.cortex, bas: offset(s.cortex, -s.profondeur), court: true };   // réflecteur court : os dessiné sur une profondeur limitée, pas jusqu'au bas du cadre
     if (s.cortex) return { haut: s.cortex, bas: [[s.cortex[0][0], H + 40], [s.cortex[s.cortex.length - 1][0], H + 40]], os: true };
     if (s.ligne) return { haut: offset(s.ligne, (s.ep || 4) / 2), bas: offset(s.ligne, -(s.ep || 4) / 2) };
     if (s.bas && s.ep) {              // bande d'épaisseur constante posée sur `bas` ; extrémités effilées (cartilage, périoste)
@@ -105,6 +107,7 @@
       ${blots('grain', '0.22 0.22', 8, [0.80, 0.45, 0.33], 4, -1.9)}
       <pattern id="${id}-tpa" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(24)"><rect width="7" height="7" fill="#ece9e1"/><circle cx="2" cy="2" r="1.3" fill="#b9b4a8"/><circle cx="5.5" cy="5.5" r="1.3" fill="#ffffff"/></pattern>
       <pattern id="${id}-mpa" width="16" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)"><rect width="16" height="14" fill="#8e2f27"/><ellipse cx="4.5" cy="3.5" rx="4" ry="3" fill="#b8493d"/><ellipse cx="12.5" cy="10.5" rx="4" ry="3" fill="#b8493d"/></pattern>
+      <pattern id="${id}-hach" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="12" height="12" fill="#6f747c"/><rect width="5" height="12" fill="#8e939b"/></pattern>
       <pattern id="${id}-fasc" width="10" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(18)"><rect width="10" height="9" fill="#d9a521"/><circle cx="3" cy="2.5" r="2.6" fill="#f7e27a"/><circle cx="8" cy="7" r="2.6" fill="#f7e27a"/></pattern>
       ${blots('soie', '0.008 0.12', 5, [0.72, 0.70, 0.66], 5, -2.6)}
       <filter id="${id}-main" ${box}><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
@@ -162,6 +165,8 @@
         g.push(`<path d="${d}" fill="#2f9fe0" opacity="${s.fin ? '.4' : '.9'}" stroke="#1d6fa3" stroke-width="1.2"/>`); break;   // `fin: true` : film synovial, pas une collection
       case 'aiguille':   // `ligne` du point d'entrée à la pointe, ep ≈ 5
         g.push(`<path d="${d}" fill="#dfe4ea" stroke="#4b5563" stroke-width="1.4"/><path d="${smooth(s.ligne)}" fill="none" stroke="#ffffff" stroke-width="1" opacity=".9"/>`); break;
+      case 'indetermine':   // plan visible mais non identifiable : gris hachuré, sans préjuger de sa nature
+        g.push(`<path d="${d}" fill="url(#${id}-hach)" stroke="#8a8f98" stroke-width="1.2" stroke-dasharray="6 4"/>`); break;
       case 'conjonctif':
         g.push(`<path d="${d}" fill="#e3bfae" filter="url(#${id}-lob)"/>`); break;
       default:
