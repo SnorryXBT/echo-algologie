@@ -4,6 +4,10 @@
   const RET = [[262,197],[300,178],[350,165],[400,160],[450,162],[500,174],[560,195],[620,213],[700,233],[790,248]];
   const PLANCHER = [[0,215],[60,208],[110,222],[150,250],[200,232]].concat(RET, [[815,215],[840,192],[870,183],[910,188],[950,210],[1000,235]]);
   const ovale = (cx, cy, rx, ry, rot) => { const o = [], a = (rot || 0) * Math.PI / 180; for (let i = 0; i < 12; i++) { const t = i / 12 * 2 * Math.PI, x = rx * Math.cos(t), y = ry * Math.sin(t); o.push([Math.round(cx + x * Math.cos(a) - y * Math.sin(a)), Math.round(cy + x * Math.sin(a) + y * Math.cos(a))]); } return o; };
+  /* ---------- echo-3, panneau B (hydrodissection, Suhaimi et al.) : moitié proximale seule, `crop` propre à la coupe ---------- */
+  const arc = (cx, cy, rx, ry, rot, t0, t1, n) => { const o = [], a = rot * Math.PI / 180; for (let i = 0; i <= n; i++) { const t = (t0 + (t1 - t0) * i / n) * Math.PI / 180, x = rx * Math.cos(t), y = ry * Math.sin(t); o.push([Math.round(cx + x * Math.cos(a) - y * Math.sin(a)), Math.round(cy + x * Math.sin(a) + y * Math.cos(a))]); } return o; };
+  const TCL_HAUT = [[0,60],[300,80],[600,105],[915,140]], TCL_BAS = [[0,125],[300,145],[600,175],[905,200]];
+  const TENDONS_HAUT = [[0,462],[100,462],[150,445],[255,430],[330,440],[385,400],[450,376],[700,345],[900,316],[1000,303]];
   ECHO.anat['nerf-median-canal-carpien'] = [{
     fig: 'img/nerf-median-canal-carpien/echo-1.jpg',
     valide: false,
@@ -57,6 +61,40 @@
       { s: 'fdp', x: 530, y: 362, dx: 345, dy: 138, text: 'Fléch. profonds' },
       { s: 'pisiforme', x: 885, y: 250, dx: 25, dy: 135, text: 'Pisiforme' },
       { s: 'lunatum', x: 520, y: 497, dx: 240, dy: 88, text: 'Lunatum' },
+    ],
+  }, {
+    fig: 'img/nerf-median-canal-carpien/echo-3.jpg',
+    crop: [0, 0.527, 0.56, 0.30], panneau: 'B, moitié proximale (nerf, rétinaculum, pointe de l\'aiguille)',
+    valide: false,
+    vb: [1000, 550], orient: { left: 'Proximal', right: 'Distal (thénar)' },
+    lecture: [
+      'Supposition — plan de coupe : oblique, propre à la technique des auteurs (plan de la première articulation carpo-métacarpienne conservé pendant la translation médiale de la sonde) ; ce n\'est ni la coupe transversale du schéma apparié (radial / ulnaire) ni un grand axe strict. Les axes de l\'image et du schéma ne sont pas comparables, et l\'abord (distal → proximal, depuis la base du pouce) n\'est pas l\'abord ulnaire transversal décrit dans la fiche.',
+      'Certain — rétinaculum des fléchisseurs (aplat vert) et nerf médian (aplat jaune) : désignés par les auteurs. Leurs aplats sont des formes géométriques approximatives (rectangle, ellipse) qui masquent les vraies limites : le tracé reprend leurs contours, pas une interface mesurée.',
+      'Certain — orientation et aiguille : mention « Thenar muscle » à droite (hors du cadre de la coupe, visible sur le panneau entier) et légende d\'origine « oblique distal-to-proximal trajectory » ; l\'aiguille, dans le plan, vient de la droite, passe sous le rétinaculum et sa pointe est au bord distal et profond du nerf (x ≈ 375, y ≈ 372).',
+      'Probable — injectat : plages anéchogènes continues entre le rétinaculum et le nerf, en aval du nerf sous le rétinaculum (x ≈ 480–900) et sous le nerf (x ≈ 0–380) ; la légende d\'origine décrit une diffusion « beneath the TCL and around the median nerve » sans la désigner sur l\'image. Lu comme le halo péri-neural, plan profond et plan superficiel ouverts.',
+      'Probable — tendons fléchisseurs : bande échogène fibrillaire sous l\'aiguille ; les auteurs ne les désignent que sur leur figure 1. Limite profonde non visible (remplie jusqu\'au bas du cadre).',
+      'Supposition — réflecteur très brillant en bas à gauche (y ≈ 500–530) : corticale d\'un os du carpe ou tendon perpendiculaire au faisceau, non identifié. Tissu à droite de l\'extrémité de l\'aplat vert : non désigné, non identifié.',
+      'Extrapolé — peau et tissu sous-cutané palmaires : limite placée à l\'estime entre la ligne de sonde et l\'aplat vert (champ proche écrasé).',
+    ],
+    structures: [
+      { id: 'peau', tissu: 'peau', haut: [[0,8],[1000,8]], bas: [[0,45],[1000,45]] },
+      { id: 'sc', tissu: 'graisse', haut: [[0,45],[1000,45]], bas: TCL_HAUT.concat([[1000,150]]), extrapole: true },
+      { id: 'injectat', tissu: 'liquide', haut: TCL_BAS.concat([[925,235]]), bas: TENDONS_HAUT.slice(0, 9).concat([[925,300]]) },
+      { id: 'cote-thenar', tissu: 'indetermine', haut: [[915,140],[1000,150]], bas: [[925,300],[1000,303]] },
+      { id: 'tcl', tissu: 'ligament', haut: TCL_HAUT, bas: TCL_BAS },
+      { id: 'median', tissu: 'nerf', haut: arc(245, 270, 230, 88, 7, 180, 360, 10), bas: arc(245, 270, 230, 88, 7, 180, 0, 10) },
+      { id: 'tendons', tissu: 'tendon', haut: TENDONS_HAUT, bas: [[0,560],[1000,560]] },
+      { id: 'reflecteur', tissu: 'indetermine', ligne: [[55,518],[150,513],[250,513],[288,524]], ep: 24 },
+      { id: 'aiguille', tissu: 'aiguille', ligne: [[1000,289],[375,372]], ep: 7 },
+    ],
+    labels: [
+      { s: 'median', x: 150, y: 235, dx: 0, dy: -200, text: 'Nerf médian' },
+      { s: 'tcl', x: 600, y: 138, dx: 40, dy: -103, text: 'Rétinaculum des fléchisseurs' },
+      { s: 'injectat', x: 560, y: 285, dx: 130, dy: -40, text: 'Injectat (halo)' },
+      { s: 'aiguille', x: 850, y: 310, dx: 70, dy: -62, text: 'Aiguille' },
+      { s: 'injectat', x: 200, y: 400, dx: -60, dy: 0, text: 'Injectat', vue: 'anat' },
+      { s: 'tendons', x: 680, y: 420, dx: 50, dy: 75, text: 'Tendons fléchisseurs (probable)' },
+      { s: 'reflecteur', x: 130, y: 512, dx: 150, dy: -42, text: 'Réflecteur non identifié' },
     ],
   }];
 })();
