@@ -55,7 +55,7 @@ ECHO.figures['ischio-jambiers-proximaux'] = [
     src: 'img/ischio-jambiers-proximaux/echo-2.jpg',
     pair: 'ij-transverse',
     titre: 'Coupe transversale réelle : tendon conjoint et nerf sciatique',
-    legende: 'Grand fessier en surface ; le tendon conjoint, hyperéchogène, se détache de la tubérosité ischiatique ; le nerf sciatique est l\'ovale en nid d\'abeilles en dehors et en profondeur, sur le carré fémoral, entre tubérosité et grand trochanter. Panneau c d\'une planche dont le panneau d annoté sert de corrigé.',
+    legende: 'Grand fessier en surface ; le tendon conjoint, hyperéchogène, se détache de la tubérosité ischiatique ; le nerf sciatique est l\'ovale en nid d\'abeilles en dehors et en profondeur, sur le carré fémoral, entre tubérosité et grand trochanter. Panneau c d\'une planche dont le panneau d annoté sert de corrigé. Tubérosité ischiatique à droite de l\'image, donc médial à droite : orientation inverse de celle du schéma.',
     credit: 'Lin TY, Chang KV, Wu WT et al., Journal of Medical Ultrasound 2026, fig. 9c — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-26-00004',
     crop: [0.0, 0.5, 0.5, 0.5],
@@ -75,7 +75,7 @@ ECHO.figures['ischio-jambiers-proximaux'] = [
     legende: 'Sonde dans l\'axe de la cuisse : grand fessier en surface, tendon conjoint fibrillaire qui s\'insère sur la tubérosité ischiatique (cône d\'ombre), semi-membraneux en profondeur puis grand adducteur ; l\'aiguille suit ce plan de distal en proximal jusqu\'à l\'enthèse. Panneau c d\'une planche dont le panneau d annoté sert de corrigé.',
     credit: 'Lin TY, Chang KV, Wu WT et al., Journal of Medical Ultrasound 2026, fig. 10c — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-26-00004',
-    crop: [0.0, 0.5, 0.5, 0.5],
+    crop: [0.004, 0.512, 0.478, 0.437],
     labels: [
       { x: 0.66, y: 0.24, text: 'Grand fessier', dx: 0.02, dy: -0.12 },
       { x: 0.46, y: 0.46, text: 'Tendon conjoint', dx: 0.20, dy: -0.06 },
