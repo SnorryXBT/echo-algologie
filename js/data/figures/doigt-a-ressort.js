@@ -57,6 +57,7 @@ ECHO.figures['doigt-a-ressort'] = [
     legende: 'Image d\'origine annotée (anglais) : FDS / FDP = fléchisseurs superficiel et profond, Volar plate = plaque palmaire, Metacarpal head = tête métacarpienne, Proximal phalanx = phalange proximale ; la zone ombrée marque la poulie A1 épaissie, bombement hypoéchogène au-dessus des tendons en regard de la tête métacarpienne.',
     credit: 'Kim SH, Hwang J, Yoon Y et al., Life 2026, fig. 4 — CC BY 4.0',
     source: 'https://doi.org/10.3390/life16020289',
+    crop: [0.009, 0.026, 0.983, 0.951],
     labels: [
       { x: 0.53, y: 0.20, text: 'Poulie A1 épaissie', dx: 0.22, dy: 0.18 },
     ],
@@ -69,6 +70,6 @@ ECHO.figures['doigt-a-ressort'] = [
     legende: 'Image d\'origine annotée (anglais) : Flex = tendons fléchisseurs, Met = tête métacarpienne ; les astérisques marquent la poulie A1 épaissie et les flèches l\'aiguille 25 G glissée dans le plan, par le versant latéral, entre poulie et tendons. Panneau B d\'une planche dont le A montre la prise en main.',
     credit: 'Tortora S, Messina C, Albano D et al., Journal of Ultrasonography 2021, fig. 6B — CC BY-NC-ND 4.0',
     source: 'https://doi.org/10.15557/JoU.2021.0027',
-    crop: [0.0, 0.585, 1.0, 0.415],
+    crop: [0.002, 0.588, 0.996, 0.411],
   },
 ];
