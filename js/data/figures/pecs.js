@@ -87,7 +87,7 @@ ECHO.figures['pecs'] = [
     legende: 'Panneau D de la figure d\'origine, recadré. Abréviations des auteurs : *PMM* = grand pectoral, *pmm* = petit pectoral, *SAM* = dentelé antérieur, *IV Rib* / *V Rib* = 4e et 5e côtes, *EIM* / *IIM* = intercostaux externe / interne, *TAA* = branche pectorale de l\'artère thoraco-acromiale, *Pleura* = plèvre, *N* = aiguille (flèches blanches). Les deux flèches correspondent aux deux options que décrit leur légende : la plus superficielle s\'arrête **entre petit pectoral et dentelé** — c\'est le PECS II de la fiche ; la plus profonde va **sous le dentelé, au contact de la 4e côte** — variante que la fiche déconseille comme cible par défaut, parce qu\'elle revient à un bloc profond du plan du dentelé et n\'a pas la même couverture. Le temps superficiel (PECS I) n\'est pas montré sur ce panneau. **Orientation inverse de celle du schéma** : la 5e côte est à gauche de l\'écran et l\'aiguille, que les auteurs disent médio-latérale, entre par la droite — donc crânial et médial à droite, caudal et latéral à gauche.',
     credit: 'Sepolvere G, Marianello D, Santonocito C, Messina S, Silvetti S, Franchi F, Paternoster G, Sanfilippo F, Journal of Clinical Medicine 2025, fig. 5 (panneau D) — CC BY 4.0',
     source: 'https://doi.org/10.3390/jcm14030973',
-    crop: [0.515, 0.555, 0.485, 0.445],
+    crop: [0.533, 0.558, 0.370, 0.395],
     labels: [
       { x: 0.415, y: 0.36, text: 'Plan pecto-serratus : PECS II de la fiche', dx: -0.10, dy: -0.26 },
       { x: 0.465, y: 0.435, text: 'Variante sous le dentelé, sur la côte', dx: 0.0, dy: 0.47 },
