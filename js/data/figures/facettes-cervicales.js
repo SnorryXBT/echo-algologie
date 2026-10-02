@@ -86,6 +86,7 @@ ECHO.figures['facettes-cervicales'] = [
     legende: 'Annotations d\'origine : *AP* = pilier articulaire, *PT* = tubercule postérieur du processus transverse, *NR* = racine nerveuse. L\'aiguille, ligne hyperéchogène venant du coin supérieur gauche, est amenée dans le plan jusqu\'au contact osseux à la taille du pilier. Cette image sert à visualiser deux choses que le schéma longitudinal ne montre pas : la **pente latérale** du pilier, sur laquelle l\'aiguille peut glisser, et la **proximité immédiate de la racine** dès que la pointe dépasse le tubercule postérieur. **Réserve d\'interprétation** : il s\'agit d\'une **coupe axiale** pour une radiofréquence pulsée de branche médiale, non de la coupe para-sagittale de la fiche ni d\'une injection intra-articulaire — le trajet d\'aiguille n\'est donc pas superposable à celui du schéma en regard, qui est longitudinal et caudo-crânial.',
     credit: 'Akkemik Ü, Ulukaya SO, Şen M, Güleç MS, Diagnostics 2026, figure 2 — CC BY 4.0',
     source: 'https://doi.org/10.3390/diagnostics16040590',
+    crop: [0.010, 0.011, 0.978, 0.972],
     labels: [
       { x: 0.20, y: 0.18, text: 'Aiguille (dans le plan)', dx: 0.16, dy: -0.10 },
       { x: 0.31, y: 0.47, text: 'Pilier articulaire', dx: -0.20, dy: 0.20 },
