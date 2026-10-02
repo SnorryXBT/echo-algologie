@@ -70,7 +70,7 @@ ECHO.figures['serratus-plane'] = [
     legende: 'Moitié gauche, **non annotée**, du panneau B de la figure d\'origine ; les étiquettes françaises transposent point par point le calque coloré que les auteurs ont posé sur la moitié droite de la même image (*LD*, *SA*, *LTN*, *LCIN*, *ICM*, *R5*, *R6*, *Pleura*). De la superficie à la profondeur : grand dorsal (à droite de l\'écran, donc postérieur), dentelé antérieur en bande oblique, muscles intercostaux entre les deux côtes, plèvre. Le **nerf thoracique long** est posé à la surface du dentelé et la **branche cutanée latérale du 5e nerf intercostal** émerge sous lui : tout le contenu du plan superficiel du schéma en regard. Les mentions incrustées par les auteurs donnent l\'axe : antéro-crânial à gauche, postéro-caudal à droite — coupe oblique, plus proche de l\'axe de la côte que la coupe perpendiculaire de la fiche. **Réserve** : cas pathologique (cicatrice de drain thoracique, nerfs épaissis et englués dans la fibrose, que les auteurs ont hydrodisséqués) ; l\'image vaut pour la topographie des plans, pas pour l\'aspect normal des nerfs, habituellement invisibles.',
     credit: 'Yoon Y, Lam KHS, Su DC, Suryadi T, Suhaimi A, Pain Practice 2026, fig. 3 (panneau B, moitié gauche) — CC BY 4.0',
     source: 'https://doi.org/10.1111/papr.70195',
-    crop: [0.0, 0.478, 0.5, 0.522],
+    crop: [0.004, 0.479, 0.496, 0.516],
     labels: [
       { x: 0.84, y: 0.35, text: 'Grand dorsal', dx: 0.0, dy: -0.22 },
       { x: 0.59, y: 0.45, text: 'Dentelé antérieur', dx: 0.20, dy: 0.20 },
