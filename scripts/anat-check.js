@@ -13,8 +13,9 @@ function size(file) {                    // dimensions JPEG / PNG sans dépendan
   for (let i = 2; i < b.length;) { const m = b[i + 1], l = b.readUInt16BE(i + 2); if (m >= 0xc0 && m <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(m)) return [b.readUInt16BE(i + 7), b.readUInt16BE(i + 5)]; i += 2 + l; }
   return null;
 }
-let err = 0, tot = 0, ok = 0; const bad = m => { err++; console.log('  ERREUR ' + m); };
+let err = 0, tot = 0, ok = 0, refus = 0; const bad = m => { err++; console.log('  ERREUR ' + m); };
 for (const id of Object.keys(ECHO.anat).sort()) for (const a of ECHO.anat[id]) {
+  if (a.refus) { refus++; console.log(`${id}  ${a.fig}  NON TRACÉE — ${a.refus.slice(0, 90)}`); if (!(ECHO.figures[id] || []).some(x => x.src === a.fig)) bad('refus rattaché à une figure inconnue'); continue; }
   tot++; if (a.valide) ok++;
   console.log(`${id}  ${a.fig}  ${a.valide ? 'validée' : 'À VALIDER'}  (${(a.structures || []).length} structures, ${(a.labels || []).length} étiquettes)`);
   const f = (ECHO.figures[id] || []).find(x => x.src === a.fig);
@@ -35,5 +36,5 @@ for (const id of Object.keys(ECHO.anat).sort()) for (const a of ECHO.anat[id]) {
     if (l.x < 0 || l.x > a.vb[0] || l.y < 0 || l.y > a.vb[1]) bad(`étiquette « ${l.text} » pointe hors cadre`);
   }
 }
-console.log(`\n${tot} coupe(s) anatomique(s), ${ok} validée(s), ${err} erreur(s)`);
+console.log(`\n${tot} coupe(s) anatomique(s), ${ok} validée(s), ${refus} image(s) non tracée(s) en attente de décision, ${err} erreur(s)`);
 process.exit(err ? 1 : 0);

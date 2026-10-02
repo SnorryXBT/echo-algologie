@@ -120,6 +120,14 @@ moins de 350 px sans corrigé, ou des figures dont les annotations contredisent 
 la règle « ne pas tracer l'indécidable », pas un échec : chaque refus doit arriver à Mat avec la question précise
 (remplacer l'image ? quel panneau ? quelle lecture ?).
 
+## Refus et questions : ils vont sur la page de validation, pas seulement dans le rapport
+
+Une image non tracée s'enregistre dans `js/data/anat/zz-refus.js` : `R('<fiche>', <rang écho>, 'motif', ['question
+précise'])`. Une question ouverte sur une coupe tracée : `Q('<fiche>', <rang écho>, ['question'])`. La page
+`#/validation` affiche la carte « non tracée » avec le motif, la question et un champ de décision ; la réponse de Mat
+revient dans le même bilan (« NON TRACÉE — décision : … »). Retirer la ligne quand l'image est remplacée ou tracée.
+`anat-check.js` compte les refus à part.
+
 ## Règles
 
 - Dessin **original** : ne jamais décalquer ni reproduire une planche d'un atlas ou d'une application commerciale
