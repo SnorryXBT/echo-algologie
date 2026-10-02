@@ -53,10 +53,10 @@ ECHO.figures['long-biceps'] = [
     src: 'img/long-biceps/echo-1.jpg',
     pair: 'lhb-sono',
     titre: 'Coupe transversale réelle de la gouttière bicipitale',
-    legende: 'Deltoïde en surface ; le tendon du long biceps est l\'ovale hyperéchogène (si la sonde est bien perpendiculaire) au fond du U osseux, entre grand tubercule en dehors et petit tubercule en dedans, sous le ligament huméral transverse. Panneau c (échographe fixe) d\'une planche composite ; le panneau d annoté sert de corrigé.',
+    legende: 'Deltoïde en surface ; le tendon du long biceps est l\'ovale hyperéchogène (si la sonde est bien perpendiculaire) au fond du U osseux, entre grand tubercule en dehors et petit tubercule en dedans, sous le ligament huméral transverse. Latéral à gauche : orientation inverse de celle du schéma apparié. Panneau c (échographe fixe) d\'une planche composite ; le panneau d annoté sert de corrigé.',
     credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 1c — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-25-00156',
-    crop: [0.0, 0.5, 0.5, 0.5],
+    crop: [0.002, 0.5104, 0.4944, 0.4872],
     labels: [
       { x: 0.50, y: 0.16, text: 'Deltoïde', dx: 0.00, dy: -0.08 },
       { x: 0.50, y: 0.42, text: 'Tendon du long biceps', dx: 0.00, dy: -0.14 },
@@ -73,6 +73,6 @@ ECHO.figures['long-biceps'] = [
     legende: 'Image d\'origine annotée (anglais) : DEL M = deltoïde, SUB T = sous-scapulaire, SS T = supra-épineux, CP = coracoïde ; les flèches marquent l\'aiguille et l\'astérisque l\'espace péritendineux du long biceps rempli d\'injectat, au niveau de l\'intervalle des rotateurs. Panneau B d\'une planche composite.',
     credit: 'Naňka O, Mezian K, Chang KV et al., Insights into Imaging 2026, fig. 1B — CC BY 4.0',
     source: 'https://doi.org/10.1186/s13244-026-02255-y',
-    crop: [0.215, 0.0, 0.39, 0.5],
+    crop: [0.215, 0.005, 0.3836, 0.4726],
   },
 ];
