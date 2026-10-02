@@ -54,7 +54,7 @@ ECHO.figures['nerf-suprascapulaire'] = [
     src: 'img/nerf-suprascapulaire/echo-1.jpg',
     pair: 'ssn-fosse',
     titre: 'Coupe de repérage réelle : fosse supra-épineuse',
-    legende: 'Trapèze puis supra-épineux (SE) superposés, plancher osseux concave hyperéchogène ; la ligne blanche figure le trajet de l\'aiguille dans le plan, de latéral en médial, jusqu\'au contact osseux au niveau de l\'échancrure. Comparer avec le schéma en regard.',
+    legende: 'Trapèze puis supra-épineux (SE) superposés, plancher osseux concave hyperéchogène ; la ligne blanche figure le trajet de l\'aiguille dans le plan, jusqu\'au contact osseux. **Réserve** : ni la légende ni le texte des auteurs ne donnent l\'orientation médial / latéral de l\'image, et ni le nerf, ni l\'artère, ni l\'échancrure n\'y sont désignés — le sens du trajet ne peut donc pas être affirmé ici ; se fier au schéma en regard.',
     credit: 'Costa JRP, García FJJ, García Hernández D et al., Interventional Pain Medicine 2026, fig. 2 — CC BY 4.0',
     source: 'https://doi.org/10.1016/j.inpm.2026.100805',
     labels: [

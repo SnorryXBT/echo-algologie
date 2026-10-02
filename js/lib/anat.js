@@ -25,6 +25,8 @@
     conjonctif:{ nom: 'Tissu conjonctif', trait: '#e9c7b5' },
     aiguille:  { nom: 'Aiguille', trait: '#7fe0ff' },
     indetermine: { nom: 'Plan non attribué', trait: '#b8bcc4' },
+    calcification: { nom: 'Calcification', trait: '#ffffff' },
+    fibrocartilage: { nom: 'Fibrocartilage', trait: '#b9c7d9' },
   };
 
   /* ---------- géométrie ---------- */
@@ -85,7 +87,7 @@
       for (let i = 0; i < m; i++) {
         let tt = t;
         if (enth) {                       // enthèse : chaque fibre plonge vers l'os, les profondes s'insérant le plus loin du bec
-          const u = i / (m - 1), u0 = enth * t; if (u < u0) continue;
+          const u = enth < 0 ? 1 - i / (m - 1) : i / (m - 1), u0 = Math.abs(enth) * t; if (u < u0) continue;   // enth < 0 : insertion à la FIN du tracé (côté droit)
           const w = Math.max(0, 1 - (u - u0) / 0.14); tt = t + (1 - t) * w * w * (3 - 2 * w);
         }
         pts.push([A[i][0] + (B[i][0] - A[i][0]) * tt, A[i][1] + (B[i][1] - A[i][1]) * tt + rnd() * amp]);
@@ -165,6 +167,10 @@
         g.push(`<path d="${d}" fill="#2f9fe0" opacity="${s.fin ? '.4' : '.9'}" stroke="#1d6fa3" stroke-width="1.2"/>`); break;   // `fin: true` : film synovial, pas une collection
       case 'aiguille':   // `ligne` du point d'entrée à la pointe, ep ≈ 5
         g.push(`<path d="${d}" fill="#dfe4ea" stroke="#4b5563" stroke-width="1.4"/><path d="${smooth(s.ligne)}" fill="none" stroke="#ffffff" stroke-width="1" opacity=".9"/>`); break;
+      case 'calcification':   // dépôt crayeux, bord net
+        g.push(`<path d="${d}" fill="#fbfaf5" stroke="#8a8473" stroke-width="2.2"/><path d="${d}" fill="url(#${id}-tpa)" opacity=".35"/>`); break;
+      case 'fibrocartilage':  // labrum, ménisque, disque articulaire
+        g.push(`<path d="${d}" fill="#b9c7d9" stroke="#6c7f97" stroke-width="1.6"/>${lignes(fibres(b, 6, 0.8, 29), '#dfe7f0', '#8496ad', 1, 0.8)}`); break;
       case 'indetermine':   // plan visible mais non identifiable : gris hachuré, sans préjuger de sa nature
         g.push(`<path d="${d}" fill="url(#${id}-hach)" stroke="#8a8f98" stroke-width="1.2" stroke-dasharray="6 4"/>`); break;
       case 'conjonctif':
@@ -184,7 +190,10 @@
       const b = bords(s, H), c = (TISSUS[s.tissu] || {}).trait || '#fff';
       const d = b.os ? smooth(b.haut) : pathOf(b), cls = `anat-c${visible ? ' on' : ''}`;
       /* sans signal écho (dessiné par connaissance anatomique) : pointillé. Corticale : `vu: [i0, i1]` = segment réellement vu */
-      if (s.vu) return `<path class="${cls} ex" data-s="${s.id}" d="${d}" style="--c:${c}" ${b.os ? 'fill="none"' : ''}/><path class="${cls}" data-s="${s.id}" d="${smooth((s.cortex || s.contour).slice(s.vu[0], s.vu[1] + 1))}" style="--c:${c}" fill="none"/>`;
+      if (s.vu) {   // `vu: [i0, i1]` ou plusieurs segments `[[i0, i1], [i2, i3]]` : tracé plein là où la corticale est réellement vue, pointillé ailleurs
+        const pts = s.cortex || s.contour, segs = Array.isArray(s.vu[0]) ? s.vu : [s.vu];
+        return `<path class="${cls} ex" data-s="${s.id}" d="${d}" style="--c:${c}" ${b.os ? 'fill="none"' : ''}/>` + segs.map(v => `<path class="${cls}" data-s="${s.id}" d="${smooth(pts.slice(v[0], v[1] + 1))}" style="--c:${c}" fill="none"/>`).join('');
+      }
       return `<path class="${cls}${s.extrapole ? ' ex' : ''}" data-s="${s.id}" d="${d}" style="--c:${c}" ${b.os ? 'fill="none"' : ''}/>`;
     }).join('');
   }
