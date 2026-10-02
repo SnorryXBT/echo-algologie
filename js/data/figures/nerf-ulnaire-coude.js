@@ -55,7 +55,7 @@ ECHO.figures['nerf-ulnaire-coude'] = [
     legende: 'Image d\'origine annotée (anglais) : UN = nerf ulnaire, OS = ligament d\'Osborne (rétinaculum), UCL P = faisceau postérieur du ligament collatéral ulnaire, H = humérus (épicondyle médial), U = ulna (olécrane) ; antéro-latéral à gauche, postéro-médial à droite. La tête de flèche désigne la branche postérieure du nerf cutané médial de l\'avant-bras, à épargner au point de ponction. Panneau C d\'une planche composite.',
     credit: 'Wu WT, Chang KV, Özçakar L et al., Diagnostics 2026, fig. 1C — CC BY 4.0',
     source: 'https://doi.org/10.3390/diagnostics16070960',
-    crop: [0.475, 0.5, 0.525, 0.5],
+    crop: [0.475, 0.506, 0.512, 0.482],
   },
   {
     type: 'echo',
