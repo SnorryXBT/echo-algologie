@@ -15,7 +15,7 @@
   ECHO.anat['nerf-ulnaire-coude'] = [{
     fig: 'img/nerf-ulnaire-coude/echo-3.jpg',
     valide: false,
-    vb: [1000, 608], orient: { left: 'Antérieur (humérus)', right: 'Postérieur (olécrâne)' },
+    vb: [1000, 608], orient: { left: 'Humérus (ant.)', right: 'Olécrâne (post.)' },
     lecture: [
       'Supposition — toit et plancher du tunnel : les auteurs posent les sigles OS (ligament d\'Osborne) et UCLp (faisceau postérieur du ligament collatéral ulnaire) sans en tracer les limites, et l\'image (395 px) ne les résout pas. Dessinés là où un signal porte le sigle : le plancher comme le tissu échogène homogène qui comble la vallée osseuse, le toit comme la bande hyperéchogène qui part du bord du nerf et rejoint l\'ulna en passant au-dessus du relief H. Son passage au-dessus du nerf n\'est pas visible : le nerf n\'apparaît pas « sous un toit » sur cette coupe.',
       'Supposition — le nerf n\'est pas entre les deux reliefs osseux comme sur le schéma apparié : il est à gauche, au-dessus de la longue pente osseuse, et la vallée, le relief H et l\'interligne le séparent de l\'ulna. Les auteurs écrivent seulement « H : humerus » : rien ne dit si la pente gauche est la face postérieure de l\'épicondyle médial et le relief H la berge médiale de la trochlée (lecture la plus cohérente, coupe un peu distale), ou l\'inverse. La légende de la fiche affirme « H = épicondyle médial » : ce n\'est pas dans la source.',
