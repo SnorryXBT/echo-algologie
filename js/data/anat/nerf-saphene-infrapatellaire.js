@@ -13,7 +13,7 @@
     fig: 'img/nerf-saphene-infrapatellaire/echo-1.jpg',
     crop: [0.5152, 0.0501, 0.3835, 0.5465], panneau: 'b (champ échographique)',
     valide: false,
-    vb: [1000, 756], orient: { left: 'Postéro-médial (long adducteur)', right: 'Antéro-latéral (vaste médial)' },
+    vb: [1000, 756], orient: { left: 'Postéro-médial', right: 'Antéro-latéral' },
     lecture: [
       'Supposition — plage hypoéchogène ovalaire (≈ 10 × 4 mm) juste en dedans du nerf, sous le fascia profond du sartorius, là où la fiche situe l\'artère fémorale : non désignée par les auteurs, pas de Doppler, forme aplatie peu compatible avec une artère non comprimée. Vaisseaux fémoraux (veine écrasée par la sonde ?) ou faisceau du long adducteur : indécidable — dessinée en plan non attribué. Le repère central du geste n\'est donc pas identifié sur cette image.',
       'Certain — orientation : long adducteur à gauche, vaste médial et droit fémoral à droite (sigles des auteurs) ; image en miroir du schéma apparié (dit dans la légende).',
