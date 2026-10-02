@@ -53,7 +53,7 @@ ECHO.figures['calcifications-coiffe-barbotage'] = [
     src: 'img/calcifications-coiffe-barbotage/echo-1.jpg',
     pair: 'calc-sono',
     titre: 'Calcification compacte du supra-épineux, coupe réelle',
-    legende: 'Image d\'origine annotée (anglais) : DEL = deltoïde, GT = grand tubercule, SS T = tendon du supra-épineux ; les flèches noires marquent un foyer calcique compact, hyperéchogène avec cône d\'ombre postérieur — forme dure, peu propice au lavage, à distinguer du dépôt nuageux sans ombre (phase résorptive, idéal pour le barbotage). Panneau c d\'une planche composite.',
+    legende: 'Image d\'origine annotée (anglais) : DEL = deltoïde, GT = grand tubercule, SS T = tendon du supra-épineux ; les flèches noires marquent un foyer calcique compact, hyperéchogène avec cône d\'ombre postérieur — forme dure, peu propice au lavage, à distinguer du dépôt nuageux sans ombre (phase résorptive, idéal pour le barbotage). Latéral à gauche : orientation inverse de celle du schéma apparié. Panneau c d\'une planche composite.',
     credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 12c — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-25-00156',
     crop: [0.0, 0.5, 0.5, 0.5],
@@ -66,7 +66,7 @@ ECHO.figures['calcifications-coiffe-barbotage'] = [
     legende: 'Panneau B d\'une planche composite : l\'aiguille, dans le plan, vient du bord latéral et sa pointe est dans la calcification « en pâte dentifrice » (flèche de l\'image d\'origine), avant fragmentation et lavage au sérum. Le panneau A montre le même dépôt mesuré aux curseurs avant le geste.',
     credit: 'Romeo D, Aparisi Gómez MP, Bazzocchi A, British Journal of Radiology 2026, fig. 1B — CC BY-NC 4.0',
     source: 'https://doi.org/10.1093/bjr/tqag151',
-    crop: [0.505, 0.0, 0.495, 1.0],
+    crop: [0.505, 0.0212, 0.4915, 0.968],
     labels: [
       { x: 0.86, y: 0.32, text: 'Aiguille 20 G, dans le plan', dx: -0.20, dy: -0.18 },
       { x: 0.60, y: 0.40, text: 'Calcification', dx: -0.26, dy: 0.20 },
