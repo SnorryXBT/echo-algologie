@@ -75,6 +75,6 @@ ECHO.figures['sous-acromiale'] = [
     legende: 'Image d\'origine annotée (anglais) : CLA = clavicule, ACR = acromion, SS T = tendon du supra-épineux ; les têtes de flèche marquent l\'aiguille, qui vient du bord latéral et avance sous l\'auvent acromial, dans la bourse, au-dessus du tendon. Panneau d d\'une planche composite (le panneau c montre la prise en main).',
     credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 17d — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-25-00156',
-    crop: [0.5, 0.5, 0.5, 0.5],
+    crop: [0.5, 0.5197, 0.5, 0.478],
   },
 ];
