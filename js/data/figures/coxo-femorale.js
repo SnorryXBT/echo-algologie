@@ -58,7 +58,7 @@ ECHO.figures['coxo-femorale'] = [
     legende: 'Sonde dans l\'axe du col : de la surface vers la profondeur, droit fémoral et sartorius, ilio-psoas, puis la capsule qui suit la convexité de la tête et le col ; le récessus antérieur est la fente hypoéchogène entre capsule et jonction tête-col. Panneau c (échographe fixe) d\'une planche dont le panneau d annoté sert de corrigé.',
     credit: 'Lin TY, Chang KV, Wu WT et al., Journal of Medical Ultrasound 2026, fig. 1c — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-26-00004',
-    crop: [0.0, 0.5, 0.5, 0.5],
+    crop: [0.0, 0.5, 0.494, 0.5],
     labels: [
       { x: 0.50, y: 0.14, text: 'Droit fémoral / sartorius', dx: 0.00, dy: -0.08 },
       { x: 0.50, y: 0.32, text: 'Ilio-psoas', dx: 0.22, dy: -0.06 },
@@ -76,5 +76,6 @@ ECHO.figures['coxo-femorale'] = [
     legende: 'Injection d\'acide hyaluronique pour coxarthrose : l\'aiguille 22 G, dans le plan, vient de distal et de latéral et sa pointe (flèche de l\'image d\'origine) est dans le récessus capsulaire antérieur à la jonction tête-col, où l\'injectat distend la capsule.',
     credit: 'Romeo D, Aparisi Gómez MP, Bazzocchi A, British Journal of Radiology 2026, fig. 5 — CC BY-NC 4.0',
     source: 'https://doi.org/10.1093/bjr/tqag151',
+    crop: [0.008, 0.008, 0.984, 0.984],
   },
 ];
