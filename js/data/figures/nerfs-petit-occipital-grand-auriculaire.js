@@ -87,10 +87,10 @@ ECHO.figures['nerfs-petit-occipital-grand-auriculaire'] = [
     src: 'img/nerfs-petit-occipital-grand-auriculaire/echo-2.jpg',
     pair: 'lon-gan-geste',
     titre: 'Ponction au bord postérieur du SCM — plexus cervical superficiel et trajet d\'aiguille',
-    legende: 'Annotations de l\'original conservées : le **cercle vert** entoure le plexus cervical superficiel (amas de petits nodules hypoéchogènes), le **tracé bleu** souligne le bord latéral du sterno-cléido-mastoïdien, le **cercle rouge** le scalène moyen, et la **flèche jaune** l\'aiguille de ponction, qui vient de l\'arrière et reste au-dessus du fascia. C\'est exactement l\'image de repérage décrite dans la fiche : le biseau du SCM, le plan graisseux interfascial où siègent petit occipital et grand auriculaire, et le plancher musculaire à ne pas franchir. **Réserve d\'interprétation** : image issue d\'un bloc du plexus cervical superficiel pour chirurgie oro-maxillo-faciale, donc une injection unique non sélective — en algologie, si l\'on veut distinguer petit occipital et grand auriculaire, il faut deux points et deux volumes minimes.',
+    legende: 'Annotations de l\'original conservées : le **cercle vert** entoure le plexus cervical superficiel (amas de petits nodules hypoéchogènes), le **tracé bleu** souligne le bord latéral du sterno-cléido-mastoïdien, le **cercle rouge** le scalène moyen, et la **flèche jaune** l\'aiguille de ponction, qui vient de l\'arrière et reste au-dessus du fascia. C\'est exactement l\'image de repérage décrite dans la fiche : le biseau du SCM, le plan graisseux interfascial où siègent petit occipital et grand auriculaire, et le plancher musculaire à ne pas franchir. **Réserve d\'interprétation** : image issue d\'un bloc du plexus cervical superficiel pour chirurgie oro-maxillo-faciale, donc une injection unique non sélective — en algologie, si l\'on veut distinguer petit occipital et grand auriculaire, il faut deux points et deux volumes minimes. **Orientation** : postérieur à gauche, antérieur à droite — orientation inverse de celle du schéma en regard.',
     credit: 'Zhao HR, Hao JS, Xue LF, Zhao JZ, Wang YC, Xiao WL, Frontiers in Oncology 2024, Figure 2 — CC BY 4.0',
     source: 'https://doi.org/10.3389/fonc.2024.1412062',
-    crop: [0.20, 0.17, 0.70, 0.80],
+    crop: [0.239, 0.207, 0.622, 0.703],
     labels: [
       { x: 0.342, y: 0.256, text: 'Plexus cervical superficiel', dx: -0.16, dy: 0.24 },
       { x: 0.611, y: 0.229, text: 'Bord latéral du SCM', dx: 0.10, dy: 0.10 },
