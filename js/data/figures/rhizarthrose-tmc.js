@@ -50,7 +50,7 @@ ECHO.figures['rhizarthrose-tmc'] = [
     src: 'img/rhizarthrose-tmc/echo-2.jpg',
     pair: 'tmc-injection',
     titre: 'Rhizarthrose sévère : aiguille en place malgré les ostéophytes',
-    legende: 'Image d\'origine annotée (anglais) : MC = métacarpien, T = trapèze ; la flèche marque la pointe de l\'aiguille dans l\'interligne, par un passage trouvé au balayage entre les ostéophytes. Panneau c d\'une planche dont le a est la radiographie et le b l\'ossification qui barrait l\'accès (flèche).',
+    legende: 'Image d\'origine annotée (anglais) : MC = métacarpien, T = trapèze ; la flèche marque la pointe de l\'aiguille dans l\'interligne, par un passage trouvé au balayage entre les ostéophytes. Panneau c d\'une planche dont le a est la radiographie et le b l\'ossification qui barrait l\'accès (flèche). Orientation inverse de celle du schéma : distal à gauche (métacarpien), proximal à droite (trapèze).',
     credit: 'Patel RP, McGill K, Motamedi D et al., Skeletal Radiology 2022, fig. 13c — CC BY 4.0',
     source: 'https://doi.org/10.1007/s00256-022-04148-9',
     crop: [0.0, 0.535, 0.60, 0.465],
