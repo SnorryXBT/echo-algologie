@@ -126,7 +126,8 @@ Une image non tracée s'enregistre dans `js/data/anat/zz-refus.js` : `R('<fiche>
 précise'])`. Une question ouverte sur une coupe tracée : `Q('<fiche>', <rang écho>, ['question'])`. La page
 `#/validation` affiche la carte « non tracée » avec le motif, la question et un champ de décision ; la réponse de Mat
 revient dans le même bilan (« NON TRACÉE — décision : … »). Retirer la ligne quand l'image est remplacée ou tracée.
-`anat-check.js` compte les refus à part.
+`anat-check.js` compte les refus à part. `anat-export.js <fiche> <n>` prend, comme `anat-grid.js` et `zz-refus.js`, le rang de la
+figure `type:'echo'` dans la fiche.
 
 ## Règles
 

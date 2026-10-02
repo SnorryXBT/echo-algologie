@@ -68,17 +68,27 @@ Voir `CHANTIER-ILLUSTRATIONS.md` : planches de Gray annotées (`js/data/figures/
 images dans `img/<id>/`), figures d'installation, écho-anatomie réelle côte à côte,
 vidéo par fiche (`scripts/video.js`, fichiers dans `video/`). Exécution sur le Mac.
 
-## Chantier coupes anatomiques (lancé le 21 septembre 2026)
+## Chantier coupes anatomiques (lancé le 21 septembre 2026, production le 2 octobre)
 
 Décision de Mat : chaque image échographique réelle du mémo reçoit sa **coupe anatomique recalée** (tissus colorés,
-mêmes contours, étiquettes communes, fondu écho ↔ anatomie) — skill `/echo-anatomie`. Socle livré : moteur, palette
-de 18 tissus, page de validation, export, contrôles. Ordre convenu : (1) socle — fait ; (2) pilote de 5 coupes
-hétérogènes pour éprouver la palette — fait le 21 septembre : sous-acromiale, canal carpien, genou (image remplacée),
-ganglion stellaire tracés, tous `valide: false` ; LFCN **non tracé**, lecture indécidable sur l'image actuelle, soumis à
-Mat (leçons consignées dans la skill) ; (3) production région par région avec lot de validation par région ; (4) rachis-bassin, thorax,
-socle : `/illustrer` d'abord. **Une coupe reste `valide: false` (bandeau visible) tant que Mat ne l'a pas relue** ;
-jamais d'auto-validation. 41 des 75 images portent des annotations incrustées : préférer une image vierge quand elle
-existe. Export hors mémo : CC BY / images personnelles uniquement (37 des 75 images sont CC BY).
+mêmes contours, étiquettes communes, fondu écho ↔ anatomie) — skill `/echo-anatomie`, moteur `js/lib/anat.js`.
+**État au 2 octobre 2026** : tête-cou, membre supérieur, membre inférieur et thorax traités par cette session (trois
+vagues de trois agents) ; rachis-bassin-paroi et socle traités par une session parallèle (« Atlas coupes anatomiques »).
+Compte courant : `node scripts/anat-check.js` (coupes tracées, validées, images non tracées).
+- **Rendement réel : ≈ une image sur deux est traçable.** Les autres (moins de 350 px, orientation non donnée par les
+  auteurs, sigles posés ailleurs que sur la structure, mentions contraires à l'anatomie) ne sont PAS tracées : elles
+  ont une ligne `R(...)` dans `js/data/anat/zz-refus.js` et une carte « non tracée » sur `#/validation`, avec la
+  question précise posée à Mat. Les questions ouvertes sur une coupe tracée sont des lignes `Q(...)`.
+- **Une coupe reste `valide: false` (bandeau visible) tant que Mat ne l'a pas relue** ; jamais d'auto-validation. Sa
+  réponse revient par « Copier le bilan » (`/echo-anatomie --bilan`).
+- **Décision de Mat sur le stellaire (22 septembre)** : une figure dont les annotations contredisent l'anatomie, ou
+  dont le trajet d'aiguille impliqué est médicalement invraisemblable, est disqualifiée, pas réinterprétée.
+- **Reste à faire** : (1) validation par Mat ; (2) remplacement des images non tracées selon ses décisions ;
+  (3) **passe de correction des légendes** des figures `echo` — les agents en ont relevé une vingtaine qui affirment
+  plus que leur source (plan, côté, sens d'aiguille) ou la contredisent (rhizarthrose 1, facettes cervicales 1, Morton 2,
+  obturateur 2, paravertébral 2, serratus 2) : elles sont citées dans `zz-refus.js`, non corrigées sans l'avis de Mat ;
+  (4) après un changement de `crop`, les `labels` de la figure sont décalés si la coupe est retirée.
+- Export hors mémo : CC BY / images personnelles uniquement, et coupe validée (`scripts/anat-export.js`).
 
 ## État des illustrations (21 septembre 2026)
 

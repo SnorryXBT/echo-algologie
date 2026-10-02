@@ -11,7 +11,9 @@ const [fiche, n = '0'] = pos, out = pos[2] || `export-${fiche}-${n}.png`;
 if (!fiche) { console.error('usage : node scripts/anat-export.js <fiche> [n] [sortie.png] [--prive]'); process.exit(1); }
 global.window = global; global.ECHO = { figures: {}, anat: {} };
 for (const d of ['figures', 'anat']) { const f = path.join(root, 'js/data', d, fiche + '.js'); if (fs.existsSync(f)) eval(fs.readFileSync(f, 'utf8')); }
-const a = (ECHO.anat[fiche] || [])[+n]; if (!a) { console.error(`pas de coupe anatomique n° ${n} pour ${fiche}`); process.exit(1); }
+/* n = rang de la figure `type:'echo'` dans la fiche (comme anat-grid.js et zz-refus.js) ; repli : rang dans le tableau des coupes */
+const echoN = ((ECHO.figures[fiche] || []).filter(x => x.type === 'echo')[+n] || {}).src;
+const a = (ECHO.anat[fiche] || []).find(x => x.fig === echoN && !x.refus) || (ECHO.anat[fiche] || [])[+n]; if (!a) { console.error(`pas de coupe anatomique n° ${n} pour ${fiche}`); process.exit(1); }
 const f = ECHO.figures[fiche].find(x => x.src === a.fig), credit = f.credit || '';
 const libre = /CC0|domaine public|image personnelle|CC BY(?:-SA)?(?![-A-Z])/i.test(credit) && !/-NC|-ND/i.test(credit);
 if (!libre && !prive) { console.error(`REFUS : licence non diffusable (« ${credit} »). NC / ND restent dans le mémo privé ; --prive pour un export filigrané à usage personnel.`); process.exit(2); }
@@ -21,15 +23,15 @@ if (!a.valide && !prive) { console.error('REFUS : coupe non validée par Mat (va
   const page = await browser.newPage({ viewport: { width: 1700, height: 1100 }, deviceScaleFactor: 2 });
   await page.goto('file://' + path.join(root, 'index.html') + '#/validation/' + fiche);
   await page.waitForTimeout(1200);
-  await page.evaluate(({ n, titre, credit, filigrane }) => {
-    const host = document.querySelectorAll('.anat-valid')[n].querySelectorAll('.anat-host')[1];
+  await page.evaluate(({ fig, titre, credit, filigrane }) => {
+    const host = document.querySelector(`.anat-valid .anat-host[data-fig="${fig}"]:not([data-mode])`);
     const box = document.createElement('div'); box.id = 'anat-export';
     box.style.cssText = 'position:fixed;inset:0 auto auto 0;z-index:99999;width:1660px;padding:20px;background:#fff;color:#14181d;font-family:-apple-system,system-ui,sans-serif';
     box.innerHTML = `<div style="font:600 22px Georgia,serif;margin-bottom:10px">${titre}</div>`;
     box.appendChild(host); host.querySelector('.anat-bar').remove();
     box.insertAdjacentHTML('beforeend', `<div style="font-size:13px;color:#5b6672;margin-top:10px">Échographie : ${credit}. Coupe anatomique : dessin original, Dr M. Abou-Badra — Institut Français de la Douleur.${filigrane ? ' <b style="color:#b91c1c">USAGE PRIVÉ — NE PAS DIFFUSER.</b>' : ''}</div>`);
     document.body.appendChild(box);
-  }, { n: +n, titre: f.titre || fiche, credit, filigrane: !libre || !a.valide });
+  }, { fig: a.fig, titre: f.titre || fiche, credit, filigrane: !libre || !a.valide });
   await page.waitForTimeout(500);
   await page.locator('#anat-export').screenshot({ path: out });
   console.log(`${out}  (${libre ? 'diffusable, crédit incrusté' : 'FILIGRANE usage privé'}${a.valide ? '' : ', coupe NON VALIDÉE'})`);
