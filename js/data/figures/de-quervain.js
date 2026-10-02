@@ -57,7 +57,7 @@ ECHO.figures['de-quervain'] = [
     legende: 'Image d\'origine annotée (anglais) : APL = long abducteur du pouce, EPB = court extenseur du pouce ; la flèche désigne le septum qui sépare les deux tendons en deux sous-compartiments — variante fréquente qui impose d\'injecter de chaque côté. Panneau B d\'une planche dont le A, plus proximal, montre les tendons non individualisables.',
     credit: 'Kitridis D, Perdikakis E, Potoupnis M et al., Journal of Personalized Medicine 2024, fig. 1B — CC BY 4.0',
     source: 'https://doi.org/10.3390/jpm14090928',
-    crop: [0.51, 0.0, 0.49, 1.0],
+    crop: [0.508, 0.031, 0.482, 0.943],
     labels: [
       { x: 0.42, y: 0.22, text: 'Rétinaculum (toit)', dx: -0.14, dy: -0.12 },
       { x: 0.42, y: 0.82, text: 'Styloïde radiale', dx: -0.10, dy: 0.10 },
