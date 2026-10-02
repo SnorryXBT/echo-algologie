@@ -63,9 +63,9 @@ ECHO.figures['erector-spinae-plane'] = [
     type: 'echo',
     src: 'img/erector-spinae-plane/echo-1.jpg',
     pair: 'esp-sono',
-    crop: [0.145, 0.578, 0.69, 0.375],
+    crop: [0.153, 0.581, 0.663, 0.313],
     titre: 'Coupe para-sagittale thoracique réelle : trois muscles, deux processus transverses, la plèvre entre les deux',
-    legende: 'Sonde linéaire para-sagittale, crânial à gauche — orientation déduite de la photographie A de la même figure, où l\'aiguille est engagée du côté de la tête et arrive par la gauche de l\'image. Sigles d\'origine : *MT* trapèze, *RM* grand rhomboïde, *ES* érecteur du rachis, *TP* processus transverse, *Pleura* plèvre ; le pointillé blanc, ajouté par les auteurs, figure le trajet de l\'aiguille : sa pointe s\'arrête dans le plan profond de l\'érecteur, au bord caudal du processus transverse de gauche. C\'est l\'image du schéma en regard : processus transverses **plats, à bord carré, avec cône d\'ombre franc**, et plèvre visible **uniquement entre eux**, plus profonde que le plan osseux.',
+    legende: 'Sonde linéaire para-sagittale, crânial à gauche — établi par le texte des auteurs (aiguille « advanced in a craniocaudal direction ») et par leur pointillé, qui entre par la gauche de l\'image ; la photographie A de la même figure concorde (aiguille engagée du côté de la tête). Sigles d\'origine : *MT* trapèze, *RM* grand rhomboïde, *ES* érecteur du rachis, *TP* processus transverse, *Pleura* plèvre ; le pointillé blanc, ajouté par les auteurs, figure le trajet de l\'aiguille : sa pointe s\'arrête dans le plan profond de l\'érecteur, au bord caudal du processus transverse de gauche. C\'est l\'image du schéma en regard : processus transverses **plats, à bord carré, avec cône d\'ombre franc**, et plèvre visible **uniquement entre eux**, plus profonde que le plan osseux.',
     credit: 'Avcı G, Okan SC, Yörükoğlu HU, Aksu C, Kuş A, BMC Anesthesiology 2026, fig. 1B — CC BY 4.0',
     source: 'https://doi.org/10.1186/s12871-026-03655-9',
     labels: [
@@ -76,9 +76,9 @@ ECHO.figures['erector-spinae-plane'] = [
     type: 'echo',
     src: 'img/erector-spinae-plane/echo-2.jpg',
     pair: 'esp-bloc',
-    crop: [0.025, 0.05, 0.44, 0.93],
+    crop: [0.0271, 0.0678, 0.438, 0.870],
     titre: 'Aiguille réelle dans le plan, abordant le processus transverse de T8',
-    legende: 'Annotations d\'origine : *Needle* et deux flèches blanches suivent le fût de l\'aiguille, qui descend obliquement depuis le coin supérieur gauche à travers le trapèze puis l\'érecteur jusqu\'au voisinage immédiat du processus transverse (dôme hyperéchogène avec cône d\'ombre) ; la seconde flèche marque la pointe. La vignette en bas à gauche est la photographie d\'installation des auteurs (sonde para-sagittale sur le dos). L\'axe crânio-caudal n\'est pas précisé par la légende d\'origine. Ce que l\'image apprend : l\'aiguille n\'est vue **que par segments** à cet angle — d\'où la recommandation d\'une aiguille écho-visible ou de l\'hydrolocalisation.',
+    legende: 'Annotations d\'origine : *Needle* et deux flèches blanches suivent le fût de l\'aiguille, qui descend obliquement depuis le coin supérieur gauche à travers le trapèze puis l\'érecteur jusqu\'au voisinage immédiat du processus transverse (dôme hyperéchogène avec cône d\'ombre) ; la seconde flèche marque la pointe. La vignette en bas à gauche est la photographie d\'installation des auteurs (sonde para-sagittale sur le dos). Crânial à gauche : la légende d\'origine ne le dit pas, mais le texte des auteurs l\'établit (sonde verticale, repère vers le haut ; aiguille « advanced in-plane in a cranial-to-caudal direction »). Ce que l\'image apprend : l\'aiguille n\'est vue **que par segments** à cet angle — d\'où la recommandation d\'une aiguille écho-visible ou de l\'hydrolocalisation.',
     credit: 'Adi O, Fong CP, Ahmad AH, Ghani MRA, Fathil S, The Ultrasound Journal 2025, fig. 1 — CC BY 4.0',
     source: 'https://doi.org/10.1186/s13089-025-00461-1',
     labels: [
