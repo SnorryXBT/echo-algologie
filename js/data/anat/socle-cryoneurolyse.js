@@ -3,7 +3,7 @@
    de la cryosonde, face latérale de la jambe gauche, mi-fibula. Corrigé indirect : fig. 3 des auteurs (« in-plane view of
    the cryoprobe and fibula », non reprise dans le mémo), où la seule ligne osseuse est la corticale fibulaire, oblique,
    montant vers la droite — la même que sur fig. 4 et 5. Calipers jaunes des auteurs = diamètre de la lésion.
-   Le moteur n'a pas de tissu « glace » : la boule est rendue par le film bleu translucide de `liquide` (fin: true), étiquetée « tissu gelé ». */
+   Boule rendue par le tissu « glace » du moteur. */
 (function () {
   const PEAU_H = [[0,-10],[1000,-10]], PEAU_B = [[0,48],[1000,48]];
   const MUSC = [[0,215],[200,212],[400,205],[500,200],[600,198],[700,198],[800,186],[900,176],[1000,170]];
@@ -22,7 +22,7 @@
     { id: 'superficiel', tissu: 'indetermine', haut: PEAU_B, bas: MUSC },
     { id: 'muscle', tissu: 'muscle', haut: MUSC, bas: BAS },
     { id: 'fibula', tissu: 'os', cortex: FIB, vu },
-    { id: 'glace', tissu: 'liquide', fin: true, contour: glace },   // pas de tissu « glace » : film bleu translucide, étiqueté
+    { id: 'glace', tissu: 'glace', contour: glace },
     { id: 'cryosonde', tissu: 'aiguille', ligne: sonde, ep: 11 },
   ];
 
