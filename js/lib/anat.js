@@ -194,7 +194,7 @@
         const pts = s.cortex || s.contour, segs = Array.isArray(s.vu[0]) ? s.vu : [s.vu];
         return `<path class="${cls} ex" data-s="${s.id}" d="${d}" style="--c:${c}" ${b.os ? 'fill="none"' : ''}/>` + segs.map(v => `<path class="${cls}" data-s="${s.id}" d="${smooth(pts.slice(v[0], v[1] + 1))}" style="--c:${c}" fill="none"/>`).join('');
       }
-      return `<path class="${cls}${s.extrapole ? ' ex' : ''}" data-s="${s.id}" d="${d}" style="--c:${c}" ${b.os ? 'fill="none"' : ''}/>`;
+      return `<path class="${cls}${s.extrapole ? ' ex' : ''}${b.os ? ' lin' : ''}" data-s="${s.id}" d="${d}" style="--c:${c}" ${b.os ? 'fill="none"' : ''}/>`;
     }).join('');
   }
   function etiquettes(spec, id, vue, W, large) {
@@ -222,7 +222,7 @@
 .anat-l line{stroke:#d97706;stroke-width:2.2}.anat-pill rect{fill:rgba(255,255,255,.94);stroke:#d97706;stroke-width:1.4}.anat-pill text{font-family:system-ui,sans-serif;font-weight:600;fill:#1f2937}
 .anat-l{cursor:default}.anat-o{float:right;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:11.5px}
 .anat-c{fill:var(--c);fill-opacity:0;stroke:var(--c);stroke-opacity:0;stroke-width:3;transition:all .15s;pointer-events:all}
-.anat-c.ex{stroke-dasharray:9 7}.quiz .anat-l{opacity:0;transition:opacity .25s}.quiz .anat-p:hover .anat-l{opacity:1}
+.anat-c.ex{stroke-dasharray:9 7}.anat-c.lin{pointer-events:stroke;fill:none!important}.quiz .anat-l{opacity:0;transition:opacity .25s}.quiz .anat-p:hover .anat-l{opacity:1}
 .anat-c.on{stroke-opacity:.95;fill-opacity:.10;stroke-width:2.5}.anat-c.hl{stroke-opacity:1;fill-opacity:.28;stroke-width:4}
 .anat-bar{grid-column:1/-1;display:flex;align-items:center;gap:10px;font:13px var(--sans,system-ui);color:var(--muted,#6b7280)}.anat-bar input{flex:1;max-width:340px}`;
 
