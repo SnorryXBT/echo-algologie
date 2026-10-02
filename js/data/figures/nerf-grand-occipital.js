@@ -57,7 +57,7 @@ ECHO.figures['nerf-grand-occipital'] = [
     legende: 'Détail du panneau B de la figure originale (la planche complète montre aussi la position de sonde et la diffusion de l\'injectat). Coupe transversale prise entre le processus transverse de C1 et l\'épineuse de C2 : l\'**étoile jaune** est le nerf grand occipital, exactement dans l\'interface hyperéchogène qui sépare le semi-épineux de la tête (superficiel) de l\'oblique inférieur (profond). Les trois segments jaunes sont les mesures d\'épaisseur des auteurs, à ignorer pour le geste : *a* = SCT, épaisseur du semi-épineux de la tête ; *b* = OCIT, épaisseur de l\'oblique inférieur ; *c* = DF-SOCI, épaisseur du fascia profond superficiel à l\'oblique inférieur — c\'est-à-dire le plan cible lui-même. Échelle en centimètres à droite : le plan est ici à ≈ 1,5–2 cm, profondeur plutôt faible pour un adulte (2,5–4 cm attendus).',
     credit: 'Zhang J, Zhang Z, Song E, Wu J, Frontiers in Physiology 2026, Figure 1 — CC BY 4.0',
     source: 'https://doi.org/10.3389/fphys.2026.1838823',
-    crop: [0.0, 0.305, 1.0, 0.33],
+    crop: [0.002, 0.3414, 0.932, 0.3155],
     labels: [
       { x: 0.447, y: 0.479, text: 'GON', dx: 0.12, dy: -0.18 },
       { x: 0.275, y: 0.495, text: 'Oblique inférieur', dx: -0.12, dy: 0.22 },
