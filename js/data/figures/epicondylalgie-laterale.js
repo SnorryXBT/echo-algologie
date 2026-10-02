@@ -75,6 +75,7 @@ ECHO.figures['epicondylalgie-laterale'] = [
     legende: 'Image d\'origine annotée (anglais) : Lateral Epicondyle = épicondyle latéral, Radial Head = tête radiale ; les têtes de flèche marquent le tendon extenseur commun, bande fibrillaire tendue de l\'épicondyle à la tête radiale au-dessus de l\'interligne. Ici tendon d\'aspect normal ; en tendinopathie, il s\'épaissit et devient hypoéchogène en profondeur, près de l\'os.',
     credit: 'Terzi MM, Kıratlıoğlu Y, Bezirgan U et al., Clinics in Shoulder and Elbow 2026, fig. 1 — CC BY-NC 4.0',
     source: 'https://doi.org/10.5397/cise.2025.01389',
+    crop: [0.185, 0.065, 0.74, 0.74],
   },
   {
     type: 'echo',
@@ -84,6 +85,6 @@ ECHO.figures['epicondylalgie-laterale'] = [
     legende: 'Image d\'origine annotée (anglais) : LE = épicondyle latéral, CET = tendon extenseur commun, RCL = ligament collatéral radial, J = interligne huméro-radial, R = tête radiale. La fenestration vise la zone dégénérée du tendon, en surface du ligament collatéral : ne pas traverser ce ligament ni entrer dans l\'interligne.',
     credit: 'Raeissadat SA, Khavari Ardestani D, Mousavikhah SE et al., Future Science OA 2026, fig. 2 — CC BY-NC 4.0',
     source: 'https://doi.org/10.1080/20565623.2026.2644326',
-    crop: [0.16, 0.0, 0.62, 1.0],
+    crop: [0.167, 0.033, 0.556, 0.955],
   },
 ];
