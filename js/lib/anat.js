@@ -25,6 +25,7 @@
     conjonctif:{ nom: 'Tissu conjonctif', trait: '#e9c7b5' },
     aiguille:  { nom: 'Aiguille', trait: '#7fe0ff' },
     indetermine: { nom: 'Plan non attribué', trait: '#b8bcc4' },
+    glace:     { nom: 'Glace', trait: '#e6f7ff' },
     calcification: { nom: 'Calcification', trait: '#ffffff' },
     fibrocartilage: { nom: 'Fibrocartilage', trait: '#b9c7d9' },
   };
@@ -172,6 +173,8 @@
         g.push(`<path d="${d}" fill="#fbfaf5" stroke="#8a8473" stroke-width="2.2"/><path d="${d}" fill="url(#${id}-tpa)" opacity=".35"/>`); break;
       case 'fibrocartilage':  // labrum, ménisque, disque articulaire
         g.push(`<path d="${d}" fill="#b9c7d9" stroke="#6c7f97" stroke-width="1.6"/>${lignes(fibres(b, 6, 0.8, 29), '#dfe7f0', '#8496ad', 1, 0.8)}`); break;
+      case 'glace':     // boule de cryoneurolyse : front net, cœur opaque
+        g.push(`<path d="${d}" fill="#dff3fb" stroke="#7fb6d0" stroke-width="2.5"/><path d="${d}" fill="url(#${id}-tpa)" opacity=".25"/>`); break;
       case 'indetermine':   // plan visible mais non identifiable : gris hachuré, sans préjuger de sa nature
         g.push(`<path d="${d}" fill="url(#${id}-hach)" stroke="#8a8f98" stroke-width="1.2" stroke-dasharray="6 4"/>`); break;
       case 'conjonctif':

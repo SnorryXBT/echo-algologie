@@ -68,7 +68,7 @@ ECHO.anat['<fiche>'] = [{
 ```
 
 Tissus : `peau graisse muscle tendon ligament fascia bourse cartilage os nerf artere veine plevre poumon glande disque
-liquide conjonctif aiguille calcification fibrocartilage indetermine` (`indetermine` : plan visible mais non identifiable, gris hachuré — préférable à un nom inventé). Options : `enthese: 0.38` (tendon, ligament : fraction du bord bas, depuis le début du tracé, sur
+liquide conjonctif aiguille calcification fibrocartilage glace indetermine` (`indetermine` : plan visible mais non identifiable, gris hachuré — préférable à un nom inventé). Options : `enthese: 0.38` (tendon, ligament : fraction du bord bas, depuis le début du tracé, sur
 laquelle les fibres s'insèrent ; valeur négative = insertion à la fin du tracé, côté droit) ; `vu: [i0, i1]` ou
 `[[i0, i1], [i2, i3]]` (segments de corticale réellement vus) ; `guide: […]` (muscle : bord bas lissé pour orienter les fibres quand le vrai bord fait
 une épingle) ; `fin: true` (liquide : film synovial translucide, pas une collection) ; `lame: [f0, f1]` (bourse : position de la lame liquidienne dans le complexe graisseux, en fraction de
@@ -111,7 +111,10 @@ Quand la figure affichée est une planche à plusieurs panneaux dont la légende
 donner à l'entrée anat son propre `crop: [x, y, l, h]` (fractions de l'image entière) et, facultatif, `panneau: 'A
 (Doppler)'`. La planche reste affichée entière dans la fiche, la paire écho / coupe anatomique du panneau vient dessous.
 Repérage : `node scripts/anat-grid.js <fiche> <n> <dossier> x,y,l,h`. Un réflecteur osseux court se dessine avec
-`cortex` + `profondeur: 60` (os limité à cette épaisseur, pas rempli jusqu'au bas du cadre).
+`cortex` + `profondeur: 60` (os limité à cette épaisseur, pas rempli jusqu'au bas du cadre). **Plusieurs panneaux d'une
+même planche** : une entrée anat par panneau, même `fig`, chacune avec son `crop` et son `panneau` (obligatoires dans ce
+cas) ; export : `anat-export.js <fiche> <rang écho> sortie.png --panneau=B`. L'`aiguille` se dessine toujours avec
+`ligne` (jamais `contour`).
 
 ## Rendement réel (première vague de production, 2 octobre 2026)
 

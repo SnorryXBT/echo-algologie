@@ -6,7 +6,7 @@ const fs = require('fs'), path = require('path');
 const root = path.join(__dirname, '..');
 global.window = global; global.ECHO = { figures: {}, anat: {} };
 for (const d of ['figures', 'anat']) { const dir = path.join(root, 'js/data', d); if (fs.existsSync(dir)) for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.js'))) eval(fs.readFileSync(path.join(dir, f), 'utf8')); }
-const TISSUS = ['peau', 'graisse', 'muscle', 'tendon', 'bourse', 'cartilage', 'os', 'nerf', 'artere', 'veine', 'ligament', 'fascia', 'plevre', 'poumon', 'glande', 'disque', 'liquide', 'conjonctif', 'aiguille', 'indetermine', 'calcification', 'fibrocartilage'];
+const TISSUS = ['peau', 'graisse', 'muscle', 'tendon', 'bourse', 'cartilage', 'os', 'nerf', 'artere', 'veine', 'ligament', 'fascia', 'plevre', 'poumon', 'glande', 'disque', 'liquide', 'conjonctif', 'aiguille', 'indetermine', 'calcification', 'fibrocartilage', 'glace'];
 function size(file) {                    // dimensions JPEG / PNG sans dépendance
   const b = fs.readFileSync(file);
   if (b[0] === 0x89) return [b.readUInt32BE(16), b.readUInt32BE(20)];
@@ -19,6 +19,8 @@ for (const id of Object.keys(ECHO.anat).sort()) for (const a of ECHO.anat[id]) {
   tot++; if (a.valide) ok++;
   console.log(`${id}  ${a.fig}  ${a.valide ? 'validée' : 'À VALIDER'}  (${(a.structures || []).length} structures, ${(a.labels || []).length} étiquettes)`);
   const f = (ECHO.figures[id] || []).find(x => x.src === a.fig);
+  const jumeaux = ECHO.anat[id].filter(x => x.fig === a.fig && !x.refus);
+  if (jumeaux.length > 1 && jumeaux.some(x => !x.crop || !x.panneau)) bad('plusieurs coupes sur la même figure : chacune doit avoir son `crop` et son `panneau`');
   if (!f || f.type !== 'echo') { bad('aucune figure type echo avec ce src dans js/data/figures/' + id + '.js'); continue; }
   const file = path.join(root, a.fig); if (!fs.existsSync(file)) { bad('image absente'); continue; }
   const s = size(file), c = a.crop || f.crop || [0, 0, 1, 1];   // `crop` propre à la coupe : sous-panneau d'une planche composite
@@ -31,6 +33,7 @@ for (const id of Object.keys(ECHO.anat).sort()) for (const a of ECHO.anat[id]) {
     if (ids.has(st.id)) bad('structure en double : ' + st.id); ids.add(st.id);
     if (!TISSUS.includes(st.tissu)) bad(`tissu inconnu « ${st.tissu} » (${st.id})`);
     if (!(st.cortex || st.contour || st.ligne || (st.bas && (st.haut || st.ep)))) bad('géométrie absente : ' + st.id);
+    if (st.tissu === 'aiguille' && !st.ligne) bad(`aiguille « ${st.id} » sans \`ligne\` : le rendu plante (une aiguille vue en point se dessine avec un petit \`contour\` de tissu indetermine ou une \`ligne\` très courte)`);
   }
   for (const l of a.labels || []) {
     if (l.s && !ids.has(l.s)) bad(`étiquette « ${l.text} » rattachée à une structure inconnue : ${l.s}`);
