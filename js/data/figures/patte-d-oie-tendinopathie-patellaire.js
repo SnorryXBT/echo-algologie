@@ -69,5 +69,6 @@ ECHO.figures['patte-d-oie-tendinopathie-patellaire'] = [
     legende: 'Coupe longitudinale, patella à gauche, tendon (*Patellar tendon*) s\'étendant vers la droite. La flèche blanche désigne la zone hypoéchogène de la **face profonde du tiers proximal**, envahie de néovaisseaux au Doppler ; le corps du tendon garde ailleurs son échostructure fibrillaire normale. C\'est l\'image typique de la tendinopathie patellaire — et c\'est aussi le piège : dans le cas d\'origine, **ce site n\'était pas douloureux à la palpation**, la douleur antérieure venant d\'une souffrance de la branche infrapatellaire du saphène. L\'anomalie échographique ne fait pas le diagnostic : c\'est la concordance avec le point douloureux exquis qui décide du geste.',
     credit: 'Miyata T, Kawabata M, Watanabe D, Miyatake K, Cureus 2025, fig. 1 — CC BY 4.0',
     source: 'https://doi.org/10.7759/cureus.93051',
+    crop: [0.03, 0.054, 0.935, 0.911],
   },
 ];
