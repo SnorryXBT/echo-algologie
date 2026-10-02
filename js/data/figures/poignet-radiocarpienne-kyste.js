@@ -55,7 +55,7 @@ ECHO.figures['poignet-radiocarpienne-kyste'] = [
     pair: 'poignet-radiocarpienne',
     titre: 'Coupe sagittale dorsale réelle : interligne radio-carpien',
     legende: 'Image d\'origine annotée (anglais) : R = épiphyse distale du radius, S = scaphoïde ; la flèche pointillée figure le trajet de l\'aiguille dans le plan, de distal en proximal, sous la capsule dorsale, vers l\'interligne. Panneau b d\'une planche dont le panneau a montre la sonde sur le poignet.',
-    credit: 'Patel RP, McGill K, Motamedi D et al., Skeletal Radiology 2022, fig. 10b — CC BY 4.0',
+    credit: 'Patel RP, McGill K, Motamedi D et al., Skeletal Radiology 2023, fig. 10b — CC BY 4.0',
     source: 'https://doi.org/10.1007/s00256-022-04148-9',
     crop: [0.42, 0.006, 0.577, 0.988],
     labels: [

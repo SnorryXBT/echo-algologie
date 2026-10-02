@@ -164,8 +164,9 @@
       case 'disque':
         g.push(`<path d="${d}" fill="#9db7c9"/>${lignes(fibres(b, 7, 1, 19), '#c9dbe6', '#6f8da1', 1.2, 0.8)}<path d="${d}" fill="none" stroke="#5f7d91" stroke-width="1.3"/>`); break;
       case 'liquide':
-        g.push(`<path d="${d}" fill="#2f9fe0" opacity="${s.fin ? '.4' : '.9'}" stroke="#1d6fa3" stroke-width="1.2"/>`); break;   // `fin: true` : film synovial, pas une collection
-      case 'aiguille':   // `ligne` du point d'entrée à la pointe, ep ≈ 5
+        g.push(`<path d="${d}" fill="${s.fin ? '#9bd4f5' : '#2f9fe0'}" opacity="${s.fin ? '.55' : '.9'}" stroke="#1d6fa3" stroke-width="1.2"/>`); break;   // `fin: true` : film synovial, pas une collection
+      case 'aiguille':   // `ligne` du point d'entrée à la pointe, ep ≈ 5 ; `extrapole: true` = trajet prévu (pointillé), pas une aiguille vue
+        if (s.extrapole) { g.push(`<path d="${smooth(s.ligne)}" fill="none" stroke="#e5e7eb" stroke-width="3" stroke-dasharray="12 8" stroke-linecap="round"/>`); break; }
         g.push(`<path d="${d}" fill="#dfe4ea" stroke="#4b5563" stroke-width="1.4"/><path d="${smooth(s.ligne)}" fill="none" stroke="#ffffff" stroke-width="1" opacity=".9"/>`); break;
       case 'calcification':   // dépôt crayeux, bord net
         g.push(`<path d="${d}" fill="#fbfaf5" stroke="#8a8473" stroke-width="2.2"/><path d="${d}" fill="url(#${id}-tpa)" opacity=".35"/>`); break;
