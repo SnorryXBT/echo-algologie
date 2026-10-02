@@ -221,7 +221,7 @@
   const CSS = `.anat{display:grid;gap:10px}.anat.paire{grid-template-columns:1fr 1fr}@media(max-width:900px){.anat.paire{grid-template-columns:1fr}}
 .anat-p{position:relative;margin:0}.anat-p h4{margin:0 0 4px;font:600 13px var(--sans,system-ui);color:var(--muted,#6b7280)}.anat-svg{display:block;width:100%;border-radius:10px;background:#0a0a0c}
 .anat-l line{stroke:#d97706;stroke-width:2.2}.anat-pill rect{fill:rgba(255,255,255,.94);stroke:#d97706;stroke-width:1.4}.anat-pill text{font-family:system-ui,sans-serif;font-weight:600;fill:#1f2937}
-.anat-l{cursor:default}.anat-o{float:right;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:11.5px}
+.anat-l{cursor:default}.anat-o{display:block;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .anat-c{fill:var(--c);fill-opacity:0;stroke:var(--c);stroke-opacity:0;stroke-width:3;transition:all .15s;pointer-events:all}
 .anat-c.ex{stroke-dasharray:9 7}.anat-c.lin{pointer-events:stroke;fill:none!important}.quiz .anat-l{opacity:0;transition:opacity .25s}.quiz .anat-p:hover .anat-l{opacity:1}
 .anat-c.on{stroke-opacity:.95;fill-opacity:.10;stroke-width:2.5}.anat-c.hl{stroke-opacity:1;fill-opacity:.28;stroke-width:4}

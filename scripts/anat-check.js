@@ -25,7 +25,7 @@ for (const id of Object.keys(ECHO.anat).sort()) for (const a of ECHO.anat[id]) {
   if (s && a.vb) { const H = 1000 * (s[1] * c[3]) / (s[0] * c[2]); if (a.vb[0] !== 1000 || Math.abs(a.vb[1] - H) / H > 0.02) bad(`vb ${JSON.stringify(a.vb)} incohérent avec l'image après crop (attendu [1000, ${Math.round(H)}]) — le crop a-t-il changé après le tracé ?`); }
   if (!a.lecture || !a.lecture.length) bad('`lecture` absente : la confiance de la lecture doit être annoncée');
   if (!a.orient || !a.orient.left || !a.orient.right) bad('`orient` absent');
-  else if ((a.orient.left + a.orient.right).length > 34) bad(`libellés d'orientation trop longs (« ${a.orient.left} · ${a.orient.right} ») : le titre du panneau passe sur deux lignes et décale la paire — 34 caractères au plus à eux deux`);
+  else if ((a.orient.left + a.orient.right).length > 60) bad(`libellés d'orientation trop longs (« ${a.orient.left} · ${a.orient.right} ») : le titre du panneau passe sur deux lignes et décale la paire — 60 caractères au plus à eux deux`);
   const ids = new Set();
   for (const st of a.structures || []) {
     if (ids.has(st.id)) bad('structure en double : ' + st.id); ids.add(st.id);
