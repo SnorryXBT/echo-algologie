@@ -37,7 +37,7 @@ ECHO.figures['acromio-claviculaire'] = [
     src: 'img/acromio-claviculaire/echo-1.jpg',
     pair: 'ac-geste',
     titre: 'Coupe coronale réelle de l\'interligne AC, aiguille en place',
-    legende: 'Image d\'origine annotée (anglais) : ACR = acromion, CLA = clavicule ; les têtes de flèche marquent l\'aiguille, ici passée dans le plan de latéral en médial, dans le V hypoéchogène de l\'interligne dont la capsule bombe en surface. Latéral à gauche : orientation inverse de celle du schéma apparié, et abord différent (dans le plan, alors que la fiche décrit la ponction hors du plan). Panneau d d\'une planche composite (le panneau c montre la prise en main).',
+    legende: 'Image d\'origine annotée (anglais) : ACR = acromion, CLA = clavicule ; les têtes de flèche marquent l\'aiguille, ici passée dans le plan de latéral en médial, dans le V hypoéchogène de l\'interligne dont la capsule bombe en surface. Latéral à gauche : orientation inverse de celle du schéma apparié. Panneau d d\'une planche composite (le panneau c montre la prise en main).',
     credit: 'Chang KV, Wu WT, Tsai YY et al., Journal of Medical Ultrasound 2026, fig. 16d — CC BY-NC-SA 4.0 selon l\'URL de la balise licence (le texte de la même balise dit BY-NC-ND)',
     source: 'https://doi.org/10.4103/jmu.JMU-D-25-00156',
     crop: [0.5, 0.5186, 0.5, 0.4814],
