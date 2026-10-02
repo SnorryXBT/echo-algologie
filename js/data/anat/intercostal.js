@@ -58,7 +58,7 @@
     labels: [
       { s: 'sc', x: 330, y: 122, dx: -190, dy: -82, text: 'Tissu sous-cutané (supposé)' },
       { s: 'paroi', x: 520, y: 240, dx: 60, dy: -215, text: 'Muscles de la paroi (non séparés)' },
-      { s: 'ic', x: 585, y: 335, dx: 255, dy: -190, text: 'Muscles intercostaux' },
+      { s: 'ic', x: 568, y: 345, dx: 272, dy: -200, text: 'Muscles intercostaux' },
       { s: 'cote-1', x: 262, y: 300, dx: -150, dy: -60, text: 'Côte (calotte seule vue)' },
       { s: 'a-1', x: 339, y: 346, dx: -150, dy: 124, text: 'A. intercostale (site des auteurs)' },
       { s: 'n-3', x: 739, y: 386, dx: 95, dy: 110, text: 'Veine et nerf : extrapolés', vue: 'anat' },
