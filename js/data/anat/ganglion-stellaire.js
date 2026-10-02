@@ -55,4 +55,75 @@
       { s: 'c6', x: 900, y: 252, dx: 5, dy: 40, text: 'Corps vertébral de C6' },
     ],
   }];
+
+  /* ---------- echo-2 : niveau C7 (Lam et al., Cureus 2026, fig. 1) — planche composite NON recadrée ; coupe tracée sur le seul sonogramme
+     Doppler du panneau A (`crop` propre, 269 × 174 px). Le sonogramme colorisé voisin est la même image annotée par les auteurs :
+     identités et positions en viennent (recalage entre les deux panneaux à ≈ ± 25 unités près), les interfaces nettes sont placées sur le Doppler. ---------- */
+  const ell = (cx, cy, rx, ry, rot) => { const o = [], a = (rot || 0) * Math.PI / 180; for (let i = 0; i < 12; i++) { const t = i / 12 * 2 * Math.PI, x = rx * Math.cos(t), y = ry * Math.sin(t); o.push([Math.round(cx + x * Math.cos(a) - y * Math.sin(a)), Math.round(cy + x * Math.sin(a) + y * Math.cos(a))]); } return o; };
+  const SCM_BAS = [[0,112],[50,123],[100,137],[150,148],[200,149],[250,142],[300,141],[350,138],[400,130],[450,119],[500,108],[550,104],[600,100],[650,97],[700,99],[750,95],[800,100],[850,100],[920,108],[1000,120]];
+  /* ligne osseuse : arc médial (face antérieure du corps de C7), gouttière où chemine l'artère vertébrale, puis relief latéral qui porte la racine C7 */
+  const CORTEX7 = [[-40,620],[0,585],[60,545],[130,520],[200,512],[250,511],[300,520],[350,540],[400,572],[450,595],[500,606],[560,606],[620,598],[670,592],[705,575],[730,548],[760,528]];
+  ECHO.anat['ganglion-stellaire'].push({
+    fig: 'img/ganglion-stellaire/echo-2.jpg',
+    crop: [0.577, 0.149, 0.358, 0.206], panneau: 'A, sonogramme Doppler (coupe transversale en C7)',
+    valide: false,
+    vb: [1000, 647], orient: { left: 'Médial', right: 'Latéral' },
+    lecture: [
+      'Probable — extrémité de l\'aiguille : le fût brillant est suivi depuis le bord latéral jusqu\'à x ≈ 490, au bord latéral du long du cou ; c\'est là que l\'aiguille est arrêtée sur le tracé. La ligne brillante horizontale qui continue vers la carotide (y ≈ 350, avec un renforcement très brillant sous l\'artère) n\'est pas dans l\'axe du fût : elle est lue comme le plan prévertébral à la surface du long du cou, pas comme l\'aiguille. Si c\'était l\'aiguille, sa pointe serait sous la carotide.',
+      'Certain — point de sécurité : en C7 l\'artère vertébrale (signal Doppler faible, x ≈ 460–560) est dans la gouttière en avant du processus transverse, entre le long du cou et la racine C7, sans tubercule antérieur pour la couvrir — sigles VA, C7 et C7TP des auteurs, et texte de l\'article (« the C7 nerve root lies between the vertebral artery medially and the posterior tubercle of C7 laterally »). Elle est à l\'aplomb de l\'extrémité de l\'aiguille, plus profonde d\'environ deux diamètres carotidiens : seuls des muscles les séparent.',
+      'Certain — orientation (croix « Medial / Lateral » des auteurs : médial à gauche, comme le schéma apparié) ; carotide commune, artère thyroïdienne inférieure dans la thyroïde, sterno-cléido-mastoïdien, long du cou, scalène antérieur, œsophage : aplats du panneau colorisé voisin, reportés sur le Doppler.',
+      'Certain — trajet : aiguille dans le plan, de latéral en médial, sous le sterno-cléido-mastoïdien et la gaine carotidienne, à la face superficielle du scalène antérieur, jusqu\'au plan prévertébral sur le long du cou (légende d\'origine : aiguille dans le fascia prévertébral, superficielle au long du cou, biseau vers le bas). Concordant avec le schéma apparié. Il s\'agit d\'une hydrodissection au glucosé 5 %, pas d\'un bloc anesthésique (déjà dit dans la légende).',
+      'Probable — fascia prévertébral (ligne violette des auteurs : il coiffe la nappe, qui le décolle du long du cou), veine jugulaire interne collabée, nerf vague (deux repères jaunes des auteurs), nerf phrénique sur le scalène antérieur, ganglion cervico-thoracique et nappe d\'injectat : positions prises sur le corrigé des auteurs ; à 269 px aucun n\'a de contour propre sur le panneau Doppler (nerfs et fascia en pointillé). Le nerf phrénique est au contact du trajet de l\'aiguille.',
+      'Supposition — deux signaux Doppler que les auteurs ne désignent pas : une traînée verticale sous la carotide (x ≈ 185–250), qui recouvre le bord médial du long du cou (débordement de couleur, ou artère thyroïdienne inférieure croisant en arrière de la carotide ?), et un point au contact de l\'extrémité de l\'aiguille (x ≈ 505 : jet d\'injectat, ou artère cervicale ascendante sur le scalène ?). Dessinés en plan non attribué.',
+      'Supposition — arc osseux médial lu comme la face antérieure du corps de C7 (non désigné) ; plans situés autour de l\'artère vertébrale, en dehors de la racine et sous le scalène antérieur non attribués.',
+      'Extrapolé — os sous la corticale (cône d\'ombre).',
+    ],
+    structures: [
+      { id: 'peau', tissu: 'peau', haut: [[0,0],[1000,0]], bas: [[0,30],[1000,30]] },
+      { id: 'sc', tissu: 'graisse', haut: [[0,30],[1000,30]], bas: [[0,52],[1000,52]] },
+      { id: 'scm', tissu: 'muscle', haut: [[0,52],[1000,52]], bas: SCM_BAS },
+      { id: 'cellulaire', tissu: 'conjonctif', haut: SCM_BAS, bas: [[0,700],[1000,700]] },
+      { id: 'thyroide', tissu: 'glande', contour: [[0,185],[60,180],[125,195],[158,225],[160,270],[125,300],[60,312],[0,305]] },
+      { id: 'oesophage', tissu: 'muscle', contour: [[0,360],[60,350],[120,372],[150,420],[140,470],[100,495],[0,500]] },
+      { id: 'ita', tissu: 'artere', contour: ell(105, 228, 28, 22) },
+      { id: 'carotide', tissu: 'artere', contour: ell(220, 258, 54, 54) },
+      { id: 'vji', tissu: 'veine', contour: [[440,151],[520,142],[620,141],[720,148],[735,156],[720,163],[620,160],[520,161],[450,163]] },
+      { id: 'vague', tissu: 'nerf', contour: ell(420, 172, 17, 10), extrapole: true },
+      { id: 'vague2', tissu: 'nerf', contour: ell(338, 166, 15, 9), extrapole: true },
+      { id: 'scalene', tissu: 'muscle', contour: [[535,395],[575,345],[620,300],[700,278],[780,256],[850,238],[885,250],[890,315],[855,372],[780,412],[700,432],[620,434],[560,420]] },
+      { id: 'lco', tissu: 'muscle', contour: [[132,512],[140,440],[165,395],[210,368],[300,355],[400,356],[438,385],[444,440],[432,500],[412,566],[350,540],[300,520],[250,511],[200,512]] },
+      { id: 'prof-lat', tissu: 'indetermine', contour: [[444,440],[535,395],[560,420],[620,434],[700,432],[780,412],[855,372],[890,315],[1000,290],[1000,700],[760,700],[760,528],[730,548],[705,575],[670,592],[620,598],[560,606],[500,606],[450,595],[412,566],[432,500]] },
+      { id: 'injectat', tissu: 'liquide', contour: [[300,342],[380,304],[470,270],[560,266],[602,284],[578,332],[562,372],[522,400],[462,398],[436,364],[380,352],[300,354]] },
+      /* fascia prévertébral : non individualisable sur le Doppler, repris de la ligne violette du corrigé (au-dessus de la nappe, puis en dehors au-dessus de l'aiguille) */
+      { id: 'pvf', tissu: 'fascia', ligne: [[150,400],[200,358],[300,340],[380,302],[470,268],[560,262],[700,222],[880,200]], ep: 5, extrapole: true },
+      { id: 'doppler-carotide', tissu: 'indetermine', contour: [[186,335],[250,338],[254,400],[246,455],[226,482],[202,470],[188,420]] },
+      { id: 'doppler-pointe', tissu: 'indetermine', contour: ell(515, 272, 14, 26) },
+      { id: 'vertebrale', tissu: 'artere', contour: ell(512, 556, 50, 27) },
+      { id: 'c7', tissu: 'nerf', contour: ell(668, 528, 34, 22) },
+      { id: 'ctg', tissu: 'nerf', contour: ell(345, 326, 26, 12), extrapole: true },
+      { id: 'phrenique', tissu: 'nerf', contour: ell(545, 290, 18, 10), extrapole: true },
+      { id: 'aiguille', tissu: 'aiguille', ligne: [[1000,187],[490,322]], ep: 6 },
+      { id: 'os', tissu: 'os', cortex: CORTEX7, vu: [2, 16] },
+    ],
+    labels: [
+      { s: 'ita', x: 105, y: 222, dx: 50, dy: -200, text: 'A. thyroïdienne inf.' },
+      { s: 'vji', x: 600, y: 150, dx: 10, dy: -128, text: 'V. jugulaire interne' },
+      { s: 'aiguille', x: 930, y: 205, dx: 10, dy: -183, text: 'Aiguille' },
+      { s: 'scm', x: 130, y: 112, dx: -70, dy: -17, text: 'SCM' },
+      { s: 'carotide', x: 228, y: 215, dx: 72, dy: -143, text: 'Carotide commune' },
+      { s: 'vague', x: 420, y: 170, dx: 100, dy: -98, text: 'N. vague' },
+      { s: 'phrenique', x: 548, y: 288, dx: 242, dy: -216, text: 'N. phrénique' },
+      { s: 'thyroide', x: 45, y: 275, dx: 35, dy: 60, text: 'Thyroïde' },
+      { s: 'oesophage', x: 60, y: 430, dx: 20, dy: 50, text: 'Œsophage' },
+      { s: 'doppler-carotide', x: 218, y: 455, dx: -83, dy: 105, text: 'Signal non attribué' },
+      { s: 'ctg', x: 345, y: 330, dx: 40, dy: 95, text: 'Chaîne sympathique' },
+      { s: 'lco', x: 300, y: 490, dx: 0, dy: 138, text: 'Long du cou' },
+      { s: 'injectat', x: 505, y: 375, dx: 95, dy: 95, text: 'Injectat' },
+      { s: 'pvf', x: 765, y: 212, dx: 85, dy: 118, text: 'Fascia prévertébral' },
+      { s: 'scalene', x: 720, y: 370, dx: 100, dy: 85, text: 'Scalène antérieur' },
+      { s: 'vertebrale', x: 512, y: 556, dx: 38, dy: 72, text: 'A. vertébrale exposée' },
+      { s: 'c7', x: 690, y: 528, dx: 160, dy: 12, text: 'Racine C7' },
+      { s: 'os', x: 705, y: 578, dx: 147, dy: 50, text: 'Proc. transverse C7' },
+    ],
+  });
 })();
