@@ -76,6 +76,7 @@ ECHO.figures['plexus-cervical-superficiel'] = [
     legende: 'Image réelle richement annotée par les auteurs, **médial à gauche, latéral à droite** comme sur le schéma en regard. Abréviations d\'origine : *ST* = tissu sous-cutané, *SCM* = sterno-cléido-mastoïdien, *IL* = feuillet superficiel du fascia cervical profond (*investing layer*), *PF* = fascia prévertébral, *TP* = processus transverse, *C4* = racine C4 (disque vert), *CA* = carotide, *IJV* = jugulaire interne, *LCM* = long de la tête, *DCM* = muscles cervicaux profonds, *LSM* = élévateur de la scapula. Les trois flèches marquent les trois cibles possibles : **SCP** en sous-cutané au-dessus du feuillet superficiel, **ICP** — la technique de la fiche — dans le plan interfascial entre SCM et fascia prévertébral, **DCP** sous le fascia prévertébral au contact du processus transverse. Retenir la hiérarchie de sécurité : tout ce qui descend sous la ligne *PF* devient un bloc cervical profond, avec son risque phrénique et vasculaire. **Réserve** : l\'image est prise au niveau **C4**, un cran au-dessus du cricoïde (C6) où la fiche pose la sonde ; les plans fasciaux sont les mêmes, les rapports osseux non.',
     credit: 'Spasari E, Cirillo D, Sepolvere G, Ranieri G, Santonastaso DP, Terracciano G, de Giovanni R, Malfi P, Cozzolino A, Coviello A, Langenbeck\'s Archives of Surgery 2026, fig. 16 — CC BY 4.0',
     source: 'https://doi.org/10.1007/s00423-026-03980-0',
+    crop: [0.062, 0.065, 0.873, 0.870],
   },
   {
     type: 'echo',
