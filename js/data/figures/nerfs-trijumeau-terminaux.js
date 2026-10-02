@@ -70,7 +70,7 @@ ECHO.figures['nerfs-trijumeau-terminaux'] = [
     legende: 'Panneau (a) de la figure originale, sonde hockey stick. Annotations anglaises conservées : *OOC* = orbiculaire de l\'œil, *LLS* = élévateur de la lèvre supérieure, *Maxilla* = maxillaire. La **tête de flèche blanche** désigne le foramen, reconnu sur les deux critères de la fiche — **interruption de la ligne corticale** et **spot Doppler** de l\'artère infra-orbitaire — tandis que les têtes de flèche noires suivent la paroi osseuse médiale. **Attention à l\'axe** : l\'image originale est orientée **latéral à gauche, médial à droite**, soit l\'**inverse** du schéma en regard (médial à gauche). Le trajet d\'aiguille de l\'article est par ailleurs **médio-latéral**, choisi pour s\'aligner sur l\'axe du canal en vue d\'une thermocoagulation ; la fiche décrit l\'abord **latéro-médial** tangentiel, qui est celui du bloc simple.',
     credit: 'Wang ST, Chang KV, Wu WT, Özçakar L, Diagnostics 2026, figure 1a — CC BY 4.0',
     source: 'https://doi.org/10.3390/diagnostics16020254',
-    crop: [0.00, 0.00, 0.505, 0.505],
+    crop: [0.007, 0.007, 0.492, 0.491],
     labels: [
       { x: 0.29, y: 0.505, text: 'Foramen + a. infra-orbitaire', dx: -0.06, dy: 0.26 },
       { x: 0.58, y: 0.53, text: 'Corticale du maxillaire', dx: 0.10, dy: 0.20 },
