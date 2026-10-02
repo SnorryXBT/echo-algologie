@@ -78,6 +78,7 @@ ECHO.figures['paravertebral-thoracique'] = [
     legende: 'Image annotée par les auteurs, **crânial à gauche et caudal à droite** (mentions *CRANIAL* / *CAUDAL* incrustées), comme sur le schéma en regard. Abréviations d\'origine : *TM* = trapèze, *RM* = rhomboïde, *ESM* = érecteurs du rachis, *EIM* / *IIM* = muscles intercostaux externe / interne, *TP* = processus transverse, *PLEURA* = plèvre. On retrouve les deux ombres des processus transverses, à sommet aplati, et entre elles la ligne pleurale brillante. Le **coin en pointillé orange**, non défini dans la légende d\'origine, est placé entre le plan du ligament costo-transversaire supérieur et la plèvre : il marque vraisemblablement l\'espace paravertébral (**Supposition**). Le ligament lui-même n\'est pas étiqueté sur ce panneau. **Réserve** : le sommet de l\'ombre de gauche est plus arrondi que sur le schéma ; sur une image fixe, la distinction processus transverse / côte repose ici sur l\'étiquetage des auteurs. En médaillon, la position de sonde et le point de ponction des auteurs.',
     credit: 'Balan C, Bubenek-Turconi SI, Tomescu DR, Valeanu L, Medicina (Kaunas) 2021, fig. 1A — CC BY 4.0',
     source: 'https://doi.org/10.3390/medicina57040312',
+    crop: [0.036, 0.029, 0.928, 0.934],
     labels: [
       { x: 0.43, y: 0.69, text: 'Espace paravertébral (cible)', dx: 0.0, dy: 0.17 },
     ],
@@ -90,7 +91,7 @@ ECHO.figures['paravertebral-thoracique'] = [
     legende: 'Panneau B de la figure d\'origine, recadré — **pièce cadavérique** (étude de diffusion de colorant), niveau T6–T7. Annotations des auteurs : *TP 6* = processus transverse de T6, **flèches jaunes** = aiguille, **triangles blancs** = plèvre, *Medial* / *Lateral*. C\'est l\'argument de l\'abord latéro-médial en une image : l\'aiguille est visible de la peau à la pointe, aborde l\'espace à angle aigu par rapport à la ligne pleurale, et s\'arrête à l\'apex de l\'espace, au pied de l\'ombre du processus transverse. **Orientation inverse de celle du schéma** : ici médial à gauche et latéral à droite, l\'aiguille progresse donc de la droite vers la gauche de l\'écran — trajet toujours latéro-médial. **Incohérence de la source** : la légende d\'origine décrit A comme la coupe transversale et B comme la sagittale, à l\'inverse des mentions incrustées (*Cephalad / Caudal* sur A, *Medial / Lateral* sur B) ; ce sont les mentions incrustées qui font foi ici.',
     credit: 'Tang J, Tang S, Wang N, Bai B, Zhang Y, Zhang Y, Ma M, Bi Y, Shen X, Zhang D, Ma C, Huang Y, Frontiers in Medicine 2025, fig. 1 (panneau B) — CC BY 4.0',
     source: 'https://doi.org/10.3389/fmed.2025.1667862',
-    crop: [0.505, 0.0, 0.495, 0.43],
+    crop: [0.508, 0.006, 0.486, 0.422],
     labels: [
       { x: 0.08, y: 0.47, text: 'Processus transverse T6', dx: 0.17, dy: -0.30 },
       { x: 0.87, y: 0.285, text: 'Aiguille', dx: -0.22, dy: -0.12 },
