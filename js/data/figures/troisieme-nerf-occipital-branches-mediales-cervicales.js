@@ -74,7 +74,7 @@ ECHO.figures['troisieme-nerf-occipital-branches-mediales-cervicales'] = [
     legende: 'Deux panneaux d\'une planche pédagogique : à gauche (b) la colonne des piliers en coupe coronale, à droite (c) le niveau **C2-C3**. Les encarts bleus de l\'original sont des schémas de lecture, pas des annotations de l\'image : *C2-C3*, *C3-C4* = articulations (les sommets) ; *C3 MB*, *C3-C4 MB* = branches médiales (*medial branch*), au creux entre deux sommets ; *TON* = nerf occipital III, figuré en rose **au sommet de l\'articulation C2-C3**. Les abréviations jaunes sont celles de l\'échographe : *LS* = élévateur de la scapula, *SC* = semi-épineux de la tête, *superior/inferior* = crânial/caudal. Le repère décisif du panneau (c) est le **« drop-off »** : au-dessus de C2-C3 la ligne osseuse s\'interrompt brutalement, ce qui authentifie le niveau le plus haut et permet de compter vers le bas sans se tromper.',
     credit: 'Wong MJ, Rajarathinam M, Canadian Journal of Pain 2023, Figure 3 (panneaux b et c) — CC BY 4.0',
     source: 'https://doi.org/10.1080/24740527.2023.2193617',
-    crop: [0.2975, 0.001, 0.7025, 0.184],
+    crop: [0.291, 0.000, 0.709, 0.215],
     labels: [
       { x: 0.365, y: 0.330, text: 'Semi-épineux de la tête (SC)', dx: -0.10, dy: 0.30 },
       { x: 0.788, y: 0.530, text: '« Drop-off » au-dessus de C2-C3', dx: -0.10, dy: 0.30 },
