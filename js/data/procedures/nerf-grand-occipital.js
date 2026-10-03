@@ -201,7 +201,6 @@ Preuves : revue systématique 2024 (Can J Pain) de la PRF du GON dans les cépha
     { titre: 'Ultrasound-Guided Greater Occipital Nerve Block', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-greater-occipital-nerve-block/', note: 'Planche de référence : sono-anatomie et technique' },
     { titre: 'Occipital Neuralgia: Sonoanatomy and Sonopathology of the Occipital Nerves', source: 'NYSORA', url: 'https://nysora.com/pain-management/occipital-neuralgia-sonoanatomy-and-sonopathology-of-the-occipital-nerves/', note: 'Sono-anatomie et sono-pathologie du nerf grand occipital' },
     { titre: 'Greater occipital nerve block', source: 'USRA (usra.ca)', url: 'https://usra.ca/pain-medicine/specific-blocks/head-neck/gon.php', note: 'coupes commentées et trajet d\'aiguille' },
-    { titre: 'Greater occipital nerve block (ultrasound-guided)', source: 'Radiopaedia', url: 'https://radiopaedia.org/articles/greater-occipital-nerve-block-ultrasound-guided', note: 'rappel anatomique et repères' },
     { titre: 'Occipital nerve block — StatPearls', source: 'NCBI Bookshelf', url: 'https://www.ncbi.nlm.nih.gov/books/NBK580523/', note: 'texte de synthèse, complications' },
   ],
 

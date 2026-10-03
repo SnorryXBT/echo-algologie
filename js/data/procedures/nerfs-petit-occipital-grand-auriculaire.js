@@ -188,7 +188,6 @@ Deux réserves : la valeur diagnostique disparaît (on ne saura pas quel nerf po
     { titre: 'The Ultrasound Guided Lesser Occipital Nerve Block (NRAP Academy’s Ultrasound Course excerpt)', source: 'YouTube', url: 'https://www.youtube.com/watch?v=ENVRqkC-zQY', note: 'NRAP Academy (Dr David Rosenblum) : bloc du petit occipital au bord postérieur du SCM, 2 min' },
     { titre: 'Complex auricular neuralgia treated with GAN and facet blocks – Video abstract 126923', source: 'YouTube', url: 'https://www.youtube.com/watch?v=bccCtE3DBxE', note: 'Dove Medical Press (vidéo d\'article, Journal of Pain Research) : bloc du grand auriculaire, 2 min' },
     { titre: 'Ultrasound-Guided Cervical Plexus Nerve Block', source: 'NYSORA', url: 'https://nysora.com/regional-anesthesia/techniques/head-and-neck-blocks/cervical/ultrasound-guided-cervical-plexus-block/', note: 'Planche de référence : sono-anatomie et technique (branches du plexus cervical superficiel, dont le petit occipital)' },
-    { titre: 'Superficial cervical plexus nerve block (ultrasound)', source: 'Radiopaedia', url: 'https://radiopaedia.org/articles/superficial-cervical-plexus-nerve-block-ultrasound', note: 'coupes commentées, plan interfascial' },
     { titre: 'Cervical plexus block', source: 'USRA (usra.ca)', url: 'https://usra.ca/regional-anesthesia/specific-blocks/neck/cervicalplexus.php', note: 'repères, technique et limites du bloc superficiel' },
   ],
 
