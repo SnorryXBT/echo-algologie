@@ -16,7 +16,7 @@
     fig: 'img/nevrome-cicatriciel/echo-1.jpg',
     crop: [0.005, 0.092, 0.585, 0.806],
     panneau: 'A',
-    valide: false,
+    valide: true,
     vb: [1000, 500], orient: { left: 'Distal', right: 'Proximal' },
     lecture: [
       'Certain — orientation : légende d\'origine « left, distal; right, proximal », coupe longitudinale de la face dorsale du poignet. Le schéma apparié met le proximal à gauche : la figure du mémo le dit déjà.',

@@ -14,7 +14,7 @@
   const TP = [[340,790],[376,747],[421,726],[458,695],[477,653],[494,622],[505,597],[506,552],[499,524],[477,500],[464,487],[464,469],[477,458],[499,454],[525,461],[541,479],[564,489],[592,491],[617,483],[645,471],[662,457],[671,437],[675,418],[688,414],[699,416],[716,431],[730,451],[734,461],[723,471],[702,491],[689,505],[690,522],[699,536],[699,550],[710,564],[711,601],[738,596],[769,584],[797,580],[825,578],[848,584],[867,598],[879,626],[886,660],[888,690],[892,790]];
   ECHO.anat['plexus-cervical-superficiel'] = [{
     fig: 'img/plexus-cervical-superficiel/echo-1.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 771], orient: { left: 'Antérieur / médial', right: 'Postérieur / latéral' },
     lecture: [
       'Probable — veine jugulaire interne : désignée par les auteurs (sigle IJV) en avant et en dedans de la carotide, alors qu\'elle est habituellement antéro-latérale. Compatible avec une sonde postéro-latérale et une tête tournée (la veine vient alors recouvrir la carotide), mais seule une partie de la lumière est dans le champ, sans paroi propre visible : dessinée là où les auteurs la désignent, à confirmer.',

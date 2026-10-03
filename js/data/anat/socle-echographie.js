@@ -13,7 +13,7 @@
     fig: 'img/socle-echographie/echo-2.jpg',
     crop: [0, 0.513, 1, 0.487],
     panneau: 'B (hors du plan)',
-    valide: false,
+    valide: true,
     vb: [1000, 505], orient: { left: 'Proximal', right: 'Distal' },
     lecture: [
       'Certain — orientation et plan : coupe longitudinale de la 4e articulation métatarso-phalangienne gauche, tête métatarsienne (croix des auteurs) à gauche, base de la phalange proximale (double croix) à droite, donc proximal à gauche. Face dorsale **probable** : les auteurs ne l\'écrivent pas, mais l\'épanchement distend le récessus situé au-dessus de la tête, comme dans l\'abord dorsal habituel.',

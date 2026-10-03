@@ -12,7 +12,7 @@
   const CORTEX = [[0,535],[100,530],[200,528],[280,522],[325,513],[345,530],[370,548],[400,552],[435,546],[455,524],[475,503],[510,498],[550,512],[600,520],[628,517],[697,443],[750,392],[800,350],[860,318],[912,300],[1000,285]];
   ECHO.anat['nerfs-trijumeau-terminaux'] = [{
     fig: 'img/nerfs-trijumeau-terminaux/echo-1.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 994], orient: { left: 'Latéral', right: 'Médial (nez)' },
     lecture: [
       'Supposition — limites des deux muscles : image de 361 px, speckle grossier. Les auteurs donnent l\'ordre (orbiculaire de l\'œil en surface, élévateur de la lèvre supérieure en profondeur, sigles OOC et LLS), pas les contours. L\'orbiculaire est tracé sur la bande hypoéchogène oblique (nette en dedans, y ≈ 125–190 ; masquée par le sigle OOC au milieu ; devinée en dehors) ; l\'élévateur est dessiné comme la couche posée sur l\'os, sans limite latérale identifiable — la plage ovale hypoéchogène en dehors (x ≈ 30–190, y ≈ 340–440) n\'est pas nommée.',

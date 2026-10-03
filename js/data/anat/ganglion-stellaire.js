@@ -8,7 +8,7 @@
   const ovale = (cx, cy, rx, ry) => { const o = []; for (let i = 0; i < 12; i++) { const t = i / 12 * 2 * Math.PI; o.push([Math.round(cx + rx * Math.cos(t)), Math.round(cy + ry * Math.sin(t))]); } return o; };
   ECHO.anat['ganglion-stellaire'] = [{
     fig: 'img/ganglion-stellaire/echo-1.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 447], orient: { left: 'Latéral', right: 'Médial' },
     lecture: [
       'Certain — orientation : carotide commune à droite de l\'image, donc médial à droite ; image en miroir du schéma apparié (déjà dit dans la légende).',
@@ -16,7 +16,7 @@
       'Probable — surface du corps vertébral de C6 : bande hyperéchogène sous le long du cou, prolongée en dedans sous la carotide.',
       'Supposition — plans superficiels : contraste écrasé (noir sur noir) au-dessus du fascia ; le sterno-cléido-mastoïdien est dessiné comme une couche unique, la veine jugulaire interne (collabée par la sonde ?) n\'est pas individualisable et n\'est pas dessinée.',
       'Probable — scalène antérieur en avant de la racine C6 (inséré sur le tubercule antérieur) et scalène moyen en dehors, sur le tubercule postérieur : disposition reprise de la coupe de référence fournie par Mat (RAAPM, bloc en C6) ; sur cette image les deux masses ne sont pas séparées par un signal propre.',
-      'Probable — au-delà du dépôt latéral (LA), la nappe se prolonge en dedans sous le fascia, sur la face antérieure du long du cou : c\'est la lame fine comprise entre le pointillé vert et le pointillé jaune des auteurs. C\'est le plan de la chaîne sympathique, que l\'injectat doit envelopper (remarque de Mat).',
+      'Validé par Mat (3 octobre), avec deux corrections appliquées : l\'injectat est figuré pour l\'essentiel au niveau de la chaîne sympathique, dans le fascia prévertébral sur la face antérieure du long du cou (NYSORA : « into prevertebral fascia between the carotid artery and the tip of C6 anterior tubercle »), le dépôt latéral n\'étant que le point d\'entrée ; le scalène antérieur descend jusqu\'à la racine C6.',
       'Extrapolé — profondeur des corticales (cône d\'ombre). La chaîne sympathique cervicale elle-même n\'est pas visible : dessinée dans la nappe sous-fasciale, en avant du long du cou — étiquetée sur la coupe anatomique seulement.',
     ],
     structures: [
@@ -25,25 +25,25 @@
       { id: 'scm', tissu: 'muscle', haut: [[0,62],[950,62]], bas: TOIT, extrapole: true },
       /* scalène antérieur : en avant de la racine, inséré sur le tubercule antérieur ; scalène moyen : en dehors et en arrière, sur le tubercule postérieur —
          disposition calquée sur la coupe de référence fournie par Mat (RAAPM, bloc stellaire en C6), pas sur un signal propre de cette image */
-      { id: 'scal-ant', tissu: 'muscle', contour: T([[232,197],[440,210],[442,282],[425,300],[380,296],[340,284],[300,282],[262,296],[240,262],[228,225]]) },
+      { id: 'scal-ant', tissu: 'muscle', contour: T([[232,197],[440,210],[442,282],[440,330],[412,358],[360,350],[310,330],[268,312],[240,262],[228,225]]) },   // descend jusqu'à la racine C6 (remarque de Mat, réf. NYSORA)
       { id: 'scal-moy', tissu: 'muscle', contour: T([[0,178],[228,197],[226,240],[238,300],[236,335],[222,360],[200,385],[175,400],[158,430],[0,450]]) },
       { id: 'lc', tissu: 'muscle', contour: T([[560,225],[640,222],[680,230],[750,275],[800,290],[780,310],[720,350],[650,395],[560,410],[520,400],[515,340],[500,300],[530,280],[555,245]]) },
       { id: 'cca', tissu: 'artere', contour: ovale(812, 240 - 39, 66, 37) },
       { id: 'racine', tissu: 'nerf', contour: ovale(296, 376 - 39, 50, 47) },
-      { id: 'al', tissu: 'liquide', contour: T([[430,215],[520,212],[560,222],[552,250],[522,275],[470,280],[440,265]]) },
+      { id: 'al', tissu: 'liquide', contour: T([[432,215],[520,212],[536,236],[520,260],[472,266],[442,254]]) },
       /* diffusion sous-fasciale en dedans, sur la face antérieure du long du cou : c'est là que passe la chaîne sympathique, et c'est elle que la nappe doit envelopper —
          lame fine entre le pointillé vert (fascia) et le pointillé jaune (long du cou) des auteurs */
-      { id: 'nappe', tissu: 'liquide', haut: T([[550,214],[600,213],[650,215],[700,223],[745,250]]), bas: T([[550,228],[600,225],[650,223],[700,232],[745,270]]) },
-      { id: 'chaine', tissu: 'nerf', contour: ovale(612, 219 - 39, 13, 5), extrapole: true },
+      { id: 'nappe', tissu: 'liquide', haut: T([[518,211],[600,208],[650,208],[700,218],[745,248]]), bas: T([[520,242],[600,240],[650,238],[700,246],[745,274]]) },   // l'essentiel de l'injectat : dans le fascia prévertébral, sur la face antérieure du long du cou, autour de la chaîne
+      { id: 'chaine', tissu: 'nerf', contour: ovale(612, 224 - 39, 13, 6), extrapole: true },
       { id: 'fascia', tissu: 'fascia', ligne: FASCIA, ep: 5 },
       { id: 'aiguille', tissu: 'aiguille', ligne: T([[0,146],[485,251]]), ep: 5 },
       { id: 'c6', tissu: 'os', cortex: CORTEX, vu: [1, 21] },
     ],
     labels: [
-      { s: 'scm', x: 450, y: 82, dx: 0, dy: -52, text: 'Sterno-cléido-mastoïdien (supposé)' },
-      { s: 'aiguille', x: 200, y: 150, dx: -50, dy: -105, text: 'Aiguille', vue: 'anat' },
-      { s: 'al', x: 480, y: 205, dx: -150, dy: -105, text: 'Dépôt d\'anesthésique local', vue: 'anat' },
-      { s: 'chaine', x: 612, y: 186, dx: -10, dy: -86, text: 'Chaîne sympathique, dans la nappe', vue: 'anat' },
+      { s: 'scm', x: 330, y: 82, dx: -90, dy: -52, text: 'SCM (supposé)' },
+      { s: 'aiguille', x: 120, y: 125, dx: 10, dy: -80, text: 'Aiguille', vue: 'anat' },
+      { s: 'nappe', x: 560, y: 186, dx: -30, dy: -140, text: 'Nappe d\'AL (fascia prévertébral)', vue: 'anat' },
+      { s: 'chaine', x: 612, y: 186, dx: 40, dy: -86, text: 'Chaîne sympathique', vue: 'anat' },
       { s: 'fascia', x: 700, y: 181, dx: 200, dy: -121, text: 'Fascia prévertébral', vue: 'anat' },
       { s: 'cca', x: 840, y: 182, dx: 60, dy: -72, text: 'Carotide commune', vue: 'anat' },
       { s: 'scal-ant', x: 340, y: 205, dx: -150, dy: -55, text: 'Scalène antérieur' },
@@ -69,6 +69,7 @@
     valide: false,
     vb: [1000, 647], orient: { left: 'Médial', right: 'Latéral' },
     lecture: [
+      'Corrigé le 3 octobre à la demande de Mat (réf. NYSORA, bloc sympathique cervical) : la nappe est confinée en dedans de la pointe de l\'aiguille, dans le fascia prévertébral sur la face antérieure du long du cou, autour du ganglion ; elle ne déborde plus sur le scalène antérieur ni sur le phrénique. À revalider.',
       'Probable — extrémité de l\'aiguille : le fût brillant est suivi depuis le bord latéral jusqu\'à x ≈ 490, au bord latéral du long du cou ; c\'est là que l\'aiguille est arrêtée sur le tracé. La ligne brillante horizontale qui continue vers la carotide (y ≈ 350, avec un renforcement très brillant sous l\'artère) n\'est pas dans l\'axe du fût : elle est lue comme le plan prévertébral à la surface du long du cou, pas comme l\'aiguille. Si c\'était l\'aiguille, sa pointe serait sous la carotide.',
       'Certain — point de sécurité : en C7 l\'artère vertébrale (signal Doppler faible, x ≈ 460–560) est dans la gouttière en avant du processus transverse, entre le long du cou et la racine C7, sans tubercule antérieur pour la couvrir — sigles VA, C7 et C7TP des auteurs, et texte de l\'article (« the C7 nerve root lies between the vertebral artery medially and the posterior tubercle of C7 laterally »). Elle est à l\'aplomb de l\'extrémité de l\'aiguille, plus profonde d\'environ deux diamètres carotidiens : seuls des muscles les séparent.',
       'Certain — orientation (croix « Medial / Lateral » des auteurs : médial à gauche, comme le schéma apparié) ; carotide commune, artère thyroïdienne inférieure dans la thyroïde, sterno-cléido-mastoïdien, long du cou, scalène antérieur, œsophage : aplats du panneau colorisé voisin, reportés sur le Doppler.',
@@ -93,7 +94,7 @@
       { id: 'scalene', tissu: 'muscle', contour: [[535,395],[575,345],[620,300],[700,278],[780,256],[850,238],[885,250],[890,315],[855,372],[780,412],[700,432],[620,434],[560,420]] },
       { id: 'lco', tissu: 'muscle', contour: [[132,512],[140,440],[165,395],[210,368],[300,355],[400,356],[438,385],[444,440],[432,500],[412,566],[350,540],[300,520],[250,511],[200,512]] },
       { id: 'prof-lat', tissu: 'indetermine', contour: [[444,440],[535,395],[560,420],[620,434],[700,432],[780,412],[855,372],[890,315],[1000,290],[1000,700],[760,700],[760,528],[730,548],[705,575],[670,592],[620,598],[560,606],[500,606],[450,595],[412,566],[432,500]] },
-      { id: 'injectat', tissu: 'liquide', contour: [[300,342],[380,304],[470,270],[560,266],[602,284],[578,332],[562,372],[522,400],[462,398],[436,364],[380,352],[300,354]] },
+      { id: 'injectat', tissu: 'liquide', contour: [[300,342],[380,304],[470,270],[518,268],[528,322],[508,378],[462,398],[436,364],[380,352],[300,354]] },   // nappe confinée en dedans de la pointe, dans le fascia prévertébral sur le long du cou — pas sur le scalène antérieur ni le phrénique (réf. NYSORA, correction demandée par Mat)
       /* fascia prévertébral : non individualisable sur le Doppler, repris de la ligne violette du corrigé (au-dessus de la nappe, puis en dehors au-dessus de l'aiguille) */
       { id: 'pvf', tissu: 'fascia', ligne: [[150,400],[200,358],[300,340],[380,302],[470,268],[560,262],[700,222],[880,200]], ep: 5, extrapole: true },
       { id: 'doppler-carotide', tissu: 'indetermine', contour: [[186,335],[250,338],[254,400],[246,455],[226,482],[202,470],[188,420]] },

@@ -28,7 +28,7 @@
 
   ECHO.anat['socle-cryoneurolyse'] = [{
     fig: 'img/socle-cryoneurolyse/echo-1.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 667], orient: { left: 'Proximal (probable)', right: 'Distal' },
     lecture: lecture('Segment gauche (x ≈ 100–400) : continuation probable de la même corticale, interrompue par l\'ombre de la boule.',
       'plage anéchogène à liseré antérieur hyperéchogène, née de la pointe, 0,80 cm (calipers), suivie d\'un cône d\'ombre franc.'),
@@ -45,7 +45,7 @@
     ],
   }, {
     fig: 'img/socle-cryoneurolyse/echo-2.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 663], orient: { left: 'Proximal (probable)', right: 'Distal' },
     lecture: lecture('Ligne profonde gauche de la fig. 4 à peine visible ici : seule la corticale de droite est tracée en plein.',
       'à 4 min, 1,12 cm (calipers) ; contour posé sur la limite sombre supérieure, l\'arc brillant qu\'elle contient (y ≈ 128) étant lu comme son bord antérieur réverbéré (Probable). Elle atteint en profondeur le niveau de la corticale extrapolée.'),
