@@ -194,7 +194,10 @@ Ponction **in-plane, avec le trajet le plus tangentiel possible** : l\'aiguille 
     { auteurs: 'Cummings M, Ross-Marrs R, Gerwin R', titre: 'Pneumothorax complication of deep dry needling demonstration', revue: 'Acupunct Med', annee: '2014', type: 'cas clinique', verif: false, note: 'Rappel que l\'aiguille fine ne protège pas de la ponction pleurale.' },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Learn Ultrasound Guided Trigger Point Injections with R3', source: 'YouTube', url: 'https://www.youtube.com/watch?v=3oQUmI6BfMI', note: 'R3 Medical Training : infiltration échoguidée de points gâchettes du trapèze, 3 min 50' },
+    { titre: 'Trigger Point Injections - Ultrasound Guided', source: 'YouTube', url: 'https://www.youtube.com/watch?v=EyKDI-eERhM', note: 'Cypress Healthcare : démonstration en cabinet, 1 min 23' },
+  ],
 
   scenes: [
     {

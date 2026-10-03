@@ -210,10 +210,11 @@ Le compromis utile en HDJ : échographie pour tout ce qui est périphérique et 
     { verif: true, auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco' },
   ],
   videos: [
+    { titre: 'Genicular RF Ablation: Prof. Philip Peng Explains This Advanced Knee Pain Procedure', source: 'YouTube', url: 'https://www.youtube.com/watch?v=3aPuqT9b7J8', note: 'Neuron Pain Clinic (Dr Rajendra Sahoo) : conférence du Pr Philip Peng (Toronto) sur la RF échoguidée des nerfs géniculés, 59 min' },
+    { titre: 'Cervical Medial Branch Block and Radiofrequency Ablation – Oblique Approach', source: 'NYSORA', url: 'https://nysora.com/interventional-pain/cervical-medial-branch-block-radiofrequency-ablation-oblique/', note: 'Exemple NYSORA de radiofréquence échoguidée ; pas de planche de physique de la RF' },
     { titre: 'Radiofrequency ablation — StatPearls', source: 'NCBI Bookshelf', url: 'https://www.ncbi.nlm.nih.gov/sites/books/NBK482387/', note: 'Texte de référence libre : physique, paramètres, complications' },
     { titre: 'Radiofrequency ablation and its role in treating chronic pain', source: 'ASRA News', url: 'https://asra.com/news-publications/asra-newsletter/newsletter-item/asra-news/2020/08/01/radiofrequency-ablation-and-its-role-in-treating-chronic-pain' },
     { titre: 'The role of sensory and motor stimulation in RF pain procedures', source: 'Polar Medical', url: 'https://www.polarmedical.co.uk/the-role-of-sensory-and-motor-stimulation-in-rf-pain-procedures/', note: 'Rappel pratique des seuils' },
-    { titre: 'Ultrasound-guided third occipital nerve and cervical medial branch nerve blocks', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-third-occipital-nerve-and-cervical-medial-branch-nerve-blocks/', note: 'Sono-anatomie des cibles cervicales, préalable à toute PRF cervicale' },
   ],
 
   scenes: [

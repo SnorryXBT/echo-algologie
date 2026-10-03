@@ -202,7 +202,9 @@ C\'est la voie la mieux étudiée. Elle a été validée en cadavre avec contrô
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco' },
   ],
   videos: [
-    { titre: 'Ultrasound-guided cervical zygapophyseal (facet) intra-articular injection', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-cervical-zygapophyseal-facet-intra-articular-injection/', note: 'voie latérale, image « saw sign », trajet d\'aiguille' },
+    { titre: 'Ultrasound-Guided Cervical Facet Joint Injection – Cervical Medial Branch Block Medstudylab.com', source: 'YouTube', url: 'https://www.youtube.com/watch?v=jdYiVV1LVzk', note: 'Anesthesia and Pain medicine (Medstudylab) : infiltration facettaire cervicale et bloc des branches médiales, 10 min' },
+    { titre: 'Ultrasound-guided cervical facet joint injection, in-plane approach, technique, and weak points', source: 'YouTube', url: 'https://www.youtube.com/watch?v=TJf_1j4XbZk', note: 'Practical Pain Management with Dr. Lee : abord dans le plan, limites, 6 min' },
+    { titre: 'Ultrasound-Guided Cervical Zygapophyseal (Facet) Intra-Articular Injection', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-cervical-zygapophyseal-facet-intra-articular-injection/', note: 'Planche de référence : sono-anatomie et technique' },
     { titre: 'Ultrasound sonoanatomy and associated interventional procedures for axial structures', source: 'ASRA Pain Medicine', url: 'https://asra.com/news-publications/asra-updates/blog-landing/legacy-b-blog-posts/2019/08/06/ultrasound-sonoanatomy-and-associated-interventional-procedures-for-axial-structures', note: 'repérage des piliers et des interlignes, limites de l\'échographie au rachis' },
   ],
 

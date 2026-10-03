@@ -215,7 +215,7 @@ C’est aussi ce qui rend le geste descriptible et défendable en cas de contrô
     { titre: 'Diagnosis and management of infections related to spinal pain interventions', revue: 'Anesth Pain Med (Seoul)', type: 'revue', verif: false, note: 'Incidence, abcès épidural, S. aureus, délai d’apparition ; année et référence exacte à confirmer.' },
   ],
   videos: [
-    { titre: 'Regional anesthesia in anticoagulated patients', source: 'NYSORA', url: 'https://www.nysora.com/topics/sub-specialties/regional-anesthesia-in-anticoagulated-patients/', note: 'Synthèse des délais d’interruption' },
+    { titre: 'Regional Anesthesia in Anticoagulated Patients', source: 'NYSORA', url: 'https://nysora.com/regional-anesthesia/topics/sub-specialties/regional-anesthesia-in-anticoagulated-patients/', note: 'Gestion des antithrombotiques' },
     { titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition)', source: 'ASRA Pain Medicine', url: 'https://asra.com/news-publications/asra-updates/blog-landing/guidelines/2022/12/14/interventional-spine-and-pain-procedures-in-patients-on-antiplatelet-and-anticoagulant-medications-(second-edition)', note: 'Page de la recommandation de 2018' },
     { titre: 'Les check-lists pour la sécurité du patient', source: 'Haute Autorité de Santé', url: 'https://www.has-sante.fr/jcms/c_1518984/fr/les-check-lists-pour-la-securite-du-patient' },
   ],

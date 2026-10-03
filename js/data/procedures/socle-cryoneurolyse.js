@@ -217,10 +217,12 @@ Intérêt pour un centre de douleur travaillant avec des chirurgiens : c'est un 
     { verif: true, titre: 'Effect of ultrasound-guided genicular nerve neurolysis versus sham procedure on pain in patients with knee osteoarthritis: a randomized clinical trial', revue: 'Pain Medicine', pmid: '40581824', type: 'ECR', note: 'Neurolyse **chimique** (éthanol 95 %), 100 patients — comparateur utile, technique différente. Année non relevée lors de la recherche.' },
   ],
   videos: [
+    { titre: 'Deep Genicular Nerve Cryoneurolysis – Ultrasound-Guided Knee Procedure', source: 'YouTube', url: 'https://www.youtube.com/watch?v=6U66H2HwmCQ', note: 'iovera° (vidéo du fabricant) : cryoneurolyse échoguidée des nerfs géniculés, boule de glace visible, 1 min' },
+    { titre: 'Evaluating cryoneurolysis as a minimally invasive solution for chronic non-cancer pain', source: 'NYSORA', url: 'https://nysora.com/education-news/evaluating-cryoneurolysis-as-a-minimally-invasive-solution-for-chronic-non-cancer-pain/', note: 'Synthèse NYSORA ; pas de planche technique dédiée' },
+    { titre: 'Cryoneurolysis fails to demonstrate lasting benefit for phantom limb pain after above-knee amputation', source: 'NYSORA', url: 'https://nysora.com/education-news/cryoneurolysis-fails-to-demonstrate-lasting-benefit-for-phantom-limb-pain-after-above-knee-amputation/', note: 'Synthèse NYSORA d\'un essai négatif' },
     { titre: 'Cryoanalgesia — StatPearls', source: 'NCBI Bookshelf (texte + figures)', url: 'https://www.ncbi.nlm.nih.gov/books/NBK482123/', note: 'Mécanisme, matériel, complications' },
     { titre: 'Percutaneous image-guided cryoneurolysis: applications and techniques', source: 'RadioGraphics (RSNA)', url: 'https://pubs.rsna.org/doi/full/10.1148/rg.220082', note: 'Iconographie des cibles et des boules de glace' },
     { titre: 'Cryo-S Painless — cryoanalgésie dans la douleur chronique', source: 'Metrum Cryoflex', url: 'https://www.metrum.com.pl/en/medical-products/cryoanalgesia/cryo-s-painless-for-cryoanalgesia-for-chronic-pain/', note: 'Documentation constructeur : gaz, gamme de cryosondes, neurostimulation intégrée' },
-    { titre: 'Cryoneurolysis fails to demonstrate lasting benefit for phantom limb pain after above-knee amputation', source: 'NYSORA', url: 'https://www.nysora.com/education-news/cryoneurolysis-fails-to-demonstrate-lasting-benefit-for-phantom-limb-pain-after-above-knee-amputation/', note: 'Le signal négatif et son explication technique' },
   ],
 
   scenes: [

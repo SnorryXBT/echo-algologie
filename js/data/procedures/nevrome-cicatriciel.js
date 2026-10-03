@@ -234,6 +234,7 @@ Ce qu'il faut dire au patient et au chirurgien : la **résection simple d'un né
     { verif: true, titre: 'Ultrasound-guided percutaneous cryoneurolysis for post-thoracotomy pain syndrome: a case report', revue: 'Cureus', annee: '2023', pmid: '36699749', type: 'cas clinique', note: 'Amélioration de 75 % pendant 6 semaines puis 50 % pendant 8 semaines.' },
   ],
   videos: [
+    { titre: 'Ultrasound guided post amputation median nerve neuroma injection with immediate pain relief.', source: 'YouTube', url: 'https://www.youtube.com/watch?v=P5j5SwtWuok', note: 'Dr Ahmed Hegab pain relief clinic : infiltration échoguidée d\'un névrome de moignon du nerf médian, 35 s' },
     { titre: 'Ultrasound-guided neuroma injection', source: 'ASRA — blog', url: 'https://asra.com/news-publications/asra-updates/blog-landing/legacy-b-blog-posts/2019/08/06/ultrasound-guided-neuroma-injection', note: 'Technique de bloc et d\'infiltration péri-névromateuse' },
     { titre: 'Traumatic neuroma — imagerie', source: 'Radsource (MRI Web Clinic)', url: 'https://radsource.us/traumatic-neuroma/', note: 'Sémiologie et diagnostic différentiel' },
     { titre: 'Sonography of peripheral nerve pathology', source: 'AJR (texte intégral, figures)', url: 'https://ajronline.org/doi/full/10.2214/ajr.182.1.1820123', note: 'Iconographie des névromes et des lésions nerveuses' },

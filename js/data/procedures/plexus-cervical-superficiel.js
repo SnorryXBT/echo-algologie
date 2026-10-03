@@ -179,7 +179,11 @@ En pratique de douleur chronique, préférer l\'intermédiaire pour le bloc thé
     { auteurs: 'Choi DS, Atchabahian A, Brown AR', titre: 'Cervical plexus block provides postoperative analgesia after clavicle surgery', revue: 'Anesth Analg', annee: '2005', type: 'cas cliniques / lettre', verif: false },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true, note: 'Classification du risque hémorragique des procédures de douleur interventionnelle.' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Superficial cervical plexus block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=hmfvUldlvfY', note: 'Regional Anesthesiology and Acute Pain Medicine : bloc au bord postérieur du SCM, 7 min' },
+    { titre: 'Superficial Cervical Plexus Block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=480jYSpjsNE', note: 'Clarius Mobile Health : démonstration courte, 1 min' },
+    { titre: 'Ultrasound-Guided Cervical Plexus Nerve Block', source: 'NYSORA', url: 'https://nysora.com/regional-anesthesia/techniques/head-and-neck-blocks/cervical/ultrasound-guided-cervical-plexus-block/', note: 'Planche de référence : sono-anatomie et technique' },
+  ],
 
   scenes: [
     {

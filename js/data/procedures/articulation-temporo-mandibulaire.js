@@ -186,7 +186,10 @@ Résultats : gain d\'ouverture buccale et baisse de la douleur bien documentés 
     { auteurs: 'Sivri MB, Ozkan Y, Pekiner FN, Gocmen G', titre: 'Comparison of ultrasound-guided and conventional arthrocentesis of the temporomandibular joint', revue: 'Br J Oral Maxillofac Surg', annee: '2016', type: 'étude comparative', verif: false },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Ultrasound-Guided Temporomandibular Joint Aspiration: A Case Series', source: 'YouTube', url: 'https://www.youtube.com/watch?v=OLsLsdWTpEk', note: 'AIUM (American Institute of Ultrasound in Medicine) : ponction échoguidée de l\'ATM, série de cas, 11 min' },
+    { titre: 'Ultrasound-Guided Injections For Management of Temporo-Mandibular Joint Internal Derangement', source: 'YouTube', url: 'https://www.youtube.com/watch?v=GRWOls7sW3A', note: 'PCO Professional Academy : infiltration échoguidée de l\'ATM, 8 min' },
+  ],
 
   scenes: [
     {

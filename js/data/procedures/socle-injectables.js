@@ -242,9 +242,10 @@ Position d’ensemble : aucun adjuvant périneural n’a d’AMM pour cet usage,
     { titre: 'L’acide hyaluronique dans l’arthrose de genou ?', revue: 'CBIP — Folia Pharmacotherapeutica', url: 'https://www.cbip.be/fr/articles/4186?folia=4179', type: 'synthèse', verif: true, note: 'Synthèse des recommandations divergentes (NICE, AAOS, ACR contre ; OARSI pour) et de la méta-analyse BMJ 2022.' },
   ],
   videos: [
-    { titre: 'Local anesthetic systemic toxicity (LAST)', source: 'NYSORA', url: 'https://nysora.com/anesthesia/local-anesthetic-systemic-toxicity-last/', note: 'Prévention, reconnaissance, traitement' },
+    { titre: 'LAST (Local Anesthetic Systemic Toxicity): A practical update for clinicians', source: 'YouTube', url: 'https://www.youtube.com/watch?v=6dnfkEsySKU', note: 'Regional Anesthesiology and Acute Pain Medicine : cours (pas une démonstration de geste) sur la toxicité systémique des AL, 13 min' },
+    { titre: 'Local anesthetic systemic toxicity (LAST)', source: 'NYSORA', url: 'https://nysora.com/anesthesia/local-anesthetic-systemic-toxicity-last/', note: 'Toxicité systémique des AL : prévention et traitement' },
+    { titre: 'Clinical Pharmacology of Local Anesthetics', source: 'NYSORA', url: 'https://nysora.com/regional-anesthesia/topics/pharmacology/clinical-pharmacology-local-anesthetics/', note: 'Pharmacologie des anesthésiques locaux' },
     { titre: 'Checklist for treatment of local anesthetic systemic toxicity', source: 'ASRA Pain Medicine', url: 'https://asra.com/news-publications/asra-updates/blog-landing/guidelines/2020/11/01/checklist-for-treatment-of-local-anesthetic-systemic-toxicity', note: 'À imprimer et afficher en salle' },
-    { titre: 'Clinical pharmacology of local anesthetics', source: 'NYSORA', url: 'https://www.nysora.com/topics/pharmacology/clinical-pharmacology-local-anesthetics/' },
   ],
 
   scenes: [

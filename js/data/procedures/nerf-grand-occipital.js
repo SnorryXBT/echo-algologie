@@ -196,7 +196,10 @@ Preuves : revue systématique 2024 (Can J Pain) de la PRF du GON dans les cépha
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco' },
   ],
   videos: [
-    { titre: 'Ultrasound-guided greater occipital nerve block', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-greater-occipital-nerve-block/', note: 'sono-anatomie des deux niveaux, images de référence' },
+    { titre: 'Greater Occipital Nerve Block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=FVDDqLPbEIs', note: 'Leicester Pain Education (NHS) : bloc proximal échoguidé, 2 min' },
+    { titre: 'Greater Occipital Nerve Block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=SGYAYfewQNs', note: 'Regional Anesthesia (ISURA) : abord à C2 entre obliquus capitis inferior et semispinalis capitis, 2 min 23' },
+    { titre: 'Ultrasound-Guided Greater Occipital Nerve Block', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-greater-occipital-nerve-block/', note: 'Planche de référence : sono-anatomie et technique' },
+    { titre: 'Occipital Neuralgia: Sonoanatomy and Sonopathology of the Occipital Nerves', source: 'NYSORA', url: 'https://nysora.com/pain-management/occipital-neuralgia-sonoanatomy-and-sonopathology-of-the-occipital-nerves/', note: 'Sono-anatomie et sono-pathologie du nerf grand occipital' },
     { titre: 'Greater occipital nerve block', source: 'USRA (usra.ca)', url: 'https://usra.ca/pain-medicine/specific-blocks/head-neck/gon.php', note: 'coupes commentées et trajet d\'aiguille' },
     { titre: 'Greater occipital nerve block (ultrasound-guided)', source: 'Radiopaedia', url: 'https://radiopaedia.org/articles/greater-occipital-nerve-block-ultrasound-guided', note: 'rappel anatomique et repères' },
     { titre: 'Occipital nerve block — StatPearls', source: 'NCBI Bookshelf', url: 'https://www.ncbi.nlm.nih.gov/books/NBK580523/', note: 'texte de synthèse, complications' },

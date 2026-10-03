@@ -205,6 +205,8 @@ Sens de ponction choisi pour arriver **tangentiellement au nerf**, dans l'interf
     { verif: true, auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', note: 'Reprise de la fiche de référence du mémo.' },
   ],
   videos: [
+    { titre: 'Webinar: Ultrasound-guided Peripheral Nerve Hydrodissection', source: 'YouTube', url: 'https://www.youtube.com/watch?v=UfrFQvg_6ng', note: 'Sonosite : webinaire avec démonstrations d\'hydrodissection périneurale, 37 min' },
+    { titre: 'Non-Surgical Carpal Tunnel Treatment with Nerve Hydrodissection | Sebastian Klisiewicz', source: 'YouTube', url: 'https://www.youtube.com/watch?v=RCz1RSvcFUI', note: 'Integrative Rehab Medicine (Dr S. Klisiewicz, DO) : hydrodissection du nerf médian, 2 min' },
     { titre: 'Ultrasound-guided nerve hydrodissection for pain management: rationale, methods, current literature, and theoretical mechanisms', source: 'Journal of Pain Research (texte intégral + figures)', url: 'https://www.tandfonline.com/doi/full/10.2147/JPR.S247208', note: 'Iconographie des cibles et des plans de décollement' },
     { titre: 'The effectiveness and safety of commonly used injectates for ultrasound-guided hydrodissection of peripheral nerve entrapment syndromes', source: 'Frontiers in Pharmacology', url: 'https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2020.621150/full', note: 'Comparaison des injectats' },
   ],

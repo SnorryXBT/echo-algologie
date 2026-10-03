@@ -231,7 +231,10 @@ Ces images ne sont pas décoratives : elles documentent que le guidage a réelle
     { titre: 'Optimizing image quality when evaluating blood flow at Doppler US: a tutorial', revue: 'RadioGraphics', annee: '2019', doi: '10.1148/rg.2019180055', type: 'revue technique', verif: true, note: 'PRF, filtre de paroi, gain couleur, angle : les réglages qui font apparaître ou disparaître un petit vaisseau.' },
   ],
   videos: [
-    { titre: 'Ultrasound technical aspects: how to improve needle visibility', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-technical-aspects-how-to-improve-needle-visibility/' },
+    { titre: 'Ultrasound for Needle Guidance Using the In Plane Approach', source: 'YouTube', url: 'https://www.youtube.com/watch?v=tMpjaozbegU', note: 'Gulfcoast Ultrasound Institute : visualisation de l\'aiguille dans le plan, alignement, 4 min 34' },
+    { titre: 'Ultrasound Technical Aspects: How to Improve Needle Visibility', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-technical-aspects-how-to-improve-needle-visibility/', note: 'Planche de référence : sono-anatomie et technique' },
+    { titre: 'Essential Knobology for Ultrasound-Guided Regional Anesthesia and Interventional Pain Management', source: 'NYSORA', url: 'https://nysora.com/pain-management/essential-knobology-for-ultrasound-guided-regional-anesthesia-and-interventional-pain-management/', note: 'Réglages de la machine (gain, profondeur, focale, Doppler)' },
+    { titre: 'Basics of Ultrasound: Pitfalls and Limitations', source: 'NYSORA', url: 'https://nysora.com/pain-management/basics-of-ultrasound-pitfalls-and-limitations/', note: 'Artéfacts et limites' },
   ],
 
   scenes: [

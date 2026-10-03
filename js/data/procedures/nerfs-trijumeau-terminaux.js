@@ -195,7 +195,11 @@ Foramens de la face : ponction **in-plane, de latéral en médial**, à angle tr
     { auteurs: 'Ilhan Alp S, Alp R', titre: 'Supraorbital and infraorbital nerve blockade in migraine patients: results of 6-month clinical follow-up', revue: 'Eur Rev Med Pharmacol Sci', annee: '2013', type: 'série', verif: false },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Supra Orbital, Infra Orbital and Mental Nerve Blocks', source: 'YouTube', url: 'https://www.youtube.com/watch?v=UcWEcf3MFUA', note: 'Leicester Pain Education (NHS) : les trois foramens sous écho, 3 min' },
+    { titre: 'Ultrasound guided Maxillary and Mandibular Nerve Block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=daTOpdkH0wU', note: 'MADHAN PANDIAN MSK CONNECT : V2 et V3 par l\'échancrure mandibulaire (abord infra-zygomatique), 9 min 37' },
+    { titre: 'Ultrasound-Guided Superficial Trigeminal Nerve Blocks', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-superficial-trigeminal-nerve-blocks/', note: 'Planche de référence : sono-anatomie et technique (supra-orbitaire, infra-orbitaire, mentonnier)' },
+  ],
 
   scenes: [
     {

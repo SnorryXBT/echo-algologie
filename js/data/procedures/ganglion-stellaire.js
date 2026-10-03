@@ -188,7 +188,10 @@ Intérêt : bloc sympathique du membre supérieur plus constant qu\'en C6 (le C6
     { titre: 'Stellate ganglion blocks — StatPearls', revue: 'NCBI Bookshelf', annee: '2024', url: 'https://www.ncbi.nlm.nih.gov/books/NBK507798/', type: 'revue' , verif: true },
   ],
   videos: [
-    { titre: 'Ultrasound-Guided Cervical Sympathetic Block', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-cervical-sympathetic-block/', note: 'sono-anatomie C6, plan sous-fascial, iconographie de référence' },
+    { titre: 'ULTRASOUND GUIDED STELLATE GANGLION BLOCK', source: 'YouTube', url: 'https://www.youtube.com/watch?v=5WWuFytNfrk', note: 'Vicente Roques Escolar (anesthésiste-algologue, Espagne) : démonstration réelle, abord antéro-latéral à C6, 4 min 46' },
+    { titre: 'Ultrasound guided stellate ganglion block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=B6ROeVFUJSY', note: 'Regional Anesthesiology and Acute Pain Medicine : sono-anatomie et technique, 9 min' },
+    { titre: 'Ultrasound-Guided Cervical Sympathetic Block', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-cervical-sympathetic-block/', note: 'Planche de référence : sono-anatomie et technique' },
+    { titre: 'Case study: Upper limb complex regional pain syndrome (CRPS)', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-upper-limb-complex-regional-pain-syndrome-crps/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas (bloc du ganglion stellaire pour SDRC)' },
     { titre: 'Cervical Sympathetic Trunk Block', source: 'USRA (usra.ca)', url: 'https://usra.ca/pain-medicine/specific-blocks/head-neck/cervicaltrunk.php', note: 'balayage et trajectoire in-plane' },
     { titre: 'How I Do It: Stellate Ganglion Blocks', source: 'ASRA News', url: 'https://asra.com/news-publications/asra-newsletter/newsletter-item/asra-news/2020/08/01/how-i-do-it-stellate-ganglion-blocks', note: 'pas-à-pas commenté, pièges' },
     { titre: 'Stellate Ganglion Blocks — StatPearls (texte et figures)', source: 'NCBI Bookshelf', url: 'https://www.ncbi.nlm.nih.gov/books/NBK507798/' },
