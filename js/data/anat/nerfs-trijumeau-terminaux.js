@@ -1,6 +1,8 @@
 /* Coupes anatomiques recalées — branches terminales du trijumeau (format : .claude/skills/echo-anatomie/SKILL.md).
-   echo-1 : foramen infra-orbitaire (Wang et al., Diagnostics 2026, fig. 1a). echo-2 (voie sous-zygomatique, Taha et al. 2025) :
-   NON TRACÉE — aucune corticale visible sous les sigles A (coronoïde) et B (condyle), lecture soumise à Mat. */
+   echo-1 : foramen infra-orbitaire (Wang et al., Diagnostics 2026, fig. 1a).
+   echo-2 : voie sous-zygomatique pour V3 (Yildiz & Akkaya, Cureus 2024, fig. 2) — la figure affiche le panneau C (annoté) ; la coupe est
+            tracée sur le panneau B, même image vierge (`crop` propre à l'entrée : `anat-grid.js nerfs-trijumeau-terminaux 1 <dossier> 0.58,0,0.42,0.499`),
+            les positions de CoP, CP et LPP étant reportées des pointillés des auteurs sur le panneau C. */
 (function () {
   const ovale = (cx, cy, rx, ry, rot) => { const o = [], a = (rot || 0) * Math.PI / 180; for (let i = 0; i < 12; i++) { const t = i / 12 * 2 * Math.PI, x = rx * Math.cos(t), y = ry * Math.sin(t); o.push([Math.round(cx + x * Math.cos(a) - y * Math.sin(a)), Math.round(cy + x * Math.sin(a) + y * Math.cos(a))]); } return o; };
   const PEAU = [[0,45],[1000,45]];
@@ -45,6 +47,45 @@
       { s: 'maxillaire', x: 385, y: 553, dx: 95, dy: 147, text: 'Foramen infra-orbitaire', vue: 'anat' },
       { s: 'maxillaire', x: 800, y: 760, dx: -30, dy: 140, text: 'Maxillaire', vue: 'anat' },
       { s: 'maxillaire', x: 850, y: 650, dx: -50, dy: 110, text: 'Cône d\'ombre du maxillaire', vue: 'echo' },
+    ],
+  }, {
+    fig: 'img/nerfs-trijumeau-terminaux/echo-2.jpg',
+    valide: false,
+    crop: [0.58, 0, 0.42, 0.499],
+    panneau: 'B (image vierge ; corrigé = panneau C)',
+    vb: [1000, 829], orient: { left: 'Antérieur', right: 'Postérieur' },
+    lecture: [
+      'Certain — orientation : coronoïde (CoP) à gauche, condyle (CP) à droite, nommés par les auteurs sur le panneau C : antérieur à gauche, même sens que le schéma apparié.',
+      'Certain — les trois réflecteurs osseux : coronoïde (plage très brillante x ≈ 130–330, y ≈ 255–300, ombre dessous), condyle (plage brillante x ≈ 690–830, y ≈ 215–250) et lame ptérygoïdienne latérale (ligne brillante oblique x ≈ 230–700, y ≈ 740 → 650) — positions reportées des pointillés des auteurs (panneau C) et retrouvées sur les pics de brillance du panneau B. Coronoïde et condyle sont dessinés comme des réflecteurs courts (plaques vues en coupe), la lame comme un os plein.',
+      'Certain — la flèche verticale des auteurs est une direction d\'aiguille (perpendiculaire, entre coronoïde et condyle jusqu\'à la lame), pas une aiguille vue : reportée en pointillé. Le schéma apparié propose un abord oblique dans le plan : les deux ne sont pas superposables.',
+      'Supposition — plans mous, non désignés par les auteurs : bande brillante superficielle 20–95 en tissu sous-cutané ; masséter de ≈ 95 à la ligne brillante y ≈ 215–250 ; entre cette ligne et le sommet des os / du ptérygoïdien, un plan laissé non attribué (tendon du temporal vers le coronoïde, graisse) ; ptérygoïdien latéral = zone grise mouchetée de la fenêtre, de y ≈ 300 à la lame.',
+      'Extrapolé — nerf mandibulaire : en arrière et en dedans de la lame, hors du champ utile ; dessiné à titre indicatif sous l\'extrémité postérieure de la lame. Artère maxillaire : non visible (pas de Doppler), non dessinée.',
+      'Image de 315 px : les limites des plans mous sont à ± 1,5 mm ; seules les corticales et l\'orientation sont fiables.',
+    ],
+    structures: [
+      { id: 'peau', tissu: 'peau', haut: [[0,0],[1000,0]], bas: [[0,20],[1000,20]] },
+      { id: 'sc', tissu: 'graisse', haut: [[0,20],[1000,20]], bas: [[0,95],[300,98],[600,95],[1000,90]] },
+      { id: 'mass', tissu: 'muscle', haut: [[0,95],[300,98],[600,95],[1000,90]], bas: [[0,255],[100,262],[200,250],[300,245],[400,235],[500,225],[600,222],[700,215],[800,215],[900,235],[1000,250]] },
+      { id: 'plan', tissu: 'indetermine', haut: [[0,255],[100,262],[200,250],[300,245],[400,235],[500,225],[600,222],[700,215],[800,215],[900,235],[1000,250]], bas: [[0,300],[100,300],[130,268],[200,255],[260,258],[330,272],[380,300],[450,302],[550,292],[640,270],[690,222],[760,215],[830,230],[880,260],[1000,290]] },
+      { id: 'lpm', tissu: 'muscle', haut: [[0,300],[100,300],[130,268],[200,255],[260,258],[330,272],[380,300],[450,302],[550,292],[640,270],[690,222],[760,215],[830,230],[880,260],[1000,290]], bas: [[0,790],[200,750],[300,736],[430,702],[560,662],[640,648],[700,655],[1000,700]] },
+      { id: 'v3', tissu: 'nerf', contour: (function () { const o = []; for (let i = 0; i < 12; i++) { const t = i / 12 * 2 * Math.PI; o.push([Math.round(760 + 22 * Math.cos(t)), Math.round(690 + 16 * Math.sin(t))]); } return o; })(), extrapole: true },
+      { id: 'cop', tissu: 'os', cortex: [[100,300],[130,268],[200,255],[260,258],[330,272],[380,300]], profondeur: 110 },
+      { id: 'cp', tissu: 'os', cortex: [[640,262],[690,222],[760,215],[830,230],[880,260]], profondeur: 110 },
+      { id: 'lpp', tissu: 'os', cortex: [[200,750],[300,736],[430,702],[560,662],[640,648],[700,655]] },
+      { id: 'trajet', tissu: 'aiguille', ligne: [[515,243],[515,635]], ep: 5, extrapole: true },
+    ],
+    labels: [
+      { s: 'sc', x: 300, y: 60, dx: -140, dy: 0, text: 'Tissu sous-cutané' },
+      { s: 'mass', x: 820, y: 150, dx: 80, dy: -28, text: 'Masséter', vue: 'anat' },
+      { s: 'plan', x: 500, y: 265, dx: -40, dy: -100, text: 'Plan non attribué (tendon du temporal ?)', vue: 'anat' },
+      { s: 'cop', x: 230, y: 258, dx: -40, dy: -120, text: 'Processus coronoïde (CoP)' },
+      { s: 'cp', x: 760, y: 216, dx: 60, dy: 110, text: 'Processus condylien (CP)' },
+      { s: 'lpm', x: 420, y: 480, dx: -150, dy: 60, text: 'Ptérygoïdien latéral', vue: 'anat' },
+      { s: 'lpm', x: 560, y: 420, dx: 220, dy: 20, text: 'Fenêtre entre coronoïde et condyle', vue: 'echo' },
+      { s: 'lpp', x: 470, y: 690, dx: -170, dy: 80, text: 'Lame ptérygoïdienne latérale (LPP)' },
+      { s: 'v3', x: 760, y: 690, dx: 60, dy: 70, text: 'V3 : en arrière de la lame, non visible', vue: 'anat' },
+      { s: 'trajet', x: 515, y: 560, dx: 200, dy: 80, text: 'Direction d\'aiguille des auteurs (perpendiculaire)' },
+      { s: 'cop', x: 150, y: 450, dx: 30, dy: 80, text: 'Ombre du coronoïde', vue: 'echo' },
     ],
   }];
 })();
