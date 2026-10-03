@@ -222,7 +222,7 @@
     const nUnv = (p.references || []).filter(r => r.verif === false).length;
     push('references', 'Références', p.references && p.references.length ? (nUnv ? callout('Sourçage', `${nUnv} référence${nUnv > 1 ? 's' : ''} sur ${p.references.length} ${nUnv > 1 ? 'sont citées' : 'est citée'} de mémoire (marquées « à vérifier ») : existence probable, mais revue, année ou DOI non confirmés par une recherche. À confirmer avant citation.`, 'warn') : '') + card(refsHtml(p.references)) : '');
     push('demo', 'Vidéo de démonstration', demoHtml(p));
-    push('videos', 'Vidéos (liens externes)', videosHtml(p.videos));
+    push('videos', 'Vidéos et liens externes', videosHtml(p.videos));
     push('checklist', 'Checklist avant le geste', card(checklistHtml(p)));
 
     const types = (p.types || []).map(t => `<span class="tag t-${t}">${esc((E.types[t] || {}).court || t)}</span>`).join('');
