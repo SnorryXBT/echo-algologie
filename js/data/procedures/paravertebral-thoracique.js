@@ -211,7 +211,12 @@ Limite : l’aiguille pointe **vers le foramen**. Fixer visuellement une limite 
     { auteurs: 'van Wijck AJ, Opstelten W, Moons KG, et al.', titre: 'The PINE study of epidural steroids and local anaesthetics to prevent postherpetic neuralgia: a randomised controlled trial', revue: 'Lancet', annee: '2006', type: 'ECR', verif: false, note: 'Comparateur essentiel : une injection épidurale unique ne prévient pas la névralgie post-zostérienne.' },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true, note: 'Bloc paravertébral thoracique : risque hémorragique intermédiaire.' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Ultrasound guided thoracic paravertebral block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=D92ZbS8fMY0', note: 'Regional Anesthesiology and Acute Pain Medicine : abords para-sagittal et transversal, 9 min 37' },
+    { titre: 'Paravertebral Block // Ultrasound-Guided Demonstration', source: 'YouTube', url: 'https://www.youtube.com/watch?v=0Em45XUe2AM', note: 'Practical Anesthesia Techniques : démonstration réelle, 4 min' },
+    { titre: 'Ultrasound-Guided Thoracic Paravertebral Block', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-thoracic-paravertebral-block/', note: 'Planche de référence : sono-anatomie et technique' },
+    { titre: 'Tips for a Paravertebral Block: Transverse Oblique Technique', source: 'NYSORA', url: 'https://nysora.com/education-news/tips-for-a-paravertebral-block-transverse-oblique-technique/', note: 'Conseils pratiques NYSORA (abord transversal oblique)' },
+  ],
 
   scenes: [
     {

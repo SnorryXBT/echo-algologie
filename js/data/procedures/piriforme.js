@@ -183,7 +183,11 @@ Les essais contrôlés existent mais sont **de petite taille, anciens et hétér
     { verif: false, auteurs: 'Martin HD, Reddy M, Gómez-Hoyos J', titre: 'Deep gluteal syndrome', revue: 'Journal of Hip Preservation Surgery', annee: '2015', type: 'revue', note: 'Cadre nosologique du syndrome du muscle profond fessier.' },
     { verif: true, auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Ultrasound Guided Piriformis Injection | Step-by-Step Pain Management Procedure', source: 'YouTube', url: 'https://www.youtube.com/watch?v=dH7WeOJiv_c', note: 'Asian Pain Academy : repérage du piriforme par la mobilisation de hanche, infiltration intramusculaire, 5 min 43' },
+    { titre: 'Ultrasound-Guided Blocks for Pelvic Pain', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-blocks-for-pelvic-pain/', note: 'Planche de référence : sono-anatomie et technique (sections 6 à 9, syndrome du piriforme)' },
+    { titre: 'Ultrasound Pain Block Tip of the Week: Piriformis Muscle Injection', source: 'NYSORA', url: 'https://nysora.com/education-news/ultrasound-pain-block-tip-of-the-week-piriformis-muscle-injection-2/', note: 'Conseils pratiques NYSORA' },
+  ],
 
   scenes: [
     {

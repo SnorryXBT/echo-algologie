@@ -187,10 +187,11 @@ Protocole usuel une fois la canule en place : stimulation sensitive 50 Hz (pares
     { auteurs: '', titre: 'Ultrasound-guided lumbar spine medial branch blocks for the treatment of low back pain', revue: 'Am J Phys Med Rehabil', annee: '2020', doi: '10.1097/PHM.0000000000001591', type: 'technique' },
   ],
   videos: [
-    { titre: 'Ultrasound-guided lumbar facet nerve block and intra-articular injection', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-lumbar-facet-nerve-block-and-intra-articular-injection/', note: 'sono-anatomie et repères, texte + images' },
-    { titre: 'Ultrasound-guided lumbar medial branch and intra-articular facet injections', source: 'ASRA', url: 'https://asra.com/news-publications/asra-updates/blog-landing/legacy-b-blog-posts/2019/08/06/ultrasound-guided-lumbar-medial-branch-and-intra-articular-facet-injections' },
     { titre: 'Ultrasound guided facet joint and medial branch infiltration', source: 'YouTube', url: 'https://www.youtube.com/watch?v=1C-XbeS0pnQ' },
     { titre: 'Pain medicine — lumbar medial branch, facet joint and nerve root blocks (Eichenberger)', source: 'YouTube · ISURA', url: 'https://www.youtube.com/watch?v=oiV-O0y8zB0' },
+    { titre: 'Ultrasound-Guided Lumbar Facet Nerve Block and Intra-articular injection', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-lumbar-facet-nerve-block-and-intra-articular-injection/', note: 'Planche de référence : sono-anatomie et technique' },
+    { titre: 'Case study: Mechanical lower back pain - Injection', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-mechanical-lower-back-pain-injection/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas (infiltration facettaire lombaire)' },
+    { titre: 'Ultrasound-guided lumbar medial branch and intra-articular facet injections', source: 'ASRA', url: 'https://asra.com/news-publications/asra-updates/blog-landing/legacy-b-blog-posts/2019/08/06/ultrasound-guided-lumbar-medial-branch-and-intra-articular-facet-injections' },
   ],
 
   scenes: [

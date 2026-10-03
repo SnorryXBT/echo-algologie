@@ -193,8 +193,9 @@ Données : séries prospectives et cohortes rétrospectives (Yoon 2013 : réduct
   ],
   videos: [
     { titre: 'Ultrasound-guided ilioinguinal and iliohypogastric nerve blocks', source: 'YouTube', url: 'https://www.youtube.com/watch?v=WJPH6Ij3StA', note: 'anatomie, sono-anatomie et technique pas à pas' },
+    { titre: 'Ultrasound-Guided Blocks for Pelvic Pain', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-blocks-for-pelvic-pain/', note: 'Planche de référence : sono-anatomie et technique (sections 1 à 5)' },
+    { titre: 'Case study: Ilioinguinal neuralgia - Injection', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-ilioinguinal-neuralgia-injection/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas' },
     { titre: 'Ilioinguinal / iliohypogastric nerve block', source: 'USRA (University of Toronto)', url: 'https://usra.ca/regional-anesthesia/specific-blocks/trunk/ilioinguinalnerve.php', note: 'images échographiques légendées et repères' },
-    { titre: 'Ultrasound-guided blocks for pelvic pain', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-blocks-for-pelvic-pain/', note: 'chapitre couvrant II/IH et génito-fémoral' },
     { titre: 'Ilioinguinal and iliohypogastric block — question of the week', source: 'Society for Pediatric Anesthesia (PDF)', url: 'https://pedsanesthesia.org/wp-content/uploads/2024/12/Week-225-Ilioinguinal-and-Iliohypogastric-Block.pdf', note: 'synthèse des complications, dont la parésie fémorale' },
   ],
 

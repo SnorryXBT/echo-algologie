@@ -185,7 +185,10 @@ Ponction **in-plane, de latéral vers médial**, l\'aiguille arrivant presque pa
     { auteurs: 'Nguyen MT, Borchers A, Selmi C, Naguwa SM, Cheema G, Gershwin ME', titre: 'The SAPHO syndrome', revue: 'Semin Arthritis Rheum', annee: '2012', type: 'revue', verif: false },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true, note: 'Référence déjà vérifiée dans le projet (fiche nerf suprascapulaire).' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Ultrasound Guided Interventions: Sternoclavicular Joint (Injection)', source: 'YouTube', url: 'https://www.youtube.com/watch?v=DN_ay4rkwl8', note: 'SportDrDinesh (médecin du sport, Singapour) : infiltration échoguidée de la sterno-claviculaire, 2 min' },
+    { titre: 'Ultrasound-Guided Shoulder Joint and Bursa Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-shoulder-joint-and-bursa-injections/', note: 'Planche de référence : sono-anatomie et technique (sections 19 à 21, articulation sterno-claviculaire)' },
+  ],
 
   scenes: [
     {

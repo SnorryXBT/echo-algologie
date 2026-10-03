@@ -187,7 +187,12 @@ Deux limites à assumer : le nerf y est **moins souvent visible** qu\'à l\'épi
     { verif: false, auteurs: 'Labat JJ, Riant T, Lassaux A, et al.', titre: 'Adding corticosteroids to the pudendal nerve block for pudendal neuralgia: a randomised, double-blind, controlled trial', revue: 'BJOG', annee: '2017', type: 'ECR', note: 'Conditionne la recommandation sur le corticoïde ; année et pagination à confirmer.' },
     { verif: true, auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'PUDENDAL NERVE BLOCK', source: 'YouTube', url: 'https://www.youtube.com/watch?v=BhEHVFTc6ls', note: 'Vicente Roques Escolar : abord transglutéal à l\'épine ischiatique, ligament sacro-épineux, artère pudendale, 10 min' },
+    { titre: 'Ultrasound Guided Pudendal Nerve Block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=jhBZXwFm7nM', note: 'American Society For Post Surgical Pain : séquence courte du geste, 39 s' },
+    { titre: 'Ultrasound-Guided Blocks for Pelvic Pain', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-blocks-for-pelvic-pain/', note: 'Planche de référence : sono-anatomie et technique (sections 10 à 13, nerf pudendal)' },
+    { titre: 'Ultrasound Pain Block Tip of the Week: Pudendal Nerve Block', source: 'NYSORA', url: 'https://nysora.com/education-news/ultrasound-pain-block-tip-of-the-week-pudendal-nerve-block/', note: 'Conseils pratiques NYSORA' },
+  ],
 
   scenes: [
     {

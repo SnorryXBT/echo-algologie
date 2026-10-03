@@ -192,7 +192,9 @@ C’est dans l’**orchialgie chronique post-chirurgicale** que les données son
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true },
   ],
   videos: [
-    { titre: 'Ultrasound-guided blocks for pelvic pain', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-blocks-for-pelvic-pain/', note: 'chapitre couvrant le génito-fémoral et l’ilio-inguinal' },
+    { titre: 'Ultrasound-Guided Genitofemoral Nerve Block NYSORA Medstudylab.com', source: 'YouTube', url: 'https://www.youtube.com/watch?v=CHPMt_FXRKY', note: 'Anesthesia and Pain medicine (Medstudylab) : branche génitale dans le canal inguinal, 2 min 43' },
+    { titre: 'GENITOFEMORAL NERVE -GENITAL BRANCH BLOCK FOR HERNIA SURGERY', source: 'YouTube', url: 'https://www.youtube.com/watch?v=ADqr9jb0wFw', note: 'Shiv Kumar Singh (anesthésiste) : repérage du cordon spermatique et bloc de la branche génitale, 10 min' },
+    { titre: 'Ultrasound-Guided Blocks for Pelvic Pain', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-blocks-for-pelvic-pain/', note: 'Planche de référence : sono-anatomie et technique (sections 1 à 5, nerfs ilio-inguinal, ilio-hypogastrique et génito-fémoral)' },
   ],
 
   scenes: [

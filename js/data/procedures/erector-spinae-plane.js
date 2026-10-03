@@ -178,7 +178,12 @@ Limite honnête : dans la lombalgie facettaire, l\'ESP **ne remplace pas** le bl
     { auteurs: 'De Cassai A, Bonvicini D, Correale C, et al.', titre: 'Erector spinae plane block: a systematic qualitative review', revue: 'Minerva Anestesiologica', annee: '2019', type: 'revue systématique', verif: false },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'ESP Block - How To Perform It Effectively & Safely (2022)', source: 'YouTube', url: 'https://www.youtube.com/watch?v=rxIPrSDDpOU', note: 'Ki-Jinn Chin (Toronto, auteur de la description princeps du bloc) : technique, pièges, 11 min' },
+    { titre: 'Erector Spinae Plane (ESP) Block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=O9RB0K7f8pM', note: 'Regional Anesthesiology and Acute Pain Medicine : sono-anatomie et démonstration, 8 min' },
+    { titre: 'Erector Spinae Plane Nerve Block', source: 'NYSORA', url: 'https://nysora.com/erector-spinae-plane-block/', note: 'Planche de référence : sono-anatomie et technique' },
+    { titre: 'Tips for the Erector Spinae Plane Block', source: 'NYSORA', url: 'https://nysora.com/education-news/tips-for-the-erector-spinae-plane-block/', note: 'Conseils pratiques NYSORA' },
+  ],
 
   scenes: [
     {

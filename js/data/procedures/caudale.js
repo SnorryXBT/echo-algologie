@@ -178,7 +178,11 @@ Prévenir le patient de la nature du site et de la position : c\'est un geste bi
     { auteurs: 'Senoglu N, Senoglu M, Oksuz H, et al.', titre: 'Landmarks of the sacral hiatus for caudal epidural block: an anatomical study', revue: 'British Journal of Anaesthesia', annee: '2005', type: 'anatomie', note: 'Variabilité du hiatus et fréquence des variantes défavorables.', verif: false },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Ultrasound Guided Caudal Epidural Injection Technique', source: 'YouTube', url: 'https://www.youtube.com/watch?v=6MqONlv2peo', note: 'AJPM&R (American Journal of Physical Medicine & Rehabilitation, vidéo d\'article) : cornes sacrées, abord longitudinal dans le plan, 5 min 48' },
+    { titre: 'How To: Ultrasound Guided Caudal Epidural Steroid Injection', source: 'YouTube', url: 'https://www.youtube.com/watch?v=yD6L4aSbSZA', note: 'Sonosite : technique pas-à-pas, 5 min 20' },
+    { titre: 'Ultrasound-Guided Caudal Epidural Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-caudal-epidural-injections/', note: 'Planche de référence : sono-anatomie et technique' },
+  ],
 
   scenes: [
     {

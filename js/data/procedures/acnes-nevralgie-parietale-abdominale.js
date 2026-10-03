@@ -193,7 +193,10 @@ Message opérationnel : **poser la question chirurgicale après 2 à 3 infiltrat
     { auteurs: 'Chrona E, Kostopanagiotou G, Damigos D, Batistaki C', titre: 'Anterior cutaneous nerve entrapment syndrome: management challenges', revue: 'J Pain Res', annee: '2017', type: 'revue', verif: false },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Chronic Abdominal Wall pain & Abdominal Cutaneous Nerve Entrapment Syndrome (ACNES)', source: 'YouTube', url: 'https://www.youtube.com/watch?v=0DPJ8UjfyNs', note: 'Pain Spa (clinique de la douleur, Royaume-Uni) : ACNES et infiltration échoguidée du nerf cutané antérieur au bord du droit, 2 min 34' },
+    { titre: 'Rectus Sheath Block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=De1hjejTLBY', note: 'Regional Anesthesiology and Acute Pain Medicine : bloc de la gaine des droits (même plan postérieur du muscle droit que l\'infiltration ACNES), 5 min' },
+  ],
 
   scenes: [
     {

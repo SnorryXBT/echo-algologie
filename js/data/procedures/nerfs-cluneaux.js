@@ -179,7 +179,7 @@ Ne pas mélanger deux corticoïdes, ne pas dépasser une dose cumulée annuelle 
   ],
   videos: [
     { titre: 'The ultrasound-guided superior cluneal nerve block', source: 'YouTube · Dr David Rosenblum', url: 'https://www.youtube.com/watch?v=hVjX8KrnSpQ', note: 'innervation, physiopathologie et bloc diagnostique pas à pas' },
-    { titre: 'Ultrasound-guided middle cluneal nerve block', source: 'YouTube', url: 'https://m.youtube.com/watch?v=s2RZuO4Dkzs', note: 'repérage du LPSL entre EIPS et crête sacrée latérale' },
+    { titre: 'Ultrasound-guided middle cluneal nerve block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=s2RZuO4Dkzs', note: 'repérage du LPSL entre EIPS et crête sacrée latérale' },
     { titre: 'How to perform an ultrasound-guided cluneal nerve cryoablation to treat lower back pain', source: 'Clarius (webinaire)', url: 'https://clarius.com/blog/webinar-how-to-perform-an-ultrasound-guided-cluneal-nerve-cryoablation-to-treat-lower-back-pain/', note: 'cryoneurolyse : indications et technique' },
     { titre: 'Superior cluneal nerve block: considerations for regional anesthesia and chronic pain management', source: 'ASRA (mise au point illustrée)', url: 'https://asra.com/news-publications/asra-updates/blog-landing/legacy-b-blog-posts/2022/01/10/superior-cluneal-nerve-block-considerations-for-regional-anesthesia-and-chronic-pain' },
   ],

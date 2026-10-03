@@ -184,7 +184,12 @@ Avantages : indépendante de la perméabilité articulaire, trajet plus long don
     { verif: false, auteurs: 'Foye PM', titre: 'Coccydynia: tailbone pain', revue: 'Physical Medicine and Rehabilitation Clinics of North America', annee: '2017', type: 'revue', note: 'Cadre clinique de la coccygodynie ; à confirmer.' },
     { verif: true, auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'PainExam US Guided Ganglion Impar Block: Coccygodynia, Pelvic & Perineal Pain: David Rosenblum, MD', source: 'YouTube', url: 'https://www.youtube.com/watch?v=rDHoaih8iZw', note: 'NRAP Academy (Dr David Rosenblum, algologue, New York) : abord trans-sacro-coccygien échoguidé, 2 min 30' },
+    { titre: 'Mastering the Ganglion Impar Block: Anatomy, Procedure, and Applications', source: 'YouTube', url: 'https://www.youtube.com/watch?v=wH-B688SR-0', note: 'DARADIA Pain Clinic (Inde) : anatomie et procédure, 8 min' },
+    { titre: 'Ultrasound-Guided Ganglion Impar Injection', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-ganglion-impar-injection/', note: 'Planche de référence : sono-anatomie et technique' },
+    { titre: 'Tips for a Ganglion Impar Injection', source: 'NYSORA', url: 'https://nysora.com/education-news/tips-for-a-ganglion-impar-injection/', note: 'Conseils pratiques NYSORA' },
+  ],
 
   scenes: [
     {

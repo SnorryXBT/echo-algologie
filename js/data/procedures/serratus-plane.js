@@ -186,9 +186,11 @@ Conséquence pratique : le serratus est un **outil de sélection**. Si le patien
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true, note: 'Référence déjà vérifiée dans le projet (fiche nerf suprascapulaire).' },
   ],
   videos: [
+    { titre: 'Serratus Anterior Plane Block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=DWwQa3aYbB8', note: 'Dr Amit Pawa (Londres) : plans superficiel et profond, 4 min 44' },
+    { titre: 'Serratus Plane Block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=vQSW-K-Fw5Y', note: 'Regional Anesthesiology and Acute Pain Medicine : sono-anatomie et démonstration, 6 min 30' },
+    { titre: 'Pectoralis and Serratus Plane Nerve Blocks', source: 'NYSORA', url: 'https://nysora.com/regional-anesthesia/topics/regional-anesthesia-for-specific-surgical-procedures/thorax/pectoralis-serratus-plane-blocks/', note: 'Planche de référence : sono-anatomie et technique' },
     { titre: 'Ultrasound-guided serratus anterior blocks — StatPearls', source: 'NCBI Bookshelf (texte + figures)', url: 'https://www.ncbi.nlm.nih.gov/books/NBK538476/' },
     { titre: 'How I do it: serratus anterior plane block for rib fractures', source: 'ASRA News (2020)', url: 'https://asra.com/news-publications/asra-newsletter/newsletter-item/asra-news/2020/05/02/how-i-do-it-serratus-anterior-plane-block-for-rib-fractures' },
-    { titre: 'Pectoralis and serratus plane nerve blocks', source: 'NYSORA', url: 'https://www.nysora.com/topics/regional-anesthesia-for-specific-surgical-procedures/thorax/pectoralis-serratus-plane-blocks/' },
     { titre: 'Serratus anterior plane block', source: 'LITFL — Nerve Block Library', url: 'https://litfl.com/serratus-anterior-plane-block/' },
   ],
 

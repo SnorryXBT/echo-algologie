@@ -179,7 +179,9 @@ Les blocs de fascia ont une **absorption systémique élevée** : diluer plutôt
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true, note: 'Référence déjà vérifiée dans le projet (fiche nerf suprascapulaire).' },
   ],
   videos: [
-    { titre: 'Pectoralis and serratus plane nerve blocks', source: 'NYSORA', url: 'https://www.nysora.com/topics/regional-anesthesia-for-specific-surgical-procedures/thorax/pectoralis-serratus-plane-blocks/', note: 'anatomie, coupes et technique des deux blocs' },
+    { titre: 'Pectoralis (PECS) blocks I & II', source: 'YouTube', url: 'https://www.youtube.com/watch?v=0g_PGLYy0gw', note: 'Regional Anesthesiology and Acute Pain Medicine : plans inter-pectoral et pecto-serratus, 6 min' },
+    { titre: 'PECS 2 or PectoSerratus Plane Block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=9ytynz33NjA', note: 'Dr Amit Pawa (Londres) : démonstration courte, 1 min 41' },
+    { titre: 'Pectoralis and Serratus Plane Nerve Blocks', source: 'NYSORA', url: 'https://nysora.com/regional-anesthesia/topics/regional-anesthesia-for-specific-surgical-procedures/thorax/pectoralis-serratus-plane-blocks/', note: 'Planche de référence : sono-anatomie et technique' },
   ],
 
   scenes: [

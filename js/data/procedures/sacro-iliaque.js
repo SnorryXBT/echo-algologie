@@ -186,7 +186,11 @@ Ce n\'est **pas** un geste intra-articulaire et cela doit être écrit comme tel
     { auteurs: 'Cohen SP, Chen Y, Neufeld NJ', titre: 'Sacroiliac joint pain: a comprehensive review of epidemiology, diagnosis and treatment', revue: 'Expert Review of Neurotherapeutics', annee: '2013', type: 'revue', verif: false },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Ultrasound-Guided Sacroiliac Joint Injection Technique', source: 'YouTube', url: 'https://www.youtube.com/watch?v=XzMCDHVOEzU', note: 'AJPM&R (vidéo d\'article) : abord du tiers caudal de l\'articulation, 5 min' },
+    { titre: 'How to: Ultrasound Guided Sacroiliac Injection', source: 'YouTube', url: 'https://www.youtube.com/watch?v=7G56DN38mz8', note: 'Sonosite : repérage et infiltration pas-à-pas, 6 min' },
+    { titre: 'Ultrasound-Guided Sacroiliac Joint Injection', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-sacroiliac-joint-injection/', note: 'Planche de référence : sono-anatomie et technique' },
+  ],
 
   scenes: [
     {

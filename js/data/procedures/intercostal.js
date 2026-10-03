@@ -195,7 +195,12 @@ Les données sont anciennes et contrastées. La cryoanalgésie intercostale **pe
     { auteurs: 'Neal JM, Barrington MJ, Fettiplace MR, et al.', titre: 'The third American Society of Regional Anesthesia and Pain Medicine practice advisory on local anesthetic systemic toxicity: executive summary 2017', revue: 'Reg Anesth Pain Med', annee: '2018', type: 'reco', verif: false, note: 'Protocole LAST et émulsion lipidique.' },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Ultrasound-Guided Intercostal Nerve Block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=m--qyUUzH5U', note: 'Regional Anesthesiology and Acute Pain Medicine : sono-anatomie côte / plèvre et bloc à l\'angle costal, 6 min 26' },
+    { titre: 'ULTRASOUND GUIDED INTERCOSTAL NERVE BLOCK', source: 'YouTube', url: 'https://www.youtube.com/watch?v=jDpV-O79kvw', note: 'Vicente Roques Escolar : démonstration réelle, 4 min' },
+    { titre: 'Ultrasound-Guided Peripheral Nerve block in Chronic Pain Management', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-peripheral-nerve-block-in-chronic-pain-management/', note: 'Planche de référence : sono-anatomie et technique (sections 9 à 12, bloc intercostal)' },
+    { titre: 'Case study: Ultrasound-Guided Intercostal Nerve Block for Post-Herpetic Neuralgia', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-ultrasound-guided-intercostal-nerve-block-for-post-herpetic-neuralgia/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas' },
+  ],
 
   scenes: [
     {

@@ -190,7 +190,10 @@ Ce qui fonctionne : on voit la trajectoire, on corrige en continu, et on visuali
     { auteurs: 'U.S. Food and Drug Administration', titre: 'Drug safety communication: FDA requires label changes to warn of rare but serious neurologic problems after epidural corticosteroid injections for pain', revue: 'FDA Drug Safety Communication', annee: '2014', type: 'alerte de sécurité', verif: false },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Ultrasound for Neuraxial Procedures', source: 'YouTube', url: 'https://www.youtube.com/watch?v=8_k2I774klo', note: 'Regional Anesthesiology and Acute Pain Medicine : repérage écho-assisté (vues para-sagittale oblique et transversale interlaminaire, profondeur, niveau), 9 min' },
+    { titre: 'Ultrasound-Guided Central Neuraxial Blocks', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-central-neuraxial-blocks/', note: 'Planche de référence : sono-anatomie et technique (section 11, épidurale lombaire)' },
+  ],
 
   scenes: [
     {
