@@ -1,7 +1,8 @@
 /* Coupes anatomiques recalées — plexus cervical superficiel / intermédiaire (format : .claude/skills/echo-anatomie/SKILL.md).
    echo-1 : coupe au processus transverse de C4 (Spasari et al., Langenbeck's Arch Surg 2026, fig. 16) — contours repris des tracés des auteurs.
-   echo-2 (Thangaraj et Selvaraj, Cureus 2026, fig. 2) : NON TRACÉE — lue selon ses propres mentions, la figure place le processus transverse
-   de C4 en avant de la carotide (panneau B) et la jugulaire externe sous le sterno-cléido-mastoïdien (panneau A) : disqualifiée, soumise à Mat. */
+   echo-2 : bloc cervical intermédiaire en temps réel (Choi et al., Anesth Pain Med (Seoul) 2026, fig. 1, CC BY-NC) — médial à gauche inscrit par
+   les auteurs ; SCM, IF, PF, IJV, CA, aiguille et nappe (astérisques) désignés. Remplace la figure de Thangaraj & Selvaraj (annotations
+   contraires à l'anatomie, retirée le 3 octobre 2026). */
 (function () {
   const ovale = (cx, cy, rx, ry, rot) => { const o = [], a = (rot || 0) * Math.PI / 180; for (let i = 0; i < 12; i++) { const t = i / 12 * 2 * Math.PI, x = rx * Math.cos(t), y = ry * Math.sin(t); o.push([Math.round(cx + x * Math.cos(a) - y * Math.sin(a)), Math.round(cy + x * Math.sin(a) + y * Math.cos(a))]); } return o; };
   const PEAU = [[0,12],[1000,12]];
@@ -59,6 +60,44 @@
       { s: 'carotide', x: 264, y: 418, dx: 6, dy: 62, text: 'Artère carotide', vue: 'anat' },
       { s: 'vji', x: 55, y: 305, dx: 118, dy: 335, text: 'Veine jugulaire interne', vue: 'anat' },
       { s: 'tp', x: 600, y: 590, dx: 0, dy: 110, text: 'Cône d\'ombre du processus transverse', vue: 'echo' },
+    ],
+  }, {
+    fig: 'img/plexus-cervical-superficiel/echo-2.jpg',
+    valide: false,
+    vb: [1000, 709], orient: { left: 'Antérieur / médial', right: 'Postérieur / latéral' },
+    lecture: [
+      'Certain — orientation : « Medial » à gauche, « Lateral » à droite incrustés par les auteurs, carotide et jugulaire interne en dedans : même orientation que le schéma apparié.',
+      'Certain — désignés par les auteurs : sterno-cléido-mastoïdien (SCM), feuillet superficiel du fascia cervical profond (IF, ligne brillante qui ferme la face profonde du SCM et monte vers son bord postérieur), fascia prévertébral (PF, ligne brillante épaisse y ≈ 360–370), jugulaire interne (IJV), carotide (CA), aiguille (ligne brillante venant du bord latéral, pointe vers x ≈ 730, y ≈ 262, sous l\'IF) et nappe d\'anesthésique local (astérisques : lentille anéchogène sous l\'IF).',
+      'Probable — faces du SCM : face superficielle sur la ligne brillante y ≈ 160–175 en dedans, qui monte vers y ≈ 100 en dehors ; face profonde = IF. Le muscle s\'effile en dehors : son bord postérieur est pris vers x ≈ 850–900, où les deux lignes se rejoignent.',
+      'Supposition — entre IF / nappe et PF (y ≈ 285–360, x 430–1000) : zone feuilletée échogène lue comme le tissu conjonctif et graisseux de l\'espace interfascial (où courent les branches du plexus, non individualisées, non dessinées). En dedans, cet espace est occupé par la gaine carotidienne (IJV, CA).',
+      'Extrapolé — trajet médial du fascia prévertébral sous les vaisseaux (hors du champ en bas à gauche) : prolongé par continuité, sans signal. Plan profond sous le PF (scalènes, élévateur de la scapula ?) non désigné : laissé non attribué.',
+      'Supposition — couche superficielle 22–160 : tissu sous-cutané et platysma non séparés (lignes brillantes multiples), dessinés en graisse.',
+    ],
+    structures: [
+      { id: 'peau', tissu: 'peau', haut: [[0,0],[1000,0]], bas: [[0,22],[1000,22]] },
+      { id: 'sc', tissu: 'graisse', haut: [[0,22],[1000,22]], bas: [[0,160],[200,168],[300,172],[400,150],[500,128],[600,115],[700,108],[800,100],[900,95],[1000,90]] },
+      { id: 'scm', tissu: 'muscle', haut: [[0,160],[200,168],[300,172],[400,150],[500,128],[600,115],[700,108],[800,100],[900,95],[1000,90]], bas: [[0,300],[100,297],[200,291],[300,283],[380,275],[440,262],[500,245],[560,228],[620,212],[680,198],[740,188],[800,176],[860,150],[900,120],[940,100],[1000,90]] },
+      { id: 'inter', tissu: 'conjonctif', haut: [[0,300],[100,297],[200,291],[300,283],[380,275],[440,262],[500,245],[560,228],[620,212],[680,198],[740,188],[800,176],[860,150],[900,120],[940,100],[1000,90]], bas: [[0,540],[120,520],[250,445],[350,410],[430,395],[500,380],[600,368],[700,362],[800,358],[900,362],[1000,366]] },
+      { id: 'if', tissu: 'fascia', ligne: [[0,300],[100,297],[200,291],[300,283],[380,275],[440,262],[500,245],[560,228],[620,212],[680,198],[740,188],[800,176],[860,150]], ep: 5 },
+      { id: 'pf', tissu: 'fascia', ligne: [[0,540],[120,520],[250,445],[350,410],[430,395],[500,380],[600,368],[700,362],[800,358],[900,362],[1000,366]], ep: 7 },
+      { id: 'profond', tissu: 'indetermine', haut: [[0,540],[120,520],[250,445],[350,410],[430,395],[500,380],[600,368],[700,362],[800,358],[900,362],[1000,366]], bas: [[0,709],[1000,709]] },
+      { id: 'ijv', tissu: 'veine', contour: [[100,330],[150,310],[220,302],[300,305],[370,318],[400,345],[380,380],[320,398],[240,402],[160,392],[110,365]] },
+      { id: 'ca', tissu: 'artere', contour: [[-10,395],[40,392],[95,410],[125,445],[120,485],[80,510],[20,518],[-10,515]] },
+      { id: 'la', tissu: 'liquide', contour: [[470,262],[540,236],[620,213],[700,200],[740,208],[735,238],[690,256],[620,270],[550,283],[490,285]] },
+      { id: 'aiguille', tissu: 'aiguille', ligne: [[1000,190],[730,262]], ep: 5 },
+    ],
+    labels: [
+      { s: 'sc', x: 300, y: 90, dx: -140, dy: -30, text: 'Tissu sous-cutané et platysma' },
+      { s: 'scm', x: 250, y: 225, dx: 60, dy: 0, text: 'Sterno-cléido-mastoïdien (SCM)', vue: 'anat' },
+      { s: 'if', x: 620, y: 212, dx: -40, dy: -90, text: 'Feuillet superficiel (IF) = face profonde du SCM' },
+      { s: 'scm', x: 860, y: 150, dx: 60, dy: -110, text: 'Bord postérieur du SCM', vue: 'anat' },
+      { s: 'la', x: 600, y: 250, dx: -170, dy: 90, text: 'Nappe d\'AL entre IF et PF (astérisques)' },
+      { s: 'aiguille', x: 870, y: 226, dx: 20, dy: 60, text: 'Aiguille : de latéral en médial, sous l\'IF' },
+      { s: 'pf', x: 800, y: 358, dx: 60, dy: 80, text: 'Fascia prévertébral (PF) = limite' },
+      { s: 'ijv', x: 260, y: 350, dx: 0, dy: 110, text: 'V. jugulaire interne' },
+      { s: 'ca', x: 60, y: 455, dx: 110, dy: 110, text: 'Carotide' },
+      { s: 'inter', x: 520, y: 330, dx: 110, dy: 200, text: 'Espace interfascial (branches non vues)', vue: 'anat' },
+      { s: 'profond', x: 700, y: 560, dx: 60, dy: 70, text: 'Plan profond non attribué (scalènes ?)', vue: 'anat' },
     ],
   }];
 })();
