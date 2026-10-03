@@ -195,6 +195,7 @@ Ponction **dans le plan, de latéral en médial**, sur l\'axe long ou l\'axe cou
   ],
   videos: [
     { titre: 'Ultrasound-guided Barbotage for Calcific Tendinitis', source: 'YouTube', url: 'https://www.youtube.com/watch?v=1pz2QYNTyOo', note: 'Démonstration de barbotage échoguidé de l\'épaule (Dr Gary P. Chimes).' },
+    { titre: 'Case study: Calcific tendinitis - Barbotage', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-calcific-tendinitis-barbotage/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas ; pas de planche NYSORA dédiée' },
     { titre: 'Needling and Lavage in Rotator Cuff Calcific Tendinitis: Ultrasound-Guided Technique', source: 'PMC', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC10805427/', note: 'Article de technique en accès libre, vu en résultat de recherche.' },
   ],
 

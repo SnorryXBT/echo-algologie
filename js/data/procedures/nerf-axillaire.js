@@ -190,7 +190,9 @@ Niveau de preuve : **faible** — séries et pratique d\'experts, extrapolation 
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true, note: 'Référence déjà vérifiée dans le projet (fiche nerf suprascapulaire).' },
   ],
   videos: [
-    { titre: 'Axillary Nerve Block - Ultrasound Scanning Technique', source: 'YouTube', url: 'https://www.youtube.com/watch?v=u0RbrMCugEI', note: 'Titre vu en résultat de recherche : vérifier au visionnage qu\'il s\'agit bien du bloc du nerf axillaire (espace quadrilatère) et non du bloc axillaire du plexus brachial.' },
+    { titre: 'How To: Ultrasound Guided Axillary Nerve Block 3D Video', source: 'YouTube', url: 'https://www.youtube.com/watch?v=3MBmUFMoH7w', note: 'Sonosite : nerf axillaire au col chirurgical de l\'humérus avec l\'artère circonflexe postérieure, animation 3D + écho, 2 min 40' },
+    { titre: 'Quadrangular Space Under Ultrasound | Axillary Nerve Identification Live by Dr. Chinmoy Roy', source: 'YouTube', url: 'https://www.youtube.com/watch?v=-TKAqj_5hec', note: 'Asian Pain Academy : repérage en direct du nerf axillaire dans l\'espace quadrilatère, 3 min 47' },
+    { titre: 'Shoulder Block: Axillary Nerve Block', source: 'NYSORA', url: 'https://nysora.com/education-news/shoulder-block-axillary-nerve-block/', note: 'Billet technique NYSORA (bloc du nerf axillaire pour analgésie d\'épaule) ; pas de planche douleur dédiée' },
   ],
 
   scenes: [

@@ -182,7 +182,10 @@ Niveau de preuve : **séries et cas cliniques seulement** pour ce site précis ;
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'reco', note: 'Métadonnées reprises de la fiche nerf-suprascapulaire, vérifiées lors d\'une session antérieure.' },
   ],
   videos: [
-    { titre: 'Ultrasound-Guided Hand, Wrist, and Elbow Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-hand-wrist-and-elbow-injections/', note: 'Sono-anatomie et repères des infiltrations du coude (dont nerf ulnaire), texte + images.' },
+    { titre: 'How to Hydrodissect and Block the Ulnar Nerve Using Ultrasound-Guidance', source: 'YouTube', url: 'https://www.youtube.com/watch?v=RFMTxT2FKVk', note: 'Gulfcoast Ultrasound Institute : hydrodissection et bloc du nerf ulnaire au coude, 4 min 35' },
+    { titre: 'Non-Surgical Ulnar Neuropathy Treatment - Nerve Hydrodissection | Sebastian Klisiewicz', source: 'YouTube', url: 'https://www.youtube.com/watch?v=dj_FXJExQ3U', note: 'Integrative Rehab Medicine (Dr S. Klisiewicz, DO) : hydrodissection échoguidée au tunnel cubital, 2 min 41' },
+    { titre: 'Ultrasound-Guided Hand, Wrist, and Elbow Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-hand-wrist-and-elbow-injections/', note: 'Planche de référence : sono-anatomie et technique (sections 13 à 15, coude et tunnel cubital)' },
+    { titre: 'Case study: Cubital tunnel syndrome - Injection', source: 'NYSORA', url: 'https://nysora.com/general/case-study-cubital-tunnel-syndrome-injection/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas' },
   ],
 
   scenes: [

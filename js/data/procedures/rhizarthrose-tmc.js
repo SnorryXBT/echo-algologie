@@ -209,8 +209,8 @@ Convention d\'image en longitudinal : **proximal (scaphoïde, trapèze) à gauch
       { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'reco', note: 'Métadonnées reprises de la fiche nerf-suprascapulaire, vérifiées lors d\'une session antérieure.' },
     ],
     videos: [
-      { titre: 'Ultrasound guided 1 carpometacarpal joint rhizarthrosis injection, by Prof Murat Karkucak MD', source: 'YouTube', url: 'https://www.youtube.com/watch?v=MXlfv6uD2ag', note: 'Infiltration échoguidée de la TMC.' },
       { titre: '1st CMC joint injection - MSKUS - Ultrasound guided 1st CMC joint injection - 2 minute series', source: 'YouTube', url: 'https://www.youtube.com/watch?v=FS0cBmUFoVc', note: 'Technique courte de l\'infiltration TMC échoguidée.' },
+      { titre: 'Ultrasound-Guided Hand, Wrist, and Elbow Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-hand-wrist-and-elbow-injections/', note: 'Planche de référence : sono-anatomie et technique (section poignet, articulation trapézo-métacarpienne)' },
     ],
 
     scenes: [

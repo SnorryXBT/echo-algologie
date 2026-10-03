@@ -204,6 +204,8 @@ Convention d\'image en transversal : **palmaire à gauche, dorsal à droite** �
     videos: [
       { titre: 'Ultrasound Guided De Quervain\'s Tenosynovitis Injection', source: 'YouTube', url: 'https://www.youtube.com/watch?v=GeyDLGuXWBc', note: 'Infiltration échoguidée du 1er compartiment (probeultrasound.com).' },
       { titre: 'Ultrasound-Guided First Dorsal Compartment Release de Quervain\'s Tenosynovitis | Dr. Ricardo Colberg', source: 'YouTube', url: 'https://www.youtube.com/watch?v=tO-Y4WRKNcI', note: 'Libération percutanée échoguidée du 1er compartiment (option interventionnelle avancée).' },
+      { titre: 'Ultrasound-Guided Hand, Wrist, and Elbow Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-hand-wrist-and-elbow-injections/', note: 'Planche de référence : sono-anatomie et technique (section 11, ténosynovite de De Quervain)' },
+      { titre: 'Case study: De Quervain’s tenosynovitis', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-de-quervains-tenosynovitis/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas' },
     ],
 
     scenes: [

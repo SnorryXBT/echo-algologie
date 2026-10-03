@@ -200,7 +200,10 @@ Pour l\'hydrodissection radiale : sonde **transversale** sur l\'avant-bras proxi
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'reco', note: 'Classe de risque hémorragique.' },
   ],
   videos: [
-    { titre: 'Case study: Lateral Epicondylitis (Tennis Elbow) and Ultrasound-Guided Injection', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-lateral-epicondylitis-injection-2/', note: 'Cas clinique NYSORA avec technique d\'injection échoguidée du tendon commun des extenseurs.' },
+    { titre: 'Ultrasound Guided Platelet Rich Plasma Injection for Lateral Epicondylitis/Partial Tear.', source: 'YouTube', url: 'https://www.youtube.com/watch?v=JTrZYyFGlrE', note: 'Dr Scott Weiss (probeultrasound.com) : PRP échoguidé sur le tendon extenseur commun, 5 min' },
+    { titre: 'Tennis elbow injection demonstration', source: 'YouTube', url: 'https://www.youtube.com/watch?v=SuSiTJCBDRI', note: 'Sports Medicine Ultrasound : infiltration échoguidée de l\'épicondyle latéral, 3 min' },
+    { titre: 'Ultrasound-Guided Hand, Wrist, and Elbow Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-hand-wrist-and-elbow-injections/', note: 'Planche de référence : sono-anatomie et technique (section 11, épicondylite latérale)' },
+    { titre: 'Case study: Lateral Epicondylitis (Tennis Elbow) and Ultrasound-Guided Injection', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-lateral-epicondylitis-injection-2/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas' },
   ],
 
   scenes: [

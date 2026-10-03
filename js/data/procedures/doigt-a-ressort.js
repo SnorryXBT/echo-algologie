@@ -214,7 +214,8 @@ Résultats : les séries prospectives rapportent des taux de succès **élevés,
     ],
     videos: [
       { titre: 'Ultrasound-Guided Steroid Injection for the Treatment of Trigger Finger', source: 'YouTube', url: 'https://www.youtube.com/watch?v=fbLRgKMQTs4', note: 'Infiltration échoguidée de la poulie A1.' },
-      { titre: '60353 Ultrasound-guided trigger finger A1 pulley release, compare to other interventions', source: 'YouTube', url: 'https://www.youtube.com/watch?v=WakYSB5u8Yw', note: 'Libération percutanée échoguidée de la poulie A1 (aiguille-lame 18 G).' },
+      { titre: 'Ultrasound-Guided Hand, Wrist, and Elbow Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-hand-wrist-and-elbow-injections/', note: 'Planche de référence : sono-anatomie et technique (sections 4 à 6, doigt à ressort)' },
+      { titre: 'Case study: Trigger finger - Injection', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-trigger-finger-injection/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas' },
     ],
 
     scenes: [

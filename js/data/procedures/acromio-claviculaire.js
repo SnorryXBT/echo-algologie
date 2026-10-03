@@ -177,8 +177,11 @@ L\'approche standard est **hors du plan** : la sonde reste coronale sur la fente
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'reco', note: 'Classe de risque hémorragique.' },
   ],
   videos: [
-    { titre: 'Ultrasound guided acromioclavicular joint injection (out of plane) by Prof Murat Karkucak MD', source: 'YouTube', url: 'https://www.youtube.com/watch?v=AzBEA2yKGQ0', note: 'Abord hors plan échoguidé.' },
+    { titre: 'Ultrasound-Guided Acromioclavicular Joint Injection NYSORA Medstudylab.com', source: 'YouTube', url: 'https://www.youtube.com/watch?v=7xBJB6xBqgQ', note: 'Anesthesia and Pain medicine (Medstudylab) : démonstration réelle, sonde sur l\'interligne, aiguille hors plan, 3 min' },
+    { titre: 'Acromioclavicular Joint - 2 min series MSKUS', source: 'YouTube', url: 'https://www.youtube.com/watch?v=RX83f3vznhY', note: 'SMUG MSK ultrasound training : balayage et infiltration, 2 min 25' },
     { titre: 'How To: Shoulder Ultrasound-Guided Injection of the AC Joint 3D Video', source: 'YouTube', url: 'https://www.youtube.com/watch?v=8xfcDMERiBQ&pp=0gcJCdgAo7VqN5tD', note: 'Animation 3D de la technique.' },
+    { titre: 'Ultrasound-Guided Shoulder Joint and Bursa Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-shoulder-joint-and-bursa-injections/', note: 'Planche de référence : sono-anatomie et technique (section 8, articulation acromio-claviculaire)' },
+    { titre: 'Case study: Acromioclavicular joint arthritis - Injection', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-acromioclavicular-joint-arthritis-injection/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas' },
   ],
 
   scenes: [

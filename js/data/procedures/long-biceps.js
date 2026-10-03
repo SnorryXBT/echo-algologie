@@ -179,8 +179,11 @@ Si l\'artère occupe toute la fenêtre latérale, deux solutions : descendre de 
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'reco', note: 'Classe de risque hémorragique.' },
   ],
   videos: [
-    { titre: 'Ultrasound-guided biceps tendon sheath injection, by Prof Murat Karkucak MD', source: 'YouTube', url: 'https://www.youtube.com/watch?v=r2xdh3QWhCI', note: 'Injection échoguidée de la gaine du long biceps.' },
     { titre: 'Ultrasound Guided Interventions: Long Head of Biceps', source: 'YouTube', url: 'https://www.youtube.com/watch?v=_sU4Eg20P7g', note: 'Vu en résultat de recherche.' },
+    { titre: 'Ultrasound-Guided Biceps Tendon Peritendinous Sheath Injection NYSORA Medstudylab.com', source: 'YouTube', url: 'https://www.youtube.com/watch?v=qMicNmIbyiw', note: 'Anesthesia and Pain medicine (Medstudylab) : gaine du long biceps dans la gouttière, 3 min 49' },
+    { titre: 'Ultrasound Guided Biceps Tendon Sheath Injection by probeultrasound', source: 'YouTube', url: 'https://www.youtube.com/watch?v=AWjccxc3yRM', note: 'Dr Scott Weiss (probeultrasound.com) : démonstration réelle, 3 min 50' },
+    { titre: 'Ultrasound-Guided Shoulder Joint and Bursa Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-shoulder-joint-and-bursa-injections/', note: 'Planche de référence : sono-anatomie et technique (sections 6 et 7, gaine du long biceps)' },
+    { titre: 'Case study: Biceps tendinopathy - Injection', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-biceps-tendinopathy-injection/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas' },
   ],
 
   scenes: [

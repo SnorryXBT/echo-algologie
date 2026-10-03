@@ -222,8 +222,11 @@ Intérêt majeur en pratique HDJ : pas de corticoïde, donc geste répétable, u
       { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'reco', note: 'Métadonnées reprises de la fiche nerf-suprascapulaire, vérifiées lors d\'une session antérieure.' },
     ],
     videos: [
+      { titre: 'Master Carpal Tunnel Injections with Ultrasound: A Step-by-Step Guide!', source: 'YouTube', url: 'https://www.youtube.com/watch?v=0jJADAb2oXA', note: 'SMUG MSK ultrasound training : abord ulnaire dans le plan, pas-à-pas, 6 min' },
+      { titre: 'Ultrasound Guided Carpal Tunnel Injection', source: 'YouTube', url: 'https://www.youtube.com/watch?v=62-M3CAUTS0', note: 'Clarius Mobile Health : démonstration réelle, 2 min' },
+      { titre: 'Ultrasound-Guided Hand, Wrist, and Elbow Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-hand-wrist-and-elbow-injections/', note: 'Planche de référence : sono-anatomie et technique (sections 1 à 3, canal carpien)' },
+      { titre: 'Case study: Carpal tunnel syndrome - Injection', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-carpal-tunnel-syndrome-injection/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas' },
       { titre: 'Ultrasound Guided Carpal Tunnel Injection', source: 'Clarius', url: 'https://clarius.com/classroom/ultrasound-guided-carpal-tunnel-injection/', note: 'Démonstration de l\'infiltration échoguidée du canal carpien.' },
-      { titre: 'Ultrasound-Guided Hand, Wrist, and Elbow Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-hand-wrist-and-elbow-injections/', note: 'Sono-anatomie et repères, texte + images.' },
     ],
 
     scenes: [

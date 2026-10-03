@@ -178,7 +178,12 @@ Marquer le bord latéral de l\'acromion avant la désinfection : repère de seco
     { auteurs: 'Beggs I, Bianchi S, Bueno A, et al.', titre: 'Musculoskeletal ultrasound technical guidelines — shoulder', revue: 'European Society of Musculoskeletal Radiology (ESSR)', annee: '2010', url: 'https://essr.org/content-essr/uploads/2016/10/shoulder.pdf', type: 'reco', verif: true, note: 'Protocole de coupes standardisées de l\'épaule (position de Crass / Crass modifiée).' },
     { auteurs: 'Peck E, Lai JK, Pawlina W, Smith J', titre: 'Accuracy of ultrasound-guided versus palpation-guided acromioclavicular joint injections: a cadaveric study', revue: 'PM R', annee: '2010', url: 'https://www.sciencedirect.com/science/article/abs/pii/S1934148210005101', type: 'étude cadavérique', verif: true, note: 'Cité ici pour le principe méthodologique (précision guidée vs palpation) ; voir la fiche acromio-claviculaire.' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Subacromial Bursa Injection - Ultrasound Scanning Technique', source: 'YouTube', url: 'https://www.youtube.com/watch?v=_rQx6mXq698', note: 'Clarius Mobile Health : infiltration de la bourse sous-acromio-deltoïdienne, 3 min 17' },
+    { titre: 'How to Scan & Inject an SA Bursa with Ultrasound', source: 'YouTube', url: 'https://www.youtube.com/watch?v=FcOMSZZGF_U', note: 'Sports Medicine Ultrasound : balayage et abord latéral dans le plan, 1 min 42' },
+    { titre: 'Ultrasound-Guided Shoulder Joint and Bursa Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-shoulder-joint-and-bursa-injections/', note: 'Planche de référence : sono-anatomie et technique (sections 1 à 5, bourse sous-acromiale)' },
+    { titre: 'Case study: Subacromial impingement syndrome - Injection', source: 'NYSORA', url: 'https://nysora.com/general/case-study-subacromial-impingement-syndrome-injection/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas' },
+  ],
 
   scenes: [
     {

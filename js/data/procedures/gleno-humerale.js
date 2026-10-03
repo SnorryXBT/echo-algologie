@@ -201,7 +201,10 @@ Aucune de ces trois stratégies n\'a démontré sa supériorité de façon conva
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true, note: 'Référence déjà vérifiée dans le projet (fiche nerf suprascapulaire).' },
   ],
   videos: [
-    { titre: 'Ultrasound guided shoulder (glenohumeral) joint injection (posterior approach)', source: 'YouTube', url: 'https://www.youtube.com/watch?v=ShY36L9Nr1M&pp=0gcJCdgAo7VqN5tD', note: 'Abord postérieur échoguidé (Murat Karkucak MD).' },
+    { titre: 'Ultrasound guided glenohumeral joint injection - 2 min series MSKUS', source: 'YouTube', url: 'https://www.youtube.com/watch?v=uQO6DxfHTkw', note: 'SMUG MSK ultrasound training : abord postérieur dans le plan, 3 min 23' },
+    { titre: 'SHOULDER (GLENOHUMERAL) INJECTION - POSTERIOR APPROACH: Step-By-Step Instructions', source: 'YouTube', url: 'https://www.youtube.com/watch?v=OAeOEc-X0kU', note: 'RheumTutor (rhumatologue) : démonstration réelle pas-à-pas, 3 min 45' },
+    { titre: 'Ultrasound-Guided Shoulder Joint and Bursa Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-shoulder-joint-and-bursa-injections/', note: 'Planche de référence : sono-anatomie et technique (sections 11 à 15, gléno-humérale et intervalle des rotateurs)' },
+    { titre: 'Case study: The SHAC technique for treating adhesive capsulitis', source: 'NYSORA', url: 'https://nysora.com/education-news/case-studythe-shac-technique-for-treating-adhesive-capsulitis/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas (hydrodilatation capsulaire)' },
     { titre: 'Ultrasound-Guided Glenohumeral Joint Injection Using the Posterior Approach', source: 'Am J Phys Med Rehabil (PMC)', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC4640052/', note: 'Article court avec vidéo associée (AJPMR 2015).' },
   ],
 

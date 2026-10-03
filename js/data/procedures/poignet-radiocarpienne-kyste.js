@@ -218,6 +218,7 @@ Convention d\'image en sagittal : **proximal (radius) à gauche, distal (carpe) 
     videos: [
       { titre: 'Ultrasound Guided Dorsal Wrist Ganglion Aspiration & Injection', source: 'YouTube', url: 'https://www.youtube.com/watch?v=U-pdtGN7fkI', note: 'Ponction-aspiration échoguidée d\'un kyste dorsal (probeultrasound.com).' },
       { titre: 'Ultrasound-Guided Wrist Joint Injection (Radiocarpal) – Step-by-Step Guide', source: 'YouTube', url: 'https://www.youtube.com/watch?v=-H0RA4_wpk4', note: 'Infiltration radiocarpienne échoguidée pas à pas.' },
+      { titre: 'Ultrasound-Guided Hand, Wrist, and Elbow Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-hand-wrist-and-elbow-injections/', note: 'Planche de référence : sono-anatomie et technique (sections 7 à 9, poignet)' },
     ],
 
     scenes: [

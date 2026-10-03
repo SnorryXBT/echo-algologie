@@ -169,7 +169,8 @@ C\'est la voie où le nerf est **le plus visible** (Siegenthaler 2012, Rothe 201
   ],
   videos: [
     { titre: 'Suprascapular nerve block — ultrasound scanning technique', source: 'YouTube · Clarius (Dr Rosenblum)', url: 'https://www.youtube.com/watch?v=JSReXgHprDA', note: 'repérage de la fosse et de l\'échancrure' },
-    { titre: 'Ultrasound pain block tip of the week: suprascapular nerve block', source: 'NYSORA', url: 'https://www.nysora.com/education-news/ultrasound-pain-block-tip-of-the-week-suprascapular-nerve-block/' },
+    { titre: 'Ultrasound-Guided Peripheral Nerve block in Chronic Pain Management', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-peripheral-nerve-block-in-chronic-pain-management/', note: 'Planche de référence : sono-anatomie et technique (sections 5 à 8, nerf suprascapulaire)' },
+    { titre: 'Ultrasound Pain Block Tip of the Week: Suprascapular Nerve Block', source: 'NYSORA', url: 'https://nysora.com/education-news/ultrasound-pain-block-tip-of-the-week-suprascapular-nerve-block/', note: 'Conseils pratiques NYSORA' },
     { titre: 'Suprascapular nerve block — StatPearls', source: 'NCBI Bookshelf (texte + figures)', url: 'https://www.ncbi.nlm.nih.gov/books/NBK580556/' },
   ],
 
