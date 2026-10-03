@@ -179,8 +179,8 @@ Ne jamais orienter la pointe en direction du pli inguinal (crânio-médial franc
     { auteurs: 'Short AJ, Barnett JJG, Gofeld M, et al.', titre: 'Anatomic study of innervation of the anterior hip capsule: implication for image-guided intervention', revue: 'Reg Anesth Pain Med', annee: '2018', pmid: '29140962', type: 'anatomie', verif: true, note: 'Base anatomique de la filière neuro-ablative alternative à l’infiltration.' },
   ],
   videos: [
-    { titre: 'Ultrasound-Guided Intra-articular Hip Injections', source: 'NYSORA', url: 'https://www.nysora.com/pain-management/ultrasound-guided-intra-articular-hip-injections/', note: 'Sono-anatomie, abord antérieur longitudinal, texte + images.' },
     { titre: 'How To: Ultrasound Guided Hip Injection Scanning Technique Video', source: 'YouTube', url: 'https://www.youtube.com/watch?v=9CxPnc2-sH4', note: 'Position de la sonde, du patient et trajet d\'aiguille.' },
+    { titre: 'Ultrasound-Guided Intra-articular Hip Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-intra-articular-hip-injections/', note: 'Planche de référence : sono-anatomie et technique' },
   ],
 
   scenes: [

@@ -188,7 +188,11 @@ Le **tendon patellaire** s'étend de la pointe de la patella à la tubérosité 
     { auteurs: `Alvarez-Nemegyei J, Canoso JJ`, titre: `Evidence-based soft tissue rheumatology IV: anserine bursitis`, revue: `Journal of Clinical Rheumatology`, annee: '2004', type: 'revue', verif: true },
     { auteurs: `Narouze S, Benzon HT, Provenzano D, et al.`, titre: `Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP`, revue: `Regional Anesthesia and Pain Medicine`, annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true },
   ],
-  videos: [],
+  videos: [
+    { titre: '#ultrasound Guided Interventions: Pes Anserine (Imaging)', source: 'YouTube', url: 'https://www.youtube.com/watch?v=-pwbETCX1hk', note: 'SportDrDinesh (médecin du sport, Singapour) : repérage et infiltration de la patte d\'oie, 2 min' },
+    { titre: '#ultrasound Guided Interventions: Patella Tendon (Injection)', source: 'YouTube', url: 'https://www.youtube.com/watch?v=11kLBQq5bnU', note: 'SportDrDinesh : injection échoguidée du tendon patellaire, 2 min' },
+    { titre: 'Case study: Pes anserinus bursitis - Injection', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-pes-anserinus-bursitis-injection/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas ; pas de planche NYSORA dédiée' },
+  ],
 
   scenes: [
     {

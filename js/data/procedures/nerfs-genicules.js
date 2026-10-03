@@ -199,8 +199,10 @@ L'ECR contre sham de **Radnovich 2017** porte sur la cryoneurolyse des branches 
     { auteurs: `Narouze S, Benzon HT, Provenzano D, et al.`, titre: `Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP`, revue: `Regional Anesthesia and Pain Medicine`, annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true },
   ],
   videos: [
-    { titre: 'Genicular Nerve Blocks', source: 'NYSORA', url: 'https://www.nysora.com/techniques/lower-extremity/nysora-com-genicular-nerve-blocks/', note: 'Page technique NYSORA : blocs des nerfs géniculés échoguidés.' },
+    { titre: 'Ultrasound Guided Genicular Nerve Blocks', source: 'YouTube', url: 'https://www.youtube.com/watch?v=PxkSdSzUfGs', note: 'Regional Anesthesiology and Acute Pain Medicine : repères osseux et blocs des trois nerfs géniculés, 4 min 49' },
     { titre: 'Ultrasound guided Genicular nerve interventions - New Landmarks Technical Considerations', source: 'YouTube', url: 'https://www.youtube.com/watch?v=THV9wOjzsHE', note: 'Webinaire : nouveaux repères anatomiques et considérations techniques pour les blocs/RF géniculés.' },
+    { titre: 'Genicular Nerve Blocks', source: 'NYSORA', url: 'https://nysora.com/regional-anesthesia/techniques/lower-extremity/nysora-com-genicular-nerve-blocks/', note: 'Planche de référence : sono-anatomie et technique' },
+    { titre: 'Ultrasound Pain Block Tip of the Week: How to identify the Genicular Nerves?', source: 'NYSORA', url: 'https://nysora.com/education-news/ultrasound-pain-block-tip-of-the-week-how-to-identify-the-genicular-nerves/', note: 'Conseils pratiques NYSORA' },
   ],
 
   scenes: [

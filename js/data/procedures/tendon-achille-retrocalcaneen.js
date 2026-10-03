@@ -211,7 +211,10 @@ Limite méthodologique importante à connaître : dans cet essai, le bras gros v
     { auteurs: 'Wiegerinck JI, Kerkhoffs GM, van Sterkenburg MN, Sierevelt IN, van Dijk CN', titre: 'Treatment for insertional Achilles tendinopathy: a systematic review', revue: 'Knee Surgery, Sports Traumatology, Arthroscopy', annee: '2013', type: 'revue systématique', verif: false },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true, note: 'Référence reprise telle quelle de la fiche nerf-suprascapulaire.js, dont le DOI avait été vérifié lors de sa rédaction.' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Achilles tendon High volume hydrodissection injection by ultrasound guidance', source: 'YouTube', url: 'https://www.youtube.com/watch?v=VxExZXmr6Aw', note: 'Liam Stapleton (podiatre du sport) : injection de gros volume entre tendon et graisse de Kager, 3 min 28' },
+    { titre: 'Ultrasound-Guided Injection of Retrocalcaneal Bursitis', source: 'YouTube', url: 'https://www.youtube.com/watch?v=hCjr__HmQKY', note: 'Chen Carl : infiltration de la bourse rétro-calcanéenne, 4 min' },
+  ],
 
   scenes: [
     {

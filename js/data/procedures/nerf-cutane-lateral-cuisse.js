@@ -199,6 +199,10 @@ Le choix appartient au patient, informé de ce compromis. Aucun essai comparatif
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'recommandation', verif: true },
   ],
   videos: [
+    { titre: 'Lateral Femoral Cutaneous Nerve (LFCN) - How to find it with Ultrasound', source: 'YouTube', url: 'https://www.youtube.com/watch?v=ENrU1WiJvr8', note: 'Dr Amit Pawa (anesthésiste, Londres) : repérage du NCLC sous le ligament inguinal et entre sartorius et TFL, 2 min 44' },
+    { titre: 'Femoral and lateral femoral cutaneous nerve blocks: Foundational overview', source: 'YouTube', url: 'https://www.youtube.com/watch?v=TOcvCKr9J18', note: 'Regional Anesthesiology and Acute Pain Medicine : sono-anatomie et bloc, 5 min' },
+    { titre: 'Ultrasound-Guided Peripheral Nerve block in Chronic Pain Management', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-peripheral-nerve-block-in-chronic-pain-management/', note: 'Planche de référence : sono-anatomie et technique (sections 1 à 4, nerf cutané latéral de la cuisse)' },
+    { titre: 'Case study: Meralgia paresthetica - Injection', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-meralgia-paresthetica-injection/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas' },
     { titre: 'Lateral Femoral Cutaneous Nerve Block', source: 'USRA', url: 'https://usra.ca/pain-medicine/specific-blocks/peripheral-nerves/lfcnerve.php', note: 'Page technique USRA (Ultrasound for Regional Anesthesia) : repérage et bloc échoguidé du NCLC.' },
   ],
 

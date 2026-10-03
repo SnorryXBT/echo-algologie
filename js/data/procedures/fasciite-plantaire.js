@@ -201,7 +201,11 @@ Deux temps distincts : **repérage en coupe longitudinale** (mesure de l\'épais
     { auteurs: 'Babcock MS, Foster L, Pasquina P, Jabbari B', titre: 'Treatment of pain attributed to plantar fasciitis with botulinum toxin A: a short-term, randomized, placebo-controlled, double-blind study', revue: 'American Journal of Physical Medicine & Rehabilitation', annee: '2005', type: 'ECR', verif: false, note: 'Hors AMM en France dans cette indication.' },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true, note: 'Référence reprise telle quelle de la fiche nerf-suprascapulaire.js, dont le DOI avait été vérifié lors de sa rédaction.' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Ultrasound-Guided Diagnosis and Treatment of Plantar Fasciitis', source: 'YouTube', url: 'https://www.youtube.com/watch?v=4lqyz4XWuHw', note: 'AJPM&R (vidéo d\'article) : diagnostic échographique et infiltration par abord médial dans le plan, 4 min' },
+    { titre: 'Plantar Fascia injection with cortisone demonstation', source: 'YouTube', url: 'https://www.youtube.com/watch?v=E5_TlTWMVKI', note: 'Sports Medicine Ultrasound : démonstration réelle, 3 min 26' },
+    { titre: 'Case study: Plantar fasciopathy - Injection', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-plantar-fasciopathy-injection/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas ; pas de planche NYSORA dédiée' },
+  ],
 
   scenes: [
     {

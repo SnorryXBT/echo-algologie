@@ -187,8 +187,9 @@ Le taux de récidive est élevé si la pathologie intra-articulaire sous-jacente
     { auteurs: `Narouze S, Benzon HT, Provenzano D, et al.`, titre: `Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP`, revue: `Regional Anesthesia and Pain Medicine`, annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true },
   ],
   videos: [
-    { titre: 'Ultrasound-Guided Knee Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-knee-injections/', note: 'Page technique NYSORA : abords échoguidés du genou.' },
     { titre: 'Suprapatellar Injection of the Knee - Ultrasound Scanning Technique', source: 'YouTube', url: 'https://www.youtube.com/watch?v=fWLgKRjf69c', note: 'Injection intra-articulaire échoguidée par le récessus supra-patellaire.' },
+    { titre: 'Ultrasound-Guided Knee Injections', source: 'NYSORA', url: 'https://nysora.com/pain-management/ultrasound-guided-knee-injections/', note: 'Planche de référence : sono-anatomie et technique' },
+    { titre: 'Case study: Baker’s cyst - Injection', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-bakers-cyst-injection/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas (kyste poplité)' },
   ],
 
   scenes: [

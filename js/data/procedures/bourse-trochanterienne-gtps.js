@@ -184,6 +184,7 @@ Prévenir d’une **recrudescence douloureuse de 5 à 10 jours**, interdire le c
   ],
   videos: [
     { titre: 'Ultrasound Guided Hip Greater Trochanteric Bursa Injection', source: 'YouTube (probeultrasound.com)', url: 'https://www.youtube.com/watch?v=4IRnvNuiUJo', note: 'Infiltration échoguidée de la bourse trochantérienne, abord dans le plan.' },
+    { titre: 'Case study: Greater trochanteric pain syndrome - Injection', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-greater-trochanteric-pain-syndrome-injection/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas ; pas de planche NYSORA dédiée' },
     { titre: 'Greater Trochanter Injection', source: 'Clarius', url: 'https://clarius.com/classroom/great-trochanter-injection/', note: 'Démonstration d\'infiltration échoguidée de la bourse trochantérienne (Clarius Classroom).' },
   ],
 

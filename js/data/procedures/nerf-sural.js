@@ -204,7 +204,11 @@ Ponction **in-plane**, dans le grand axe de la sonde, de latéral en médial ou 
     { auteurs: 'Trescot AM', titre: 'Cryoanalgesia in interventional pain management', revue: 'Pain Physician', annee: '2003', type: 'revue', verif: false },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true, note: 'Référence reprise telle quelle de la fiche nerf-suprascapulaire.js, dont le DOI avait été vérifié lors de sa rédaction.' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'US Guided Sural Nerve Block of the Ankle', source: 'YouTube', url: 'https://www.youtube.com/watch?v=OvDW1BFho7Y', note: 'Society for Pediatric Pain Medicine : bloc sural rétro-malléolaire avec la petite veine saphène, 1 min 41' },
+    { titre: 'How to Find the Sural Nerve with MSK Ultrasound | For Achilles Pain & Injection Safety', source: 'YouTube', url: 'https://www.youtube.com/watch?v=9dLUpGB9CD8', note: 'SMUG MSK ultrasound training : repérage du nerf sural au mollet et à la cheville, 1 min 44' },
+    { titre: 'Ultrasound-Guided Ankle Nerve Block', source: 'NYSORA', url: 'https://nysora.com/regional-anesthesia/techniques/ultrasound-guided-ankle-block/', note: 'Planche d\'anesthésie régionale : bloc de cheville, dont le nerf sural rétro-malléolaire (pas de planche douleur dédiée)' },
+  ],
 
   scenes: [
     {

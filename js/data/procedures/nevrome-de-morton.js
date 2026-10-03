@@ -197,7 +197,10 @@ Voie dorsale : ponction **dorsale, dans l\'espace intermétatarsien**, aiguille 
     { auteurs: 'Mulder JD', titre: 'The causative mechanism in Morton\'s metatarsalgia', revue: 'Journal of Bone and Joint Surgery (Br)', annee: '1951', type: 'historique', verif: false, note: 'Description originale du signe qui porte son nom.' },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true, note: 'Référence reprise telle quelle de la fiche nerf-suprascapulaire.js, dont le DOI avait été vérifié lors de sa rédaction.' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Mortons Neuroma - 2 min series MSKUS', source: 'YouTube', url: 'https://www.youtube.com/watch?v=jCGBsovcvEE', note: 'SMUG MSK ultrasound training : repérage (signe de Mulder) et infiltration, 3 min' },
+    { titre: 'Morton’s neuroma injection with ultrasound guidance', source: 'YouTube', url: 'https://www.youtube.com/watch?v=tmNLQk_bQn0', note: 'Donald E. Pelto, DPM (podiatre) : infiltration par abord dorsal, 2 min' },
+  ],
 
   scenes: [
     {

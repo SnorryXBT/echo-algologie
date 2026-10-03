@@ -193,7 +193,10 @@ Conduite à tenir : **IRM** et **avis chirurgical**. Le traitement est l'évacua
     { auteurs: `Wu YT, Ho TY, Chou YC, et al.`, titre: `Six-month efficacy of perineural dextrose for carpal tunnel syndrome: a prospective, randomized, double-blind, controlled trial`, revue: `Mayo Clinic Proceedings`, annee: '2017', type: 'ECR', verif: false, note: `Base de preuve du dextrose 5 % — indication différente, extrapolation assumée.` },
     { auteurs: `Narouze S, Benzon HT, Provenzano D, et al.`, titre: `Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP`, revue: `Regional Anesthesia and Pain Medicine`, annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true },
   ],
-  videos: [],
+  videos: [
+    { titre: 'How to Scan & Inject the Common Fibular Nerve with Ultrasound', source: 'YouTube', url: 'https://www.youtube.com/watch?v=E9NbpP_3De0', note: 'Sports Medicine Ultrasound : balayage au col de la fibula et infiltration périneurale, 5 min' },
+    { titre: 'How to Scan the Common Peroneal Nerve with MSK Ultrasound', source: 'YouTube', url: 'https://www.youtube.com/watch?v=3e_oBkhBcnU', note: 'SMUG MSK ultrasound training : repérage du creux poplité au col fibulaire, 2 min 34' },
+  ],
 
   scenes: [
     {

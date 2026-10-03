@@ -211,7 +211,12 @@ Ce qui reste possible : une cryoneurolyse ou une alcoolisation ciblée sur une *
     { auteurs: `Cass SP`, titre: `Ultrasound-guided nerve hydrodissection: what is it? A review of the literature`, revue: `Current Sports Medicine Reports`, annee: '2016', type: 'revue', verif: false },
     { auteurs: `Narouze S, Benzon HT, Provenzano D, et al.`, titre: `Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP`, revue: `Regional Anesthesia and Pain Medicine`, annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Tarsal Tunnel Injection', source: 'YouTube', url: 'https://www.youtube.com/watch?v=AzPoU1fAOfA', note: 'Clarius Mobile Health : nerf tibial rétro-malléolaire sous le rétinaculum des fléchisseurs, 2 min 15' },
+    { titre: 'Tarsal Tunnel Hydrodissection', source: 'YouTube', url: 'https://www.youtube.com/watch?v=bS2sNPq8Y_A', note: 'Daniel Clearfield, DO (médecine du sport) : hydrodissection du nerf tibial, 1 min 50' },
+    { titre: 'Nerve Block Tip of the Week: Tibial Nerve Block at the Level of the Ankle', source: 'NYSORA', url: 'https://nysora.com/education-news/nerve-block-tip-of-the-week-tibial-nerve-block-at-the-level-of-the-ankle/', note: 'Conseils pratiques NYSORA : nerf tibial rétro-malléolaire' },
+    { titre: 'Ultrasound-Guided Ankle Nerve Block', source: 'NYSORA', url: 'https://nysora.com/regional-anesthesia/techniques/ultrasound-guided-ankle-block/', note: 'Planche d\'anesthésie régionale : bloc de cheville, dont le nerf tibial (pas de planche douleur dédiée)' },
+  ],
 
   scenes: [
     {

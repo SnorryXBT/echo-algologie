@@ -183,7 +183,11 @@ Pour l'IPBSN, même orientation mais trajet très court : on reste dans le plan 
     { auteurs: `Lam KHS, Hung CY, Chiang YP, et al.`, titre: `Ultrasound-guided nerve hydrodissection for pain management: rationale, methods, current literature, and theoretical mechanisms`, revue: `Journal of Pain Research`, annee: '2020', doi: '10.2147/JPR.S247208', type: 'revue', verif: true },
     { auteurs: `Radnovich R, Scott D, Patel AT, et al.`, titre: `Cryoneurolysis to treat the pain and symptoms of knee osteoarthritis: a multicenter, randomized, double-blind, sham-controlled trial`, revue: `Osteoarthritis and Cartilage`, annee: '2017', doi: '10.1016/j.joca.2017.03.006', type: 'ECR', verif: true },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Saphenous Nerve Block in True Adductor Canal Block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=Gd1Ed0-wCVw', note: 'Leicester Pain Education (NHS) : nerf saphène dans le canal des adducteurs, 4 min' },
+    { titre: 'Infrapatellar Saphenous Nerve Block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=VN4sD5Tq6mI', note: 'Clarius Mobile Health : bloc de la branche infrapatellaire, 1 min 35' },
+    { titre: 'Ultrasound-Guided Saphenous (Adductor Canal) Nerve Block', source: 'NYSORA', url: 'https://nysora.com/regional-anesthesia/topics/regional-anesthesia-for-specific-surgical-procedures/lower-extremity-regional-anesthesia-for-specific-surgical-procedures/foot-and-anckle/ultrasound-guided-saphenous-subsartorius-adductor-canal-nerve-block/', note: 'Planche de référence : sono-anatomie et technique' },
+  ],
 
   scenes: [
     {

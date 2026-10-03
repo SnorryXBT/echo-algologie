@@ -191,7 +191,11 @@ Sens de ponction pour la voie antérieure : **de distal vers proximal**, aiguill
     { auteurs: 'Talusan PG, Toy J, Perez JL, Milewski MB, Reach JS', titre: 'Anterior ankle impingement: diagnosis and treatment', revue: 'Journal of the American Academy of Orthopaedic Surgeons', annee: '2014', type: 'revue', verif: false },
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Reg Anesth Pain Med', annee: '2018;43(3):225-62', doi: '10.1097/AAP.0000000000000700', type: 'reco', verif: true, note: 'Référence reprise telle quelle de la fiche nerf-suprascapulaire.js, dont le DOI avait été vérifié lors de sa rédaction.' },
   ],
-  videos: [],
+  videos: [
+    { titre: 'Ultrasound guided ankle and subtalar joint injection technique for POCUS clinicians', source: 'YouTube', url: 'https://www.youtube.com/watch?v=9BgGRJn4WWw', note: 'MSK Australia : tibio-talienne antérieure et sous-talienne, 3 min 28' },
+    { titre: 'Ankle Effusion - Identification, Aspiration and Injection', source: 'YouTube', url: 'https://www.youtube.com/watch?v=hDqOnLgSgzY', note: 'Core Ultrasound : repérage de l\'épanchement, ponction et infiltration tibio-talienne, 5 min' },
+    { titre: 'Case study: Ankle joint effusion - Injection', source: 'NYSORA', url: 'https://nysora.com/education-news/case-study-ankle-joint-effusion-injection/', note: 'Cas clinique NYSORA : images échographiques du geste, pas-à-pas ; pas de planche NYSORA dédiée' },
+  ],
 
   scenes: [
     {

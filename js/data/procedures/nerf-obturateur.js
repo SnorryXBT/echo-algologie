@@ -195,6 +195,9 @@ En pratique, chez un candidat à la dénervation : **PENG 15 mL + bloc obturateu
     { auteurs: 'Narouze S, Benzon HT, Provenzano D, et al.', titre: 'Interventional spine and pain procedures in patients on antiplatelet and anticoagulant medications (second edition): guidelines from the ASRA, ESRA, AAPM, INS, NANS and WIP', revue: 'Regional Anesthesia and Pain Medicine', annee: '2018', doi: '10.1097/AAP.0000000000000700', type: 'recommandation', verif: true },
   ],
   videos: [
+    { titre: 'USG Obturator Nerve Block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=tlnSiXfTvok', note: 'Ki-Jinn Chin (Toronto) : abord inter-fascial distal et proximal, 6 min 31' },
+    { titre: 'Ultrasound Guided Obturator Nerve Block', source: 'YouTube', url: 'https://www.youtube.com/watch?v=Xa0pbbEPFNk', note: 'Regional Anesthesiology and Acute Pain Medicine : sono-anatomie des adducteurs et bloc, 6 min' },
+    { titre: 'Ultrasound-Guided Obturator Nerve Block', source: 'NYSORA', url: 'https://nysora.com/regional-anesthesia/techniques/lower-extremity/obturator/ultrasound-guided-obturator-nerve-block/', note: 'Planche de référence : sono-anatomie et technique' },
     { titre: 'Obturator Nerve Block', source: 'USRA', url: 'https://usra.ca/regional-anesthesia/specific-blocks/lower-limb/obturatornerve.php', note: 'Page technique USRA : sonoanatomie et bloc interfascial échoguidé du nerf obturateur.' },
   ],
 
