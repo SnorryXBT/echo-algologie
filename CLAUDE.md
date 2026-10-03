@@ -90,6 +90,16 @@ Compte courant : `node scripts/anat-check.js` (coupes tracées, validées, image
   (4) après un changement de `crop`, les `labels` de la figure sont décalés si la coupe est retirée.
 - Export hors mémo : CC BY / images personnelles uniquement, et coupe validée (`scripts/anat-export.js`).
 
+## Liens externes par fiche (3 octobre 2026)
+
+Décision de Mat : chaque fiche porte, dans `videos`, (1) au moins une vidéo de démonstration réelle (YouTube en premier :
+c'est elle qui est intégrée en lecteur), (2) le lien vers la page NYSORA du geste quand elle existe (`source: 'NYSORA'`,
+lien seulement — **aucune image NYSORA dans le dépôt, qui est public** ; les pages servent de référence anatomique pour
+redessiner). État : 63/64 fiches avec vidéo (socle-securite : rien à démontrer), 53/64 avec page NYSORA (11 gestes sans
+page exacte). Chaque lien YouTube a été ouvert dans le navigateur intégré (YouTube refuse curl depuis le Mac) : 6 liens
+anciens étaient morts (vidéos passées en privé, réservées aux membres, hors sujet) et ont été remplacés. Vérifier un lien :
+l'ouvrir, jamais le deviner.
+
 ## État des illustrations (21 septembre 2026)
 
 **Toutes les régions sont illustrées** : membre supérieur (14 fiches), membre inférieur (17), tête-cou (9),
