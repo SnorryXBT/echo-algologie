@@ -73,7 +73,7 @@ chaque fiche : 1 image réelle de la coupe de repérage, téléchargée dans
 complet (auteurs, revue, année, licence, URL). Étiqueter en français ; si l'image porte
 déjà des annotations, ne pas les dupliquer.
 
-## 4. Vidéos
+## 4. Vidéos — ABANDONNÉ le 4 octobre 2026 (décision de Mat : liens externes seulement, voir CLAUDE.md)
 
 - Pour chaque fiche, ajouter aux scènes un champ `narration` (≤ 35 mots, phrase parlée,
   français) quand la `legende` est trop longue ou trop écrite pour être dite.

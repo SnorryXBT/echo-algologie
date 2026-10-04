@@ -54,7 +54,12 @@ ne traite que du projet.
 ## Commandes projet (skills)
 
 `/nouvelle-fiche <id>` · `/controle` · `/verif-biblio [région]` · `/deployer` ·
-`/illustrer [id|région]` · `/videos [id|--all]` · `/echo-anatomie [id|région|--bilan]`
+`/illustrer [id|région]` · `/echo-anatomie [id|région|--bilan]`
+
+## Début de session
+
+Lire `PROCHAINE-SESSION.md` : état du mémo, décisions de Mat qui s'imposent, ordre de travail et modèle
+conseillé par tâche. Le mettre à jour en fin de session.
 
 ## Règle de reprise (décision de Mat, 10 septembre 2026)
 
@@ -65,8 +70,9 @@ fréquents servent de points de reprise.
 ## Chantier en cours : illustrations et vidéos
 
 Voir `CHANTIER-ILLUSTRATIONS.md` : planches de Gray annotées (`js/data/figures/<id>.js`,
-images dans `img/<id>/`), figures d'installation, écho-anatomie réelle côte à côte,
-vidéo par fiche (`scripts/video.js`, fichiers dans `video/`). Exécution sur le Mac.
+images dans `img/<id>/`), figures d'installation, écho-anatomie réelle côte à côte. **Plus de
+vidéos générées** (décision de Mat, 4 octobre 2026) : les vidéos sont des liens externes vérifiés,
+exclusivement (`videos` de la fiche). La section Références est toujours repliée à l'ouverture.
 
 ## Chantier coupes anatomiques (lancé le 21 septembre 2026, production le 2 octobre)
 

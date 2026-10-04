@@ -8,10 +8,6 @@ const figDir = path.join(root, 'js/data/figures');
 const figs = fs.existsSync(figDir) ? fs.readdirSync(figDir).filter(f => f.endsWith('.js')).sort() : [];
 const anatDir = path.join(root, 'js/data/anat');
 const anats = fs.existsSync(anatDir) ? fs.readdirSync(anatDir).filter(f => f.endsWith('.js')).sort() : [];
-const vidDir = path.join(root, 'video');
-const vids = {};
-if (fs.existsSync(vidDir)) for (const f of fs.readdirSync(vidDir)) { const m = f.match(/^(.+)\.(mp4|webm)$/); if (m) (vids[m[1]] = vids[m[1]] || []).push(m[2]); }
-fs.writeFileSync(path.join(root, 'js/data/videos.js'), `/* généré par scripts/build-index.js — vidéos locales présentes dans video/ */\nwindow.ECHO = window.ECHO || {}; ECHO.videosLocales = ${JSON.stringify(vids)};\n`);
 const tags = files.map(f => `  <script src="js/data/procedures/${f}"></script>`).concat(figs.map(f => `  <script src="js/data/figures/${f}"></script>`)).concat(anats.map(f => `  <script src="js/data/anat/${f}"></script>`)).join('\n');
 const html = `<!doctype html>
 <html lang="fr">
@@ -26,7 +22,6 @@ const html = `<!doctype html>
   <script src="js/lib/icons.js"></script>
   <script src="js/lib/scene.js"></script>
   <script src="js/lib/anat.js"></script>
-  <script src="js/data/videos.js"></script>
 ${tags}
   <script src="js/app.js" defer></script>
 </head>
@@ -49,4 +44,4 @@ ${tags}
 </html>
 `;
 fs.writeFileSync(path.join(root, 'index.html'), html);
-console.log(`index.html régénéré — ${files.length} fiche(s), ${figs.length} fichier(s) de figures, ${anats.length} de coupes anatomiques, ${Object.keys(vids).length} vidéo(s) locale(s)`);
+console.log(`index.html régénéré — ${files.length} fiche(s), ${figs.length} fichier(s) de figures, ${anats.length} de coupes anatomiques`);

@@ -50,7 +50,9 @@
   /* Sections opératoires toujours dépliées ; les autres repliées par défaut, choix mémorisé. */
   const SEC_OPEN = ['vue', 'installation', 'reperage', 'sonoanatomie', 'technique', 'injectat', 'securite', 'checklist'];
   let secState = {}; try { secState = JSON.parse(localStorage.getItem('echo-sections') || '{}'); } catch (e) { secState = {}; }
-  const secOpen = id => secState[id] === undefined ? SEC_OPEN.includes(id) : !!secState[id];
+  /* Références : toujours repliées à l'ouverture (décision de Mat, 4 octobre 2026) ; « Tout déplier » les laisse fermées */
+  const SEC_FERMEES = ['references'];
+  const secOpen = id => SEC_FERMEES.includes(id) ? false : secState[id] === undefined ? SEC_OPEN.includes(id) : !!secState[id];
   const saveSecState = () => { try { localStorage.setItem('echo-sections', JSON.stringify(secState)); } catch (e) {} };
   const sec = (id, titre, inner, n) => inner ? `<section class="sec ${secOpen(id) ? '' : 'closed'}" id="${id}"><h2><button class="sec-toggle" type="button" aria-expanded="${secOpen(id)}" aria-controls="body-${id}"><span class="n">${n}</span><span class="tt">${titre}</span><span class="chev" aria-hidden="true"></span></button></h2><div class="sec-body" id="body-${id}">${inner}</div></section>` : '';
   const card = (inner, cls) => `<div class="card ${cls || ''}">${inner}</div>`;
@@ -181,13 +183,6 @@
     bindAnat();
   }
 
-  function demoHtml(p) {
-    const yt = (p.videos || []).map(v => (v.url || '').match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{6,})/)).find(Boolean);
-    const exts = (E.videosLocales || {})[p.id] || [];
-    const local = exts.length ? `<video class="demo" controls loop playsinline preload="metadata">${exts.includes('mp4') ? `<source src="video/${esc(p.id)}.mp4" type="video/mp4">` : ''}${exts.includes('webm') ? `<source src="video/${esc(p.id)}.webm" type="video/webm">` : ''}</video>` : `<div class="demo-missing">Vidéo non encore générée pour cette fiche (<code>node scripts/video.js ${esc(p.id)}</code>).</div>`;
-    return `<div class="demo-wrap card"><h3>Le geste en 40 secondes (schémas animés${exts.length ? '' : ''})</h3>${local}</div>` +
-      (yt ? `<div class="card" style="margin-top:12px"><h3>Démonstration réelle (YouTube, en ligne)</h3><div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/${esc(yt[1])}" title="Démonstration" loading="lazy" allowfullscreen referrerpolicy="no-referrer"></iframe></div></div>` : '');
-  }
 
   function renderFiche(p) {
     const parts = []; let n = 0;
@@ -221,7 +216,6 @@
     push('cotation', 'Cotation', p.ccam ? callout('CCAM — à vérifier sur ameli.fr avant facturation', md(p.ccam), '') : '');
     const nUnv = (p.references || []).filter(r => r.verif === false).length;
     push('references', 'Références', p.references && p.references.length ? (nUnv ? callout('Sourçage', `${nUnv} référence${nUnv > 1 ? 's' : ''} sur ${p.references.length} ${nUnv > 1 ? 'sont citées' : 'est citée'} de mémoire (marquées « à vérifier ») : existence probable, mais revue, année ou DOI non confirmés par une recherche. À confirmer avant citation.`, 'warn') : '') + card(refsHtml(p.references)) : '');
-    push('demo', 'Vidéo de démonstration', demoHtml(p));
     push('videos', 'Vidéos et liens externes', videosHtml(p.videos));
     push('checklist', 'Checklist avant le geste', card(checklistHtml(p)));
 
@@ -330,8 +324,9 @@
     if (foldBtn) foldBtn.addEventListener('click', () => {
       const list = [...document.querySelectorAll('section.sec')];
       if (!list.length) return;
-      const allOpen = list.every(s => !s.classList.contains('closed'));
+      const allOpen = list.filter(s => !SEC_FERMEES.includes(s.id)).every(s => !s.classList.contains('closed'));
       list.forEach(s => {
+        if (SEC_FERMEES.includes(s.id)) return;
         s.classList.toggle('closed', allOpen);
         const b = s.querySelector('.sec-toggle'); if (b) b.setAttribute('aria-expanded', String(!allOpen));
         secState[s.id] = !allOpen;
