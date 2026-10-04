@@ -2,7 +2,7 @@
 (function (E) {
   const $ = (s, r) => (r || document).querySelector(s);
   const esc = E.esc, md = E.md, inline = E.inline;
-  const state = { q: '', type: null, quiz: false, theme: null };
+  const state = { q: '', type: null, quiz: false, theme: null, anatToutes: false };
   try { state.theme = localStorage.getItem('echo-theme'); state.quiz = localStorage.getItem('echo-quiz') === '1'; } catch (e) {}
 
   /* ---------- helpers ---------- */
@@ -163,9 +163,11 @@
   function renderValidation(filtre) {
     let notes = {}; try { notes = JSON.parse(localStorage.getItem('echo-anat-notes') || '{}'); } catch (e) {}
     const items = [];
-    E.regions.forEach(r => Object.keys(E.anat).sort().forEach(id => { const p = E.procedures[id]; if (!p || p.region !== r.id) return; if (filtre && filtre !== r.id && filtre !== id) return; E.anat[id].forEach(a => items.push({ id, p, a, r })); }));
+    /* les coupes déjà validées par Mat sont masquées (bouton pour les revoir) : la page ne montre que ce qui attend une décision */
+    let nValidees = 0;
+    E.regions.forEach(r => Object.keys(E.anat).sort().forEach(id => { const p = E.procedures[id]; if (!p || p.region !== r.id) return; if (filtre && filtre !== r.id && filtre !== id) return; E.anat[id].forEach(a => { if (a.valide && !state.anatToutes) { nValidees++; return; } items.push({ id, p, a, r }); }); }));
     const nRefus = Object.values(E.anat).reduce((n, l) => n + l.filter(a => a.refus).length, 0), tot = Object.values(E.anat).reduce((n, l) => n + l.filter(a => !a.refus).length, 0), ok = Object.values(E.anat).reduce((n, l) => n + l.filter(a => a.valide).length, 0);
-    let html = `<div class="home"><h1>Validation des coupes anatomiques</h1><p class="lead">${ok} validée${ok > 1 ? 's' : ''} sur ${tot} coupes tracées ; ${nRefus} image${nRefus > 1 ? 's' : ''} non tracée${nRefus > 1 ? 's' : ''}, en attente de ta décision. Pour chaque coupe : les contours proposés sur l'écho (pointillé = dessiné sans signal, par connaissance anatomique), la lecture annoncée avec son niveau de confiance, puis le rendu. Cocher ou noter la correction, puis « Copier le bilan » et le coller à Claude, qui corrige et passe la coupe en <code>valide: true</code>.</p><p><a href="#/validation">Toutes</a> · ${E.regions.map(r => `<a href="#/validation/${r.id}">${esc(r.nom)}</a>`).join(' · ')} &nbsp; <button id="anatCopy" class="replay">Copier le bilan</button></p>`;
+    let html = `<div class="home"><h1>Validation des coupes anatomiques</h1><p class="lead">${ok} validée${ok > 1 ? 's' : ''} sur ${tot} coupes tracées ; ${nRefus} image${nRefus > 1 ? 's' : ''} non tracée${nRefus > 1 ? 's' : ''}, en attente de ta décision. Pour chaque coupe : les contours proposés sur l'écho (pointillé = dessiné sans signal, par connaissance anatomique), la lecture annoncée avec son niveau de confiance, puis le rendu. Cocher ou noter la correction, puis « Copier le bilan » et le coller à Claude, qui corrige et passe la coupe en <code>valide: true</code>.</p><p><a href="#/validation">Toutes</a> · ${E.regions.map(r => `<a href="#/validation/${r.id}">${esc(r.nom)}</a>`).join(' · ')} &nbsp; <button id="anatCopy" class="replay">Copier le bilan</button>${nValidees || state.anatToutes ? ` <button id="anatToutes" class="replay">${state.anatToutes ? 'Masquer les validées' : `Afficher les ${nValidees} validée${nValidees > 1 ? 's' : ''}`}</button>` : ''}</p>`;
     items.forEach(({ id, p, a }) => {
       const idx = E.anat[id].indexOf(a), k = id + '|' + a.fig + (a.refus ? '|refus' : '') + (a.panneau ? '|' + a.panneau : ''), n = notes[k] || {};
       const qs = a.questions && a.questions.length ? `<div class="callout warn anat-q"><div class="t">Question${a.questions.length > 1 ? 's' : ''} pour toi</div><ul>${a.questions.map(t => `<li>${inline(t)}</li>`).join('')}</ul></div>` : '';
@@ -173,7 +175,7 @@
       if (a.refus) { const fg = (E.figures[id] || []).find(x => x.src === a.fig) || {}; html += `<div class="card anat-valid anat-refus" data-k="${esc(k)}"><h3><a href="#/fiche/${id}/sonoanatomie">${esc(p.titreCourt || p.titre)}</a> <small>${esc(a.fig)}</small> <span class="tag">non tracée</span></h3><div class="anat-refus-c"><div><img src="${esc(a.fig)}" alt="" loading="lazy"><p class="anat-refus-l">${fg.titre ? `<b>${inline(fg.titre)}</b> ` : ''}${inline(fg.legende || '')}${fg.credit ? `<span class="credit">${inline(fg.credit)}</span>` : ''}</p></div><div><p><b>Pourquoi :</b> ${inline(a.refus)}</p>${qs}</div></div><div class="anat-verdict"><input type="text" placeholder="Ta décision (remplacer l'image, lecture à retenir, laisser sans coupe…)" value="${esc(n.note || '')}"></div></div>`; return; }
       html += `<div class="card anat-valid" data-k="${esc(k)}"><h3><a href="#/fiche/${id}/sonoanatomie">${esc(p.titreCourt || p.titre)}</a> <small>${esc(a.fig)}${a.panneau ? ' · panneau ' + esc(a.panneau) : ''}</small> ${a.valide ? '<span class="tag grade">validée</span>' : '<span class="anat-badge">à valider</span>'}</h3>${a.lecture ? `<ul class="anat-lecture">${a.lecture.map(t => `<li>${inline(t)}</li>`).join('')}</ul>` : ''}${qs}<div class="anat-host" data-mode="contours" data-fiche="${esc(id)}" data-fig="${esc(a.fig)}" data-idx="${idx}"></div><div class="anat-host" data-fiche="${esc(id)}" data-fig="${esc(a.fig)}" data-idx="${idx}" style="margin-top:12px"></div><div class="anat-verdict"><label><input type="checkbox" ${n.ok ? 'checked' : ''}> Contours exacts</label><input type="text" placeholder="Correction à apporter (structure, limite, orientation…)" value="${esc(n.note || '')}"></div></div>`;
     });
-    if (!items.length) html += '<div class="empty">Aucune coupe anatomique pour ce filtre.</div>';
+    if (!items.length) html += `<div class="empty">${nValidees ? 'Tout est traité ici : ' + nValidees + ' coupe' + (nValidees > 1 ? 's' : '') + ' validée' + (nValidees > 1 ? 's' : '') + '.' : 'Aucune coupe anatomique pour ce filtre.'}</div>`;
     $('#content').innerHTML = html + '</div>';
     $('#crumbs').innerHTML = '<a href="#/">Écho-algologie</a> › <b>Validation des coupes anatomiques</b>';
     document.title = 'Validation des coupes anatomiques — Écho-algologie';
