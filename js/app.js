@@ -182,9 +182,9 @@
     const save = () => { document.querySelectorAll('.anat-valid').forEach(c => { notes[c.dataset.k] = { ok: !!(c.querySelector('input[type=checkbox]') || {}).checked, note: c.querySelector('input[type=text]').value.trim() }; }); try { localStorage.setItem('echo-anat-notes', JSON.stringify(notes)); } catch (e) {} };
     document.querySelectorAll('.anat-verdict input').forEach(i => i.addEventListener('change', save));
     $('#anatCopy').addEventListener('click', () => { save(); const txt = 'Bilan de validation des coupes anatomiques\n' + items.map(({ id, a }) => { const n = notes[id + '|' + a.fig + (a.refus ? '|refus' : '') + (a.panneau ? '|' + a.panneau : '')] || {}; return a.refus ? `- ${id} | ${a.fig} : NON TRACÉE — ${n.note ? 'décision : ' + n.note : 'sans réponse'}` : `- ${id} | ${a.fig}${a.panneau ? ' (panneau ' + a.panneau + ')' : ''} : ${n.ok ? 'OK' : n.note ? 'À CORRIGER' : 'non relue'}${n.note ? ' — ' + n.note : ''}`; }).join('\n'); (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(() => { $('#anatCopy').textContent = 'Bilan copié'; }, () => window.prompt('Copier ce bilan :', txt)); });
+    const bt = $('#anatToutes'); if (bt) bt.addEventListener('click', () => { state.anatToutes = !state.anatToutes; renderValidation(filtre); });
     bindAnat();
   }
-
 
   function renderFiche(p) {
     const parts = []; let n = 0;
