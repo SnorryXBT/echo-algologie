@@ -2,3 +2,5 @@
 .DS_Store
 !data/
 dist/
+scripts/anki/.venv/
+__pycache__/

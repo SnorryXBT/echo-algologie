@@ -4,6 +4,8 @@
       "Bash(node scripts/*)",
       "Bash(NODE_PATH=* node scripts/*)",
       "Bash(npm root -g)",
+      "Bash(scripts/anki/.venv/bin/*)", "Bash(python3 -m venv *)",
+      "Bash(node --test *)", "Bash(NODE_PATH=* node --test *)",
       "Bash(git status*)", "Bash(git log*)", "Bash(git diff*)", "Bash(git add*)",
       "Bash(git commit*)", "Bash(git push*)", "Bash(git pull*)", "Bash(git fetch*)",
       "Bash(npx wrangler pages deploy*)",
