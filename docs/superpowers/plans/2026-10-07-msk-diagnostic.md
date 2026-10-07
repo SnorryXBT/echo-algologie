@@ -1905,7 +1905,7 @@ Expected: deux fichiers de plusieurs Mo dans chaque dossier
 
 Critères d'acceptation, tous vérifiés :
 - `node scripts/msk-audit.js epaule` → 0 erreur ; `NODE_PATH=$(npm root -g) node scripts/check-all.js` → 0 problème ; `NODE_PATH=$(npm root -g) node --test tests/*.test.js` → vert ;
-- protocole : toutes les coupes du guide ESSR de l'épaule, numérotées dans son ordre, chacune avec image à marqueurs (≥ 3 marqueurs) sauf absence motivée d'image libre, écrite dans `legende` ;
+- protocole : toutes les coupes du guide ESSR de l'épaule, numérotées dans son ordre, chacune avec image à marqueurs (≥ 3 marqueurs) sauf absence motivée d'image libre (`image: null` + `sansImage: '<motif>'`, règle du 7 octobre 2026) ;
 - 6 à 12 pathologies, chacune reliée à un geste du mémo ou portant `aucunGeste` ; 12 à 15 compétences couvrant les six types ; `dictee` complète (toutes les structures du protocole) ;
 - `NODE_PATH=$(npm root -g) node scripts/msk-export.js epaule` → au moins 40 cartes issues de la fiche seule (hors socle), vérifié en comptant les cartes dont la `key` ne commence pas par `socle-` ;
 - toutes les images sous `img/msk/epaule/` en CC BY, CC BY-NC ou CC0, crédits recoupés ;
