@@ -3,15 +3,16 @@
 Ce fichier dit où en est le mémo et dans quel ordre avancer. À lire en début de session, après
 `CLAUDE.md`. Le mettre à jour en fin de session.
 
-## Où on en est (7 octobre 2026)
+## Où on en est (7 octobre 2026, soir)
 
 - 64 fiches, toutes illustrées ; 119 images écho réelles appariées aux schémas.
-- Coupes anatomiques : 81 tracées, 17 validées par Mat, 25 images non tracées en attente de décision. Compte
+- Coupes anatomiques : 87 tracées, 31 validées par Mat, 17 images non tracées en attente de décision. Compte
   exact : `node scripts/anat-check.js`.
-- Régions relues par Mat : socle, tête-cou (bilan du 3 octobre, appliqué), membre inférieur (bilan du 7 octobre,
-  appliqué : 10 validations, 7 coupes tracées sur sa lecture, 6 images remplacées ou ajoutées, 1 coupe retirée).
-  Restent à relire : membre supérieur, thorax, rachis-bassin, plus les nouvelles coupes de tête-cou et du membre
-  inférieur (toutes `valide: false`).
+- Régions relues par Mat : socle, tête-cou (bilan du 3 octobre), membre inférieur (bilan du 7 octobre : 10 validations,
+  7 coupes tracées sur sa lecture, 6 images remplacées ou ajoutées), membre supérieur (bilan du 7 octobre : 14
+  validations, 2 corrections, 3 coupes tracées sur sa lecture, 4 images remplacées — suprascapulaire, ulnaire ×2,
+  rhizarthrose 2). Restent à relire : thorax, rachis-bassin, plus les coupes nouvelles ou corrigées de tête-cou et des
+  deux membres (toutes `valide: false`). Sans réponse : long biceps 2 (remplacer par une injection in vivo ?).
 - Liens externes : 63/64 fiches avec vidéo YouTube vérifiée, 53/64 avec page NYSORA.
 - 213 références encore `verif: false`.
 
