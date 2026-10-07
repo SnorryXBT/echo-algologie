@@ -10,7 +10,7 @@
   const TENDONS_HAUT = [[0,462],[100,462],[150,445],[255,430],[330,440],[385,400],[450,376],[700,345],[900,316],[1000,303]];
   ECHO.anat['nerf-median-canal-carpien'] = [{
     fig: 'img/nerf-median-canal-carpien/echo-1.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 611], orient: { left: 'Radial', right: 'Ulnaire' },
     lecture: [
       'Certain — orientation et identité des repères : scaphoïde à gauche (radial), pisiforme à droite (ulnaire), artère ulnaire anéchogène en surface du rétinaculum, nerf médian sous le rétinaculum, long fléchisseur du pouce en dessous — d\'après le panneau 2B, corrigé annoté par les auteurs (non recalé au pixel sur 2A : il sert aux positions relatives, pas au tracé).',
@@ -65,7 +65,7 @@
   }, {
     fig: 'img/nerf-median-canal-carpien/echo-3.jpg',
     crop: [0, 0.527, 0.56, 0.30], panneau: 'B, moitié proximale (nerf, rétinaculum, pointe de l\'aiguille)',
-    valide: false,
+    valide: true,
     vb: [1000, 550], orient: { left: 'Proximal', right: 'Distal (thénar)' },
     lecture: [
       'Supposition — plan de coupe : oblique, propre à la technique des auteurs (plan de la première articulation carpo-métacarpienne conservé pendant la translation médiale de la sonde) ; ce n\'est ni la coupe transversale du schéma apparié (radial / ulnaire) ni un grand axe strict. Les axes de l\'image et du schéma ne sont pas comparables, et l\'abord (distal → proximal, depuis la base du pouce) n\'est pas l\'abord ulnaire transversal décrit dans la fiche.',

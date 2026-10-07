@@ -1,8 +1,8 @@
 /* Coupes anatomiques recalées — doigt à ressort (format : .claude/skills/echo-anatomie/SKILL.md).
    echo-1 : Kim et al., Life 2026, fig. 4 (coupe longitudinale palmaire de la métacarpo-phalangienne ; sigles FDS / FDP / Volar plate /
    Metacarpal head / Proximal phalanx, poulie A1 délimitée par une zone ombrée). Échelle de l'appareil : 1 cm = 477 unités.
-   echo-2 (Tortora et al., J Ultrason 2021, fig. 6B) : NON TRACÉE — côté radial / ulnaire non établi par la source (« in-plane axial approach »),
-   pointe visible de l'aiguille en dehors de l'anneau hypoéchogène, plage noire latérale non attribuable. */
+   echo-2 : Tortora et al., J Ultrason 2021, fig. 6B — côté radial / ulnaire non donné par la source ; Mat (7 octobre 2026) : le côté
+   importe peu, orientation neutre (côté de ponction à droite). */
 (function () {
   const ovale = (cx, cy, rx, ry, rot) => { const o = [], a = (rot || 0) * Math.PI / 180; for (let i = 0; i < 16; i++) { const t = i / 16 * 2 * Math.PI, x = rx * Math.cos(t), y = ry * Math.sin(t); o.push([Math.round(cx + x * Math.cos(a) - y * Math.sin(a)), Math.round(cy + x * Math.sin(a) + y * Math.cos(a))]); } return o; };
   /* surface superficielle des tendons : ligne fibrillaire hyperéchogène (pics 151, 154, 146, 149, 148, 133, 138, 138, 146 de x 50 à 450), puis plongée vers la phalange */
@@ -13,9 +13,11 @@
   const MC = [[-40,400],[0,385],[50,374],[100,364],[130,360],[160,363],[200,374],[250,395],[280,410],[310,432],[335,462],[345,520],[-40,520]];
   /* phalange proximale : base (pics 326–335 à x 450–500) puis diaphyse (348, 365, 375, 383, 393, 399, 400, 403, 407) */
   const P1 = [[400,520],[405,400],[425,360],[445,336],[470,327],[500,327],[550,346],[600,362],[650,374],[700,383],[750,392],[800,399],[850,401],[900,403],[950,406],[1040,409],[1040,520]];
+  /* --- echo-2 (coupe transversale, côté de ponction à droite) --- */
+  const MC2 = [[0,662],[150,560],[250,500],[320,482],[400,474],[490,478],[560,500],[650,560],[760,662],[1000,662]];
   ECHO.anat['doigt-a-ressort'] = [{
     fig: 'img/doigt-a-ressort/echo-1.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 484], orient: { left: 'Proximal', right: 'Distal' },
     lecture: [
       'Supposition — limite profonde des tendons en regard de la tête métacarpienne : deux lectures. Retenue : tendons de y ≈ 140 à ≈ 320 (≈ 4 mm à l\'échelle de l\'appareil), dont la moitié profonde, à fibres obliques et moins échogène (anisotropie), repose sur la plaque palmaire — cohérent avec l\'épaisseur mesurée sur la phalange (≈ 3,4 mm). Écartée : tendons limités à la bande fibrillaire brillante (y ≈ 140–220, moins de 2 mm), la plage grise sous-jacente étant la plaque palmaire. Les sigles FDS / FDP des auteurs ne tranchent pas ; l\'interface entre les deux tendons n\'est pas tracée.',
@@ -50,6 +52,35 @@
       { s: 'cartilage', x: 205, y: 362, dx: 130, dy: 93, text: 'Cartilage' },
       { s: 'plaque', x: 350, y: 330, dx: 180, dy: 125, text: 'Plaque palmaire', vue: 'anat' },
       { s: 'p1', x: 800, y: 430, dx: 50, dy: 25, text: 'Phalange proximale', vue: 'anat' },
+    ],
+  }, {
+    fig: 'img/doigt-a-ressort/echo-2.jpg',
+    valide: false,
+    vb: [1000, 662], orient: { left: 'Côté opposé', right: 'Côté de ponction' },
+    lecture: [
+      'Certain — orientation : la source ne donne pas le côté radial / ulnaire (« in-plane axial approach ») ; décision de Mat : le côté importe peu, orientation neutre, l\'aiguille venant du bord droit. Le schéma apparié est radial à gauche, ulnaire à droite : rien ne dit de quel côté vient l\'aiguille de l\'image.',
+      'Certain — identité : sigles des auteurs Flex (tendons fléchisseurs) et Met (tête métacarpienne), astérisques sur la poulie A1 épaissie, flèches sur l\'aiguille 25 G dans le plan.',
+      'Probable — tendons : ovale hyperéchogène fibrillaire (x ≈ 255–520, y ≈ 180–385) ; fléchisseurs superficiel et profond non séparables. Poulie A1 : anneau hypoéchogène qui les coiffe, épais au toit là où les auteurs posent les astérisques (y ≈ 105–200).',
+      'Supposition — pointe de l\'aiguille (x ≈ 690, y ≈ 291) : dessinée telle que vue, ≈ 1,5 mm en dehors de l\'anneau ; la partie terminale peut être sortie du plan. Sous la poulie ou encore extra-synoviale : question posée à Mat.',
+      'Supposition — plage noire au bord de l\'anneau, côté ponction (x ≈ 520–655, y ≈ 190–460) : poulie épaissie, épanchement ou ombre de bord, non attribuable.',
+      'Probable — tête métacarpienne : corticale hyperéchogène (x ≈ 300–490, y ≈ 474–490), sigle Met. Plaque palmaire non individualisée entre tendons et corticale.',
+      'Supposition — plans gris qui entourent l\'ensemble (graisse palmaire, lombricaux, pédicules digitaux) : non attribuables, laissés en « plan non attribué ». Peau hors champ.',
+    ],
+    structures: [
+      { id: 'plans', tissu: 'indetermine', haut: [[0,0],[1000,0]], bas: MC2 },
+      { id: 'plage', tissu: 'indetermine', contour: [[560,215],[625,190],[650,240],[655,330],[640,420],[600,460],[560,450],[530,400],[520,330],[525,265]] },
+      { id: 'poulie', tissu: 'ligament', contour: [[185,400],[180,320],[200,250],[240,200],[300,160],[380,118],[460,105],[540,108],[600,135],[625,190],[560,215],[520,210],[495,190],[440,175],[370,172],[300,190],[260,220],[240,270],[235,330],[240,400]] },
+      { id: 'tendons', tissu: 'tendon', contour: [[255,280],[270,225],[310,195],[370,180],[440,185],[495,215],[520,265],[515,320],[490,360],[430,385],[350,385],[290,360],[262,320]] },
+      { id: 'aiguille', tissu: 'aiguille', ligne: [[1000,205],[900,228],[800,258],[700,288],[690,291]], ep: 6 },
+      { id: 'mc', tissu: 'os', cortex: MC2, vu: [2, 5] },
+    ],
+    labels: [
+      { s: 'poulie', x: 470, y: 140, dx: -300, dy: -80, text: 'Poulie A1 épaissie' },
+      { s: 'tendons', x: 385, y: 290, dx: -250, dy: 230, text: 'Tendons fléchisseurs', vue: 'anat' },
+      { s: 'aiguille', x: 850, y: 242, dx: 0, dy: -150, text: 'Aiguille 25 G' },
+      { s: 'plage', x: 590, y: 330, dx: 150, dy: 180, text: 'Plage non attribuée', vue: 'anat' },
+      { s: 'mc', x: 420, y: 477, dx: 0, dy: 120, text: 'Tête métacarpienne', vue: 'anat' },
+      { s: 'plans', x: 880, y: 420, dx: 0, dy: 160, text: 'Plans non attribués', vue: 'anat' },
     ],
   }];
 })();

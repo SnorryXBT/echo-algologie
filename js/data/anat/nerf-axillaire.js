@@ -12,7 +12,7 @@
   const CORTEX = [[0,645],[100,642],[200,638],[300,627],[350,620],[400,612],[500,611],[550,609],[650,605],[700,598],[800,594],[900,590],[1000,586]];
   ECHO.anat['nerf-axillaire'] = [{
     fig: 'img/nerf-axillaire/echo-1.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 959], orient: { left: 'Crânial', right: 'Caudal' },
     lecture: [
       'Probable — orientation : les auteurs n\'écrivent ni « crânial » ni « caudal ». Leur dessin B (corrigé, non recalé au pixel) nomme « Teres minor » le coin musculaire de gauche et place un mince triceps à droite ; leur texte situe le nerf « au bord supérieur de l\'espace quadrilatère, entre petit rond et chef long du triceps ». Le petit rond étant la limite supérieure de l\'espace, crânial est à gauche — concordant avec le schéma apparié. C\'est le seul appui de l\'orientation : à confirmer.',

@@ -16,7 +16,7 @@
   const HH2 = [[0,440],[100,400],[195,365],[300,332],[400,318],[500,322],[600,330],[700,318],[814,294],[900,290],[979,296],[1000,300]];
   ECHO.anat['calcifications-coiffe-barbotage'] = [{
     fig: 'img/calcifications-coiffe-barbotage/echo-1.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 589], orient: { left: 'Latéral (grand tubercule)', right: 'Médial' },
     lecture: [
       'Certain — orientation et identité des plans : deltoïde (DEL), grand tubercule à gauche (GT), tendon du supra-épineux (SS T), foyer calcique entre les deux flèches noires — sigles et légende des auteurs (« compact calcific focus with posterior acoustic shadowing »). Image en miroir du schéma apparié.',
@@ -48,7 +48,7 @@
     ],
   }, {
     fig: 'img/calcifications-coiffe-barbotage/echo-2.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 697], orient: { left: 'Médial (acromion)', right: 'Latéral' },
     lecture: [
       'Probable — orientation : la légende d\'origine ne la donne pas. Elle est déduite de la corticale superficielle à cône d\'ombre franc, à gauche, lue comme l\'acromion sous lequel s\'engage le tendon ; l\'aiguille vient alors du bord latéral, comme dans la fiche. À confirmer par Mat.',

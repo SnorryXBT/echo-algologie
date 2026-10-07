@@ -21,15 +21,15 @@
       'Probable — double arc de la tête : l\'arc profond, le plus brillant, est la corticale ; la bande hypoéchogène qui le coiffe est le cartilage ; l\'arc superficiel est l\'interface capsule / face profonde de l\'infra-épineux.',
       'Probable — sur le versant médial de la tête, la bande hypoéchogène s\'épaissit vers le labrum (≈ 25 à 40 unités) : dessinée comme le récessus postérieur, cible du geste. Aucun épanchement franc.',
       'Supposition — labrum : petit triangle échogène au bord de la glène (x ≈ 385–445, y ≈ 585–645), image de 270 px ; position déduite du corrigé.',
-      'Supposition — jonction myo-tendineuse de l\'infra-épineux (x ≈ 450–640) : limite arbitraire, dessinée en biseau, le tendon n\'est pas séparé du muscle par un signal propre.',
+      'Supposition — jonction myo-tendineuse de l\'infra-épineux (oblique, x ≈ 650 en surface à 560 en profondeur) : limite arbitraire, le tendon n\'est pas séparé du muscle par un signal propre. Correction de Mat : muscle et tendon sont tracés entre les mêmes bords (face profonde du deltoïde en haut, capsule en bas), le tendon prolongeant le corps musculaire en dehors, fibres en continuité.',
       'Extrapolé — versant articulaire de la glène et de la tête en profondeur de l\'interligne (cône d\'ombre) ; plage hyperéchogène dans le deltoïde à droite (x 800–940, y 160–280) : septum ou graisse intramusculaire, non dessinée.',
     ],
     structures: [
       { id: 'peau', tissu: 'peau', haut: [[0,0],[1000,0]], bas: [[0,50],[1000,50]] },
       { id: 'sc', tissu: 'graisse', haut: [[0,50],[1000,50]], bas: F1 },
       { id: 'deltoide', tissu: 'muscle', haut: F1, bas: L1 },
-      { id: 'is-muscle', tissu: 'muscle', haut: L1, bas: G1.slice(0, 9).concat([[400,600],[425,585]], HH1.slice(2)) },
-      { id: 'is-tendon', tissu: 'tendon', haut: L1.slice(5), bas: [[450,339],[520,350],[580,378],[640,416],[719,398],[812,387],[906,390],[1000,410]] },
+      { id: 'is-muscle', tissu: 'muscle', haut: L1, bas: G1.slice(0, 9).concat([[400,600],[425,572]], ARC1.slice(1), [[812,387],[906,390],[1000,410]]) },
+      { id: 'is-tendon', tissu: 'tendon', haut: L1.slice(9), bas: [[562,450],[625,424],[719,398],[812,387],[906,390],[1000,410]] },
       { id: 'recessus', tissu: 'liquide', fin: true, haut: ARC1, bas: [[425,598],[434,586],[484,538],[548,486],[615,447],[719,405]] },
       { id: 'labrum', tissu: 'fibrocartilage', contour: [[385,628],[400,600],[425,585],[446,592],[440,620],[420,640],[402,646]] },
       { id: 'cartilage', tissu: 'cartilage', bas: HH1.slice(2), ep: 24 },
@@ -48,7 +48,7 @@
     ],
   }, {
     fig: 'img/gleno-humerale/echo-2.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 748], orient: { left: 'Médial (glène)', right: 'Latéral (tête humérale)' },
     lecture: [
       'Certain — orientation et repères : deltoïde (DEL), infra-épineux (IS M), tête humérale (HH), glène (G), aiguille désignée par les têtes de flèche, venant du bord latéral — sigles des auteurs. Même orientation que le schéma apparié ; trajet conforme à la fiche (dans le plan, de latéral en médial, sur la convexité de la tête).',

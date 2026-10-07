@@ -65,16 +65,11 @@ ECHO.figures['poignet-radiocarpienne-kyste'] = [
   {
     type: 'echo',
     src: 'img/poignet-radiocarpienne-kyste/echo-2.jpg',
-    pair: 'poignet-kyste',
-    titre: 'Kyste arthro-synovial dorsal réel',
-    legende: 'Poche anéchogène bien limitée, à renforcement postérieur, posée sur la capsule dorsale près du tubercule de Lister ; son pédicule plonge vers l\'interligne. Rester extra-articulaire : ponctionner la poche, non l\'interligne. Panneau 6A d\'une planche dont le 6B montre un kyste centré sur le lunatum.',
+    pair: 'poignet-sagittal',
+    titre: 'Kyste arthro-synovial dorsal réel, coupe sagittale',
+    legende: 'Poche anéchogène bien limitée, à renforcement postérieur, en regard de la première rangée du carpe. La source ne donne pas le plan : l\'image se lit comme une coupe sagittale dorsale, radius à gauche (lecture confirmée par Mat), même orientation que le schéma apparié. Rester extra-articulaire : ponctionner la poche, non l\'interligne. Panneau 6A d\'une planche dont le 6B montre un kyste centré sur le lunatum.',
     credit: 'Manske RC, Wolfe C, Page P et al., International Journal of Sports Physical Therapy 2026, fig. 6A — CC BY-NC 4.0',
     source: 'https://doi.org/10.26603/001c.155692',
     crop: [0.0, 0.0, 0.5, 1.0],
-    labels: [
-      { x: 0.62, y: 0.35, text: 'Kyste (anéchogène)', dx: 0.02, dy: -0.22 },
-      { x: 0.62, y: 0.62, text: 'Pédicule vers l\'interligne', dx: 0.10, dy: 0.24 },
-      { x: 0.30, y: 0.30, text: 'Tendons extenseurs', dx: -0.06, dy: 0.24 },
-    ],
   },
 ];

@@ -68,7 +68,7 @@ ECHO.figures['de-quervain'] = [
     src: 'img/de-quervain/echo-2.jpg',
     pair: 'dq-injection',
     titre: 'Injection réelle sous le rétinaculum, aiguille dans le plan',
-    legende: 'Image d\'origine annotée (anglais) : Abd pl = long abducteur, Ext pb = court extenseur, épaissis et arrondis (tendinose) ; les astérisques marquent le rétinaculum épaissi et la flèche l\'aiguille 25 G glissée sous lui, dans le plan, de latéral en médial. Panneau B d\'une planche dont le A montre la prise en main.',
+    legende: 'Image d\'origine annotée (anglais) : Abd pl = long abducteur, Ext pb = court extenseur, épaissis et arrondis (tendinose) ; les astérisques marquent le rétinaculum épaissi et la flèche l\'aiguille 25 G, dans le plan. Les auteurs écrivent « de latéral en médial » ; la prise en main du panneau A montre une entrée par le versant palmaire : palmaire à droite, dorsal à gauche, orientation inverse de celle du schéma apparié (où l\'aiguille vient du versant dorsal). Panneau B d\'une planche dont le A montre la prise en main.',
     credit: 'Tortora S, Messina C, Albano D et al., Journal of Ultrasonography 2021, fig. 5B — CC BY-NC-ND 4.0',
     source: 'https://doi.org/10.15557/JoU.2021.0027',
     crop: [0.0, 0.61, 1.0, 0.39],

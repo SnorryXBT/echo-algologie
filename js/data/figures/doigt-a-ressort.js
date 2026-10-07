@@ -67,7 +67,7 @@ ECHO.figures['doigt-a-ressort'] = [
     src: 'img/doigt-a-ressort/echo-2.jpg',
     pair: 'dr-injection',
     titre: 'Injection réelle sous la poulie A1, coupe transversale',
-    legende: 'Image d\'origine annotée (anglais) : Flex = tendons fléchisseurs, Met = tête métacarpienne ; les astérisques marquent la poulie A1 épaissie et les flèches l\'aiguille 25 G glissée dans le plan, par le versant latéral, entre poulie et tendons. Panneau B d\'une planche dont le A montre la prise en main.',
+    legende: 'Image d\'origine annotée (anglais) : Flex = tendons fléchisseurs, Met = tête métacarpienne ; les astérisques marquent la poulie A1 épaissie et les flèches l\'aiguille 25 G, dans le plan (« in-plane axial approach »). La source ne donne pas le côté radial ou ulnaire : l\'aiguille vient du bord droit de l\'image, sans correspondance établie avec le schéma apparié (radial à gauche). Panneau B d\'une planche dont le A montre la prise en main.',
     credit: 'Tortora S, Messina C, Albano D et al., Journal of Ultrasonography 2021, fig. 6B — CC BY-NC-ND 4.0',
     source: 'https://doi.org/10.15557/JoU.2021.0027',
     crop: [0.002, 0.588, 0.996, 0.411],

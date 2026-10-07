@@ -9,7 +9,7 @@
   const LHT_BAS = [[200,268],[270,288],[330,300],[400,296],[500,303],[600,300],[680,299],[730,300]];
   ECHO.anat['long-biceps'] = [{
     fig: 'img/long-biceps/echo-1.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 787], orient: { left: 'Latéral (grand tubercule)', right: 'Médial (petit tubercule)' },
     lecture: [
       'Certain — orientation et identité des repères : grand tubercule à gauche, petit tubercule à droite, tendon du long biceps au fond de la gouttière sous le ligament huméral transverse, deltoïde en surface, tendon du subscapulaire à droite du petit tubercule — d\'après le panneau d de la même figure, corrigé annoté et colorisé par les auteurs (GT / LT / BIL / THL / SUB T ; autre appareil, non recalé au pixel). Image en miroir du schéma apparié.',

@@ -37,7 +37,7 @@ ECHO.figures['rhizarthrose-tmc'] = [
     src: 'img/rhizarthrose-tmc/echo-1.jpg',
     pair: 'tmc-longitudinal',
     titre: 'Coupe longitudinale réelle de la trapézo-métacarpienne',
-    legende: 'Image d\'origine annotée (anglais) : T = trapèze, MC = premier métacarpien ; la flèche pointillée figure le trajet de l\'aiguille dans le plan, de distal en proximal, vers l\'interligne en V entre les deux corticales. Panneau b d\'une planche dont le a montre la sonde sur la colonne du pouce, main en poing sur son bord ulnaire.',
+    legende: 'Image d\'origine annotée (anglais) : T = trapèze, MC = premier métacarpien ; la flèche pointillée figure le trajet de l\'aiguille dans le plan, de proximal en distal (texte de l\'article : « in-plane approach from proximal to distal »), vers l\'interligne en V entre les deux corticales — abord inverse de l\'entrée distale décrite par la fiche. Panneau b d\'une planche dont le a montre la sonde sur la colonne du pouce, main en poing sur son bord ulnaire.',
     credit: 'Patel RP, McGill K, Motamedi D et al., Skeletal Radiology 2023, fig. 12b — CC BY 4.0',
     source: 'https://doi.org/10.1007/s00256-022-04148-9',
     crop: [0.40, 0.0, 0.60, 1.0],

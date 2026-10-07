@@ -11,7 +11,7 @@
   const HH1 = [[140,800],[200,690],[260,610],[330,540],[350,520],[450,455],[531,425],[600,420],[706,424],[744,396],[850,392],[937,398],[1000,415]];
   ECHO.anat['sous-acromiale'] = [{
     fig: 'img/sous-acromiale/echo-2.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 791], orient: { left: 'Latéral', right: 'Médial' },
     lecture: [
       'Certain — orientation : grand tubercule à gauche, tête humérale et cartilage à droite (panneau d de la même figure, annoté GT / CAR / HH par les auteurs).',
@@ -42,7 +42,7 @@
     ],
   }, {
     fig: 'img/sous-acromiale/echo-1.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 763], orient: { left: 'Médial (clavicule)', right: 'Latéral' },
     lecture: [
       'Certain — orientation et repères : clavicule à gauche (CLA), acromion (ACR), tendon du supra-épineux (SS T), aiguille désignée par les têtes de flèche, venant du bord latéral — sigles et légende des auteurs (« lateral-to-medial injection of the subdeltoid bursa »). Même orientation que le schéma apparié ; trajet conforme à la fiche.',

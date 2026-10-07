@@ -23,7 +23,7 @@
 
   ECHO.anat['epicondylalgie-laterale'] = [{
     fig: 'img/epicondylalgie-laterale/echo-2.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 503], orient: { left: 'Proximal', right: 'Distal' },
     lecture: [
       'Probable — capitulum : plaque hyperéchogène comprise entre la pente de l\'épicondyle et l\'interligne (x 400–545, y ≈ 190–210), non désignée par les auteurs ; elle est légèrement concave vers la sonde, ce qui est inhabituel pour un condyle — à confirmer.',
@@ -60,7 +60,7 @@
     valide: false,
     vb: [1000, 561], orient: { left: 'Proximal', right: 'Distal' },
     lecture: [
-      'Supposition — plan traversé par l\'aiguille : elle chemine dans une lentille hypoéchogène posée sur la zone fibrillaire du tendon (x ≈ 225–540, y ≈ 100–150) et sa pointe (x ≈ 215, y ≈ 137) vient au contact des fibres superficielles de l\'insertion, à ≈ 3 mm de la corticale. Cette lentille peut être de la graisse profonde, l\'anesthésique local (les auteurs injectent 1 mL de ropivacaïne en sous-cutané en regard du tendon avant le geste) ou la portion superficielle, hypoéchogène, du tendon : elle est laissée en « plan non attribué ». Dire si la pointe est déjà dans le tendon revient à Mat.',
+      'Certain — lecture donnée par Mat : la pointe de l\'aiguille est dans le tendon, entourée d\'un petit injectat hypoéchogène. La « lentille » hypoéchogène lue au premier tracé le long de l\'aiguille n\'existe pas : effacée. Contour de l\'injectat : Probable (plage sombre autour de la pointe, x ≈ 180–270, y ≈ 115–165).',
       'Certain — orientation et repères : épicondyle latéral (LE) à gauche, interligne (J) puis tête radiale (R) à droite, tendon extenseur commun (CET) et ligament collatéral radial (RCL) — sigles des auteurs ; proximal à gauche, comme le schéma apparié.',
       'Certain — aiguille : trait hyperéchogène oblique venant du bord distal ; la figure n\'a pas de légende descriptive, mais le texte de l\'article la donne pour l\'abord du geste (23 G, dans le plan, de distal en proximal, vers l\'origine du tendon). Trajet de même sens que celui de la fiche. Les auteurs font un dépôt en un seul passage à l\'interface tendon-os, sans fenestration : sur cette image la pointe n\'a pas encore atteint cette cible.',
       'Probable — tendon : zone fibrillaire convergeant vers la corticale de l\'épicondyle (x < 500) ; sa partie distale (second sigle CET, x ≈ 700) est hypoéchogène, sans fibres visibles (anisotropie ou jonction myotendineuse). Limite superficielle (fascia, y ≈ 95–108) : Supposition, photographie d\'écran très contrastée de 417 px.',
@@ -72,17 +72,17 @@
       { id: 'peau', tissu: 'peau', haut: [[0,0],[1000,0]], bas: [[0,40],[1000,40]] },
       { id: 'sc', tissu: 'graisse', haut: [[0,40],[1000,40]], bas: FASC1 },
       { id: 'tendon', tissu: 'tendon', enthese: 0.3, haut: FASC1, bas: LE1.slice(1, 8).concat([[330,242],[400,222],[470,215],[540,215],[600,222],[650,238],[750,243],[800,254],[900,262],[1000,275]]) },
-      { id: 'lentille', tissu: 'indetermine', contour: [[225,110],[300,107],[400,101],[480,98],[540,98],[522,130],[480,148],[400,150],[300,148],[250,140]] },
       { id: 'supin', tissu: 'indetermine', contour: [[650,238],[750,243],[800,254],[900,262],[1000,275],[1000,478],[950,470],[870,462],[820,438],[770,398],[730,372],[700,348],[672,312],[668,300]] },
       { id: 'lcr', tissu: 'ligament', extrapole: true, contour: [[330,242],[400,222],[470,215],[540,215],[600,222],[650,238],[668,300],[650,296],[600,293],[560,300],[540,278],[505,285],[500,290],[450,272],[400,260],[350,258]] },
       { id: 'interligne', tissu: 'liquide', fin: true, contour: [[505,285],[540,278],[560,300],[548,330],[525,330],[515,300]] },
+      { id: 'injectat', tissu: 'liquide', contour: [[180,135],[192,122],[215,116],[245,120],[268,132],[272,148],[255,160],[225,163],[198,156],[184,146]] },
       { id: 'aiguille', tissu: 'aiguille', ligne: [[1000,19],[215,137]], ep: 5 },
       { id: 'epicondyle', tissu: 'os', contour: LE1, vu: [1, 12] },
       { id: 'radius', tissu: 'os', contour: R1, vu: [[2, 5], [7, 11]] },
     ],
     labels: [
       { s: 'sc', x: 150, y: 72, dx: 0, dy: -44, text: 'Tissu sous-cutané' },
-      { s: 'lentille', x: 400, y: 128, dx: 80, dy: -100, text: 'Plan non attribué', vue: 'anat' },
+      { s: 'injectat', x: 240, y: 152, dx: 160, dy: -118, text: 'Injectat' },
       { s: 'aiguille', x: 880, y: 37, dx: 20, dy: 118, text: 'Aiguille 23 G' },
       { s: 'epicondyle', x: 150, y: 260, dx: -20, dy: 100, text: 'Épicondyle latéral', vue: 'anat' },
       { s: 'tendon', x: 330, y: 200, dx: -100, dy: 280, text: 'Tendon extenseur commun', vue: 'anat' },

@@ -7,7 +7,7 @@
   const CLA = [[439,500],[439,345],[442,288],[475,266],[512,272],[562,296],[600,321],[700,350],[800,360],[840,362],[1000,372]];
   ECHO.anat['acromio-claviculaire'] = [{
     fig: 'img/acromio-claviculaire/echo-1.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 767], orient: { left: 'Latéral (acromion)', right: 'Médial (clavicule)' },
     lecture: [
       'Certain — orientation et repères osseux : acromion à gauche (ACR), clavicule à droite (CLA), aiguille désignée par les têtes de flèche, venant du bord latéral — sigles et légende des auteurs (« lateral to medial coronal approach »). Image en miroir du schéma apparié.',
