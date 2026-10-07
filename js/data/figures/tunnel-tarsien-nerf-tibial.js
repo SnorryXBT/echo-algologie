@@ -74,6 +74,7 @@ ECHO.figures['tunnel-tarsien-nerf-tibial'] = [
     titre: 'Nerf tibial en coupe transversale — image réelle, niveau supra-malléolaire',
     legende: 'Annotations anglaises de l\'original conservées : *TIBIAL NERVE* = nerf tibial, désigné par deux flèches, avec son aspect en **nid d\'abeilles** (fascicules hypoéchogènes dans un fond hyperéchogène) ; *TIBIAL CORTEX VISUALIZED 4 CM PROXIMAL* = corticale tibiale, ligne hyperéchogène curvilinéaire servant de repère osseux. **Réserve d\'interprétation** : la coupe est prise **4 cm au-dessus** du bord inférieur de la malléole médiale, donc un peu en amont du tunnel proprement dit — le nerf y est encore un tronc unique et le rétinaculum des fléchisseurs n\'est pas dans le champ. L\'intérêt pour nous est la même série : les auteurs ont mesuré la position du nerf par rapport à l\'artère tibiale postérieure sur 200 chevilles et trouvent le nerf **postérieur à l\'artère dans 61 %** des cas, **antérieur dans 9 %**, **profond dans 29 %**, **déjà bifurqué dans 1 %**. Autrement dit l\'abord postéro-antérieur éloigne de l\'artère dans la majorité des cas, mais pas toujours : le Doppler avant chaque ponction n\'est pas une formalité.',
     credit: 'Benimeli-Fenollar M, Macián-Romero C, Carbonell-José L et al., Journal of Foot and Ankle Research 2026, figure 2 — CC BY 4.0',
+    crop: [0.14, 0.03, 0.605, 0.93],
     source: 'https://doi.org/10.1002/jfa2.70178',
   },
   {
