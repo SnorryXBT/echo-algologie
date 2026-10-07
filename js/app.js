@@ -31,6 +31,14 @@
   function renderNav() {
     const map = byRegion(), cur = currentId();
     const nav = $('#nav'); let html = '';
+    /* volet Diagnostic MSK en tête de colonne ; masqué quand un filtre de type de geste est actif */
+    const curMsk = currentMsk();
+    const mskList = state.type ? [] : (E.mskRegions || []).filter(r => !state.q || E.mskMatches(state.q, r));
+    if (mskList.length) {
+      html += `<div class="nav-region nav-msk"><h2><a href="#/msk" style="color:inherit">Diagnostic MSK</a><span class="count">${mskList.filter(r => E.msk[r.id]).length}/${mskList.length}</span></h2>`;
+      mskList.forEach(r => { const f = E.msk[r.id]; html += `<a href="#/msk/${r.id}" class="${curMsk === r.id ? 'active' : ''} ${f ? '' : 'missing'}"><span class="dot msk"></span><span>${esc(r.nom)}</span>${f && !f.valide ? '<span class="lvl" title="non validée par Mat">à valider</span>' : ''}</a>`; });
+      html += '</div>';
+    }
     E.regions.forEach(r => {
       const list = (map[r.id] || []).filter(matches);
       if (!list.length) return;
@@ -48,7 +56,7 @@
   /* ---------- rendu d'une fiche ---------- */
   const secs = [];
   /* Sections opératoires toujours dépliées ; les autres repliées par défaut, choix mémorisé. */
-  const SEC_OPEN = ['vue', 'installation', 'reperage', 'sonoanatomie', 'technique', 'injectat', 'securite', 'checklist'];
+  const SEC_OPEN = ['vue', 'installation', 'reperage', 'sonoanatomie', 'technique', 'injectat', 'securite', 'checklist', 'protocole', 'pathologies', 'dictee'];
   let secState = {}; try { secState = JSON.parse(localStorage.getItem('echo-sections') || '{}'); } catch (e) { secState = {}; }
   /* Références : toujours repliées à l'ouverture (décision de Mat, 4 octobre 2026) ; « Tout déplier » les laisse fermées */
   const SEC_FERMEES = ['references'];
@@ -242,7 +250,7 @@
       });
     });
     /* un lien profond #/fiche/<id>/<section> doit ouvrir la section qu'il cible */
-    const deep = (location.hash.match(/^#\/fiche\/[^/]+\/([^/]+)/) || [])[1];
+    const deep = (location.hash.match(/^#\/(?:fiche|msk)\/[^/]+\/([^/]+)/) || [])[1];
     if (deep) { const s = document.getElementById(deep); if (s && s.classList.contains('closed')) s.querySelector('.sec-toggle').click(); }
     /* section courante surlignée dans la sous-navigation */
     if (window.IntersectionObserver) {
@@ -293,6 +301,7 @@
 
   /* ---------- routage ---------- */
   function currentId() { const m = location.hash.match(/^#\/fiche\/([^/]+)/); return m ? m[1] : null; }
+  function currentMsk() { const m = location.hash.match(/^#\/msk\/([^/]+)/); return m ? m[1] : null; }
   function route() {
     const h = location.hash || '#/';
     let m;
@@ -301,6 +310,7 @@
       if (p) { renderFiche(p); if (m[2]) { const el = document.getElementById(m[2]); if (el) el.scrollIntoView({ block: 'start' }); } else window.scrollTo(0, 0); }
       else { $('#content').innerHTML = `<div class="empty"><h2>Fiche « ${esc(m[1])} » non encore rédigée</h2><p>Elle figure au plan mais son fichier n'est pas encore présent.</p></div>`; }
     } else if ((m = h.match(/^#\/region\/([^/]+)/))) { renderHome(m[1]); window.scrollTo(0, 0); }
+    else if ((m = h.match(/^#\/msk(?:\/([^/]+))?(?:\/([^/]+))?/))) { E.renderMsk(m[1], m[2]); if (!m[2]) window.scrollTo(0, 0); }
     else if ((m = h.match(/^#\/validation(?:\/([^/]+))?/))) { renderValidation(m[1]); window.scrollTo(0, 0); }
     else { renderHome(); }
     renderNav();
@@ -314,6 +324,8 @@
     $('#themeBtn').textContent = dark ? '☀︎ Clair' : '☾ Sombre';
   }
   function applyQuiz() { document.body.classList.toggle('quiz', state.quiz); $('#quizBtn').classList.toggle('on', state.quiz); }
+  /* helpers de mise en page partagés avec js/lib/msk.js (volet diagnostic) */
+  E.ui = { sec, card, callout, steps, flash, refsHtml, videosHtml, figHtml, applyCrops, bindSections };
 
   window.addEventListener('hashchange', route);
   document.addEventListener('DOMContentLoaded', () => {
