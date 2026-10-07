@@ -44,6 +44,9 @@ test('chaque règle produit son erreur', () => {
     [f => { f.protocole[0].image.crop = [0, 0, 1, 0]; }, /crop invalide/],
     [f => { f.protocole[0].image.crop = [NaN, 0, 1, 1]; }, /crop invalide/],
     [f => { f.protocole[0].image.marqueurs[1].n = 1; }, /marqueur 1 en double/],
+    // numéros en ordre : le verso d'une carte « structure » liste les marqueurs par numéro, la réponse doit correspondre aux pastilles de l'image
+    [f => { f.protocole[0].image.marqueurs.reverse(); }, /marqueur 2 attendu en position 1 — numéroter les marqueurs dans l'ordre du tableau/],
+    [f => { f.protocole[0].image.marqueurs[1].n = 3; }, /marqueur 3 attendu en position 2/],
     [f => { f.dictee = 'Bourse de 3 mm.'; }, /mesure « 3 mm » sans source/],
     [f => { f.pathologies[0].gestes = []; }, /ni geste du mémo ni phrase aucunGeste/],
     [f => { f.pathologies[0].gestes = ['inconnu']; }, /pathologie .* geste inconnu/],
@@ -69,6 +72,8 @@ test('chaque règle produit son erreur', () => {
     if (!e.some(m => re.test(m))) muets.push(`${re} : absent de ${JSON.stringify(e)}`);
   }
   assert.deepStrictEqual(muets, []);
+  assert.deepStrictEqual(errsOf(f => { f.protocole[0].image.marqueurs[1].n = 1; }), ['protocole coupe 1 : marqueur 1 en double'], 'un doublon ne produit pas, en plus, un message de position');
+  assert.deepStrictEqual(errsOf(f => { f.protocole[0].image.marqueurs[1].n = 'deux'; }), ['protocole coupe 1 : marqueur sans numéro'], 'un numéro invalide ne produit pas, en plus, un message de position');
 });
 test('mesuresDe : jetons « nombre unité », une borne par jeton, texte normalisé', () => {
   const cas = [

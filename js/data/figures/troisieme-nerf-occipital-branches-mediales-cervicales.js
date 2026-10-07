@@ -56,7 +56,7 @@ ECHO.figures['troisieme-nerf-occipital-branches-mediales-cervicales'] = [
     pair: 'cmb-piliers-long',
     titre: 'Colonne des piliers articulaires en coupe coronale — image réelle',
     legende: 'C\'est l\'image de référence du repérage et du comptage : la ligne hyperéchogène **festonnée en dents de scie** de C3 à C6, avec son ombre acoustique franche. Les **étoiles jaunes de l\'original** marquent les points cibles des branches médiales, au **creux** entre deux convexités, c\'est-à-dire à la taille (*waist*) du pilier articulaire — les sommets, eux, correspondent aux articulations zygapophysaires. Les lettres C3 à C6 sont celles de l\'original et repèrent les niveaux. Une ligne continue et régulière, sans festons, signe une sonde trop postérieure (lames) ou trop antérieure (processus transverses) : il faut reglisser avant de compter.',
-    credit: 'Kucukbingoz C, Yılmaz A, Diagnostics 2026, Figure 1 — CC BY 4.0 (le nom Giurazza F affiché par PMC est celui de l\'*academic editor* MDPI, pas d\'un auteur)',
+    credit: 'Kucukbingoz C, Yılmaz A, Diagnostics 2026, Figure 1 — CC BY 4.0 (le nom Giurazza F affiché par PMC est celui de l\'« academic editor » MDPI, pas d\'un auteur)',
     source: 'https://doi.org/10.3390/diagnostics16040592',
     crop: [0.060, 0.073, 0.913, 0.907],
     labels: [
