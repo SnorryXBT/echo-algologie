@@ -55,11 +55,11 @@ ECHO.figures['patte-d-oie-tendinopathie-patellaire'] = [
   {
     type: 'echo',
     src: 'img/patte-d-oie-tendinopathie-patellaire/echo-1.jpg',
-    pair: 'po-sono',
-    titre: 'Tendons de la patte d\'oie — coupe transversale réelle et diffusion de l\'injectat',
-    legende: 'Annotations anglaises d\'origine. **A** : coupe transversale des trois tendons conjoints — *ST* = tendon du sartorius, *GT* = tendon du gracile, *SMT* = tendon du semi-tendineux, alignés de l\'antérieur (gauche) au postérieur (droite), tous très superficiels (échelle 1,8 cm). **B** : l\'aiguille (*Needle*) abordée dans le plan, les têtes de flèches jalonnant son trajet, et *RP* = ropivacaïne qui décolle le plan tendineux. Réserve d\'interprétation : l\'image d\'origine documente un **bloc analgésique** de la patte d\'oie avant reconstruction du LCA, pas une infiltration de bursite — la fenêtre acoustique et le plan de diffusion sont néanmoins ceux du geste de la fiche. On n\'y voit aucune bourse liquidienne : c\'est la règle, la bourse anserine est le plus souvent virtuelle.',
-    credit: 'Zhang D, Wang X, Huang G, et al., Scientific Reports 2025, fig. 2 — CC BY-NC-ND 4.0',
-    source: 'https://doi.org/10.1038/s41598-025-94343-0',
+    pair: 'po-inj',
+    titre: 'Bursite anserine : aiguille sous la lame tendineuse, au-dessus du tibia',
+    legende: 'Annotations anglaises d\'origine conservées. Infiltration échoguidée d\'une **bursite anserine** : *PATT* (flèche creuse descendante) = **lame tendineuse de la patte d\'oie, épaissie**, qui passe en pont au-dessus de la collection ; l\'**étoile** marque la **bourse anserine distendue** (plage hypoéchogène) ; les flèches creuses ascendantes désignent le **bord du tibia**, corticale brillante sous la bourse ; les trois flèches pleines jalonnent l\'**aiguille**, dans le plan, qui entre par le haut à gauche et glisse **sous la lame tendineuse jusque dans la bourse, sans traverser les tendons** — le trajet de la fiche. Les tendons ne sont pas individualisés (lame commune) et le ligament collatéral médial n\'est pas désigné. **Orientation** : les auteurs n\'inscrivent que *lateral* à droite ; sur la face antéro-médiale du tibia, le côté latéral est le côté antérieur — l\'aiguille vient donc de l\'arrière, à l\'inverse du schéma (antérieur à gauche, aiguille d\'avant en arrière) : **orientation inverse de celle du schéma**, lecture à confirmer.',
+    credit: 'Mun JU, Cho HR, Bae SM, Park SK, Choi SL, Seo MS, Lim YS, Rn SHW, Kim YU, Medicine 2017, Figure 2 — CC BY 4.0',
+    source: 'https://doi.org/10.1097/MD.0000000000008330',
   },
   {
     type: 'echo',
