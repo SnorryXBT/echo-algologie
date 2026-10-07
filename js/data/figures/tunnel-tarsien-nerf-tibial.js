@@ -81,9 +81,9 @@ ECHO.figures['tunnel-tarsien-nerf-tibial'] = [
     type: 'echo',
     src: 'img/tunnel-tarsien-nerf-tibial/echo-2.jpg',
     pair: 'tt-bloc',
-    titre: 'Bloc échoguidé au tunnel tarsien — position de sonde et trajet d\'aiguille',
-    legende: 'À gauche, la sonde posée en arrière de la malléole médiale (*MM*), médial à gauche et latéral à droite. À droite, la coupe courte correspondante : *AV* = artère et veines tibiales postérieures, *MPN* = nerf plantaire médial, *LPN* = nerf plantaire latéral, *MCN* = nerf calcanéen médial, chacun cerclé en pointillés ; la bande hyperéchogène superficielle porte la mention *Transverse Tarsal Ligament*, qui désigne ici le **rétinaculum des fléchisseurs** (toit du tunnel). La flèche blanche en pointillés est le trajet d\'aiguille. Ce cas illustre exactement ce que dit la fiche sur la division : à ce niveau le tronc tibial a déjà donné ses trois branches, et une aiguille placée trop bas n\'en bloque qu\'une. **Réserve d\'interprétation** : l\'image provient d\'un bloc **sélectif du nerf plantaire médial** pour une névralgie post-zostérienne de l\'hallux, pas d\'un bloc du tronc tibial ni d\'une hydrodissection — le trajet d\'aiguille est donc plus médial et plus distal que celui de la fiche, où l\'on aborde le tronc par l\'arrière en amont de la division.',
-    credit: 'Garg H, Rahman S, Punj J, Indian Journal of Anaesthesia 2026, figure 1 — CC BY-NC-ND 4.0',
-    source: 'https://doi.org/10.4103/ija.ija_325_26',
+    titre: 'Tunnel tarsien rétro-malléolaire — coupe transversale annotée, repères du bloc',
+    legende: 'Coupe **transversale rétro-malléolaire**, annotations anglaises des auteurs conservées : *PTN* = **nerf tibial** (tronc, en nid d\'abeilles), *PTA & PTV* = **artère et veines tibiales postérieures**, juste **en avant** du nerf ; *tibialis posterior* et *flexor digitorum longus* = tendons tibial postérieur et long fléchisseur des orteils, en avant du paquet ; *flexor hallucis longus* = long fléchisseur de l\'hallux, en arrière et en profondeur ; *medial malleolus* = malléole médiale, le grand cône d\'ombre en bas à droite. **Antérieur à droite** (malléole), postérieur à gauche : **orientation inverse de celle du schéma**. Pas d\'aiguille sur cette image : le trajet de la fiche entre par le bord postérieur (à gauche ici) et s\'arrête au nerf, l\'artère restant en avant. Image d\'enseignement d\'un atelier de blocs (« author\'s own image »).',
+    credit: 'Foreman A, Sippel J, Ollmann E, Dorinzi N, Journal of Education & Teaching in Emergency Medicine 2025, figure « Ultrasound-guided posterior tibial nerve block » (jetem-10-4-sg66f7) — CC BY 4.0',
+    source: 'https://doi.org/10.21980/J8.52156',
   },
 ];
