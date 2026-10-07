@@ -64,11 +64,11 @@ ECHO.figures['nerf-saphene-infrapatellaire'] = [
   },
   {
     type: 'echo',
-    src: 'img/nerf-saphene-infrapatellaire/echo-2.jpg',
+    src: 'img/nerf-saphene-infrapatellaire/echo-2.png',
     pair: 'sap-ipbsn',
-    titre: 'Branche infrapatellaire — coupe courte réelle sur le condyle fémoral médial',
-    legende: '**A** et **B** : schémas des nerfs du genou — IPBSN = branche infrapatellaire du saphène, SMGN / SLGN / IMGN / ILGN = nerfs géniculés supéro- et inféro-médiaux et latéraux, RPGN = nerfs géniculés récurrents fibulaires, CPN = nerf fibulaire commun. **C** : sonde en plan axial sur le condyle fémoral médial. **D** : coupe courte du nerf (tête de flèche) en arrière et en dedans du vaste médial (*Vastus Medialis*), superficiel au LCM, accompagné d\'une petite artère visible au Doppler ; *posterior* et *anterior* repèrent l\'orientation de l\'écran. Le nerf est très superficiel : aiguille tangentielle, jamais perpendiculaire. Postérieur à gauche, antérieur à droite (mentions incrustées par les auteurs) : orientation inverse de celle du schéma.',
-    credit: 'Spalkit S, Chapala S, Shirodkar K et al., Journal of Ultrasonography 2026, fig. 10 — CC BY-NC-ND 4.0',
-    source: 'https://doi.org/10.15557/jou.2026.0019',
+    titre: 'Branche infrapatellaire du saphène au genou : névrome en continuité et piégeage cicatriciel',
+    legende: 'Planche des auteurs, annotations anglaises conservées. **a** : coupe **longitudinale** sur la face médiale du genou — l\'**IPBSN** (branche inférieure) est épaissie et hypoéchogène entre les têtes de flèche, avec perte de l\'architecture fasciculaire : **névrome en continuité** après chirurgie du genou ; *Femur* (condyle médial) et *Tibia* nommés par les auteurs, l\'interligne entre les deux — proximal à gauche par le repère osseux. **b** : photographie opératoire correspondante (antérieur en haut, proximal à droite) : névrome de la branche inférieure (flèche), IPBSN (flèche ondulée) et branche supérieure (tête de flèche) normales. **c, d** : **piégeage** de la branche inférieure (flèches) par du tissu cicatriciel (têtes de flèche) au niveau de la tubérosité tibiale, en coupes transversale (c) et longitudinale (d), le *Tibia* au fond. Le nerf est sous-cutané, à 2–3 mm de la peau : c\'est le plan du bloc de la fiche. **Plan différent de celui du schéma** (transversal sur le condyle) : la coupe a est longitudinale, dans l\'axe de la branche.',
+    credit: 'Yang SR, Hirschmann MT, Schiffmann A, Kovacs BK, Gehweiler J, Amsler F, Hirschmann A, European Radiology 2022, Fig. 2 — CC BY 4.0',
+    source: 'https://doi.org/10.1007/s00330-021-08184-2',
   },
 ];
