@@ -51,15 +51,12 @@ ECHO.figures['nerf-suprascapulaire'] = [
   },
   {
     type: 'echo',
-    src: 'img/nerf-suprascapulaire/echo-1.jpg',
+    src: 'img/nerf-suprascapulaire/echo-2.jpg',
     pair: 'ssn-fosse',
-    titre: 'Coupe de repérage réelle : fosse supra-épineuse',
-    legende: 'Trapèze puis supra-épineux (SE) superposés, plancher osseux concave hyperéchogène ; la ligne blanche figure le trajet de l\'aiguille dans le plan, jusqu\'au contact osseux. **Réserve** : ni la légende ni le texte des auteurs ne donnent l\'orientation médial / latéral de l\'image, et ni le nerf, ni l\'artère, ni l\'échancrure n\'y sont désignés — le sens du trajet ne peut donc pas être affirmé ici ; se fier au schéma en regard.',
-    credit: 'Costa JRP, García FJJ, García Hernández D et al., Interventional Pain Medicine 2026, fig. 2 — CC BY 4.0',
-    source: 'https://doi.org/10.1016/j.inpm.2026.100805',
-    labels: [
-      { x: 0.60, y: 0.89, text: 'Plancher de la fosse', dx: -0.16, dy: 0.06 },
-      { x: 0.46, y: 0.82, text: 'Pointe : échancrure', dx: -0.24, dy: -0.10 },
-    ],
+    titre: 'Coupe de repérage réelle : fosse supra-épineuse et échancrure',
+    legende: 'Image d\'origine annotée (anglais) : trapèze et supra-épineux superposés, acromion en haut à droite ; les flèches désignent le ligament transverse supérieur de la scapula sur l\'échancrure (« scapular notch »), les deux astérisques le nerf suprascapulaire (légende des auteurs : l\'injection se fait dans l\'échancrure et se suit par un bombement du ligament). Orientation établie par l\'acromion : latéral à droite, médial à gauche — même orientation que le schéma. Panneau D d\'une planche de quatre (A–B : injection intra-articulaire gléno-humérale, C : installation).',
+    credit: 'Gahier M, Lecler A, Gadbled G, Arnolfo P, Gross R, Frontiers in Neurology 2025, fig. 1D (photos : Dr Etienne Savard) — CC BY 4.0',
+    source: 'https://doi.org/10.3389/fneur.2025.1620168',
+    crop: [0.420, 0.533, 0.456, 0.378],
   },
 ];
