@@ -1,4 +1,5 @@
-/* Ouvre chaque fiche dans Chromium headless et rapporte erreurs JS, scènes rendues, sections. */
+/* Ouvre dans Chromium headless chaque fiche geste (#/fiche/<id> : erreurs JS, scènes rendues, sections) puis chaque fiche MSK
+   (#/msk/<region> : erreurs JS, sections, figures, marqueurs, validation). */
 const { chromium } = require('playwright');
 const path = require('path'), fs = require('fs');
 (async () => {
