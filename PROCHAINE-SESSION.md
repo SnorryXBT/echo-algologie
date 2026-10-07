@@ -3,14 +3,17 @@
 Ce fichier dit où en est le mémo et dans quel ordre avancer. À lire en début de session, après
 `CLAUDE.md`. Le mettre à jour en fin de session.
 
-## Où on en est
+## Où on en est (7 octobre 2026)
 
-- 64 fiches, toutes illustrées (Gray annoté, installation, écho réelle appariée au schéma).
-- Coupes anatomiques recalées : 69 tracées, 7 validées par Mat, 41 images non tracées (motif + question
-  sur `#/validation`), 149 questions ouvertes. Compte exact : `node scripts/anat-check.js`.
-- Liens externes : 63/64 fiches avec une vidéo YouTube vérifiée, 53/64 avec la page NYSORA du geste.
-- 213 références encore marquées `verif: false` (citées de mémoire à la création).
-- Mat relit `#/validation` région par région ; il en était au bloc ACNES le 3 octobre.
+- 64 fiches, toutes illustrées ; 119 images écho réelles appariées aux schémas.
+- Coupes anatomiques : 81 tracées, 17 validées par Mat, 25 images non tracées en attente de décision. Compte
+  exact : `node scripts/anat-check.js`.
+- Régions relues par Mat : socle, tête-cou (bilan du 3 octobre, appliqué), membre inférieur (bilan du 7 octobre,
+  appliqué : 10 validations, 7 coupes tracées sur sa lecture, 6 images remplacées ou ajoutées, 1 coupe retirée).
+  Restent à relire : membre supérieur, thorax, rachis-bassin, plus les nouvelles coupes de tête-cou et du membre
+  inférieur (toutes `valide: false`).
+- Liens externes : 63/64 fiches avec vidéo YouTube vérifiée, 53/64 avec page NYSORA.
+- 213 références encore `verif: false`.
 
 ## Décisions de Mat qui s'imposent à toute session
 
