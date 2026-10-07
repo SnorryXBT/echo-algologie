@@ -2,7 +2,9 @@
    echo-1 : planche à trois panneaux de Reijnierse et Griffith (J Ultrason 2023, fig. 20) — coupe tracée sur le seul panneau B
    (échographie transversale du 3ᵉ espace), `crop` propre à la coupe ; la planche reste affichée entière dans la fiche.
    Le texte de l'article rattache la figure à une sonde plantaire : plante en haut, à l'inverse du schéma apparié (voie dorsale).
-   echo-2 (Klontzas et al., fig. 3) : non tracée — sens proximal / distal non donné, aiguille au centre de la masse (voir zz-refus.js). */
+   echo-2 : remplacée le 7 octobre 2026 (Klontzas et al., fig. 3, pointe intralésionnelle, retirée sur décision de Mat) par Camuñas-Nieves et al.,
+   Reports 2025, fig. 2 (CC BY) — voie plantaire, coupe sagittale, aiguille le long de la face plantaire du complexe bourse-nerf ; coupe tracée
+   dans le second bloc ci-dessous. */
 (function () {
   const DERME = [[0,65],[200,90],[350,84],[500,68],[650,68],[750,88],[1000,80]];
   /* faces plantaires des têtes : arcs concaves vers la sonde (bord superficiel de la ligne brillante) */
@@ -40,4 +42,46 @@
       { s: 'profond', x: 560, y: 470, dx: -15, dy: 80, text: 'Espace profond (non vu)', vue: 'anat' },
     ],
   }];
+})();
+
+/* echo-2 — Camuñas-Nieves et al., Reports (MDPI) 2025, fig. 2, CC BY : crop de la figure (écho seule, sans l'encart photographique ni la rose).
+   Orientation inscrite par les auteurs : plante en haut, dos du pied en bas, proximal à gauche, distal à droite. Le surlignage jaune des auteurs
+   (complexe bourse-nerf) et leurs astérisques (aiguille) sont les seuls repères certains ; panneau de 400 × 281 px. */
+(function () {
+  const DERME = [[0,32],[500,30],[1000,30]];
+  /* face plantaire du complexe et plan de l'aiguille : limite profonde du coussinet */
+  const COUSS_B = [[0,258],[200,262],[300,256],[460,246],[600,248],[800,250],[920,252],[1000,242]];
+  const PROF = [[0,455],[200,455],[460,452],[600,452],[800,448],[920,440],[1000,430]];
+  ECHO.anat['nevrome-de-morton'].push({
+    fig: 'img/nevrome-de-morton/echo-2.jpg',
+    valide: false,
+    vb: [1000, 703], orient: { left: 'Proximal', right: 'Distal — plante en haut' },
+    lecture: [
+      'Certain — rose d\'orientation des auteurs : plante en haut, dos du pied en bas, proximal à gauche, distal à droite ; voie plantaire (encart photographique de la figure d\'origine : sonde et aiguille sur la plante). Coupe sagittale dans le grand axe du nerf : plan et voie différents du schéma apparié (coronal, voie dorsale).',
+      'Certain — aiguille = ligne brillante entre les deux astérisques jaunes des auteurs, entrée distale (bord droit), pointe au bord proximal du complexe (astérisque gauche, x ≈ 470) ; elle chemine à la face plantaire du complexe bourse-nerf surligné en jaune par les auteurs, sans y pénétrer : injection péri-lésionnelle.',
+      'Certain — complexe bourse-nerf (névrome de Morton du 3ᵉ espace) = plage surlignée par les auteurs, x ≈ 460–925, y ≈ 250–450 ; son prolongement proximal effilé (x ≈ 200–460) est lu comme le nerf plantaire digital commun (Probable).',
+      'Probable — coussinet graisseux plantaire : couche échogène épaisse entre le derme (y ≈ 30) et le plan de l\'aiguille (y ≈ 245–260).',
+      'Supposition — arc brillant convexe en profondeur (y ≈ 600, x ≈ 560–830) : tête métatarsienne (M3 ou M4) prise en volume partiel par la coupe sagittale ; plans intermédiaires (ligament métatarsien transverse profond, lombrical, étage dorsal) non attribuables sur cette image : dessinés en plan non attribué.',
+    ],
+    structures: [
+      { id: 'peau', tissu: 'peau', haut: [[0,0],[1000,0]], bas: DERME },
+      { id: 'coussinet', tissu: 'graisse', haut: DERME, bas: COUSS_B },
+      { id: 'etage', tissu: 'indetermine', haut: COUSS_B, bas: PROF },
+      { id: 'profond', tissu: 'indetermine', haut: PROF, bas: [[0,703],[1000,703]] },
+      { id: 'nerf_prox', tissu: 'nerf', haut: [[200,262],[300,256],[400,250],[462,250]], bas: [[200,284],[300,282],[400,280],[462,290]] },
+      { id: 'nevrome', tissu: 'nerf', contour: [[462,250],[560,250],[700,252],[830,258],[900,275],[925,320],[920,380],[880,420],[800,445],[700,450],[600,450],[520,440],[472,400],[456,330]] },
+      { id: 'aiguille', tissu: 'aiguille', ligne: [[470,232],[600,228],[820,215],[1000,205]], ep: 6 },
+      { id: 'mt', tissu: 'os', cortex: [[560,640],[600,618],[650,605],[700,598],[750,598],[800,604],[830,612]], profondeur: 60, extrapole: true },
+    ],
+    labels: [
+      { s: 'peau', x: 150, y: 16, dx: 100, dy: 70, text: 'Peau plantaire' },
+      { s: 'coussinet', x: 650, y: 140, dx: 0, dy: -60, text: 'Coussinet graisseux plantaire' },
+      { s: 'aiguille', x: 900, y: 208, dx: -80, dy: -80, text: 'Aiguille (voie plantaire, de distal en proximal)' },
+      { s: 'aiguille', x: 474, y: 232, dx: -180, dy: -70, text: 'Pointe au contact, hors du névrome' },
+      { s: 'nevrome', x: 700, y: 350, dx: 0, dy: 200, text: 'Complexe bourse-névrome (3ᵉ espace)' },
+      { s: 'nerf_prox', x: 320, y: 268, dx: -160, dy: 180, text: 'Nerf plantaire digital commun' },
+      { s: 'mt', x: 700, y: 606, dx: 150, dy: 50, text: 'Tête métatarsienne (?)', vue: 'anat' },
+      { s: 'profond', x: 380, y: 560, dx: -60, dy: 90, text: 'Plans profonds non attribués' },
+    ],
+  });
 })();
