@@ -970,7 +970,7 @@ git commit -m "MSK : dérivation des cartes Anki (fiche et fiches gestes) et dig
 
 **Interfaces:**
 - Consumes: cartes de la tâche 6.
-- Produces: `renderMarkers(page, { src, crop, marqueurs, mode }, outPng, tmpHtml)` ; CLI `node scripts/msk-export.js <region> [--gestes a,b] [--out dist/msk]` → `dist/msk/<region>.cards.json` (`{ region, nom, genere, cards: [{ type, key, front_html, back_html, source, tags, media: [chemins relatifs au dépôt] }] }`), `dist/msk/<region>.json`, `dist/msk/<region>-digest.md`, `dist/msk/img/<region>/msk-<region>-<key>-{recto,verso,image}.png`. Les noms de médias commencent par `msk-<region>-` (Review Focus 1).
+- Produces: `renderMarkers(page, { src, crop, marqueurs, mode }, outPng, tmpHtml)` ; CLI `node scripts/msk-export.js <region> [--gestes a,b] [--out dist/msk]` → `dist/msk/<region>.cards.json` (`{ region, nom, genere, cards: [{ type, key, front_html, back_html, source, tags, media: [chemins relatifs au dépôt] }] }`), `dist/msk/<region>.json`, `dist/msk/<region>-digest.md`, `dist/msk/img/<region>/msk-<region>-<key>-{recto,verso,image}.jpg` (JPEG qualité 85, décision d'exécution : 15 PNG pesaient 16 Mo). Les noms de médias commencent par `msk-<region>-` (Review Focus 1).
 
 - [ ] **Step 1 : écrire les tests**
 
@@ -1762,7 +1762,7 @@ Argument : une région (ou `all` : chaque région qui a une fiche MSK). Durée :
 1. `NODE_PATH=$(npm root -g) node scripts/msk-export.js <region>` (sans fiche MSK : ajouter `--gestes id,id,…`). Noter le nombre N de cartes affiché.
 2. `scripts/anki/.venv/bin/python scripts/anki/build.py <region> --copy`
 3. `scripts/anki/.venv/bin/python scripts/anki/check.py dist/anki/msk-<region>.apkg N` → code 0, aucun média manquant.
-4. Lire deux PNG de dist/msk/img/<region>/ (un recto, un verso) : pastilles lisibles, lignes sur la structure ; sinon corriger dx/dy dans la fiche et relancer.
+4. Lire deux JPEG de dist/msk/img/<region>/ (un recto, un verso) : pastilles lisibles, lignes sur la structure ; sinon corriger dx/dy dans la fiche et relancer.
 5. Dire à Mat : cartes par type, chemin dans iCloud Drive (Écho MSK → anki → msk-<region>.apkg), import dans Avorio (Importer → Fichiers → iCloud Drive → Écho MSK → anki). Une réimportation met les cartes à jour sans perdre la planification : GUID stables tant que les `key` des cartes ne changent pas — ne jamais les renommer.
 ```
 
@@ -1858,7 +1858,7 @@ Expected: `dossier privé prêt : /Users/…/Claude/Projects/Écho MSK` ; `anki 
 Run: `NODE_PATH=$(npm root -g) node scripts/msk-export.js epaule | tee /tmp/export.txt && N=$(grep -o '[0-9]* cartes' /tmp/export.txt | grep -o '[0-9]*') && scripts/anki/.venv/bin/python scripts/anki/build.py epaule --copy && scripts/anki/.venv/bin/python scripts/anki/check.py dist/anki/msk-epaule.apkg $N && ls -la ~/Library/Mobile\ Documents/com~apple~CloudDocs/Écho\ MSK/anki/`
 Expected: `msk-epaule.apkg : N notes`, deux lignes `copié →`, check en code 0, le fichier visible dans iCloud Drive.
 
-Lire `dist/msk/img/epaule/msk-epaule-socle-sous-acromiale-echo-1-recto.png` et `…-verso.png` : pastilles et lignes correctes.
+Lire `dist/msk/img/epaule/msk-epaule-socle-sous-acromiale-echo-1-recto.jpg` et `…-verso.jpg` : pastilles et lignes correctes.
 
 - [ ] **Step 3 : documentation du dépôt**
 
