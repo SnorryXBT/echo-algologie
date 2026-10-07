@@ -15,9 +15,9 @@ ECHO.registerMsk({
       image: { src: 'img/nerf-axillaire/echo-1.jpg', crop: [0.09, 0.385, 0.34, 0.25], credit: 'Abril-Serván MJ, García-Sanz F, Cases-Sebastia A et al., Healthcare 2026, fig. 3C', licence: 'CC BY 4.0', source: 'https://doi.org/10.3390/healthcare14111471', legende: 'Sonde sagittale postérieure : deltoïde en surface, paquet axillaire plaqué contre le col chirurgical.',
         marqueurs: [
           { n: 1, x: 0.30, y: 0.22, dx: 0.00, dy: -0.10, label: 'Deltoïde' },
-          { n: 2, x: 0.59, y: 0.58, dx: -0.06, dy: -0.30, label: 'Nerf axillaire' },
-          { n: 3, x: 0.66, y: 0.55, dx: 0.16, dy: -0.18, label: 'Artère circonflexe postérieure' },
-          { n: 4, x: 0.47, y: 0.71, dx: 0.02, dy: 0.16, label: 'Col chirurgical de l\'humérus' },
+          { n: 2, x: 0.53, y: 0.60, dx: 0.00, dy: -0.32, label: 'Nerf axillaire' },
+          { n: 3, x: 0.60, y: 0.59, dx: 0.22, dy: -0.09, label: 'Artère circonflexe postérieure' },
+          { n: 4, x: 0.47, y: 0.635, dx: 0.02, dy: 0.235, label: 'Col chirurgical de l\'humérus' },
         ] } },
   ],
   sonoanatomie: [

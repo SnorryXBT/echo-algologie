@@ -219,3 +219,5 @@ th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--lin
 .muted { color: var(--muted); font-size: 13.5px; }
 .card h4 { font-size: 13.5px; margin: 10px 0 4px; }
 .msk-banniere { margin-top: 12px; }
+.kv dd p { margin: 0 0 4px; }
+.card h3 .en { font-weight: 400; font-style: italic; color: var(--muted); font-size: 13px; }

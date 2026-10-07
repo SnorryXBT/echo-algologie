@@ -16,7 +16,7 @@ window.ECHO = window.ECHO || {};
   /* image réelle à marqueurs numérotés : même rendu que les figures des fiches gestes (crop, lignes, étiquettes, mode quiz) */
   function figure(img, ficheId) {
     if (!img || !img.src) return '';
-    const f = Object.assign({ type: 'echo' }, img, { labels: (img.marqueurs || []).map(m => ({ x: m.x, y: m.y, dx: m.dx, dy: m.dy, text: `${m.n}. ${m.label}` })) });
+    const f = Object.assign({ type: 'echo' }, img, { credit: [img.credit, img.licence].filter(Boolean).join(' — '), labels: (img.marqueurs || []).map(m => ({ x: m.x, y: m.y, dx: m.dx, dy: m.dy, text: `${m.n}. ${m.label}` })) });
     return `<div class="figs">${E.ui.figHtml(f, { id: 'msk-' + ficheId })}</div>`;
   }
   function protocoleHtml(f) {
