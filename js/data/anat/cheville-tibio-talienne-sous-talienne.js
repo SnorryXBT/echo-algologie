@@ -55,3 +55,52 @@
     ],
   }];
 })();
+
+/* echo-3 (Hung, Chang, Mezian et al., Diagnostics 2020, fig. 6, CC BY) : planche à trois panneaux (A, B pièces cadavériques ;
+   C échographie) — coupe tracée sur le seul panneau C, `crop` propre à la coupe. Grand axe du ligament talo-calcanéen latéral,
+   crânial à gauche, caudal à droite (inscrit par les auteurs) : talus et calcanéus de part et d'autre de l'ouverture latérale du
+   sinus du tarse. Panneau de 267 px de haut : les structures fines ne sont pas résolues. Entrée ajoutée à la suite de celle
+   d'echo-1 (session parallèle), 7 octobre 2026. */
+(function () {
+  /* bord profond du tissu sous-cutané = face superficielle des ligaments (ATFL puis LTCL), puis toit des tendons fibulaires */
+  const SUP = [[0,140],[60,135],[150,118],[250,100],[350,88],[450,82],[550,78],[650,84],[720,92],[760,100],[800,50],[900,38],[1000,48]];
+  const ATFL_B = [[0,190],[60,183],[150,172],[250,160],[350,135],[450,112]];
+  const LTCL_H = [[380,88],[450,82],[550,78],[650,84],[720,92],[760,100]];
+  const LTCL_B = [[380,118],[450,118],[500,124],[530,138],[560,140],[620,138],[680,150],[720,170],[760,192]];
+  const TALUS = [[0,196],[60,189],[150,177],[250,163],[300,149],[350,136],[400,124],[450,118],[500,124],[530,138],[555,160],[575,190],[590,230],[600,300],[605,341]];
+  const CALC = [[690,262],[705,216],[725,198],[760,192],[800,198],[850,204],[900,208],[950,208],[1000,212]];
+  (ECHO.anat['cheville-tibio-talienne-sous-talienne'] = ECHO.anat['cheville-tibio-talienne-sous-talienne'] || []).push({
+    fig: 'img/cheville-tibio-talienne-sous-talienne/echo-3.jpg',
+    crop: [0, 0.556, 1, 0.444], panneau: 'C (échographie)',
+    valide: false,
+    vb: [1000, 341], orient: { left: 'Crânial', right: 'Caudal' },
+    lecture: [
+      'Certain — crânial à gauche, caudal à droite (inscrit sur l\'image par les auteurs) ; talus et calcanéus nommés par eux ; têtes de flèche = ligament talo-fibulaire antérieur, flèches = ligament talo-calcanéen latéral, PB / PL = tendons des fibulaires court et long. Plan crânio-caudal (grand axe du ligament talo-calcanéen latéral), différent de l\'axe du schéma apparié (entonnoir vu de l\'ouverture antéro-latérale vers le canal) : les deux os sont ici côte à côte et non superposés.',
+      'Probable — corticale du talus (processus latéral) = bord supérieur du grand cône d\'ombre de gauche ; corticale du calcanéus = ligne irrégulière y ≈ 190–210 à droite de x ≈ 720. Entre les deux, zone échogène hétérogène x ≈ 560–720 = ouverture latérale du sinus du tarse (graisse), dont le fond (talus au-dessus, calcanéus au-dessous) n\'est pas dans le plan.',
+      'Probable — ligament talo-fibulaire antérieur = bande oblique encadrée par les quatre têtes de flèche, de (x 100, y 170) à (x 450, y 100), posée sur le talus ; ligament talo-calcanéen latéral = bande brillante y ≈ 80–130 qui franchit l\'ouverture du sinus jusqu\'au calcanéus (trois flèches).',
+      'Supposition — couche échogène mouchetée y ≈ 30–100 sous la peau : tissu sous-cutané (dessiné en graisse) ; elle pourrait inclure le rétinaculum des extenseurs ou le court extenseur des orteils, non désignés par les auteurs. Tissu de la gaine des fibulaires entre les tendons et le calcanéus dessiné en tissu conjonctif.',
+      'Extrapolé — flancs de l\'entonnoir (bord inférieur du talus sous son ombre, versant du calcanéus vers le canal) : pointillés, hors du plan.',
+    ],
+    structures: [
+      { id: 'peau', tissu: 'peau', haut: [[0,0],[1000,0]], bas: [[0,28],[500,26],[1000,26]] },
+      { id: 'sc', tissu: 'graisse', haut: [[0,28],[500,26],[1000,26]], bas: SUP },
+      { id: 'gaine', tissu: 'conjonctif', haut: [[760,100],[800,50],[900,38],[1000,48]], bas: [[760,192],[800,198],[850,204],[900,208],[950,208],[1000,212]] },
+      { id: 'pb', tissu: 'tendon', contour: [[760,100],[770,75],[800,62],[830,70],[845,100],[835,135],[800,150],[770,135]] },
+      { id: 'pl', tissu: 'tendon', contour: [[840,90],[855,55],[890,45],[925,55],[945,90],[930,125],[890,140],[855,125]] },
+      { id: 'atfl', tissu: 'ligament', haut: SUP.slice(0, 6), bas: ATFL_B, enthese: -0.5 },
+      { id: 'ltcl', tissu: 'ligament', haut: LTCL_H, bas: LTCL_B, enthese: -0.4 },
+      { id: 'sinus', tissu: 'graisse', contour: [[530,138],[555,160],[575,190],[590,230],[600,300],[605,341],[690,341],[690,262],[705,216],[725,198],[760,192],[720,170],[680,150],[620,138],[560,140]], extrapole: true },
+      { id: 'talus', tissu: 'os', cortex: TALUS, vu: [[0, 10]] },
+      { id: 'calc', tissu: 'os', cortex: CALC, vu: [[2, 8]] },
+    ],
+    labels: [
+      { s: 'atfl', x: 250, y: 130, dx: -90, dy: -105, text: 'Lig. talo-fibulaire antérieur' },
+      { s: 'sc', x: 420, y: 55, dx: 0, dy: -30, text: 'Tissu sous-cutané (?)' },
+      { s: 'ltcl', x: 600, y: 105, dx: 60, dy: -80, text: 'Lig. talo-calcanéen latéral' },
+      { s: 'pb', x: 800, y: 108, dx: 90, dy: -85, text: 'Fibulaires court / long' },
+      { s: 'talus', x: 350, y: 150, dx: -40, dy: 150, text: 'Talus (processus latéral)' },
+      { s: 'sinus', x: 630, y: 175, dx: -30, dy: 125, text: 'Ouverture du sinus du tarse' },
+      { s: 'calc', x: 870, y: 215, dx: -110, dy: 62, text: 'Calcanéus' },
+    ],
+  });
+})();

@@ -68,4 +68,13 @@ ECHO.figures['cheville-tibio-talienne-sous-talienne'] = [
     credit: 'Kim YH, Chai JW, Kim DH, Kim HJ, Seo J, Ultrasonography 2022, fig. 15 — CC BY-NC 4.0',
     source: 'https://doi.org/10.14366/usg.21069',
   },
+  {
+    type: 'echo',
+    src: 'img/cheville-tibio-talienne-sous-talienne/echo-3.jpg',
+    pair: 'ankle-sinus-tarse',
+    titre: 'Ouverture latérale du sinus du tarse : talus, calcanéus et ligament talo-calcanéen latéral',
+    legende: 'Planche des auteurs, annotations conservées. **A, B** : pièces cadavériques de la face latérale de la cheville — **1** ligament talo-fibulaire antérieur, **2** calcanéo-fibulaire, **3** ligament talo-calcanéen latéral de type I (bande distincte), **4** de type II (fibres confluentes avec le calcanéo-fibulaire), **5** et **6** composants calcanéo-naviculaire et calcanéo-cuboïdien du ligament bifurqué. **C** : coupe échographique **dans le grand axe du ligament talo-calcanéen latéral** (flèches), sonde sur la face latérale du pied, **crânial à gauche, caudal à droite** : le talus (processus latéral) à gauche, le calcanéus à droite, et entre les deux corticales l\'**ouverture latérale du sinus du tarse**, fermée en surface par le ligament ; les têtes de flèche désignent le ligament talo-fibulaire antérieur, PB et PL les tendons des fibulaires court et long. Pas d\'aiguille. **Plan différent de celui du schéma** : le schéma est pris dans l\'axe de l\'entonnoir (talus au-dessus, calcanéus au-dessous, ouverture antéro-latérale à droite) ; ici le plan est crânio-caudal, perpendiculaire à cet axe, et les deux os sont côte à côte de part et d\'autre de l\'ouverture.',
+    credit: 'Hung CY, Chang KV, Mezian K, Naňka O, Wu WT, Hsu PC, Özçakar L, Diagnostics 2020, Figure 6 — CC BY 4.0',
+    source: 'https://doi.org/10.3390/diagnostics10030160',
+  },
 ];
