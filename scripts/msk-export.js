@@ -2,7 +2,7 @@
    node scripts/msk-export.js <region> [--gestes id,id,…] [--out dist/msk]
    Cartes = fiche MSK (si présente, avec ses `gestes`) + fiches gestes de --gestes quand la fiche n'existe pas encore.
    Sorties dans --out : <region>.cards.json (cartes + médias rendus), <region>.json (fiche brute), <region>-digest.md (NotebookLM),
-   img/<region>/msk-<region>-<key>-{recto,verso,image}.png. */
+   img/<region>/msk-<region>-<key>-{recto,verso,image}.jpg (JPEG qualité 85). */
 const fs = require('fs'), path = require('path');
 const { chromium } = require('playwright');
 const { loadEcho, ROOT } = require('./lib/load-echo');
@@ -26,20 +26,20 @@ fs.mkdirSync(imgDir, { recursive: true });
 const cards = (f ? cardsFromMsk(f, E) : []).concat(cardsFromGestes(gestes, E, region));
 (async () => {
   const browser = await chromium.launch({ ...(process.env.PW_CHROME ? { executablePath: process.env.PW_CHROME } : {}) });
-  const page = await browser.newPage({ viewport: { width: 1000, height: 1000 }, deviceScaleFactor: 2 });
   const tmp = path.join(out, '_render.html');
-  for (const c of cards) {
-    c.media = []; c.front_html = c.front; c.back_html = c.back;
-    if (!c.image) { delete c.image; continue; }
-    const base = `msk-${region}-${c.key}`, spec = { src: path.join(ROOT, c.image.src), crop: c.image.crop, marqueurs: c.image.marqueurs };
-    const add = async (mode, suffix) => { const file = `${base}-${suffix}.png`; await renderMarkers(page, Object.assign({}, spec, { mode }), path.join(imgDir, file), tmp); c.media.push(path.relative(ROOT, path.join(imgDir, file))); return `<img src="${file}">`; };
-    if (c.image.mode === 'front-back') { c.front_html = (await add('front', 'recto')) + '<br>' + c.front; c.back_html = (await add('back', 'verso')) + '<br>' + c.back; }
-    else if (c.image.mode === 'back') c.back_html = c.back + '<br>' + (await add('back', 'verso'));
-    else c.front_html = (await add('plain', 'image')) + '<br>' + c.front;
-    delete c.image;
-  }
-  await browser.close();
-  if (fs.existsSync(tmp)) fs.unlinkSync(tmp);
+  try {   // un rendu en échec ne laisse ni Chromium ni page temporaire : l'erreur remonte (code 1) et aucun fichier de sortie n'est écrit
+    const page = await browser.newPage({ viewport: { width: 1000, height: 1000 }, deviceScaleFactor: 2 });
+    for (const c of cards) {
+      c.media = []; c.front_html = c.front; c.back_html = c.back;
+      if (!c.image) { delete c.image; continue; }
+      const base = `msk-${region}-${c.key}`, spec = { src: path.join(ROOT, c.image.src), crop: c.image.crop, marqueurs: c.image.marqueurs };
+      const add = async (mode, suffix) => { const file = `${base}-${suffix}.jpg`; await renderMarkers(page, Object.assign({}, spec, { mode }), path.join(imgDir, file), tmp); c.media.push(path.relative(ROOT, path.join(imgDir, file))); return `<img src="${file}">`; };
+      if (c.image.mode === 'front-back') { c.front_html = (await add('front', 'recto')) + '<br>' + c.front; c.back_html = (await add('back', 'verso')) + '<br>' + c.back; }
+      else if (c.image.mode === 'back') c.back_html = c.back + '<br>' + (await add('back', 'verso'));
+      else c.front_html = (await add('plain', 'image')) + '<br>' + c.front;
+      delete c.image;
+    }
+  } finally { await browser.close(); if (fs.existsSync(tmp)) fs.unlinkSync(tmp); }
   fs.writeFileSync(path.join(out, `${region}.cards.json`), JSON.stringify({ region, nom, genere: new Date().toISOString().slice(0, 10), cards }, null, 1));
   if (f) fs.writeFileSync(path.join(out, `${region}.json`), JSON.stringify(f, null, 1));
   fs.writeFileSync(path.join(out, `${region}-digest.md`), digest(f, gestes, E, nom));

@@ -1,5 +1,6 @@
-/* Rendu PNG d'une image à marqueurs numérotés (Playwright) : 'front' = numéros seuls, 'back' = numéros et libellés, 'plain' = image nue.
-   renderMarkers(page, { src: chemin absolu, crop: [x0, y0, w, h] en fractions, marqueurs: [{ n, x, y, dx, dy, label }], mode }, outPng, tmpHtml)
+/* Rendu JPEG (qualité 85) d'une image à marqueurs numérotés (Playwright) : 'front' = numéros seuls, 'back' = numéros et libellés, 'plain' = image nue.
+   renderMarkers(page, { src: chemin absolu, crop: [x0, y0, w, h] en fractions, marqueurs: [{ n, x, y, dx, dy, label }], mode }, outJpg, tmpHtml)
+   Format imposé par `type: 'jpeg'`, quelle que soit l'extension : nommer outJpg en .jpg pour que nom et contenu concordent. JPEG plutôt que PNG : paquets Anki légers sur iPhone.
    La page est écrite dans tmpHtml et ouverte en file:// : une page about:blank ne peut pas charger d'image locale. */
 const fs = require('fs'), path = require('path');
 const CSS = `body{margin:0;background:#000}.wrap{position:relative;width:900px;overflow:hidden;background:#000}.clip{position:absolute;inset:0;overflow:hidden}.clip img{position:absolute;display:block;max-width:none}
@@ -22,7 +23,7 @@ async function renderMarkers(page, spec, out, tmpHtml) {
     svg.innerHTML = marqueurs.map(m => { const tx = m.x + (m.dx || 0), ty = m.y + (m.dy || 0); return `<line x1="${tx * 100}" y1="${ty * 100}" x2="${m.x * 100}" y2="${m.y * 100}"/><circle cx="${m.x * 100}" cy="${m.y * 100}" r="0.9"/>`; }).join('');
     for (const m of marqueurs) { const d = document.createElement('div'); d.className = 'lbl' + (mode === 'front' ? ' num' : ''); d.style.left = ((m.x + (m.dx || 0)) * 100) + '%'; d.style.top = ((m.y + (m.dy || 0)) * 100) + '%'; d.textContent = mode === 'front' ? String(m.n) : `${m.n}. ${m.label}`; w.appendChild(d); }
   }, { crop, marqueurs: spec.marqueurs || [], mode });
-  await page.locator('#w').screenshot({ path: out });
+  await page.locator('#w').screenshot({ path: out, type: 'jpeg', quality: 85 });
   return out;
 }
 module.exports = { renderMarkers };
