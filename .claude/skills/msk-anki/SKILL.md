@@ -2,7 +2,7 @@
 name: msk-anki
 description: Générer le paquet Anki d'une région (cartes de la fiche MSK et des fiches gestes de la région), le vérifier, le copier vers l'iPhone via iCloud et dire à Mat comment l'importer dans Avorio.
 ---
-Argument : une région (ou `all` : chaque région qui a une fiche MSK). Durée : une à deux minutes par région.
+Argument : une région, ou `all` : chaque fichier `js/data/msk/*.js` — étapes 1 à 3 en boucle, `for r in $(ls js/data/msk | sed 's/\.js$//'); do NODE_PATH=$(npm root -g) node scripts/msk-export.js $r > /tmp/msk-export-$r.txt && N=$(grep -o '[0-9]* cartes' /tmp/msk-export-$r.txt | grep -o '[0-9]*') && scripts/anki/.venv/bin/python scripts/anki/build.py $r --copy && scripts/anki/.venv/bin/python scripts/anki/check.py dist/anki/msk-$r.apkg $N || break; done`, puis l'étape 4 pour chaque région. Durée : une à deux minutes par région.
 1. `NODE_PATH=$(npm root -g) node scripts/msk-export.js <region>` (sans fiche MSK : ajouter `--gestes id,id,…`). Noter le nombre N de cartes affiché.
 2. `scripts/anki/.venv/bin/python scripts/anki/build.py <region> --copy` (le paquet est vérifié avant toute copie ; dossier privé requis : s'il n'existe pas, `node scripts/msk-progress.js init` d'abord)
 3. `scripts/anki/.venv/bin/python scripts/anki/check.py dist/anki/msk-<region>.apkg N` → code 0, aucun média manquant.

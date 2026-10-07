@@ -32,7 +32,9 @@
    Garde-fou d'abord, sur le nom et sur le texte : dans le texte, seule y échappe une date AAAA-MM-JJ isolée du 2026-01-01 à aujourd'hui + 7 jours (dates du volet,
    semaine planifiée comprise) ; dans le nom, la date de séance en tête du nom du fichier de cas.
    question fermer : « - [ ] » → « - [x] » sur la question ouverte désignée par son texte (tel que rendu par cas pick ou plan) ou son numéro parmi les ouvertes (ordre du fichier).
-   region activer : ajoute une région à regions_actives de config.json, sur décision de Mat ; seul ce champ change.
+   region activer : ajoute une région à regions_actives de config.json, sur décision de Mat ; seul ce champ change, indentation du fichier conservée ;
+   regions_actives absente ou qui n'est pas une liste de régions : refus, rien n'est modifié.
+   plan, audios : { fichier, ecoute, regenere } ; une marque d'écoute antérieure au jour de dépôt du fichier (épisode régénéré) est ignorée : ecoute null, regenere true.
    Sortie JSON (init : lignes de texte ; commande inconnue : cet usage) ; erreur ou refus : une ligne sur stderr.
    Codes : 0 ok · 1 erreur · 2 refus du garde-fou données patient. Entrée invalide (1) ou refusée (2) : rien n'est écrit.
    Transferts vers l'iPhone (Anki, audio), créés par init : $ECHO_MSK_ICLOUD ou ~/Library/Mobile Documents/com~apple~CloudDocs/Écho MSK.
@@ -189,7 +191,10 @@ function critere(region, nom) {
 }
 function plan(region) {
   const cfg = config(), { f, nom } = fiche(region), pr = progression();
-  const audios = episodes().filter(x => x.startsWith(region + '-')).map(x => ({ fichier: x, ecoute: (pr.audio || {})[x] || null }));
+  const audios = episodes().filter(x => x.startsWith(region + '-')).map(x => {   // marque d'écoute antérieure au jour de dépôt du fichier : épisode régénéré depuis, à réécouter (la marque reste dans progression.json)
+    const e = (pr.audio || {})[x] || null, regenere = !!e && e < jourLocal(fs.statSync(P(path.join('audio', x))).mtime);
+    return { fichier: x, ecoute: regenere ? null : e, regenere };
+  });
   const apkg = path.join(cfg.transfert_anki, `msk-${region}.apkg`), anki = fs.existsSync(apkg) ? { fichier: apkg, modifie: jourLocal(fs.statSync(apkg).mtime) } : null;
   const questions = questionsOuvertes(region), paliers = etatList(region).paliers;
   if (!f) return { mode: 'socle', region, nom, cibles: [], cas: [], audios, anki, questions, paliers, critere: critere(region, nom), note: `pas encore de fiche MSK pour ${nom} : plan socle — audio, cartes des fiches gestes, et trois cibles à choisir dans les sections Sono-anatomie de ces fiches` };
@@ -252,8 +257,10 @@ function audioEcoute(fichier) {
 /* ---- tâche 10 : écritures des skills de coaching par le CLI (plan de semaine, fichier de cas, question fermée, région activée) ---- */
 /* Dates du volet dans le texte d'ecrire : une date AAAA-MM-JJ isolée (ni lettre ni chiffre collés, ni chiffre relié par « - », « . » ou « / ») du 2026-01-01 à
    aujourd'hui + 7 jours n'est pas une donnée patient (séance, paquet Anki, semaine planifiée). Pour le seul garde-fou, ses tirets deviennent « · » : la règle
-   « date complète » ne la voit plus, ses chiffres et son contexte restent lus (« née le 2026-10-07 », « la dame du 2026-10-07 », « 2026-10-07 12 34 56 78 » restent
-   refusés). Toute autre date (« 1956-03-12 », « 7 octobre 2026 », « 2026-10-07-1956 ») reste au garde-fou. */
+   « date complète » ne la voit plus ; son contexte reste lu (« née le 2026-10-07 », « la dame du 2026-10-07 » restent refusés), comme un numéro écrit à côté
+   (« 2026-10-10 au 06 12 34 56 78 » reste refusé). Ses chiffres restent lus eux aussi : un jour de 01 à 09 suivi de huit chiffres forme un numéro de téléphone,
+   refusé ; « 2026-10-10 12 34 56 78 » passe, comme « 12 34 56 78 » seul. Toute autre date (« 1956-03-12 », « 7 octobre 2026 », « 2026-10-07-1956 ») reste au
+   garde-fou. Cas rejoués à horloge simulée par les tests (le 10, le 31, le 1er d'un mois, au changement d'année). */
 const DATE_ISOLEE = /(?<![\p{L}\p{N}_]|\p{N}[./-])(\d{4})-(\d{2})-(\d{2})(?![\p{L}\p{N}_]|[./-]\p{N})/gu;
 const datesDuVolet = t => t.replace(DATE_ISOLEE, (m, a, mo, j) => { const d = `${a}-${mo}-${j}`; return dateReelle(d) && d >= DEBUT && d <= finPeriode(7) ? `${a}·${mo}·${j}` : m; });
 const NOMS = {   // nom de fichier par sous-dossier (spec §8) ; cas : la date de séance en tête, puis l'item (minuscules, chiffres, « . », « - »)
@@ -286,9 +293,11 @@ function questionFermer(q) {   // texte exact (avec ou sans sa case, espaces rep
   return { question: o.texte, ouvertes: ouvertes.length - 1 };
 }
 function regionActiver(region) {   // ajoute une région à regions_actives de config.json (proposée par /msk-semaine --bilan, décidée par Mat) ; seul ce champ change, sans doublon
-  fiche(region); const c = config(), actives = Array.isArray(c.regions_actives) ? c.regions_actives : [];
+  fiche(region); const c = config(), actives = c.regions_actives;
+  if (!Array.isArray(actives) || actives.some(r => typeof r !== 'string')) throw new Error(`config.json : regions_actives doit être une liste de régions (reçu : ${actives === undefined ? 'absent' : JSON.stringify(actives)}) — rien n'est modifié`);
   if (actives.includes(region)) return { regions_actives: actives, ajoutee: false };
-  c.regions_actives = actives.concat(region); writeJson(P('config.json'), c);
+  const m = /^\{\r?\n([ \t]+)\S/.exec(fs.readFileSync(P('config.json'), 'utf8')), indent = m ? m[1] : 1;   // indentation du fichier conservée ; à défaut, 1 espace (celle d'init, par writeJson)
+  c.regions_actives = actives.concat(region); ecrireTexte(P('config.json'), JSON.stringify(c, null, indent) + '\n');
   return { regions_actives: c.regions_actives, ajoutee: true };
 }
 

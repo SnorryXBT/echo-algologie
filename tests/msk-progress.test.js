@@ -300,6 +300,20 @@ test('questions servies par leur étiquette de région, jamais par leur texte ; 
 // ---- tâche 10 : écritures des skills par le CLI (ecrire, question fermer, region activer), grille OSAUS affichée (bilan --grille, limite) ----
 const dossiers = () => ['cas', 'semaines'].flatMap(d => fs.readdirSync(path.join(H, d)).sort().map(f => `${d}/${f}\n${fs.readFileSync(path.join(H, d, f), 'utf8')}`));   // fichiers écrits par ecrire : un refus n'y ajoute rien
 const racine = () => fs.readdirSync(H).sort();   // aucun fichier égaré à la racine du dossier privé (nom en « .. », reste .part)
+/* Cas du garde-fou d'ecrire, calculés depuis aujourd'hui (jour) : joués à la date réelle par le test « garde-fou d'abord », rejoués à horloge simulée par le test
+   « indépendant de la date du jour » (un cas qui ne serait refusé qu'à certaines dates y échoue). [sous-dossier, nom, texte]. */
+const ECRIRE_REFUS = () => { const W = '2026-W42.md', ok = '# Plan\n\nTrois cibles.'; return [
+  ['semaines', W, 'Revu avec Mme Dupont'], ['semaines', W, 'Femme de 55 ans, douleur d\'épaule'], ['semaines', W, 'Rappeler au 06\n12 34 56 78'],
+  ['semaines', W, 'Contrôle le 1956-03-12'], ['semaines', W, `Rappeler le ${jour(0)} au 06 12 34 56 78`],   // numéro complet à côté d'une date du volet : refusé à toute date
+  ['semaines', W, `Séance ${jour(0)}-03-1956`], ['semaines', W, `Séance ${jour(0)}-1956`],   // date du volet reliée à d'autres chiffres : garde-fou
+  ['semaines', W, `Née le ${jour(0)}`], ['semaines', W, `la dame du ${jour(0)}`],   // une date du volet n'efface pas son contexte
+  ['semaines', W, 'Cas du 7 octobre 2026'], ['semaines', W, `Revoir le ${jour(8)}`], ['semaines', W, 'Revoir le 2025-12-31'],   // date en lettres ; hors du volet (avant 2026, au-delà de la semaine à venir)
+  ['cas', `${P.today()}-Mme Dupont.md`, ok], ['cas', '1956-03-12-epaule.p01.md', ok], ['cas', `${jour(3)}-epaule.p01.md`, ok],   // nom de fichier : seule la date de séance en tête y échappe
+]; };
+const ECRIRE_ADMIS = () => { const W = '2026-W42.md', ok = '# Plan\n\nTrois cibles.'; return [   // dates du volet : passent le garde-fou quel que soit le jour
+  ['semaines', W, `# Semaine (du ${jour(0)} au ${jour(7)})\n\n- [ ] ${jour(-1)} (epaule) : Comment dégager l'infra-épineux ?\n**Anki** : paquet du ${jour(0)}, à importer.\n**Logbook** : ${jour(-1)} 3 examens, 2 dictés sans aide.\nVolet ouvert le 2026-01-01.`],
+  ['cas', `${jour(0)}-epaule.p01.md`, ok], ['cas', `${jour(2)}-epaule.p01-2.md`, ok], ['cas', `${jour(-1)}-question.md`, ok],
+]; };
 test('grille OSAUS : limite de l\'auto-évaluation (spec §10) écrite avec chaque bilan ; bilan <region> --grille l\'affiche sans rien écrire', () => {
   assert.strictEqual(P.OSAUS.limite, 'Auto-évaluation : ce n\'est pas une évaluation observée ; une notation trimestrielle par un confrère sur la même grille reste à organiser');
   assert.strictEqual(JSON.parse(fs.readFileSync(path.join(H, 'osaus', P.today().slice(0, 7) + '.json'), 'utf8')).epaule.grille.limite, P.OSAUS.limite, 'limite dite dans la grille de chaque bilan');
@@ -340,13 +354,7 @@ test('ecrire : plan de semaine et fichier de cas dans leur sous-dossier, texte t
 });
 test('ecrire : garde-fou d\'abord (code 2), seules les dates du volet échappent ; sous-dossier, nom et texte validés (code 1) ; rien n\'est écrit', () => {
   const avant = [prives(), dossiers(), racine()], ok = '# Plan\n\nTrois cibles.', W = '2026-W42.md';
-  const passes = [
-    ['semaines', W, 'Revu avec Mme Dupont'], ['semaines', W, 'Femme de 55 ans, douleur d\'épaule'], ['semaines', W, 'Rappeler au 06\n12 34 56 78'],
-    ['semaines', W, 'Contrôle le 1956-03-12'], ['semaines', W, `Rappeler le ${jour(0)} 12 34 56 78`], ['semaines', W, `Séance ${jour(0)}-03-1956`], ['semaines', W, `Séance ${jour(0)}-1956`],   // date du volet reliée à d'autres chiffres : garde-fou
-    ['semaines', W, `Née le ${jour(0)}`], ['semaines', W, `la dame du ${jour(0)}`],   // une date du volet n'efface pas son contexte
-    ['semaines', W, 'Cas du 7 octobre 2026'], ['semaines', W, `Revoir le ${jour(8)}`], ['semaines', W, 'Revoir le 2025-12-31'],   // date en lettres ; hors du volet (avant 2026, au-delà de la semaine à venir)
-    ['cas', `${P.today()}-Mme Dupont.md`, ok], ['cas', '1956-03-12-epaule.p01.md', ok], ['cas', `${jour(3)}-epaule.p01.md`, ok],   // nom de fichier : seule la date de séance en tête y échappe
-  ].filter(([s, n, t]) => { try { P.ecrire(s, n, t); return true; } catch (err) { return !(err instanceof P.GuardError); } }).map(x => x.join(' | '));
+  const passes = ECRIRE_REFUS().filter(([s, n, t]) => { try { P.ecrire(s, n, t); return true; } catch (err) { return !(err instanceof P.GuardError); } }).map(x => x.join(' | '));
   assert.deepStrictEqual(passes, [], 'écritures non refusées par le garde-fou');
   const rates = [];
   for (const [s, n, t, re] of [
@@ -371,6 +379,19 @@ test('ecrire : garde-fou d\'abord (code 2), seules les dates du volet échappent
   } finally { fs.rmSync(vide, { recursive: true, force: true }); }
   assert.deepStrictEqual(rates, []);
   assert.deepStrictEqual([prives(), dossiers(), racine()], avant, 'aucun refus n\'a écrit quoi que ce soit');
+});
+test('garde-fou d\'ecrire indépendant de la date du jour : mêmes refus et mêmes admissions le 10, le 31, le 1er d\'un mois et au changement d\'année (horloge simulée)', (t) => {
+  const rates = [];   // sous-dossier « x » : un texte admis par le garde-fou bute ensuite sur le sous-dossier, rien n'est jamais écrit
+  for (const d of ['2026-10-10', '2026-10-31', '2026-11-01', '2026-12-31', '2027-01-01']) {
+    t.mock.timers.enable({ apis: ['Date'], now: Date.parse(d + 'T12:00:00') });
+    try {
+      if (P.today() !== d) rates.push(`${d} : horloge non simulée (${P.today()})`);
+      for (const [, n, x] of ECRIRE_REFUS()) { try { P.ecrire('x', n, x); } catch (err) { if (!(err instanceof P.GuardError)) rates.push(`${d} : non refusé : ${n} | ${x}`); } }
+      for (const [, n, x] of ECRIRE_ADMIS()) { try { P.ecrire('x', n, x); } catch (err) { if (err instanceof P.GuardError || !/^sous-dossier/.test(err.message)) rates.push(`${d} : refusé : ${n} | ${x} — ${err.message}`); } }
+    } finally { t.mock.timers.reset(); }
+  }
+  assert.deepStrictEqual(rates, []);
+  assert.deepStrictEqual(dossiers().filter(f => f.startsWith('x/')), [], 'rien écrit');
 });
 test('question fermer : la ligne désignée passe de « - [ ] » à « - [x] », par son texte exact ou son numéro parmi les ouvertes ; rien d\'autre ne change', () => {
   const q = path.join(H, 'questions.md'), infra = '2026-09-30 (epaule) : Comment dégager l\'infra-épineux ?', sub = '2026-10-01 (epaule) : Quelle profondeur pour le sous-scapulaire ?', gen = '2026-09-25 (genou) : Récessus : comparer avec la bourse (epaule) ?';
@@ -410,4 +431,37 @@ test('region activer : ajoute une région à regions_actives (seul champ modifi�
   assert.deepStrictEqual(rates, []); assert.deepStrictEqual(prives(), avant, 'rien écrit');
   const c = cli('region', 'activer', 'rachis');
   assert.strictEqual(c.status, 0, c.stderr); assert.deepStrictEqual(JSON.parse(c.stdout), { regions_actives: ['epaule', 'genou', 'rachis'], ajoutee: true });
+});
+test('plan : une marque d\'écoute antérieure au dépôt de l\'épisode (régénéré depuis) est ignorée — ecoute null, regenere true ; réécouté, il est de nouveau marqué', () => {
+  const f = 'epaule-rappel.mp3', F = path.join(H, 'audio', f), ilYa = n => new Date(Date.now() - n * 864e5);
+  const ep = () => P.plan('epaule').audios.find(a => a.fichier === f);
+  fs.writeFileSync(F, ''); fs.utimesSync(F, ilYa(5), ilYa(5));   // déposé il y a cinq jours
+  assert.deepStrictEqual(ep(), { fichier: f, ecoute: null, regenere: false }, 'jamais écouté');
+  P.audioEcoute(f);
+  assert.deepStrictEqual(ep(), { fichier: f, ecoute: P.today(), regenere: false }, 'écouté après son dépôt');
+  const pr = P.progression(); pr.audio[f] = jour(-3); P.writeJson(path.join(H, 'progression.json'), pr);   // écouté il y a trois jours…
+  const maintenant = new Date(); fs.utimesSync(F, maintenant, maintenant);   // …puis régénéré : fichier touché aujourd'hui
+  assert.deepStrictEqual(ep(), { fichier: f, ecoute: null, regenere: true }, 'marque antérieure au dépôt : ignorée');
+  assert.strictEqual(P.progression().audio[f], jour(-3), 'plan n\'écrit rien : la marque reste dans progression.json');
+  P.audioEcoute(f);
+  assert.deepStrictEqual(ep(), { fichier: f, ecoute: P.today(), regenere: false }, 'réécouté le jour du dépôt : de nouveau marqué');
+  assert.deepStrictEqual(P.plan('epaule').audios.find(a => a.fichier === 'epaule-socle-deep-dive.mp3'), { fichier: 'epaule-socle-deep-dive.mp3', ecoute: P.today(), regenere: false }, 'forme stable pour chaque épisode');
+});
+test('region activer : regions_actives mal formée ou absente refusée sans rien réécrire ; indentation du fichier conservée', () => {
+  const cfgF = path.join(H, 'config.json'), cfg0 = fs.readFileSync(cfgF, 'utf8'), c = JSON.parse(cfg0);
+  try {
+    const rates = [];
+    for (const v of ['epaule', { epaule: true }, ['epaule', 42], null, undefined]) {
+      const brut = JSON.stringify(Object.assign({}, c, { regions_actives: v }), null, 2) + '\n'; fs.writeFileSync(cfgF, brut);
+      const attendu = `config.json : regions_actives doit être une liste de régions (reçu : ${v === undefined ? 'absent' : JSON.stringify(v)}) — rien n'est modifié`;
+      try { P.regionActiver('hanche'); rates.push(JSON.stringify(v) + ' accepté'); } catch (err) { if (err.message !== attendu) rates.push(JSON.stringify(v) + ' : ' + err.message); }
+      if (fs.readFileSync(cfgF, 'utf8') !== brut) rates.push(JSON.stringify(v) + ' : fichier réécrit');
+    }
+    assert.deepStrictEqual(rates, []);
+    for (const indent of [2, '\t', 1]) {   // 1 espace : ce qu'écrit init (writeJson)
+      fs.writeFileSync(cfgF, JSON.stringify(c, null, indent) + '\n');
+      P.regionActiver('hanche');
+      assert.strictEqual(fs.readFileSync(cfgF, 'utf8'), JSON.stringify(Object.assign({}, c, { regions_actives: c.regions_actives.concat('hanche') }), null, indent) + '\n', 'indentation conservée : ' + JSON.stringify(indent));
+    }
+  } finally { fs.writeFileSync(cfgF, cfg0); }
 });

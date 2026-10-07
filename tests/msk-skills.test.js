@@ -33,7 +33,8 @@ test('skills : chaque script cité existe, chaque option figure dans sa source, 
   let commandes = 0;
   for (const [base, names] of SKILLS) for (const n of names) {
     const txt = fs.readFileSync(path.join(ROOT, base, n, 'SKILL.md'), 'utf8');
-    for (const [, span] of txt.matchAll(/`([^`\n]+)`/g)) for (const m of span.matchAll(/(?:^|[\s/])(scripts\/[\w./-]+?\.(?:js|py))(?![\w])(.*)$/g)) {
+    const segments = [...txt.matchAll(/`([^`\n]+)`/g)].flatMap(([, span]) => span.split(/\s+(?:&&|\|\|?)\s+|;\s*/));   // une commande shell par segment (boucle de /msk-anki all) ; « su|pas-su » sans espaces reste entier
+    for (const seg of segments) for (const m of seg.matchAll(/(?:^|[\s/])(scripts\/[\w./-]+?\.(?:js|py))(?![\w])(.*)$/g)) {
       const [, script, reste] = m, f = path.join(ROOT, script);
       if (!fs.existsSync(f)) { rates.push(`${n} : script absent ${script}`); continue; }
       const src = fs.readFileSync(f, 'utf8');

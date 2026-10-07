@@ -2,7 +2,7 @@
 name: msk-cas
 description: Cas raisonné du soir (15 min) en écho MSK — une vignette d'HDJ fictive et une image, tutorat socratique selon la skill learn, fin nette « su / pas su », palier mis à jour via scripts/msk-progress.js.
 ---
-Argument : une région (sinon la première de `regions_actives` dans ~/Claude/Projects/Écho MSK/config.json ; `<repo>` = `repo` de ce fichier). Durée annoncée : 15 min, six tours au plus, pas de recherche web pendant le tutorat.
+Argument : une région (sinon la première de `regions_actives` dans ~/Claude/Projects/Écho MSK/config.json ; `<repo>` = `repo` de ce fichier, à défaut ~/Claude/Code/echo-algologie ; sans config.json, lancer `node <repo>/scripts/msk-progress.js init` et le dire). Durée annoncée : 15 min, six tours au plus, pas de recherche web pendant le tutorat.
 1. `node <repo>/scripts/msk-progress.js cas pick <region>`.
 2. `source: question` → traiter la question comme un cas : la replacer dans une situation d'HDJ, faire raisonner, conclure par une réponse sourcée (fiche MSK, ou une recherche PubMed si un PMID est accessible en une fois) ; puis la fermer : `node <repo>/scripts/msk-progress.js question fermer "<texte>"` (`texte` tel que rendu par cas pick).
    `source: item` → construire une vignette d'HDJ fictive à partir de `vignette` et de la fiche (jamais un patient réel), montrer `image` si elle existe (SendUserFile en rendu si l'outil est disponible, sinon lien cliquable vers le fichier), poser une seule question : « que voyez-vous », « quel signe cherchez-vous », « quelle coupe ensuite ».
