@@ -3,8 +3,9 @@ name: deployer
 description: Publier le mémo sur Cloudflare Pages derrière Cloudflare Access (accès réservé à l'e-mail de Mat), puis vérifier que le site n'est pas public.
 ---
 
-Lire `DEPLOIEMENT.md`. Avec le connecteur Cloudflare (ou, à défaut, `npx wrangler pages
-deploy . --project-name=echo-algologie --branch=main`) :
+Lire `DEPLOIEMENT.md`. Avec le connecteur Cloudflare ou, à défaut, `wrangler` **sur un export de
+l'arbre commité** (jamais sur le dossier de travail, qui contient le venv Python, `dist/` et
+`.superpowers/`) — la commande exacte est dans `DEPLOIEMENT.md`, section « Mises à jour du site » :
 
 1. Projet Pages `echo-algologie` relié à `SnorryXBT/echo-algologie`, branche `main`,
    sans build, sortie `/`.

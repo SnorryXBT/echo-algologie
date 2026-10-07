@@ -35,16 +35,24 @@ Le projet est en **direct upload** : un `git push` ne redéploie **pas**. Après
 modification (et après `node scripts/build-index.js` + `check-all.js` → 0 problème) :
 
 ```bash
-cd ~/Claude/Code/echo-algologie && npx wrangler pages deploy . --project-name=echo-algologie --branch=main
+cd ~/Claude/Code/echo-algologie && T=$(mktemp -d) && git archive HEAD | tar -x -C "$T" && npx wrangler pages deploy "$T" --project-name=echo-algologie --branch=main --commit-hash=$(git rev-parse HEAD) --commit-message="$(git log -1 --format=%s)" ; rm -rf "$T"
 ```
+
+Depuis le 7 octobre 2026, on déploie **l'arbre commité** (`git archive HEAD`), pas le dossier de travail :
+celui-ci contient désormais `scripts/anki/.venv/` (≈ 1 000 fichiers Python), `dist/` (paquets Anki, cartes)
+et `.superpowers/` (briefs et diffs de revue), que `wrangler` enverrait tels quels — il n'applique pas
+`.gitignore`. Les options `--commit-hash` et `--commit-message` conservent la colonne *Source* de
+`wrangler pages deployment list`, qui dit quel commit est en ligne.
 
 Pièges connus :
 - sans `--branch=main`, le déploiement part en *Preview* (couvert par Access grâce au
   wildcard, mais l'URL principale n'est pas mise à jour) ;
 - wrangler ≥ 4.130 : `--force` n'est nécessaire qu'à la **création** d'un projet, pas au
   déploiement ;
-- tout le dossier est envoyé (docs, scripts, `.claude/`). Rien de secret n'y figure, et
-  Access couvre l'ensemble, mais ne jamais y déposer de jeton ni de donnée patient.
+- tout l'arbre commité est envoyé (docs, scripts, `.claude/`). Rien de secret n'y figure, et
+  Access couvre l'ensemble, mais ne jamais y déposer de jeton ni de donnée patient ;
+- `npx wrangler pages deploy .` (le dossier de travail) enverrait aussi le venv Python, `dist/` et
+  `.superpowers/` : toujours passer par l'export `git archive` ci-dessus.
 
 ## Passer à l'auto-déploiement Git (optionnel)
 
