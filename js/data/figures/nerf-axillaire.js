@@ -63,7 +63,7 @@ ECHO.figures['nerf-axillaire'] = [
     crop: [0.09, 0.385, 0.34, 0.25],
     labels: [
       { x: 0.53, y: 0.60, text: 'N. axillaire', dx: -0.06, dy: -0.30 },
-      { x: 0.60, y: 0.59, text: 'A. circonflexe post.', dx: 0.16, dy: -0.18 },
+      { x: 0.60, y: 0.59, text: 'A. circonflexe post.', dx: 0.22, dy: -0.09 },
       { x: 0.47, y: 0.635, text: 'Col chirurgical', dx: 0.02, dy: 0.16 },
       { x: 0.30, y: 0.22, text: 'Deltoïde', dx: 0.00, dy: -0.10 },
     ],

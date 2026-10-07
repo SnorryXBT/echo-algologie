@@ -51,7 +51,7 @@ function auditMsk(f, ctx) {
       m = m || {};
       if (!Number.isInteger(m.n) || m.n < 1) err(`${where} : marqueur sans numéro`);
       if (ns.has(m.n)) err(`${where} : marqueur ${m.n} en double`);
-      else if (Number.isInteger(m.n) && m.n >= 1 && m.n !== k + 1) err(`${where} : marqueur ${m.n} attendu en position ${k + 1} — numéroter les marqueurs dans l'ordre du tableau`);   // la carte « structure » nomme les marqueurs par numéro : l'ordre du tableau doit être celui des pastilles
+      else if (Number.isInteger(m.n) && m.n >= 1 && m.n !== k + 1) err(`${where} : position ${k + 1} : marqueur ${k + 1} attendu, ${m.n} trouvé — numéroter les marqueurs 1, 2, 3… dans l'ordre du tableau`);   // la carte « structure » nomme les marqueurs par numéro : l'ordre du tableau doit être celui des pastilles
       ns.add(m.n);
       if (typeof m.x !== 'number' || typeof m.y !== 'number') err(`${where} : marqueur ${m.n} : x et y doivent être des nombres`);
       else if (!(m.x >= 0 && m.x <= 1 && m.y >= 0 && m.y <= 1)) err(`${where} : marqueur ${m.n} hors de l'image (x, y en fractions de 0 à 1)`);
