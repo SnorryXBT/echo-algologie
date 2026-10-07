@@ -52,7 +52,7 @@ ECHO.figures['peng-branches-articulaires-hanche'] = [
     src: 'img/peng-branches-articulaires-hanche/echo-1.jpg',
     pair: 'peng-plan',
     titre: 'Coupe de repérage réelle du plan PENG, avant et après injection',
-    legende: 'Sonde convexe alignée sur la branche supérieure du pubis : la ligne osseuse continue va de l\'épine iliaque antéro-inférieure, en dehors, à l\'éminence ilio-pectinée, en dedans ; au-dessus, l\'ilio-psoas et son tendon hyperéchogène ; le paquet fémoral est en dedans. Panneau A avant injection ; en B, l\'injectat décolle le psoas de l\'os.',
+    legende: 'Sonde convexe alignée sur la branche supérieure du pubis : la ligne osseuse continue va de l\'épine iliaque antéro-inférieure, en dehors, à l\'éminence ilio-pectinée, en dedans ; au-dessus, l\'ilio-psoas et son tendon hyperéchogène ; le paquet fémoral est en dedans. Panneau A avant injection ; en B, l\'injectat décolle le psoas de l\'os. Épine iliaque antéro-inférieure à gauche et vaisseau à droite, donc latéral à gauche : orientation inverse de celle du schéma.',
     credit: 'Zhai W, Yue F, Wang Y et al., Frontiers in Medicine 2026, fig. 1A — CC BY 4.0',
     source: 'https://doi.org/10.3389/fmed.2026.1924751',
     labels: [

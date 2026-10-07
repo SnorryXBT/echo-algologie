@@ -1,7 +1,7 @@
 /* Coupes anatomiques recalées — bloc PENG, branches articulaires de la hanche (format : .claude/skills/echo-anatomie/SKILL.md).
    echo-2 : Sun et al., PLOS One 2026, fig. 2 (651 px, annotée : AIIS, IPE, FA, FV, flèches du trajet).
-   echo-1 (Zhai et al., Front Med 2026, fig. 1 A/B) : NON tracée — planche vierge, aucun repère désigné par les auteurs ;
-   l'orientation et le tendon du psoas n'y sont établis que par raisonnement : soumise à Mat. */
+   echo-1 (Zhai et al., Front Med 2026, fig. 1 A/B) : panneau B tracé le 7 octobre 2026 sur la lecture de Mat — épine iliaque antéro-inférieure
+   à gauche, vaisseau rond à droite (image en miroir du schéma), nappe d'injectat sous le tendon du psoas. */
 (function () {
   const ovale = (cx, cy, rx, ry, rot) => { const o = [], a = (rot || 0) * Math.PI / 180; for (let i = 0; i < 12; i++) { const t = i / 12 * 2 * Math.PI, x = rx * Math.cos(t), y = ry * Math.sin(t); o.push([Math.round(cx + x * Math.cos(a) - y * Math.sin(a)), Math.round(cy + x * Math.sin(a) + y * Math.cos(a))]); } return o; };
   /* sonde convexe : la peau suit l'arc de la sonde (flèche au centre, x ≈ 520) */
@@ -51,4 +51,48 @@
       { s: 'tendon', x: 440, y: 302, dx: 60, dy: 198, text: 'Tendon du psoas (probable)' },
     ],
   }];
+  /* ---------- echo-1, panneau B (fig. 1B, après injection) : sonde convexe, cadre limité au secteur ---------- */
+  const B_TOP = [[200,15],[300,50],[400,78],[500,92],[600,96],[700,85],[800,60],[900,30]];
+  const B_DERME = B_TOP.map(p => [p[0], p[1] + 22]);
+  /* bord profond du tissu sous-cutané très échogène (≈ 1,4 cm au centre) */
+  const B_FSUP = [[200,120],[300,128],[350,150],[400,180],[450,186],[500,204],[550,222],[600,240],[650,245],[700,232],[750,241],[800,190],[850,182],[900,180]];
+  /* corticale : épine iliaque antéro-inférieure (plateau x 250–300) puis descente continue vers le sillon ; pics de brillance par colonne */
+  const B_CORTEX = [[200,250],[250,254],[300,256],[350,282],[400,330],[420,332],[450,334],[500,340],[525,345],[575,381],[600,385],[625,405],[650,407],[700,405],[725,425],[750,423],[800,423],[825,451]];
+  /* toit de la nappe = bord profond du muscle et du tendon décollés de l'os (bande sombre de 2 à 6 mm, x 430–820) */
+  const B_NAPPE = [[420,331],[450,306],[480,322],[530,345],[580,360],[630,350],[680,335],[730,330],[780,350],[820,390],[830,452]];
+  ECHO.anat['peng-branches-articulaires-hanche'].push({
+    fig: 'img/peng-branches-articulaires-hanche/echo-1.jpg',
+    crop: [0.545, 0.03, 0.35, 0.66], panneau: 'B (après injection : nappe sous le tendon du psoas)',
+    valide: false,
+    vb: [1000, 573], orient: { left: 'Latéral (EIAI)', right: 'Médial (vaisseaux)' },
+    lecture: [
+      'Certain — lecture donnée par Mat (7 octobre) : épine iliaque antéro-inférieure à gauche, vaisseau rond à droite ; image en miroir du schéma apparié (médial à gauche sur le schéma) — formule ajoutée à la légende de la figure.',
+      'Probable — corticale : plateau brillant de l\'épine (x 250–300, y ≈ 255) puis descente continue vers la droite jusqu\'au fond du sillon (y ≈ 405–450, x 650–825) ; l\'éminence ilio-pubienne n\'est pas atteinte dans le cadre — le relief grenu à droite (x > 825) n\'est pas résolu, laissé non attribué.',
+      'Probable — nappe d\'injectat : bande hypoéchogène de 2 à 6 mm entre le bord profond du plan musculo-tendineux et la corticale, de x ≈ 430 à 820, absente sur le panneau A (critère de fin de la fiche : le psoas décollé de l\'os). Elle se pince vers x ≈ 500–530 où le tendon reste au contact de l\'os.',
+      'Probable — tendon du psoas : ovale très brillant (x 690–760, y 235–285) à la face superficielle du muscle, au-dessus du fond du sillon ; strie brillante oblique plus latérale (x 395–490, y 250–330) dessinée en fibres tendineuses, sans certitude (fascia iliaque ?).',
+      'Supposition — vaisseau : plage ronde anéchogène au bord médial du secteur (x 800–885, y 195–300), dessinée en artère (fémorale ?) sans Doppler : artère ou veine à trancher. Plan superficiel très échogène (y 100–240) lu comme tissu sous-cutané épais, muscle ilio-psoas en dessous (gris, y 240–350) ; limite posée sur le changement de texture.',
+      'Extrapolé — peau sur l\'arc de la sonde, profondeur de l\'os, plans dessinés jusqu\'aux bords du cadre hors du secteur.',
+    ],
+    structures: [
+      { id: 'peau', tissu: 'peau', haut: B_TOP, bas: B_DERME },
+      { id: 'sc', tissu: 'graisse', haut: B_DERME, bas: B_FSUP },
+      { id: 'ilio-psoas', tissu: 'muscle', haut: B_FSUP, bas: B_CORTEX.slice(0, 6).concat(B_NAPPE.slice(1), [[900,452]]) },
+      { id: 'droite', tissu: 'indetermine', contour: [[825,300],[900,300],[900,573],[830,573],[830,452]] },
+      { id: 'nappe', tissu: 'liquide', haut: B_NAPPE, bas: B_CORTEX.slice(5) },
+      { id: 'fibres', tissu: 'tendon', contour: [[395,248],[430,262],[470,295],[492,328],[476,336],[432,304],[392,274]] },
+      { id: 'tendon', tissu: 'tendon', contour: ovale(725, 260, 42, 22, 15) },
+      { id: 'vaisseau', tissu: 'artere', contour: ovale(845, 248, 40, 55) },
+      { id: 'bassin', tissu: 'os', cortex: B_CORTEX },
+    ],
+    labels: [
+      { s: 'sc', x: 400, y: 150, dx: -250, dy: -70, text: 'Tissu sous-cutané' },
+      { s: 'ilio-psoas', x: 480, y: 255, dx: -360, dy: -75, text: 'Ilio-psoas' },
+      { s: 'bassin', x: 280, y: 257, dx: -130, dy: 73, text: 'Épine iliaque antéro-inférieure', vue: 'anat' },
+      { s: 'tendon', x: 725, y: 258, dx: 135, dy: -138, text: 'Tendon du psoas (probable)' },
+      { s: 'nappe', x: 650, y: 380, dx: -350, dy: 90, text: 'Nappe d\'injectat sous le tendon (critère de fin)' },
+      { s: 'vaisseau', x: 845, y: 248, dx: 115, dy: 172, text: 'Vaisseau (artère ?)', vue: 'anat' },
+      { s: 'bassin', x: 640, y: 440, dx: -80, dy: 100, text: 'Fond du sillon (branche supérieure du pubis)', vue: 'anat' },
+      { s: 'droite', x: 865, y: 400, dx: -105, dy: 80, text: 'Relief non résolu (éminence ?)' },
+    ],
+  });
 })();
