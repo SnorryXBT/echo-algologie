@@ -4,9 +4,12 @@
    Sorties dans --out : <region>.cards.json (cartes + médias rendus), <region>.json (fiche brute), <region>-digest.md (NotebookLM),
    img/<region>/msk-<region>-<key>-{recto,verso,image}.jpg (JPEG qualité 85).
    Refus avant tout rendu (code 1, rien n'est écrit) : région ou geste inconnu ; clé de carte en double (même GUID Anki, même nom d'image) ;
-   image source absente (carte, fiche et fichier nommés).
+   image source absente (carte, fiche et fichier nommés) ; dossier <out>/img/<region> contenant autre chose que des médias msk-<region>-*.jpg
+   (--out mal choisi : la mise en place l'aurait supprimé ; seul .DS_Store, du Finder, est toléré).
    Tout est produit dans un dossier de travail sous --out et mis en place seulement si l'export réussit : un export en échec laisse intactes
    les sorties de l'export réussi précédent ; un export réussi remplace toutes celles de la région (images d'une carte disparue comprises).
+   Un arrêt brutal (kill, Ctrl-C) peut laisser <out>/.<region>-XXXXXX (ignoré par git, à supprimer sans risque) ; interrompu pendant la mise en place,
+   l'export peut mêler les sorties de deux exécutions : le relancer.
    Un dessin identique (src, crop, marqueurs, mode) n'est rendu qu'une fois : le verso de coupe-<n> est la copie de celui de coupe-<n>-structures. */
 const fs = require('fs'), path = require('path');
 const { chromium } = require('playwright');
@@ -37,6 +40,10 @@ const origine = c => { const g = c.tags.find(t => t.startsWith('geste::')); retu
 const absentes = cards.filter(c => c.image && !(c.image.src && estFichier(path.join(ROOT, c.image.src))));
 if (absentes.length) { absentes.forEach(c => console.error(`image absente : carte ${c.key} (${origine(c)}) → ${c.image.src || '(aucun chemin)'}`)); process.exit(1); }
 const out = path.resolve(ROOT, opt('--out', 'dist/msk')), imgDir = path.join(out, 'img', region);
+/* la mise en place remplace <out>/img/<region> en entier : s'il contient autre chose que des médias de l'export (--out mal choisi), refus, dossier laissé intact */
+const estMedia = n => n.startsWith(`msk-${region}-`) && n.endsWith('.jpg') && estFichier(path.join(imgDir, n));
+const etranger = fs.existsSync(imgDir) ? fs.readdirSync(imgDir).find(n => n !== '.DS_Store' && !estMedia(n)) : undefined;   // .DS_Store : recréé par le Finder dès que le dossier est ouvert
+if (etranger !== undefined) { console.error(`dossier laissé intact : ${imgDir} contient « ${etranger} », qui n'est pas un média msk-${region}-*.jpg de l'export — vérifier --out`); process.exit(1); }
 fs.mkdirSync(out, { recursive: true });
 const travail = fs.mkdtempSync(path.join(out, `.${region}-`)), imgTravail = path.join(travail, 'img');   // sous --out : même volume, la mise en place se fait par renommage
 (async () => {

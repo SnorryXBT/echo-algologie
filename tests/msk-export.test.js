@@ -21,43 +21,81 @@ const donnees = (dir, corps) => {
   fs.writeFileSync(f, `const m = require(${JSON.stringify(path.join(ROOT, 'scripts/lib/load-echo.js'))}), vrai = m.loadEcho;\nm.loadEcho = (...a) => { const E = vrai(...a); (${corps})(E); return E; };\n`);
   return f;
 };
+/* données factices, indépendantes du squelette épaule (que la tâche 13 remplace) et des figures du mémo. Fiche « epaule » : coupe 1 imagée (trois marqueurs),
+   coupe 2 sans image (absence motivée : image null), une pathologie imagée reliée au geste factice, une sans image, un artefact ; geste factice : une figure écho
+   à deux étiquettes, un piège. Image : un SVG du dossier de test, désigné comme une vraie par un chemin relatif au dépôt. `retouche` : code appliqué ensuite à E. */
+const factice = (dir, retouche = '') => {
+  const svg = path.join(dir, 'coupe.svg');
+  fs.writeFileSync(svg, '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><rect width="400" height="300" fill="#444"/><circle cx="200" cy="150" r="70" fill="#aaa"/></svg>');
+  const src = path.relative(ROOT, svg);
+  const fiche = { id: 'epaule', titre: 'Fiche factice', valide: false, gestes: ['geste-factice'],
+    protocole: [
+      { n: 1, titre: 'Coupe imagée', position: 'Assis', repere: 'Repère', structures: ['Un', 'Deux', 'Trois'],
+        image: { src, credit: 'Test', licence: 'CC0', marqueurs: [{ n: 1, x: 0.2, y: 0.3, dy: -0.15, label: 'Un' }, { n: 2, x: 0.5, y: 0.5, dx: 0.2, label: 'Deux' }, { n: 3, x: 0.7, y: 0.8, dy: 0.1, label: 'Trois' }] } },
+      { n: 2, titre: 'Coupe sans image libre', position: 'Assis', repere: 'Repère', structures: ['Quatre'], image: null },
+    ],
+    pathologies: [
+      { nom: 'Pathologie imagée', signes: ['Signe'], conduite: 'Conduite', gestes: ['geste-factice'], vignette: 'Vignette', image: { src, credit: 'Test', licence: 'CC0' } },
+      { nom: 'Pathologie sans image', signes: ['Signe'], conduite: 'Conduite' },
+    ],
+    artefacts: [{ nom: 'Artefact', texte: 'Texte' }],
+  };
+  const geste = { id: 'geste-factice', titre: 'Geste factice', pieges: ['Un piège assez long pour une carte : et sa parade, assez longue aussi'] };
+  const figures = [{ type: 'echo', src, labels: [{ x: 0.3, y: 0.4, text: 'Cinq' }, { x: 0.6, y: 0.6, text: 'Six' }] }];
+  return donnees(dir, `E => { E.msk.epaule = ${JSON.stringify(fiche)}; E.procedures['geste-factice'] = ${JSON.stringify(geste)}; E.figures['geste-factice'] = ${JSON.stringify(figures)}; ${retouche} }`);
+};
 /* arborescence d'un dossier : chemin (et empreinte du contenu pour un fichier), fichiers et dossiers cachés compris */
 const arbre = d => fs.readdirSync(d, { recursive: true }).sort().map(n => { const p = path.join(d, n); return fs.statSync(p).isFile() ? `${n} ${crypto.createHash('sha1').update(fs.readFileSync(p)).digest('hex')}` : n + '/'; });
 const doubles = stderr => { const m = /^clés de cartes en double .*?: (.+)$/m.exec(stderr); assert.ok(m, 'message des clés en double : ' + stderr); return m[1].split(', '); };
+const cartes = out => JSON.parse(fs.readFileSync(path.join(out, 'epaule.cards.json'), 'utf8')).cards;
+const medias = (cs, key) => cs.find(c => c.key === key).media.map(m => path.basename(m));
 
-test('msk-export epaule : cartes du squelette + socle des 7 gestes, médias préfixés, digest ; sorties d\'un export antérieur remplacées', (t) => {
+test('msk-export epaule (données réelles) : cartes de la fiche et du socle des gestes, médias préfixés et cités, sorties d\'un export antérieur remplacées', (t) => {
   const out = tmp(t, 'mx-');
   fs.mkdirSync(path.join(out, 'img', 'epaule'), { recursive: true });
-  fs.writeFileSync(path.join(out, 'img', 'epaule', 'msk-epaule-perimee-recto.jpg'), 'ancien');   // média d'une carte disparue depuis l'export précédent
+  for (const f of ['msk-epaule-perimee-recto.jpg', '.DS_Store']) fs.writeFileSync(path.join(out, 'img', 'epaule', f), 'ancien');   // média d'une carte disparue ; métadonnées du Finder, tolérées
   fs.writeFileSync(path.join(out, 'epaule.cards.json'), '{"cards":[]}');
   const r = exporter(['epaule', '--out', out]);
   assert.strictEqual(r.status, 0, r.stderr);
-  assert.match(r.stdout, /epaule : \d+ cartes/);
+  assert.match(r.stdout, /^epaule : \d+ cartes \(.+\), \d+ images → /m);
   const data = JSON.parse(fs.readFileSync(path.join(out, 'epaule.cards.json'), 'utf8'));
   assert.strictEqual(data.region, 'epaule'); assert.strictEqual(data.nom, 'Épaule');
-  assert.ok(data.cards.length >= 40, 'au moins 40 cartes avec les 7 fiches gestes : ' + data.cards.length);
+  assert.ok(data.cards.length >= 40, 'au moins 40 cartes avec les fiches gestes : ' + data.cards.length);
   const keys = data.cards.map(c => c.key); assert.strictEqual(new Set(keys).size, keys.length, 'clés uniques');
-  for (const c of data.cards) for (const m of c.media) { assert.ok(path.basename(m).startsWith('msk-epaule-'), m); assert.match(m, /\.jpg$/, 'média JPEG : ' + m); assert.ok(fs.existsSync(path.join(ROOT, m)), 'média présent : ' + m); }
-  const s = data.cards.find(c => c.key === 'coupe-1-structures');
-  assert.match(s.front_html, /<img src="msk-epaule-coupe-1-structures-recto\.jpg">/); assert.match(s.back_html, /<img src="msk-epaule-coupe-1-structures-verso\.jpg">/);
-  const medias = [...new Set(data.cards.flatMap(c => c.media.map(m => path.basename(m))))].sort();
-  assert.deepStrictEqual(fs.readdirSync(path.join(out, 'img', 'epaule')).sort(), medias, 'img/epaule : exactement les médias des cartes, le média périmé est retiré');
+  for (const c of data.cards) for (const m of c.media) {
+    assert.ok(path.basename(m).startsWith('msk-epaule-'), m); assert.match(m, /\.jpg$/, 'média JPEG : ' + m); assert.ok(fs.existsSync(path.join(ROOT, m)), 'média présent : ' + m);
+    assert.ok((c.front_html + c.back_html).includes(`<img src="${path.basename(m)}">`), `média cité par sa carte : ${c.key} → ${path.basename(m)}`);
+  }
+  const tous = [...new Set(data.cards.flatMap(c => c.media.map(m => path.basename(m))))].sort();
+  assert.ok(tous.length > 0, 'des médias');
+  assert.deepStrictEqual(fs.readdirSync(path.join(out, 'img', 'epaule')).sort(), tous, 'img/epaule : exactement les médias des cartes, média périmé et .DS_Store retirés');
   assert.deepStrictEqual(fs.readdirSync(out).sort(), ['epaule-digest.md', 'epaule.cards.json', 'epaule.json', 'img'], 'ni page temporaire ni dossier de travail');
 });
 
-test('msk-export : un dessin identique est rendu une fois (verso de coupe-1 et de coupe-1-structures), copié pour la seconde carte', (t) => {
-  const out = tmp(t, 'mx-'), e = espion(tmp(t, 'mx-pre-'));
-  const r = exporter(['epaule', '--out', out], [e.pre]);
+test('msk-export : un dessin identique est rendu une fois (verso de coupe-n et de coupe-n-structures), copié sous le nom de la seconde carte', (t) => {
+  const out = tmp(t, 'mx-'), d = tmp(t, 'mx-pre-'), e = espion(d);
+  const r = exporter(['epaule', '--out', out], [factice(d), e.pre]);
   assert.strictEqual(r.status, 0, r.stderr);
-  const appels = e.appels(), dessins = appels.map(a => JSON.stringify(a.spec));
-  assert.ok(appels.length > 0, 'des rendus ont eu lieu');
-  assert.strictEqual(new Set(dessins).size, dessins.length, 'aucun dessin rendu deux fois');
-  assert.strictEqual(appels.filter(a => /-coupe-1(-structures)?-verso\.jpg$/.test(a.out)).length, 1, 'verso de la coupe 1 rendu une seule fois');
-  const data = JSON.parse(fs.readFileSync(path.join(out, 'epaule.cards.json'), 'utf8')), media = k => data.cards.find(c => c.key === k).media.map(m => path.basename(m));
-  assert.deepStrictEqual(media('coupe-1'), ['msk-epaule-coupe-1-verso.jpg'], 'chaque carte garde son propre nom de média');
-  assert.deepStrictEqual(media('coupe-1-structures'), ['msk-epaule-coupe-1-structures-recto.jpg', 'msk-epaule-coupe-1-structures-verso.jpg']);
+  const appels = e.appels();
+  assert.deepStrictEqual(appels.map(a => path.basename(a.out)), ['msk-epaule-coupe-1-structures-recto.jpg', 'msk-epaule-coupe-1-structures-verso.jpg', 'msk-epaule-patho-pathologie-imagee-image.jpg',
+    'msk-epaule-socle-geste-factice-echo-1-recto.jpg', 'msk-epaule-socle-geste-factice-echo-1-verso.jpg'], 'cinq rendus pour six médias : le verso de coupe-1 n\'est pas rendu');
+  assert.strictEqual(new Set(appels.map(a => JSON.stringify(a.spec))).size, appels.length, 'aucun dessin rendu deux fois');
+  const cs = cartes(out);
+  assert.deepStrictEqual(medias(cs, 'coupe-1'), ['msk-epaule-coupe-1-verso.jpg'], 'chaque carte garde son propre nom de média');
+  assert.deepStrictEqual(medias(cs, 'coupe-1-structures'), ['msk-epaule-coupe-1-structures-recto.jpg', 'msk-epaule-coupe-1-structures-verso.jpg']);
   const img = f => fs.readFileSync(path.join(out, 'img', 'epaule', f));
   assert.ok(img('msk-epaule-coupe-1-verso.jpg').equals(img('msk-epaule-coupe-1-structures-verso.jpg')), 'même verso, octet pour octet');
+});
+
+test('msk-export : une coupe sans image (absence motivée, image null) garde sa carte « coupe », sans rendu ni média, sans carte « structures »', (t) => {
+  const out = tmp(t, 'mx-'), d = tmp(t, 'mx-pre-'), e = espion(d);
+  const r = exporter(['epaule', '--out', out], [factice(d), e.pre]);
+  assert.strictEqual(r.status, 0, r.stderr);
+  const cs = cartes(out), c = cs.find(x => x.key === 'coupe-2');
+  assert.ok(c, 'carte coupe-2 présente');
+  assert.deepStrictEqual(c.media, []); assert.ok(!/<img/.test(c.front_html + c.back_html), 'aucune image dans la carte');
+  assert.ok(!cs.some(x => x.key === 'coupe-2-structures'), 'pas de carte « structures » sans image');
+  assert.ok(!e.appels().some(a => /-coupe-2-/.test(a.out)), 'aucun rendu pour la coupe 2');
 });
 
 test('msk-export : un id de --gestes absent du mémo est refusé avant tout rendu', (t) => {
@@ -67,47 +105,57 @@ test('msk-export : un id de --gestes absent du mémo est refusé avant tout rend
   assert.deepStrictEqual(fs.readdirSync(out), [], 'rien n\'est écrit');   // les fonctions de cartes ignorent un id inconnu sans rien dire : l'export doit refuser avant
 });
 
-test('msk-export : clés de cartes en double (--gestes répété) refusées avant tout rendu, clés nommées', (t) => {
-  const out = tmp(t, 'mx-');
-  const r = exporter(['genou', '--gestes', 'sous-acromiale,sous-acromiale', '--out', out]);
+test('msk-export : clés de cartes en double (--gestes répété) refusées avant tout rendu, toutes nommées', (t) => {
+  const out = tmp(t, 'mx-'), d = tmp(t, 'mx-pre-'), e = espion(d);
+  const r = exporter(['genou', '--gestes', 'geste-factice,geste-factice', '--out', out], [factice(d), e.pre]);
   assert.strictEqual(r.status, 1, 'code de sortie : ' + r.stderr);
-  const cles = doubles(r.stderr);
-  assert.ok(cles.includes('socle-sous-acromiale-echo-1') && cles.includes('socle-sous-acromiale-piege-1'), cles.join(', '));
-  assert.ok(cles.every(k => k.startsWith('socle-sous-acromiale-')), 'seules les clés en double sont citées : ' + cles.join(', '));
+  assert.deepStrictEqual(doubles(r.stderr), ['socle-geste-factice-echo-1', 'socle-geste-factice-piege-1']);
+  assert.deepStrictEqual(e.appels(), [], 'aucun rendu');
   assert.deepStrictEqual(fs.readdirSync(out), [], 'rien n\'est écrit');   // une clé en double = un GUID Anki en double et une image écrasée
 });
 
 test('msk-export : deux pathologies de même slug refusées sur la liste finale des cartes (clés patho- et geste-)', (t) => {
   const out = tmp(t, 'mx-'), d = tmp(t, 'mx-pre-'), e = espion(d);
-  const pre = donnees(d, `E => { const p = E.msk.epaule.pathologies; p.push(Object.assign({}, p[0], { nom: p[0].nom.toUpperCase() })); }`);   // même nom en capitales : même slug
+  const pre = factice(d, `const p = E.msk.epaule.pathologies; p.push(Object.assign({}, p[0], { nom: p[0].nom.toUpperCase() }));`);   // même nom en capitales : même slug
   const r = exporter(['epaule', '--out', out], [pre, e.pre]);
   assert.strictEqual(r.status, 1, 'code de sortie : ' + r.stderr);
-  assert.deepStrictEqual(doubles(r.stderr), ['patho-bursite-sous-acromio-deltoidienne', 'geste-bursite-sous-acromio-deltoidienne']);
+  assert.deepStrictEqual(doubles(r.stderr), ['patho-pathologie-imagee', 'geste-pathologie-imagee']);
   assert.deepStrictEqual(e.appels(), [], 'aucun rendu');
   assert.deepStrictEqual(fs.readdirSync(out), [], 'rien n\'est écrit');
 });
 
 test('msk-export : image source absente → refus immédiat, carte, fiche et fichier nommés, aucun rendu', (t) => {
-  const out = tmp(t, 'mx-'), d = tmp(t, 'mx-pre-'), e = espion(d);
-  const pre = donnees(d, `E => {
-    E.msk.epaule.protocole[0].image.src = 'img/msk/epaule/absente.jpg';
-    E.figures['sous-acromiale'].filter(f => f.type === 'echo' && (f.labels || []).length >= 2)[0].src = 'img/sous-acromiale/absente.jpg';
-  }`);
+  const out = tmp(t, 'mx-'), d = tmp(t, 'mx-pre-'), e = espion(d), absente = path.relative(ROOT, path.join(d, 'absente.jpg'));
+  const pre = factice(d, `E.msk.epaule.protocole[0].image.src = ${JSON.stringify(absente)}; E.figures['geste-factice'][0].src = ${JSON.stringify(absente)};`);
   const r = exporter(['epaule', '--out', out], [pre, e.pre]);
   assert.strictEqual(r.status, 1, 'code de sortie : ' + r.stderr);
-  assert.match(r.stderr, /^image absente : carte coupe-1-structures \(fiche MSK epaule\) → img\/msk\/epaule\/absente\.jpg$/m);
-  assert.match(r.stderr, /^image absente : carte coupe-1 \(fiche MSK epaule\) → img\/msk\/epaule\/absente\.jpg$/m);
-  assert.match(r.stderr, /^image absente : carte socle-sous-acromiale-echo-1 \(fiche sous-acromiale\) → img\/sous-acromiale\/absente\.jpg$/m);
+  assert.deepStrictEqual(r.stderr.split('\n').filter(Boolean), [
+    `image absente : carte coupe-1-structures (fiche MSK epaule) → ${absente}`,
+    `image absente : carte coupe-1 (fiche MSK epaule) → ${absente}`,
+    `image absente : carte socle-geste-factice-echo-1 (fiche geste-factice) → ${absente}`]);
   assert.deepStrictEqual(e.appels(), [], 'aucun rendu lancé');
   assert.deepStrictEqual(fs.readdirSync(out), [], 'rien n\'est écrit');
 });
 
+test('msk-export : un dossier img/<region> qui contient autre chose que des médias de l\'export est refusé, laissé intact, rien n\'est écrit', (t) => {
+  const out = tmp(t, 'mx-'), d = tmp(t, 'mx-pre-'), e = espion(d), dossier = path.join(out, 'img', 'epaule');
+  fs.mkdirSync(dossier, { recursive: true });
+  fs.writeFileSync(path.join(dossier, 'msk-epaule-coupe-1-verso.jpg'), 'média');
+  fs.writeFileSync(path.join(dossier, 'notes.txt'), 'à garder');   // --out mal choisi : un fichier qui n'est pas un média de l'export
+  const avant = arbre(out);
+  const r = exporter(['epaule', '--out', out], [factice(d), e.pre]);
+  assert.strictEqual(r.status, 1, 'code de sortie : ' + r.stderr);
+  assert.ok(r.stderr.includes(dossier) && r.stderr.includes('notes.txt'), 'dossier et entrée étrangère nommés : ' + r.stderr);
+  assert.deepStrictEqual(e.appels(), [], 'aucun rendu');
+  assert.deepStrictEqual(arbre(out), avant, 'dossier intact, rien d\'autre écrit');
+});
+
 test('msk-export : un rendu en échec laisse intactes les sorties de l\'export précédent, sans page temporaire ni dossier de travail', (t) => {
-  const out = tmp(t, 'mx-'), e = espion(tmp(t, 'mx-pre-'), 3);   // le 3e rendu échoue : deux médias sont déjà écrits
+  const out = tmp(t, 'mx-'), d = tmp(t, 'mx-pre-'), e = espion(d, 3);   // le 3e rendu échoue : deux médias et une copie sont déjà écrits
   fs.mkdirSync(path.join(out, 'img', 'epaule'), { recursive: true });
   for (const [f, s] of [['epaule.cards.json', '{"cards":[]}'], ['epaule.json', '{}'], ['epaule-digest.md', '# ancien'], ['img/epaule/msk-epaule-coupe-1-structures-recto.jpg', 'ancien recto']]) fs.writeFileSync(path.join(out, f), s);
   const avant = arbre(out);
-  const r = exporter(['epaule', '--out', out], [e.pre]);
+  const r = exporter(['epaule', '--out', out], [factice(d), e.pre]);
   assert.strictEqual(r.status, 1, 'code de sortie');
   assert.match(r.stderr, /rendu en échec \(simulé\)/);
   assert.strictEqual(e.appels().length, 3, 'échec au 3e rendu');
@@ -115,9 +163,9 @@ test('msk-export : un rendu en échec laisse intactes les sorties de l\'export p
 });
 
 test('msk-export sans fiche MSK (--gestes) : la fiche brute d\'un export antérieur est retirée', (t) => {
-  const out = tmp(t, 'mx-');
+  const out = tmp(t, 'mx-'), d = tmp(t, 'mx-pre-');
   fs.writeFileSync(path.join(out, 'genou.json'), '{}');
-  const r = exporter(['genou', '--gestes', 'genou-intra-articulaire', '--out', out]);
+  const r = exporter(['genou', '--gestes', 'geste-factice', '--out', out], [factice(d)]);
   assert.strictEqual(r.status, 0, r.stderr);
   assert.deepStrictEqual(fs.readdirSync(out).sort(), ['genou-digest.md', 'genou.cards.json', 'img']);
 });

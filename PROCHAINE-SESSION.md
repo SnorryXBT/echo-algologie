@@ -112,9 +112,13 @@ Socle livré le 7 octobre (tâches 1 à 11 du plan `docs/superpowers/plans/2026-
    `js/data/msk/epaule.js` (`valide: false`) et `img/msk/epaule/*.jpg` (CC BY, CC BY-NC, CC0). Critères du plan, dont
    `node scripts/msk-audit.js epaule` sans erreur, check-all à 0 problème, tests verts, au moins 40 cartes hors `socle-`.
    Puis lien `#/msk/epaule` et questions ouvertes à Mat : sa décision seule met `valide: true`.
-3. **Tâche 14, clôture du pilote — Opus 5** : `/msk-anki epaule` (les cartes `socle-` gardent leur GUID) et
-   `/msk-audio epaule` sur la fiche complète ; première semaine réelle avec Mat (`/msk-semaine`, `/msk-cas epaule`,
-   `/msk-logbook`, dont une dictée piège refusée) ; coût mesuré du pilote noté ici. Écarts à reporter dans la spec :
+3. **Tâche 14, clôture du pilote — Opus 5** : `/msk-anki epaule` (les cartes `socle-` gardent leur GUID tant que figures
+   et pièges des fiches gestes n'ont pas bougé : voir CLAUDE.md) et `/msk-audio epaule` sur la fiche complète ; première
+   semaine réelle avec Mat (`/msk-semaine`, `/msk-cas epaule`, `/msk-logbook`, dont une dictée piège refusée). Noter ici le
+   coût mesuré du pilote et le rendement des images libres (combien de coupes du protocole ont une image sous licence
+   libre). Profil hors dépôt : paragraphe « Volet Diagnostic MSK » dans `~/.claude/profil/projets/echo-algologie.md`
+   (spec, plan, dossier privé, skills, Avorio, état du pilote), puis commit et push dans `~/.claude` par chemin explicite —
+   jamais `git -C ~/.claude add -A`, qui embarquerait les trois skills globales non suivies. Écarts à reporter dans la spec :
    §1 critère compté en examens dictés sans aide cumulés, non « consécutifs » ; §5 marqueurs en fractions ; §6 cartes
    des fiches gestes gardées dans le paquet, étiquette `niveau::` abandonnée ; §8 `/msk-cas` ne tire que pathologies et
    pièges (les coupes sont des cibles sur patient). Mat tranche le refus de « depuis 3 ans » par le garde-fou (en-tête
