@@ -1,15 +1,12 @@
-/* Regénère index.html avec une balise <script> par fiche présente dans js/data/procedures.
-   Usage : node scripts/build-index.js  (à relancer après ajout d'une fiche). */
+/* Regénère index.html avec une balise <script> par fichier de données (fiches gestes, figures, coupes anatomiques,
+   fiches MSK). Usage : node scripts/build-index.js  (à relancer après ajout d'un fichier de données). */
 const fs = require('fs'), path = require('path');
-const root = path.join(__dirname, '..');
-const dir = path.join(root, 'js/data/procedures');
-const files = fs.readdirSync(dir).filter(f => f.endsWith('.js')).sort();
-const figDir = path.join(root, 'js/data/figures');
-const figs = fs.existsSync(figDir) ? fs.readdirSync(figDir).filter(f => f.endsWith('.js')).sort() : [];
-const anatDir = path.join(root, 'js/data/anat');
-const anats = fs.existsSync(anatDir) ? fs.readdirSync(anatDir).filter(f => f.endsWith('.js')).sort() : [];
-const tags = files.map(f => `  <script src="js/data/procedures/${f}"></script>`).concat(figs.map(f => `  <script src="js/data/figures/${f}"></script>`)).concat(anats.map(f => `  <script src="js/data/anat/${f}"></script>`)).join('\n');
-const html = `<!doctype html>
+const DATA = ['procedures', 'figures', 'anat', 'msk'];
+const listJs = dir => fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => f.endsWith('.js')).sort() : [];
+function buildHtml(root) {
+  const files = Object.fromEntries(DATA.map(d => [d, listJs(path.join(root, 'js/data', d))]));
+  const tags = DATA.flatMap(d => files[d].map(f => `  <script src="js/data/${d}/${f}"></script>`)).join('\n');
+  const html = `<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -22,6 +19,7 @@ const html = `<!doctype html>
   <script src="js/lib/icons.js"></script>
   <script src="js/lib/scene.js"></script>
   <script src="js/lib/anat.js"></script>
+  <script src="js/lib/msk.js"></script>
 ${tags}
   <script src="js/app.js" defer></script>
 </head>
@@ -43,5 +41,12 @@ ${tags}
 </body>
 </html>
 `;
-fs.writeFileSync(path.join(root, 'index.html'), html);
-console.log(`index.html régénéré — ${files.length} fiche(s), ${figs.length} fichier(s) de figures, ${anats.length} de coupes anatomiques`);
+  return { html, counts: Object.fromEntries(DATA.map(d => [d, files[d].length])) };
+}
+if (require.main === module) {
+  const root = path.join(__dirname, '..');
+  const { html, counts } = buildHtml(root);
+  fs.writeFileSync(path.join(root, 'index.html'), html);
+  console.log(`index.html régénéré — ${counts.procedures} fiche(s), ${counts.figures} fichier(s) de figures, ${counts.anat} de coupes anatomiques, ${counts.msk} fiche(s) MSK`);
+}
+module.exports = { buildHtml };
