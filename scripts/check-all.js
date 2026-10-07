@@ -28,6 +28,17 @@ const path = require('path'), fs = require('fs');
     if (flag) bad++;
     console.log(`${id.padEnd(52)} scènes ${r.scenes} err ${r.sceneErr} sections ${String(r.secs).padStart(2)} étiquettes hors cadre ${r.labelsOut}${r.anat ? ` coupes anat. ${r.anat}${r.anatErr ? ' ERR ' + r.anatErr : ''}` : ''}${flag}${errs.length ? '\n   ' + errs.join('\n   ') : ''}`);
   }
-  console.log(`\n${ids.length} fiches, ${bad} avec problème`);
+  const mskDir = path.join(__dirname, '../js/data/msk');
+  const msk = fs.existsSync(mskDir) ? fs.readdirSync(mskDir).filter(f => f.endsWith('.js')).map(f => f.replace('.js', '')).sort() : [];
+  for (const id of msk) {
+    errs.length = 0;
+    await page.evaluate(h => { location.hash = h; }, '#/msk/' + id);
+    await page.waitForTimeout(150);
+    const r = await page.evaluate(() => ({ h1: (document.querySelector('.fiche-head h1') || {}).textContent || '', secs: document.querySelectorAll('section.sec').length, figs: document.querySelectorAll('.fig').length, labels: document.querySelectorAll('.fig-label').length, valide: !document.querySelector('.msk-banniere') }));
+    const flag = errs.length || !r.h1 ? ' <<<' : '';
+    if (flag) bad++;
+    console.log(`MSK ${id.padEnd(48)} sections ${String(r.secs).padStart(2)} figures ${r.figs} marqueurs ${r.labels}${r.valide ? '' : ' (non validée)'}${flag}${errs.length ? '\n   ' + errs.join('\n   ') : ''}`);
+  }
+  console.log(`\n${ids.length} fiches + ${msk.length} fiche(s) MSK, ${bad} avec problème`);
   await browser.close();
 })();
