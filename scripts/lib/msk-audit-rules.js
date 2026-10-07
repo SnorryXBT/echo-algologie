@@ -25,13 +25,17 @@ function auditMsk(f, ctx) {
       if (!isStr(img.licence)) err(`${where} : image sans licence`);
       else if (!LICENCES_MSK.test(img.licence) || /\b(ND|SA)\b/.test(img.licence)) err(`${where} : licence non admise sous img/msk/ (« ${img.licence} ») — CC BY, CC BY-NC ou CC0 seulement, jamais ND ni SA`);
     }
-    if (img.crop != null && (!Array.isArray(img.crop) || img.crop.length !== 4 || img.crop.some(v => typeof v !== 'number' || v < 0 || v > 1))) err(`${where} : crop invalide`);
+    if (img.crop != null) {   /* [x, y, largeur, hauteur] en fractions de l'image : le rectangle doit y tenir */
+      if (!Array.isArray(img.crop) || img.crop.length !== 4 || img.crop.some(v => typeof v !== 'number' || v < 0 || v > 1)) err(`${where} : crop invalide`);
+      else if (img.crop[0] + img.crop[2] > 1 + 1e-9 || img.crop[1] + img.crop[3] > 1 + 1e-9) err(`${where} : crop hors de l'image`);
+    }
     const ns = new Set();
     (img.marqueurs || []).forEach(m => {
       if (!Number.isInteger(m.n) || m.n < 1) err(`${where} : marqueur sans numéro`);
       if (ns.has(m.n)) err(`${where} : marqueur ${m.n} en double`);
       ns.add(m.n);
-      if (!(m.x >= 0 && m.x <= 1 && m.y >= 0 && m.y <= 1)) err(`${where} : marqueur ${m.n} hors de l'image (x, y en fractions de 0 à 1)`);
+      if (typeof m.x !== 'number' || typeof m.y !== 'number') err(`${where} : marqueur ${m.n} : x et y doivent être des nombres`);
+      else if (!(m.x >= 0 && m.x <= 1 && m.y >= 0 && m.y <= 1)) err(`${where} : marqueur ${m.n} hors de l'image (x, y en fractions de 0 à 1)`);
       if (!isStr(m.label)) err(`${where} : marqueur ${m.n} sans label`);
     });
   };
@@ -59,6 +63,8 @@ function auditMsk(f, ctx) {
     if (ctx.procedures) gestes.forEach(id => { if (!ctx.procedures[id]) err(`${where} : geste inconnu « ${id} »`); });
     checkImage(p.image, where);
   });
+  /* gestes de la fiche (pastilles de la vue d'ensemble) : chaque id doit exister dans le registre */
+  (f.gestes || []).forEach(id => { if (ctx.procedures && !ctx.procedures[id]) err(`gestes : geste inconnu « ${id} »`); });
   (f.artefacts || []).forEach((a, i) => { if (!isStr(a.nom) || !isStr(a.texte)) err(`artefact ${i + 1} : nom et texte obligatoires`); });
   const ids = new Set(), re = new RegExp(`^${f.id}\\.([a-z])(\\d{2})$`);
   (f.competences || []).forEach((c, i) => {

@@ -1,12 +1,12 @@
 // tests/msk-audit.test.js
 const test = require('node:test');
 const assert = require('node:assert');
-const path = require('path');
 const { auditMsk, slug } = require('../scripts/lib/msk-audit-rules');
 const { loadEcho, ROOT } = require('../scripts/lib/load-echo');
 
 const fiche = () => ({
   id: 'genou', titre: 'Genou', en: 'Knee', maj: '2026-10', valide: false, motsCles: ['genou'],
+  gestes: ['genou-intra-articulaire'],
   flash: { sonde: 'lineaire' },
   protocole: [{ n: 1, titre: 'Tendon quadricipital', position: 'Dorsal, genou fléchi 30°', repere: 'Patella', structures: ['Tendon quadricipital'],
     image: { src: 'img/nerf-axillaire/echo-1.jpg', credit: 'Abril-Serván et al. 2026', licence: 'CC BY 4.0', marqueurs: [{ n: 1, x: 0.3, y: 0.2, label: 'Deltoïde' }, { n: 2, x: 0.6, y: 0.6, label: 'Nerf' }] } }],
@@ -30,10 +30,13 @@ test('chaque règle produit son erreur', () => {
     [f => { f.protocole[0].image.src = 'img/msk/genou/x.jpg'; f.protocole[0].image.licence = 'CC BY-SA 4.0'; }, /jamais ND ni SA/],
     [f => { f.protocole[0].image.src = 'img/msk/genou/absente.jpg'; }, /image absente sur le disque/],
     [f => { f.protocole[0].image.marqueurs[0].x = 1.4; }, /hors de l'image/],
+    [f => { f.protocole[0].image.marqueurs[0].x = '0.3'; }, /x et y doivent être des nombres/],
+    [f => { f.protocole[0].image.crop = [0.5, 0, 0.6, 1]; }, /crop hors de l'image/],
     [f => { f.protocole[0].image.marqueurs[1].n = 1; }, /marqueur 1 en double/],
     [f => { f.dictee = 'Bourse de 3 mm.'; }, /mesure « 3 mm » sans source/],
     [f => { f.pathologies[0].gestes = []; }, /ni geste du mémo ni phrase aucunGeste/],
     [f => { f.pathologies[0].gestes = ['inconnu']; }, /geste inconnu/],
+    [f => { f.gestes = ['inconnu']; }, /gestes : geste inconnu/],
     [f => { f.protocole[0].n = 2; }, /numéro attendu 1/],
     [f => { f.references[0].verif = 'oui'; }, /verif \(true\/false\)/],
     [f => { f.sonoanatomie[0].source = [4]; }, /hors des références/],
