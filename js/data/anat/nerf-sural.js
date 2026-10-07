@@ -2,7 +2,8 @@
    echo-1 : planche à quatre panneaux de Duarte et al. (Radiol Bras 2025, fig. 4), dont la légende décrit l'ensemble — la planche
    n'est pas recadrée ; la coupe est tracée sur le seul panneau D (nerf constitué, latéral à la petite veine saphène), `crop` propre.
    Le cadre de la coupe exclut l'échelle de profondeur (à gauche) et les mentions « medial / right / lateral » (en bas).
-   echo-2 (fig. 7, cheville et pied, cinq panneaux) : non tracée — voir js/data/anat/zz-refus.js. */
+   echo-2 (fig. 7, cheville et pied, cinq panneaux) : panneau B tracé le 7 octobre 2026 sur décision de Mat (coupe axiale rétro-malléolaire,
+   nerf constitué et petite veine saphène désignés par les auteurs) ; tendon d'Achille et réflecteur profond en plan non attribué. */
 (function () {
   const ovale = (cx, cy, rx, ry, rot) => { const o = [], a = (rot || 0) * Math.PI / 180; for (let i = 0; i < 12; i++) { const t = i / 12 * 2 * Math.PI, x = rx * Math.cos(t), y = ry * Math.sin(t); o.push([Math.round(cx + x * Math.cos(a) - y * Math.sin(a)), Math.round(cy + x * Math.sin(a) + y * Math.cos(a))]); } return o; };
   const PEAU = [[0,42],[1000,42]];
@@ -49,4 +50,41 @@
       { s: 'prof', x: 600, y: 522, dx: -40, dy: -62, text: 'Plan profond non désigné' },
     ],
   }];
+  /* ---------- echo-2, panneau B (fig. 7) : axial, en amont de la malléole latérale — cadre sans l'échelle ni les mentions d'orientation ---------- */
+  const B_PEAU = [[0,45],[1000,45]];
+  const B_SC = [[0,110],[100,100],[200,100],[300,108],[400,122],[450,128],[500,133],[550,133],[600,130],[650,140],[700,148],[800,152],[900,150],[1000,150]];
+  ECHO.anat['nerf-sural'].push({
+    fig: 'img/nerf-sural/echo-2.jpg',
+    crop: [0.536, 0, 0.464, 0.275], panneau: 'B (axial, nerf constitué et petite veine saphène)',
+    valide: false,
+    vb: [1000, 557], orient: { left: 'Médial', right: 'Latéral' },
+    lecture: [
+      'Certain — lecture donnée par Mat (7 octobre) : tracer le panneau B. Orientation : mentions « medial » à gauche et « lateral » à droite incrustées par les auteurs sous le panneau (hors du cadre de la coupe). Le schéma apparié est en plan coronal oblique (postérieur / antérieur) : ses axes ne se superposent pas à ceux de cette coupe axiale, ce n\'est pas un miroir.',
+      'Certain — petite veine saphène (flèche « ssv » des auteurs, point noir ≈ 1 mm sous la flèche) et nerf sural (flèche « sn », immédiatement en dehors et à peine plus profond que la veine) : le couple est à ≈ 3–4 mm de la peau, dans le tissu sous-cutané, en dehors du tendon d\'Achille (« at ») — c\'est la fenêtre du bloc.',
+      'Extrapolé — contours de la veine et du nerf : ovales posés sur les pointes des flèches (nerf de 2–3 px, aucun fascicule résolu).',
+      'Supposition — tendon d\'Achille : le sigle « at » est posé sur une plage à texture moyenne (x 90–430, y 100–260) sans bord net ; dessiné en plan non attribué, conformément à la décision de Mat. Court fibulaire (« pbm », en haut à droite) et long fléchisseur de l\'hallux (« fhlm », en bas à droite) : identités des auteurs, contours non résolus (pointillé).',
+      'Supposition — bande brillante oblique de (620, 310) à (950, 520) : non désignée par les auteurs ; os (calcanéus ? talus ?) ou cloison fibreuse — plan non attribué, pas de cône d\'ombre franc. Zone sombre entre le tendon d\'Achille et le long fléchisseur de l\'hallux dessinée en graisse (graisse de Kager probable).',
+    ],
+    structures: [
+      { id: 'peau', tissu: 'peau', haut: [[0,0],[1000,0]], bas: B_PEAU },
+      { id: 'sc', tissu: 'graisse', haut: B_PEAU, bas: B_SC },
+      { id: 'kager', tissu: 'graisse', haut: B_SC, bas: [[0,557],[1000,557]] },
+      { id: 'achille', tissu: 'indetermine', contour: [[95,100],[400,108],[432,150],[425,230],[380,262],[200,258],[100,250],[88,180]] },
+      { id: 'pbm', tissu: 'muscle', contour: [[700,150],[1000,150],[1000,300],[850,290],[720,240]], extrapole: true },
+      { id: 'fhlm', tissu: 'muscle', contour: [[560,290],[700,240],[850,290],[1000,330],[1000,557],[560,557]], extrapole: true },
+      { id: 'reflecteur', tissu: 'indetermine', ligne: [[620,310],[700,350],[780,410],[870,470],[950,520]], ep: 22 },
+      { id: 'veine', tissu: 'veine', contour: ovale(478, 103, 12, 11), extrapole: true },
+      { id: 'nerf', tissu: 'nerf', contour: ovale(548, 106, 18, 9), extrapole: true },
+    ],
+    labels: [
+      { s: 'sc', x: 300, y: 78, dx: -150, dy: -45, text: 'Tissu sous-cutané' },
+      { s: 'veine', x: 478, y: 103, dx: -150, dy: 87, text: 'Petite veine saphène (ssv)', vue: 'anat' },
+      { s: 'nerf', x: 548, y: 106, dx: 150, dy: -50, text: 'Nerf sural (sn)', vue: 'anat' },
+      { s: 'achille', x: 250, y: 180, dx: 0, dy: 150, text: 'Tendon d\'Achille (at) — contours non résolus' },
+      { s: 'pbm', x: 870, y: 180, dx: 10, dy: 70, text: 'Court fibulaire (pbm)', vue: 'anat' },
+      { s: 'fhlm', x: 800, y: 420, dx: 0, dy: 80, text: 'Long fléch. de l\'hallux (fhlm)', vue: 'anat' },
+      { s: 'kager', x: 450, y: 400, dx: 0, dy: 80, text: 'Graisse (Kager ?)' },
+      { s: 'reflecteur', x: 700, y: 350, dx: -140, dy: -50, text: 'Réflecteur non désigné (os ?)' },
+    ],
+  });
 })();
