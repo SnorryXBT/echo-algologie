@@ -19,13 +19,18 @@ ne traite que du projet.
 - `VERIFICATION.md` — passe de vérification bibliographique en cours.
 - `DEPLOIEMENT.md` — hébergement privé Cloudflare Pages + Access.
 - `scripts/` — `build-index.js` (régénère `index.html` après ajout d'une fiche),
-  `audit.js` (champs, longueurs, références), `check-all.js` (rendu de chaque fiche en
-  Chromium, erreurs JS), `shot.js` (capture d'une scène), `refs-a-verifier.js`,
+  `audit.js` (champs, longueurs, références), `check-all.js` (rendu en Chromium de
+  chaque fiche geste et de chaque fiche MSK, erreurs JS), `shot.js` (capture d'une scène), `refs-a-verifier.js`,
   `audit-axes.js` (axes des paires écho/schéma, images référencées absentes), `anat-grid.js`
   (grille cotée + profils de brillance avant tracé), `anat-check.js` (contrôle statique et état de validation des
   coupes anatomiques), `anat-export.js` (export PNG pour l'enseignement, licences diffusables seulement).
 - `js/lib/anat.js` — moteur des coupes anatomiques recalées sur les échos réelles ; données dans
   `js/data/anat/<id>.js` ; page de validation `#/validation`.
+- Volet Diagnostic MSK : `js/data/msk/<region>.js` — une fiche diagnostique par région (`ECHO.registerMsk`) ;
+  `js/lib/msk.js` — rendu de `#/msk` et `#/msk/<region>` ; `scripts/msk-audit.js` (contrôle statique des fiches MSK),
+  `scripts/msk-export.js` (cartes, images à marqueurs et digest NotebookLM dans `dist/msk/`, non versionné),
+  `scripts/anki/` (venv Python, genanki : `build.py` construit et copie le paquet, `check.py` le vérifie),
+  `scripts/msk-progress.js` (état privé, hors dépôt), `scripts/lib/phi-guard.js` (garde-fou données patient).
 
 ## Règles non négociables
 
@@ -54,7 +59,11 @@ ne traite que du projet.
 ## Commandes projet (skills)
 
 `/nouvelle-fiche <id>` · `/controle` · `/verif-biblio [région]` · `/deployer` ·
-`/illustrer [id|région]` · `/echo-anatomie [id|région|--bilan]`
+`/illustrer [id|région]` · `/echo-anatomie [id|région|--bilan]` · `/msk-fiche <region>` ·
+`/msk-anki <region|all>` · `/msk-audio <region>`
+
+Globales (source `.claude/skills-global/`, installées dans `~/.claude/skills/` par `node scripts/msk-skills-install.js`,
+à relancer après toute modification) : `/msk-semaine [--bilan]` · `/msk-cas [region]` · `/msk-logbook`
 
 ## Début de session
 
@@ -66,6 +75,19 @@ conseillé par tâche. Le mettre à jour en fin de session.
 **À chaque quota de session atteint, reprendre systématiquement le travail dès que la
 limite est levée**, là où il s'était arrêté, sans attendre d'instruction. Les commits
 fréquents servent de points de reprise.
+
+## Volet Diagnostic MSK (7 octobre 2026)
+
+Spec : `docs/superpowers/specs/2026-10-07-msk-diagnostic-design.md` ; plan : `docs/superpowers/plans/2026-10-07-msk-diagnostic.md`.
+- Régions, dans cet ordre : épaule → genou → rachis → coude → poignet-main → hanche → cheville-pied → paroi-nerfs.
+- Une fiche MSK reste `valide: false` (bandeau visible) tant que Mat ne l'a pas validée ; jamais d'auto-validation.
+- Images sous `img/msk/` : CC BY, CC BY-NC ou CC0 seulement, jamais ND ni SA ; aucune figure d'ouvrage ni de NYSORA.
+- Marqueurs en fractions [0, 1] de l'image recadrée, numérotés dans l'ordre du tableau (`n` = rang + 1, sans trou).
+- Les `key` des cartes fixent les GUID Anki : ne jamais les renommer (une clé renommée = une carte neuve, planification à zéro).
+- Aucune donnée patient, nulle part. État privé dans `~/Claude/Projects/Écho MSK`, jamais dans le dépôt : écrit par
+  `scripts/msk-progress.js` seul, derrière le garde-fou `scripts/lib/phi-guard.js`.
+- Avant tout commit : `NODE_PATH=$(npm root -g) node --test tests/*.test.js` → tout vert ; `node scripts/msk-audit.js`
+  → code 0 (code 1 s'il reste une erreur).
 
 ## Chantier en cours : illustrations et vidéos
 

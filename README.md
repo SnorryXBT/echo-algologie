@@ -8,6 +8,7 @@ les liens « Vidéos » ouvrent des ressources externes.
 - **Rejouer** relance l'animation aiguille → diffusion d'un schéma.
 - Thème clair / sombre, impression (`⎙`).
 - Checklist pré-geste cochable (non persistante, volontairement).
+- Volet Diagnostic MSK : `#/msk` — fiches de région, cartes Anki et audio dérivés.
 
 Structure : `js/data/procedures/*.js` (une fiche par fichier) · `js/lib/scene.js`
 (moteur des schémas) · `GUIDE-REDACTION.md` (règles de rédaction et API des schémas).

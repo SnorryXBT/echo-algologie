@@ -15,6 +15,9 @@ Ce fichier dit où en est le mémo et dans quel ordre avancer. À lire en début
   deux membres (toutes `valide: false`). Sans réponse : long biceps 2 (remplacer par une injection in vivo ?).
 - Liens externes : 63/64 fiches avec vidéo YouTube vérifiée, 53/64 avec page NYSORA.
 - 213 références encore `verif: false`.
+- Volet Diagnostic MSK (plan du 7 octobre) : socle livré — fiche squelette `#/msk/epaule` (non validée), paquet
+  `msk-epaule.apkg` (106 cartes : squelette + sept fiches gestes d'épaule, 13 images) déposé dans iCloud Drive → Écho MSK
+  → anki, dossier privé `~/Claude/Projects/Écho MSK` initialisé, six skills. Pilote épaule à produire : voir G.
 
 ## Décisions de Mat qui s'imposent à toute session
 
@@ -95,6 +98,33 @@ recherches, pas par le quota.
   des droits et celle de la résolution ; cadre à fixer avec ses associés.
 - 3e nerf occipital : « à corriger » avec le seul lien NYSORA ; demander ce qui diverge (niveaux,
   position des nerfs, sens de l'aiguille).
+
+### G. Volet Diagnostic MSK — Fable 5.1 pour la fiche, Opus 5 pour anki/audio
+
+Socle livré le 7 octobre (tâches 1 à 11 du plan `docs/superpowers/plans/2026-10-07-msk-diagnostic.md`, spec
+`docs/superpowers/specs/2026-10-07-msk-diagnostic-design.md`) ; pilote épaule à produire, dans cet ordre :
+1. **Tâche 12, audio J0 — Opus 5** : `/msk-audio epaule` sur `dist/msk/epaule-digest.md` (le régénérer d'abord :
+   `NODE_PATH=$(npm root -g) node scripts/msk-export.js epaule`), le guide ESSR de l'épaule et les vidéos YouTube des
+   sept fiches gestes. Livrables : `~/Claude/Projects/Écho MSK/audio/epaule-deep-dive.mp3` et `epaule-rappel.mp3`, copiés
+   dans iCloud `Écho MSK/audio/`. Noter ici la durée réelle de génération et le verdict sur le format « rappel ».
+2. **Tâche 13, fiche épaule complète — Fable 5.1** : `/msk-fiche epaule` sans raccourci, sourçage d'abord
+   (`docs/msk/sources-epaule.md` commité avant toute rédaction), trois agents au plus, quota vérifié avant. Livrables :
+   `js/data/msk/epaule.js` (`valide: false`) et `img/msk/epaule/*.jpg` (CC BY, CC BY-NC, CC0). Critères du plan, dont
+   `node scripts/msk-audit.js epaule` sans erreur, check-all à 0 problème, tests verts, au moins 40 cartes hors `socle-`.
+   Puis lien `#/msk/epaule` et questions ouvertes à Mat : sa décision seule met `valide: true`.
+3. **Tâche 14, clôture du pilote — Opus 5** : `/msk-anki epaule` (les cartes `socle-` gardent leur GUID) et
+   `/msk-audio epaule` sur la fiche complète ; première semaine réelle avec Mat (`/msk-semaine`, `/msk-cas epaule`,
+   `/msk-logbook`, dont une dictée piège refusée) ; coût mesuré du pilote noté ici. Écarts à reporter dans la spec :
+   §1 critère compté en examens dictés sans aide cumulés, non « consécutifs » ; §5 marqueurs en fractions ; §6 cartes
+   des fiches gestes gardées dans le paquet, étiquette `niveau::` abandonnée ; §8 `/msk-cas` ne tire que pathologies et
+   pièges (les coupes sont des cibles sur patient). Mat tranche le refus de « depuis 3 ans » par le garde-fou (en-tête
+   de `scripts/lib/phi-guard.js`). Ensuite, une région tous les dix jours environ.
+
+À faire confirmer par Mat : les étiquettes de l'écho 1 du nerf axillaire (Abril-Serván 2026, fig. 3C) ont été déplacées
+le 7 octobre pour suivre la légende des auteurs (nerf sous la flèche, artère circonflexe postérieure sous la tête de
+flèche, col chirurgical sur la corticale) ; les mêmes positions servent à la coupe 1 de la fiche squelette et aux cartes
+qui en dérivent. Le paquet Anki reste personnel : trois de ses cinq images sources (Chang 2026, J Med Ultrasound) sont en
+CC BY-NC-SA ou BY-NC-ND (balise de licence ambiguë) — ne pas le partager, même aux associés.
 
 ## Quota
 
