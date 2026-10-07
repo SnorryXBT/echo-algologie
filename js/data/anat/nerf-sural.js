@@ -16,7 +16,7 @@
   ECHO.anat['nerf-sural'] = [{
     fig: 'img/nerf-sural/echo-1.jpg',
     crop: [0.525, 0.515, 0.47, 0.41], panneau: 'D (nerf constitué, latéral à la petite veine saphène)',
-    valide: false,
+    valide: true,
     vb: [1000, 550], orient: { left: 'Médial', right: 'Latéral' },
     lecture: [
       'Extrapolé — contour du nerf sural : la flèche « sn » des auteurs en donne le site (immédiatement latéral à la veine, au contact du feuillet profond qu\'il traverse à ce niveau selon la légende d\'origine) ; sur un panneau de 333 px aucun fascicule n\'est résolu, l\'ovale est posé à la pointe de la flèche.',

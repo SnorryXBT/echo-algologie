@@ -12,7 +12,7 @@
   const CORTEX = [[0,300],[150,300],[240,305],[300,316],[350,329],[400,337],[450,344],[500,356],[524,360],[545,354],[571,339],[607,312],[643,279],[673,258],[714,243],[744,234],[800,240],[1000,285]];
   ECHO.anat['peng-branches-articulaires-hanche'] = [{
     fig: 'img/peng-branches-articulaires-hanche/echo-2.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 724], orient: { left: 'Médial (vaisseaux)', right: 'Latéral (EIAI)' },
     lecture: [
       'Probable — tendon du psoas : les auteurs ne le désignent pas sur l\'image (leur texte : pointe « between the psoas tendon (anterior) and pubic ramus (posterior) »). Il est lu comme la bande hyperéchogène posée ≈ 3 mm au-dessus du plateau de l\'éminence ilio-pubienne (x ≈ 390–470, y ≈ 296–306), prolongée en dehors par un amas brillant (x ≈ 500–540, y ≈ 278–295) : c\'est à son bord latéral qu\'aboutit la droite tracée par les flèches. Si le tendon est seulement l\'amas latéral, logé dans le creux entre éminence et épine, le plan cible est à décaler de ≈ 1 cm en dehors : à confirmer.',

@@ -26,7 +26,7 @@
 
   ECHO.anat['coxo-femorale'] = [{
     fig: 'img/coxo-femorale/echo-1.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 808], orient: { left: 'Crânial (acétabulum)', right: 'Caudal (col)' },
     lecture: [
       'Probable — double arc au-dessus de la tête : l\'arc profond (y ≈ 360–420) est lu comme la corticale de la tête fémorale, l\'arc superficiel (y ≈ 315–400), qui se prolonge à gauche au-dessus du rebord acétabulaire, comme la capsule (ligament ilio-fémoral) ; la bande sombre entre les deux comme le cartilage et l\'interligne. Si c\'est l\'arc superficiel qui est la corticale, toute la coupe est à décaler de ≈ 3 mm : à confirmer.',
@@ -62,7 +62,7 @@
     ],
   }, {
     fig: 'img/coxo-femorale/echo-2.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 659], orient: { left: 'Crânial (tête)', right: 'Caudal (col)' },
     lecture: [
       'Probable — orientation : les auteurs ne l\'écrivent pas. Déduite de la morphologie osseuse — convexité de la tête à gauche de la jonction tête-col que désigne leur flèche, longue concavité du col à droite — et du trajet de l\'aiguille, qui vient du côté du col. Concordante avec le schéma apparié. La légende de la fiche dit que l\'aiguille vient « de distal et de latéral » : « de latéral » n\'est pas dans la source.',

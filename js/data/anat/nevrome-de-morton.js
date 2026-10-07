@@ -11,7 +11,7 @@
   ECHO.anat['nevrome-de-morton'] = [{
     fig: 'img/nevrome-de-morton/echo-1.jpg',
     crop: [0.002, 0.5, 0.641, 0.498], panneau: 'B (coupe transversale)',
-    valide: false,
+    valide: true,
     vb: [1000, 586], orient: { left: 'Médial (M3)', right: 'Latéral (M4) — plante en haut' },
     lecture: [
       'Probable — voie plantaire, plante en haut : la légende d\'origine ne nomme pas la voie, mais le texte de l\'article rattache cette figure à une sonde plantaire (« towards the plantar placed transducer », avec renvoi à la fig. 20). L\'image concorde : têtes vues par leur face plantaire, concave, sous un coussinet épais. La coupe est donc inversée dans le sens dorso-plantaire par rapport au schéma apparié et à la voie de la fiche : l\'aiguille dorsale arriverait par le bas de l\'image, hors champ. Image de diagnostic, pas du geste — à confirmer par Mat.',

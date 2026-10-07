@@ -11,7 +11,7 @@
   const PROF = [[258,318],[300,346],[350,374],[395,388],[440,366],[475,312],[505,268],[550,254],[650,250],[750,245],[850,240],[950,228],[1000,222]];
   ECHO.anat['patte-d-oie-tendinopathie-patellaire'] = [{
     fig: 'img/patte-d-oie-tendinopathie-patellaire/echo-2.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 752], orient: { left: 'Proximal (patella)', right: 'Distal (TTA)' },
     lecture: [
       'Probable — face profonde du tendon au tiers proximal : tracée sur la bande échogène courbe qui limite en bas la plage hypoéchogène (y jusqu\'à ≈ 390), ce qui fait du tendon un fuseau de ≈ 9 mm sous la pointe de la patella contre ≈ 5 mm plus bas. C\'est la lecture des auteurs (« deep layer of the proximal portion of the patellar tendon »). Autre lecture possible : face profonde rectiligne dans le prolongement de la ligne brillante de droite (y ≈ 265), la partie basse de la plage et du signal Doppler étant alors dans la graisse de Hoffa.',

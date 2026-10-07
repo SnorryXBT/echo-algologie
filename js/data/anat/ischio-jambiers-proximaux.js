@@ -11,7 +11,7 @@
   const TENDON_PROF = [[450,420],[500,415],[600,405],[700,400],[800,400],[900,398],[1000,395]];
   ECHO.anat['ischio-jambiers-proximaux'] = [{
     fig: 'img/ischio-jambiers-proximaux/echo-1.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 729], orient: { left: 'Proximal (ischion)', right: 'Distal' },
     lecture: [
       'Probable — face superficielle du tendon conjoint, c\'est-à-dire le plan d\'injection : placée sur l\'interface échogène continue y ≈ 275–295. À gauche, au-dessus de la tubérosité, cette interface s\'épaissit en une bande brillante (y ≈ 250–300) lue comme le fascia profond du grand fessier vu à 90° ; si ce sont les fibres superficielles du tendon, sa face superficielle est ≈ 3 mm plus haut à cet endroit.',

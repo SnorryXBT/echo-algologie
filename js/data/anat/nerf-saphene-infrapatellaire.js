@@ -15,6 +15,7 @@
     valide: false,
     vb: [1000, 756], orient: { left: 'Postéro-médial', right: 'Antéro-latéral' },
     lecture: [
+      'Mat (7 octobre) lit la plage ovalaire en dedans du nerf comme « possiblement la grande veine saphène ». Réserve : au tiers moyen de cuisse la grande saphène chemine dans le tissu sous-cutané, en avant du sartorius ; une veine aplatie SOUS le sartorius, contre le nerf, est plutôt la veine fémorale dans le canal des adducteurs. Dessinée en veine, identité laissée ouverte.',
       'Supposition — plage hypoéchogène ovalaire (≈ 10 × 4 mm) juste en dedans du nerf, sous le fascia profond du sartorius, là où la fiche situe l\'artère fémorale : non désignée par les auteurs, pas de Doppler, forme aplatie peu compatible avec une artère non comprimée. Vaisseaux fémoraux (veine écrasée par la sonde ?) ou faisceau du long adducteur : indécidable — dessinée en plan non attribué. Le repère central du geste n\'est donc pas identifié sur cette image.',
       'Certain — orientation : long adducteur à gauche, vaste médial et droit fémoral à droite (sigles des auteurs) ; image en miroir du schéma apparié (dit dans la légende).',
       'Certain — identité du sartorius, du long adducteur, du vaste médial, du droit fémoral et du nerf saphène (cerclé) : sigles des auteurs. Niveau : tiers moyen de cuisse (légende d\'origine), plus haut que le tiers inférieur visé par la fiche.',
@@ -29,7 +30,7 @@
       { id: 'rf', tissu: 'muscle', contour: [[872,242],[1040,234],[1040,484],[940,472],[885,448],[876,420],[872,330]] },
       { id: 'sartorius', tissu: 'muscle', contour: [[165,268],[300,254],[450,246],[600,242],[750,242],[862,241],[868,330],[872,420],[850,440],[780,432],[700,442],[640,458],[590,455],[540,460],[470,458],[400,452],[340,445],[290,410],[230,350],[185,305]] },
       { id: 'canal', tissu: 'conjonctif', contour: [[330,452],[400,456],[470,462],[540,464],[590,459],[642,462],[642,548],[612,572],[520,592],[410,588],[340,565],[322,515]] },
-      { id: 'plage', tissu: 'indetermine', contour: [[335,480],[380,468],[450,468],[520,474],[546,496],[540,535],[500,560],[420,566],[356,552],[330,516]] },
+      { id: 'plage', tissu: 'veine', /* Mat (7 octobre) : « possiblement la grande veine saphène » — dessinée en veine, identité à confirmer (voir lecture) */ contour: [[335,480],[380,468],[450,468],[520,474],[546,496],[540,535],[500,560],[420,566],[356,552],[330,516]] },
       { id: 'saphene', tissu: 'nerf', contour: ovale(588, 497, 37, 36) },
       { id: 'toit', tissu: 'fascia', ligne: TOIT, ep: 5 },
       { id: 'lata', tissu: 'fascia', ligne: LATA, ep: 6 },
@@ -42,7 +43,7 @@
       { s: 'rf', x: 950, y: 400, dx: -40, dy: -100, text: 'Droit fémoral', vue: 'anat' },
       { s: 'al', x: 110, y: 520, dx: 40, dy: -100, text: 'Long adducteur', vue: 'anat' },
       { s: 'saphene', x: 588, y: 500, dx: 6, dy: 155, text: 'Nerf saphène', vue: 'anat' },
-      { s: 'plage', x: 430, y: 520, dx: -160, dy: 140, text: 'Plan non attribué (vaisseaux ?)' },
+      { s: 'plage', x: 430, y: 520, dx: -160, dy: 140, text: 'Veine (GVS selon Mat ? à confirmer)' },
       { s: 'vm', x: 820, y: 600, dx: 0, dy: 80, text: 'Vaste médial', vue: 'anat' },
     ],
   }];

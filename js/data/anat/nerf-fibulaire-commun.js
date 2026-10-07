@@ -28,7 +28,7 @@
 
   ECHO.anat['nerf-fibulaire-commun'] = [{
     fig: 'img/nerf-fibulaire-commun/echo-1.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 820], orient: { left: 'Postérieur', right: 'Antérieur' },
     lecture: [
       'Probable — étendue du nerf : l\'étoile des auteurs est posée dans un ovale moucheté (x ≈ 480–635, y ≈ 180–243) cerné en profondeur par un liseré brillant ; c\'est lui qui est tracé. La lentille hyperéchogène homogène qui le coiffe et le prolonge vers le col (x ≈ 470–770) est lue comme le coussin fibro-graisseux de la loge, pas comme du nerf — si toute la lentille était le nerf, sa surface serait à peu près triplée.',
@@ -61,47 +61,6 @@
       { s: 'loge', x: 690, y: 170, dx: -10, dy: 330, text: 'Coussin fibro-graisseux' },
       { s: 'fibula', x: 890, y: 185, dx: -10, dy: 195, text: 'Col de la fibula', vue: 'anat' },
       { s: 'fibula', x: 760, y: 640, dx: 0, dy: 60, text: 'Ombre acoustique', vue: 'echo' },
-    ],
-  }, {
-    fig: 'img/nerf-fibulaire-commun/echo-2.jpg',
-    valide: false,
-    vb: [1000, 1109], orient: { left: 'Postérieur', right: 'Antérieur' },
-    lecture: [
-      'Supposition — plans autour du nerf : les auteurs ne désignent que ★, F, PL, ED et TA. La lame hyperéchogène qui coiffe le nerf (y ≈ 235–250, x ≈ 240–600) est lue comme le toit du tunnel (arcade fibreuse du long fibulaire ?) sans que la source le dise ; le tissu compris entre cette lame et la corticale, de part et d\'autre du nerf, et le coin échogène en avant de l\'os ne sont pas attribués.',
-      'Supposition — limite postérieure du long fibulaire : aucune cloison n\'est visible entre le muscle qui recouvre le nerf et le muscle situé en arrière de la fibula (non désigné : soléaire ?) ; la limite est placée à l\'aplomb du pôle postérieur du nerf, faute de mieux.',
-      'Certain — identité : ★ nerf fibulaire commun, F fibula, PL long fibulaire, ED extenseur des orteils, TA tibial antérieur (sigles des auteurs). Orientation déduite de ces sigles (loge antérieure à droite), non écrite par la source. Image en miroir du schéma apparié (déjà dit dans la légende).',
-      'Probable — contour du nerf : ovale hypoéchogène aplati, entre la lame du toit et un liseré brillant profond, posé sur l\'angle postéro-latéral de la fibula ; une lame fine de tissu le sépare de la corticale.',
-      'Probable — long fibulaire : tout le muscle compris entre le fascia crural et la cloison arquée qui remonte vers la droite (y ≈ 430 → 320) ; les deux lames brillantes internes sont lues comme ses aponévroses intramusculaires. Extenseur des orteils entre cette cloison et la suivante ; tibial antérieur dessous, limite profonde hors signal.',
-      'Probable — géométrie du geste : aucune aiguille sur l\'image. Le nerf est à l\'angle postéro-latéral de l\'os, dont le sommet s\'étend en avant de lui : le plan profond (nerf / périoste) s\'ouvre plus directement par l\'arrière (gauche de l\'image) ; un abord antérieur traverse tout le long fibulaire et longe la corticale. Le schéma apparié, où le nerf est posé au sommet de l\'os, montre l\'entrée « face profonde » du côté antérieur.',
-      'Extrapolé — faces latérales et profondeur de la fibula (cône d\'ombre) : seule la corticale du sommet est vue.',
-    ],
-    structures: [
-      { id: 'peau', tissu: 'peau', haut: [[0,0],[1000,0]], bas: [[0,32],[1000,32]] },
-      { id: 'sc', tissu: 'graisse', haut: [[0,32],[1000,32]], bas: FA_HAUT },
-      { id: 'fascia', tissu: 'fascia', haut: FA_HAUT, bas: FA_BAS },
-      { id: 'post', tissu: 'indetermine', contour: FA_BAS.slice(0, 5).concat([[250,243],[272,266],[280,284],[302,300],[302,1150],[0,1150]]) }   /* déborde de 10 sous le plan du tunnel et l'os, peints ensuite */,
-      { id: 'pl', tissu: 'muscle', haut: FA_BAS.slice(4), bas: LAME.concat([[592,300],[600,380]], CLOISON_D), guide: [[240,260],[600,340],[1000,340]] },
-      { id: 'pl-apo1', tissu: 'fascia', ligne: [[440,202],[500,186],[550,174],[600,176],[650,175],[690,180]], ep: 6 },
-      { id: 'pl-apo2', tissu: 'fascia', ligne: [[600,298],[650,305],[700,313],[750,323],[820,332]], ep: 6 },
-      { id: 'tunnel', tissu: 'indetermine', contour: LAME.concat([[592,300],[600,380],[640,432],[625,512],[624,650],[590,560],[558,480],[545,410],[520,355],[490,322],[450,311],[400,308],[350,304],[320,306],[300,318],[292,300],[270,284],[262,266]]) },
-      { id: 'ed', tissu: 'muscle', haut: CLOISON_D, bas: CLOISON_E },
-      { id: 'ta', tissu: 'muscle', haut: CLOISON_E, bas: [[620,1150],[1000,1150]] },
-      { id: 'lame', tissu: 'fascia', ligne: LAME, ep: 7 },
-      { id: 'nerf', tissu: 'nerf', contour: ovale(307, 266, 45, 17) },
-      { id: 'fibula', tissu: 'os', cortex: CORTEX2, vu: [3, 8] },
-    ],
-    labels: [
-      { s: 'fascia', x: 150, y: 104, dx: 20, dy: -54, text: 'Fascia crural' },
-      { s: 'pl', x: 720, y: 220, dx: 70, dy: -170, text: 'Long fibulaire', vue: 'anat' },
-      { s: 'lame', x: 350, y: 238, dx: -185, dy: -53, text: 'Lame du toit (arcade ?)' },
-      { s: 'nerf', x: 300, y: 268, dx: -150, dy: 62, text: 'Nerf fibulaire commun', vue: 'anat' },
-      { s: 'tunnel', x: 330, y: 296, dx: 0, dy: 134, text: 'Plan nerf / périoste' },
-      { s: 'post', x: 110, y: 560, dx: 60, dy: 80, text: 'Muscle non désigné' },
-      { s: 'fibula', x: 470, y: 320, dx: 30, dy: 240, text: 'Fibula', vue: 'anat' },
-      { s: 'fibula', x: 430, y: 830, dx: 0, dy: 70, text: 'Ombre acoustique', vue: 'echo' },
-      { s: 'tunnel', x: 570, y: 420, dx: 40, dy: 300, text: 'Plan non attribué' },
-      { s: 'ed', x: 800, y: 450, dx: 50, dy: 110, text: 'Extenseur des orteils', vue: 'anat' },
-      { s: 'ta', x: 800, y: 640, dx: 50, dy: 80, text: 'Tibial antérieur', vue: 'anat' },
     ],
   }];
 })();

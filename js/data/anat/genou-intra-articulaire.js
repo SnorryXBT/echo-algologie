@@ -6,7 +6,7 @@
   const CORTEX = [[0,440],[120,455],[250,478],[380,500],[500,522],[620,548],[720,572],[820,590],[880,600],[1000,625]];
   ECHO.anat['genou-intra-articulaire'] = [{
     fig: 'img/genou-intra-articulaire/echo-1.jpg',
-    valide: false,
+    valide: true,
     vb: [1000, 681], orient: { left: 'Proximal', right: 'Distal (patella)' },
     lecture: [
       'Certain — orientation et identité des plans : patella à droite, fémur en profondeur, graisse supra-patellaire (SF), récessus (astérisques), graisse pré-fémorale (étoiles), muscle articulaire du genou (AG) — légende et corrigé coloré des auteurs (moitié droite de la planche).',

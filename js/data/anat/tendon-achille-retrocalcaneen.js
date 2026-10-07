@@ -18,7 +18,7 @@
   ECHO.anat['tendon-achille-retrocalcaneen'] = [{
     fig: 'img/tendon-achille-retrocalcaneen/echo-1.jpg',
     crop: [0.0015, 0.003, 0.387, 0.454], panneau: 'A (mode B)',
-    valide: false,
+    valide: true,
     vb: [1000, 550], orient: { left: 'Proximal', right: 'Distal' },
     lecture: [
       'Probable — orientation : ni la légende ni l\'image ne nomment les côtés, et aucun os n\'est dans le champ. Distal à droite est déduit de deux indices : la graisse de Kager s\'épaissit vers la droite (le triangle s\'élargit vers le calcanéus), et les mêmes auteurs placent le calcanéus à droite sur les cinq panneaux de leur figure 17. Concordant avec le schéma apparié ; à confirmer par Mat.',
