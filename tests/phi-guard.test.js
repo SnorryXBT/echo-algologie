@@ -28,6 +28,8 @@ test('phrases pièges refusées', () => {
     // revue 1, retouches : nom en capitales à particule, chambre par son ordinal, origine sans sujet, avec incise ou après un retour à la ligne
     'le patient DA SILVA, épaule droite', 'la patiente de la 12e chambre, bursite', 'Épaule droite, vient de Libourne', 'Coupe 3 vue\nVient de Libourne, épaule droite',
     'la patiente, adressée ce matin, vient de Marmande', 'un patient venant de Bergerac, épaule droite', 'Elle est venue de Bergerac ce matin',
+    // tâche 9b, ronde 1 : numéro coupé par un retour à la ligne (msk-progress écrit chaque texte sur une ligne, où il redevient un numéro)
+    'Rappeler au 06\n12 34 56 78', 'secu 1 85 03 75\n123 456 78',
   ];
   const passes = pieges.filter(p => detecter(p).length === 0);
   assert.deepStrictEqual(passes, [], 'phrases pièges non refusées (' + passes.length + ') :\n  ' + passes.join('\n  '));

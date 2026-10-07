@@ -4,6 +4,8 @@
    Avant toute règle, le texte est « lissé » : espaces insécables → espace, apostrophes typographiques → ', traits d'union typographiques
    (U+2010 à U+2012, dont l'insécable U+2011) → -, indicateur ordinal « º » (U+00BA) → degré « ° », toute suite de blancs → un seul caractère (espace, ou
    retour à la ligne si la suite en contient un) : aucune règle ne parcourt une longue suite de blancs, donc aucune dérive quadratique.
+   Deux lectures du texte lissé : retours à la ligne gardés (ils marquent un début de phrase : « vue\nVient de Libourne »), puis repliés en une
+   espace (un numéro ou un nom coupé par un retour à la ligne : « 06\n12 34 56 78 » ; c'est aussi le texte que msk-progress écrit, sur une ligne).
    Début de phrase : la majuscule n'y signale plus un nom propre (« Patient Dupont », « Le monsieur de Libourne », « Habite à Bergerac ») ;
    les règles de majuscules passent donc aussi sur le texte dont la première lettre de chaque phrase est abaissée.
    Sigles : après « patient », un nom en capitales est refusé (« patient DUPONT ») sauf sigle de la liste SIGLES (« patient BPCO ») : à compléter au besoin.
@@ -58,10 +60,13 @@ const REGLES_NORM = [   // sur le texte normalisé (minuscules, sans accent)
   [/\b(?:profession\b|travaill(?:e|es|ent|ait|aient|ant)\s+(?:a|au|chez|comme|pour)\b(?!\s+(?:main\b|deux\s+mains|\d|doppler|plat\b|l'(?:aveugle|etirement|allongement|effort))))/, 'profession ou employeur'],   // « travaillé à main levée », « au Doppler », « à 15 MHz », « à deux mains » : technique, pas employeur
 ];
 function detecter(texte) {
-  const hits = [], brut = lisse(texte), bas = debutBas(brut), n = norm(brut);
+  const hits = [], lignes = lisse(texte);
   const noter = (motif, m) => { if (m && !hits.some(h => h.motif === motif)) hits.push({ motif, extrait: m[0].trim() }); };
-  for (const [re, motif] of REGLES_BRUT) noter(motif, re.exec(brut) || re.exec(bas));
-  for (const [re, motif] of REGLES_NORM) noter(motif, re.exec(n));
+  for (const brut of lignes.includes('\n') ? [lignes, lignes.replace(/\n/g, ' ')] : [lignes]) {   // les deux lectures de l'en-tête ; dans l'une et l'autre, aucune suite de blancs
+    const bas = debutBas(brut), n = norm(brut);
+    for (const [re, motif] of REGLES_BRUT) noter(motif, re.exec(brut) || re.exec(bas));
+    for (const [re, motif] of REGLES_NORM) noter(motif, re.exec(n));
+  }
   return hits;
 }
 const verifierTextes = arr => (arr || []).flatMap(t => detecter(t));
