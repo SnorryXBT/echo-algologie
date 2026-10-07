@@ -1597,9 +1597,9 @@ test('audio ecoute', () => { assert.strictEqual(P.audioEcoute('epaule-socle-deep
 - [ ] **Step 2 : lancer le test, il doit échouer**
 
 Run: `node --test tests/msk-progress.test.js`
-Expected: FAIL, `P.plan is not a function`
+Expected: FAIL, `disponible à la tâche 9c` (stubs de la tâche 9b)
 
-- [ ] **Step 3 : insérer le bloc dans `scripts/msk-progress.js`** à la place du commentaire `/* ---- tâche 9c … ---- */`, et compléter `module.exports` avec `plan, bilan, casPick, casRecord, audioEcoute`
+- [ ] **Step 3 : insérer le bloc dans `scripts/msk-progress.js`** à la place du commentaire `/* ---- tâche 9c … ---- */` **et des lignes de stubs** (`plan`, `bilan`, `casPick`, `casRecord`, `audioEcoute` lèvent « disponible à la tâche 9c » depuis la tâche 9b : les supprimer, sinon « Identifier 'plan' has already been declared »), puis compléter `module.exports` avec `plan, bilan, casPick, casRecord, audioEcoute` (ils y figurent peut-être déjà comme stubs)
 
 ```js
 const questionsOuvertes = () => fs.existsSync(P('questions.md')) ? fs.readFileSync(P('questions.md'), 'utf8').split('\n').filter(l => l.startsWith('- [ ] ')).map(l => l.slice(6)) : [];
