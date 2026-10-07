@@ -45,6 +45,27 @@ window.ECHO = window.ECHO || {};
     if (E.order.indexOf(p.id) === -1) E.order.push(p.id);
   };
 
+  /* ---------- Volet « Diagnostic MSK » (docs/superpowers/specs/2026-10-07-msk-diagnostic-design.md) ----------
+     Une fiche par région dans js/data/msk/<region>.js, enregistrée par ECHO.registerMsk({...}). */
+  E.msk = E.msk || {};
+  E.mskRegions = [
+    { id: 'epaule',        nom: 'Épaule' },
+    { id: 'genou',         nom: 'Genou' },
+    { id: 'rachis',        nom: 'Rachis' },
+    { id: 'coude',         nom: 'Coude' },
+    { id: 'poignet-main',  nom: 'Poignet et main' },
+    { id: 'hanche',        nom: 'Hanche' },
+    { id: 'cheville-pied', nom: 'Cheville et pied' },
+    { id: 'paroi-nerfs',   nom: 'Paroi et nerfs périphériques' },
+  ];
+  /* lettre de l'identifiant de compétence <region>.<lettre><nn> */
+  E.mskTypes = { coupe: 'c', structure: 's', pathologie: 'p', dynamique: 'd', piege: 'a', geste: 'g' };
+  E.registerMsk = function (f) {
+    if (!f || !f.id) throw new Error('Fiche MSK sans id');
+    if (!E.mskRegions.some(r => r.id === f.id)) throw new Error('Région MSK inconnue : ' + f.id);
+    E.msk[f.id] = f;
+  };
+
   /* Ordre éditorial des fiches (le manifest). Une fiche absente d'ici est
      tout de même affichée, en fin de région. */
   E.manifest = [
