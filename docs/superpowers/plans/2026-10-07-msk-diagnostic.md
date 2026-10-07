@@ -21,7 +21,7 @@
 - **Écart documenté à la spec §5 :** les `marqueurs` sont en fractions [0, 1] de l'image recadrée, comme les `labels` des figures existantes (et non en repère de largeur 1000), pour réutiliser `figHtml` tel quel.
 - Aucune donnée patient dans le dépôt ni dans le dossier privé ; `scripts/lib/phi-guard.js` refuse tout identifiant avant écriture.
 - Dossier privé : `~/Claude/Projects/Écho MSK/` ; surcharge par la variable `ECHO_MSK_HOME` (tests). Transfert iPhone : iCloud Drive `~/Library/Mobile Documents/com~apple~CloudDocs/Écho MSK/{anki,audio}`.
-- Après toute modification du site : `node scripts/build-index.js` puis `NODE_PATH=$(npm root -g) node scripts/check-all.js` → 0 problème ; `node --test tests/*.test.js` → tout vert.
+- Après toute modification du site : `node scripts/build-index.js` puis `NODE_PATH=$(npm root -g) node scripts/check-all.js` → 0 problème ; `NODE_PATH=$(npm root -g) node --test tests/*.test.js` → tout vert (Playwright est global : sans NODE_PATH les tests de rendu échouent) ; `node scripts/audit.js` → `64/64 fiches`, 0 MANQUANTE.
 - Commits en français, sans ligne d'attribution ; jamais `git stash` ; avant push : `git fetch origin && git rebase --autostash origin/main`.
 - Agents de production : trois au plus par vague ; sourcer avant de rédiger ; coût en quota noté dans `PROCHAINE-SESSION.md`.
 
