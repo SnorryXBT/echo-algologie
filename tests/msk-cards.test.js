@@ -30,6 +30,11 @@ test('cardsFromGestes : images étiquetées, sono-anatomie, pièges « énoncé 
   const piege = cards.find(c => c.key === 'socle-sous-acromiale-piege-1');
   assert.match(piege.front, /anisotropie/); assert.match(piege.back, /basculer la sonde/);
   assert.ok(cards.every(c => c.tags.includes('geste::sous-acromiale')));
+  assert.ok(cards.every(c => c.tags.includes('msk::socle')), 'sans région : msk::socle');
+  const ep = cardsFromGestes(['sous-acromiale'], E, 'epaule');
+  assert.ok(ep.every(c => c.tags.includes('msk::epaule') && c.tags.includes('geste::sous-acromiale') && !c.tags.includes('msk::socle')), 'avec région : msk::epaule à la place de msk::socle');
+  assert.deepStrictEqual(ep[0].tags, ['msk::epaule', 'geste::sous-acromiale', 'type::structure']);
+  assert.deepStrictEqual(ep.map(c => c.key), keys, 'la région ne touche pas aux clés (GUID Anki)');
 });
 
 test('digest : fiche puis gestes, sans balises ni astérisques', () => {
@@ -37,4 +42,9 @@ test('digest : fiche puis gestes, sans balises ni astérisques', () => {
   const md = digest(E.msk.epaule, ['sous-acromiale'], E, 'Épaule');
   assert.match(md, /^# Écho MSK — Épaule/); assert.match(md, /## Fiche diagnostique/); assert.match(md, /## Geste : Bourse sous-acromio/);
   assert.ok(!md.includes('**anisotropie**'), 'gras retiré'); assert.match(md, /### Dictée/);
+  // un « < » et un « > » dans une même chaîne sont des comparateurs, pas une balise ; une vraie balise reste retirée
+  const g = { titre: 'Test', resume: 'Texte <b>x</b> gras.', protocole: [], sonoanatomie: [], pathologies: [], artefacts: [], dictee: 'Bourse normale < 2 mm ; pathologique > 2 mm.' };
+  const out = digest(g, [], E, 'Test');
+  assert.ok(out.includes('< 2 mm ; pathologique > 2 mm'), 'comparateurs conservés'); assert.ok(out.includes('Texte x gras.') && !/<\/?b>/.test(out), 'vraie balise retirée, texte gardé');
+  assert.ok(digest(Object.assign({}, g, { dictee: '- Bourse fine (< 2 mm).\n- Tendon épaissi (> 5 mm).' }), [], E, 'Test').includes('(< 2 mm).\n- Tendon épaissi (> 5 mm)'), 'comparateurs conservés sur plusieurs lignes');
 });

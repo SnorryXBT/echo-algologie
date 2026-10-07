@@ -1,5 +1,6 @@
-/* Texte Markdown d'une région pour NotebookLM : fiche MSK (si présente) puis extraits des fiches gestes. Sans balises ni gras. */
-const strip = s => String(s == null ? '' : s).replace(/\*\*/g, '').replace(/<[^>]+>/g, '');
+/* Texte Markdown d'une région pour NotebookLM : fiche MSK (si présente) puis extraits des fiches gestes. Sans balises ni gras.
+   Seules les vraies balises (`<b>`, `</ul>`, `<a href…>`) sont retirées : un « < 2 mm » ou un « > 5 mm » reste intact, même avec les deux dans une même chaîne. */
+const strip = s => String(s == null ? '' : s).replace(/\*\*/g, '').replace(/<\/?[a-z][^>]*>/gi, '');
 const list = arr => (arr || []).map(x => `- ${strip(typeof x === 'string' ? x : [x.titre, x.texte].filter(Boolean).join(' : '))}`).join('\n');
 function digest(f, gestes, E, nom) {
   const out = [`# Écho MSK — ${nom}`, ''];

@@ -1,7 +1,8 @@
 /* Dérivation des cartes Anki : d'une fiche MSK (cardsFromMsk) et des fiches gestes d'une région (cardsFromGestes).
    Pur : aucune E/S. Carte : { type, key, front, back, source, tags, image } ; image = null ou
    { src, crop, marqueurs, mode: 'front-back' | 'back' | 'plain' } — le rendu PNG est fait par scripts/msk-export.js.
-   Les `key` fixent les GUID Anki : ne jamais les renommer sans accepter de perdre la planification des cartes. */
+   Les `key` fixent les GUID Anki : ne jamais les renommer sans accepter de perdre la planification des cartes.
+   cardsFromGestes(ids, E, region) : `region` (facultatif) donne l'étiquette `msk::<region>` ; sans elle, `msk::socle`. Elle n'entre jamais dans une `key`. */
 const slug = require('./slug');
 const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const SITE = 'https://echo-algologie.pages.dev/#/';
@@ -34,11 +35,11 @@ function cardsFromMsk(f, E) {
     back: `<p>${inline(a.reponse || a.texte)}</p>`, source: '' }));
   return cards;
 }
-function cardsFromGestes(ids, E) {
+function cardsFromGestes(ids, E, region) {
   const { inline } = helpers(E), cards = [];
   for (const id of ids) {
     const p = (E.procedures || {})[id]; if (!p) continue;
-    const t = inline(p.titreCourt || p.titre), tags = ty => ['msk::socle', `geste::${id}`, `type::${ty}`];
+    const t = inline(p.titreCourt || p.titre), tags = ty => [`msk::${region || 'socle'}`, `geste::${id}`, `type::${ty}`];
     ((E.figures || {})[id] || []).filter(f => f.type === 'echo' && (f.labels || []).length >= 2).forEach((f, i) => {
       const mq = f.labels.map((l, k) => ({ n: k + 1, x: l.x, y: l.y, dx: l.dx, dy: l.dy, label: l.text }));
       cards.push({ type: 'structure', key: `socle-${id}-echo-${i + 1}`, tags: tags('structure'), image: { src: f.src, crop: f.crop, marqueurs: mq, mode: 'front-back' },
