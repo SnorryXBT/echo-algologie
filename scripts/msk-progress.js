@@ -7,6 +7,10 @@
    node scripts/msk-progress.js bilan <region> --osaus 1,2,3,4,5,4,3 [--note "…"]
    node scripts/msk-progress.js cas pick <region> | cas record <itemId> su|pas-su [--fichier <chemin>]
    node scripts/msk-progress.js audio ecoute <fichier>
+   node scripts/msk-progress.js bilan <region> --grille
+   node scripts/msk-progress.js ecrire cas|semaines <nom.md> --texte '<markdown>' | --file <chemin>
+   node scripts/msk-progress.js question fermer <texte exact | numéro>
+   node scripts/msk-progress.js region activer <region>
    init --repo sur un dossier déjà initialisé : seul repo change dans config.json (dépôt déplacé) ; toute commande qui lit les fiches vérifie ce dépôt.
    etat set : identifiant d'une compétence de la fiche de sa région ; un palier ne redescend qu'avec --force.
    Entrée : { date: 'AAAA-MM-JJ', region, examens?, dictes_seul?, items?: [{ id? | libelle?, trouve, difficulte?, dicte_seul? }], questions?: [textes], commentaire? }
@@ -23,6 +27,12 @@
    (jamais d'abaissement), pas-su → palier inchangé ; chaque cas est noté dans l'historique. audio ecoute : un épisode présent dans audio/ du dossier privé.
    Textes libres des autres commandes (source d'etat set, --note, --fichier, nom d'épisode) : même garde-fou, avant toute écriture ; seule y échappe la date de
    séance en tête du nom du fichier de cas, suivie de « - » et d'une lettre, de l'extension ou de rien (cas/AAAA-MM-JJ-<item>.md).
+   bilan --grille : la grille OSAUS (sept items, référence, limite de l'auto-évaluation), sans rien écrire ; --osaus ou --note avec --grille : erreur.
+   ecrire : plan de semaine (semaines/<AAAA>-W<nn>.md, remplacé et dit : remplace) ou fichier de cas (cas/<AAAA-MM-JJ>-<item>.md, jamais remplacé) ; nom seul, sans « / » ni « .. ».
+   Garde-fou d'abord, sur le nom et sur le texte : dans le texte, seule y échappe une date AAAA-MM-JJ isolée du 2026-01-01 à aujourd'hui + 7 jours (dates du volet,
+   semaine planifiée comprise) ; dans le nom, la date de séance en tête du nom du fichier de cas.
+   question fermer : « - [ ] » → « - [x] » sur la question ouverte désignée par son texte (tel que rendu par cas pick ou plan) ou son numéro parmi les ouvertes (ordre du fichier).
+   region activer : ajoute une région à regions_actives de config.json, sur décision de Mat ; seul ce champ change.
    Sortie JSON (init : lignes de texte ; commande inconnue : cet usage) ; erreur ou refus : une ligne sur stderr.
    Codes : 0 ok · 1 erreur · 2 refus du garde-fou données patient. Entrée invalide (1) ou refusée (2) : rien n'est écrit.
    Transferts vers l'iPhone (Anki, audio), créés par init : $ECHO_MSK_ICLOUD ou ~/Library/Mobile Documents/com~apple~CloudDocs/Écho MSK.
@@ -40,10 +50,11 @@ const readJson = (f, d) => {   // absent : la valeur par défaut, sinon une erre
   if (!fs.existsSync(f)) { if (d !== undefined) return d; throw new Error('fichier introuvable : ' + f); }
   try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch (e) { throw new Error(f + ' : ' + e.message, { cause: e }); }
 };
-const writeJson = (f, o) => {   // écrit à côté puis renomme (atomique sur un même volume) : une écriture interrompue ne laisse jamais un JSON tronqué
+const ecrireTexte = (f, s) => {   // écrit à côté puis renomme (atomique sur un même volume) : une écriture interrompue ne laisse jamais un fichier tronqué
   const t = `${f}.${process.pid}.part`;
-  try { fs.writeFileSync(t, JSON.stringify(o, null, 1) + '\n'); fs.renameSync(t, f); } catch (e) { fs.rmSync(t, { force: true }); throw e; }
+  try { fs.writeFileSync(t, s); fs.renameSync(t, f); } catch (e) { fs.rmSync(t, { force: true }); throw e; }
 };
+const writeJson = (f, o) => ecrireTexte(f, JSON.stringify(o, null, 1) + '\n');
 const ID_RE = /^([a-z-]+)\.([cspdag])(\d{2})$/;
 class GuardError extends Error { constructor(hits) { super('données patient détectées : ' + hits.map(h => `${h.motif} (« ${h.extrait} »)`).join(' ; ')); this.hits = hits; } }
 const depotMsk = r => typeof r === 'string' && fs.existsSync(path.join(r, 'js/data/registry.js')) && fs.existsSync(path.join(r, 'js/data/msk'));
@@ -110,7 +121,7 @@ const garde = t => {   // garde-fou données patient avant toute écriture, sur 
 const entier = (v, champ, min, max) => { if (v != null && !(Number.isInteger(v) && v >= min && v <= max)) throw new Error(`${champ} : entier de ${min} à ${max} attendu`); };
 const AAAAMMJJ = /^\d{4}-\d{2}-\d{2}$/;
 const dateReelle = d => typeof d === 'string' && AAAAMMJJ.test(d) && !isNaN(new Date(d)) && new Date(d).toISOString().startsWith(d);   // « 2026-02-30 » deviendrait le 2 mars
-const DEBUT = '2026-01-01', finPeriode = () => new Date(Date.parse(today()) + 2 * 864e5).toISOString().slice(0, 10);   // période d'une date de séance : du début du volet MSK à aujourd'hui + 2 jours
+const DEBUT = '2026-01-01', finPeriode = (j = 2) => new Date(Date.parse(today()) + j * 864e5).toISOString().slice(0, 10);   // période d'une date de séance : du début du volet MSK à aujourd'hui + 2 jours (+ 7 pour les dates des textes d'ecrire : semaine planifiée)
 const datePlausible = d => dateReelle(d) && d >= DEBUT && d <= finPeriode();   // 1956-03-12 est une date de naissance, pas une séance
 function logbookAdd(entry) {
   if (!entry || typeof entry !== 'object' || Array.isArray(entry)) throw new Error('entrée : objet { date, region, … } attendu');
@@ -184,7 +195,7 @@ function plan(region) {
   if (!f) return { mode: 'socle', region, nom, cibles: [], cas: [], audios, anki, questions, paliers, critere: critere(region, nom), note: `pas encore de fiche MSK pour ${nom} : plan socle — audio, cartes des fiches gestes, et trois cibles à choisir dans les sections Sono-anatomie de ces fiches` };
   return { mode: 'fiche', region, nom, cibles: parPalier(f, pr, ['coupe', 'structure', 'dynamique']).filter(c => c.etat <= 2).slice(0, 3), cas: parPalier(f, pr, ['pathologie', 'piege']).filter(c => c.etat <= 2).slice(0, 2), audios, anki, questions, paliers, critere: critere(region, nom) };
 }
-/* Grille OSAUS : libellés de la publication mot pour mot, glose française ; écrite avec chaque bilan, exportée pour /msk-semaine. */
+/* Grille OSAUS : libellés de la publication mot pour mot, glose française, limite de l'auto-évaluation (spec §10) ; écrite avec chaque bilan, affichée par bilan --grille. */
 const OSAUS = Object.freeze({
   nom: 'OSAUS',
   reference: 'Tolsgaard MG, Todsen T, Sorensen JL, Ringsted C, Lorentzen T, Ottesen B, Tabor A. International Multispecialty Consensus on How to Evaluate Ultrasound Competence: A Delphi Consensus Survey. PLoS ONE 2013. doi:10.1371/journal.pone.0057687',
@@ -195,6 +206,7 @@ const OSAUS = Object.freeze({
     { n: 7, en: 'Medical decision making', fr: 'Décision médicale' },
   ].map(Object.freeze)),
   echelle: '1 à 5 par item',
+  limite: 'Auto-évaluation : ce n\'est pas une évaluation observée ; une notation trimestrielle par un confrère sur la même grille reste à organiser',
 });
 function bilan(region, items, note) {
   garde([note]);   // la note est écrite dans osaus/AAAA-MM.json : garde-fou d'abord (spec §12)
@@ -205,6 +217,7 @@ function bilan(region, items, note) {
   fs.mkdirSync(P('osaus'), { recursive: true }); writeJson(f, o);
   return { fichier, remplace: ancien ? { date: ancien.date || null, items: ancien.items || null } : null, critere: critere(region, nom), paliers: etatList(region).paliers };   // bilan du mois écrasé : dit, jamais en silence
 }
+function grille(region) { fiche(region); return OSAUS; }   // bilan <region> --grille : la grille à remplir, sans rien écrire ; région vérifiée comme partout
 function casPick(region) {
   const cfg = config(), { f, nom } = fiche(region);   // région vérifiée d'abord, même si une question l'attend : rien n'est lu pour une région inventée
   const q = questionsOuvertes(region); if (q.length) return { source: 'question', texte: q[0] };
@@ -236,11 +249,54 @@ function audioEcoute(fichier) {
   return { fichier, ecoute: pr.audio[fichier] };
 }
 
+/* ---- tâche 10 : écritures des skills de coaching par le CLI (plan de semaine, fichier de cas, question fermée, région activée) ---- */
+/* Dates du volet dans le texte d'ecrire : une date AAAA-MM-JJ isolée (ni lettre ni chiffre collés, ni chiffre relié par « - », « . » ou « / ») du 2026-01-01 à
+   aujourd'hui + 7 jours n'est pas une donnée patient (séance, paquet Anki, semaine planifiée). Pour le seul garde-fou, ses tirets deviennent « · » : la règle
+   « date complète » ne la voit plus, ses chiffres et son contexte restent lus (« née le 2026-10-07 », « la dame du 2026-10-07 », « 2026-10-07 12 34 56 78 » restent
+   refusés). Toute autre date (« 1956-03-12 », « 7 octobre 2026 », « 2026-10-07-1956 ») reste au garde-fou. */
+const DATE_ISOLEE = /(?<![\p{L}\p{N}_]|\p{N}[./-])(\d{4})-(\d{2})-(\d{2})(?![\p{L}\p{N}_]|[./-]\p{N})/gu;
+const datesDuVolet = t => t.replace(DATE_ISOLEE, (m, a, mo, j) => { const d = `${a}-${mo}-${j}`; return dateReelle(d) && d >= DEBUT && d <= finPeriode(7) ? `${a}·${mo}·${j}` : m; });
+const NOMS = {   // nom de fichier par sous-dossier (spec §8) ; cas : la date de séance en tête, puis l'item (minuscules, chiffres, « . », « - »)
+  semaines: { re: /^\d{4}-W(?:0[1-9]|[1-4]\d|5[0-3])\.md$/, attendu: '<AAAA>-W<nn>.md attendu (semaine ISO)' },
+  cas: { re: /^(\d{4}-\d{2}-\d{2})-[a-z0-9][a-z0-9.-]*\.md$/, attendu: '<AAAA-MM-JJ>-<item>.md attendu (date de séance, puis minuscules, chiffres, « . » ou « - »)' },
+};
+function ecrire(sous, nom, texte) {   // plan de semaine remplacé (et dit) ; fichier de cas jamais remplacé
+  garde([typeof nom === 'string' ? sansDateDeSeance(nom) : nom, typeof texte === 'string' ? datesDuVolet(texte) : texte]);   // garde-fou d'abord, sur le nom et sur le texte : refus (code 2), rien n'est écrit
+  if (!Object.hasOwn(NOMS, sous)) throw new Error(`sous-dossier : cas ou semaines attendu (reçu : ${sous})`);
+  if (typeof nom !== 'string' || !nom || /[/\\]/.test(nom) || nom.includes('..')) throw new Error(`nom : un nom de fichier seul, sans « / » ni « .. » (reçu : ${nom})`);
+  const m = NOMS[sous].re.exec(nom);
+  if (!m || (sous === 'cas' && !datePlausible(m[1]))) throw new Error(`nom : ${NOMS[sous].attendu}, reçu : ${nom}`);
+  if (typeof texte !== 'string' || !texte.trim()) throw new Error('texte : contenu Markdown non vide attendu');
+  config();
+  const f = P(path.join(sous, nom)), remplace = fs.existsSync(f);
+  if (remplace && sous === 'cas') throw new Error(`cas/${nom} existe déjà : un fichier de cas n'est jamais remplacé — reprendre avec un suffixe (${nom.replace(/\.md$/, '-2.md')})`);
+  fs.mkdirSync(P(sous), { recursive: true }); ecrireTexte(f, texte.endsWith('\n') ? texte : texte + '\n');
+  return { fichier: `${sous}/${nom}`, remplace };
+}
+function questionFermer(q) {   // texte exact (avec ou sans sa case, espaces repliés) ou numéro parmi les ouvertes, dans l'ordre du fichier ; aucune autre ligne ne change
+  config();
+  const f = P('questions.md'), lignes = fs.existsSync(f) ? fs.readFileSync(f, 'utf8').split('\n') : [];
+  const ouvertes = lignes.flatMap((l, i) => l.startsWith('- [ ] ') ? [{ i, texte: uneLigne(l.slice(6)) }] : []);
+  const dispo = `(ouvertes : ${ouvertes.map((o, k) => `${k + 1}. ${o.texte}`).join(' · ') || 'aucune'})`;
+  const t = typeof q === 'string' ? uneLigne(q).replace(/^- \[ \] /, '') : '';
+  if (!t) throw new Error(`question fermer : texte exact ou numéro de la question manquant ${dispo}`);
+  const o = /^\d+$/.test(t) ? ouvertes[Number(t) - 1] : ouvertes.find(x => x.texte === t);
+  if (!o) throw new Error(`aucune question ouverte ne correspond : ${t} ${dispo}`);
+  lignes[o.i] = '- [x] ' + lignes[o.i].slice(6); ecrireTexte(f, lignes.join('\n'));
+  return { question: o.texte, ouvertes: ouvertes.length - 1 };
+}
+function regionActiver(region) {   // ajoute une région à regions_actives de config.json (proposée par /msk-semaine --bilan, décidée par Mat) ; seul ce champ change, sans doublon
+  fiche(region); const c = config(), actives = Array.isArray(c.regions_actives) ? c.regions_actives : [];
+  if (actives.includes(region)) return { regions_actives: actives, ajoutee: false };
+  c.regions_actives = actives.concat(region); writeJson(P('config.json'), c);
+  return { regions_actives: c.regions_actives, ajoutee: true };
+}
+
 const USAGE = fs.readFileSync(__filename, 'utf8').split('*/')[0].split('\n').slice(1).map(l => l.trim()).join('\n');
 if (require.main === module) {
   const a = process.argv.slice(2), opt = (k, d) => { const i = a.indexOf(k); return i >= 0 ? a[i + 1] : d; };
   const out = o => console.log(typeof o === 'string' ? o : JSON.stringify(o, null, 1));
-  const cmd = a[0] + (['etat', 'cas', 'audio', 'logbook'].includes(a[0]) && a[1] ? ' ' + a[1] : '');
+  const cmd = a[0] + (['etat', 'cas', 'audio', 'logbook', 'question', 'region'].includes(a[0]) && a[1] ? ' ' + a[1] : '');
   const valeur = (k, quoi) => { const v = opt(k); if (v == null || v.startsWith('--')) throw new Error(`${k} : ${quoi} manquant`); return v; };   // option donnée sans sa valeur
   const entree = () => {   // logbook add : --file <entrée.json> ou --json '<entrée>' ; chaque erreur nomme son option
     const k = a.includes('--file') ? '--file' : a.includes('--json') ? '--json' : null;
@@ -248,6 +304,14 @@ if (require.main === module) {
     let t = valeur(k, k === '--file' ? 'chemin' : 'JSON');
     if (k === '--file') { try { t = fs.readFileSync(t, 'utf8'); } catch (e) { throw new Error(`--file : ${e.code === 'ENOENT' ? 'fichier introuvable : ' + t : e.message}`); } }
     try { return JSON.parse(t); } catch (e) { throw new Error(`${k} : JSON invalide — ${e.message}`); }
+  };
+  const texte = () => {   // ecrire : --texte '<markdown>' ou --file <chemin> (fichier temporaire, hors du dossier privé) ; jamais les deux
+    const t = a.includes('--texte'), f = a.includes('--file');
+    if (t && f) throw new Error('ecrire : --texte ou --file, pas les deux');
+    if (!t && !f) throw new Error("ecrire : --texte '<markdown>' ou --file <chemin>");
+    if (t) return valeur('--texte', 'texte');
+    const c = valeur('--file', 'chemin');
+    try { return fs.readFileSync(c, 'utf8'); } catch (e) { throw new Error(`--file : ${e.code === 'ENOENT' ? 'fichier introuvable : ' + c : e.message}`); }
   };
   try {
     switch (cmd) {
@@ -260,12 +324,17 @@ if (require.main === module) {
       case 'etat list': out(etatList(a[2])); break;
       case 'logbook add': out(logbookAdd(entree())); break;
       case 'plan': out(plan(a[1])); break;
-      case 'bilan': out(bilan(a[1], (opt('--osaus') || '').split(',').map(Number), a.includes('--note') ? valeur('--note', 'texte') : undefined)); break;   // --osaus absent ou vide : le message des sept notes
+      case 'bilan':
+        if (a.includes('--grille')) { if (a.includes('--osaus') || a.includes('--note')) throw new Error('bilan --grille : affichage seul, sans --osaus ni --note'); out(grille(a[1])); break; }
+        out(bilan(a[1], (opt('--osaus') || '').split(',').map(Number), a.includes('--note') ? valeur('--note', 'texte') : undefined)); break;   // --osaus absent ou vide : le message des sept notes
       case 'cas pick': out(casPick(a[2])); break;
       case 'cas record': out(casRecord(a[2], a[3], a.includes('--fichier') ? valeur('--fichier', 'chemin') : undefined)); break;
       case 'audio ecoute': out(audioEcoute(a[2])); break;
+      case 'ecrire': out(ecrire(a[1], a[2], texte())); break;
+      case 'question fermer': out(questionFermer(a.slice(2).join(' '))); break;   // texte en un argument entre guillemets, ou en plusieurs mots
+      case 'region activer': out(regionActiver(a[2])); break;
       default: console.log(USAGE); process.exit(1);
     }
   } catch (e) { console.error((e instanceof GuardError ? 'REFUS — ' : 'ERREUR — ') + e.message); process.exit(e instanceof GuardError ? 2 : 1); }
 }
-module.exports = { init, etatSet, etatList, logbookAdd, GuardError, HOME, P, progression, config, fiche, readJson, writeJson, today, slug, plan, bilan, casPick, casRecord, audioEcoute, OSAUS };
+module.exports = { init, etatSet, etatList, logbookAdd, GuardError, HOME, P, progression, config, fiche, readJson, writeJson, today, slug, plan, bilan, casPick, casRecord, audioEcoute, OSAUS, grille, ecrire, questionFermer, regionActiver };

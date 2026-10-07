@@ -296,3 +296,118 @@ test('questions servies par leur étiquette de région, jamais par leur texte ; 
   assert.strictEqual(P.bilan('genou', [3, 3, 3, 3, 3, 3, 3], '').remplace, null);
   assert.deepStrictEqual([P.OSAUS.nom, P.OSAUS.items.map(i => i.n), P.OSAUS.echelle, Object.isFrozen(P.OSAUS), Object.isFrozen(P.OSAUS.items[0])], ['OSAUS', [1, 2, 3, 4, 5, 6, 7], '1 à 5 par item', true, true]);
 });
+
+// ---- tâche 10 : écritures des skills par le CLI (ecrire, question fermer, region activer), grille OSAUS affichée (bilan --grille, limite) ----
+const dossiers = () => ['cas', 'semaines'].flatMap(d => fs.readdirSync(path.join(H, d)).sort().map(f => `${d}/${f}\n${fs.readFileSync(path.join(H, d, f), 'utf8')}`));   // fichiers écrits par ecrire : un refus n'y ajoute rien
+const racine = () => fs.readdirSync(H).sort();   // aucun fichier égaré à la racine du dossier privé (nom en « .. », reste .part)
+test('grille OSAUS : limite de l\'auto-évaluation (spec §10) écrite avec chaque bilan ; bilan <region> --grille l\'affiche sans rien écrire', () => {
+  assert.strictEqual(P.OSAUS.limite, 'Auto-évaluation : ce n\'est pas une évaluation observée ; une notation trimestrielle par un confrère sur la même grille reste à organiser');
+  assert.strictEqual(JSON.parse(fs.readFileSync(path.join(H, 'osaus', P.today().slice(0, 7) + '.json'), 'utf8')).epaule.grille.limite, P.OSAUS.limite, 'limite dite dans la grille de chaque bilan');
+  const avant = [prives(), osaus()], rates = [];
+  assert.strictEqual(P.grille('epaule'), P.OSAUS); assert.throws(() => P.grille('nez'), /^Error: région inconnue : nez/);
+  const c = cli('bilan', 'epaule', '--grille');
+  assert.strictEqual(c.status, 0, c.stderr); assert.deepStrictEqual(JSON.parse(c.stdout), JSON.parse(JSON.stringify(P.OSAUS)));
+  for (const [args, re] of [
+    [['bilan', 'nez', '--grille'], /^ERREUR — région inconnue : nez/],
+    [['bilan', 'epaule', '--grille', '--osaus', '4,4,3,4,5,4,3'], /^ERREUR — bilan --grille : affichage seul, sans --osaus ni --note\n$/],
+    [['bilan', 'epaule', '--grille', '--note', 'relu'], /^ERREUR — bilan --grille : affichage seul, sans --osaus ni --note\n$/],
+  ]) { const r = cli(...args); if (r.status !== 1 || !re.test(r.stderr)) rates.push(`${args.join(' ')} → ${r.status} ${r.stderr.trim()}`); }
+  assert.deepStrictEqual(rates, []);
+  assert.deepStrictEqual([prives(), osaus()], avant, 'rien écrit');
+});
+test('ecrire : plan de semaine et fichier de cas dans leur sous-dossier, texte tel quel ; plan remplacé et dit, fichier de cas jamais remplacé', () => {
+  const plan = `# Semaine 2026-W41 (du ${jour(0)} au ${jour(7)})\n\n**Trajet** : epaule-deep-dive.mp3, non écouté.\n**Questions en attente** : ${jour(-1)} (epaule) : Comment dégager l'infra-épineux ?\n**Anki** : paquet du ${jour(0)}, à importer.\n**Logbook** : ${jour(-1)} 3 examens, 2 dictés sans aide.\n`;
+  assert.deepStrictEqual(P.ecrire('semaines', '2026-W41.md', plan), { fichier: 'semaines/2026-W41.md', remplace: false });
+  assert.strictEqual(fs.readFileSync(path.join(H, 'semaines/2026-W41.md'), 'utf8'), plan, 'texte écrit tel quel, dates du volet comprises');
+  assert.deepStrictEqual(P.ecrire('semaines', '2026-W41.md', '# Semaine 2026-W41\n\nPlan refait.'), { fichier: 'semaines/2026-W41.md', remplace: true });
+  assert.strictEqual(fs.readFileSync(path.join(H, 'semaines/2026-W41.md'), 'utf8'), '# Semaine 2026-W41\n\nPlan refait.\n', 'plan de la semaine remplacé (et dit), fin de ligne finale ajoutée');
+  const nom = `${P.today()}-epaule.p01.md`, nom2 = nom.replace(/\.md$/, '-2.md');
+  const cas = `# Cas ${P.today()} — epaule.p01\n\nVignette : douleur latérale d'épaule à l'abduction, nocturne, depuis trois mois.\n\nVerdict : su.\n`;
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'msk-ecrire-')), f = path.join(tmp, 'cas.md');   // fichier temporaire hors du dossier privé, comme le scratchpad d'une skill
+  try {
+    fs.writeFileSync(f, cas);
+    let c = cli('ecrire', 'cas', nom, '--file', f);
+    assert.strictEqual(c.status, 0, c.stderr); assert.deepStrictEqual(JSON.parse(c.stdout), { fichier: 'cas/' + nom, remplace: false });
+    assert.strictEqual(fs.readFileSync(path.join(H, 'cas', nom), 'utf8'), cas);
+    assert.throws(() => P.ecrire('cas', nom, 'autre cas'), { message: `cas/${nom} existe déjà : un fichier de cas n'est jamais remplacé — reprendre avec un suffixe (${nom2})` });
+    assert.strictEqual(fs.readFileSync(path.join(H, 'cas', nom), 'utf8'), cas, 'premier cas intact');
+    c = cli('ecrire', 'cas', nom2, '--texte', 'Deuxième cas du jour sur le même item.');
+    assert.strictEqual(c.status, 0, c.stderr); assert.deepStrictEqual(JSON.parse(c.stdout), { fichier: 'cas/' + nom2, remplace: false });
+    assert.strictEqual(fs.readFileSync(path.join(H, 'cas', nom2), 'utf8'), 'Deuxième cas du jour sur le même item.\n');
+  } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
+  assert.strictEqual(P.casRecord('epaule.p01', 'pas-su', 'cas/' + nom2).fichier, 'cas/' + nom2, 'le nom rendu par ecrire passe tel quel à cas record --fichier');
+  assert.deepStrictEqual(['', 'cas', 'semaines'].flatMap(d => fs.readdirSync(path.join(H, d))).filter(x => x.endsWith('.part')), [], 'écriture par fichier temporaire renommé : aucun reste');
+});
+test('ecrire : garde-fou d\'abord (code 2), seules les dates du volet échappent ; sous-dossier, nom et texte validés (code 1) ; rien n\'est écrit', () => {
+  const avant = [prives(), dossiers(), racine()], ok = '# Plan\n\nTrois cibles.', W = '2026-W42.md';
+  const passes = [
+    ['semaines', W, 'Revu avec Mme Dupont'], ['semaines', W, 'Femme de 55 ans, douleur d\'épaule'], ['semaines', W, 'Rappeler au 06\n12 34 56 78'],
+    ['semaines', W, 'Contrôle le 1956-03-12'], ['semaines', W, `Rappeler le ${jour(0)} 12 34 56 78`], ['semaines', W, `Séance ${jour(0)}-03-1956`], ['semaines', W, `Séance ${jour(0)}-1956`],   // date du volet reliée à d'autres chiffres : garde-fou
+    ['semaines', W, `Née le ${jour(0)}`], ['semaines', W, `la dame du ${jour(0)}`],   // une date du volet n'efface pas son contexte
+    ['semaines', W, 'Cas du 7 octobre 2026'], ['semaines', W, `Revoir le ${jour(8)}`], ['semaines', W, 'Revoir le 2025-12-31'],   // date en lettres ; hors du volet (avant 2026, au-delà de la semaine à venir)
+    ['cas', `${P.today()}-Mme Dupont.md`, ok], ['cas', '1956-03-12-epaule.p01.md', ok], ['cas', `${jour(3)}-epaule.p01.md`, ok],   // nom de fichier : seule la date de séance en tête y échappe
+  ].filter(([s, n, t]) => { try { P.ecrire(s, n, t); return true; } catch (err) { return !(err instanceof P.GuardError); } }).map(x => x.join(' | '));
+  assert.deepStrictEqual(passes, [], 'écritures non refusées par le garde-fou');
+  const rates = [];
+  for (const [s, n, t, re] of [
+    ['osaus', W, ok, /^sous-dossier : cas ou semaines attendu \(reçu : osaus\)$/], ['../cas', W, ok, /^sous-dossier : cas ou semaines attendu/], ['', W, ok, /^sous-dossier/],
+    ['semaines', '../config.json', ok, /^nom : un nom de fichier seul, sans « \/ » ni « \.\. » \(reçu : \.\.\/config\.json\)$/], ['cas', `sous/${P.today()}-x.md`, ok, /^nom : un nom de fichier seul/], ['semaines', '..', ok, /^nom : un nom de fichier seul/],
+    ['semaines', 'plan.md', ok, /^nom : <AAAA>-W<nn>\.md attendu \(semaine ISO\), reçu : plan\.md$/], ['semaines', '2026-W54.md', ok, /^nom : <AAAA>-W<nn>\.md attendu/], ['semaines', '2026-W42.txt', ok, /^nom : <AAAA>-W<nn>\.md attendu/],
+    ['cas', 'epaule.p01.md', ok, /^nom : <AAAA-MM-JJ>-<item>\.md attendu \(date de séance, puis minuscules, chiffres, « \. » ou « - »\), reçu : epaule\.p01\.md$/],
+    ['cas', `${P.today()}-Epaule.md`, ok, /^nom : <AAAA-MM-JJ>-<item>\.md attendu/], ['cas', `${P.today()}.md`, ok, /^nom : <AAAA-MM-JJ>-<item>\.md attendu/],
+    ['semaines', W, '', /^texte : contenu Markdown non vide attendu$/], ['semaines', W, ' \n ', /^texte : contenu Markdown non vide attendu$/], ['semaines', W, 42, /^texte : contenu Markdown non vide attendu$/],
+  ]) { try { P.ecrire(s, n, t); rates.push(`${s} ${n} accepté`); } catch (err) { if (!re.test(err.message)) rates.push(`${s} ${n} : ${err.message}`); } }
+  for (const [args, re] of [
+    [['ecrire', 'semaines', W], /^ERREUR — ecrire : --texte '<markdown>' ou --file <chemin>\n$/], [['ecrire', 'semaines', W, '--texte', 'a', '--file', 'b'], /^ERREUR — ecrire : --texte ou --file, pas les deux\n$/],
+    [['ecrire', 'semaines', W, '--texte'], /^ERREUR — --texte : texte manquant\n$/], [['ecrire', 'semaines', W, '--file'], /^ERREUR — --file : chemin manquant\n$/],
+    [['ecrire', 'semaines', W, '--file', path.join(H, 'absent.md')], /^ERREUR — --file : fichier introuvable : /],
+  ]) { const c = cli(...args); if (c.status !== 1 || !re.test(c.stderr)) rates.push(`${args.join(' ')} → ${c.status} ${c.stderr.trim()}`); }
+  const g = cli('ecrire', 'semaines', W, '--texte', 'Revu avec Mme Dupont');
+  assert.strictEqual(g.status, 2, g.stderr); assert.strictEqual(g.stderr, 'REFUS — données patient détectées : civilité suivie d\'un nom (« Mme Dupont »)\n');
+  const vide = fs.mkdtempSync(path.join(os.tmpdir(), 'msk-vide-'));   // dossier privé non initialisé : erreur, rien n'est créé
+  try {
+    const v = spawnSync(process.execPath, [path.join(ROOT, 'scripts/msk-progress.js'), 'ecrire', 'semaines', W, '--texte', ok], { env: Object.assign({}, process.env, { ECHO_MSK_HOME: vide }), encoding: 'utf8' });
+    assert.strictEqual(v.status, 1); assert.match(v.stderr, /^ERREUR — dossier privé non initialisé/); assert.deepStrictEqual(fs.readdirSync(vide), []);
+  } finally { fs.rmSync(vide, { recursive: true, force: true }); }
+  assert.deepStrictEqual(rates, []);
+  assert.deepStrictEqual([prives(), dossiers(), racine()], avant, 'aucun refus n\'a écrit quoi que ce soit');
+});
+test('question fermer : la ligne désignée passe de « - [ ] » à « - [x] », par son texte exact ou son numéro parmi les ouvertes ; rien d\'autre ne change', () => {
+  const q = path.join(H, 'questions.md'), infra = '2026-09-30 (epaule) : Comment dégager l\'infra-épineux ?', sub = '2026-10-01 (epaule) : Quelle profondeur pour le sous-scapulaire ?', gen = '2026-09-25 (genou) : Récessus : comparer avec la bourse (epaule) ?';
+  const contenu = `# Questions ouvertes\n\n- [x] 2026-09-29 (epaule) : traitée\n- [ ] ${gen}\n- [ ] ${infra}\n- [ ] ${sub}\n`;
+  fs.writeFileSync(q, contenu);
+  const rates = [], refus = (f, re) => { try { f(); rates.push(String(f) + ' accepté'); } catch (err) { if (!re.test(err.message)) rates.push(String(f) + ' : ' + err.message); } };
+  refus(() => P.questionFermer('4'), new RegExp(`^aucune question ouverte ne correspond : 4 \\(ouvertes : 1\\. ${gen.replace(/[()?]/g, '\\$&')} · 2\\. .+ · 3\\. .+\\)$`));
+  assert.strictEqual(fs.readFileSync(q, 'utf8'), contenu, 'rien écrit');
+  assert.deepStrictEqual(P.casPick('epaule'), { source: 'question', texte: infra });
+  assert.deepStrictEqual(P.questionFermer(P.casPick('epaule').texte), { question: infra, ouvertes: 2 }, 'texte tel que rendu par cas pick');
+  assert.strictEqual(fs.readFileSync(q, 'utf8'), contenu.replace(`- [ ] ${infra}`, `- [x] ${infra}`), 'seule la ligne désignée change');
+  assert.deepStrictEqual(P.casPick('epaule'), { source: 'question', texte: sub });
+  let c = cli('question', 'fermer', '2');   // numéro parmi les ouvertes, dans l'ordre du fichier : 1 = genou, 2 = sous-scapulaire
+  assert.strictEqual(c.status, 0, c.stderr); assert.deepStrictEqual(JSON.parse(c.stdout), { question: sub, ouvertes: 1 });
+  assert.strictEqual(P.casPick('epaule').source, 'item', 'plus aucune question ouverte pour l\'épaule');
+  c = cli('question', 'fermer', `- [ ] ${gen}`);   // la ligne copiée avec sa case est acceptée
+  assert.strictEqual(c.status, 0, c.stderr); assert.deepStrictEqual(JSON.parse(c.stdout), { question: gen, ouvertes: 0 });
+  const avant = [prives(), dossiers()];
+  refus(() => P.questionFermer(infra), /^aucune question ouverte ne correspond : .+ \(ouvertes : aucune\)$/);   // déjà fermée
+  refus(() => P.questionFermer('1'), /^aucune question ouverte ne correspond : 1 \(ouvertes : aucune\)$/); refus(() => P.questionFermer('0'), /^aucune question ouverte ne correspond : 0 /);
+  refus(() => P.questionFermer(''), /^question fermer : texte exact ou numéro de la question manquant \(ouvertes : aucune\)$/); refus(() => P.questionFermer(), /^question fermer : texte exact ou numéro/);
+  c = cli('question', 'fermer'); if (c.status !== 1 || !/^ERREUR — question fermer : texte exact ou numéro de la question manquant/.test(c.stderr)) rates.push('CLI sans argument → ' + c.status + ' ' + c.stderr);
+  assert.deepStrictEqual(rates, []);
+  assert.deepStrictEqual([prives(), dossiers()], avant, 'rien écrit');
+  assert.strictEqual(fs.readFileSync(q, 'utf8'), contenu.replace(/- \[ \] /g, '- [x] '), 'trois lignes fermées, l\'en-tête et la ligne déjà fermée intacts');
+});
+test('region activer : ajoute une région à regions_actives (seul champ modifié), idempotent ; région inconnue refusée sans écriture', () => {
+  const cfgF = path.join(H, 'config.json'), cfg0 = JSON.parse(fs.readFileSync(cfgF, 'utf8'));
+  assert.deepStrictEqual(cfg0.regions_actives, ['epaule']);
+  assert.deepStrictEqual(P.regionActiver('genou'), { regions_actives: ['epaule', 'genou'], ajoutee: true });
+  assert.deepStrictEqual(P.regionActiver('genou'), { regions_actives: ['epaule', 'genou'], ajoutee: false });
+  assert.deepStrictEqual(JSON.parse(fs.readFileSync(cfgF, 'utf8')), Object.assign({}, cfg0, { regions_actives: ['epaule', 'genou'] }), 'seul regions_actives change');
+  const avant = prives(), rates = [];
+  for (const [args, re] of [[['region', 'activer', 'nez'], /^ERREUR — région inconnue : nez/], [['region', 'activer'], /^ERREUR — région inconnue : undefined/]]) {
+    const c = cli(...args); if (c.status !== 1 || !re.test(c.stderr)) rates.push(`${args.join(' ')} → ${c.status} ${c.stderr.trim()}`);
+  }
+  assert.deepStrictEqual(rates, []); assert.deepStrictEqual(prives(), avant, 'rien écrit');
+  const c = cli('region', 'activer', 'rachis');
+  assert.strictEqual(c.status, 0, c.stderr); assert.deepStrictEqual(JSON.parse(c.stdout), { regions_actives: ['epaule', 'genou', 'rachis'], ajoutee: true });
+});
