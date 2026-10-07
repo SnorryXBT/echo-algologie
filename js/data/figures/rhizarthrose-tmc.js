@@ -47,12 +47,12 @@ ECHO.figures['rhizarthrose-tmc'] = [
   },
   {
     type: 'echo',
-    src: 'img/rhizarthrose-tmc/echo-2.jpg',
+    src: 'img/rhizarthrose-tmc/echo-3.jpg',
     pair: 'tmc-injection',
-    titre: 'Rhizarthrose sévère : aiguille en place malgré les ostéophytes',
-    legende: 'Image d\'origine annotée (anglais) : MC = métacarpien, T = trapèze ; la flèche marque la pointe de l\'aiguille dans l\'interligne, par un passage trouvé au balayage entre les ostéophytes. Panneau c d\'une planche dont le a est la radiographie et le b l\'ossification qui barrait l\'accès (flèche). Orientation inverse de celle du schéma : distal à gauche (métacarpien), proximal à droite (trapèze).',
-    credit: 'Patel RP, McGill K, Motamedi D et al., Skeletal Radiology 2023, fig. 13c — CC BY 4.0',
-    source: 'https://doi.org/10.1007/s00256-022-04148-9',
-    crop: [0.0, 0.535, 0.60, 0.465],
+    titre: 'Injection trapézo-métacarpienne réelle sous échographe de poche (pièce anatomique)',
+    legende: 'Image d\'origine annotée (anglais) : TRAPEZIUM et 1st METACARPAL ; les astérisques rouges jalonnent l\'aiguille, qui entre du côté du trapèze (à gauche) et descend vers l\'interligne. Coupe « sagittale » selon les auteurs (longitudinale sur la colonne du pouce), échographe de poche Vscan Air, pièce anatomique fraîche. Même orientation que le schéma (proximal à gauche) ; **réserve** : abord proximal → distal, à l\'inverse de l\'entrée distale décrite dans la fiche. Panneau A ; le B montre l\'articulation après injection de colorant (1 = capsule, 2 = interligne rempli).',
+    credit: 'Hamoudi C, Martins A, Willaume T, Debordes PA, Liverneaux P, Facca S, Cureus 2023, fig. 3A — CC BY (version non précisée dans le XML Europe PMC)',
+    source: 'https://doi.org/10.7759/cureus.45779',
+    crop: [0, 0, 1, 0.497],
   },
 ];
