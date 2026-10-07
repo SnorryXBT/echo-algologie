@@ -22,7 +22,7 @@ const donnees = (dir, corps) => {
   return f;
 };
 /* données factices, indépendantes du squelette épaule (que la tâche 13 remplace) et des figures du mémo. Fiche « epaule » : coupe 1 imagée (trois marqueurs),
-   coupe 2 sans image (absence motivée : image null), une pathologie imagée reliée au geste factice, une sans image, un artefact ; geste factice : une figure écho
+   coupe 2 sans image libre (image null + sansImage), une pathologie imagée reliée au geste factice, une sans image, un artefact ; geste factice : une figure écho
    à deux étiquettes, un piège. Image : un SVG du dossier de test, désigné comme une vraie par un chemin relatif au dépôt. `retouche` : code appliqué ensuite à E. */
 const factice = (dir, retouche = '') => {
   const svg = path.join(dir, 'coupe.svg');
@@ -32,7 +32,7 @@ const factice = (dir, retouche = '') => {
     protocole: [
       { n: 1, titre: 'Coupe imagée', position: 'Assis', repere: 'Repère', structures: ['Un', 'Deux', 'Trois'],
         image: { src, credit: 'Test', licence: 'CC0', marqueurs: [{ n: 1, x: 0.2, y: 0.3, dy: -0.15, label: 'Un' }, { n: 2, x: 0.5, y: 0.5, dx: 0.2, label: 'Deux' }, { n: 3, x: 0.7, y: 0.8, dy: 0.1, label: 'Trois' }] } },
-      { n: 2, titre: 'Coupe sans image libre', position: 'Assis', repere: 'Repère', structures: ['Quatre'], image: null },
+      { n: 2, titre: 'Coupe sans image libre', position: 'Assis', repere: 'Repère', structures: ['Quatre'], image: null, sansImage: 'Aucune figure CC BY de cette coupe (test)' },
     ],
     pathologies: [
       { nom: 'Pathologie imagée', signes: ['Signe'], conduite: 'Conduite', gestes: ['geste-factice'], vignette: 'Vignette', image: { src, credit: 'Test', licence: 'CC0' } },
@@ -87,7 +87,7 @@ test('msk-export : un dessin identique est rendu une fois (verso de coupe-n et d
   assert.ok(img('msk-epaule-coupe-1-verso.jpg').equals(img('msk-epaule-coupe-1-structures-verso.jpg')), 'même verso, octet pour octet');
 });
 
-test('msk-export : une coupe sans image (absence motivée, image null) garde sa carte « coupe », sans rendu ni média, sans carte « structures »', (t) => {
+test('msk-export : une coupe sans image libre (image null + sansImage) garde sa carte « coupe » en texte seul, sans rendu ni média, sans carte « structures »', (t) => {
   const out = tmp(t, 'mx-'), d = tmp(t, 'mx-pre-'), e = espion(d);
   const r = exporter(['epaule', '--out', out], [factice(d), e.pre]);
   assert.strictEqual(r.status, 0, r.stderr);

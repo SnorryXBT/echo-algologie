@@ -35,3 +35,20 @@ test('volet MSK : index, fiche épaule, région sans fiche, lien profond, naviga
     assert.deepStrictEqual(errs, []); assert.match(r, /non encore rédigée/);
   } finally { await browser.close(); }   // une assertion en échec ne doit pas laisser Chromium ouvert : node --test resterait bloqué
 });
+test('volet MSK : coupe sans image libre (image null + sansImage) — motif affiché à la place de la figure', async () => {
+  const browser = await chromium.launch({ ...(process.env.PW_CHROME ? { executablePath: process.env.PW_CHROME } : {}) });
+  try {
+    const page = await browser.newPage({ viewport: { width: 1300, height: 900 } });
+    const errs = await open(page, '#/msk');
+    await page.evaluate(() => {   // fiche factice enregistrée à chaud sur une région sans fiche du dépôt, puis route : indépendant du contenu de la fiche épaule
+      ECHO.registerMsk({ id: 'genou', titre: 'Genou (factice)', valide: false, protocole: [{ n: 1, titre: 'Coupe sans image libre', position: 'Décubitus, genou fléchi', repere: 'Patella',
+        structures: ['Tendon quadricipital'], image: null, sansImage: 'Europe PMC : aucune figure **CC BY** de cette coupe' }] });
+      location.hash = '#/msk/genou';
+    });
+    await page.waitForTimeout(400);
+    const r = await page.evaluate(() => { const s = document.getElementById('protocole'); return s ? { p: [...s.querySelectorAll('p.muted')].map(p => p.textContent), figs: s.querySelectorAll('.fig').length } : null; });
+    assert.deepStrictEqual(errs, []); assert.ok(r, 'section protocole rendue');
+    assert.deepStrictEqual(r.p, ['Pas d\'image libre — Europe PMC : aucune figure CC BY de cette coupe'], 'motif rendu par inline (Markdown), à la place de la figure');
+    assert.strictEqual(r.figs, 0, 'aucune figure');
+  } finally { await browser.close(); }
+});

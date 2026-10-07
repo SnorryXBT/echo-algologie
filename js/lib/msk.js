@@ -19,12 +19,14 @@ window.ECHO = window.ECHO || {};
     const f = Object.assign({ type: 'echo' }, img, { credit: [img.credit, img.licence].filter(Boolean).join(' — '), labels: (img.marqueurs || []).map(m => ({ x: m.x, y: m.y, dx: m.dx, dy: m.dy, text: `${m.n}. ${m.label}` })) });
     return `<div class="figs">${E.ui.figHtml(f, { id: 'msk-' + ficheId })}</div>`;
   }
+  /* coupe sans image libre (image null) : le motif sansImage (ce qui a été cherché, pourquoi rien ne convient) tient la place de la figure */
+  const sansImage = c => !c.image && c.sansImage ? `<p class="muted">Pas d'image libre — ${inline(c.sansImage)}</p>` : '';
   function protocoleHtml(f) {
     return (f.protocole || []).map(c => E.ui.card(`<h3>Coupe ${c.n} — ${inline(c.titre)}</h3>` + kv([
       ['Position', c.position && inline(c.position)], ['Repère', c.repere && inline(c.repere)],
       ['Structures attendues', c.structures && c.structures.length ? md(c.structures) : ''],
       ['Manœuvre dynamique', c.dynamique && md(c.dynamique)], ['Pièges', c.pieges && md(c.pieges)],
-    ]) + figure(c.image, f.id))).join('');
+    ]) + figure(c.image, f.id) + sansImage(c))).join('');
   }
   function sonoHtml(f) {
     if (!f.sonoanatomie || !f.sonoanatomie.length) return '';

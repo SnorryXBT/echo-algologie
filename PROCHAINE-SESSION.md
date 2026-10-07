@@ -119,10 +119,11 @@ Socle livré le 7 octobre (tâches 1 à 11 du plan `docs/superpowers/plans/2026-
    libre). Profil hors dépôt : paragraphe « Volet Diagnostic MSK » dans `~/.claude/profil/projets/echo-algologie.md`
    (spec, plan, dossier privé, skills, Avorio, état du pilote), puis commit et push dans `~/.claude` par chemin explicite —
    jamais `git -C ~/.claude add -A`, qui embarquerait les trois skills globales non suivies. Écarts à reporter dans la spec :
-   §1 critère compté en examens dictés sans aide cumulés, non « consécutifs » ; §5 marqueurs en fractions ; §6 cartes
-   des fiches gestes gardées dans le paquet, étiquette `niveau::` abandonnée ; §8 `/msk-cas` ne tire que pathologies et
-   pièges (les coupes sont des cibles sur patient). Mat tranche le refus de « depuis 3 ans » par le garde-fou (en-tête
-   de `scripts/lib/phi-guard.js`). Ensuite, une région tous les dix jours environ.
+   §1 critère compté en examens dictés sans aide cumulés, non « consécutifs » ; §5 marqueurs en fractions, et coupe sans
+   image libre en `image: null` + `sansImage` (motif) ; §6 cartes des fiches gestes gardées dans le paquet, étiquette
+   `niveau::` abandonnée ; §8 `/msk-cas` ne tire que pathologies et pièges (les coupes sont des cibles sur patient). Mat
+   tranche le refus de « depuis 3 ans » par le garde-fou (en-tête de `scripts/lib/phi-guard.js`). Ensuite, une région
+   tous les dix jours environ.
 
 À faire confirmer par Mat : les étiquettes de l'écho 1 du nerf axillaire (Abril-Serván 2026, fig. 3C) ont été déplacées
 le 7 octobre pour suivre la légende des auteurs (nerf sous la flèche, artère circonflexe postérieure sous la tête de

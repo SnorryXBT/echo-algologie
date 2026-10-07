@@ -66,6 +66,9 @@ function auditMsk(f, ctx) {
     if (!isStr(c.position) || !isStr(c.repere)) err(`${where} : position et repère obligatoires`);
     if (!arr(c.structures).length) err(`${where} : structures attendues vides`);
     checkImage(c.image, where);
+    /* exactement l'un des deux : image (règles ci-dessus) ou, faute d'image libre admissible, image null et sansImage = ce qui a été cherché, pourquoi rien ne convient */
+    if (c.image != null && c.sansImage != null) err(`${where} : image et sansImage à la fois`);
+    else if (c.image == null && !isStr(c.sansImage)) err(`${where} : ni image ni sansImage`);
   });
   arr(f.sonoanatomie).forEach((s, i) => {
     s = s || {};

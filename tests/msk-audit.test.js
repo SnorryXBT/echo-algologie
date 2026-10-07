@@ -164,3 +164,10 @@ test('le squelette épaule du dépôt passe l\'audit', () => {
   const E = loadEcho({ procedures: true, msk: true });
   assert.deepStrictEqual(auditMsk(E.msk.epaule, { root: ROOT, procedures: E.procedures, types: E.mskTypes }), []);
 });
+test('coupe du protocole : image ou sansImage, exactement l\'un des deux', () => {
+  const motif = 'Europe PMC (7 octobre 2026) : aucune figure CC BY, CC BY-NC ni CC0 de cette coupe ; seules des figures ND ou SA';
+  assert.deepStrictEqual(errsOf(f => { f.protocole[0].image = null; f.protocole[0].sansImage = motif; }), [], 'sansImage seul : conforme');
+  assert.deepStrictEqual(errsOf(f => { f.protocole[0].image = null; }), ['protocole coupe 1 : ni image ni sansImage']);
+  assert.deepStrictEqual(errsOf(f => { delete f.protocole[0].image; f.protocole[0].sansImage = '  '; }), ['protocole coupe 1 : ni image ni sansImage'], 'motif blanc : comme absent');
+  assert.deepStrictEqual(errsOf(f => { f.protocole[0].sansImage = motif; }), ['protocole coupe 1 : image et sansImage à la fois']);
+});
