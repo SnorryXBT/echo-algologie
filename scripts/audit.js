@@ -1,8 +1,8 @@
 /* Audit des fiches : champs obligatoires, longueur, scènes, références. node scripts/audit.js */
 const fs = require('fs'), path = require('path');
+// Manifest lu par le chargeur (plus de regex sur le texte de registry.js). À garder AVANT la ligne suivante : le chargeur pose global.window/ECHO, qu'elle remplace par l'ECHO minimal de l'audit.
+const manifest = require('./lib/load-echo').loadEcho({}).manifest.slice();
 global.window = {}; const E = global.ECHO = { procedures: {}, register(p) { E.procedures[p.id] = p; } };
-const reg = fs.readFileSync(path.join(__dirname, '../js/data/registry.js'), 'utf8');
-const manifest = [...reg.matchAll(/'([a-z0-9-]+)'/g)].map(m => m[1]).filter(x => !['socle','tete-cou','rachis-bassin','thorax','membre-sup','membre-inf','infiltration','bloc','interventionnel','dorsal','ventral','lateral','assis','semi-assis','procubitus','lineaire','convexe','hockey'].includes(x));
 const dir = path.join(__dirname, '../js/data/procedures');
 const errors = [];
 for (const f of fs.readdirSync(dir)) if (f.endsWith('.js')) { try { require(path.join(dir, f)); } catch (e) { errors.push(`${f}: ${e.message}`); } }

@@ -8,7 +8,7 @@ function loadEcho(opts, rootDir) {
   opts = Object.assign({ procedures: false, figures: false, anat: false, msk: false, md: false }, opts || {});
   const base = rootDir || ROOT, g = global;
   g.window = g; delete g.ECHO;
-  const run = f => { (0, eval)(fs.readFileSync(f, 'utf8')); };   // eval indirect : portée globale, comme un <script>
+  const run = f => { try { (0, eval)(fs.readFileSync(f, 'utf8')); } catch (e) { throw new Error(path.relative(base, f) + ' : ' + e.message, { cause: e }); } };   // eval indirect : portée globale, comme un <script> ; l'erreur nomme le fichier
   run(path.join(base, 'js/data/registry.js'));
   if (opts.md) run(path.join(base, 'js/lib/md.js'));
   for (const d of ['procedures', 'figures', 'anat', 'msk']) {
