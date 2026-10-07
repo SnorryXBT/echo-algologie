@@ -10,7 +10,9 @@ const ROOT = path.resolve(__dirname, '..');
 const H = process.env.ECHO_MSK_HOME;
 const cli = (...args) => spawnSync(process.execPath, [path.join(ROOT, 'scripts/msk-progress.js'), ...args], { env: process.env, encoding: 'utf8' });   // même dossier factice que le module
 const prives = () => ['logbook.md', 'questions.md', 'progression.json', 'config.json'].map(f => fs.readFileSync(path.join(H, f), 'utf8'));   // un refus ne doit rien y écrire
-const e = o => Object.assign({ date: '2026-10-13', region: 'epaule', items: [{ id: 'epaule.a01', trouve: true }] }, o);   // a01 trouvé : un refus tardif aurait déjà relevé son palier
+const e = o => Object.assign({ date: '2026-09-29', region: 'epaule', items: [{ id: 'epaule.a01', trouve: true }] }, o);   // a01 trouvé : un refus tardif aurait déjà relevé son palier
+const jour = n => new Date(Date.parse(P.today()) + n * 864e5).toISOString().slice(0, 10);   // aujourd'hui + n jours (calendrier local) : bornes de la période des dates de séance
+const osaus = () => fs.readdirSync(path.join(H, 'osaus')).sort().map(f => f + '\n' + fs.readFileSync(path.join(H, 'osaus', f), 'utf8'));   // bilans OSAUS : un refus ne doit rien y écrire
 test.after(() => { for (const d of [H, process.env.ECHO_MSK_ICLOUD]) fs.rmSync(d, { recursive: true, force: true }); });   // dossiers factices (jamais le vrai dossier privé), supprimés après le dernier test du fichier
 
 test('init : arborescence, config, fichiers vides ; idempotent', () => {
@@ -36,7 +38,7 @@ test('etat set / list : paliers, jamais d\'abaissement sans --force', () => {
 });
 test('logbook add : refus sans écriture, puis entrée légitime, états et questions', () => {
   const avant = fs.readFileSync(path.join(H, 'logbook.md'), 'utf8');
-  assert.throws(() => P.logbookAdd({ date: '2026-10-13', region: 'epaule', items: [{ id: 'epaule.s01', trouve: true }], commentaire: 'Mme Dupont très algique' }), P.GuardError);
+  assert.throws(() => P.logbookAdd({ date: '2026-09-29', region: 'epaule', items: [{ id: 'epaule.s01', trouve: true }], commentaire: 'Mme Dupont très algique' }), P.GuardError);
   assert.strictEqual(fs.readFileSync(path.join(H, 'logbook.md'), 'utf8'), avant, 'rien écrit après un refus');
   // entrée mal formée, ou identifiant hors des champs prévus : refus avant toute écriture
   const etatAvant = prives();
@@ -53,7 +55,7 @@ test('logbook add : refus sans écriture, puis entrée légitime, états et ques
   assert.throws(() => P.logbookAdd(e({ items: [{ id: 'epaule.s99', trouve: true }] })), /absent de la fiche epaule : epaule\.s99/);
   assert.throws(() => P.logbookAdd(e({ items: [{ id: 'epaule.a01', trouve: true, remarque: 'revu avec Mme Dupont' }] })), P.GuardError, 'garde-fou sur tout texte de l\'entrée');
   assert.throws(() => P.logbookAdd(e({ examens: 2, contexte: { lieu: 'habite à Bergerac' } })), P.GuardError);
-  let c = cli('logbook', 'add', '--json', JSON.stringify({ date: '2026-10-13', region: 'epaule', items: [{ libelle: 'Mme Dupont' }] }));
+  let c = cli('logbook', 'add', '--json', JSON.stringify({ date: '2026-09-29', region: 'epaule', items: [{ libelle: 'Mme Dupont' }] }));
   assert.strictEqual(c.status, 2, 'code 2 : refus du garde-fou'); assert.match(c.stderr, /^REFUS — données patient détectées : civilité suivie d'un nom/);
   c = cli('logbook', 'add', '--json', JSON.stringify(e({ region: 'nez' })));
   assert.strictEqual(c.status, 1, 'code 1 : erreur'); assert.match(c.stderr, /^ERREUR — région inconnue : nez/);
@@ -61,24 +63,24 @@ test('logbook add : refus sans écriture, puis entrée légitime, états et ques
   // ordre des écritures de l'entrée légitime : logbook.md, puis questions.md, puis progression.json en une seule écriture (fichier temporaire renommé)
   const ordre = [], ap = fs.appendFileSync, rn = fs.renameSync;
   fs.appendFileSync = (f, ...x) => { ordre.push(path.basename(f)); return ap(f, ...x); }; fs.renameSync = (s, d) => { ordre.push(path.basename(d)); return rn(s, d); };
-  const r = P.logbookAdd({ date: '2026-10-13', region: 'epaule', examens: 3, dictes_seul: 1, items: [{ id: 'epaule.s01', trouve: true, difficulte: 2 }, { id: 'epaule.c01', trouve: true, dicte_seul: true }, { libelle: 'infra-épineux en grand axe', trouve: false, difficulte: 3 }], questions: ['Comment dégager l\'infra-épineux ?'] });
+  const r = P.logbookAdd({ date: '2026-09-29', region: 'epaule', examens: 3, dictes_seul: 1, items: [{ id: 'epaule.s01', trouve: true, difficulte: 2 }, { id: 'epaule.c01', trouve: true, dicte_seul: true }, { libelle: 'infra-épineux en grand axe', trouve: false, difficulte: 3 }], questions: ['Comment dégager l\'infra-épineux ?'] });
   fs.appendFileSync = ap; fs.renameSync = rn;
   assert.deepStrictEqual(ordre, ['logbook.md', 'questions.md', 'progression.json']);
   assert.strictEqual(r.questions, 1);
   assert.deepStrictEqual(r.maj.map(m => [m.itemId, m.etat, m.inchange]), [['epaule.s01', 3, false], ['epaule.c01', 4, false]]);
   const log = fs.readFileSync(path.join(H, 'logbook.md'), 'utf8');
-  assert.match(log, /## 2026-10-13 — Épaule/); assert.match(log, /dictés sans aide : 1/); assert.match(log, /\(hors carte\) infra-épineux/);
+  assert.match(log, /## 2026-09-29 — Épaule/); assert.match(log, /dictés sans aide : 1/); assert.match(log, /\(hors carte\) infra-épineux/);
   const s01 = P.etatList('epaule').items.find(i => i.id === 'epaule.s01').libelle; assert.ok(log.includes(`\n- epaule.s01 ${s01} : trouvé, difficulté 2\n`), 'ligne d\'item : identifiant et libellé de la compétence');
   assert.strictEqual(P.etatList('epaule').items.find(i => i.id === 'epaule.s01').etat, 3);
   assert.strictEqual(P.etatList('epaule').items.find(i => i.id === 'epaule.c01').etat, 4);
-  assert.match(fs.readFileSync(path.join(H, 'questions.md'), 'utf8'), /- \[ \] 2026-10-13 \(epaule\) : Comment dégager/);
-  P.logbookAdd({ date: '2026-10-14', region: 'epaule', items: [{ id: 'epaule.s01', trouve: false }] });
+  assert.match(fs.readFileSync(path.join(H, 'questions.md'), 'utf8'), /- \[ \] 2026-09-29 \(epaule\) : Comment dégager/);
+  P.logbookAdd({ date: '2026-09-30', region: 'epaule', items: [{ id: 'epaule.s01', trouve: false }] });
   assert.strictEqual(P.etatList('epaule').items.find(i => i.id === 'epaule.s01').etat, 3, 'un « non trouvé » n\'abaisse pas le palier');
   assert.throws(() => P.logbookAdd({ region: 'epaule', items: [] }), /date/);
   // région sans fiche (genou : sa question ne compte pas pour l'épaule) ; un texte multiligne est écrit sur une ligne, sans fausse entrée dans questions.md
-  P.logbookAdd({ date: '2026-10-15', region: 'genou', commentaire: 'note\nsur deux lignes', questions: ['Récessus supra-patellaire :\n- [ ] quelle profondeur ?'] });
-  assert.match(fs.readFileSync(path.join(H, 'logbook.md'), 'utf8'), /\n## 2026-10-15 — Genou\n- Note : note sur deux lignes\n/);
-  assert.match(fs.readFileSync(path.join(H, 'questions.md'), 'utf8'), /\n- \[ \] 2026-10-15 \(genou\) : Récessus supra-patellaire : - \[ \] quelle profondeur \?\n$/);
+  P.logbookAdd({ date: '2026-10-01', region: 'genou', commentaire: 'note\nsur deux lignes', questions: ['Récessus supra-patellaire :\n- [ ] quelle profondeur ?'] });
+  assert.match(fs.readFileSync(path.join(H, 'logbook.md'), 'utf8'), /\n## 2026-10-01 — Genou\n- Note : note sur deux lignes\n/);
+  assert.match(fs.readFileSync(path.join(H, 'questions.md'), 'utf8'), /\n- \[ \] 2026-10-01 \(genou\) : Récessus supra-patellaire : - \[ \] quelle profondeur \?\n$/);
   assert.deepStrictEqual(fs.readdirSync(H).filter(x => x.endsWith('.part')), [], 'écritures JSON par fichier temporaire renommé : aucun reste');
 });
 test('garde-fou d\'abord, sur le texte tel qu\'il sera écrit et tel que dicté : refus (code 2), rien n\'est écrit', () => {
@@ -95,25 +97,32 @@ test('garde-fou d\'abord, sur le texte tel qu\'il sera écrit et tel que dicté 
   assert.strictEqual(c.status, 2, c.stderr); assert.match(c.stderr, /^REFUS — données patient détectées : courriel ou téléphone \(« 06 12 34 56 78 »\)/);
   assert.deepStrictEqual(prives(), avant, 'aucun refus n\'a écrit quoi que ce soit');
 });
-test('forme : entiers bornés, date réelle, trouve obligatoire, dicté seul seulement si trouvé', () => {
+test('forme : entiers bornés, date réelle et dans la période, trouve obligatoire, dicté seul seulement si trouvé', () => {
   const avant = prives();
   const cas = [
     [{ examens: 185037512345678 }, /^examens : entier de 0 à 200/],   // un numéro en nombre échappe au garde-fou, qui ne lit que les textes
     [{ examens: 201 }, /^examens : entier de 0 à 200/], [{ examens: 3, dictes_seul: 2.5 }, /^dictes_seul : entier de 0 à 200/],
     [{ items: [{ id: 'epaule.a01', trouve: true, difficulte: 19560312 }] }, /^difficulte : entier de 1 à 3/], [{ items: [{ id: 'epaule.a01', trouve: true, difficulte: 0 }] }, /^difficulte : entier de 1 à 3/],
     [{ date: '2026-13-45' }, /date/], [{ date: '2026-02-30' }, /date/],
+    [{ date: '1956-03-12' }, /^date hors période : 1956-03-12 \(attendue du 2026-01-01 au \d{4}-\d{2}-\d{2}\)$/],   // une date de naissance n'est pas une date de séance
+    [{ date: '2025-12-31' }, /^date hors période : 2025-12-31 /], [{ date: jour(3) }, new RegExp(`^date hors période : ${jour(3)} \\(attendue du 2026-01-01 au ${jour(2)}\\)$`)],
     [{ items: [{ id: 'epaule.a01' }] }, /^trouve : booléen obligatoire/], [{ items: [{ id: 'epaule.a01', trouve: false, dicte_seul: true }] }, /^dicte_seul : seulement pour une structure trouvée/],
   ];
   const rates = cas.filter(([o, re]) => { try { P.logbookAdd(e(o)); return true; } catch (err) { return !re.test(err.message); } }).map(([o]) => JSON.stringify(o));
   assert.deepStrictEqual(rates, [], 'entrées acceptées ou refusées pour une autre raison');
   assert.deepStrictEqual(prives(), avant, 'aucun refus n\'a écrit quoi que ce soit');
 });
+test('date de séance : du 2026-01-01 à aujourd\'hui + 2 jours, bornes comprises', () => {
+  for (const date of ['2026-01-01', jour(2)]) P.logbookAdd({ date, region: 'hanche' });
+  const log = fs.readFileSync(path.join(H, 'logbook.md'), 'utf8');
+  for (const date of ['2026-01-01', jour(2)]) assert.ok(log.includes(`\n## ${date} — Hanche\n`), date);
+});
 test('une seule entrée par jour et par région (le critère de passage additionne les blocs)', () => {
   const avant = prives();
-  assert.throws(() => P.logbookAdd({ date: '2026-10-13', region: 'epaule', items: [{ id: 'epaule.a01', trouve: true }] }), { message: 'une entrée existe déjà pour 2026-10-13 — Épaule ; corriger le logbook à la main ou utiliser une autre date' });
+  assert.throws(() => P.logbookAdd({ date: '2026-09-29', region: 'epaule', items: [{ id: 'epaule.a01', trouve: true }] }), { message: 'une entrée existe déjà pour 2026-09-29 — Épaule ; corriger le logbook à la main ou utiliser une autre date' });
   assert.deepStrictEqual(prives(), avant, 'rien écrit');
-  P.logbookAdd({ date: '2026-10-13', region: 'genou' });   // même jour, autre région : accepté
-  assert.match(fs.readFileSync(path.join(H, 'logbook.md'), 'utf8'), /\n## 2026-10-13 — Genou\n$/);
+  P.logbookAdd({ date: '2026-09-29', region: 'genou' });   // même jour, autre région : accepté
+  assert.match(fs.readFileSync(path.join(H, 'logbook.md'), 'utf8'), /\n## 2026-09-29 — Genou\n$/);
 });
 test('etat set : seulement un identifiant de la fiche de sa région', () => {
   const avant = prives(), rates = [];
@@ -156,7 +165,7 @@ test('CLI : chaque erreur d\'entrée nomme son option ; une région inconnue lis
   fs.writeFileSync(f, '{"date":');
   const rates = [];
   for (const [args, re] of [
-    [['logbook', 'add', '--json', '{"date":"2026-10-13",'], /^ERREUR — --json : JSON invalide — /], [['logbook', 'add', '--json'], /^ERREUR — --json : JSON manquant/],
+    [['logbook', 'add', '--json', '{"date":"2026-09-29",'], /^ERREUR — --json : JSON invalide — /], [['logbook', 'add', '--json'], /^ERREUR — --json : JSON manquant/],
     [['logbook', 'add', '--file'], /^ERREUR — --file : chemin manquant/], [['logbook', 'add', '--file', path.join(H, 'absent.json')], /^ERREUR — --file : fichier introuvable : /],
     [['logbook', 'add', '--file', f], /^ERREUR — --file : JSON invalide — /], [['logbook', 'add'], /^ERREUR — logbook add : --json '<entrée>' ou --file <entrée\.json>/],
     [['init', '--repo'], /^ERREUR — --repo : chemin manquant/],
@@ -165,4 +174,99 @@ test('CLI : chaque erreur d\'entrée nomme son option ; une région inconnue lis
   fs.rmSync(f);
   assert.deepStrictEqual(rates, []);
   assert.deepStrictEqual(prives(), avant);
+});
+
+// ---- tâche 9c : tests du brief (dates de séance ramenées dans la période : 2026-10-13 → 2026-09-29, 2026-10-15 → 2026-10-01) ----
+test('plan : mode fiche sur l\'épaule, cibles et cas triés par palier, audio et anki détectés', () => {
+  fs.writeFileSync(path.join(H, 'audio/epaule-socle-deep-dive.mp3'), ''); fs.writeFileSync(path.join(H, 'audio/genou-x.mp3'), '');
+  const cfg = JSON.parse(fs.readFileSync(path.join(H, 'config.json'), 'utf8')); fs.writeFileSync(path.join(cfg.transfert_anki, 'msk-epaule.apkg'), '');
+  const p = P.plan('epaule');
+  assert.strictEqual(p.mode, 'fiche'); assert.ok(p.cibles.length <= 3); assert.ok(p.cas.length >= 1 && p.cas.length <= 2);
+  assert.ok(p.cibles.every(c => ['coupe', 'structure', 'dynamique'].includes(c.type) && c.etat <= 2));
+  assert.ok(!p.cibles.some(c => c.id === 'epaule.c01'), 'c01 est au palier 4 : pas une cible');
+  assert.deepStrictEqual(p.audios.map(a => a.fichier), ['epaule-socle-deep-dive.mp3']); assert.ok(p.anki && p.anki.fichier.endsWith('msk-epaule.apkg'));
+  assert.strictEqual(p.questions.length, 1); assert.strictEqual(p.critere.atteint, false); assert.strictEqual(p.critere.dictes_sans_aide, 1);
+  assert.strictEqual(P.plan('genou').mode, 'socle');
+});
+test('bilan OSAUS : fichier mensuel, critère de passage', () => {
+  assert.throws(() => P.bilan('epaule', [1, 2, 3], ''), /sept notes/);
+  const b = P.bilan('epaule', [4, 4, 3, 4, 5, 4, 3], 'premier bilan');
+  const f = path.join(H, 'osaus', b.fichier); assert.ok(fs.existsSync(f));
+  assert.deepStrictEqual(JSON.parse(fs.readFileSync(f, 'utf8')).epaule.items, [4, 4, 3, 4, 5, 4, 3]);
+  assert.strictEqual(b.critere.atteint, false, '10 examens dictés requis'); assert.deepStrictEqual(b.critere.osaus.items.slice(3, 6), [4, 5, 4]);
+});
+test('cas : pick (question d\'abord, puis item), record', () => {
+  let c = P.casPick('epaule'); assert.strictEqual(c.source, 'question'); assert.match(c.texte, /infra-épineux/);
+  fs.writeFileSync(path.join(H, 'questions.md'), '# Questions ouvertes\n\n- [x] 2026-09-29 (epaule) : traitée\n');
+  c = P.casPick('epaule'); assert.strictEqual(c.source, 'item'); assert.ok(['pathologie', 'piege'].includes(c.item.type));
+  if (c.item.type === 'pathologie') { assert.ok(c.pathologie && c.pathologie.nom); }
+  const r = P.casRecord(c.item.id, 'su', 'cas/2026-10-01-test.md'); assert.strictEqual(r.etat, 2);
+  assert.strictEqual(P.casRecord(c.item.id, 'pas-su').etat, 2, 'pas-su ne change pas le palier');
+  assert.throws(() => P.casRecord(c.item.id, 'bof'), /su ou pas-su/);
+});
+test('audio ecoute', () => { assert.strictEqual(P.audioEcoute('epaule-socle-deep-dive.mp3').ecoute.length, 10); assert.ok(P.plan('epaule').audios[0].ecoute); });
+
+// ---- tâche 9c : ajustements du contrôleur et durcissements (état : c01 au palier 4, s01 au 3, p01 au 2 après « su », a01 au 0) ----
+test('textes libres hors logbook (source d\'etat set, fichier de cas, note de bilan, nom d\'épisode) : garde-fou d\'abord, refus (code 2), rien n\'est écrit', () => {
+  const avant = [prives(), osaus()];
+  const passes = [
+    () => P.etatSet('epaule.p01', 3, 'Mme Dupont 06 12 34 56 78'), () => P.casRecord('epaule.p01', 'su', 'cas/Mme Dupont.md'),
+    () => P.casRecord('epaule.p01', 'pas-su', 'cas/1956-03-12-epaule.p01.md'),   // seule une date de séance (période du logbook), en tête du nom du fichier de cas, échappe au garde-fou
+    () => P.bilan('epaule', [4, 4, 3, 4, 5, 4, 3], 'revu avec\nMme Dupont'), () => P.audioEcoute('Mme Dupont.mp3'),
+  ].filter(f => { try { f(); return true; } catch (err) { return !(err instanceof P.GuardError); } }).map(String);
+  assert.deepStrictEqual(passes, [], 'appels non refusés par le garde-fou');
+  const c = cli('etat', 'set', 'epaule.p01', '3', 'Mme Dupont 06 12 34 56 78');
+  assert.strictEqual(c.status, 2, c.stderr); assert.strictEqual(c.stderr, 'REFUS — données patient détectées : civilité suivie d\'un nom (« Mme Dupont ») ; courriel ou téléphone (« 06 12 34 56 78 »)\n');
+  assert.deepStrictEqual([prives(), osaus()], avant, 'aucun refus n\'a écrit quoi que ce soit');
+});
+test('validation avant toute écriture : cas record, cas pick, audio ecoute, bilan ; options du CLI nommées', () => {
+  const avant = [prives(), osaus()], rates = [], q = path.join(H, 'questions.md'), q0 = fs.readFileSync(q, 'utf8');
+  fs.appendFileSync(q, '- [ ] 2026-09-29 (nez) : question ajoutée à la main pour une région inventée\n');   // cas pick vérifie la région avant de lire les questions
+  for (const [f, re] of [
+    [() => P.casRecord('epaule.p99', 'pas-su'), /^identifiant absent de la fiche epaule : epaule\.p99$/],   // « pas su » sur un identifiant hors fiche : pas d'entrée fantôme
+    [() => P.casRecord('nez.p01', 'pas-su'), /^région inconnue : nez/], [() => P.casRecord('epaule.p01', 'peut-être'), /^verdict : su ou pas-su$/],
+    [() => P.casRecord('epaule.p01', 'su', 42), /^fichier : chemin attendu$/], [() => P.casPick('nez'), /^région inconnue : nez/],
+    [() => P.audioEcoute(), /^audio ecoute : nom de l'épisode manquant \(épisodes : epaule-socle-deep-dive\.mp3, genou-x\.mp3\)$/],
+    [() => P.audioEcoute('epaule-deep-dive.mp3'), /^épisode introuvable dans .+ : epaule-deep-dive\.mp3 \(épisodes : /], [() => P.audioEcoute('../config.json'), /^épisode introuvable dans /],
+    [() => P.bilan('nez', [4, 4, 3, 4, 5, 4, 3], ''), /^région inconnue : nez/], [() => P.bilan('epaule', [4, 4, 3, 4, 5, 4, 3], 7), /^note : texte attendu$/],
+  ]) { try { f(); rates.push(String(f) + ' accepté'); } catch (err) { if (!re.test(err.message)) rates.push(String(f) + ' : ' + err.message); } }
+  fs.writeFileSync(q, q0);
+  for (const [args, re] of [
+    [['bilan', 'epaule', '--osaus'], /^ERREUR — OSAUS : sept notes entières de 1 à 5/], [['bilan', 'epaule', '--osaus', '4,4,3,4,5,4,3', '--note'], /^ERREUR — --note : texte manquant\n$/],
+    [['cas', 'record', 'epaule.p01', 'su', '--fichier'], /^ERREUR — --fichier : chemin manquant\n$/], [['audio', 'ecoute'], /^ERREUR — audio ecoute : nom de l'épisode manquant/],
+    [['plan', 'nez'], /^ERREUR — région inconnue : nez/],
+  ]) { const c = cli(...args); if (c.status !== 1 || !re.test(c.stderr)) rates.push(`${args.join(' ')} → ${c.status} ${c.stderr.trim()}`); }
+  assert.deepStrictEqual(rates, []);
+  assert.deepStrictEqual([prives(), osaus()], avant, 'rien écrit');
+});
+test('critère de passage : 10 examens dictés sans aide (ligne Examens des blocs de la région) et OSAUS ≥ 4 aux items 4, 5, 6 du dernier bilan', () => {
+  const crit = () => P.plan('epaule').critere;
+  assert.strictEqual(crit().dictes_sans_aide, 1);
+  P.logbookAdd({ date: '2026-09-28', region: 'genou', examens: 5, dictes_seul: 5 });   // autre région : ne compte pas
+  P.logbookAdd({ date: '2026-09-27', region: 'epaule', commentaire: 'objectif : dictés sans aide : 50' });   // texte libre : ne compte pas
+  P.logbookAdd({ date: '2026-09-28', region: 'epaule', examens: 9, dictes_seul: 8 });
+  assert.deepStrictEqual([crit().dictes_sans_aide, crit().atteint], [9, false]);
+  P.logbookAdd({ date: '2026-09-26', region: 'epaule', examens: 2, dictes_seul: 1 });
+  let c = crit(); assert.deepStrictEqual([c.dictes_sans_aide, c.atteint, c.osaus.items], [10, true, [4, 4, 3, 4, 5, 4, 3]], '10 dictés, et 4, 5, 4 aux items 4 à 6');
+  const b = P.bilan('epaule', [5, 5, 5, 5, 5, 3, 5], 'documentation\nà reprendre');   // documentation (item 6) sous 4 ; le bilan du mois est remplacé
+  assert.deepStrictEqual([b.critere.dictes_sans_aide, b.critere.atteint, b.paliers.reduce((a, n) => a + n)], [10, false, 5]);
+  const o = JSON.parse(fs.readFileSync(path.join(H, 'osaus', b.fichier), 'utf8')).epaule;
+  assert.deepStrictEqual([o.items, o.note, o.date], [[5, 5, 5, 5, 5, 3, 5], 'documentation à reprendre', P.today()]);
+  assert.match(o.grille, /^OSAUS \(Tolsgaard et coll\., 2013\) : indication, appareil, image, examen systématique, interprétation, documentation, décision/);
+  for (const f of ['brouillon.json', '2026-09.json']) fs.writeFileSync(path.join(H, 'osaus', f), JSON.stringify({ epaule: { items: [5, 5, 5, 5, 5, 5, 5] } }));   // hors AAAA-MM.json, et mois antérieur : le dernier bilan l'emporte
+  c = crit(); assert.deepStrictEqual([c.osaus.fichier, c.atteint], [b.fichier, false]);
+  assert.strictEqual(P.plan('genou').critere.osaus, null);
+});
+test('tri déterministe des cibles et des cas : palier le plus bas d\'abord, puis ordre de la fiche ; mode socle complet', () => {
+  const p = P.plan('epaule');
+  assert.deepStrictEqual([p.cibles, p.cas.map(c => [c.id, c.etat])], [[], [['epaule.a01', 0], ['epaule.p01', 2]]], 'squelette : c01 (4) et s01 (3) au-dessus du palier 2 ; a01 (0) avant p01 (2)');
+  assert.strictEqual(p.anki.modifie, P.today(), 'date locale du paquet');
+  const c = P.casPick('epaule'); assert.deepStrictEqual([c.source, c.item.id, c.etat, c.image, c.pathologie], ['item', 'epaule.a01', 0, null, null]);
+  P.etatSet('epaule.c01', 2, 'test', true); P.etatSet('epaule.s01', 1, 'test', true);
+  assert.deepStrictEqual(P.plan('epaule').cibles.map(c => [c.id, c.etat]), [['epaule.s01', 1], ['epaule.c01', 2]]);
+  P.etatSet('epaule.c01', 1, 'test', true);
+  assert.deepStrictEqual(P.plan('epaule').cibles.map(c => c.id), ['epaule.c01', 'epaule.s01'], 'à palier égal, ordre de la fiche');
+  const g = P.plan('genou');
+  assert.deepStrictEqual([g.mode, g.cibles, g.cas, g.paliers, g.audios.map(a => a.fichier), g.questions], ['socle', [], [], [0, 0, 0, 0, 0], ['genou-x.mp3'], []]);
+  assert.deepStrictEqual(g.critere, { dictes_sans_aide: 5, osaus: null, atteint: false });
 });

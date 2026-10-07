@@ -10,10 +10,17 @@
    init --repo sur un dossier déjà initialisé : seul repo change dans config.json (dépôt déplacé) ; toute commande qui lit les fiches vérifie ce dépôt.
    etat set : identifiant d'une compétence de la fiche de sa région ; un palier ne redescend qu'avec --force.
    Entrée : { date: 'AAAA-MM-JJ', region, examens?, dictes_seul?, items?: [{ id? | libelle?, trouve, difficulte?, dicte_seul? }], questions?: [textes], commentaire? }
-   D'abord le garde-fou, sur tout texte de l'entrée sauf la date, tel qu'il sera écrit (sur une ligne) et tel que dicté. Puis la forme : date réelle,
-   region parmi ECHO.mskRegions, une seule entrée par jour et par région, examens et dictes_seul entiers de 0 à 200 (dictes_seul ≤ examens),
+   D'abord le garde-fou, sur tout texte de l'entrée sauf la date, tel qu'il sera écrit (sur une ligne) et tel que dicté. Puis la forme : date réelle, du 2026-01-01
+   à aujourd'hui + 2 jours, region parmi ECHO.mskRegions, une seule entrée par jour et par région, examens et dictes_seul entiers de 0 à 200 (dictes_seul ≤ examens),
    id parmi les compétences de la fiche, trouve booléen obligatoire, dicte_seul seulement si trouvé, difficulte entier de 1 à 3.
    Puis les écritures : logbook.md, questions.md, et progression.json en une fois.
+   plan : cibles (coupe, structure, dynamique ; trois au plus) et cas (pathologie, piège ; deux au plus) au palier ≤ 2, le plus bas d'abord puis dans l'ordre de la fiche ;
+   région sans fiche MSK : mode socle. Critère de passage (spec §1) : 10 examens dictés sans aide (lignes « Examens » du logbook) et OSAUS ≥ 4 aux items 4, 5 et 6 du dernier bilan.
+   bilan : sept notes OSAUS de 1 à 5 dans osaus/AAAA-MM.json (un bilan par région et par mois : le dernier remplace le précédent).
+   cas pick : la plus ancienne question ouverte de la région, sinon la pathologie ou le piège au palier le plus bas. cas record : su → palier 2
+   (jamais d'abaissement), pas-su → palier inchangé, tentative notée. audio ecoute : un épisode présent dans audio/ du dossier privé.
+   Textes libres des autres commandes (source d'etat set, --note, --fichier, nom d'épisode) : même garde-fou, avant toute écriture ; seule la date de séance
+   en tête du nom du fichier de cas (cas/AAAA-MM-JJ-<item>.md) y échappe.
    Sortie JSON (init : lignes de texte ; commande inconnue : cet usage) ; erreur ou refus : une ligne sur stderr.
    Codes : 0 ok · 1 erreur · 2 refus du garde-fou données patient. Entrée invalide (1) ou refusée (2) : rien n'est écrit.
    Transferts vers l'iPhone (Anki, audio), créés par init : $ECHO_MSK_ICLOUD ou ~/Library/Mobile Documents/com~apple~CloudDocs/Écho MSK.
@@ -24,7 +31,8 @@ const { loadEcho } = require('./lib/load-echo');
 const slug = require('./lib/slug');
 const HOME = () => process.env.ECHO_MSK_HOME || path.join(os.homedir(), 'Claude/Projects/Écho MSK');
 const ICLOUD = () => process.env.ECHO_MSK_ICLOUD || path.join(os.homedir(), 'Library/Mobile Documents/com~apple~CloudDocs/Écho MSK');
-const today = () => { const d = new Date(); return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10); };   // calendrier local (Europe/Paris), pas UTC : passé minuit, c'est le lendemain
+const jourLocal = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);   // calendrier local (Europe/Paris), pas UTC : passé minuit, c'est le lendemain
+const today = () => jourLocal(new Date());
 const P = f => path.join(HOME(), f);
 const readJson = (f, d) => {   // absent : la valeur par défaut, sinon une erreur qui nomme le fichier ; JSON illisible : erreur qui nomme le fichier
   if (!fs.existsSync(f)) { if (d !== undefined) return d; throw new Error('fichier introuvable : ' + f); }
@@ -64,6 +72,10 @@ const fiche = region => {   // région absente de ECHO.mskRegions : erreur, quel
   return { f: E.msk[region], nom: r.nom };
 };
 const competence = (f, id) => ((f || {}).competences || []).some(c => c.id === id);
+const idDeFiche = itemId => {   // identifiant <region>.<lettre><nn> d'une compétence de la fiche de sa région : jamais d'entrée fantôme dans progression.json
+  const m = ID_RE.exec(itemId || ''); if (!m) throw new Error('identifiant invalide : ' + itemId);
+  if (!competence(fiche(m[1]).f, itemId)) throw new Error(`identifiant absent de la fiche ${m[1]} : ${itemId}`);
+};
 const relever = (pr, itemId, palier, source, force) => {   // en mémoire ; un palier ne redescend jamais sans force
   const it = pr.items[itemId] || { etat: 0, maj: null, historique: [] };
   if (palier < it.etat && !force) return { itemId, etat: it.etat, inchange: true };
@@ -72,9 +84,10 @@ const relever = (pr, itemId, palier, source, force) => {   // en mémoire ; un p
 };
 
 function etatSet(itemId, palier, source, force) {
-  const m = ID_RE.exec(itemId || ''); if (!m) throw new Error('identifiant invalide : ' + itemId);
+  garde([source]);   // la source est écrite dans progression.json : garde-fou d'abord (refus, code 2), comme le logbook
+  if (source != null && typeof source !== 'string') throw new Error('source : texte attendu');
+  idDeFiche(itemId);
   palier = Number(palier); if (!Number.isInteger(palier) || palier < 0 || palier > 4) throw new Error('palier : entier de 0 à 4');
-  if (!competence(fiche(m[1]).f, itemId)) throw new Error(`identifiant absent de la fiche ${m[1]} : ${itemId}`);
   const pr = progression(), r = relever(pr, itemId, palier, source, force);
   if (!r.inchange) writeJson(P('progression.json'), pr);
   return r;
@@ -87,18 +100,24 @@ function etatList(region) {
 }
 const textes = v => typeof v === 'string' ? [v] : v && typeof v === 'object' ? Object.values(v).flatMap(textes) : [];   // toutes les chaînes d'une valeur JSON, à toute profondeur
 const uneLigne = s => s.replace(/\s+/g, ' ').trim();   // un retour à la ligne dans un texte fabriquerait une fausse ligne de logbook.md ou de questions.md
+const garde = t => {   // garde-fou données patient avant toute écriture, sur des textes libres tels que dictés et tels qu'écrits (sur une ligne) : refus = GuardError (code 2)
+  const dictee = t.filter(x => typeof x === 'string'), ecrit = dictee.map(uneLigne);
+  const hits = verifierTextes(ecrit.concat(dictee.filter((x, i) => x !== ecrit[i]))).filter((h, i, l) => l.findIndex(y => y.motif === h.motif && y.extrait === h.extrait) === i);
+  if (hits.length) throw new GuardError(hits);
+};
 const entier = (v, champ, min, max) => { if (v != null && !(Number.isInteger(v) && v >= min && v <= max)) throw new Error(`${champ} : entier de ${min} à ${max} attendu`); };
 const AAAAMMJJ = /^\d{4}-\d{2}-\d{2}$/;
 const dateReelle = d => typeof d === 'string' && AAAAMMJJ.test(d) && !isNaN(new Date(d)) && new Date(d).toISOString().startsWith(d);   // « 2026-02-30 » deviendrait le 2 mars
+const DEBUT = '2026-01-01', finPeriode = () => new Date(Date.parse(today()) + 2 * 864e5).toISOString().slice(0, 10);   // période d'une date de séance : du début du volet MSK à aujourd'hui + 2 jours
+const datePlausible = d => dateReelle(d) && d >= DEBUT && d <= finPeriode();   // 1956-03-12 est une date de naissance, pas une séance
 function logbookAdd(entry) {
   if (!entry || typeof entry !== 'object' || Array.isArray(entry)) throw new Error('entrée : objet { date, region, … } attendu');
   // 1. Le garde-fou d'abord, sur tout texte de l'entrée quel que soit le champ (un identifiant dans un champ mal formé est un refus, code 2) : tel qu'il sera
   //    écrit, sur une ligne, et tel que dicté (un retour à la ligne y marque un début de phrase). Seule une date de forme AAAA-MM-JJ y échappe (toute date ISO serait refusée).
-  const { date, ...reste } = entry, dictee = textes(typeof date === 'string' && AAAAMMJJ.test(date) ? reste : entry), ecrit = dictee.map(uneLigne);
-  const hits = verifierTextes(ecrit.concat(dictee.filter((t, i) => t !== ecrit[i]))).filter((h, i, l) => l.findIndex(x => x.motif === h.motif && x.extrait === h.extrait) === i);
-  if (hits.length) throw new GuardError(hits);
+  const { date, ...reste } = entry; garde(textes(typeof date === 'string' && AAAAMMJJ.test(date) ? reste : entry));
   // 2. La forme, avant toute écriture.
   if (!dateReelle(entry.date) || !entry.region) throw new Error('entrée : date (AAAA-MM-JJ, date réelle) et region obligatoires');
+  if (!datePlausible(entry.date)) throw new Error(`date hors période : ${entry.date} (attendue du ${DEBUT} au ${finPeriode()})`);
   const { f, nom } = fiche(entry.region), lib = id => (((f || {}).competences || []).find(c => c.id === id) || {}).libelle || '';
   if ([entry.items, entry.questions].some(x => x != null && !Array.isArray(x))) throw new Error('items et questions doivent être des tableaux');
   entier(entry.examens, 'examens', 0, 200); entier(entry.dictes_seul, 'dictes_seul', 0, 200);
@@ -133,10 +152,71 @@ function logbookAdd(entry) {
   return { lignes: lignes.length - 1, maj, questions: questions.length };
 }
 
-/* ---- tâche 9c : plan, bilan, cas, audio (insérer ici) ---- */
-/* Bouchons jusqu'à la tâche 9c, qui remplace ces deux lignes par ses fonctions : le switch du CLI et module.exports les nomment déjà. */
-const tache9c = () => { throw new Error('disponible à la tâche 9c'); };
-const plan = tache9c, bilan = tache9c, casPick = tache9c, casRecord = tache9c, audioEcoute = tache9c;
+/* ---- tâche 9c : plan de semaine, bilan OSAUS, cas raisonnés, audio écouté ---- */
+const AUDIO = /\.(mp3|m4a|wav)$/i;
+const episodes = () => fs.existsSync(P('audio')) ? fs.readdirSync(P('audio')).filter(x => AUDIO.test(x)).sort() : [];   // épisodes du dossier privé (audio/), triés
+const questionsOuvertes = () => fs.existsSync(P('questions.md')) ? fs.readFileSync(P('questions.md'), 'utf8').split('\n').filter(l => l.startsWith('- [ ] ')).map(l => l.slice(6)) : [];
+const parPalier = (f, pr, types) => {   // compétences des types demandés, palier le plus bas d'abord puis ordre de la fiche (tri déterministe), chacune avec son palier
+  const etat = id => (pr.items[id] || { etat: 0 }).etat;
+  return (f.competences || []).map((c, i) => ({ c, i })).filter(x => types.includes(x.c.type)).sort((a, b) => etat(a.c.id) - etat(b.c.id) || a.i - b.i).map(x => Object.assign({ etat: etat(x.c.id) }, x.c));
+};
+/* critère de passage à la région suivante (spec §1) : 10 examens dictés sans aide, OSAUS ≥ 4 aux items 4, 5 et 6 (examen systématique, interprétation,
+   documentation) du dernier bilan. Dictés : la ligne « - Examens : n ; dictés sans aide : k » des blocs « ## AAAA-MM-JJ — <nom> » de la région, et elle seule
+   (un texte libre qui cite « dictés sans aide : 50 » ne compte pas). Dernier bilan : le plus récent des osaus/AAAA-MM.json qui note la région. */
+function critere(region, nom) {
+  const log = fs.existsSync(P('logbook.md')) ? fs.readFileSync(P('logbook.md'), 'utf8') : '';
+  const dictes = log.split(/\n(?=## )/).filter(b => (/^## \d{4}-\d{2}-\d{2} — (.+)$/.exec(b.split('\n')[0].trimEnd()) || [])[1] === nom)
+    .reduce((n, b) => n + Number((/^- Examens : \d+ ; dictés sans aide : (\d+)$/m.exec(b) || [0, 0])[1]), 0);
+  const files = fs.existsSync(P('osaus')) ? fs.readdirSync(P('osaus')).filter(x => /^\d{4}-\d{2}\.json$/.test(x)).sort().reverse() : [];
+  let osaus = null; for (const x of files) { const o = readJson(P(path.join('osaus', x)), {}) || {}; if (o[region]) { osaus = Object.assign({ fichier: x }, o[region]); break; } }
+  return { dictes_sans_aide: dictes, osaus, atteint: dictes >= 10 && !!osaus && Array.isArray(osaus.items) && [3, 4, 5].every(i => osaus.items[i] >= 4) };
+}
+function plan(region) {
+  const cfg = config(), { f, nom } = fiche(region), pr = progression();
+  const audios = episodes().filter(x => x.startsWith(region + '-')).map(x => ({ fichier: x, ecoute: (pr.audio || {})[x] || null }));
+  const apkg = path.join(cfg.transfert_anki, `msk-${region}.apkg`), anki = fs.existsSync(apkg) ? { fichier: apkg, modifie: jourLocal(fs.statSync(apkg).mtime) } : null;
+  const questions = questionsOuvertes().filter(q => q.includes(`(${region})`)), paliers = etatList(region).paliers;
+  if (!f) return { mode: 'socle', region, nom, cibles: [], cas: [], audios, anki, questions, paliers, critere: critere(region, nom), note: `pas encore de fiche MSK pour ${nom} : plan socle — audio, cartes des fiches gestes, et trois cibles à choisir dans les sections Sono-anatomie de ces fiches` };
+  return { mode: 'fiche', region, nom, cibles: parPalier(f, pr, ['coupe', 'structure', 'dynamique']).filter(c => c.etat <= 2).slice(0, 3), cas: parPalier(f, pr, ['pathologie', 'piege']).filter(c => c.etat <= 2).slice(0, 2), audios, anki, questions, paliers, critere: critere(region, nom) };
+}
+function bilan(region, items, note) {
+  garde([note]);   // la note est écrite dans osaus/AAAA-MM.json : garde-fou d'abord (spec §12)
+  if (!Array.isArray(items) || items.length !== 7 || items.some(n => !Number.isInteger(n) || n < 1 || n > 5)) throw new Error('OSAUS : sept notes entières de 1 à 5 (indication, appareil, image, examen systématique, interprétation, documentation, décision)');
+  if (note != null && typeof note !== 'string') throw new Error('note : texte attendu');
+  const { nom } = fiche(region), jour = today(), fichier = jour.slice(0, 7) + '.json', f = P(path.join('osaus', fichier)), o = readJson(f, {}) || {};
+  o[region] = { items, note: uneLigne(note || ''), date: jour, grille: 'OSAUS (Tolsgaard et coll., 2013) : indication, appareil, image, examen systématique, interprétation, documentation, décision — libellés à reprendre de la publication au premier bilan' };
+  fs.mkdirSync(P('osaus'), { recursive: true }); writeJson(f, o);
+  return { fichier, critere: critere(region, nom), paliers: etatList(region).paliers };
+}
+function casPick(region) {
+  const cfg = config(), { f, nom } = fiche(region);   // région vérifiée d'abord, même si une question l'attend : rien n'est lu pour une région inventée
+  const q = questionsOuvertes().filter(x => x.includes(`(${region})`)); if (q.length) return { source: 'question', texte: q[0] };
+  if (!f) throw new Error(`aucun cas pour ${nom} : pas encore de fiche MSK ni de question ouverte`);
+  const c = parPalier(f, progression(), ['pathologie', 'piege'])[0];
+  if (!c) throw new Error('aucune compétence pathologie ou piège dans la fiche');
+  const { etat, ...item } = c, p = item.type === 'pathologie' ? (f.pathologies || []).find(x => slug(x.nom) === item.patho) || null : null;
+  const img = p && p.image && p.image.src ? path.join(cfg.repo, p.image.src) : null;
+  return { source: 'item', item, etat, image: img, vignette: p ? p.vignette || '' : '', pathologie: p ? { nom: p.nom, en: p.en, signes: p.signes, conduite: p.conduite, gestes: p.gestes || [] } : null };
+}
+const sansDateDeSeance = f => f.replace(/(^|\/)(\d{4}-\d{2}-\d{2})(?=[^/]*$)/, (m, sep, d) => datePlausible(d) ? sep : m);   // cas/<AAAA-MM-JJ>-<item>.md (spec §8) : la date de séance en tête du nom n'est pas une donnée patient ; toute autre date reste au garde-fou
+function casRecord(itemId, verdict, fichier) {
+  garde([typeof fichier === 'string' ? sansDateDeSeance(fichier) : fichier]);   // le chemin du fichier de cas est un texte libre : garde-fou d'abord
+  if (!['su', 'pas-su'].includes(verdict)) throw new Error('verdict : su ou pas-su');
+  if (fichier != null && typeof fichier !== 'string') throw new Error('fichier : chemin attendu');
+  if (verdict === 'su') return Object.assign(etatSet(itemId, 2, 'cas:su'), { fichier: fichier || null });   // palier 2, jamais d'abaissement (etatSet)
+  idDeFiche(itemId);   // pas su : palier inchangé, tentative notée dans l'historique, sur une compétence de la fiche seulement (pas d'entrée fantôme)
+  const pr = progression(), it = pr.items[itemId] || { etat: 0, maj: null, historique: [] };
+  it.historique.push([today(), it.etat, 'cas:pas-su']); pr.items[itemId] = it; writeJson(P('progression.json'), pr);
+  return { itemId, etat: it.etat, inchange: true, fichier: fichier || null };
+}
+function audioEcoute(fichier) {
+  garde([fichier]);   // le nom de l'épisode est écrit dans progression.json : garde-fou d'abord
+  config(); const liste = episodes(), dispo = `(épisodes : ${liste.join(', ') || 'aucun'})`;
+  if (typeof fichier !== 'string' || !fichier) throw new Error(`audio ecoute : nom de l'épisode manquant ${dispo}`);
+  if (!liste.includes(fichier)) throw new Error(`épisode introuvable dans ${P('audio')} : ${fichier} ${dispo}`);   // un nom mal tapé ne s'enregistre pas en silence
+  const pr = progression(); pr.audio = pr.audio || {}; pr.audio[fichier] = today(); writeJson(P('progression.json'), pr);
+  return { fichier, ecoute: pr.audio[fichier] };
+}
 
 const USAGE = fs.readFileSync(__filename, 'utf8').split('*/')[0].split('\n').slice(1).map(l => l.trim()).join('\n');
 if (require.main === module) {
@@ -162,9 +242,9 @@ if (require.main === module) {
       case 'etat list': out(etatList(a[2])); break;
       case 'logbook add': out(logbookAdd(entree())); break;
       case 'plan': out(plan(a[1])); break;
-      case 'bilan': out(bilan(a[1], opt('--osaus', '').split(',').map(Number), opt('--note', ''))); break;
+      case 'bilan': out(bilan(a[1], (opt('--osaus') || '').split(',').map(Number), a.includes('--note') ? valeur('--note', 'texte') : undefined)); break;   // --osaus absent ou vide : le message des sept notes
       case 'cas pick': out(casPick(a[2])); break;
-      case 'cas record': out(casRecord(a[2], a[3], opt('--fichier'))); break;
+      case 'cas record': out(casRecord(a[2], a[3], a.includes('--fichier') ? valeur('--fichier', 'chemin') : undefined)); break;
       case 'audio ecoute': out(audioEcoute(a[2])); break;
       default: console.log(USAGE); process.exit(1);
     }
