@@ -45,6 +45,8 @@
   Q('nerf-median-canal-carpien', 1, ['Plan oblique et abord distal propres aux auteurs, différents de la fiche (transversal, abord ulnaire) : garder cette planche, ou chercher une hydrodissection en coupe transversale ?']);
 
   /* ---- membre inférieur ---- */
+  /* hanche */
+  Q('bourse-trochanterienne-gtps', 1, ['La couche striée entre le fascia lata et la bandelette (y ≈ 260–390) : fibres superficielles du grand fessier (légende des auteurs, retenu) ou tenseur du fascia lata / aponévrose épaisse ?', 'La bande brillante oblique qui descend à gauche au-dessus du « GMx » des auteurs : face profonde de la bandelette / aponévrose glutéale (retenu) ou tendon postérieur du moyen fessier ?', 'Tendon du petit fessier : seul le cercle jaune est donné ; ses limites dessinées (coin sous l\'extrémité antérieure du moyen fessier, sur la pente antérieure) te conviennent-elles ?']);
             /* nerfs de la jambe */
               /* pied-cheville */
           Q('fasciite-plantaire', 0, ['Face profonde du fascia en aval de l\'insertion : sous la bande fibrillaire brillante (retenu, fascia fusiforme), ou sur la ligne très brillante 2 à 3 mm plus profonde ? C\'est l\'interface cible de la fiche.', 'Le relief brillant au bord antérieur de la tubérosité : face antérieure du calcanéus (retenu) ou enthésophyte ?']);

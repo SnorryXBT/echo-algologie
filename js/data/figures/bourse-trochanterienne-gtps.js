@@ -65,4 +65,14 @@ ECHO.figures['bourse-trochanterienne-gtps'] = [
       { x: 0.86, y: 0.50, text: 'Grand fessier', dx: 0.00, dy: -0.16 },
     ],
   },
+  {
+    type: 'echo',
+    src: 'img/bourse-trochanterienne-gtps/echo-2.jpg',
+    pair: 'gt-transverse',
+    titre: 'Coupe transversale annotée du grand trochanter : tendons fessiers et bourses',
+    legende: 'Coupe **axiale** (transversale) sur le grand trochanter, annotations des auteurs conservées : le tendon du **petit fessier** (cercle jaune) s\'insère sur la face antérieure du trochanter, le tendon du **moyen fessier** (astérisque) est au milieu, sur la facette latérale, et le **grand fessier** (GMx) coiffe le tout par ses fibres musculaires. Les auteurs ont dessiné les deux bourses, virtuelles sur cette hanche normale : en **rouge** la bourse trochantérienne (sous-glutéale du grand fessier), entre la face profonde du grand fessier / fascia lata et le tendon du moyen fessier — c\'est le plan de clivage visé par l\'infiltration ; en **bleu** la bourse du moyen fessier, entre son tendon et la partie antéro-supérieure de la facette latérale. Antérieur à droite (côté du petit fessier) : **orientation inverse de celle du schéma**.',
+    credit: 'Corvino A, Tagliati C, Ricci V, Corvino F, Tafuri D, Catalano O, Cocco G, Diagnostics 2026, Figure 7 — CC BY 4.0',
+    source: 'https://doi.org/10.3390/diagnostics16111731',
+    crop: [0.0, 0.0, 1.0, 0.76],
+  },
 ];
