@@ -19,6 +19,10 @@ const path = require('path');
   /* L'en-tête et la sous-navigation collants masquaient ≈ 6 % du haut des captures d'élément : on les rend statiques,
      et on agrandit la fenêtre pour qu'une figure haute ne soit pas tronquée. */
   if (selector) { await page.addStyleTag({ content: '.topbar, .subnav, .fiche-head { position: static !important; }' }); await page.setViewportSize({ width: 1400, height: 3000 }); }
+  /* Les images des figures sont en loading="lazy" : sous ≈ 3 000 px de hauteur de page, elles ne se chargeaient qu'au défilement vers
+     l'élément, applyCrops les redimensionnait pendant la capture et le cadre se décalait (figure tronquée, carte suivante incluse).
+     Toutes sont donc chargées (eager) et attendues avant la mesure. */
+  await page.evaluate(() => Promise.all([...document.images].map(i => { i.loading = 'eager'; return i.complete ? true : new Promise(r => { i.addEventListener('load', r); i.addEventListener('error', r); }); })));
   await page.waitForTimeout(selector ? 4000 : 1000);
   if (selector) await page.locator(selector).nth(+nth).screenshot({ path: out });
   else await page.screenshot({ path: out, fullPage: !selector });
