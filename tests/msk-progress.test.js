@@ -202,6 +202,7 @@ test('cas : pick (question d\'abord, puis item), record', () => {
   if (c.item.type === 'pathologie') { assert.ok(c.pathologie && c.pathologie.nom); }
   const r = P.casRecord(c.item.id, 'su', 'cas/2026-10-01-test.md'); assert.strictEqual(r.etat, 2);
   assert.strictEqual(P.casRecord(c.item.id, 'pas-su').etat, 2, 'pas-su ne change pas le palier');
+  const h = P.progression().items[c.item.id].historique; assert.deepStrictEqual([h.at(-2), h.at(-1)], [[P.today(), 2, 'cas:su'], [P.today(), 2, 'cas:pas-su']], 'su puis pas su : chaque cas noté');
   assert.throws(() => P.casRecord(c.item.id, 'bof'), /su ou pas-su/);
 });
 test('audio ecoute', () => { assert.strictEqual(P.audioEcoute('epaule-socle-deep-dive.mp3').ecoute.length, 10); assert.ok(P.plan('epaule').audios[0].ecoute); });
@@ -239,7 +240,16 @@ test('validation avant toute écriture : cas record, cas pick, audio ecoute, bil
   assert.deepStrictEqual(rates, []);
   assert.deepStrictEqual([prives(), osaus()], avant, 'rien écrit');
 });
-test('critère de passage : 10 examens dictés sans aide (ligne Examens des blocs de la région) et OSAUS ≥ 4 aux items 4, 5, 6 du dernier bilan', () => {
+test('cas record : chaque cas noté, « su » compris au-dessus du palier 2 ; date de séance exemptée seulement seule en tête du nom du fichier', () => {
+  const h = id => P.progression().items[id].historique, n = h('epaule.c01').length;
+  assert.deepStrictEqual(P.casRecord('epaule.c01', 'su', 'cas/2026-10-07-epaule.c01.md'), { itemId: 'epaule.c01', etat: 4, inchange: true, fichier: 'cas/2026-10-07-epaule.c01.md' });
+  assert.deepStrictEqual([h('epaule.c01').length, h('epaule.c01').at(-1)], [n + 1, [P.today(), 4, 'cas:su']], 'palier 4 inchangé, cas réussi noté');
+  for (const [id, f] of [['epaule.p01', 'cas/2026-10-07-epaule.p01.md'], ['epaule.a01', 'cas/2026-10-01-test.md'], ['epaule.a01', 'cas/2026-10-01.md']]) assert.strictEqual(P.casRecord(id, 'pas-su', f).fichier, f);   // date suivie d'un tiret et d'une lettre, ou de l'extension
+  const avant = prives(), passes = ['cas/2026-10-01-03-1956.md', 'cas/2026-10-06 12 34 56 78.md'].filter(f => { try { P.casRecord('epaule.a01', 'pas-su', f); return true; } catch (err) { return !(err instanceof P.GuardError); } });
+  assert.deepStrictEqual(passes, [], 'date de naissance ou numéro collés à la date de séance : refus');
+  assert.deepStrictEqual(prives(), avant, 'rien écrit');
+});
+test('critère de passage : 10 examens dictés sans aide (ligne Examens des blocs de la région) et OSAUS ≥ 4 aux items 4, 5, 6 du dernier bilan ; grille sourcée, bilan remplacé signalé', () => {
   const crit = () => P.plan('epaule').critere;
   assert.strictEqual(crit().dictes_sans_aide, 1);
   P.logbookAdd({ date: '2026-09-28', region: 'genou', examens: 5, dictes_seul: 5 });   // autre région : ne compte pas
@@ -247,14 +257,23 @@ test('critère de passage : 10 examens dictés sans aide (ligne Examens des bloc
   P.logbookAdd({ date: '2026-09-28', region: 'epaule', examens: 9, dictes_seul: 8 });
   assert.deepStrictEqual([crit().dictes_sans_aide, crit().atteint], [9, false]);
   P.logbookAdd({ date: '2026-09-26', region: 'epaule', examens: 2, dictes_seul: 1 });
-  let c = crit(); assert.deepStrictEqual([c.dictes_sans_aide, c.atteint, c.osaus.items], [10, true, [4, 4, 3, 4, 5, 4, 3]], '10 dictés, et 4, 5, 4 aux items 4 à 6');
-  const b = P.bilan('epaule', [5, 5, 5, 5, 5, 3, 5], 'documentation\nà reprendre');   // documentation (item 6) sous 4 ; le bilan du mois est remplacé
-  assert.deepStrictEqual([b.critere.dictes_sans_aide, b.critere.atteint, b.paliers.reduce((a, n) => a + n)], [10, false, 5]);
+  let c = crit(); assert.deepStrictEqual([c.dictes_sans_aide, c.atteint, c.osaus.items], [10, true, [4, 4, 3, 4, 5, 4, 3]], '10 dictés et 4, 5, 4 aux items 4 à 6 (l\'item 3 à 3 ne compte pas)');
+  const b = P.bilan('epaule', [5, 5, 5, 5, 5, 5, 5], 'revu en fin de mois\nsans aide');   // deuxième bilan du mois : il remplace le premier, et le dit
+  assert.deepStrictEqual([b.critere.atteint, b.paliers.reduce((a, n) => a + n), b.remplace], [true, 5, { date: P.today(), items: [4, 4, 3, 4, 5, 4, 3] }]);
   const o = JSON.parse(fs.readFileSync(path.join(H, 'osaus', b.fichier), 'utf8')).epaule;
-  assert.deepStrictEqual([o.items, o.note, o.date], [[5, 5, 5, 5, 5, 3, 5], 'documentation à reprendre', P.today()]);
-  assert.match(o.grille, /^OSAUS \(Tolsgaard et coll\., 2013\) : indication, appareil, image, examen systématique, interprétation, documentation, décision/);
+  assert.deepStrictEqual([o.items, o.note, o.date, o.grille], [[5, 5, 5, 5, 5, 5, 5], 'revu en fin de mois sans aide', P.today(), P.OSAUS]);
+  assert.strictEqual(o.grille.items.length, 7); assert.ok(o.grille.reference.endsWith('PLoS ONE 2013. doi:10.1371/journal.pone.0057687'), o.grille.reference);
+  assert.deepStrictEqual(o.grille.items, [   // libellés de la publication mot pour mot, avec leur glose française
+    { n: 1, en: 'Indication for the examination', fr: 'Indication de l\'examen' }, { n: 2, en: 'Applied knowledge of ultrasound equipment', fr: 'Connaissance appliquée de l\'appareil' },
+    { n: 3, en: 'Image optimization', fr: 'Optimisation de l\'image' }, { n: 4, en: 'Systematic examination', fr: 'Examen systématique' },
+    { n: 5, en: 'Interpretation of images', fr: 'Interprétation des images' }, { n: 6, en: 'Documentation of examination', fr: 'Documentation de l\'examen' },
+    { n: 7, en: 'Medical decision making', fr: 'Décision médicale' },
+  ]);
+  const rates = [];
+  for (const i of [3, 4, 5]) { const notes = [5, 5, 5, 5, 5, 5, 5]; notes[i] = 3; if (P.bilan('epaule', notes, '').critere.atteint !== false) rates.push(`item ${i + 1} à 3 : critère atteint`); }   // chacun des items 4, 5, 6 sous 4, seul, suffit à refuser
+  assert.deepStrictEqual(rates, []);
   for (const f of ['brouillon.json', '2026-09.json']) fs.writeFileSync(path.join(H, 'osaus', f), JSON.stringify({ epaule: { items: [5, 5, 5, 5, 5, 5, 5] } }));   // hors AAAA-MM.json, et mois antérieur : le dernier bilan l'emporte
-  c = crit(); assert.deepStrictEqual([c.osaus.fichier, c.atteint], [b.fichier, false]);
+  c = crit(); assert.deepStrictEqual([c.osaus.fichier, c.osaus.items, c.atteint], [b.fichier, [5, 5, 5, 5, 5, 3, 5], false]);
   assert.strictEqual(P.plan('genou').critere.osaus, null);
 });
 test('tri déterministe des cibles et des cas : palier le plus bas d\'abord, puis ordre de la fiche ; mode socle complet', () => {
@@ -269,4 +288,11 @@ test('tri déterministe des cibles et des cas : palier le plus bas d\'abord, pui
   const g = P.plan('genou');
   assert.deepStrictEqual([g.mode, g.cibles, g.cas, g.paliers, g.audios.map(a => a.fichier), g.questions], ['socle', [], [], [0, 0, 0, 0, 0], ['genou-x.mp3'], []]);
   assert.deepStrictEqual(g.critere, { dictes_sans_aide: 5, osaus: null, atteint: false });
+});
+test('questions servies par leur étiquette de région, jamais par leur texte ; premier bilan d\'une région : rien de remplacé ; grille OSAUS exportée', () => {
+  P.logbookAdd({ date: '2026-09-25', region: 'genou', questions: ['Récessus : comparer avec la bourse (epaule) ?'] });
+  const q = '2026-09-25 (genou) : Récessus : comparer avec la bourse (epaule) ?';
+  assert.deepStrictEqual([P.plan('epaule').questions, P.plan('genou').questions, P.casPick('epaule').source, P.casPick('genou')], [[], [q], 'item', { source: 'question', texte: q }]);
+  assert.strictEqual(P.bilan('genou', [3, 3, 3, 3, 3, 3, 3], '').remplace, null);
+  assert.deepStrictEqual([P.OSAUS.nom, P.OSAUS.items.map(i => i.n), P.OSAUS.echelle, Object.isFrozen(P.OSAUS), Object.isFrozen(P.OSAUS.items[0])], ['OSAUS', [1, 2, 3, 4, 5, 6, 7], '1 à 5 par item', true, true]);
 });
