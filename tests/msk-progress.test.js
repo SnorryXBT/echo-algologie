@@ -259,7 +259,7 @@ test('critère de passage : 10 examens dictés sans aide (ligne Examens des bloc
   P.logbookAdd({ date: '2026-09-26', region: 'epaule', examens: 2, dictes_seul: 1 });
   let c = crit(); assert.deepStrictEqual([c.dictes_sans_aide, c.atteint, c.osaus.items], [10, true, [4, 4, 3, 4, 5, 4, 3]], '10 dictés et 4, 5, 4 aux items 4 à 6 (l\'item 3 à 3 ne compte pas)');
   const b = P.bilan('epaule', [5, 5, 5, 5, 5, 5, 5], 'revu en fin de mois\nsans aide');   // deuxième bilan du mois : il remplace le premier, et le dit
-  assert.deepStrictEqual([b.critere.atteint, b.paliers.reduce((a, n) => a + n), b.remplace], [true, 5, { date: P.today(), items: [4, 4, 3, 4, 5, 4, 3] }]);
+  assert.deepStrictEqual([b.critere.atteint, b.paliers.reduce((a, n) => a + n), b.remplace], [true, P.etatList('epaule').items.length, { date: P.today(), items: [4, 4, 3, 4, 5, 4, 3] }], 'les paliers comptent chaque compétence de la fiche');
   const o = JSON.parse(fs.readFileSync(path.join(H, 'osaus', b.fichier), 'utf8')).epaule;
   assert.deepStrictEqual([o.items, o.note, o.date, o.grille], [[5, 5, 5, 5, 5, 5, 5], 'revu en fin de mois sans aide', P.today(), P.OSAUS]);
   assert.strictEqual(o.grille.items.length, 7); assert.ok(o.grille.reference.endsWith('PLoS ONE 2013. doi:10.1371/journal.pone.0057687'), o.grille.reference);
@@ -277,14 +277,28 @@ test('critère de passage : 10 examens dictés sans aide (ligne Examens des bloc
   assert.strictEqual(P.plan('genou').critere.osaus, null);
 });
 test('tri déterministe des cibles et des cas : palier le plus bas d\'abord, puis ordre de la fiche ; mode socle complet', () => {
-  const p = P.plan('epaule');
-  assert.deepStrictEqual([p.cibles, p.cas.map(c => [c.id, c.etat])], [[], [['epaule.a01', 0], ['epaule.p01', 2]]], 'squelette : c01 (4) et s01 (3) au-dessus du palier 2 ; a01 (0) avant p01 (2)');
+  /* état forcé sur les compétences de la fiche du dépôt (ids lus dans la fiche, pas écrits ici) : le test vérifie la règle, pas le contenu */
+  const items = P.etatList('epaule').items, ids = (...t) => items.filter(i => t.includes(i.type)).map(i => i.id);   // dans l'ordre de la fiche
+  const C = ids('coupe', 'structure', 'dynamique'), K = ids('pathologie', 'piege'), initial = Object.fromEntries(items.map(i => [i.id, i.etat]));
+  assert.ok(C.length >= 4 && K.length >= 3, 'la fiche offre au moins quatre cibles possibles et trois cas possibles');
+  const pose = etats => Object.entries(etats).forEach(([id, e]) => P.etatSet(id, e, 'test', true));
+  pose(Object.fromEntries(items.map(i => [i.id, 3])));
+  let p = P.plan('epaule');
+  assert.deepStrictEqual([p.mode, p.cibles, p.cas], ['fiche', [], []], 'tout au palier 3 : ni cible ni cas');
   assert.strictEqual(p.anki.modifie, P.today(), 'date locale du paquet');
-  const c = P.casPick('epaule'); assert.deepStrictEqual([c.source, c.item.id, c.etat, c.image, c.pathologie], ['item', 'epaule.a01', 0, null, null]);
-  P.etatSet('epaule.c01', 2, 'test', true); P.etatSet('epaule.s01', 1, 'test', true);
-  assert.deepStrictEqual(P.plan('epaule').cibles.map(c => [c.id, c.etat]), [['epaule.s01', 1], ['epaule.c01', 2]]);
-  P.etatSet('epaule.c01', 1, 'test', true);
-  assert.deepStrictEqual(P.plan('epaule').cibles.map(c => c.id), ['epaule.c01', 'epaule.s01'], 'à palier égal, ordre de la fiche');
+  pose({ [C[0]]: 2, [C[1]]: 1, [C[2]]: 2, [C[3]]: 0, [K[0]]: 2, [K[1]]: 0, [K[2]]: 1 });
+  p = P.plan('epaule');
+  assert.deepStrictEqual(p.cibles.map(c => [c.id, c.etat]), [[C[3], 0], [C[1], 1], [C[0], 2]], 'palier le plus bas d\'abord, puis ordre de la fiche ; trois cibles au plus (la quatrième, au palier 2, attend)');
+  assert.deepStrictEqual(p.cas.map(c => [c.id, c.etat]), [[K[1], 0], [K[2], 1]], 'deux cas au plus, le palier 2 attend');
+  pose({ [C[3]]: 3, [C[2]]: 3, [C[0]]: 1, [C[1]]: 1 });
+  assert.deepStrictEqual(P.plan('epaule').cibles.map(c => c.id), [C[0], C[1]], 'à palier égal, ordre de la fiche');
+  /* cas proposé : le premier de la liste triée ; un piège vient sans image ni pathologie, une pathologie avec sa vignette et sa fiche */
+  const piege = items.find(i => i.type === 'piege'), patho = items.find(i => i.type === 'pathologie');
+  pose(Object.fromEntries(K.map(id => [id, 3]))); pose({ [piege.id]: 0 });
+  let k = P.casPick('epaule'); assert.deepStrictEqual([k.source, k.item.id, k.etat, k.image, k.vignette, k.pathologie], ['item', piege.id, 0, null, '', null]);
+  pose({ [piege.id]: 3, [patho.id]: 0 }); k = P.casPick('epaule');
+  assert.deepStrictEqual([k.source, k.item.id, k.etat, k.image === null || path.isAbsolute(k.image), typeof k.vignette, typeof k.pathologie.nom, Array.isArray(k.pathologie.signes), Array.isArray(k.pathologie.gestes)], ['item', patho.id, 0, true, 'string', 'string', true, true]);
+  pose(initial);   // état rendu aux tests suivants
   const g = P.plan('genou');
   assert.deepStrictEqual([g.mode, g.cibles, g.cas, g.paliers, g.audios.map(a => a.fichier), g.questions], ['socle', [], [], [0, 0, 0, 0, 0], ['genou-x.mp3'], []]);
   assert.deepStrictEqual(g.critere, { dictes_sans_aide: 5, osaus: null, atteint: false });

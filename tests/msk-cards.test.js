@@ -4,24 +4,39 @@ const assert = require('node:assert');
 const { loadEcho } = require('../scripts/lib/load-echo');
 const { cardsFromMsk, cardsFromGestes } = require('../scripts/lib/msk-cards');
 const { digest } = require('../scripts/lib/msk-digest');
+const slug = require('../scripts/lib/slug');
 
-test('cardsFromMsk sur le squelette épaule : cinq types, clés uniques et stables', () => {
+test('cardsFromMsk sur la fiche épaule du dépôt : cinq types, clés dérivées du contenu, uniques et stables', () => {
   const E = loadEcho({ procedures: true, figures: true, msk: true, md: true });
-  const cards = cardsFromMsk(E.msk.epaule, E);
-  const types = cards.map(c => c.type).sort();
-  assert.deepStrictEqual(types, ['coupe', 'geste', 'pathologie', 'piege', 'structure']);
-  assert.deepStrictEqual(cards.map(c => c.key).sort(), ['coupe-1', 'coupe-1-structures', 'geste-bursite-sous-acromio-deltoidienne', 'patho-bursite-sous-acromio-deltoidienne', 'piege-anisotropie']);
-  const s = cards.find(c => c.type === 'structure');
-  assert.strictEqual(s.image.mode, 'front-back'); assert.strictEqual(s.image.marqueurs.length, 4); assert.match(s.back, /Nerf axillaire/);
-  assert.strictEqual(cards.find(c => c.type === 'coupe').image.mode, 'back');
-  const credit = 'Abril-Serván MJ, García-Sanz F, Cases-Sebastia A et al., Healthcare 2026, fig. 3C — CC BY 4.0';   // crédit, puis licence
-  assert.strictEqual(s.source, credit); assert.strictEqual(cards.find(c => c.key === 'coupe-1').source, credit);
-  assert.strictEqual(cards.find(c => c.type === 'pathologie').source, '', 'pathologie sans image : pas de source');
-  const fi = E.msk.epaule.protocole[0].image;   // les cartes ne partagent aucun tableau avec la fiche
-  assert.ok(s.image.marqueurs !== fi.marqueurs && s.image.crop !== fi.crop && cards.find(c => c.key === 'coupe-1').image.marqueurs !== fi.marqueurs, 'pas d\'alias avec la fiche'); assert.deepStrictEqual(s.image.crop, fi.crop);
-  assert.match(cards.find(c => c.type === 'geste').back, /echo-algologie\.pages\.dev\/#\/fiche\/sous-acromiale/);
-  assert.match(cards.find(c => c.type === 'piege').front, /rupture \?/);
-  assert.deepStrictEqual(cardsFromMsk(E.msk.epaule, E), cards, 'déterministe');
+  const f = E.msk.epaule, cards = cardsFromMsk(f, E), keys = cards.map(c => c.key);
+  assert.deepStrictEqual([...new Set(cards.map(c => c.type))].sort(), ['coupe', 'geste', 'pathologie', 'piege', 'structure']);
+  assert.strictEqual(new Set(keys).size, keys.length, 'clés uniques');
+  /* schéma des clés, dérivé de la fiche chargée (le comportement, pas le contenu) : une carte coupe par coupe (coupe-<n>), une carte structure par image
+     à ≥ 2 marqueurs (coupe-<n>-structures), une carte pathologie par pathologie (patho-<slug>), une carte geste par pathologie reliée à un geste
+     (geste-<slug>), une carte piège par artefact (piege-<slug>) — dans l'ordre de la fiche */
+  const attendues = [];
+  for (const c of f.protocole) { if (c.image && c.image.src && (c.image.marqueurs || []).length >= 2) attendues.push(`coupe-${c.n}-structures`); attendues.push(`coupe-${c.n}`); }
+  for (const p of f.pathologies) { attendues.push(`patho-${slug(p.nom)}`); if ((p.gestes || []).length) attendues.push(`geste-${slug(p.nom)}`); }
+  for (const a of f.artefacts || []) attendues.push(`piege-${slug(a.nom)}`);
+  assert.deepStrictEqual(keys, attendues);
+  assert.ok(keys.includes('patho-bursite-sous-acromio-deltoidienne') && keys.includes('piege-anisotropie'), 'clés du pilote conservées (GUID Anki du paquet déjà distribué)');
+  /* carte structure : image recto-verso, marqueurs de la coupe, verso = libellés ; carte coupe : image au verso ; source = crédit, puis licence */
+  const c0 = f.protocole.find(c => c.image && c.image.src && (c.image.marqueurs || []).length >= 2), fi = c0.image;
+  const s = cards.find(c => c.key === `coupe-${c0.n}-structures`), k = cards.find(c => c.key === `coupe-${c0.n}`);
+  assert.strictEqual(s.image.mode, 'front-back'); assert.strictEqual(s.image.marqueurs.length, fi.marqueurs.length);
+  for (const m of fi.marqueurs) assert.ok(s.back.includes(E.inline(m.label)), 'verso : ' + m.label);
+  assert.strictEqual(k.image.mode, 'back');
+  const credit = E.inline(`${fi.credit} — ${fi.licence}`);
+  assert.strictEqual(s.source, credit); assert.strictEqual(k.source, credit);
+  assert.ok(s.image.marqueurs !== fi.marqueurs && s.image.crop !== fi.crop && k.image.marqueurs !== fi.marqueurs, 'pas d\'alias avec la fiche'); assert.deepStrictEqual(s.image.crop, fi.crop);
+  /* pathologie : sans image, pas de source ; avec image, crédit puis licence ; geste : lien vers la fiche du site ; piège : question au recto, réponse au verso */
+  const pSans = f.pathologies.find(p => !p.image), pAvec = f.pathologies.find(p => p.image && p.image.src), pG = f.pathologies.find(p => (p.gestes || []).length);
+  if (pSans) assert.strictEqual(cards.find(c => c.key === `patho-${slug(pSans.nom)}`).source, '', 'pathologie sans image : pas de source');
+  if (pAvec) assert.strictEqual(cards.find(c => c.key === `patho-${slug(pAvec.nom)}`).source, E.inline(`${pAvec.image.credit} — ${pAvec.image.licence}`));
+  if (pG) assert.ok(cards.find(c => c.key === `geste-${slug(pG.nom)}`).back.includes(`echo-algologie.pages.dev/#/fiche/${pG.gestes[0]}`));
+  const a0 = (f.artefacts || []).find(a => a.question && a.reponse), piege = a0 && cards.find(c => c.key === `piege-${slug(a0.nom)}`);
+  if (a0) assert.ok(piege.front.includes(E.inline(a0.question)) && piege.back.includes(E.inline(a0.reponse)));
+  assert.deepStrictEqual(cardsFromMsk(f, E), cards, 'déterministe');
   assert.ok(cards.every(c => c.tags.includes('msk::epaule')));
 });
 
