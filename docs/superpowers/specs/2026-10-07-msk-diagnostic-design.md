@@ -314,3 +314,16 @@ répétition de `/msk-fiche`, `/msk-anki` et `/msk-audio` par région, sans nouv
 Clips personnels anonymisés dans le dossier privé pour `/msk-cas` · synchronisation de
 `progression.json` entre appareils · cartes d'occlusion d'image natives · évaluation OSAUS par
 un confrère · export de planches d'enseignement depuis les fiches MSK.
+
+## 16. Écarts d'implémentation (7–8 octobre 2026)
+
+Ce que le code livré fait autrement que le texte ci-dessus, relevé à la clôture du pilote épaule le 2026-10-08 ; le reste
+de la spécification s'applique tel quel. Une ligne par écart : section, date, commit.
+
+- §1 — 2026-10-07 (`812397d`) : critère de passage compté en examens dictés sans aide cumulés (lignes « Examens » du logbook), et non sur « 10 patients consécutifs ».
+- §5 — 2026-10-07 (`84a8c43`) : marqueurs en fractions [0, 1] de l'image recadrée, et non dans un repère de largeur 1000, pour réutiliser `figHtml` (rendu et mode quiz des figures des fiches gestes).
+- §5 — 2026-10-07 (`3b39ae5`) : coupe sans image libre = `image: null` + `sansImage: '<motif>'` (audit : exactement l'un des deux ; ligne grise au rendu ; carte de coupe textuelle, sans carte « structure »).
+- §6 — 2026-10-07 (`bbb80b6`) : les cartes issues des fiches gestes restent dans le paquet de la région (sous-paquets Structures et Pièges et artefacts, clés `socle-…`) au lieu d'être remplacées par celles de la fiche MSK ; pas d'étiquette `niveau::`.
+- §6 — 2026-10-07 (`7d0c762`) : médias en JPEG qualité 85, et non en PNG : 15 PNG à 1800 px pesaient 16 Mo pour le seul squelette de l'épaule, 2,85 Mo en JPEG.
+- §6 — 2026-10-07 (`ef3a698`) : l'export écrit dans un répertoire de travail sous `dist/msk/`, mis en place seulement s'il réussit ; un échec laisse intactes les sorties précédentes.
+- §8 — 2026-10-07 (`812397d`) : `cas pick` ne tire que pathologies et pièges, après les questions ouvertes ; les coupes sont des cibles sur patient, dans le plan de semaine.

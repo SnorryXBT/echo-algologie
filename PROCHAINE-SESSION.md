@@ -3,7 +3,7 @@
 Ce fichier dit où en est le mémo et dans quel ordre avancer. À lire en début de session, après
 `CLAUDE.md`. Le mettre à jour en fin de session.
 
-## Où on en est (7 octobre 2026, soir)
+## Où on en est (8 octobre 2026)
 
 - 64 fiches, toutes illustrées ; 119 images écho réelles appariées aux schémas.
 - Coupes anatomiques : 87 tracées, 31 validées par Mat, 17 images non tracées en attente de décision. Compte
@@ -15,9 +15,11 @@ Ce fichier dit où en est le mémo et dans quel ordre avancer. À lire en début
   deux membres (toutes `valide: false`). Sans réponse : long biceps 2 (remplacer par une injection in vivo ?).
 - Liens externes : 63/64 fiches avec vidéo YouTube vérifiée, 53/64 avec page NYSORA.
 - 213 références encore `verif: false`.
-- Volet Diagnostic MSK (plan du 7 octobre) : socle livré — fiche squelette `#/msk/epaule` (non validée), paquet
-  `msk-epaule.apkg` (106 cartes : squelette + sept fiches gestes d'épaule, 13 images) déposé dans iCloud Drive → Écho MSK
-  → anki, dossier privé `~/Claude/Projects/Écho MSK` initialisé, six skills. Pilote épaule à produire : voir G.
+- Volet Diagnostic MSK (plan du 7 octobre) : pilote épaule clos le 8 octobre, sauf l'audio. Fiche complète `#/msk/epaule`
+  déployée, non validée (12 coupes dont 9 illustrées, 12 pathologies), 32 questions en attente de Mat
+  (`docs/msk/questions-epaule.md`) ; paquet `msk-epaule.apkg` de 152 cartes dans iCloud Drive → Écho MSK → anki ; audio
+  bloqué par l'authentification NotebookLM (`nlm login`, à faire par Mat) ; première semaine écrite dans le dossier privé
+  (`semaines/2026-W41.md`). Détail, coût et suite : voir G.
 
 ## Décisions de Mat qui s'imposent à toute session
 
@@ -101,35 +103,73 @@ recherches, pas par le quota.
 
 ### G. Volet Diagnostic MSK — Fable 5.1 pour la fiche, Opus 5 pour anki/audio
 
-Socle livré le 7 octobre (tâches 1 à 11 du plan `docs/superpowers/plans/2026-10-07-msk-diagnostic.md`, spec
-`docs/superpowers/specs/2026-10-07-msk-diagnostic-design.md`) ; pilote épaule à produire, dans cet ordre :
-1. **Tâche 12, audio J0 — Opus 5** : `/msk-audio epaule` sur `dist/msk/epaule-digest.md` (le régénérer d'abord :
-   `NODE_PATH=$(npm root -g) node scripts/msk-export.js epaule`), le guide ESSR de l'épaule et les vidéos YouTube des
-   sept fiches gestes. Livrables : `~/Claude/Projects/Écho MSK/audio/epaule-deep-dive.mp3` et `epaule-rappel.mp3`, copiés
-   dans iCloud `Écho MSK/audio/`. Noter ici la durée réelle de génération et le verdict sur le format « rappel ».
-2. **Tâche 13, fiche épaule complète — Fable 5.1** : `/msk-fiche epaule` sans raccourci, sourçage d'abord
-   (`docs/msk/sources-epaule.md` commité avant toute rédaction), trois agents au plus, quota vérifié avant. Livrables :
-   `js/data/msk/epaule.js` (`valide: false`) et `img/msk/epaule/*.jpg` (CC BY, CC BY-NC, CC0). Critères du plan, dont
-   `node scripts/msk-audit.js epaule` sans erreur, check-all à 0 problème, tests verts, au moins 40 cartes hors `socle-`.
-   Puis lien `#/msk/epaule` et questions ouvertes à Mat : sa décision seule met `valide: true`.
-3. **Tâche 14, clôture du pilote — Opus 5** : `/msk-anki epaule` (les cartes `socle-` gardent leur GUID tant que figures
-   et pièges des fiches gestes n'ont pas bougé : voir CLAUDE.md) et `/msk-audio epaule` sur la fiche complète ; première
-   semaine réelle avec Mat (`/msk-semaine`, `/msk-cas epaule`, `/msk-logbook`, dont une dictée piège refusée). Noter ici le
-   coût mesuré du pilote et le rendement des images libres (combien de coupes du protocole ont une image sous licence
-   libre). Profil hors dépôt : paragraphe « Volet Diagnostic MSK » dans `~/.claude/profil/projets/echo-algologie.md`
-   (spec, plan, dossier privé, skills, Avorio, état du pilote), puis commit et push dans `~/.claude` par chemin explicite —
-   jamais `git -C ~/.claude add -A`, qui embarquerait les trois skills globales non suivies. Écarts à reporter dans la spec :
-   §1 critère compté en examens dictés sans aide cumulés, non « consécutifs » ; §5 marqueurs en fractions, et coupe sans
-   image libre en `image: null` + `sansImage` (motif) ; §6 cartes des fiches gestes gardées dans le paquet, étiquette
-   `niveau::` abandonnée ; §8 `/msk-cas` ne tire que pathologies et pièges (les coupes sont des cibles sur patient). Mat
-   tranche le refus de « depuis 3 ans » par le garde-fou (en-tête de `scripts/lib/phi-guard.js`). Ensuite, une région
-   tous les dix jours environ.
+Plan `docs/superpowers/plans/2026-10-07-msk-diagnostic.md`, spec `docs/superpowers/specs/2026-10-07-msk-diagnostic-design.md`
+(écarts d'implémentation en fin de spec). Socle livré le 7 octobre (tâches 1 à 11) ; pilote épaule clos le 8 octobre
+(tâches 13 et 14), sauf l'audio.
 
-À faire confirmer par Mat : les étiquettes de l'écho 1 du nerf axillaire (Abril-Serván 2026, fig. 3C) ont été déplacées
-le 7 octobre pour suivre la légende des auteurs (nerf sous la flèche, artère circonflexe postérieure sous la tête de
-flèche, col chirurgical sur la corticale) ; les mêmes positions servent à la coupe 1 de la fiche squelette et aux cartes
-qui en dérivent. Le paquet Anki reste personnel : trois de ses cinq images sources (Chang 2026, J Med Ultrasound) sont en
-CC BY-NC-SA ou BY-NC-ND (balise de licence ambiguë) — ne pas le partager, même aux associés.
+**État du pilote (8 octobre)**
+- Fiche `js/data/msk/epaule.js` complète, déployée, `valide: false` : 12 coupes (10 points ESSR + 2 hors protocole),
+  12 pathologies, 6 artefacts, 15 compétences. 32 questions pour Mat dans `docs/msk/questions-epaule.md` (réponse par
+  numéro dans la conversation) ; `valide: true` sur sa seule parole.
+- Paquet `msk-epaule.apkg` : 152 cartes (coupe 12, structure 70, pathologie 12, geste 12, piège 46), 47 images, vérifié
+  (`check.py` code 0), copié dans le dossier privé et dans iCloud Drive → Écho MSK → anki. Import dans Avorio : Importer →
+  Fichiers → iCloud Drive → Écho MSK → anki. Une réimportation met à jour en place (clés stables) et ajoute les 47 cartes
+  neuves ; `coupe-1` est désormais le positionnement (texte seul), la bursite et l'anisotropie du squelette ont pris le
+  contenu de la fiche. Si le paquet du socle (106 cartes) avait été importé, une carte reste orpheline, à supprimer à la
+  main : « coupe 1, Coupe postérieure, espace quadrilatère (squelette) », sous-paquet Structures (remplacée par la coupe 11 ;
+  question 21).
+- Digest NotebookLM (`dist/msk/epaule-digest.md`, régénéré par l'export) : depuis le 8 octobre, pièges et terme anglais de
+  chaque pathologie, question et réponse de chaque artefact ; le prompt du deep dive de `/msk-audio` cite les pièges.
+- Audio (tâche 12 et étape 2 de la tâche 14) : non produit, NotebookLM demande une nouvelle connexion (`nlm login`, compte
+  Google de Mat). Ensuite `/msk-audio epaule`, et noter ici la durée réelle de génération et le verdict sur le format « rappel ».
+- Première semaine écrite par `/msk-semaine` : `~/Claude/Projects/Écho MSK/semaines/2026-W41.md` (mode fiche ; cibles
+  c01 à c03 ; cas p01 et p02 ; paquet à importer). `/msk-cas` et `/msk-logbook`, qui attendent la dictée de Mat, ont été
+  joués à blanc sur un dossier jetable : dictée piège (« Mme Dupont… ») refusée, code 2, rien d'écrit ; dictée reformulée
+  écrite (palier c01 → 4, question en file puis fermée) ; cas p01 « su » (palier 0 → 2). Skills globales corrigées
+  (semaine ISO calculée, compétence à plusieurs coupes, vignette de la fiche à reformuler, image recadrée) et réinstallées.
+
+**Ce que Mat lance d'abord** (Claude Code, n'importe quel dossier)
+1. `/msk-semaine` — le lundi, 2 min (W41 écrite ; prochaine le 2026-10-12) : plan de la semaine. Ne lui demande que les
+   épisodes audio écoutés, quand il y en a ; avec `--bilan` (mensuel), ses sept notes OSAUS de 1 à 5 par région active.
+2. `/msk-cas epaule` — le soir, 15 min : vignette d'HDJ fictive et image, une question (« que voyez-vous ? »), six tours
+   au plus ; lui demande ses réponses, conclut « su » ou « pas su ».
+3. `/msk-logbook` — après une journée d'HDJ, 3 min : lui demande sa dictée (région, nombre d'examens, combien dictés sans
+   aide, structures trouvées ou non avec difficulté 1 à 3, questions) ; refuse tout nom, initiale, âge avec date, chambre,
+   numéro, lieu ou profession, et demande alors une reformulation.
+
+**Coût mesuré du pilote (tâche 13)** : quota hebdomadaire Fable 36 % → 48 %, tous modèles 25 % → 33 % ; ≈ 2,9 M tokens
+en ≈ 5 h : sourçage ≈ 475 k Fable (≈ 1 h) ; rédaction A 316 k Fable, B 389 k Opus, C 367 k Opus ; assemblage 358 k Fable
+(≈ 45 min) ; relecture 312 k Fable ; ronde de correction 372 k Opus ; re-relecture 298 k Sonnet. Génération audio : non
+mesurée (bloquée).
+
+**Rendement des images libres** : 9 coupes sur 12 illustrées (sans image : 1 positionnement, 4 structures antéro-médiales
+et ligament coraco-acromial, 6 supra-épineux en position 2), 10 pathologies sur 12 ; 5 fichiers conservés sans référence
+en attente de Mat (coupe-4, coupe-4b, coupe-5b, coupe-9, patho-calcification-supra-epineux).
+
+**Règle de quota de Mat (7 octobre)** : plafond du chantier = 75 % de l'usage hebdomadaire Fable et 60 % du forfait tous
+modèles ; usage vérifié avant chaque dispatch d'agent et chaque relecture ; seuil atteint → finir proprement la tâche en
+cours (commit), ne rien lancer de plus, rendre la main avec l'état ; modèles moins coûteux (Opus, Sonnet) par défaut,
+Fable seulement quand la tâche l'exige (jugement anatomique ou visuel, revue finale).
+
+**Suite** : une région tous les dix jours environ, dans l'ordre genou, rachis, coude, poignet-main, hanche, cheville-pied,
+paroi-nerfs ; pour chacune `/msk-fiche <region>` (sourçage commité avant rédaction, trois agents au plus, quota vérifié
+avant), puis `/msk-anki <region>` et `/msk-audio <region>`. L'épaule est validée par Mat avant la production des autres
+régions (spec §2) : ses réponses fixent les conventions reprises ensuite (pastilles osseuses, seuils, coupes hors protocole).
+
+**En attente d'une décision de Mat**
+- Les 32 questions de `docs/msk/questions-epaule.md`.
+- Coupe 2, pastille 4 « Petit tubercule » : posée sur les parties molles qui couvrent le tubercule (y 0,37), ≈ 0,03 au-dessus
+  de la corticale (pic de luminance à y 0,40) : à descendre si Mat adopte la convention corticale (question 25).
+- `js/data/procedures/nerf-suprascapulaire.js` se contredit : l. 66, nerf « médial ou sous l'artère » ; l. 76
+  (sono-anatomie), « médial à l'artère ». La coupe 12 de l'épaule reprend la première formule (question 28).
+- Refus de « depuis 3 ans » par le garde-fou (âge ou durée en chiffres ; en-tête de `scripts/lib/phi-guard.js`).
+- Étiquettes de l'écho 1 du nerf axillaire (Abril-Serván 2026, fig. 3C), déplacées le 7 octobre pour suivre la légende des
+  auteurs (nerf sous la flèche, artère circonflexe postérieure sous la tête de flèche, col chirurgical sur la corticale) :
+  elles servent à la coupe 11 de la fiche épaule et aux cartes qui en dérivent.
+
+Le paquet Anki reste personnel : trois des cinq images des cartes socle (fiches gestes sous-acromiale, long-biceps,
+gleno-humerale ; Chang 2026, J Med Ultrasound) sont en CC BY-NC-SA ou BY-NC-ND (balise de licence ambiguë) — ne pas le
+partager, même aux associés.
 
 ## Quota
 

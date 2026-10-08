@@ -76,6 +76,23 @@ test('digest : fiche puis gestes, sans balises ni astérisques', () => {
   assert.ok(digest(Object.assign({}, g, { dictee: '- Bourse fine (< 2 mm).\n- Tendon épaissi (> 5 mm).' }), [], E, 'Test').includes('(< 2 mm).\n- Tendon épaissi (> 5 mm)'), 'comparateurs conservés sur plusieurs lignes');
 });
 
+test('digest : pièges et terme anglais de chaque pathologie, question et réponse des artefacts (le digest nourrit l\'audio)', () => {
+  const E = loadEcho({ procedures: true, figures: true, msk: true, md: true });
+  const f = E.msk.epaule, md = digest(f, [], E, 'Épaule'), net = s => String(s).replace(/\*\*/g, '').replace(/<\/?[a-z][^>]*>/gi, '');
+  /* fiche du dépôt : chaque pièce présente, quel que soit le contenu */
+  for (const p of f.pathologies) if (p.pieges) assert.ok(md.includes(`  - Pièges : ${net(p.pieges)}\n`), 'pièges : ' + p.nom);
+  for (const a of f.artefacts || []) if (a.question && a.reponse) assert.ok(md.includes(`  - Question : ${net(a.question)}\n  - Réponse : ${net(a.reponse)}\n`), 'question et réponse : ' + a.nom);
+  /* fixture (la ponctuation se vérifie ici, pas sur le texte libre de la fiche) : ordre signes → pièges → conduite, un seul point en fin de signes, gras et balises retirés, rien pour un champ absent */
+  const g = { titre: 'T', resume: '', protocole: [], sonoanatomie: [], dictee: '',
+    pathologies: [{ nom: 'Bursite', en: 'Bursitis', signes: ['Bourse > 2 mm.', 'Liquide <b>bursal</b>.'], pieges: 'Lame **physiologique** fréquente.', conduite: 'Infiltrer.' }, { nom: 'Sans piège', signes: ['S.'], conduite: 'C.' }],
+    artefacts: [{ nom: 'Anisotropie', texte: 'Tendon sombre.', question: 'Hypoéchogène : rupture ?', reponse: 'Basculer la sonde.' }, { nom: 'Ombre', texte: 'Os.' }] };
+  const out = digest(g, [], E, 'Test');
+  assert.ok(out.includes('- Bursite (Bursitis)\n  - Signes : Bourse > 2 mm ; Liquide bursal.\n  - Pièges : Lame physiologique fréquente.\n  - Conduite : Infiltrer.\n'), out);
+  assert.ok(out.includes('- Sans piège\n  - Signes : S.\n  - Conduite : C.\n'), 'pathologie sans piège ni terme anglais');
+  assert.ok(out.includes('- Anisotropie : Tendon sombre.\n  - Question : Hypoéchogène : rupture ?\n  - Réponse : Basculer la sonde.\n'), 'artefact : question puis réponse');
+  assert.ok(out.includes('- Ombre : Os.\n\n### Dictée'), 'artefact sans question : son texte seul');
+});
+
 test('cardsFromMsk : verso des structures trié par numéro, libellés passés par inline', () => {
   const E = loadEcho({ procedures: true, md: true });
   const f = { id: 'epaule', titre: 'T', protocole: [{ n: 1, titre: 'c', image: { src: 'img/x.jpg', marqueurs: [{ n: 2, x: 0.6, y: 0.6, label: 'Nerf **axillaire**' }, { n: 1, x: 0.3, y: 0.2, label: 'Deltoïde' }] } }] };
