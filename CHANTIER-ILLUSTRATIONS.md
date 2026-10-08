@@ -73,6 +73,8 @@ chaque fiche : 1 image réelle de la coupe de repérage, téléchargée dans
 complet (auteurs, revue, année, licence, URL). Étiqueter en français ; si l'image porte
 déjà des annotations, ne pas les dupliquer.
 
+**Depuis le 7 octobre 2026**, les figures écho des fiches gestes d'une région MSK (épaule : 7 fiches — `sous-acromiale`, `long-biceps`, `gleno-humerale`, `acromio-claviculaire`, `nerf-suprascapulaire`, `nerf-axillaire`, `calcifications-coiffe-barbotage`) portent des cartes Anki `socle-<geste>-echo-<rang>` dont le GUID dépend du rang de la figure parmi celles à ≥ 2 étiquettes : en insérer une ailleurs qu'en fin de liste, en retirer, les réordonner ou ôter les étiquettes d'une figure rend orphelines des notes sur l'iPhone (CLAUDE.md, clause des clés) ; prévenir Mat avant de toucher une figure écho d'une fiche geste de l'épaule.
+
 ## 4. Vidéos — ABANDONNÉ le 4 octobre 2026 (décision de Mat : liens externes seulement, voir CLAUDE.md)
 
 - Pour chaque fiche, ajouter aux scènes un champ `narration` (≤ 35 mots, phrase parlée,

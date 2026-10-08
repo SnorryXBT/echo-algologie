@@ -57,6 +57,7 @@
   const secs = [];
   /* Sections opératoires toujours dépliées ; les autres repliées par défaut, choix mémorisé. */
   const SEC_OPEN = ['vue', 'installation', 'reperage', 'sonoanatomie', 'technique', 'injectat', 'securite', 'checklist', 'protocole', 'pathologies', 'dictee'];
+  /* secState (localStorage « echo-sections ») est indexé par id de section : partagé, voulu, entre fiches gestes et fiches MSK (« vue », « sonoanatomie », « videos » : replier l'une replie l'autre) */
   let secState = {}; try { secState = JSON.parse(localStorage.getItem('echo-sections') || '{}'); } catch (e) { secState = {}; }
   /* Références : toujours repliées à l'ouverture (décision de Mat, 4 octobre 2026) ; « Tout déplier » les laisse fermées */
   const SEC_FERMEES = ['references'];

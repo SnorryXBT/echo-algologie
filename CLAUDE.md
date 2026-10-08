@@ -83,9 +83,10 @@ Spec : `docs/superpowers/specs/2026-10-07-msk-diagnostic-design.md` ; plan : `do
 - Une fiche MSK reste `valide: false` (bandeau visible) tant que Mat ne l'a pas validée ; jamais d'auto-validation.
 - Images sous `img/msk/` : CC BY, CC BY-NC ou CC0 seulement, jamais ND ni SA ; aucune figure d'ouvrage ni de NYSORA.
 - Marqueurs en fractions [0, 1] de l'image recadrée, numérotés dans l'ordre du tableau (`n` = rang + 1, sans trou).
-- Les `key` des cartes fixent les GUID Anki : ne jamais les renommer (une clé renommée = une carte neuve, planification à zéro) ;
+- Les `key` des cartes fixent les GUID Anki : ne jamais les renommer (une clé renommée = une carte neuve, planification à zéro),
+  ni le `nom` affiché d'une région (nom et deck_id des paquets Anki en dérivent : le renommer crée d'autres paquets à la réimportation) ;
   celles du socle sont positionnelles (`socle-<geste>-echo-<rang parmi les figures écho à ≥ 2 étiquettes>`,
-  `socle-<geste>-piege-<rang dans pieges>`) : ajouter, retirer ou réordonner ces figures ou ces pièges, ou ôter ses étiquettes
+  `socle-<geste>-piege-<rang dans pieges>`) : insérer (ailleurs qu'en fin de liste), retirer ou réordonner ces figures ou ces pièges, ou ôter ses étiquettes
   à une figure, les renumérote et rend orphelines les notes Anki correspondantes (carte perdue ainsi en `a497e75`).
 - Aucune donnée patient, nulle part. État privé dans `~/Claude/Projects/Écho MSK`, jamais dans le dépôt : écrit par
   `scripts/msk-progress.js` seul, derrière le garde-fou `scripts/lib/phi-guard.js`.

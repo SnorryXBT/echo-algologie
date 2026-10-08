@@ -1,6 +1,6 @@
 /* Dérivation des cartes Anki : d'une fiche MSK (cardsFromMsk) et des fiches gestes d'une région (cardsFromGestes).
    Pur : aucune E/S. Carte : { type, key, front, back, source, tags, image } ; image = null ou
-   { src, crop, marqueurs, mode: 'front-back' | 'back' | 'plain' } — le rendu PNG est fait par scripts/msk-export.js.
+   { src, crop, marqueurs, mode: 'front-back' | 'back' | 'plain' } — le rendu JPEG est fait par scripts/msk-export.js.
    Les `key` fixent les GUID Anki : ne jamais les renommer sans accepter de perdre la planification des cartes.
    cardsFromGestes(ids, E, region) : `region` (facultatif) donne l'étiquette `msk::<region>` ; sans elle, `msk::socle`. Elle n'entre jamais dans une `key`.
    Tout texte entre dans une carte par `inline` (échappé, Markdown du site), `source` compris : crédit puis licence, comme les crédits du site.

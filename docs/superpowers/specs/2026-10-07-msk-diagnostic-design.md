@@ -321,9 +321,16 @@ Ce que le code livré fait autrement que le texte ci-dessus, relevé à la clôt
 de la spécification s'applique tel quel. Une ligne par écart : section, date, commit.
 
 - §1 — 2026-10-07 (`812397d`) : critère de passage compté en examens dictés sans aide cumulés (lignes « Examens » du logbook), et non sur « 10 patients consécutifs ».
+- §4 — 2026-10-07 (`c429ca9`) : une compétence de type `pathologie` porte un champ `patho` obligatoire (slug du nom de sa pathologie, contrôlé par l'audit) ; `cas pick` en tire la pathologie, sa vignette et son image.
+- §5 — 2026-10-07 (`5a5748b`) : `registry.js` tient `E.mskRegions` (identifiant et nom affiché de chaque région, dans l'ordre du plan), et non `E.mskOrder`.
+- §5 — 2026-10-07 (`84a8c43`, repris par `2875e21`) : `flash` reprend les champs des fiches gestes, rendus par le même code : `position` et `positionNote` au lieu d'`installation` ; `sonde`, `sondeNote` et `duree` comme prévu.
 - §5 — 2026-10-07 (`84a8c43`) : marqueurs en fractions [0, 1] de l'image recadrée, et non dans un repère de largeur 1000, pour réutiliser `figHtml` (rendu et mode quiz des figures des fiches gestes).
 - §5 — 2026-10-07 (`3b39ae5`) : coupe sans image libre = `image: null` + `sansImage: '<motif>'` (audit : exactement l'un des deux ; ligne grise au rendu ; carte de coupe textuelle, sans carte « structure »).
 - §6 — 2026-10-07 (`bbb80b6`) : les cartes issues des fiches gestes restent dans le paquet de la région (sous-paquets Structures et Pièges et artefacts, clés `socle-…`) au lieu d'être remplacées par celles de la fiche MSK ; pas d'étiquette `niveau::`.
+- §6 — 2026-10-07 (`2c8ca60`, `93aed59`) : GUID de note dérivé de la clé de la carte, `('msk', region, type, key)`, et non de l'`item_id` d'une compétence : les cartes ne dérivent pas des compétences.
+- §6, §14 — 2026-10-08 (`c7eb23d`) : 152 cartes pour le pilote contre « 40 à 60 » visées : 51 de la fiche MSK et 101 du socle des sept fiches gestes (61 structures, 40 pièges), qui restent dans le paquet ; la charge quotidienne visée (« 10 à 15 min ») est à remesurer, et le volume à arbitrer par Mat.
 - §3, §6 — 2026-10-07 (`7d0c762`) : médias en JPEG qualité 85, et non en PNG : 15 PNG à 1800 px pesaient 16 Mo pour le seul squelette de l'épaule, 2,85 Mo en JPEG.
 - §6 — 2026-10-07 (`ef3a698`) : l'export écrit dans un répertoire de travail sous `dist/msk/`, mis en place seulement s'il réussit ; un échec laisse intactes les sorties précédentes.
 - §8 — 2026-10-07 (`812397d`) : `cas pick` ne tire que pathologies et pièges, après les questions ouvertes ; les coupes sont des cibles sur patient, dans le plan de semaine.
+- §9, §12 — 2026-10-07 (`7f44c56`, `d384688`) : l'entrée de logbook porte un texte libre `commentaire` (passé au garde-fou, comme tout texte de l'entrée) et les nombres `examens` et `dictes_seul` (critère de passage) ; le texte libre n'est donc pas limité aux questions.
+- §11 — 2026-10-07 (`41f0eb0`) : pas de `tests/fixtures/echo-msk/` : les tests créent un dossier privé factice (`mkdtemp`) ; les skills de coaching sont vérifiées par `tests/msk-skills.test.js` (scripts, options et commandes citées existent), pas exécutées contre des sorties attendues.
