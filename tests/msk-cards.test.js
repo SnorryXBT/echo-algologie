@@ -31,11 +31,15 @@ test('cardsFromMsk sur la fiche épaule du dépôt : cinq types, clés dérivée
   assert.ok(s.image.marqueurs !== fi.marqueurs && s.image.crop !== fi.crop && k.image.marqueurs !== fi.marqueurs, 'pas d\'alias avec la fiche'); assert.deepStrictEqual(s.image.crop, fi.crop);
   /* pathologie : sans image, pas de source ; avec image, crédit puis licence ; geste : lien vers la fiche du site ; piège : question au recto, réponse au verso */
   const pSans = f.pathologies.find(p => !p.image), pAvec = f.pathologies.find(p => p.image && p.image.src), pG = f.pathologies.find(p => (p.gestes || []).length);
-  if (pSans) assert.strictEqual(cards.find(c => c.key === `patho-${slug(pSans.nom)}`).source, '', 'pathologie sans image : pas de source');
-  if (pAvec) assert.strictEqual(cards.find(c => c.key === `patho-${slug(pAvec.nom)}`).source, E.inline(`${pAvec.image.credit} — ${pAvec.image.licence}`));
-  if (pG) assert.ok(cards.find(c => c.key === `geste-${slug(pG.nom)}`).back.includes(`echo-algologie.pages.dev/#/fiche/${pG.gestes[0]}`));
-  const a0 = (f.artefacts || []).find(a => a.question && a.reponse), piege = a0 && cards.find(c => c.key === `piege-${slug(a0.nom)}`);
-  if (a0) assert.ok(piege.front.includes(E.inline(a0.question)) && piege.back.includes(E.inline(a0.reponse)));
+  /* chaque cas doit exister dans la fiche chargée : une fiche qui en manque un échoue ici, bruyamment, au lieu de sauter l'assertion */
+  assert.ok(pSans, 'la fiche doit compter une pathologie sans image'); assert.ok(pAvec, 'la fiche doit compter une pathologie illustrée'); assert.ok(pG, 'la fiche doit compter une pathologie reliée à un geste du mémo');
+  assert.strictEqual(cards.find(c => c.key === `patho-${slug(pSans.nom)}`).source, '', 'pathologie sans image : pas de source');
+  assert.strictEqual(cards.find(c => c.key === `patho-${slug(pAvec.nom)}`).source, E.inline(`${pAvec.image.credit} — ${pAvec.image.licence}`));
+  assert.ok(cards.find(c => c.key === `geste-${slug(pG.nom)}`).back.includes(`echo-algologie.pages.dev/#/fiche/${pG.gestes[0]}`));
+  const a0 = (f.artefacts || []).find(a => a.question && a.reponse);
+  assert.ok(a0, 'la fiche doit compter un artefact à question et réponse');
+  const piege = cards.find(c => c.key === `piege-${slug(a0.nom)}`);
+  assert.ok(piege.front.includes(E.inline(a0.question)) && piege.back.includes(E.inline(a0.reponse)));
   assert.deepStrictEqual(cardsFromMsk(f, E), cards, 'déterministe');
   assert.ok(cards.every(c => c.tags.includes('msk::epaule')));
 });

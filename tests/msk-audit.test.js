@@ -160,7 +160,7 @@ test('listes mal formées : l\'audit signale, il ne lève jamais d\'exception', 
   }
   assert.deepStrictEqual(faux, []);
 });
-test('le squelette épaule du dépôt passe l\'audit', () => {
+test('la fiche épaule du dépôt passe l\'audit', () => {
   const E = loadEcho({ procedures: true, msk: true });
   assert.deepStrictEqual(auditMsk(E.msk.epaule, { root: ROOT, procedures: E.procedures, types: E.mskTypes }), []);
 });
