@@ -6,6 +6,15 @@ const LICENCES_MSK = /^(CC BY(-NC)?( \d(\.\d)?)?|CC0( 1\.0)?|domaine public|imag
 const isStr = s => typeof s === 'string' && s.trim().length > 0;
 const arr = x => Array.isArray(x) ? x : [];   // toute liste lue dans une fiche passe par arr() : une fiche mal formée est signalée, jamais une exception
 const escRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+/* existence d'un fichier, casse comprise, segment par segment : macOS ignore la casse (img/msk/epaule/Coupe-2.jpg y « existe » pour coupe-2.jpg), Cloudflare non (404 en ligne) */
+const surDisque = (root, src) => {
+  let d = root;
+  for (const s of path.normalize(src).split('/').filter(x => x && x !== '.')) {
+    if (s !== '..') { let noms; try { noms = fs.readdirSync(d); } catch { return false; } if (!noms.includes(s)) return false; }
+    d = path.join(d, s);
+  }
+  return fs.existsSync(d);
+};
 /* Mesures chiffrées d'un texte, en jetons « <nombre> <unité> », un jeton par borne : mesuresDe('5–7 mm') → ['5 mm', '7 mm'] ; ('1,5 mm') → ['1.5 mm'] ; ('30º') → ['30 °'].
    Comparés entiers, jamais en sous-chaîne (« 5 mm » n'est pas dans « 15 mm »). Texte normalisé avant lecture : espaces (insécables compris) → espace,
    tirets typographiques et signe moins → « - », « º » → « ° », virgule décimale → point. Bornes : a-b, a à b, entre a et b, a x b (ou ×), a ± b ;
@@ -31,9 +40,9 @@ function auditMsk(f, ctx) {
   const refs = arr(f.references);
   const srcOk = (s, where) => (s == null ? [] : Array.isArray(s) ? s : [s]).forEach(k => { if (!Number.isInteger(k) || k < 0 || k >= refs.length) err(`${where} : source [${k}] hors des références`); });
   const checkImage = (img, where) => {
-    if (!img) return;
-    if (!isStr(img.src)) { err(`${where} : image sans src`); return; }
-    if (ctx.root && !fs.existsSync(path.join(ctx.root, img.src))) err(`${where} : image absente sur le disque (${img.src})`);
+    if (img == null) return;
+    if (typeof img !== 'object' || !isStr(img.src)) { err(`${where} : image sans src`); return; }   // '' , false, 0 : ni image ni motif sansImage affichés
+    if (ctx.root && !surDisque(ctx.root, img.src)) err(`${where} : image absente sur le disque (${img.src})${fs.existsSync(path.join(ctx.root, img.src)) ? ' — la casse diffère du fichier présent : le site en ligne la distingue' : ''}`);
     if (!isStr(img.credit)) err(`${where} : image sans credit`);
     const srcN = img.src.replace(/^\.\//, '').replace(/^\//, '').toLowerCase();   // « ./IMG/msk/… » ou « /img/msk/… » n'échappent pas au contrôle de licence ; img.src garde sa casse pour le disque
     if (srcN.startsWith('img/msk/')) {

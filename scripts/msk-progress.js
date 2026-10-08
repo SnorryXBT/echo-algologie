@@ -12,6 +12,7 @@
    node scripts/msk-progress.js question fermer <texte exact | numéro>
    node scripts/msk-progress.js region activer <region>
    init --repo sur un dossier déjà initialisé : seul repo change dans config.json (dépôt déplacé) ; toute commande qui lit les fiches vérifie ce dépôt.
+   init sans --repo : si repo ne contient plus les fiches (dépôt déplacé), il devient le dépôt du script, et c'est dit (repo mis à jour).
    etat set : identifiant d'une compétence de la fiche de sa région ; un palier ne redescend qu'avec --force.
    Entrée : { date: 'AAAA-MM-JJ', region, examens?, dictes_seul?, items?: [{ id? | libelle?, trouve, difficulte?, dicte_seul? }], questions?: [textes], commentaire? }
    D'abord le garde-fou, sur tout texte de l'entrée sauf la date, tel qu'il sera écrit (sur une ligne) et tel que dicté. Puis la forme : date réelle, du 2026-01-01
@@ -66,7 +67,7 @@ function init(repo) {
   if (!depotMsk(r)) throw new Error(`--repo : ${r} ne contient pas les fiches MSK (js/data/registry.js, js/data/msk)`);
   for (const d of ['', 'cas', 'semaines', 'osaus', 'audio', 'anki']) fs.mkdirSync(path.join(home, d), { recursive: true });
   if (!fs.existsSync(P('config.json'))) writeJson(P('config.json'), { repo: r, transfert_anki: path.join(ICLOUD(), 'anki'), transfert_audio: path.join(ICLOUD(), 'audio'), regions_actives: ['epaule'] });
-  else if (repo) { const c = readJson(P('config.json')); if (c.repo !== r) writeJson(P('config.json'), Object.assign(c, { repo: r })); }   // --repo explicite sur un dossier initialisé : seul repo change
+  else { const c = readJson(P('config.json')); if (repo ? c.repo !== r : !depotMsk(c.repo)) writeJson(P('config.json'), Object.assign(c, { repo: r })); }   // dossier initialisé : seul repo change, s'il est donné (--repo) ou s'il ne contient plus les fiches (dépôt du script)
   const cfg = readJson(P('config.json'));
   for (const d of [cfg.transfert_anki, cfg.transfert_audio]) fs.mkdirSync(d, { recursive: true });
   if (!fs.existsSync(P('progression.json'))) writeJson(P('progression.json'), { items: {}, audio: {} });
@@ -324,7 +325,7 @@ if (require.main === module) {
   };
   try {
     switch (cmd) {
-      case 'init': {   // annonce un changement de dépôt (init --repo), jamais rien d'autre de config.json
+      case 'init': {   // annonce un changement de dépôt (init --repo, ou dépôt déplacé remplacé par celui du script), jamais rien d'autre de config.json
         const repo = a.includes('--repo') ? valeur('--repo', 'chemin') : undefined, avant = readJson(P('config.json'), null), home = init(repo), apres = readJson(P('config.json'));
         if (avant && avant.repo !== apres.repo) out(`repo mis à jour : ${apres.repo}`);
         out(`dossier privé prêt : ${home}`); break;

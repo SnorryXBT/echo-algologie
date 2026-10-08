@@ -3,7 +3,7 @@
    Cartes = fiche MSK (si présente, avec ses `gestes`) + fiches gestes de --gestes quand la fiche n'existe pas encore.
    Sorties dans --out : <region>.cards.json (cartes + médias rendus), <region>.json (fiche brute), <region>-digest.md (NotebookLM),
    img/<region>/msk-<region>-<key>-{recto,verso,image}.jpg (JPEG qualité 85).
-   Refus avant tout rendu (code 1, rien n'est écrit) : région ou geste inconnu ; clé de carte en double (même GUID Anki, même nom d'image) ;
+   Refus avant tout rendu (code 1, rien n'est écrit) : option sans valeur ; région ou geste inconnu ; clé de carte en double (même GUID Anki, même nom d'image) ;
    image source absente (carte, fiche et fichier nommés) ; dossier <out>/img/<region> contenant autre chose que des médias msk-<region>-*.jpg
    (--out mal choisi : la mise en place l'aurait supprimé ; seul .DS_Store, du Finder, est toléré).
    Tout est produit dans un dossier de travail sous --out et mis en place seulement si l'export réussit : un export en échec laisse intactes
@@ -18,12 +18,17 @@ const { cardsFromMsk, cardsFromGestes } = require('./lib/msk-cards');
 const { digest } = require('./lib/msk-digest');
 const { renderMarkers } = require('./lib/render-markers');
 const args = process.argv.slice(2), region = args.find((a, i) => !a.startsWith('--') && (i === 0 || !args[i - 1].startsWith('--')));
-const opt = (k, d) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : d; };
+const opt = (k, d) => {   // valeur d'une option ; option donnée sans valeur (absente, vide ou suivie d'une autre option) : refus nommé, code 1, avant tout chargement
+  const i = args.indexOf(k); if (i < 0) return d;
+  const v = args[i + 1]; if (!v || v.startsWith('--')) { console.error(`${k} : valeur manquante`); process.exit(1); }
+  return v;
+};
 if (!region) { console.error('usage : node scripts/msk-export.js <region> [--gestes id,id] [--out dist/msk]'); process.exit(1); }
+const optGestes = opt('--gestes', ''), optOut = opt('--out', 'dist/msk');
 const E = loadEcho({ procedures: true, figures: true, msk: true, md: true });
 const nom = ((E.mskRegions || []).find(r => r.id === region) || {}).nom;
 if (!nom) { console.error('région inconnue : ' + region); process.exit(1); }
-const cli = opt('--gestes', '') ? opt('--gestes').split(',') : [];
+const cli = optGestes ? optGestes.split(',') : [];
 const f = E.msk[region], gestes = (f && f.gestes) || cli;
 if (!f && !gestes.length) { console.error('ni fiche MSK ni --gestes : rien à exporter'); process.exit(1); }
 /* les fonctions de cartes sautent un id inconnu sans rien dire : tout id (--gestes, gestes de la fiche) doit exister dans le mémo, avant tout rendu */
@@ -39,7 +44,7 @@ const estFichier = p => { try { return fs.statSync(p).isFile(); } catch { return
 const origine = c => { const g = c.tags.find(t => t.startsWith('geste::')); return g ? 'fiche ' + g.slice('geste::'.length) : 'fiche MSK ' + region; };
 const absentes = cards.filter(c => c.image && !(c.image.src && estFichier(path.join(ROOT, c.image.src))));
 if (absentes.length) { absentes.forEach(c => console.error(`image absente : carte ${c.key} (${origine(c)}) → ${c.image.src || '(aucun chemin)'}`)); process.exit(1); }
-const out = path.resolve(ROOT, opt('--out', 'dist/msk')), imgDir = path.join(out, 'img', region);
+const out = path.resolve(ROOT, optOut), imgDir = path.join(out, 'img', region);
 /* la mise en place remplace <out>/img/<region> en entier : s'il contient autre chose que des médias de l'export (--out mal choisi), refus, dossier laissé intact */
 const estMedia = n => n.startsWith(`msk-${region}-`) && n.endsWith('.jpg') && estFichier(path.join(imgDir, n));
 const etranger = fs.existsSync(imgDir) ? fs.readdirSync(imgDir).find(n => n !== '.DS_Store' && !estMedia(n)) : undefined;   // .DS_Store : recréé par le Finder dès que le dossier est ouvert

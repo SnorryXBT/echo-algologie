@@ -7,6 +7,8 @@ process.env.ECHO_MSK_HOME = fs.mkdtempSync(path.join(os.tmpdir(), 'msk-home-'));
 process.env.ECHO_MSK_ICLOUD = fs.mkdtempSync(path.join(os.tmpdir(), 'msk-icloud-'));
 const P = require('../scripts/msk-progress');
 const ROOT = path.resolve(__dirname, '..');
+/* région sans fiche MSK, choisie à l'exécution (la première de l'ordre du plan) : les tests du mode socle ne dépendent pas de la prochaine région rédigée */
+const { id: SANS, nom: NOM } = (E => E.mskRegions.find(r => !E.msk[r.id]))(require('../scripts/lib/load-echo').loadEcho({ msk: true }));
 const H = process.env.ECHO_MSK_HOME;
 const cli = (...args) => spawnSync(process.execPath, [path.join(ROOT, 'scripts/msk-progress.js'), ...args], { env: process.env, encoding: 'utf8' });   // même dossier factice que le module
 const prives = () => ['logbook.md', 'questions.md', 'progression.json', 'config.json'].map(f => fs.readFileSync(path.join(H, f), 'utf8'));   // un refus ne doit rien y écrire
@@ -34,7 +36,7 @@ test('etat set / list : paliers, jamais d\'abaissement sans --force', () => {
   const l = P.etatList('epaule');
   assert.strictEqual(l.nom, 'Épaule'); assert.ok(l.fiche); assert.strictEqual(l.items.find(i => i.id === 'epaule.c01').etat, 1); assert.strictEqual(l.paliers.reduce((a, b) => a + b), l.items.length);
   assert.throws(() => P.etatList('nez'), /région inconnue : nez/);
-  const g = P.etatList('genou'); assert.strictEqual(g.fiche, false); assert.deepStrictEqual(g.items, []);
+  const g = P.etatList(SANS); assert.strictEqual(g.fiche, false); assert.deepStrictEqual(g.items, []);
 });
 test('logbook add : refus sans écriture, puis entrée légitime, états et questions', () => {
   const avant = fs.readFileSync(path.join(H, 'logbook.md'), 'utf8');
@@ -77,10 +79,10 @@ test('logbook add : refus sans écriture, puis entrée légitime, états et ques
   P.logbookAdd({ date: '2026-09-30', region: 'epaule', items: [{ id: 'epaule.s01', trouve: false }] });
   assert.strictEqual(P.etatList('epaule').items.find(i => i.id === 'epaule.s01').etat, 3, 'un « non trouvé » n\'abaisse pas le palier');
   assert.throws(() => P.logbookAdd({ region: 'epaule', items: [] }), /date/);
-  // région sans fiche (genou : sa question ne compte pas pour l'épaule) ; un texte multiligne est écrit sur une ligne, sans fausse entrée dans questions.md
-  P.logbookAdd({ date: '2026-10-01', region: 'genou', commentaire: 'note\nsur deux lignes', questions: ['Récessus supra-patellaire :\n- [ ] quelle profondeur ?'] });
-  assert.match(fs.readFileSync(path.join(H, 'logbook.md'), 'utf8'), /\n## 2026-10-01 — Genou\n- Note : note sur deux lignes\n/);
-  assert.match(fs.readFileSync(path.join(H, 'questions.md'), 'utf8'), /\n- \[ \] 2026-10-01 \(genou\) : Récessus supra-patellaire : - \[ \] quelle profondeur \?\n$/);
+  // région sans fiche (sa question ne compte pas pour l'épaule) ; un texte multiligne est écrit sur une ligne, sans fausse entrée dans questions.md
+  P.logbookAdd({ date: '2026-10-01', region: SANS, commentaire: 'note\nsur deux lignes', questions: ['Récessus supra-patellaire :\n- [ ] quelle profondeur ?'] });
+  assert.ok(fs.readFileSync(path.join(H, 'logbook.md'), 'utf8').includes(`\n## 2026-10-01 — ${NOM}\n- Note : note sur deux lignes\n`));
+  assert.ok(fs.readFileSync(path.join(H, 'questions.md'), 'utf8').endsWith(`\n- [ ] 2026-10-01 (${SANS}) : Récessus supra-patellaire : - [ ] quelle profondeur ?\n`));
   assert.deepStrictEqual(fs.readdirSync(H).filter(x => x.endsWith('.part')), [], 'écritures JSON par fichier temporaire renommé : aucun reste');
 });
 test('garde-fou d\'abord, sur le texte tel qu\'il sera écrit et tel que dicté : refus (code 2), rien n\'est écrit', () => {
@@ -126,7 +128,7 @@ test('une seule entrée par jour et par région (le critère de passage addition
 });
 test('etat set : seulement un identifiant de la fiche de sa région', () => {
   const avant = prives(), rates = [];
-  for (const [id, re] of [['epaule.c99', /^identifiant absent de la fiche epaule : epaule\.c99$/], ['genou.c01', /^identifiant absent de la fiche genou : genou\.c01$/], ['nez.c01', /^région inconnue : nez/]]) {
+  for (const [id, re] of [['epaule.c99', /^identifiant absent de la fiche epaule : epaule\.c99$/], [`${SANS}.c01`, new RegExp(`^identifiant absent de la fiche ${SANS} : ${SANS}\\.c01$`)], ['nez.c01', /^région inconnue : nez/]]) {
     try { P.etatSet(id, 1, 'test'); rates.push(id + ' accepté'); } catch (err) { if (!re.test(err.message)) rates.push(id + ' : ' + err.message); }
   }
   assert.deepStrictEqual(rates, []);
@@ -149,6 +151,10 @@ test('dépôt configuré : vérifié à chaque commande, réparable par init --r
   assert.strictEqual(c.status, 0, c.stderr); assert.strictEqual(c.stdout, `repo mis à jour : ${ROOT}\ndossier privé prêt : ${H}\n`);
   assert.strictEqual(fs.readFileSync(cfgF, 'utf8'), cfg0); assert.deepStrictEqual(reste(), avant);
   assert.strictEqual(cli('init').stdout, `dossier privé prêt : ${H}\n`, 'sans --repo, rien n\'est annoncé ni changé');
+  fs.writeFileSync(cfgF, JSON.stringify(Object.assign(JSON.parse(cfg0), { repo: vide })));   // dépôt déplacé, init sans --repo : le dépôt du script le remplace, et c'est dit
+  const s = cli('init');
+  assert.strictEqual(s.status, 0, s.stderr); assert.strictEqual(s.stdout, `repo mis à jour : ${ROOT}\ndossier privé prêt : ${H}\n`);
+  assert.deepStrictEqual(JSON.parse(fs.readFileSync(cfgF, 'utf8')), JSON.parse(cfg0), 'seul repo change'); assert.deepStrictEqual(reste(), avant);
 });
 test('date du calendrier local, pas UTC', () => {
   const tz = process.env.TZ;
@@ -178,7 +184,7 @@ test('CLI : chaque erreur d\'entrée nomme son option ; une région inconnue lis
 
 // ---- tâche 9c : tests du brief (dates de séance ramenées dans la période : 2026-10-13 → 2026-09-29, 2026-10-15 → 2026-10-01) ----
 test('plan : mode fiche sur l\'épaule, cibles et cas triés par palier, audio et anki détectés', () => {
-  fs.writeFileSync(path.join(H, 'audio/epaule-socle-deep-dive.mp3'), ''); fs.writeFileSync(path.join(H, 'audio/genou-x.mp3'), '');
+  fs.writeFileSync(path.join(H, 'audio/epaule-socle-deep-dive.mp3'), ''); fs.writeFileSync(path.join(H, `audio/${SANS}-x.mp3`), '');
   const cfg = JSON.parse(fs.readFileSync(path.join(H, 'config.json'), 'utf8')); fs.writeFileSync(path.join(cfg.transfert_anki, 'msk-epaule.apkg'), '');
   const p = P.plan('epaule');
   assert.strictEqual(p.mode, 'fiche'); assert.ok(p.cibles.length <= 3); assert.ok(p.cas.length >= 1 && p.cas.length <= 2);
@@ -186,7 +192,7 @@ test('plan : mode fiche sur l\'épaule, cibles et cas triés par palier, audio e
   assert.ok(!p.cibles.some(c => c.id === 'epaule.c01'), 'c01 est au palier 4 : pas une cible');
   assert.deepStrictEqual(p.audios.map(a => a.fichier), ['epaule-socle-deep-dive.mp3']); assert.ok(p.anki && p.anki.fichier.endsWith('msk-epaule.apkg'));
   assert.strictEqual(p.questions.length, 1); assert.strictEqual(p.critere.atteint, false); assert.strictEqual(p.critere.dictes_sans_aide, 1);
-  assert.strictEqual(P.plan('genou').mode, 'socle');
+  assert.strictEqual(P.plan(SANS).mode, 'socle');
 });
 test('bilan OSAUS : fichier mensuel, critère de passage', () => {
   assert.throws(() => P.bilan('epaule', [1, 2, 3], ''), /sept notes/);
@@ -227,7 +233,7 @@ test('validation avant toute écriture : cas record, cas pick, audio ecoute, bil
     [() => P.casRecord('epaule.p99', 'pas-su'), /^identifiant absent de la fiche epaule : epaule\.p99$/],   // « pas su » sur un identifiant hors fiche : pas d'entrée fantôme
     [() => P.casRecord('nez.p01', 'pas-su'), /^région inconnue : nez/], [() => P.casRecord('epaule.p01', 'peut-être'), /^verdict : su ou pas-su$/],
     [() => P.casRecord('epaule.p01', 'su', 42), /^fichier : chemin attendu$/], [() => P.casPick('nez'), /^région inconnue : nez/],
-    [() => P.audioEcoute(), /^audio ecoute : nom de l'épisode manquant \(épisodes : epaule-socle-deep-dive\.mp3, genou-x\.mp3\)$/],
+    [() => P.audioEcoute(), new RegExp(`^audio ecoute : nom de l'épisode manquant \\(épisodes : ${['epaule-socle-deep-dive.mp3', `${SANS}-x.mp3`].sort().join(', ').replace(/\./g, '\\.')}\\)$`)],
     [() => P.audioEcoute('epaule-deep-dive.mp3'), /^épisode introuvable dans .+ : epaule-deep-dive\.mp3 \(épisodes : /], [() => P.audioEcoute('../config.json'), /^épisode introuvable dans /],
     [() => P.bilan('nez', [4, 4, 3, 4, 5, 4, 3], ''), /^région inconnue : nez/], [() => P.bilan('epaule', [4, 4, 3, 4, 5, 4, 3], 7), /^note : texte attendu$/],
   ]) { try { f(); rates.push(String(f) + ' accepté'); } catch (err) { if (!re.test(err.message)) rates.push(String(f) + ' : ' + err.message); } }
@@ -252,7 +258,7 @@ test('cas record : chaque cas noté, « su » compris au-dessus du palier 2 ; da
 test('critère de passage : 10 examens dictés sans aide (ligne Examens des blocs de la région) et OSAUS ≥ 4 aux items 4, 5, 6 du dernier bilan ; grille sourcée, bilan remplacé signalé', () => {
   const crit = () => P.plan('epaule').critere;
   assert.strictEqual(crit().dictes_sans_aide, 1);
-  P.logbookAdd({ date: '2026-09-28', region: 'genou', examens: 5, dictes_seul: 5 });   // autre région : ne compte pas
+  P.logbookAdd({ date: '2026-09-28', region: SANS, examens: 5, dictes_seul: 5 });   // autre région : ne compte pas
   P.logbookAdd({ date: '2026-09-27', region: 'epaule', commentaire: 'objectif : dictés sans aide : 50' });   // texte libre : ne compte pas
   P.logbookAdd({ date: '2026-09-28', region: 'epaule', examens: 9, dictes_seul: 8 });
   assert.deepStrictEqual([crit().dictes_sans_aide, crit().atteint], [9, false]);
@@ -274,7 +280,7 @@ test('critère de passage : 10 examens dictés sans aide (ligne Examens des bloc
   assert.deepStrictEqual(rates, []);
   for (const f of ['brouillon.json', '2026-09.json']) fs.writeFileSync(path.join(H, 'osaus', f), JSON.stringify({ epaule: { items: [5, 5, 5, 5, 5, 5, 5] } }));   // hors AAAA-MM.json, et mois antérieur : le dernier bilan l'emporte
   c = crit(); assert.deepStrictEqual([c.osaus.fichier, c.osaus.items, c.atteint], [b.fichier, [5, 5, 5, 5, 5, 3, 5], false]);
-  assert.strictEqual(P.plan('genou').critere.osaus, null);
+  assert.strictEqual(P.plan(SANS).critere.osaus, null);
 });
 test('tri déterministe des cibles et des cas : palier le plus bas d\'abord, puis ordre de la fiche ; mode socle complet', () => {
   /* état forcé sur les compétences de la fiche du dépôt (ids lus dans la fiche, pas écrits ici) : le test vérifie la règle, pas le contenu */
@@ -299,15 +305,15 @@ test('tri déterministe des cibles et des cas : palier le plus bas d\'abord, pui
   pose({ [piege.id]: 3, [patho.id]: 0 }); k = P.casPick('epaule');
   assert.deepStrictEqual([k.source, k.item.id, k.etat, k.image === null || path.isAbsolute(k.image), typeof k.vignette, typeof k.pathologie.nom, Array.isArray(k.pathologie.signes), Array.isArray(k.pathologie.gestes)], ['item', patho.id, 0, true, 'string', 'string', true, true]);
   pose(initial);   // état rendu aux tests suivants
-  const g = P.plan('genou');
-  assert.deepStrictEqual([g.mode, g.cibles, g.cas, g.paliers, g.audios.map(a => a.fichier), g.questions], ['socle', [], [], [0, 0, 0, 0, 0], ['genou-x.mp3'], []]);
+  const g = P.plan(SANS);
+  assert.deepStrictEqual([g.mode, g.cibles, g.cas, g.paliers, g.audios.map(a => a.fichier), g.questions], ['socle', [], [], [0, 0, 0, 0, 0], [`${SANS}-x.mp3`], []]);
   assert.deepStrictEqual(g.critere, { dictes_sans_aide: 5, osaus: null, atteint: false });
 });
 test('questions servies par leur étiquette de région, jamais par leur texte ; premier bilan d\'une région : rien de remplacé ; grille OSAUS exportée', () => {
-  P.logbookAdd({ date: '2026-09-25', region: 'genou', questions: ['Récessus : comparer avec la bourse (epaule) ?'] });
-  const q = '2026-09-25 (genou) : Récessus : comparer avec la bourse (epaule) ?';
-  assert.deepStrictEqual([P.plan('epaule').questions, P.plan('genou').questions, P.casPick('epaule').source, P.casPick('genou')], [[], [q], 'item', { source: 'question', texte: q }]);
-  assert.strictEqual(P.bilan('genou', [3, 3, 3, 3, 3, 3, 3], '').remplace, null);
+  P.logbookAdd({ date: '2026-09-25', region: SANS, questions: ['Récessus : comparer avec la bourse (epaule) ?'] });
+  const q = `2026-09-25 (${SANS}) : Récessus : comparer avec la bourse (epaule) ?`;
+  assert.deepStrictEqual([P.plan('epaule').questions, P.plan(SANS).questions, P.casPick('epaule').source, P.casPick(SANS)], [[], [q], 'item', { source: 'question', texte: q }]);
+  assert.strictEqual(P.bilan(SANS, [3, 3, 3, 3, 3, 3, 3], '').remplace, null);
   assert.deepStrictEqual([P.OSAUS.nom, P.OSAUS.items.map(i => i.n), P.OSAUS.echelle, Object.isFrozen(P.OSAUS), Object.isFrozen(P.OSAUS.items[0])], ['OSAUS', [1, 2, 3, 4, 5, 6, 7], '1 à 5 par item', true, true]);
 });
 
@@ -394,16 +400,17 @@ test('ecrire : garde-fou d\'abord (code 2), seules les dates du volet échappent
   assert.deepStrictEqual(rates, []);
   assert.deepStrictEqual([prives(), dossiers(), racine()], avant, 'aucun refus n\'a écrit quoi que ce soit');
 });
-test('garde-fou d\'ecrire indépendant de la date du jour : mêmes refus et mêmes admissions le 10, le 31, le 1er d\'un mois et au changement d\'année (horloge simulée)', (t) => {
-  const rates = [];   // sous-dossier « x » : un texte admis par le garde-fou bute ensuite sur le sous-dossier, rien n'est jamais écrit
-  for (const d of ['2026-10-10', '2026-10-31', '2026-11-01', '2026-12-31', '2027-01-01']) {
-    t.mock.timers.enable({ apis: ['Date'], now: Date.parse(d + 'T12:00:00') });
-    try {
-      if (P.today() !== d) rates.push(`${d} : horloge non simulée (${P.today()})`);
-      for (const [, n, x] of ECRIRE_REFUS()) { try { P.ecrire('x', n, x); } catch (err) { if (!(err instanceof P.GuardError)) rates.push(`${d} : non refusé : ${n} | ${x}`); } }
-      for (const [, n, x] of ECRIRE_ADMIS()) { try { P.ecrire('x', n, x); } catch (err) { if (err instanceof P.GuardError || !/^sous-dossier/.test(err.message)) rates.push(`${d} : refusé : ${n} | ${x} — ${err.message}`); } }
-    } finally { t.mock.timers.reset(); }
-  }
+/* horloge simulée sans l'API MockTimers (expérimentale : ExperimentalWarning dans la sortie des tests) : Date remplacée, le temps de fn, par une sous-classe
+   arrêtée à midi (heure locale) du jour iso ; new Date(x), Date.parse et Date.UTC restent ceux de la vraie Date */
+const horloge = (iso, fn) => { const Vraie = Date, t = Vraie.parse(iso + 'T12:00:00'); global.Date = class extends Vraie { constructor(...a) { super(...(a.length ? a : [t])); } static now() { return t; } }; try { return fn(); } finally { global.Date = Vraie; } };
+test('garde-fou d\'ecrire indépendant de la date du jour : mêmes refus et mêmes admissions le 10, le 31, le 1er d\'un mois et au changement d\'année (horloge simulée)', () => {
+  const rates = [], Vraie = Date;   // sous-dossier « x » : un texte admis par le garde-fou bute ensuite sur le sous-dossier, rien n'est jamais écrit
+  for (const d of ['2026-10-10', '2026-10-31', '2026-11-01', '2026-12-31', '2027-01-01']) horloge(d, () => {
+    if (P.today() !== d) rates.push(`${d} : horloge non simulée (${P.today()})`);
+    for (const [, n, x] of ECRIRE_REFUS()) { try { P.ecrire('x', n, x); } catch (err) { if (!(err instanceof P.GuardError)) rates.push(`${d} : non refusé : ${n} | ${x}`); } }
+    for (const [, n, x] of ECRIRE_ADMIS()) { try { P.ecrire('x', n, x); } catch (err) { if (err instanceof P.GuardError || !/^sous-dossier/.test(err.message)) rates.push(`${d} : refusé : ${n} | ${x} — ${err.message}`); } }
+  });
+  assert.strictEqual(Date, Vraie, 'vraie Date rendue après la simulation');
   assert.deepStrictEqual(rates, []);
   assert.deepStrictEqual(dossiers().filter(f => f.startsWith('x/')), [], 'rien écrit');
 });

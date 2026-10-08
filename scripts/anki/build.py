@@ -2,7 +2,8 @@
 """Construit dist/anki/msk-<region>.apkg depuis dist/msk/<region>.cards.json (genanki).
 usage : scripts/anki/.venv/bin/python scripts/anki/build.py <region> [--out dist/anki] [--copy]
 --copy : copie aussi le paquet dans <dossier privé>/anki/ et dans transfert_anki de config.json (iCloud → iPhone), après vérification (check.inspect) :
-         refus, raison affichée et code 1, si un média manque, si un GUID est en double, si une image n'est pas dans le manifeste ou si le nombre de notes diffère."""
+         refus, raison affichée et code 1, si un média manque, si un GUID est en double, si une image n'est pas dans le manifeste ou si le nombre de notes diffère ;
+         de même, sans rien créer ni copier, si le dossier privé n'est pas initialisé ou si config.json n'a pas de transfert_anki."""
 import argparse, hashlib, json, os, pathlib, shutil, warnings
 import genanki
 from check import inspect, problemes
@@ -43,8 +44,10 @@ def copier(apkg, attendu=None):
     raisons = problemes(inspect(apkg), attendu)   # jamais de paquet non vérifié vers l'iPhone : rien n'est créé ni copié en cas de refus
     if raisons: raise SystemExit(f'copie annulée, paquet invalide : {" ; ".join(raisons)}')
     home = pathlib.Path(os.environ.get('ECHO_MSK_HOME') or os.path.expanduser('~/Claude/Projects/Écho MSK'))
-    cfg = json.loads((home / 'config.json').read_text(encoding='utf-8'))
-    cibles = [home / 'anki', pathlib.Path(cfg['transfert_anki'])]
+    if not (home / 'config.json').is_file(): raise SystemExit(f'dossier privé non initialisé ({home}) : node scripts/msk-progress.js init')
+    transfert = json.loads((home / 'config.json').read_text(encoding='utf-8')).get('transfert_anki')
+    if not isinstance(transfert, str) or not transfert.strip(): raise SystemExit(f'{home / "config.json"} : transfert_anki absent (dossier iCloud de transfert vers l\'iPhone) — rien n\'est copié')
+    cibles = [home / 'anki', pathlib.Path(transfert)]
     for d in cibles: d.mkdir(parents=True, exist_ok=True); shutil.copy2(apkg, d / apkg.name)
     return cibles
 

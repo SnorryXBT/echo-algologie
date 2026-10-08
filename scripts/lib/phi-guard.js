@@ -9,13 +9,15 @@
    Début de phrase : la majuscule n'y signale plus un nom propre (« Patient Dupont », « Le monsieur de Libourne », « Habite à Bergerac ») ;
    les règles de majuscules passent donc aussi sur le texte dont la première lettre de chaque phrase est abaissée.
    Sigles : après « patient », un nom en capitales est refusé (« patient DUPONT ») sauf sigle de la liste SIGLES (« patient BPCO ») : à compléter au besoin.
-   Limites connues, que la skill /msk-logbook doit porter : nom écrit sans majuscule ou texte tout en capitales (aucun signal de nom propre) ;
+   Limites connues, que la skill /msk-logbook doit porter : nom écrit sans majuscule ou texte tout en capitales (aucun signal de nom propre),
+   sauf après une civilité (madame, monsieur, mme, mr, m. : refusé, « vu monsieur dupont ») ;
    prénom seul, « prénom + nom » sans civilité ; désignation par une institution (« la dame de l'EHPAD », « le patient des Urgences ») ;
    profession sans verbe (« maçon ») ; adresse postale.
    Refus assumés (coût : une reformulation) : « Douleur depuis 3 ans » (âge ou durée en chiffres : décision de Mat reportée, voir PROCHAINE-SESSION.md, section G ; d'ici là, « depuis N ans » s'écrit en lettres) ; « Dr/Pr + nom », même pour
    un auteur de vidéo ; « patient B. » en fin de phrase (initiale avec point) ; « M. de Dupuytren » (M. = maladie) ; « mode M Doppler » ; « un patient de Parkinson »
    (maladie prise pour un lieu) ; « Il vient du Doppler » (sujet pronom) ; « ch. 3 du guide » ; sigles à points (« I.R.M. ») ; plages « 10-12-15 MHz » ;
-   « le muscle travaille pour… » ; « il travaille à temps partiel » ; « patient » suivi d'un sigle absent de SIGLES.
+   « le muscle travaille pour… » ; « il travaille à temps partiel » ; « patient » suivi d'un sigle absent de SIGLES ; civilité suivie d'un mot en minuscules,
+   comme pour madame : « un monsieur âgé », « Monsieur présente… », « M. supra-épineux » (M. = muscle), « arthro-MR montre ».
    Acceptés exprès, épinglés dans les tests : « Rameau né en C5 », « né le long du nerf », « douleur née le lendemain », « Cette coupe vient de Nysora »,
    « Une patiente de Rhumatologie adressée », « CSA du nerf médian +33 % », « travaillé à main levée / au Doppler / à 15 MHz / à deux mains »,
    « la patiente de la 2e séance », « le 3 septembre » (date sans année : décision de Mat). */
@@ -44,14 +46,14 @@ const REGLES_BRUT = [   // sur le texte d'origine (la majuscule est le signal)
   [new RegExp(String.raw`(?:(?<![\p{L}\p{N}_])(?:patiente?|dame|monsieur|femme|homme|personne|sujet|il|elle|ils|elles)(?![\p{L}\p{N}_])[^.;:!?]{0,15}?\s|(?:^|[,;:(.\n])\s*)(?:vien(?:t|nent)|ven(?:u|ue|ait|ant))\s+${LIEU}`, 'u'), 'lieu d\'origine'],   // sujet personne ou sans sujet : « Cette coupe vient de Nysora » passe
 ];
 const REGLES_NORM = [   // sur le texte normalisé (minuscules, sans accent)
-  [/\b(?:mme|mlle|melle|madame|mademoiselle)\.?\s+[a-z]/, 'civilité suivie d\'un nom'],
+  [/\b(?:mme|mlle|melle|madame|mademoiselle|monsieur|mr|(?<!\d ?)m\.)\.?\s+[a-z]/, 'civilité suivie d\'un nom'],   // nom en minuscules (« vu monsieur dupont ») ; « 500 m. Le genou » : « m. » après un nombre est une unité
   [/\bdate de naissance\b|\bddn\b/, 'date de naissance'],
   [new RegExp(String.raw`\bnee?\s+(?:le|en)\b\s*(?::\s*)?(?:\d|premier\b|(?:${JOURS})\b|(?:${NB}[\s-]+(?:et[\s-]+)?){0,3}(?:${MOIS})\b)`), 'date de naissance'],   // sans accent, « ne le » seul est la négation : une date doit suivre (chiffre, jour, mois)
   [/\b\d{1,2}([\/.-])\d{1,2}\1\d{2,4}\b/, 'date complète'],   // même séparateur partout : « 2.5-10 mm » n'est pas une date
   [new RegExp(String.raw`\b\d{1,2}(?:er)?\s+(?:${MOIS})\s+\d{2,4}\b`), 'date complète'],   // « 12 mars 2019 » ; sans année (« le 3 septembre »), non refusé : décision de Mat
   [/\b(?:19|20)\d{2}-\d{2}-\d{2}\b/, 'date complète'],
   [/\b(?:chambre|ch\.?|lit|box)\s*(?:(?:n°|no|numero)\s*)?\d+/, 'numéro de chambre, de lit ou de box'],   // un seul \s* avant le chiffre : deux \s* de suite rendent la recherche quadratique sur une longue suite d'espaces
-  [/\b(?:ipp|nir|n°\s*de\s*dossier|numero de dossier|n° patient|no patient|dossier\s*(?:(?:n°|no|numero)\s*)?\d+)\b/, 'identifiant de dossier'],
+  [/\b(?:ipp|nir|n°\s*de\s*dossier|numero de dossier|n° patient|no patient|dossier\s*(?:(?:n°|no|numero)\s*)?\d+)\b|\b(?:ipp|nir)\s*\d/, 'identifiant de dossier'],   // « IPP4521 » : sigle collé au numéro
   [/\b\d(?:[ .]?\d{2}){2}[ .]?\d{2,3}[ .]?\d{3}[ .]?\d{2,3}\b|\b\d{13,15}\b/, 'numéro long (sécurité sociale, dossier)'],
   [/\b\d{1,3}\s*ans\b/, 'âge'],
   [new RegExp(String.raw`\b(?:${DIZ}(?:[\s-]+(?:et[\s-]+)?${NB}){0,3}|dix[\s-]+(?:sept|huit|neuf))\s+ans\b`), 'âge'],   // en lettres : « soixante-douze ans », « dix-neuf ans »

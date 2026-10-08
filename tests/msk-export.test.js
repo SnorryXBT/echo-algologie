@@ -4,6 +4,7 @@ const assert = require('node:assert');
 const crypto = require('crypto'), fs = require('fs'), os = require('os'), path = require('path');
 const { spawnSync } = require('child_process');
 const ROOT = path.resolve(__dirname, '..');
+const SANS = (E => E.mskRegions.find(r => !E.msk[r.id]).id)(require('../scripts/lib/load-echo').loadEcho({ msk: true }));   // région sans fiche MSK, choisie à l'exécution : ces tests ne dépendent pas de la prochaine région rédigée
 const tmp = (t, prefixe) => { const d = fs.mkdtempSync(path.join(os.tmpdir(), prefixe)); t.after(() => fs.rmSync(d, { recursive: true, force: true })); return d; };
 /* export réel ; `pre` : modules chargés avant le script (--require) pour observer le rendu ou modifier les données reçues, sans toucher au dépôt */
 const exporter = (args, pre = []) => spawnSync(process.execPath, [...pre.flatMap(p => ['--require', p]), 'scripts/msk-export.js', ...args], { cwd: ROOT, env: process.env, encoding: 'utf8', timeout: 120000 });
@@ -107,7 +108,7 @@ test('msk-export : un id de --gestes absent du mémo est refusé avant tout rend
 
 test('msk-export : clés de cartes en double (--gestes répété) refusées avant tout rendu, toutes nommées', (t) => {
   const out = tmp(t, 'mx-'), d = tmp(t, 'mx-pre-'), e = espion(d);
-  const r = exporter(['genou', '--gestes', 'geste-factice,geste-factice', '--out', out], [factice(d), e.pre]);
+  const r = exporter([SANS, '--gestes', 'geste-factice,geste-factice', '--out', out], [factice(d), e.pre]);
   assert.strictEqual(r.status, 1, 'code de sortie : ' + r.stderr);
   assert.deepStrictEqual(doubles(r.stderr), ['socle-geste-factice-echo-1', 'socle-geste-factice-piege-1']);
   assert.deepStrictEqual(e.appels(), [], 'aucun rendu');
@@ -164,8 +165,22 @@ test('msk-export : un rendu en échec laisse intactes les sorties de l\'export p
 
 test('msk-export sans fiche MSK (--gestes) : la fiche brute d\'un export antérieur est retirée', (t) => {
   const out = tmp(t, 'mx-'), d = tmp(t, 'mx-pre-');
-  fs.writeFileSync(path.join(out, 'genou.json'), '{}');
-  const r = exporter(['genou', '--gestes', 'geste-factice', '--out', out], [factice(d)]);
+  fs.writeFileSync(path.join(out, `${SANS}.json`), '{}');
+  const r = exporter([SANS, '--gestes', 'geste-factice', '--out', out], [factice(d)]);
   assert.strictEqual(r.status, 0, r.stderr);
-  assert.deepStrictEqual(fs.readdirSync(out).sort(), ['genou-digest.md', 'genou.cards.json', 'img']);
+  assert.deepStrictEqual(fs.readdirSync(out).sort(), [`${SANS}-digest.md`, `${SANS}.cards.json`, 'img'].sort());
+});
+
+test('msk-export : option sans valeur (--out, --gestes ; absente, vide ou suivie d\'une autre option) refusée, l\'option nommée, rien n\'est écrit', (t) => {
+  const out = tmp(t, 'mx-'), d = tmp(t, 'mx-pre-'), lectureSeule = path.join(d, 'lecture-seule.js');
+  /* le processus de l'export ne peut rien créer : un refus manqué échoue sur « écriture interdite » au lieu d'écrire dans le dépôt (--out '' ou --out --gestes) */
+  fs.writeFileSync(lectureSeule, `const fs = require('fs');\nfor (const k of ['writeFileSync', 'mkdirSync', 'mkdtempSync', 'copyFileSync', 'renameSync']) fs[k] = () => { throw new Error('écriture interdite (test)'); };\n`);
+  const racine = fs.readdirSync(ROOT).sort(), rates = [];
+  for (const [args, k] of [[['epaule', '--out'], '--out'], [['epaule', '--out', ''], '--out'], [['epaule', '--out', '--gestes', 'sous-acromiale'], '--out'],
+    [['epaule', '--out', out, '--gestes'], '--gestes'], [['epaule', '--gestes', '--out', out], '--gestes']]) {
+    const r = exporter(args, [lectureSeule]);
+    if (r.status !== 1 || r.stderr !== `${k} : valeur manquante\n`) rates.push(`${JSON.stringify(args)} → ${r.status} ${r.stderr.trim().split('\n')[0]}`);
+  }
+  assert.deepStrictEqual(rates, []);
+  assert.deepStrictEqual([fs.readdirSync(out), fs.readdirSync(ROOT).sort()], [[], racine], 'rien dans --out ni à la racine du dépôt');
 });

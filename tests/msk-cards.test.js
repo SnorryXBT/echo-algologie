@@ -29,17 +29,7 @@ test('cardsFromMsk sur la fiche épaule du dépôt : cinq types, clés dérivée
   const credit = E.inline(`${fi.credit} — ${fi.licence}`);
   assert.strictEqual(s.source, credit); assert.strictEqual(k.source, credit);
   assert.ok(s.image.marqueurs !== fi.marqueurs && s.image.crop !== fi.crop && k.image.marqueurs !== fi.marqueurs, 'pas d\'alias avec la fiche'); assert.deepStrictEqual(s.image.crop, fi.crop);
-  /* pathologie : sans image, pas de source ; avec image, crédit puis licence ; geste : lien vers la fiche du site ; piège : question au recto, réponse au verso */
-  const pSans = f.pathologies.find(p => !p.image), pAvec = f.pathologies.find(p => p.image && p.image.src), pG = f.pathologies.find(p => (p.gestes || []).length);
-  /* chaque cas doit exister dans la fiche chargée : une fiche qui en manque un échoue ici, bruyamment, au lieu de sauter l'assertion */
-  assert.ok(pSans, 'la fiche doit compter une pathologie sans image'); assert.ok(pAvec, 'la fiche doit compter une pathologie illustrée'); assert.ok(pG, 'la fiche doit compter une pathologie reliée à un geste du mémo');
-  assert.strictEqual(cards.find(c => c.key === `patho-${slug(pSans.nom)}`).source, '', 'pathologie sans image : pas de source');
-  assert.strictEqual(cards.find(c => c.key === `patho-${slug(pAvec.nom)}`).source, E.inline(`${pAvec.image.credit} — ${pAvec.image.licence}`));
-  assert.ok(cards.find(c => c.key === `geste-${slug(pG.nom)}`).back.includes(`echo-algologie.pages.dev/#/fiche/${pG.gestes[0]}`));
-  const a0 = (f.artefacts || []).find(a => a.question && a.reponse);
-  assert.ok(a0, 'la fiche doit compter un artefact à question et réponse');
-  const piege = cards.find(c => c.key === `piege-${slug(a0.nom)}`);
-  assert.ok(piege.front.includes(E.inline(a0.question)) && piege.back.includes(E.inline(a0.reponse)));
+  /* pathologies (avec ou sans image, reliées à un geste) et artefacts à question : vérifiés sur la fiche-fixture du test « source », pas sur le contenu de la fiche */
   assert.deepStrictEqual(cardsFromMsk(f, E), cards, 'déterministe');
   assert.ok(cards.every(c => c.tags.includes('msk::epaule')));
 });
@@ -50,7 +40,7 @@ test('cardsFromGestes : images étiquetées, sono-anatomie, pièges « énoncé 
   const keys = cards.map(c => c.key);
   assert.strictEqual(new Set(keys).size, keys.length, 'clés uniques');
   assert.ok(keys.includes('socle-sous-acromiale-echo-1'), 'echo-2 (5 étiquettes) devient la carte image n° 1');
-  assert.strictEqual(cards.filter(c => c.key.startsWith('socle-sous-acromiale-sono-')).length, 8);
+  assert.strictEqual(cards.filter(c => c.key.startsWith('socle-sous-acromiale-sono-')).length, E.procedures['sous-acromiale'].sonoanatomie.length, 'une carte par structure de la sono-anatomie');
   const piege = cards.find(c => c.key === 'socle-sous-acromiale-piege-1');
   assert.match(piege.front, /anisotropie/); assert.match(piege.back, /basculer la sonde/);
   assert.match(piege.front, /<br>Quelle conséquence, quelle parade \?$/); assert.ok(!piege.front.includes('Que faire'), 'la 2e moitié d\'un piège est une conséquence ou une parade, pas toujours une action');
@@ -108,11 +98,17 @@ test('cardsFromMsk : verso des structures trié par numéro, libellés passés p
   assert.deepStrictEqual(f.protocole[0].image.marqueurs.map(m => m.n), [2, 1], 'la fiche n\'est pas réordonnée');
 });
 
-test('source : crédit et licence passent par inline, comme les crédits du site', () => {
+test('source : crédit et licence passent par inline, comme les crédits du site ; pathologie sans image, geste relié, artefact à question (fiche-fixture)', () => {
   const E = loadEcho({ procedures: true, md: true });
   const im = { src: 'img/x.jpg', credit: 'Auteur *et al.*, fig. 2', licence: 'CC BY **4.0**', marqueurs: [{ n: 1, x: 0.1, y: 0.1, label: 'a' }, { n: 2, x: 0.2, y: 0.2, label: 'b' }] };
-  const cs = cardsFromMsk({ id: 'epaule', titre: 'T', protocole: [{ n: 1, titre: 'c', image: im }], pathologies: [{ nom: 'P', image: im }] }, E);
+  const cs = cardsFromMsk({ id: 'epaule', titre: 'T', protocole: [{ n: 1, titre: 'c', image: im }], pathologies: [{ nom: 'P', image: im }, { nom: 'Sans image', gestes: ['sous-acromiale'] }],
+    artefacts: [{ nom: 'Anisotropie', texte: 'Tendon sombre.', question: 'Hypoéchogène : **rupture** ?', reponse: 'Basculer la *sonde*.' }] }, E);
   for (const k of ['coupe-1', 'coupe-1-structures', 'patho-p']) assert.strictEqual(cs.find(c => c.key === k).source, 'Auteur <em>et al.</em>, fig. 2 — CC BY <strong>4.0</strong>', k);
+  /* pathologie : sans image, pas de source ; geste : lien vers la fiche du site ; piège : question au recto, réponse au verso */
+  assert.strictEqual(cs.find(c => c.key === 'patho-sans-image').source, '', 'pathologie sans image : pas de source');
+  assert.ok(cs.find(c => c.key === 'geste-sans-image').back.includes('echo-algologie.pages.dev/#/fiche/sous-acromiale'), 'geste : lien vers la fiche du site');
+  const piege = cs.find(c => c.key === 'piege-anisotropie');
+  assert.ok(piege.front.includes(E.inline('Hypoéchogène : **rupture** ?')) && piege.back.includes(E.inline('Basculer la *sonde*.')), 'piège : question au recto, réponse au verso');
   const Eg = Object.assign({}, E, { procedures: { h: { titre: 'H' } }, figures: { h: [{ type: 'echo', src: 'img/x.jpg', credit: 'Walter *et al.*', labels: [{ x: 0.1, y: 0.1, text: 'a' }, { x: 0.2, y: 0.2, text: 'b' }] }] } });
   assert.strictEqual(cardsFromGestes(['h'], Eg)[0].source, 'Walter <em>et al.</em>');
 });

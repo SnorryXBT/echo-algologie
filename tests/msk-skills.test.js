@@ -49,4 +49,5 @@ test('skills : chaque script cité existe, chaque option figure dans sa source, 
   }
   assert.deepStrictEqual(rates, []);
   assert.ok(commandes >= 10, `commandes msk-progress.js vérifiées : ${[...vus].join(', ')}`);
+  assert.ok(vus.has('audio ecoute') && fs.readFileSync(path.join(ROOT, '.claude/skills-global/msk-semaine/SKILL.md'), 'utf8').includes('msk-progress.js audio ecoute'), '/msk-semaine marque les épisodes écoutés (audio ecoute) : sans elle, le plan les repropose chaque semaine');
 });

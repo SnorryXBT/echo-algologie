@@ -1,6 +1,7 @@
 # scripts/anki/test_build.py  — cd scripts/anki && .venv/bin/python -m unittest test_build.py
 import json, os, pathlib, shutil, struct, subprocess, sys, tempfile, unittest, zipfile, zlib
 from unittest import mock
+import genanki
 from build import build
 from check import inspect
 import build as B, check as C   # accès aux autres fonctions des deux modules (copier, chemin_affiche, ROOT, problemes)
@@ -38,6 +39,15 @@ class BuildTest(unittest.TestCase):
         a, _ = build(self.cards, self.root / 'a', self.root); b, _ = build(self.cards, self.root / 'b', self.root)
         self.assertEqual(inspect(a)['guids'], inspect(b)['guids'])
         self.assertEqual(len(set(inspect(a)['guids'])), 2)
+    def test_identifiants_epingles(self):
+        # littéraux calculés le 2026-10-08 sur le code d'alors (genanki 0.13.1) : en changer un orpheline les notes déjà importées sur l'iPhone (cartes neuves, planification à zéro)
+        self.assertEqual(B.MODEL_ID, 1696100001)
+        self.assertEqual([f['name'] for f in B.MODEL.fields], ['Recto', 'Verso', 'Source'])
+        self.assertEqual([B.deck_id('Écho MSK::Genou::Structures'), B.deck_id('Écho MSK::Genou::Pièges et artefacts')], [754039795, 3469978156])
+        epingles = ['Ow|Norsu`{', 'wpcW[;WW=r']   # notes (genou, piege, piege-anisotropie) et (genou, structure, coupe-1-structures) de la fixture
+        self.assertEqual([genanki.guid_for('msk', 'genou', 'piege', 'piege-anisotropie'), genanki.guid_for('msk', 'genou', 'structure', 'coupe-1-structures')], epingles)
+        apkg, _ = build(self.cards, self.root / 'ok', self.root)
+        self.assertEqual(sorted(inspect(apkg)['guids']), sorted(epingles))
 
     # --- tour de correction 1 : contrôles du paquet, écriture atomique, copie vérifiée avant l'iPhone ---
     def variante(self, modif):
@@ -120,6 +130,15 @@ class BuildTest(unittest.TestCase):
     def test_copie_refusee_nombre_de_notes_inattendu(self):
         apkg, n = build(self.cards, self.root / 'ok', self.root)
         self.assertIn('attendu', self.refuse_la_copie(apkg, n + 1))
+    def test_copie_sans_dossier_prive_ou_sans_transfert(self):   # --copy avant init, ou config.json sans transfert_anki : message clair (pas de traceback), rien de créé ni copié
+        apkg, n = build(self.cards, self.root / 'ok', self.root); h = self.root / 'home'
+        with mock.patch.dict(os.environ, {'ECHO_MSK_HOME': str(h)}), self.assertRaises(SystemExit) as e: B.copier(apkg, n)
+        self.assertEqual(str(e.exception.code), f'dossier privé non initialisé ({h}) : node scripts/msk-progress.js init')
+        self.assertFalse(h.exists())
+        h.mkdir(); (h / 'config.json').write_text(json.dumps({'repo': str(B.ROOT)}), encoding='utf-8')
+        with mock.patch.dict(os.environ, {'ECHO_MSK_HOME': str(h)}), self.assertRaises(SystemExit) as e: B.copier(apkg, n)
+        self.assertIn('transfert_anki absent', str(e.exception.code)); self.assertIn(str(h / 'config.json'), str(e.exception.code))
+        self.assertEqual(os.listdir(h), ['config.json'])   # ni anki/ ni copie
 
     def test_chemin_affiche_hors_du_depot(self):
         self.assertEqual(B.chemin_affiche(B.ROOT / 'dist/anki/msk-x.apkg'), 'dist/anki/msk-x.apkg')

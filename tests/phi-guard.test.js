@@ -30,6 +30,8 @@ test('phrases pièges refusées', () => {
     'la patiente, adressée ce matin, vient de Marmande', 'un patient venant de Bergerac, épaule droite', 'Elle est venue de Bergerac ce matin',
     // tâche 9b, ronde 1 : numéro coupé par un retour à la ligne (msk-progress écrit chaque texte sur une ligne, où il redevient un numéro)
     'Rappeler au 06\n12 34 56 78', 'secu 1 85 03 75\n123 456 78',
+    // revue finale : civilité masculine en minuscules ou abrégée (« madame » l'était déjà), identifiant collé à son sigle
+    'vu monsieur dupont ce matin', 'mr dupont, épaule', 'm. dupont, épaule', 'MONSIEUR dupont, épaule', 'IPP4521', 'NIR1840431555123',
   ];
   const passes = pieges.filter(p => detecter(p).length === 0);
   assert.deepStrictEqual(passes, [], 'phrases pièges non refusées (' + passes.length + ') :\n  ' + passes.join('\n  '));
@@ -75,6 +77,8 @@ test('phrases légitimes acceptées', () => {
     'Patient EVA 7 au repos, 4 en mouvement.', 'Patient COVID long, fatigue importante.', 'Le deltoïde travaille à l\'étirement en fin de course.',
     'En mode M, le mouvement du tendon se voit mieux.', 'Rupture âgée de 3 semaines, tendon rétracté.', 'Hématome âgé de 48 h, coupe 4.',
     'Je ne le revois qu\'en mai.', 'Le signal vient de Philips ou de Canon selon la sonde.', 'Question : d\'où vient ce signal Doppler ?',
+    // revue finale : « m. » après un nombre est une unité, pas une civilité
+    'Profondeur réglée à 4 cm. Le tendon est net.', 'Périmètre de marche limité à 500 m. Le genou lâche ensuite.',
   ];
   const refusees = ok.map(p => [p, detecter(p)]).filter(([, h]) => h.length);
   assert.deepStrictEqual(refusees.map(([p]) => p), [], 'phrases légitimes refusées (' + refusees.length + ') :\n  ' + refusees.map(([p, h]) => p + '   →   ' + h.map(x => x.motif + ' [' + x.extrait + ']').join(' | ')).join('\n  '));

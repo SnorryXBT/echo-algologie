@@ -1,6 +1,8 @@
 // tests/msk-audit.test.js
 const test = require('node:test');
 const assert = require('node:assert');
+const fs = require('fs'), os = require('os'), path = require('path');
+const { spawnSync } = require('child_process');
 const { auditMsk, slug, mesuresDe } = require('../scripts/lib/msk-audit-rules');
 const { loadEcho, ROOT } = require('../scripts/lib/load-echo');
 
@@ -170,4 +172,28 @@ test('coupe du protocole : image ou sansImage, exactement l\'un des deux', () =>
   assert.deepStrictEqual(errsOf(f => { f.protocole[0].image = null; }), ['protocole coupe 1 : ni image ni sansImage']);
   assert.deepStrictEqual(errsOf(f => { delete f.protocole[0].image; f.protocole[0].sansImage = '  '; }), ['protocole coupe 1 : ni image ni sansImage'], 'motif blanc : comme absent');
   assert.deepStrictEqual(errsOf(f => { f.protocole[0].sansImage = motif; }), ['protocole coupe 1 : image et sansImage à la fois']);
+});
+test('image : existence sur le disque casse comprise (macOS l\'ignore, Cloudflare non) ; image vide ou non-objet sans sansImage signalée', () => {
+  const faux = [];
+  for (const src of ['img/nerf-axillaire/ECHO-1.jpg', 'img/Nerf-Axillaire/echo-1.jpg', 'IMG/nerf-axillaire/echo-1.jpg']) {   // existent pour macOS, 404 en ligne
+    const e = errsOf(f => { f.protocole[0].image.src = src; });
+    if (!e.some(m => m.startsWith(`protocole coupe 1 : image absente sur le disque (${src})`))) faux.push(`${src} : ${JSON.stringify(e)}`);
+  }
+  for (const src of ['img/nerf-axillaire/echo-1.jpg', './img/nerf-axillaire/echo-1.jpg']) if (errsOf(f => { f.protocole[0].image.src = src; }).length) faux.push(`${src} refusée à tort`);
+  for (const v of ['', false, 0]) {   // ni null ni objet : ni l'image ni le motif sansImage ne s'affichent
+    const e = errsOf(f => { f.protocole[0].image = v; });
+    if (JSON.stringify(e) !== JSON.stringify(['protocole coupe 1 : image sans src'])) faux.push(`image = ${JSON.stringify(v)} : ${JSON.stringify(e)}`);
+  }
+  assert.deepStrictEqual(faux, []);
+});
+test('CLI msk-audit : listes mal formées (chaîne, élément null) → messages d\'audit affichés, code 1, aucune exception', (t) => {
+  const d = fs.mkdtempSync(path.join(os.tmpdir(), 'ma-')); t.after(() => fs.rmSync(d, { recursive: true, force: true }));
+  const rates = [];
+  for (const [nom, v] of [['chaîne', 'x'], ['élément null', [null]]]) {
+    const pre = path.join(d, 'donnees.js');   // fiche du dépôt modifiée dans le seul processus de l'audit (--require), jamais sur le disque
+    fs.writeFileSync(pre, `const m = require(${JSON.stringify(path.join(ROOT, 'scripts/lib/load-echo.js'))}), vrai = m.loadEcho;\nm.loadEcho = (...a) => { const E = vrai(...a); Object.assign(E.msk.epaule, { protocole: ${JSON.stringify(v)}, references: ${JSON.stringify(v)} }); return E; };\n`);
+    const r = spawnSync(process.execPath, ['--require', pre, 'scripts/msk-audit.js', 'epaule'], { cwd: ROOT, encoding: 'utf8' });
+    if (r.status !== 1 || r.stderr !== '' || !/^epaule +\d+ coupes · 0 marqueurs · .+ réf\. \(0 à vérifier\) · /m.test(r.stdout) || !/^  ERREUR (protocole|référence 1)/m.test(r.stdout)) rates.push(`${nom} → ${r.status} ${(r.stderr || r.stdout).trim().split('\n').slice(0, 3).join(' / ')}`);
+  }
+  assert.deepStrictEqual(rates, []);
 });
