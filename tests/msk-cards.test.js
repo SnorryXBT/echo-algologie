@@ -81,15 +81,21 @@ test('digest : pièges et terme anglais de chaque pathologie, question et répon
   const f = E.msk.epaule, md = digest(f, [], E, 'Épaule'), net = s => String(s).replace(/\*\*/g, '').replace(/<\/?[a-z][^>]*>/gi, '');
   /* fiche du dépôt : chaque pièce présente, quel que soit le contenu */
   for (const p of f.pathologies) if (p.pieges) assert.ok(md.includes(`  - Pièges : ${net(p.pieges)}\n`), 'pièges : ' + p.nom);
-  for (const a of f.artefacts || []) if (a.question && a.reponse) assert.ok(md.includes(`  - Question : ${net(a.question)}\n  - Réponse : ${net(a.reponse)}\n`), 'question et réponse : ' + a.nom);
+  for (const a of f.artefacts || []) {
+    if (a.question) assert.ok(md.includes(`  - Question : ${net(a.question)}\n`), 'question : ' + a.nom);
+    if (a.reponse) assert.ok(md.includes(`  - Réponse : ${net(a.reponse)}\n`), 'réponse : ' + a.nom);
+  }
   /* fixture (la ponctuation se vérifie ici, pas sur le texte libre de la fiche) : ordre signes → pièges → conduite, un seul point en fin de signes, gras et balises retirés, rien pour un champ absent */
   const g = { titre: 'T', resume: '', protocole: [], sonoanatomie: [], dictee: '',
     pathologies: [{ nom: 'Bursite', en: 'Bursitis', signes: ['Bourse > 2 mm.', 'Liquide <b>bursal</b>.'], pieges: 'Lame **physiologique** fréquente.', conduite: 'Infiltrer.' }, { nom: 'Sans piège', signes: ['S.'], conduite: 'C.' }],
-    artefacts: [{ nom: 'Anisotropie', texte: 'Tendon sombre.', question: 'Hypoéchogène : rupture ?', reponse: 'Basculer la sonde.' }, { nom: 'Ombre', texte: 'Os.' }] };
+    artefacts: [{ nom: 'Anisotropie', texte: 'Tendon sombre.', question: 'Hypoéchogène : rupture ?', reponse: 'Basculer la sonde.' }, { nom: 'Renforcement', texte: 'Liquide.', question: 'Kyste ou tissu ?' },
+      { nom: 'Cartilage', texte: 'Bande anéchogène.', reponse: 'Pas un épanchement.' }, { nom: 'Ombre', texte: 'Os.' }] };
   const out = digest(g, [], E, 'Test');
   assert.ok(out.includes('- Bursite (Bursitis)\n  - Signes : Bourse > 2 mm ; Liquide bursal.\n  - Pièges : Lame physiologique fréquente.\n  - Conduite : Infiltrer.\n'), out);
   assert.ok(out.includes('- Sans piège\n  - Signes : S.\n  - Conduite : C.\n'), 'pathologie sans piège ni terme anglais');
   assert.ok(out.includes('- Anisotropie : Tendon sombre.\n  - Question : Hypoéchogène : rupture ?\n  - Réponse : Basculer la sonde.\n'), 'artefact : question puis réponse');
+  assert.ok(out.includes('- Renforcement : Liquide.\n  - Question : Kyste ou tissu ?\n- Cartilage'), 'artefact à question seule : la question reste, sans ligne Réponse');
+  assert.ok(out.includes('- Cartilage : Bande anéchogène.\n  - Réponse : Pas un épanchement.\n- Ombre'), 'artefact à réponse seule');
   assert.ok(out.includes('- Ombre : Os.\n\n### Dictée'), 'artefact sans question : son texte seul');
 });
 

@@ -324,6 +324,6 @@ de la spécification s'applique tel quel. Une ligne par écart : section, date, 
 - §5 — 2026-10-07 (`84a8c43`) : marqueurs en fractions [0, 1] de l'image recadrée, et non dans un repère de largeur 1000, pour réutiliser `figHtml` (rendu et mode quiz des figures des fiches gestes).
 - §5 — 2026-10-07 (`3b39ae5`) : coupe sans image libre = `image: null` + `sansImage: '<motif>'` (audit : exactement l'un des deux ; ligne grise au rendu ; carte de coupe textuelle, sans carte « structure »).
 - §6 — 2026-10-07 (`bbb80b6`) : les cartes issues des fiches gestes restent dans le paquet de la région (sous-paquets Structures et Pièges et artefacts, clés `socle-…`) au lieu d'être remplacées par celles de la fiche MSK ; pas d'étiquette `niveau::`.
-- §6 — 2026-10-07 (`7d0c762`) : médias en JPEG qualité 85, et non en PNG : 15 PNG à 1800 px pesaient 16 Mo pour le seul squelette de l'épaule, 2,85 Mo en JPEG.
+- §3, §6 — 2026-10-07 (`7d0c762`) : médias en JPEG qualité 85, et non en PNG : 15 PNG à 1800 px pesaient 16 Mo pour le seul squelette de l'épaule, 2,85 Mo en JPEG.
 - §6 — 2026-10-07 (`ef3a698`) : l'export écrit dans un répertoire de travail sous `dist/msk/`, mis en place seulement s'il réussit ; un échec laisse intactes les sorties précédentes.
 - §8 — 2026-10-07 (`812397d`) : `cas pick` ne tire que pathologies et pièges, après les questions ouvertes ; les coupes sont des cibles sur patient, dans le plan de semaine.

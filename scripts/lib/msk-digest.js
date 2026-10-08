@@ -1,7 +1,7 @@
 /* Texte Markdown d'une région pour NotebookLM : fiche MSK (si présente) puis extraits des fiches gestes. Sans balises ni gras.
    Seules les vraies balises (`<b>`, `</ul>`, `<a href…>`) sont retirées : un « < 2 mm » ou un « > 5 mm » reste intact, même avec les deux dans une même chaîne.
    Pathologie : terme anglais, signes, pièges, conduite (le digest nourrit l'audio : les pièges y ont leur place, comme au site) ; artefact : texte, puis la
-   question et la réponse de sa carte, matière toute prête pour l'épisode « rappel oral ». */
+   question et la réponse de sa carte, chacune dès qu'elle existe, matière toute prête pour l'épisode « rappel oral ». */
 const strip = s => String(s == null ? '' : s).replace(/\*\*/g, '').replace(/<\/?[a-z][^>]*>/gi, '');
 const list = arr => (arr || []).map(x => `- ${strip(typeof x === 'string' ? x : [x.titre, x.texte].filter(Boolean).join(' : '))}`).join('\n');
 const sansPoint = s => s.replace(/\s*\.$/, '');   // un signe finit souvent par un point : retiré avant de joindre par « ; », remis une fois en fin de liste
@@ -21,7 +21,8 @@ function digest(f, gestes, E, nom) {
     out.push('', '### Artefacts et pièges');
     for (const a of f.artefacts || []) {
       out.push(`- ${strip(a.nom)} : ${strip(a.texte)}`);
-      if (a.question && a.reponse) out.push(`  - Question : ${strip(a.question)}`, `  - Réponse : ${strip(a.reponse)}`);
+      if (a.question) out.push(`  - Question : ${strip(a.question)}`);   // une question seule reste : c'est le recto de la carte piège
+      if (a.reponse) out.push(`  - Réponse : ${strip(a.reponse)}`);
     }
     out.push('', '### Dictée d\'un examen normal', strip(f.dictee), '');
   }

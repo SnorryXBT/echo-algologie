@@ -12,7 +12,7 @@
    Limites connues, que la skill /msk-logbook doit porter : nom écrit sans majuscule ou texte tout en capitales (aucun signal de nom propre) ;
    prénom seul, « prénom + nom » sans civilité ; désignation par une institution (« la dame de l'EHPAD », « le patient des Urgences ») ;
    profession sans verbe (« maçon ») ; adresse postale.
-   Refus assumés (coût : une reformulation) : « Douleur depuis 3 ans » (âge ou durée en chiffres : Mat tranche à la tâche 14) ; « Dr/Pr + nom », même pour
+   Refus assumés (coût : une reformulation) : « Douleur depuis 3 ans » (âge ou durée en chiffres : décision de Mat reportée, voir PROCHAINE-SESSION.md, section G ; d'ici là, « depuis N ans » s'écrit en lettres) ; « Dr/Pr + nom », même pour
    un auteur de vidéo ; « patient B. » en fin de phrase (initiale avec point) ; « M. de Dupuytren » (M. = maladie) ; « mode M Doppler » ; « un patient de Parkinson »
    (maladie prise pour un lieu) ; « Il vient du Doppler » (sujet pronom) ; « ch. 3 du guide » ; sigles à points (« I.R.M. ») ; plages « 10-12-15 MHz » ;
    « le muscle travaille pour… » ; « il travaille à temps partiel » ; « patient » suivi d'un sigle absent de SIGLES.
