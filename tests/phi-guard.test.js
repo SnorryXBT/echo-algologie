@@ -79,6 +79,8 @@ test('phrases légitimes acceptées', () => {
     'Je ne le revois qu\'en mai.', 'Le signal vient de Philips ou de Canon selon la sonde.', 'Question : d\'où vient ce signal Doppler ?',
     // revue finale : « m. » après un nombre est une unité, pas une civilité
     'Profondeur réglée à 4 cm. Le tendon est net.', 'Périmètre de marche limité à 500 m. Le genou lâche ensuite.',
+    // « MR » accolé par un trait d'union à un mot (« arthro-MR ») est un terme d'imagerie, pas une civilité ; « mr dupont » reste refusé (pièges)
+    'arthro-MR montre une rupture',
   ];
   const refusees = ok.map(p => [p, detecter(p)]).filter(([, h]) => h.length);
   assert.deepStrictEqual(refusees.map(([p]) => p), [], 'phrases légitimes refusées (' + refusees.length + ') :\n  ' + refusees.map(([p, h]) => p + '   →   ' + h.map(x => x.motif + ' [' + x.extrait + ']').join(' | ')).join('\n  '));

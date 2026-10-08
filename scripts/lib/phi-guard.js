@@ -17,10 +17,10 @@
    un auteur de vidéo ; « patient B. » en fin de phrase (initiale avec point) ; « M. de Dupuytren » (M. = maladie) ; « mode M Doppler » ; « un patient de Parkinson »
    (maladie prise pour un lieu) ; « Il vient du Doppler » (sujet pronom) ; « ch. 3 du guide » ; sigles à points (« I.R.M. ») ; plages « 10-12-15 MHz » ;
    « le muscle travaille pour… » ; « il travaille à temps partiel » ; « patient » suivi d'un sigle absent de SIGLES ; civilité suivie d'un mot en minuscules,
-   comme pour madame : « un monsieur âgé », « Monsieur présente… », « M. supra-épineux » (M. = muscle), « arthro-MR montre ».
+   comme pour madame : « un monsieur âgé », « Monsieur présente… », « M. supra-épineux » (M. = muscle).
    Acceptés exprès, épinglés dans les tests : « Rameau né en C5 », « né le long du nerf », « douleur née le lendemain », « Cette coupe vient de Nysora »,
    « Une patiente de Rhumatologie adressée », « CSA du nerf médian +33 % », « travaillé à main levée / au Doppler / à 15 MHz / à deux mains »,
-   « la patiente de la 2e séance », « le 3 septembre » (date sans année : décision de Mat). */
+   « la patiente de la 2e séance », « le 3 septembre » (date sans année : décision de Mat), « arthro-MR montre » (MR accolé par un trait d'union). */
 const lisse = s => String(s == null ? '' : s).normalize('NFC').replace(/[^\S\n]+/g, ' ').replace(/ ?\n\s*/g, '\n').replace(/[\u{2018}\u{2019}\u{2bc}]/gu, "'").replace(/[\u{2010}-\u{2012}]/gu, '-').replace(/\u{ba}/gu, '°');
 const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 const debutBas = s => s.replace(/(^ ?|\n ?|[^\p{L}\p{N}'\s] ?)(\p{Lu})(?=[\p{Ll}'])/gu, (_, sep, c) => sep + c.toLowerCase());   // abaisse la majuscule qui suit un début de texte (blanc initial compris), un retour à la ligne ou une ponctuation
@@ -46,7 +46,7 @@ const REGLES_BRUT = [   // sur le texte d'origine (la majuscule est le signal)
   [new RegExp(String.raw`(?:(?<![\p{L}\p{N}_])(?:patiente?|dame|monsieur|femme|homme|personne|sujet|il|elle|ils|elles)(?![\p{L}\p{N}_])[^.;:!?]{0,15}?\s|(?:^|[,;:(.\n])\s*)(?:vien(?:t|nent)|ven(?:u|ue|ait|ant))\s+${LIEU}`, 'u'), 'lieu d\'origine'],   // sujet personne ou sans sujet : « Cette coupe vient de Nysora » passe
 ];
 const REGLES_NORM = [   // sur le texte normalisé (minuscules, sans accent)
-  [/\b(?:mme|mlle|melle|madame|mademoiselle|monsieur|mr|(?<!\d ?)m\.)\.?\s+[a-z]/, 'civilité suivie d\'un nom'],   // nom en minuscules (« vu monsieur dupont ») ; « 500 m. Le genou » : « m. » après un nombre est une unité
+  [/\b(?:mme|mlle|melle|madame|mademoiselle|monsieur|(?<![\w-])mr|(?<!\d ?)m\.)\.?\s+[a-z]/, 'civilité suivie d\'un nom'],   // nom en minuscules (« vu monsieur dupont ») ; « 500 m. Le genou » : « m. » après un nombre est une unité ; « arthro-MR » : « mr » accolé par un trait d'union n'est pas une civilité
   [/\bdate de naissance\b|\bddn\b/, 'date de naissance'],
   [new RegExp(String.raw`\bnee?\s+(?:le|en)\b\s*(?::\s*)?(?:\d|premier\b|(?:${JOURS})\b|(?:${NB}[\s-]+(?:et[\s-]+)?){0,3}(?:${MOIS})\b)`), 'date de naissance'],   // sans accent, « ne le » seul est la négation : une date doit suivre (chiffre, jour, mois)
   [/\b\d{1,2}([\/.-])\d{1,2}\1\d{2,4}\b/, 'date complète'],   // même séparateur partout : « 2.5-10 mm » n'est pas une date
