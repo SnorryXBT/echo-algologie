@@ -17,7 +17,7 @@
    un auteur de vidéo ; « patient B. » en fin de phrase (initiale avec point) ; « M. de Dupuytren » (M. = maladie) ; « mode M Doppler » ; « un patient de Parkinson »
    (maladie prise pour un lieu) ; « Il vient du Doppler » (sujet pronom) ; « ch. 3 du guide » ; sigles à points (« I.R.M. ») ; plages « 10-12-15 MHz » ;
    « le muscle travaille pour… » ; « il travaille à temps partiel » ; « patient » suivi d'un sigle absent de SIGLES ; civilité suivie d'un mot en minuscules,
-   comme pour madame : « un monsieur âgé », « Monsieur présente… », « M. supra-épineux » (M. = muscle).
+   comme pour madame : « un monsieur âgé », « Monsieur présente… », « M. supra-épineux » (M. = muscle), « MR arthrography montre » (écrire « arthro-IRM »).
    Acceptés exprès, épinglés dans les tests : « Rameau né en C5 », « né le long du nerf », « douleur née le lendemain », « Cette coupe vient de Nysora »,
    « Une patiente de Rhumatologie adressée », « CSA du nerf médian +33 % », « travaillé à main levée / au Doppler / à 15 MHz / à deux mains »,
    « la patiente de la 2e séance », « le 3 septembre » (date sans année : décision de Mat), « arthro-MR montre » (MR accolé par un trait d'union). */

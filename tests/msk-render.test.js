@@ -21,8 +21,8 @@ test('volet MSK : index, fiche épaule, région sans fiche, lien profond, naviga
     assert.deepStrictEqual(errs, []); assert.strictEqual(r.h1, 'Diagnostic MSK'); assert.strictEqual(r.tiles, 8); assert.strictEqual(r.nav, 8);
 
     errs = await open(page, '#/msk/epaule');
-    r = await page.evaluate(() => ({ h1: document.querySelector('.fiche-head h1').textContent, banniere: !!document.querySelector('.msk-banniere'), secs: [...document.querySelectorAll('section.sec')].map(s => s.id), labels: document.querySelectorAll('.fig-label').length, active: !!document.querySelector('.nav-msk a.active[href="#/msk/epaule"]'), gestes: document.querySelectorAll('#vue .chips a[href^="#/fiche/"]').length, gestesFiche: ECHO.msk.epaule.gestes.length }));
-    assert.deepStrictEqual(errs, []); assert.match(r.h1, /Épaule/); assert.ok(r.banniere, 'bannière non validée');
+    r = await page.evaluate(() => ({ h1: document.querySelector('.fiche-head h1').textContent, banniere: !!document.querySelector('.msk-banniere'), secs: [...document.querySelectorAll('section.sec')].map(s => s.id), labels: document.querySelectorAll('.fig-label').length, active: !!document.querySelector('.nav-msk a.active[href="#/msk/epaule"]'), gestes: document.querySelectorAll('#vue .chips a[href^="#/fiche/"]').length, gestesFiche: ECHO.msk.epaule.gestes.length, valide: ECHO.msk.epaule.valide === true }));
+    assert.deepStrictEqual(errs, []); assert.match(r.h1, /Épaule/); assert.strictEqual(r.banniere, !r.valide, 'bannière présente si et seulement si la fiche n\'est pas validée');
     for (const id of ['vue', 'protocole', 'sonoanatomie', 'pathologies', 'dictee', 'competences', 'references', 'videos']) assert.ok(r.secs.includes(id), 'section ' + id);
     assert.ok(r.labels >= 4, 'marqueurs rendus'); assert.ok(r.active); assert.strictEqual(r.gestes, r.gestesFiche, 'une pastille par geste de la fiche');
 

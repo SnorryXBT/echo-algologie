@@ -87,7 +87,9 @@ Spec : `docs/superpowers/specs/2026-10-07-msk-diagnostic-design.md` ; plan : `do
   ni le `nom` affiché d'une région (nom et deck_id des paquets Anki en dérivent : le renommer crée d'autres paquets à la réimportation) ;
   celles du socle sont positionnelles (`socle-<geste>-echo-<rang parmi les figures écho à ≥ 2 étiquettes>`,
   `socle-<geste>-piege-<rang dans pieges>`) : insérer (ailleurs qu'en fin de liste), retirer ou réordonner ces figures ou ces pièges, ou ôter ses étiquettes
-  à une figure, les renumérote et rend orphelines les notes Anki correspondantes (carte perdue ainsi en `a497e75`).
+  à une figure, les renumérote et rend orphelines les notes Anki correspondantes (carte perdue ainsi en `a497e75`) ; de même, donner une
+  deuxième étiquette à une figure qui n'en avait qu'une (elle entre dans le classement) ou renommer une structure de `sonoanatomie`
+  d'une fiche geste (`socle-<geste>-sono-<slug>`).
 - Aucune donnée patient, nulle part. État privé dans `~/Claude/Projects/Écho MSK`, jamais dans le dépôt : écrit par
   `scripts/msk-progress.js` seul, derrière le garde-fou `scripts/lib/phi-guard.js`.
 - Avant tout commit : `NODE_PATH=$(npm root -g) node --test tests/*.test.js` → tout vert ; `node scripts/msk-audit.js`
